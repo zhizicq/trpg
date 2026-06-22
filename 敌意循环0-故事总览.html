@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>敌意循环#0 - 连载记录</title>
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --paper: #fffdf8;
+      --ink: #2b241f;
+      --muted: #6e6358;
+      --accent: #1f6f78;
+      --accent-2: #b85c38;
+      --line: #d8cfc1;
+      --ok: #2e7d32;
+      --warn: #b26a00;
+      --danger: #9c2f2f;
+      --shadow: 0 12px 30px rgba(43, 36, 31, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(31, 111, 120, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 20%, rgba(184, 92, 56, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8f4eb 0%, #f0e8db 100%);
+      font-family: "LXGW WenKai", "Noto Serif SC", "Source Han Serif SC", "Microsoft YaHei", serif;
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1120px, 92vw);
+      margin: 26px auto 56px;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #fffdf8 0%, #f5ece0 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -38px;
+      top: -38px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31, 111, 120, 0.24), transparent 62%);
+      pointer-events: none;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+      letter-spacing: 0.4px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.84rem;
+      background: #fff;
+    }
+
+    .chip strong { color: var(--accent); }
+
+    .top-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.06rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+    }
+
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .kpi .box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .kpi .label {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .kpi .value {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .quick-links {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.93rem;
+    }
+
+    .quick-links li { margin: 4px 0; }
+
+    .series-nav {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .nav-box {
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      font-size: 0.88rem;
+    }
+
+    .nav-box .small { color: var(--muted); font-size: 0.8rem; }
+
+    .nav-box a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(31, 111, 120, 0.6);
+    }
+
+    .section-title {
+      margin: 20px 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .episodes {
+      display: grid;
+      gap: 12px;
+    }
+
+    details.ep {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(180deg, #fffefb 0%, #f9f1e6 100%);
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .ep-no {
+      width: 56px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .ep-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .ep-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: right;
+    }
+
+    .ep-body {
+      border-top: 1px solid var(--line);
+      padding: 14px 16px 16px;
+      background: #fff;
+    }
+
+    .ep-body p {
+      margin: 0 0 8px;
+      font-size: 0.93rem;
+      color: #3d342d;
+    }
+
+    .ep-body p:last-child { margin-bottom: 0; }
+
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(var(--accent), var(--accent-2));
+    }
+
+    .timeline li {
+      position: relative;
+      margin: 0 0 12px;
+      padding-left: 36px;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: var(--accent);
+      box-shadow: 0 0 0 2px rgba(31, 111, 120, 0.2);
+    }
+
+    .time {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .point {
+      font-size: 0.92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.93rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 3px 8px;
+      margin-left: 6px;
+      border: 1px solid transparent;
+      vertical-align: middle;
+    }
+
+    .ok { background: #e9f5ea; color: var(--ok); border-color: #c8e8cb; }
+    .warn { background: #fff4e5; color: var(--warn); border-color: #f5ddb3; }
+    .danger { background: #fdeceb; color: var(--danger); border-color: #f5c7c3; }
+
+    .todo-list li {
+      margin: 6px 0;
+    }
+
+    .next-ep {
+      margin-top: 16px;
+      border: 1px solid #e7dccf;
+      background: linear-gradient(180deg, #fffaf3 0%, #fff 100%);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .next-ep h3 {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+      color: var(--accent-2);
+    }
+
+    .tip {
+      margin-top: 16px;
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .top-grid { grid-template-columns: 1fr; }
+      .series-nav { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      summary { grid-template-columns: auto 1fr; }
+      .ep-meta { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero" id="top">
+      <h1>敌意循环#0：连载记录页</h1>
+      <p class="subtitle">当前为连载模式。后续更新时，只需在“章节回顾”中追加 1 个 details 块，并同步更新时间线与追更面板。</p>
+      <div class="chips">
+        <span class="chip">记录区间：2025-08-21 ~ 2025-08-27</span>
+        <span class="chip">最新话：<strong>第 6 话</strong></span>
+        <span class="chip">追更状态：进行中</span>
+        <span class="chip">下次更新目标：枯河渡口通关</span>
+      </div>
+
+      <div class="series-nav">
+        <div class="nav-box"><div class="small">上一卷</div>序章 / 未收录</div>
+        <div class="nav-box"><div class="small">当前卷</div><a href="#episodes">敌意循环#0</a></div>
+        <div class="nav-box"><div class="small">下一卷</div>待命名 / 未开启</div>
+      </div>
+    </section>
+
+    <section class="top-grid">
+      <article class="card">
+        <h2>连载速览</h2>
+        <ul class="quick-links">
+          <li><a href="#episodes">章节回顾（可折叠）</a></li>
+          <li><a href="#timeline">主线时间线</a></li>
+          <li><a href="#highlights">本卷要点（道具/风险/关系）</a></li>
+          <li><a href="#next">下一话预告与待填坑</a></li>
+        </ul>
+      </article>
+
+      <aside class="card">
+        <h2>追更面板</h2>
+        <div class="kpi">
+          <div class="box">
+            <div class="label">已更章节</div>
+            <div class="value">6</div>
+          </div>
+          <div class="box">
+            <div class="label">主线阶段</div>
+            <div class="value">第 1 幕后段</div>
+          </div>
+          <div class="box">
+            <div class="label">战斗战绩</div>
+            <div class="value">击溃 1 / 逼退 1</div>
+          </div>
+          <div class="box">
+            <div class="label">最新悬念</div>
+            <div class="value">哨站冲突将起</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <h2 class="section-title" id="episodes">章节回顾（连载模式）</h2>
+    <section class="episodes">
+      <details class="ep">
+        <summary>
+          <span class="ep-no">第 1 话</span>
+          <span class="ep-title">白铜之门后的委托</span>
+          <span class="ep-meta">地点：米拉卜行会总部</span>
+        </summary>
+        <div class="ep-body">
+          <p>雪菈在荒漠探险归来后被紧急召见，进入炼金术师行会核心区。沿途观测到多项技术异样，尤其是构装体核心水晶的非标频段。</p>
+          <p>尤利尼克斯展示黑市样本 7B 能谱，主波形可解释，但次级谐振呈现寄生式嫁接，疑似人为改造。</p>
+        </div>
+      </details>
+
+      <details class="ep">
+        <summary>
+          <span class="ep-no">第 2 话</span>
+          <span class="ep-title">嫉妒的语言</span>
+          <span class="ep-meta">核心：情绪编码确认</span>
+        </summary>
+        <div class="ep-body">
+          <p>雪菈近距解析碎片符文，发现其并非语法文字，而是概念化情绪符号。多个意符组合最终指向高强度“嫉妒”回响。</p>
+          <p>精神污染短时触发，尤利尼克斯以宁神药剂稳定其状态。两人确认：碎片可吸收并放大环境负面情绪。</p>
+        </div>
+      </details>
+
+      <details class="ep">
+        <summary>
+          <span class="ep-no">第 3 话</span>
+          <span class="ep-title">受命南下</span>
+          <span class="ep-meta">任务：前往拉玛萨拉</span>
+        </summary>
+        <div class="ep-body">
+          <p>雪菈接受委托，目标为回收流失碎片并调查幕后改造者。尤利尼克斯提供谐振探测器、思维守护护符、介绍信与经费支持。</p>
+          <p>联系人为塔哈·卡鲁德，主线由学术调查转入高风险实地行动。</p>
+        </div>
+      </details>
+
+      <details class="ep">
+        <summary>
+          <span class="ep-no">第 4 话</span>
+          <span class="ep-title">玻璃峰伏击</span>
+          <span class="ep-meta">战斗：沙狼夹击</span>
+        </summary>
+        <div class="ep-body">
+          <p>雪菈在峡谷发现遗弃邮差包与战斗痕迹，随即遭两只沙狼伏击。战斗中出现滚石威胁，局势一度不利。</p>
+          <p>通过机动、法术与地形应对，战线暂时稳住，并发现现场仍有幸存者求援。</p>
+        </div>
+      </details>
+
+      <details class="ep">
+        <summary>
+          <span class="ep-no">第 5 话</span>
+          <span class="ep-title">芬恩短足</span>
+          <span class="ep-meta">同盟：临时组队</span>
+        </summary>
+        <div class="ep-body">
+          <p>雪菈协助半身人信使芬恩脱困，双方联手反击。芬恩利用红酒制造液体环境，雪菈以翠炎完成连锁击溃。</p>
+          <p>战后确认芬恩遗失信件的收件人为塔哈·卡鲁德，与主线联系人重合，二人决定结伴前行。</p>
+        </div>
+      </details>
+
+      <details class="ep" open>
+        <summary>
+          <span class="ep-no">第 6 话</span>
+          <span class="ep-title">枯河渡口前夜</span>
+          <span class="ep-meta">最新：冲突临界</span>
+        </summary>
+        <div class="ep-body">
+          <p>旅途中，芬恩披露边境局势：阿斯本萨驻军将中立税点军事化，实施选择性盘查与附加税收。</p>
+          <p>雪菈与芬恩抵达关卡外缘，目击士兵盘剥难民。剧情收束于“是否介入、如何过关”的关键决断点。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="two-col" id="timeline">
+      <article class="card">
+        <h2>主线时间线</h2>
+        <ul class="timeline">
+          <li>
+            <div class="time">2025-08-21 晚</div>
+            <div class="point">雪菈返回米拉卜并受召前往行会总部。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-21 深夜前</div>
+            <div class="point">样本 7B 能谱解析完成，异常次谐振坐实。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-21 夜</div>
+            <div class="point">碎片触发精神污染，核心情绪“嫉妒”被确认。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-21 末</div>
+            <div class="point">领取任务装备与背书，正式启程拉玛萨拉。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-22 午后至傍晚</div>
+            <div class="point">玻璃峰遭遇战，救援芬恩并建立临时同盟。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-25 ~ 08-27</div>
+            <div class="point">同路推进，确认遗失信件与主线联系人重叠。</div>
+          </li>
+          <li>
+            <div class="time">2025-08-27 黄昏</div>
+            <div class="point">到达枯河渡口，目击驻军盘查，进入下一冲突节点。</div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card" id="highlights">
+        <h2>本卷要点</h2>
+        <p><strong>关键道具</strong></p>
+        <ul class="clean">
+          <li>谐振探测器：300 尺感应同源能量，30 尺近距高频提示。</li>
+          <li>思维守护护符：抗精神污染与思想读取干扰。</li>
+          <li>炼金术师行会介绍信：通行与政治背书。</li>
+          <li>经费 100gp：差旅、补给、应急周转。</li>
+        </ul>
+
+        <p><strong>风险等级</strong></p>
+        <ul class="clean">
+          <li>情绪污染扩散 <span class="badge danger">高</span></li>
+          <li>黑市链条未切断 <span class="badge danger">高</span></li>
+          <li>边境管制加码 <span class="badge warn">中</span></li>
+          <li>盟友可靠性待验证 <span class="badge warn">中</span></li>
+        </ul>
+
+        <p><strong>关系状态</strong></p>
+        <ul class="clean">
+          <li>雪菈 ↔ 尤利尼克斯：高信任、明确委托链。</li>
+          <li>雪菈 ↔ 芬恩：战斗同盟，互补明显。</li>
+          <li>雪菈 ↔ 驻军：潜在对立，未正面摊牌。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="two-col" id="next">
+      <article class="card">
+        <h2>待填坑清单</h2>
+        <ul class="clean todo-list">
+          <li>改造技术来源与执行者身份。</li>
+          <li>遗失信件的完整内容与用途。</li>
+          <li>塔哈·卡鲁德在主线中的真实位置。</li>
+          <li>驻军与黑市流通链是否有关联。</li>
+          <li>“嫉妒”是否仅是首个情绪模组。</li>
+        </ul>
+      </article>
+
+      <article class="card next-ep">
+        <h3>下一话预告（可在更新时替换）</h3>
+        <p><strong>暂定标题：</strong>第 7 话《枯河渡口》</p>
+        <p><strong>看点：</strong>雪菈如何在不暴露关键道具的情况下通过检查；芬恩是否能用信使身份破局；难民冲突会否升级为现场对抗。</p>
+        <p><strong>更新说明：</strong>追加新日志后，新增 1 个章节 details，刷新“最新话”与追更面板即可。</p>
+      </article>
+    </section>
+
+    <section class="tip">
+      <strong>连载维护指引：</strong>
+      每次更新仅做三步：1) 在“章节回顾”末尾复制一个 details 作为新话；2) 在“主线时间线”新增 1 条节点；3) 修改顶部 chips 与追更面板中的章节数与最新话。
+      这样页面可以持续连载，不需要重做全站结构。
+    </section>
+
+    <p class="footer">敌意循环#0 连载页 | 最后更新：2026-06-22</p>
+  </main>
+</body>
+</html>
