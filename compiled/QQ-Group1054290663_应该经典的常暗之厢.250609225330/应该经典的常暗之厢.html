@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应该经典的常暗之厢 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>应该经典的常暗之厢</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《应该经典的常暗之厢》是一则典型的“封闭空间生存恐怖”模组：两位少女在末班电车上醒来，发现自己与外界彻底断联，乘客消失、随身物品不翼而飞，整列车厢则像被某种异界黑暗逐步吞噬。列车本身既是交通工具，也是囚笼与迷宫；而真正的威胁并不只是“怪物”，更是它们所带来的感官压迫、方向迷失与心理崩坏。</p>
+<p>核心冲突在于：PC必须在“继续前进”与“被恐惧击溃”之间做选择，一边摸索列车异变的规律，一边寻找脱困手段。怪物对声音极度敏感，使得战斗几乎不可行，玩家只能依靠观察、潜行、诱导与有限的合作，在不断上升的精神压力下向驾驶室推进。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>两位乐队少女七海奏与柯守在末班电车上醒来，发现车厢空无一人，手机无信号，随身物品也尽数失踪，只剩下车内贴着“只管前进吧，已经没有退路了”的诡异便签。她们沿着车厢搜查，很快确认列车已被怪物侵蚀，而这一切似乎都在逼迫她们只能向前。七海在七号车厢亲眼见到怪物，精神瞬间崩溃，之后虽救下重伤的乘务员仓田白菜，却进一步陷入恐惧与不安。白菜告知怪物会被声音吸引，关键的“钥匙”疑似藏在“第三个箱子”里，前方二号车厢更有两只怪物徘徊，局势愈发危险。</p>
+<p>为突破封锁，三人用投掷物引开怪物，确认其听觉特性后改为潜行前进，但七海再次因惊吓触发即时疯狂，形成对人群的恐惧；柯守则在目睹怪物、潜行失误与移动受伤中不断承受理智损失。尽管步步惊险，他们最终还是抵达驾驶室，在白菜的指导下操控列车加速突围。白光过后，一切回归现实车站，仿佛只是噩梦一场。临别之际，七海递出 STARRY 的 live 门票，柯守欣然答应赴约，为这段恐怖体验留下了温暖而现实的尾声。</p>
+
+<h3>结局与收尾</h3>
+<p>模组以“逃出异界列车、回到现实车站”作为闭环式结局。超自然危机被暂时解除，众人从近乎封闭的死亡场景中脱身。最值得注意的是收尾并未停留在“活下来”这一层，而是让七海以音乐邀请柯守：一张 STARRY 的 live 门票，把恐怖经历重新连接回日常与人际关系。这一笔既是缓冲，也是角色关系的落点——从“共同求生”转向“以音乐和约定继续同行”，让惊悚模组拥有了少见的温柔余韵。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC：七海奏</h3>
+<ul>
+<li><strong>性格特征</strong>：敏感、神经紧绷、对异常环境反应强烈，但并非完全脆弱；她在惊恐中仍会尝试救人、推进调查，带有明显的“会怕但不放弃”的气质。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在列车初醒时积极搜索环境，推动剧情进入调查阶段。</li>
+<li>亲眼目睹怪物后理智崩溃，成为本模组恐惧感最直接的承载者。</li>
+<li>成功救治重伤乘务员仓田白菜，体现出危急时刻的行动力与同理心。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>明明精神状态濒临失控，仍尝试在恐怖环境中提供帮助。</li>
+<li>结尾主动递出 STARRY 的 live 门票，以音乐把“共同经历的恐怖”转译成“共同赴约的关系”，完成从受惊者到关系发起者的转变。</li>
+<li><strong>角色弧光</strong>：从“被吓坏的普通人”成长为“在恐惧中仍愿意向他人伸手的人”。她的恐怖体验最终没有吞噬她，反而让她更渴望建立现实中的连接。</li>
+</ul>
+
+<h3>PC：柯守</h3>
+<ul>
+<li><strong>性格特征</strong>：冷静程度相对更高，适应危机能力较强，属于能在混乱中维持基本判断的类型；但在恐怖压迫下同样会受伤、失手、掉理智。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在七海多次理智崩溃后仍持续协作，稳定团队推进。</li>
+<li>通过投掷物引怪、潜行移动等方式配合脱困策略，体现出实用主义与执行力。</li>
+<li>在目睹怪物与潜行失误后承受理智损失，说明她并非“无畏”，而是“硬撑着往前走”。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>面对音敏怪物的机制迅速转为低噪潜行思路，表现出战术适应能力。</li>
+<li>接受七海的 live 邀请，作为“从惊悚场景返回日常”的接住者，为结局提供情感落点。</li>
+<li><strong>角色弧光</strong>：柯守的魅力在于稳定与接纳。她不一定是最耀眼的爆发型角色，但她的存在让七海能在崩坏边缘继续前进；最终她接下邀请，意味着她愿意把这段共患难的经历延续到现实生活中。</li>
+</ul>
+
+<h3>重要NPC：仓田白菜</h3>
+<ul>
+<li><strong>身份与作用</strong>：重伤的乘务员，是模组中最关键的信息提供者与行动引导者之一。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>解释怪物的习性：<strong>追声</strong>，因此“安静”成为生存法则。</li>
+<li>提示关键道具与解谜方向：钥匙疑似在“第三个箱子”。</li>
+<li>在后段指导PC操作列车加速，直接促成脱困。</li>
+<li><strong>角色评价</strong>：白菜是标准的“受伤但靠谱的引导NPC”。她既承担了世界观说明，也承担了关键行动指令，是把混乱事件组织成可推进剧情的枢纽人物。</li>
+</ul>
+
+<h3>重要NPC/环境存在：怪物</h3>
+<ul>
+<li><strong>作用</strong>：怪物本身并不需要复杂人格，它的功能是制造压迫、限制行动、逼迫PC放弃直面战斗的幻想。</li>
+<li><strong>特点</strong>：追声、徘徊、车厢封锁、与黑暗列车空间高度绑定。</li>
+<li><strong>叙事效果</strong>：比起“打败怪物”，本模组更强调“理解并绕过怪物”。它让玩家体验到一种很经典的克系/生存恐怖逻辑：不是你能不能杀死它，而是你能不能不被它发现、并在恐惧中继续做正确的事。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 末班电车苏醒：异常的开端</h3>
+<p>七海奏与柯守在末班电车中醒来，周围乘客全部消失，手机失去信号，随身物品也被清空。车厢内贴着“只管前进吧，已经没有退路了”的便签，像是某种来自异界的强制指令。两人最初只能沿车厢搜索，试图理解自己身处何地。</p>
+
+<h3>2. 车厢异变与首次精神冲击</h3>
+<p>在调查过程中，她们逐渐确认列车已遭怪物侵蚀。七海在七号车厢目睹怪物，受到极强刺激导致理智崩溃，模组的恐怖氛围在此达到第一次高点。与此同时，重伤的乘务员仓田白菜被发现，成为幸存者与信息来源。</p>
+
+<h3>3. 救治白菜与情报获取</h3>
+<p>七海成功救治白菜，虽然挽回了NPC生命，却也让自己在高度紧张的状态下持续消耗理智。白菜随后透露：怪物会被声音吸引，因此行动时必须避免噪音；同时她提到“钥匙”可能藏在“第三个箱子”里，并警告前方二号车厢有两只怪物徘徊，进一步确认前路极其危险。</p>
+
+<h3>4. 以声音诱敌，改用潜行</h3>
+<p>面对音敏怪物，PC们决定利用投掷物制造声响来引开敌人，再趁机推进。这一段是模组的核心玩法展示：不是硬碰硬，而是通过理解机制进行“有限操作”。她们确认怪物对声音敏感后，改以潜行方式移动，体现出从恐惧到战术适应的过程。</p>
+
+<h3>5. 第二轮惊吓与持续失控</h3>
+<p>尽管策略正确，压力仍在持续累积。七海再次因突发惊吓触发即时疯狂，发展出人群恐惧症；柯守也因为目睹怪物、潜行失误以及移动中的受伤承受理智损失。此处剧情呈现出一种非常典型的恐怖推进节奏：不是单次事件击垮角色，而是多轮小冲击叠加，逐步蚕食行动能力。</p>
+
+<h3>6. 抵达驾驶室与列车脱困</h3>
+<p>最终，三人成功抵达驾驶室。在白菜指导下，PC操作列车加速前进，试图用“继续前进”这一最直接的动作逃离异常空间。白光闪过，现实与异界切换完成，众人回到正常车站，宛如从一场漫长而逼真的噩梦中醒来。</p>
+
+<h3>7. 回到现实后的温柔收束</h3>
+<p>脱困后，故事并未以疲惫散场，而是以一个轻柔的现实桥段收尾：七海将 STARRY 的 live 门票递给柯守，邀请她来听演出；柯守欣然答应。这个结尾将“列车上的共同生死”转化为“现实中的约定”，使模组从纯恐怖体验延伸出温暖的人际联结。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：七海在极端恐惧中仍救治白菜，并在后续把 live 门票递给柯守。一个很强的对照：前半段是生存恐怖，后半段却用音乐把情绪落回人间。</li>
+<li><strong>最意外</strong>：车厢便签“只管前进吧，已经没有退路了”几乎像一种诡异的命运宣言，和最终“加速脱困”的处理形成了非常漂亮的呼应。</li>
+<li><strong>最压迫</strong>：七号车厢目睹怪物导致七海理智崩溃，这一幕把“看见”本身变成了伤害。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>成功救治白菜</strong>：这是最关键的功能性成功之一，不仅救下了NPC，也让情报链条得以成立。</li>
+<li><strong>投掷物引怪成功</strong>：体现出玩家真正读懂了怪物机制，是模组中“把恐怖转化为解法”的代表性成功。</li>
+<li><strong>七海的即时疯狂</strong>：虽然不一定以传统意义上的“失败”出现，但其效果极强，直接改变了角色状态，并把恐惧具象化为人群恐惧症。</li>
+<li><strong>柯守的潜行失误与受伤</strong>：属于“代价型失败”，没有终结剧情，但持续抬高了紧张度。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“只管前进吧，已经没有退路了”</strong>：这句便签几乎是整场模组的主题句，像车厢本身在对玩家说话。</li>
+<li><strong>“怪物会追声”</strong>：一句看似简单的提示，直接把玩法从“硬刚”切换为“潜行恐怖”，是整个模组的关键转折。</li>
+<li><strong>结尾的 STARRY live 邀请</strong>：在刚经历完异界列车后，最日常、最青春的邀请反而成为最有力的收束，形成一种非常可爱的反差。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结</h2>
+<p>这份日志所呈现的，是一个以“列车异界化”为舞台、以“声音与恐惧”为机制核心的高压恐怖模组。其优秀之处在于：恐怖不是单纯靠怪物塑造，而是通过封闭空间、信息匮乏、噪音机制与持续理智消耗，逐步压迫玩家；而结局又没有停留在恐惧本身，而是借由 live 门票把角色关系重新拉回现实，让整个故事拥有了完整的情绪弧线——从惊醒、崩溃、求生，到回归、邀请、约定。</p>
+
+<p>如果说“常暗之厢”是一次黑暗列车上的逃生，那这场跑团最终留下的，不只是惊悚记忆，还有一张通往未来演出的门票。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

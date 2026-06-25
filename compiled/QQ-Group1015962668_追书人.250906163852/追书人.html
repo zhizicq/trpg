@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追书人 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>追书人</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《追书人》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《追书人》以一座看似平静的小镇哈克镇为舞台，核心冲突围绕“人类身份的边界”与“对自我选择的尊重”展开。镇上墓地长期流传着怪人出没的传闻，近期又出现蹄状脚印与异状，引导调查者逐步接近一桩陈年隐秘：托马斯的舅舅道格拉斯·金博尔并未死去，而是在数十年的孤独、厌倦与自我放逐后，主动成为了食尸鬼。模组的悬念不在于“怪物是否存在”，而在于当怪物不再以恶意现身，而是以一种平静甚至礼貌的姿态宣告自身选择时，玩家要如何理解它、面对它，并处理这份与亲缘、秘密和社会规范相关的复杂关系。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>蒂娜与约兰达抵达哈克镇后，先从委托人托马斯处了解情况，再通过公告板、旧报纸和图书馆资料逐步拼凑出墓地异状的时间线：十多年前便有“怪人”在公墓附近活动，近期又出现类似蹄印，似乎说明某种“老问题”重新浮出水面。蒂娜的一次灵感成功将宅邸脚印与旧闻建立联系，两人遂深入墓地，最终发现所谓怪物竟是在捧书阅读的道格拉斯·金博尔。更令人意外的是，他坦然承认自己已变为食尸鬼，并表示这是自己的选择——他厌倦人类生活，选择与同类为伴，但也并未彻底抛弃过往，只是希望外人不要打扰托马斯。之后，克里斯汀带着道格拉斯留下的书籍线索出现，众人将书搬回墓地，借此完成了与这段秘密的“收纳”与整理。接下来的一周，角色们在图书馆停留，系统性补充神秘学知识并提升技能，令这段调查不仅推动剧情，也成为角色成长节点。临行前，克里斯汀突然提出搭车同行，还以夸张油腻的“嗨宝贝~”打破气氛，三人最终带着她离开哈克镇，在一路听歌与无奈摇头中结束了这段兼具诡异、荒诞与轻松感的插曲。</p>
+
+<h3>结局与收尾</h3>
+<p>本章并未以激烈战斗或悲剧冲突收束，而是以“理解并带走秘密”作为结尾：道格拉斯的身份被揭开，但没有引发正面冲突；书籍被归还或搬运，知识线索得到整理；角色们在图书馆获得成长，完成对神秘事件的阶段性收尾。最后克里斯汀的加入，则为这段偏阴郁的调查线注入了一丝突兀的喜剧感，形成“怪诞结束、旅途继续”的开放式落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>蒂娜</h4>
+<ul>
+<li><strong>性格特征</strong>：谨慎、敏锐、观察力强，偏向用线索推进调查而非直接冲撞。</li>
+<li><strong>关键行为</strong>：通过公告板、报纸和图书馆资料梳理事件；灵感成功将宅邸脚印与旧闻对应，是推动真相揭晓的关键一击。</li>
+<li><strong>高光时刻</strong>：灵感命中后迅速把零散线索串成完整脉络，体现出“知识型侦查”的价值。</li>
+<li><strong>角色弧光</strong>：蒂娜在本段中的功能主要是“认知推进器”，她不是靠暴力解决问题，而是靠耐心与判断逐步逼近真相，代表了调查型跑团的经典魅力。</li>
+</ul>
+
+<h4>约兰达</h4>
+<ul>
+<li><strong>性格特征</strong>：行动力较强，执行调查时与蒂娜形成互补。</li>
+<li><strong>关键行为</strong>：与蒂娜连夜赶路、落脚、调查，整体参与线索收集与现场探索。</li>
+<li><strong>高光时刻</strong>：在关键发现阶段稳定配合，扮演可靠的并肩者。</li>
+<li><strong>角色弧光</strong>：约兰达更多承担“稳定输出”的队友角色，她的存在让调查过程显得更具伙伴感，也让蒂娜的灵感爆发更有支点。</li>
+</ul>
+
+<h4>克里斯汀</h4>
+<ul>
+<li><strong>性格特征</strong>：突兀、古怪、带一点油滑和刻意的社交攻击性，喜剧感极强。</li>
+<li><strong>关键行为</strong>：携带道格拉斯留下的书籍线索登场；主动提出同行；以“嗨宝贝~”这种极具冲击力的方式开场。</li>
+<li><strong>高光时刻</strong>：她的登场几乎瞬间改写全段气氛，从诡异悬疑切换成尴尬喜剧，是本段最具记忆点的人物之一。</li>
+<li><strong>角色弧光</strong>：她像是模组中用于“去严肃化”的调味角色，既带来线索，也带来节奏变化，使剧情不至于一直维持压抑。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>托马斯</h4>
+<ul>
+<li><strong>作用</strong>：委托人，故事入口。</li>
+<li><strong>功能</strong>：提供初始任务与情境信息，引导玩家进入哈克镇与墓地之谜。</li>
+<li><strong>人物意义</strong>：他同时也是道格拉斯的亲属，其“未知真相”的处境，使故事带有亲情与隐瞒的潜台词。</li>
+</ul>
+
+<h4>道格拉斯·金博尔</h4>
+<ul>
+<li><strong>作用</strong>：本章核心真相载体，墓地异状的真正源头。</li>
+<li><strong>人物特征</strong>：已变成食尸鬼，却表现得冷静、礼貌，甚至谈吐平和。</li>
+<li><strong>剧情功能</strong>：他将“怪物”从威胁转化为“选择者”，颠覆玩家预期；其坦白既解释了脚印与出没，也把冲突从生存危机转向伦理与情感层面。</li>
+<li><strong>人物亮点</strong>：请求玩家帮忙搬书、强调别让托马斯知道，显示出他并非纯粹恶意，而是仍保有某种自我秩序。</li>
+</ul>
+
+<h4>哈克镇图书馆资料体系</h4>
+<ul>
+<li><strong>作用</strong>：不是单一NPC，但在剧情中相当于“信息型角色”。</li>
+<li><strong>功能</strong>：为调查提供历史背景、旧闻线索与成长机会。</li>
+<li><strong>剧情意义</strong>：体现模组对“知识即进展”的偏好，调查与升级被自然融合。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 夜抵哈克镇，委托启动</h3>
+<p>蒂娜与约兰达连夜赶到哈克镇，先在旅馆落脚，随后前往拜访委托人托马斯。托马斯说明了墓地附近的异常：怪影、脚印和流言不断出现，令镇上人心惶惶。两位调查者因此确认，本次任务并非单纯找失物或驱邪，而是要揭开一段与墓地相关的长期谜团。</p>
+
+<h3>2. 文献调查与旧闻拼图</h3>
+<p>为了避免盲目深入，两人开始从公告板、旧报纸和图书馆资料中搜集情报。她们逐渐发现，十多年前哈克镇公墓就曾出现“怪人”传闻，近期的蹄状脚印与旧闻惊人一致，说明所谓“新异常”极可能只是旧事重演。蒂娜的一次灵感成功将宅邸脚印与历史记录对应起来，使线索从“可疑”升级为“高度相关”，调查方向由此明确。</p>
+
+<h3>3. 深入公墓，怪物现身</h3>
+<p>在线索足够后，两人前往公墓，终于见到传闻中的“怪物”。然而对方并未表现出攻击性，反而正捧着书阅读，仿佛只是来墓地安静消遣。这个反差瞬间推翻了“怪物袭击”的惯性想象，也使调查从猎怪转向对其身份与动机的理解。</p>
+
+<h3>4. 真相揭晓：道格拉斯的选择</h3>
+<p>“怪物”真实身份被确认，是托马斯的舅舅道格拉斯·金博尔，如今已转化为食尸鬼。道格拉斯对自己身份并不遮掩，甚至坦白说自己厌倦人类生活，选择加入同类。这个揭示让事件从“超自然灾害”变成“个体出走”，也让托马斯的亲属关系成为剧情中最沉默却最沉重的一层。他请二人帮忙把书搬回宅邸，并特别强调不要让托马斯知道自己的现状，显示他仍在意人类亲人，却不愿回头。</p>
+
+<h3>5. 克里斯汀登场与书籍线索回收</h3>
+<p>随后，克里斯汀带着道格拉斯留下的书籍线索登场。众人将书搬回墓地，完成资料的整理与回收。这个环节既是剧情上的“收束动作”，也是线索闭环：书籍象征知识与过去，而搬运行为则象征对秘密的安置与归位。</p>
+
+<h3>6. 图书馆停留，一周成长</h3>
+<p>在离开前，角色们在图书馆停留了一周，借阅资料并进行神秘学和技能成长。这段内容在叙事上属于“间歇性沉淀”，将调查事件的结果转化为角色能力提升，让剧情推进与成长养成自然结合。</p>
+
+<h3>7. 临行前的喜剧插曲与离镇</h3>
+<p>临行前，克里斯汀突然提出搭车同行，并用极其油腻的“嗨宝贝~”开场，制造出强烈的反差喜剧效果。最终三人带她离开哈克镇，途中一边听歌一边摇头，抵达城市后，这段介于怪诞与搞笑之间的旅程告一段落。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最意外</strong>：真正的“怪物”不是害人的敌人，而是坐在墓地里安静看书的道格拉斯；而且他是托马斯的亲戚。</li>
+<li><strong>最精彩</strong>：蒂娜靠灵感把宅邸脚印和旧闻对应起来，真正完成了“线索拼图”的瞬间。</li>
+<li><strong>最好笑</strong>：克里斯汀用“嗨宝贝~”开场，瞬间把悬疑气氛拧成社死喜剧。</li>
+<li><strong>最有反差感</strong>：食尸鬼坦然谈论自我选择、请求帮忙搬书，这种“怪物的礼貌”极具记忆点。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>灵感成功</strong>：这是本段最关键的成功检定，直接把分散的历史记录、脚印与宅邸异常联系起来，推动剧情进入真相阶段。</li>
+<li><strong>资料调查类检定的连锁成功</strong>：公告板、旧报纸、图书馆资料共同构成线索闭环，体现出“调查型模组”的成就感。</li>
+<li><strong>未见明确大失败</strong>：本段整体更偏向稳扎稳打的推进，没有明显灾难性失误，节奏较为平顺。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>道格拉斯对自身处境的平静陈述</strong>：他不是辩解，也不是威胁，而是像在解释一个人生选择，这种冷静最有冲击力。</li>
+<li><strong>“别让托马斯知道”</strong>：简单一句话，把亲情、秘密与歉意同时压进台词里，余味很足。</li>
+<li><strong>克里斯汀的油腻搭讪</strong>：一句话就足以改变全桌表情，是典型的“玩家/角色共鸣式爆笑”桥段。</li>
+<li><strong>一路听歌摇头</strong>：收尾方式轻松而有画面感，把调查后的余韵处理得很生活化。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>“模组结构与主题解读版”</strong></li>
+<li><strong>“可直接发布到论坛/群公告的精简版”</strong></li>
+<li><strong>“按时间线+人物关系图整理版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林中小屋 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>林中小屋</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《林中小屋》以一座山区废教堂为舞台，外表是荒废宗教建筑，内部却隐藏着血腥屠杀、尸体堆积、邪异仪式与“换身”般的超自然异变。故事核心矛盾并不只是“逃亡者躲避警方追捕”，而是<strong>主角在误入禁地后，被卷入一场围绕肉体、灵魂、身份与邪神帕祖祖的猎杀/夺舍争夺战</strong>。教堂中的“神父”、山中出现的“马娘”、不明的尸骸与血迹、以及圣经与蜡烛触发的异象，共同构成了一个典型的“封闭场景+失控仪式+身份错位”的恐怖模组结构。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>铃科茉莉起初只是为躲避警方追捕，慌不择路逃进山区一座废弃教堂。她试图通过地下室铁门脱身，却在教堂内部逐步发现浓重血腥味、地砖缝中的血迹与肉屑，以及厕所粪池里堆放着多具头颅尸体——其中既有警服也有常服，暗示这里早已成为某种屠宰与清理现场。茉莉在探索过程中接触到“圣经”与蜡烛，触发了教堂中的诡异变化，随即失去意识。醒来后，她已不再处于正常状态，甚至感到自己“被换了身体/状态”，并发现自己身在河底，像是被抛入了另一个介于生死之间的空间。</p>
+<p>随后，她在神父的注视下尝试潜行追踪，重新回到教堂附近，并逐渐窥见这起事件背后的结构：教堂并非单纯凶案现场，而是一个连接灵异、献祭与夺舍机制的场域。她与“马娘”“神父”及自称帕祖祖的神秘存在发生接触，在交锋中肉体被爆炸毁灭，最终化作徘徊于教堂一带的怨灵。然而故事并未彻底结束：在与占用其身体的存在接触后，她得知“还有新的身体可用”，而“就差杀死她了”——说明这场杀局与换身争夺仍在继续，真正的终局只是暂时被推后。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本模组以一种典型的“<strong>肉体死亡、灵魂滞留、身份未定</strong>”的恐怖结局收尾。茉莉的原生身体在爆炸中毁灭，但她没有真正退场，而是以怨灵或残留意识的形式继续存在；与此同时，另一个存在已占据她的身体，形成“我死了，但我还在”的双重状态。结尾保留了强烈的悬念：谁才是“真正的铃科茉莉”？新身体是否意味着复活的机会？帕祖祖究竟是幕后操盘者、伪装者，还是另一个受困者？这些都让故事停留在恐怖余韵与开放式后续之间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：铃科茉莉</strong></h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>反应快、求生欲强，属于“先活下来再说”的类型。</li>
+<li>面对超自然现象时并非完全崩溃，而是会迅速寻找可行动的下一步。</li>
+<li>在高压环境下仍能保持一定观察力，属于典型的“冷静型恐慌者”。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>为躲避警方追捕主动逃入山区废教堂，推动了整段剧情的开端。</li>
+<li>在大量恶臭与尸体面前仍坚持侦查，说明她不是单纯被恐怖吓退的人。</li>
+<li>使用圣经与蜡烛触发异变，成为剧情转折点，虽然未必是自觉操作，却等于亲手打开了模组核心机关。</li>
+<li>之后多次潜行、追踪神父，体现出她在混乱中仍试图掌握主动权。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>多次侦查成功</strong>：在极端恶臭和血腥环境中发现尸块、头颅尸体与异常痕迹，证明其观察能力非常强。</li>
+<li><strong>体质极难成功</strong>：在恶臭厕所环境下依然撑住，展现出惊人的生存韧性。</li>
+<li><strong>潜行失败后以奖励骰极难成功翻盘</strong>：这是很典型的“险中求生”高光，既有戏剧性也体现了跑团现场的紧张感。</li>
+<li>从“追逃中的普通人”被一路推成“教堂怨灵/身份错位者”，角色弧光很强，恐怖模组感拉满。</li>
+</ul>
+
+<hr>
+
+<h3><strong>重要NPC及作用</strong></h3>
+
+<h4><strong>神父</strong></h4>
+<ul>
+<li><strong>剧情作用</strong>：教堂内部秩序与异象的见证者/执行者。</li>
+<li><strong>功能定位</strong>：像是掌握真相的“门卫”，也是把茉莉引向更深层真相的人。</li>
+<li><strong>表现意义</strong>：他持续注视茉莉，增强了“被猎物锁定”的压迫感；其存在说明教堂不是废墟，而是仍在运作的仪式场。</li>
+</ul>
+
+<h4><strong>帕祖祖</strong></h4>
+<ul>
+<li><strong>剧情作用</strong>：神秘存在或伪装身份者，承载邪异与信息欺骗。</li>
+<li><strong>关键台词</strong>：</li>
+<li>“我是来了取材的记者……我叫帕祖祖，希望你不知道这意味着什么。”</li>
+<li><strong>意义</strong>：这句台词极具欺骗性与不祥感，暗示其身份并非表面“记者”，而是在利用语言制造误导。帕祖祖可能既是外部介入者，也可能是邪神/附身者/操盘者的化名。</li>
+<li><strong>剧情功能</strong>：提供模组核心谜团之一——“谁在说谎，谁在夺舍，谁在记录这一切”。</li>
+</ul>
+
+<h4><strong>“马娘”</strong></h4>
+<ul>
+<li><strong>剧情作用</strong>：与神父、帕祖祖并列出现的异质存在。</li>
+<li><strong>意义</strong>：名称本身带有强烈反差与诡异感，通常用于制造“看似无害/荒诞，实际危险”的恐怖效果。</li>
+<li><strong>功能定位</strong>：可能是追击者、被改造者，或与教堂仪式相关的受害/施术存在。</li>
+</ul>
+
+<h4><strong>占用茉莉身体的存在</strong></h4>
+<ul>
+<li><strong>剧情作用</strong>：将“身体与灵魂分离”这一主题具体化。</li>
+<li><strong>意义</strong>：这让模组从单纯灵异逃生升级为身份争夺战，也解释了结尾“还有新的身体可用”的核心悬念。</li>
+<li><strong>功能定位</strong>：与茉莉形成镜像关系，迫使玩家思考“我是谁”“我还算不算活着”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：误入废教堂，发现尸骸与异变开端</strong></h3>
+<p>铃科茉莉为躲避警方追捕，逃入山区的一座废弃教堂。教堂外表破败，但内部显然并不“空”：她先是尝试开启地下室铁门，随后在教堂内展开搜索。多次侦查成功让她捕捉到异常细节——空气中有浓重血腥味，地砖缝里卡着血迹与肉屑，厕所的粪池里甚至堆着多具头颅尸体，其中既有警服也有常服，显示这里曾发生过系统性的杀戮与处理尸体行为。</p>
+<p>在极度恶臭的环境中，她通过了体质极难检定，勉强承受住冲击。接着，她接触“圣经”与蜡烛，触发教堂内的异常变化，随即失去意识。醒来后，她发现自己像是被换了身体/状态，甚至身处河底，仿佛从现实被抛入了某种生死夹缝。之后，她在神父的注视下尝试潜行跟踪，先失败后借助奖励骰完成极难成功，最终一路尾随到教堂附近。第一章在这里戛然而止，留下“茉莉究竟变成了什么”的悬念。</p>
+
+<h3><strong>第2章：身份错位与邪异交锋，肉体毁灭后的怨灵状态</strong></h3>
+<p>在警方追查与超自然危机交织的情况下，茉莉继续被卷入教堂的黑暗真相。她逐渐意识到自己并不是单纯“看见了怪事”，而是被某种机制改变了身体与存在状态。教堂不只是藏尸现场，更是一个关于换身、附身与献祭的场所。</p>
+<p>随着探索深入，茉莉与“马娘”“神父”以及名为帕祖祖的神秘存在发生交锋。关键对话透露出更深层信息：帕祖祖自称记者，却带着明显的欺骗与危险意味；而“我想有新的身体可以用”“就差杀死她了”则直接点明了身体替换、夺舍与最后的清除步骤。最终，茉莉的肉体在爆炸中毁灭，化为困于教堂附近的怨灵。尽管身体消亡，她的意识并未完全散去，反而保留了继续观察、继续介入的可能。与此同时，另一存在已占据其身体，令结局呈现出非常强的“反转式未完结”色彩：杀局没有结束，只是换了一个层面继续。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>厕所粪池里堆满头颅尸体</strong>：这是本模组最强烈的视觉冲击之一，荒诞、恶心、恐怖三位一体。</li>
+<li><strong>“圣经”与蜡烛一触即发的异变</strong>：宗教意象与恐怖异象结合得很漂亮，像是把“神圣”直接翻面成“亵渎”。</li>
+<li><strong>醒来发现自己在河底</strong>：非常有电影感，且极具“我是谁我在哪”的失真体验。</li>
+<li><strong>肉体爆炸后变成怨灵</strong>：结局足够黑色幽默又足够悲惨，堪称恐怖模组经典收尾。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>侦查成功多次</strong>：在极端环境下逐步拼出现场真相，是推进恐怖氛围的关键。</li>
+<li><strong>体质极难成功</strong>：在恶臭厕所中撑住，堪称意志与生理双重胜利。</li>
+<li><strong>潜行失败后奖励骰极难成功</strong>：这是非常适合桌边欢呼的一次翻盘，戏剧性极强。</li>
+<li><strong>潜行追踪神父成功</strong>：让“被动受害者”短暂变为“主动追猎者”，是剧情张力的重要来源。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“我是来了取材的记者……我叫帕祖祖，希望你不知道这意味着什么。”</strong></li>
+</ul>
+<p>这句话非常有味道，既像自我介绍，又像危险预告，信息量极大。</p>
+<ul>
+<li><strong>“我想有新的身体可以用。” / “就差杀死她了。”</strong></li>
+</ul>
+<p>直接把模组核心机制摊开：不是逃出去，而是抢身体、保命、完成最后一击。</p>
+<ul>
+<li><strong>侦查到尸体堆与警方尸体混杂</strong></li>
+</ul>
+<p>让“追捕者与被追捕者”的关系瞬间变得模糊，营造出“谁才是猎人”的反转感。</p>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“官方复盘文档”的版本，或者补一版：</p>
+<ol>
+<li><strong>更偏文学性的剧情复盘</strong></li>
+<li><strong>更偏KP视角的模组评价</strong></li>
+<li><strong>按“时间线+场景表”格式重排</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

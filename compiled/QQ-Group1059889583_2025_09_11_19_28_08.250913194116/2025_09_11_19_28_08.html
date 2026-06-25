@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_09_11_19_28_08 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_09_11_19_28_08</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组将舞台设定在<strong>1920年代的大正京都</strong>，表面上是一起十余年前的悬案追查，实际则牵连到更深层的<strong>连环杀人、诡异失踪与“调查本身即危险”</strong>的结构性恐怖。玩家扮演的轮回者被投放到旧时代京都警察本部，受命协助调查曾震动当地的“<strong>窃头贼</strong>”案件：凶手专门砍下并带走死者头颅，受害者彼此毫无关联，而所有试图追查的人似乎都难逃厄运。</p>
+<p>核心冲突因此并不只是“抓凶手”，而是<strong>在信息极端匮乏、线索彼此断裂、调查者自身也可能成为猎物</strong>的情况下，试图从一桩已经被历史掩埋的旧案中拼出真相。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>三名轮回者接到新的任务后，被传送至1920年代的大正京都警察本部，得知自己要协助追查十余年前的连环杀人案“窃头贼”。在金水警官的接待下，众人翻阅卷宗，迅速掌握案件的基本轮廓：凶手作案手法极其残忍，专门割下死者头颅并带走，受害者之间没有明显关联，案件线索稀薄，且警方在调查过程中曾多人死亡，仿佛这起案子本身带有某种诅咒或会将追查者拖入险境。金水警官明确提醒他们“查案可以，但千万别陷得太深”，一方面像忠告，另一方面也像警告。</p>
+<p>离开警局后，轮回者们短暂遭遇世界静止般的异常，而迟到的同伴罗亚则以近乎戏剧化的“从天而降”方式加入队伍，显示出这个任务并不只是在历史现场搜证，而是带有明显的超现实色彩。随后众人决定乘坐电车前往案件关键地点雀森町，开始真正的民间调查。由于当前摘要只覆盖了开局阶段，可以确定的是：故事已从“受命查案”进入“前往案发地”，并且从警局、卷宗和警告中埋下了案件危险性与超自然不安的双重伏笔。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>截至当前分段摘要，剧情尚处于<strong>开局调查阶段</strong>，尚未抵达完整结局。已知的收尾是：轮回者们确认案发关键地点为<strong>雀森町</strong>，并乘电车前往继续调查；同时，金水警官的警告与“世界静止”的异象为后续发展定下了诡谲基调。可判断本模组的收束方向大概率会围绕“窃头贼”真相、头颅被带走的目的，以及调查者是否会被案件本身吞噬展开。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）</strong></h3>
+
+<h4><strong>上衫安光</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：从检定结果看，属于调查能力较强、反应敏锐的角色，可能在团队中承担信息整合、先行判断或行动发起者的位置。</li>
+<li><strong>关键行为</strong>：在搜查检定中掷出<strong>4</strong>，属于极高成功表现，说明其在阅读卷宗、抓取细节或发现线索方面非常出色。</li>
+<li><strong>高光时刻</strong>：面对复杂案件时表现出极强的搜查直觉，成为推动调查流程的重要人物。</li>
+<li><strong>角色印象</strong>：像是队伍里“能把散乱信息拼起来”的人，适合担任推理支点。</li>
+</ul>
+
+<h4><strong>郭嬴侠</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：从检定结果看，调查能力相对普通，可能更偏向行动、辅助或与他人配合型角色。</li>
+<li><strong>关键行为</strong>：搜查检定为<strong>45</strong>，表现平稳，说明他在本阶段没有特别亮眼的发现，但仍有效参与了卷宗检查。</li>
+<li><strong>高光时刻</strong>：虽然没有极端爆发，但在关键初始调查中保持了队伍推进，没有拖慢节奏。</li>
+<li><strong>角色印象</strong>：像是较稳健的队友，能在大事件中提供基础支撑。</li>
+</ul>
+
+<h4><strong>罗亚</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：迟到登场但方式极具戏剧性，以“<strong>从天而降</strong>”加入，带有明显的喜剧与异常色彩。</li>
+<li><strong>关键行为</strong>：错过开场后以夸张方式进入剧情，迅速制造记忆点。</li>
+<li><strong>高光时刻</strong>：出场本身就是高光——在一个本就诡异的年代调查故事里，用超现实方式补位，强化了模组的异样感。</li>
+<li><strong>角色印象</strong>：像是“剧情节奏搅动者”，不仅补足队伍人数，也让场面更有戏。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+
+<h4><strong>金水警官</strong></h4>
+<ul>
+<li><strong>作用</strong>：本模组开局最重要的信息提供者与引导者。</li>
+<li><strong>功能性</strong>：</li>
+</ul>
+<ol>
+<li>交代案件背景——“窃头贼”是十余年前的连环杀人案；</li>
+<li>指出调查方向——案发地在<strong>雀森町</strong>；</li>
+<li>给出警示——“查案可以，但千万别陷得太深。”</li>
+</ol>
+<ul>
+<li><strong>角色气质</strong>：谨慎、知情、带着对旧案的阴影感。既像帮手，也像目击过危险的人。</li>
+<li><strong>剧情作用</strong>：他相当于把玩家从“任务接收”推进到“正式入案”，是信息门槛的守门人。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一章：任务下达与时代降临</strong></h3>
+<p>三名轮回者接到新任务后，被直接传送到<strong>1920年代的大正京都警察本部</strong>。这个开局迅速建立起“现代轮回者进入历史现场”的陌生感，也让案件天然带上时代隔阂。玩家被安排协助调查一桩旧案：十余年前震动京都的“窃头贼”。</p>
+
+<h3><strong>第二章：卷宗初查与案件轮廓</strong></h3>
+<p>在警官金水的带领下，轮回者翻阅相关卷宗，逐渐拼出案件的基本样貌：凶手只砍头，不留头；受害者之间无明显关联；警方调查者中也有人死亡。此时案件已不再像单纯的连环杀人，而像一团会吞人的迷雾。金水警官的提醒“查案可以，但千万别陷得太深”进一步强化了危险预感。</p>
+
+<h3><strong>第三章：线索确认与案发地锁定</strong></h3>
+<p>经过搜查检定与交涉，队伍决定由金水警官协助寻找第一桩案件卷宗。与此同时，他们确认下一步调查重心在<strong>雀森町</strong>。这一阶段的重点不在发现“真凶”，而在于明确第一落点：从总卷宗进入首案，借案发地向外追查。</p>
+
+<h3><strong>第四章：异常插曲与队伍补全</strong></h3>
+<p>离开警局后，世界短暂陷入静止般的异常，显示这并不是纯现实的调查线。就在这时，迟到的同伴罗亚以“从天而降”的方式出现，为队伍补上最后一块拼图。这个桥段既有喜剧效果，也暗示了任务世界中的规则并不稳定。</p>
+
+<h3><strong>第五章：前往雀森町</strong></h3>
+<p>众人乘坐电车前往雀森町，正式从“信息接收”进入“实地调查”。虽然当前摘要尚未提供后续，但到此为止，故事已经完成了开局搭建：案件、地点、危险性、队伍成员都已就位，等待进一步揭开“窃头贼”的真相。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>罗亚“从天而降”登场</strong>：非常有画面感，几乎把悬疑氛围硬生生扭出一点黑色幽默。</li>
+<li><strong>世界突然静止</strong>：这一幕极具诡异感，像是系统失真或规则裂缝，成功把“普通旧案”升级成“超现实任务”。</li>
+<li><strong>金水警官的忠告</strong>：“查案可以，但千万别陷得太深。”这句台词既像职业经验，也像死亡预告，氛围拉满。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>上衫安光 搜查检定 4</strong>：毫无疑问是本段最亮眼的检定结果，属于极强成功，足以支撑“他一眼看穿卷宗关键点”的印象。</li>
+<li><strong>郭嬴侠 搜查检定 45</strong>：表现正常偏稳，作为对照也让上衫的高光更突出。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>金水警官</strong>：“查案可以，但千万别陷得太深。”</li>
+<li>这句话非常适合作为模组宣传语，简单一句就把悬疑、危险与劝退感全部说完了。</li>
+<li><strong>请警官帮忙找第一桩案件卷宗</strong></li>
+<li>这类处理方式很有“玩家不硬刚、直接找专业人士合作”的实用感，也说明队伍在初期就选择了高效率推进路线。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以把这份报告进一步整理成：</p>
+<ol>
+<li><strong>更像“跑团群公告”的精简版</strong>，或</li>
+<li><strong>更像“剧透后复盘文章”的详细版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

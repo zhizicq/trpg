@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追忆 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>追忆</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《追忆》的故事建立在“护卫失败后的悔恨”与“身份被篡夺的真相”之上。故事表面上是一次护送议员之女大町摩耶前往造井市的任务，实则牵连着一年前“时姬”护卫惨剧的余波：旧日失败未能守护重要之人，导致众人背负长期阴影，而这一次的护送则像是对过去的补完与赎罪。</p>
+<p>核心冲突有两层：其一，是队伍必须在红莲、赤王等敌对势力的伏击下，完成护卫与撤离；其二，则是围绕“弥生”“摩耶”与“赤王”的身份纠葛展开——真正应被守护的人是谁？所谓的替代与献祭，究竟是为了世界秩序，还是为了强行续写某个被扭曲的命运？</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>一年之前，“时姬”护卫失败的惨剧令众人耿耿于怀。如今，天王再次召集同伴，护送议员之女大町摩耶前往造井市。众人在别墅内确认同行者与分工，本以为任务只是一次谨慎的转移，却立刻遭遇“红莲”突袭。混战中，猿王高喊“这次，一定要保护好『她』”，以身挡敌掩护队伍撤离，别墅也在烈火中化为废墟。</p>
+<p>随后，追击与回忆交错推进。众人逐步拼凑出弥生的真意：她曾对岚王一见钟情，却又遭赤王觊觎；所谓“三日仪式”，更牵涉到以自身为代价守护世界的沉重使命。随着情报判定成功，真相进一步明朗——红莲并非普通敌人，而是真正赤王的分身，任务是抹杀赝品，并让摩耶取代弥生；而猿王则曾帮助红莲潜入宅邸，刻意制造疑心，使局势彻底失衡。</p>
+<p>抵达荒废神社后，赤王、猿王与红莲果然设伏。队伍借由前期积累的情报与情绪铺垫果断反击：大町摩耶以【征野】改换战场为极地，春人、神藤与刹那接连发动奥义压制敌方，赤王遭到重创。最终，春人与猿王展开正面对决，以【处方战】【风飨】不断削弱对手，逼得猿王土下座求饶并宣告脱落；望月刹那抓住破绽，以【小夜鸣鸟】当场击杀红莲，战斗结束，众人进入结算与复盘。</p>
+
+<h3>结局与收尾</h3>
+<p>结尾以战斗胜利与真相揭晓收束：赤王一方被重创，红莲被刹那击杀，猿王精神上彻底崩落并退出战斗。队伍虽然并未完全“治愈”一年前的创伤，但至少完成了这一次的守护，替过去的失败找回了一部分尊严。模组整体在“任务完成”与“情感债务暂时清算”的状态下结束，留给角色的是对弥生、摩耶、赤王与自身责任的进一步思考。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 天王</h4>
+<ul>
+<li><strong>性格关键词</strong>：沉稳、组织者、背负责任感强</li>
+<li><strong>关键行为</strong>：作为再次集结人手的核心人物，推动护送任务启动，承担整体行动的组织与统筹。</li>
+<li><strong>高光时刻</strong>：在旧案阴影下重新召集伙伴，本身就是一种对失败的正面回应。</li>
+<li><strong>角色弧光</strong>：天王代表“重新开始”的意志——不是忘记失败，而是在失败之后仍选择行动。</li>
+</ul>
+
+<h4>2. 猿王</h4>
+<ul>
+<li><strong>性格关键词</strong>：复杂、偏执、情绪驱动、带有自毁倾向</li>
+<li><strong>关键行为</strong>：一开始便高喊“这次，一定要保护好『她』”，并亲自挡敌掩护撤离；后续又被揭露为红莲帮凶，曾制造疑心暗鬼。</li>
+<li><strong>高光时刻</strong>：土下座求饶、宣告脱落，既狼狈又悲壮，极具戏剧张力。</li>
+<li><strong>角色弧光</strong>：猿王并非单纯的反派，更像被“保护某人”的执念撕裂的人。他既有保护欲，也有误入歧途后的罪责感，是本章情绪最强烈的角色之一。</li>
+</ul>
+
+<h4>3. 春人</h4>
+<ul>
+<li><strong>性格关键词</strong>：冷静、战术型、执行力强</li>
+<li><strong>关键行为</strong>：在真相逐步浮出后，能迅速进入战斗节奏；与猿王对决时，通过【处方战】与【风飨】持续压制。</li>
+<li><strong>高光时刻</strong>：与猿王的正面缠斗，体现出稳定的输出与节奏控制。</li>
+<li><strong>角色弧光</strong>：春人更像团队中的“落地执行者”，在情绪混乱中承担把局势拉回现实的功能。</li>
+</ul>
+
+<h4>4. 神藤</h4>
+<ul>
+<li><strong>性格关键词</strong>：果断、硬派、关键时刻爆发</li>
+<li><strong>关键行为</strong>：在神社决战中与春人、刹那形成联动，连续奥义压制敌方。</li>
+<li><strong>高光时刻</strong>：与队友配合压缩敌方行动空间，为最终击杀创造条件。</li>
+<li><strong>角色弧光</strong>：神藤的亮点不在单人叙事，而在“团队收束”能力上，属于战场节奏的稳定支柱。</li>
+</ul>
+
+<h4>5. 望月刹那</h4>
+<ul>
+<li><strong>性格关键词</strong>：敏锐、冷静、致命、抓机会能力极强</li>
+<li><strong>关键行为</strong>：在战局出现破绽时迅速出手，以【小夜鸣鸟】击杀红莲。</li>
+<li><strong>高光时刻</strong>：终结红莲的一击，是本章最具决定性的瞬间之一。</li>
+<li><strong>角色弧光</strong>：刹那体现的是“收割者”型角色的魅力——不一定最吵闹，但总能在最关键的一瞬间完成终结。</li>
+</ul>
+
+<h4>6. 大町摩耶</h4>
+<ul>
+<li><strong>性格关键词</strong>：具有特殊使命感、战场适应力强、命运感强烈</li>
+<li><strong>关键行为</strong>：在最终战中以【征野】改变战场环境，将战斗转入极地，显著扭转局势。</li>
+<li><strong>高光时刻</strong>：她不只是被护送对象，更在决战中成为改变局面的主动参与者。</li>
+<li><strong>角色弧光</strong>：摩耶从“被保护者”逐步转为“能够承接使命的人”，与弥生/赝品真相形成对照，强化了“谁来继承”的主题。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>弥生</h4>
+<ul>
+<li><strong>作用</strong>：故事情感核心与真相源头。</li>
+<li><strong>剧情功能</strong>：她的过去、感情与使命构成整个模组的迷雾中心。</li>
+<li><strong>意义</strong>：她曾对岚王一见钟情，同时被赤王觊觎，其“三日仪式”让她成为“以自身为代价守护世界”的悲剧人物。她不仅是过去的受害者，也象征着“被命运要求牺牲的人”。</li>
+</ul>
+
+<h4>岚王</h4>
+<ul>
+<li><strong>作用</strong>：弥生感情线的对象，强化“个人情感与大义冲突”的主题。</li>
+<li><strong>意义</strong>：他的存在使弥生不再只是抽象祭品，而是有“曾经喜欢过谁”的活人。</li>
+</ul>
+
+<h4>赤王</h4>
+<ul>
+<li><strong>作用</strong>：真正的核心敌人之一，代表操控与篡夺。</li>
+<li><strong>剧情功能</strong>：以真身与分身体系构建阴谋，并试图通过替代与抹杀完成自己的计划。</li>
+<li><strong>意义</strong>：赤王是“命运被人为重写”的象征。</li>
+</ul>
+
+<h4>红莲</h4>
+<ul>
+<li><strong>作用</strong>：战斗层面的高危敌人，同时是赤王的分身。</li>
+<li><strong>剧情功能</strong>：负责执行抹杀赝品、推进冲突升级，并最终被刹那击杀。</li>
+<li><strong>意义</strong>：红莲让“身份之争”具象化为一场必须被终结的战斗。</li>
+</ul>
+
+<h4>猿王（NPC/敌对阵营关键角色）</h4>
+<ul>
+<li><strong>作用</strong>：连接前情与当前事件的复杂中介。</li>
+<li><strong>剧情功能</strong>：曾带红莲进入宅邸、制造疑心，后又以保护姿态行动，行为极具矛盾。</li>
+<li><strong>意义</strong>：他既是帮凶也是守护者，体现了“错误的爱与错误的保护”这一主题。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 旧案回溯：时姬护卫失败的阴影</h3>
+<p>故事从一年前的惨剧开始。那次“时姬”护卫失败让众人留下强烈遗憾，也成为本模组的情绪底色。当前的任务，实际上是对旧伤的一次重新面对。</p>
+
+<h3>2. 天王重新集结，护送任务启动</h3>
+<p>天王再次召集队伍，准备护送议员之女大町摩耶前往造井市。众人在别墅内确认彼此身份、同行者与分工，表面上像是一次常规的安保准备，实际上是在为一场早已布好的局做铺垫。</p>
+
+<h3>3. 别墅遭袭，猿王掩护撤离</h3>
+<p>红莲突袭别墅，局势迅速恶化。猿王大声宣言“这次，一定要保护好『她』”，并主动挡住攻击，为队伍争取撤退时间。别墅在火海中燃烧，象征着旧秩序的崩塌，也意味着这趟旅程从一开始就注定不平静。</p>
+
+<h3>4. 追击途中，回忆拼图逐渐拼合</h3>
+<p>在一路追击与交错闪回中，队伍逐渐理解弥生的故事：她与岚王、赤王之间的关系、三日仪式的真正含义，以及她以自身为代价守护世界的使命。情感层面的真相开始反哺战斗判断。</p>
+
+<h3>5. 情报判定揭露真正敌意</h3>
+<p>随着情报判定成功，隐藏真相被更明确地揭示：红莲是赤王的分身，任务是抹杀赝品并让摩耶取代弥生；猿王则是其帮凶，曾协助红莲潜入宅邸、制造猜忌。至此，敌方的“身份战”彻底公开。</p>
+
+<h3>6. 荒废神社决战前的埋伏</h3>
+<p>众人抵达荒废神社时，赤王、猿王与红莲早已等候。表面上是敌人的主场，实际上却因前期大量情报积累与情绪铺垫，形成了“我方知晓真相、敌方仍在操盘”的反转优势。</p>
+
+<h3>7. 极地改写战场，团队总攻</h3>
+<p>大町摩耶以【征野】将战场改为极地，改变地形与节奏，削弱敌方布置。春人、神藤与刹那则连续施放奥义，形成压制链条，令赤王遭受重创。</p>
+
+<h3>8. 猿王崩溃，红莲终结</h3>
+<p>春人与猿王展开激烈对决，通过【处方战】【风飨】持续削弱对手，最终逼得猿王土下座求饶并宣布脱落。与此同时，望月刹那抓住红莲露出的破绽，以【小夜鸣鸟】完成击杀，决战结束。</p>
+
+<h3>9. 结算与复盘</h3>
+<p>战斗收束后，众人进入结算与复盘。故事在“赢了，但代价与余波仍在”的状态下收尾，留下足够的情感延展空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：荒废神社终战阶段，情报、情绪与战斗同时爆发，尤其是摩耶【征野】改写战场后，团队连段压制敌人的推进感非常强。</li>
+<li><strong>最意外</strong>：猿王一边高喊保护“她”，一边又被揭示为帮凶，这种“看似忠诚实则复杂”的反转非常抓人。</li>
+<li><strong>最有戏剧张力</strong>：猿王土下座求饶并宣布脱落的场面，狼狈、悲凉、荒诞感并存，极具跑团名场面气质。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>情报判定成功</strong>：这是全模组最关键的“认知转折点”，把原本混乱的身份与动机线索收束成可理解的敌我结构。</li>
+<li><strong>摩耶的【征野】</strong>：虽然未直接写明是检定结果，但从效果上看堪称战术级“大成功”，直接把战场导向对我方有利的环境。</li>
+<li><strong>望月刹那的【小夜鸣鸟】击杀</strong>：作为终结技命中核心目标，堪称战斗层面的收束成功。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“这次，一定要保护好『她』”</strong>：一句话把猿王的执念、愧疚与行为动机全部点燃，是全篇最有记忆点的台词之一。</li>
+<li><strong>别墅被火海吞没</strong>：视觉效果极强，像是在宣告“旧的开始方式已经被烧掉了”。</li>
+<li><strong>土下座求饶</strong>：如果说前半段是紧张追逐，后半段这个桥段则瞬间将戏剧性拉满，既紧张又带一点荒诞喜感。</li>
+</ul>
+
+<hr>
+
+<p>如需，我还可以继续为这份报告补一版：</p>
+<ol>
+<li><strong>更像贴吧/长文复盘风格的版本</strong></li>
+<li><strong>更偏游戏主持人总结的版本</strong></li>
+<li><strong>整理成“人物关系图 + 剧情时间线”版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

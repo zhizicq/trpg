@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_03_12_18_33_07 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_03_12_18_33_07</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组表面上是一起“网红奶茶引发的健康危机”事件，实则牵扯到一家以饮品营销为掩护的邪教式工厂组织。核心矛盾在于：<strong>看似普通的消费产品，暗中成为了操控与异化人类的媒介</strong>。玩家需要在都市调查、潜入侦查与超自然真相之间不断切换，逐步揭开“茗熹/茗煮”饮品背后的异常生产链、精神污染以及对人类身体与意志的侵蚀。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>毛樰望起初只是为了查明颜水雅为何反复取消拍摄，陪她前往校医院后，意外发现并非个案，许多饮用“茗熹/茗煮”奶茶的人都出现了“爆痘”等异常症状。随着调查推进，他从宣传图、博主停更、所谓“治疗声明”以及招聘广告、工厂地址中察觉出层层疑点：这并不是单纯的食品安全事故，而像是某种被精心包装的异常事件。夜间潜入工厂宿舍后，他亲眼见到多名员工皮肤鼓起如眼球般的突起，行动呆板机械，只会朝工作区跪行前进，仿佛已失去自我。毛樰望继续深入，在洪经理办公室因一次图书馆大失败误入隐藏通道，最终进入地下密室，目睹一群长满眼睛的异化人围绕扭曲塑像举行崇拜仪式，真相终于浮出水面：饮品并非单纯饮料，而是污染、控制与异化的载体。凭借尚存的理智，他成功拍下证据并撤离，随后查得“净化仪式”笔记，帮助颜水雅解除控制，最后果断报警举报，让茗熹公司在舆论与调查中遭受重创。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局上，玩家成功揭露了茗熹公司的异常工厂与地下邪教式结构，取得关键影像证据并将其公之于众。颜水雅得以解除控制，回归正常状态；公司则在警方调查与舆论压力下陷入危机。整体收尾属于<strong>“调查成功、邪恶暴露、代价尚可接受”</strong>的典型克苏鲁/都市怪谈式胜利结局，但暗示该污染源与组织未必完全根除，留有后续扩展空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>毛樰望</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：谨慎、好奇心强、执行力高，具备典型“调查员”素质。</li>
+<li><strong>关键行为</strong>：</li>
+<li>主动陪同颜水雅就医，展现出保护欲与责任感。</li>
+<li>通过灵感与图书馆检定串联线索，说明其不仅是行动派，也善于分析。</li>
+<li>在高风险环境中选择继续潜入，显示出强烈的求真欲。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>发现“爆痘”并非普通皮肤病，而是异常感染的表征。</li>
+<li>夜探工厂宿舍目睹“人机化”员工后仍保持行动。</li>
+<li>在地下密室拍下证据并成功撤离，是整场调查的关键转折点。</li>
+<li>找到“净化仪式”笔记并帮助颜水雅解除控制，完成了从调查者到救援者的角色闭环。</li>
+</ul>
+
+<h3><strong>颜水雅</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：作为被调查对象与受害者，她是整个事件的引线人物。</li>
+<li><strong>关键行为</strong>：</li>
+<li>反复取消拍摄，成为毛樰望展开调查的直接原因。</li>
+<li>因接触茗熹相关饮品而出现异常症状，疑似受到精神/生理控制。</li>
+<li><strong>作用</strong>：</li>
+<li>她既是“异常污染”的直接受害者，也是玩家最先接触到的现实后果。</li>
+<li>她的恢复标志着净化成功，也为结局提供了正面情感反馈。</li>
+</ul>
+
+<h3><strong>洪经理</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：表面上是工厂管理者，实则与地下异常组织高度相关。</li>
+<li><strong>关键作用</strong>：</li>
+<li>其办公室与隐藏通道构成了剧情的核心中转点。</li>
+<li>作为“制度化邪恶”的代表，象征着异常并非偶发，而是被有组织地经营。</li>
+<li><strong>人物功能</strong>：</li>
+<li>他是玩家从“产品异常”走向“工厂阴谋”的关键桥梁。</li>
+</ul>
+
+<h3><strong>异化员工 / 眼球化崇拜者</strong></h3>
+<ul>
+<li><strong>作用</strong>：</li>
+<li>这些人物并非传统意义上的“反派角色”，而是污染与操控后的结果。</li>
+<li>他们强化了事件的恐怖感：邪恶已经渗透到日常劳动与身体层面。</li>
+<li><strong>表现效果</strong>：</li>
+<li>“长满眼睛”“跪行前进”“围绕塑像崇拜”构成了强烈的视觉冲击，也让模组的诡异氛围达到顶点。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 起因：拍摄取消与异常就诊</strong></h3>
+<p>故事从毛樰望关注颜水雅频繁取消拍摄开始。他陪她前往校医院，本想确认她是否只是普通身体不适，却发现校医院里并不止她一人因“爆痘”就诊。这个细节让事件从个体问题迅速扩展为群体性异常，也奠定了“表面病症背后另有原因”的调查方向。</p>
+
+<h3><strong>2. 线索搜集：网红奶茶茗熹/茗煮</strong></h3>
+<p>毛樰望随后通过灵感与图书馆检定展开追查，锁定了网红奶茶“茗熹/茗煮”。从宣传图、博主停更、治疗声明等公开信息来看，这家品牌的舆论应对方式非常可疑；再结合招聘广告与工厂地址，他进一步推断其生产端可能存在问题。此阶段的重点是将“消费品危机”转化为“调查目标”。</p>
+
+<h3><strong>3. 潜入工厂宿舍：人机化现象初现</strong></h3>
+<p>夜里，毛樰望翻墙潜入工厂宿舍，终于亲眼见到异常后果：多名员工疑似被饮品影响，皮肤上鼓起“像眼球”的突起，行动机械，只会朝工作区跪行前进。这一幕将此前的推测彻底实锤，同时把故事从“疑似食品问题”推入“超自然污染”层面。</p>
+
+<h3><strong>4. 深入厂区：洪经理办公室与隐藏通道</strong></h3>
+<p>毛樰望继续潜入厂区，在洪经理办公室进行搜查时，因图书馆大失败意外触发隐藏通道，误入地下空间。这个失误虽然危险，却也成为通往真相的钥匙，体现了跑团中“失败推进剧情”的经典结构。</p>
+
+<h3><strong>5. 地下密室：异化崇拜仪式真相揭露</strong></h3>
+<p>通过隐藏通道进入地下密室后，毛樰望亲眼目睹一群身上长满眼睛的异化人围绕扭曲塑像进行崇拜仪式。此处不仅揭示了饮品背后的邪教/献祭性质，也确认了整个工厂体系已经成为异常信仰与人体异化的容器。拍下证据后撤离，成为剧情最关键的取证节点。</p>
+
+<h3><strong>6. 收尾：净化仪式与报警举报</strong></h3>
+<p>回到宿舍后，毛樰望找到“净化仪式”笔记，并成功帮助颜水雅解除控制。随后他报警举报茗熹公司，使其在舆论与调查中遭受重创。故事在此完成从“个人异常”到“公共揭露”的闭环，调查成果得到落实，受害者也获得恢复。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>地下密室的眼球崇拜仪式</strong>：视觉冲击力极强，是整场模组的高潮。</li>
+<li><strong>工厂宿舍的人机化员工</strong>：把“饮品致痘”这种日常表象骤然扭转成恐怖异化，反差非常强。</li>
+<li><strong>误入隐藏通道</strong>：图书馆大失败反而开门见真章，属于极具跑团味道的意外推进。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>灵感与图书馆检定成功</strong>：让玩家从表层信息中拼出“茗熹/茗煮”这一关键线索链。</li>
+<li><strong>图书馆大失败</strong>：虽然失败，但恰好触发隐藏通道，堪称“坏运气带来好剧情”的经典例子。</li>
+<li><strong>拍摄证据并顺利撤离</strong>：在高压环境下完成取证，是非常关键的成功检定/行动结果。</li>
+<li><strong>找到净化仪式笔记并完成解除</strong>：这一段在剧情功能上相当于“最终解法”。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>“爆痘”作为开端本身就带有一种荒诞的现实感：看起来像普通皮肤问题，实际上却是异常污染的征兆。</li>
+<li>员工“只会朝工作区跪行前进”的描写，既诡异又带一点黑色幽默，呈现出“工厂化异化”的极端讽刺感。</li>
+<li>茶饮品牌名“茗熹/茗煮”本身带有一丝伪装成国风/精致营销的荒谬感，与背后邪门真相形成反差。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式跑团复盘文档的版本</strong></li>
+<li><strong>带时间轴表格的版本</strong></li>
+<li><strong>偏“主持人视角”的幕后分析版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

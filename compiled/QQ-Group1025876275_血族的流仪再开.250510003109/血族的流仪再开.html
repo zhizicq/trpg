@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>血族的流仪再开 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>血族的流仪再开</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《血族的流仪再开》以“百夜市吸血鬼杀人案”为表层事件，实际牵出一场围绕<strong>血社势力、吸血鬼化现象与净化手段</strong>的暗战。表面上是连续杀人案与都市怪谈，深层则是不同阵营对“吸血鬼高潮阶段”的争夺：有人试图利用、操控甚至制造吸血鬼事件，也有人则肩负追查与清除的职责。</p>
+<p>核心冲突集中在两点：其一，<strong>真相与伪装</strong>——看似普通的同行者与受害者，实际都有不为人知的身份与过去；其二，<strong>毁灭与拯救</strong>——吸血鬼化并非不可逆，净化与救援的可能性让战斗不只是“击败敌人”，也变成了“把人从怪物状态中拉回来”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>众人最初在百夜市步行街展开调查，试图从零散线索中拼凑杀人案的真相。随着调查推进，同行者芦花的真实身份暴露：她并非普通旅伴，而是奉命调查百夜市杀人案的魔王流忍者，真正任务则是猎杀正处于“高潮阶段”的吸血鬼。她的出现，使整起事件从单纯的案情调查升级为多方势力交织的追猎战。随后，队伍转向废旧剧场，围绕汉娜展开关键调查。由纪以“银之大剑”对汉娜进行鉴定式攻击，成功命中并确认她曾被吸血鬼化，但这份异变并非绝对无解，净化仍有可能。也正因由纪的话语与行动，汉娜被解除吸血鬼化，沉埋的感情与真相随之浮出水面。</p>
+<p>在真相初步明朗后，众人追入废庭园，与幕后黑手暗蔷薇展开正面交锋。战斗中，奏奏的“里真言攻击”打出了决定性的爆发，栀子则通过改变地形制造“高处·甲”，为团队建立持续压制的优势。多方配合下，暗蔷薇最终在第五回合被汉娜·格雷森击倒并脱落，芦花随后完成收尾，将败北的暗蔷薇带离现场。最终，事件确认百夜市的吸血鬼骚动确由血社主导，考官魅羽离场，众人也在解除危机后回归日常，并以通宵KTV庆功为这段紧张与热血交织的故事画下轻松收束。</p>
+
+<h3>结局与收尾</h3>
+<ul>
+<li><strong>主线结局</strong>：暗蔷薇被击倒并带离现场，百夜市吸血鬼骚动的幕后指向血社得到确认。</li>
+<li><strong>角色收束</strong>：汉娜从吸血鬼化状态中被净化，完成身份与情感层面的揭露。</li>
+<li><strong>氛围收尾</strong>：考官魅羽退场，众人恢复日常，并通过通宵KTV完成庆功式结尾，形成“高压战斗后轻松落地”的鲜明反差。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 芦花</h4>
+<ul>
+<li><strong>性格特征</strong>：冷静、隐秘、任务导向强，带有典型“先隐藏后揭牌”的执行者气质。</li>
+<li><strong>关键行为</strong>：在步行街阶段突然暴露魔王流忍者身份，明确其真实立场与任务目标。</li>
+<li><strong>高光时刻</strong>：在结尾负责收尾，将落败的暗蔷薇带离现场，体现出她不仅是“揭露真相的人”，也是“处理残局的人”。</li>
+<li><strong>角色功能</strong>：承担信息反转与世界观扩展的关键角色，是把调查线推向阵营斗争线的重要推手。</li>
+</ul>
+
+<h4>2. 由纪</h4>
+<ul>
+<li><strong>性格特征</strong>：果断、精准、行动力强，兼具“能打能查”的核心调查员气质。</li>
+<li><strong>关键行为</strong>：以“银之大剑”对汉娜进行调查式攻击，成功命中并确认其吸血鬼化状态。</li>
+<li><strong>高光时刻</strong>：通过检定/命中揭示“被吸血鬼化并不等于无救”，直接推进汉娜净化，堪称剧情转折的关键点。</li>
+<li><strong>角色功能</strong>：负责将战斗动作转化为情报确认，是“以战斗推进真相”的代表。</li>
+</ul>
+
+<h4>3. 奏奏</h4>
+<ul>
+<li><strong>性格特征</strong>：爆发型、节奏感强，擅长在关键回合制造破局。</li>
+<li><strong>关键行为</strong>：在对暗蔷薇的战斗中打出“里真言攻击”的关键爆发。</li>
+<li><strong>高光时刻</strong>：作为战斗中的决定性火力点，在团队压制成型前后接管输出，显著缩短战局。</li>
+<li><strong>角色功能</strong>：承担战斗节奏中的“爆点制造机”，让剧情战斗具有明显的爽感峰值。</li>
+</ul>
+
+<h4>4. 栀子</h4>
+<ul>
+<li><strong>性格特征</strong>：战术意识强，擅长布局与环境利用。</li>
+<li><strong>关键行为</strong>：通过改变地形制造“高处·甲”，为团队创造压制优势。</li>
+<li><strong>高光时刻</strong>：不是单纯输出，而是靠场景改造放大战局收益，体现出优秀的辅助与控制价值。</li>
+<li><strong>角色功能</strong>：作为战场工程师，负责把“能赢”变成“赢得更稳”。</li>
+</ul>
+
+<h4>5. 汉娜·格雷森</h4>
+<ul>
+<li><strong>性格特征</strong>：悲剧性与情感张力并存，前期被异变笼罩，后期逐渐回归“人”的一面。</li>
+<li><strong>关键行为</strong>：被由纪确认并净化吸血鬼化，情感与真相随之揭开。</li>
+<li><strong>高光时刻</strong>：在净化与战斗推进后，最终在第五回合击倒暗蔷薇，完成从受害者到参与者的转变。</li>
+<li><strong>角色功能</strong>：承载“被污染但可救赎”的主题，是本模组最重要的情感锚点之一。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>暗蔷薇</h4>
+<ul>
+<li><strong>作用</strong>：幕后黑手与最终战对象，代表血社在百夜市事件中的执行/操盘力量。</li>
+<li><strong>剧情意义</strong>：作为终局敌人，其被击倒标志着案件从“谜题”进入“清算”。</li>
+</ul>
+
+<h4>魅羽</h4>
+<ul>
+<li><strong>作用</strong>：考官角色，负责见证、引导并在结尾离场。</li>
+<li><strong>剧情意义</strong>：她的退场象征事件阶段性结束，也强化了“试炼完成”的结构感。</li>
+</ul>
+
+<h4>汉娜·格雷森</h4>
+<ul>
+<li><strong>作用</strong>：受害者、线索核心与情感承接者。</li>
+<li><strong>剧情意义</strong>：她不仅是案情关键，更是“净化是否成立”的证明对象；其存在让战斗目标从击败敌人扩展为拯救人。</li>
+</ul>
+
+<h4>血社</h4>
+<ul>
+<li><strong>作用</strong>：幕后组织，事件根源。</li>
+<li><strong>剧情意义</strong>：将本模组从单点怪谈提升为组织阴谋，让故事拥有更大的世界框架。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 步行街调查：线索搜集与身份暴露</h3>
+<p>众人起初在百夜市步行街寻找与杀人案相关的蛛丝马迹，整体氛围仍偏向传统都市调查。但随着搜查展开，芦花的真实身份被揭晓：她是奉命调查案件的魔王流忍者，同时肩负猎杀处于高潮阶段吸血鬼的任务。这个信息将团队原本的“并肩调查”关系迅速推向更复杂的立场结构，也为后续的战斗与真相揭露埋下伏笔。</p>
+
+<h3>2. 废旧剧场：汉娜调查与净化展开</h3>
+<p>队伍转入废旧剧场，围绕汉娜展开关键行动。由纪使用“银之大剑”进行调查性质的攻击并命中，确认汉娜曾被吸血鬼化。更重要的是，这一结果证明吸血鬼化并非绝对不可逆，净化存在可能。随着由纪的判断与行动，汉娜的吸血鬼化被解除，她被压抑的情感与真相也因此浮现，剧情从“查案”转向“解谜+救赎”。</p>
+
+<h3>3. 废庭园决战：暗蔷薇现身</h3>
+<p>在真相逐渐清晰后，众人追入废庭园，与幕后黑手暗蔷薇正式交战。战斗中，奏奏以“里真言攻击”制造关键爆发，成为破防核心；栀子则通过改造地形制造“高处·甲”，让团队在战术层面获得优势。两者的配合让战斗节奏逐步被PC掌控。</p>
+
+<h3>4. 战斗收束：第五回合击倒与带离现场</h3>
+<p>在持续压制下，暗蔷薇于第五回合被汉娜·格雷森击倒并脱落，完成终局清算。芦花随即负责收尾，将暗蔷薇带离现场，确保事件的后续处理顺利完成。至此，百夜市吸血鬼骚动的真相被确认：血社确实是幕后主导者。</p>
+
+<h3>5. 事件结束：日常回归与庆功收尾</h3>
+<p>随着考官魅羽离场，剧情进入尾声。众人从紧张战斗中抽身，回归日常生活，并以通宵KTV作为庆功活动收尾。这个结局非常“跑团”：前半段是悬疑与战斗，后半段则用放松和胡闹完成情绪回落，让故事在轻快余韵中结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：废庭园与暗蔷薇的最终战。特别是奏奏爆发、栀子改地形、汉娜完成击倒的三段式协作，非常有“团队终于拧成一股绳”的爽感。</li>
+<li><strong>最意外</strong>：芦花身份暴露。原本像同行者的人突然变成“奉命办案的忍者”，瞬间提升剧情层级。</li>
+<li><strong>最温暖</strong>：由纪确认汉娜可被净化，故事从“消灭异类”转向“拯救受害者”，主题一下子柔软起来。</li>
+<li><strong>最搞笑</strong>：最终以通宵KTV庆功收尾，战斗刚打完就切回日常娱乐，形成强烈反差，十分有桌游团特有的松弛感。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>由纪对汉娜的“银之大剑”命中</strong>：这不是普通命中，而是带来设定层面信息确认的关键检定，属于“战斗动作顺手把剧情真相打出来”的高光。</li>
+<li><strong>奏奏的里真言攻击爆发</strong>：可视作终局战中的关键成功，直接影响战斗节奏。</li>
+<li><strong>栀子改变地形制造“高处·甲”</strong>：典型的战术型大成功，虽然未必是最显眼的伤害输出，却是最能体现玩家理解模组机制的一手。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“吸血鬼化并非不可净化”</strong>这一揭示本身就是最有戏剧性的桥段之一，它改变了玩家对汉娜的判断，也改变了事件的道德基调。</li>
+<li><strong>芦花身份与任务目标的公开</strong>，属于那种一锤定音式台词/设定揭示，直接把“同行”变成“猎手”。</li>
+<li><strong>KTV庆功收尾</strong>则是非常经典的跑团结尾桥段：前一秒还在与幕后黑手决战，后一秒已经开始唱歌放松，强烈体现玩家与角色共同完成事件后的释放感。</li>
+</ul>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像“模组复盘文”的正式版本</strong>，或</li>
+<li><strong>带有主持人点评风格的吐槽版复盘</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

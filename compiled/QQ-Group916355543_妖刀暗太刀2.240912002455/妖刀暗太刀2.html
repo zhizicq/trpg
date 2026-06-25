@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>妖刀暗太刀2 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>妖刀暗太刀2</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《妖刀暗太刀2》将舞台放在一所看似平静、实则被妖异渗透的校园中。故事一开始就以“班级早会后大量同学失踪”为导火索，制造出强烈的不安氛围。失踪者并非随机，而是几乎清一色的<strong>夜津香狂热粉丝</strong>，这使得案件逐渐从单纯的校园失踪事件，转向围绕“偶像崇拜”“信仰汲取”与“妖魔伪装”展开的怪异事件。</p>
+<p>本模组的核心冲突，在于<strong>玩家必须辨认出被崇拜对象背后真正的妖异本质，并阻止其借由信众与传说之树持续汲取力量</strong>。故事中的“夜津香”既是校园偶像般的存在，也是剧情最大的伪装与诱饵；土蜘蛛则借由这一身份，操纵校园舆论、情绪与信仰，构成了典型的“以人心供养怪物”的恐怖结构。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>故事从校园失踪案展开：班级早会结束后，学校里不断传出同学失踪的消息，而失踪者几乎都是夜津香的粉丝。PC们先在校园中分头调查，在日常闲聊、手偶表演、鹦鹉互动与甜点分享等轻松桥段里，逐渐确认彼此立场与情感，也一点点拼出事件真相。木栖通过【人脉】与【调查术】的成功判定，敏锐地锁定了失踪者的共同特征——“夜津香粉丝”，使案件从杂乱的校园流言中浮出水面。随后，情报进一步揭示：敌方已经取得了夜津香的【居所】，导致传说之树对土蜘蛛的力量供给失效，局势开始急转直下。</p>
+<p>当夜津香与敷岛良男在传说之树下现身时，土蜘蛛的真身也随之暴露，战斗正式进入高潮。妖魔一方面以“校园偶像”夜津香的形象诱惑、混淆视听，另一方面则以影分身、流星雨、爆破等强力招式压迫玩家方。PC们则以天枪、死灵术、天道、拷问术等手段迎击，镜原堂更施展奥义【两仪相合之界】进行强力压制，形成高密度对抗。最终，众人合力击败了伪装成校园偶像的妖魔土蜘蛛/夜津香，竹林灯取得胜利并处理妖刀暗太刀。战后学校恢复生机，樱花再度盛开，音乐大赛也顺利举行，故事以“灾厄被驱散、日常回归”的温暖结尾收束。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局属于典型的“灾厄驱散后，校园恢复正常”的圆满型收束。土蜘蛛被击败后，妖刀暗太刀也得到妥善处理，意味着这场由妖异、偶像崇拜与校园传说交织而成的危机正式落幕。随着力量源头断绝，学校重新焕发生机，樱花盛开，原本紧张压抑的氛围化为庆典般的余韵。音乐大赛顺利举行，不仅象征秩序恢复，也强化了“人类日常重新夺回舞台”的主题。整体结局没有留下明显的坏结局后患，而是以“胜利、治愈、收尾完整”的方式，将前期的怪谈与战斗转化为一段青春校园妖异物语的圆满终章。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）分析</strong></h3>
+
+<h4><strong>木栖</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：沉稳、观察力强，偏向理性推理型。</li>
+<li><strong>关键行为</strong>：通过【人脉】与【调查术】成功找出失踪者共同点，直接推动剧情进入真相阶段。</li>
+<li><strong>高光时刻</strong>：在信息混乱、校园谣言四起时，能够抓住“夜津香粉丝”这一关键线索，属于典型的“把散碎情报拼成地图”的角色。</li>
+<li><strong>角色功能</strong>：团队的情报锚点与侦查核心，负责把事件从感性恐慌拉回到可分析的层面。</li>
+</ul>
+
+<h4><strong>镜原堂</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：战斗压迫感强，带有明确的“切入战局”型风格。</li>
+<li><strong>关键行为</strong>：施展奥义【两仪相合之界】，在最终战中对敌方形成强力压制。</li>
+<li><strong>高光时刻</strong>：奥义登场时具备强烈的仪式感与反转感，是队伍在高潮战中建立主动权的关键人物之一。</li>
+<li><strong>角色功能</strong>：战场控制者/爆发核心，能在关键回合迅速改变局势。</li>
+</ul>
+
+<h4><strong>竹林灯</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：行动果断，承担“收尾者”与“胜利落点”的气质。</li>
+<li><strong>关键行为</strong>：最终取得胜利，并负责处理妖刀暗太刀。</li>
+<li><strong>高光时刻</strong>：在战斗结束后承担“收束危机”的职责，使模组从胜利进入安定阶段。</li>
+<li><strong>角色功能</strong>：剧情收口人，负责把“打赢”转化为“真正结束”。</li>
+</ul>
+
+<h4><strong>其他PC们</strong></h4>
+<ul>
+<li>从摘要看，队伍整体呈现出一种很强的“日常互动—情感确认—战斗合力”的结构。</li>
+<li>他们在前半段通过手偶、鹦鹉、甜点等互动建立羁绊，使后半段的共斗显得更有团队感，而不是单纯机械打怪。</li>
+<li>战斗中分别使用<strong>天枪、死灵术、天道、拷问术</strong>等招式，显示各自流派鲜明，且在应对土蜘蛛多段攻击时都有明确贡献。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>夜津香</strong></h4>
+<ul>
+<li><strong>表层身份</strong>：校园偶像式存在，拥有大量狂热粉丝。</li>
+<li><strong>真实作用</strong>：作为土蜘蛛伪装的关键外壳，是整个事件的诱饵与信仰中心。</li>
+<li><strong>剧情价值</strong>：她不仅是失踪案的关联点，也象征“被仰慕的光鲜外表下潜藏灾厄”的主题。</li>
+<li><strong>对剧情的影响</strong>：夜津香越受欢迎，土蜘蛛越能借由其形象操控局势，因此她是“信仰被反噬”的核心节点。</li>
+</ul>
+
+<h4><strong>敷岛良男</strong></h4>
+<ul>
+<li><strong>剧情定位</strong>：与夜津香同时现身，起到引出真相、将战斗推上台面的作用。</li>
+<li><strong>作用推测</strong>：更像是协助者、伪装体系的一部分，或者负责在表层剧情中制造误导的人物。</li>
+<li><strong>功能</strong>：让“偶像表象”与“妖异真相”之间的切换更具戏剧性。</li>
+</ul>
+
+<h4><strong>土蜘蛛</strong></h4>
+<ul>
+<li><strong>真实反派</strong>：整场事件背后的妖魔核心。</li>
+<li><strong>作用</strong>：利用校园信仰与传说之树供能，形成持续增幅；在失去供给后被迫正面战斗。</li>
+<li><strong>战斗表现</strong>：拥有影分身、流星雨、爆破、奥义“究极·保护夜津香大人之手里剑术”等强力招式，兼具诡异、夸张与压迫感。</li>
+<li><strong>主题意义</strong>：它是“偶像崇拜的怪物化”这一概念的具象体现。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 失踪事件爆发，日常校园出现裂缝</strong></h3>
+<p>班级早会后，校园内接连传出同学失踪的消息。最初这更像是无头绪的校园怪谈：谁不见了、为何不见、是否与某种传说有关，都还是模糊状态。PC们在校园中开始调查，彼此之间也趁机展开闲聊互动。手偶、鹦鹉和甜点等细碎日常桥段，不仅缓和了恐怖感，也帮助队伍确认彼此的性格与立场。</p>
+
+<h3><strong>2. 情报收束，锁定“夜津香粉丝”这一共同点</strong></h3>
+<p>随着调查深入，木栖通过【人脉】与【调查术】成功找出失踪者之间的共同联系：他们几乎全都是夜津香的狂热粉丝。这一发现非常关键，它让“失踪案”从随机事件变成了有针对性的妖异行动，也使“夜津香”从单纯的校园名人，升级为必须重点关注的剧情中心。</p>
+
+<h3><strong>3. 关键情报揭示，传说之树供能结构被破坏</strong></h3>
+<p>进一步的情报显示，敌方已经取得了夜津香的【居所】，从而导致传说之树对土蜘蛛的力量供给失效。这个信息意味着战局已经不再只是“寻找失踪者”，而是正式进入“削弱敌方、逼出真身”的阶段。玩家从侦查逐渐转向主动迎敌，剧情重心开始向最终冲突靠拢。</p>
+
+<h3><strong>4. 传说之树下现身，真相与伪装同时崩塌</strong></h3>
+<p>在传说之树下，夜津香与敷岛良男现身。此时表层剧情与底层真相同时被掀开：夜津香并非单纯的偶像，土蜘蛛的本体也终于暴露。这个场景完成了模组最重要的反转——“被崇拜者”其实是“伪装成被崇拜者的灾厄本身”，让前期所有偶像、粉丝、失踪案的细节一下子串联起来。</p>
+
+<h3><strong>5. 最终战爆发，高密度招式对轰</strong></h3>
+<p>战斗进入高潮后，土蜘蛛/夜津香展开高强度攻势：影分身、流星雨、爆破接连出现，甚至还有极具恶搞感的奥义“究极·保护夜津香大人之手里剑术”，既有压迫感，也保留了TRPG模组特有的夸张娱乐性。</p>
+<p>PC方则没有被压垮，反而以天枪、死灵术、天道、拷问术等手段多线应对，镜原堂更以【两仪相合之界】实现强势压制。整个战斗表现出明显的“敌方招式繁多、我方靠配合与关键大招反制”的节奏。</p>
+
+<h3><strong>6. 击败妖魔，处理妖刀，校园复原</strong></h3>
+<p>在众人合力下，土蜘蛛被击败，伪装成校园偶像的妖魔终被清除。竹林灯取得胜利，并进一步处理妖刀暗太刀，说明模组并不只停留于“打倒敌人”，而是将危险遗物一并处置，真正消除后患。</p>
+<p>战后，学校恢复生机，樱花盛开，音乐大赛顺利举行。故事从怪谈、调查、决战，再回到青春校园的庆典氛围，形成完整闭环。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>手偶、鹦鹉、甜点的日常互动</strong>：在失踪案和妖怪阴影之下，这些桥段意外地温馨，也让角色之间的关系显得更自然。</li>
+<li><strong>“夜津香粉丝”竟然是失踪者共同点</strong>：这是最关键也最具侦探感的反转，把看似无关的校园事件迅速串起来。</li>
+<li><strong>土蜘蛛的奥义名</strong>“究极·保护夜津香大人之手里剑术”：极具恶搞气质，既荒诞又贴合“伪装成偶像粉丝生态”的主题，非常有记忆点。</li>
+<li><strong>樱花盛开与音乐大赛收尾</strong>：战斗结束后迅速回归日常，形成很舒服的反差。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>木栖的【人脉】与【调查术】成功</strong>：这是全模组最重要的信息检定之一，直接决定了剧情能否从“失踪谜团”推进到“夜津香粉丝”这条主线。</li>
+<li><strong>镜原堂的【两仪相合之界】</strong>：虽然未必是传统意义上的“检定”，但在战斗表现上相当于关键性的大成功回合，强势压制敌方节奏。</li>
+<li>PC们在面对土蜘蛛连续招式时仍能稳定应对，体现出战斗端的整体运气与配合都不错。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>校园日常中通过<strong>手偶、鹦鹉和甜点</strong>建立羁绊的互动，带有很强的“轻松小剧场”感。</li>
+<li>围绕夜津香展开的“粉丝—偶像—失踪—妖魔”链条，天然具有戏剧性与讽刺意味。</li>
+<li>战斗中妖魔招式名的夸张程度，与严肃战斗形成了很好笑的反差，让高潮战既紧张又不失娱乐性。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像“跑团复盘文”的叙述版</strong>，</li>
+<li><strong>更像“模组评测”的分析版</strong>，或</li>
+<li><strong>补充成“主持人视角 + 玩家视角”双栏总结</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勇气 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>勇气</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《勇气》是一则将<strong>科幻、肉体恐怖与英雄觉醒</strong>揉合在一起的都市怪谈式模组。故事围绕一种来自陨石的<strong>蓝色晶体</strong>展开：它能诱发人体甲壳化、虫化，并通过情绪波动加速异变，最终将人类转化为失控的怪物。表面上，这是一场调查“异常死亡事件”的记者与学者追查真相之旅；实际上，模组的核心冲突是<strong>人类是否能在恐惧、欲望与异化中守住自我</strong>。</p>
+<p>“勇气”并不只是战斗的胆量，更是面对变异、死亡和诱惑时，仍然选择前进的能力。PC们一方面要阻止虫化怪物蔓延，另一方面还要对抗晶体对精神与肉体的侵蚀，尤其是最终“力量”对查尔斯的蛊惑，使主题从单纯的打怪升级为对<strong>勇气与力量是否会反噬人性</strong>的拷问。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>记者碕与生物学家查尔斯受安藤隼博士求助，赶往川崎酒店调查异常事件，却只找到博士惨死的现场，以及疑似虫化怪人留下的痕迹。紧接着，飞虫袭击令二人昏迷入院，醒来后得知自己已因蓝色晶体中毒而出现甲壳变异，且情绪越激动，病变越严重。为了查清真相，他们在美月的帮助下追索线索，前往东京大学。途中虽在图书馆查证时一度受挫，但查尔斯凭借运气勉强推进，逐步锁定与安藤隼相关的吉田阳介。两人潜入实验室后，吉田虫化暴走并引发火灾，碕在濒死状态下觉醒为“红色战士”，获得强大战斗强化，与查尔斯合力杀出重围。随后，他们根据中岛教授的临终遗言前往其办公室，查明蓝色晶体来自陨石；继而深入研究所地下设施，发现陨石母体与更加恐怖的真相。完全体蟑螂怪接连袭击并杀死中岛教授，最终碕与查尔斯以变身后的力量合击击碎怪物。然而胜利并不纯粹：查尔斯吞下虫卵，被“勇气/力量”所蛊惑，宣称要毁灭这个扭曲世界；碕也在濒死边缘完成终极爆发。两人以近乎献身的代价击碎了怪物与虫卵，但也将自己推向了彻底异化的边缘，留下沉重而悲壮的余韵。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是典型的<strong>“战胜怪物，却未必战胜诅咒”</strong>。主敌陨石母体与完全体蟑螂怪被击碎，表面危机解除；但查尔斯吞下虫卵后立场与精神明显被“力量”扭曲，成为后续最危险的不稳定因素。碕虽然完成了英雄式觉醒与终局爆发，却也长期处于濒死和变异边缘。模组收尾不是干净利落的胜利，而是把“勇气”的代价留在角色身上：<strong>他们赢得了战斗，却失去了绝对安全的归处</strong>。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>记者碕</h4>
+<ul>
+<li><strong>性格特征</strong>：胆大、反应快、偏行动派，遇事不太会退缩，带有明显的主角气质。身为记者，他擅长追索真相，但真到危险关头时又能直接冲上去，属于“嘴上未必最强，行动绝不缺位”的类型。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在酒店现场直面凶案与虫化痕迹，推动调查开局。</li>
+<li>面对变异与火灾没有彻底崩溃，而是撑住局面。</li>
+<li>在濒死时觉醒为“红色战士”，成为战斗端的核心爆点。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>“濒死觉醒”是最大高光：不仅强化了战斗能力，也把角色从调查者推成了真正意义上的英雄。</li>
+<li>在终战中与查尔斯联手击碎怪物，完成从旁观者到拯救者的蜕变。</li>
+<li><strong>角色弧光</strong>：从追新闻的调查者，成长为愿意以自身为代价直面灾厄的人。其“勇气”更接近<strong>本能式的冲锋与承受</strong>。</li>
+</ul>
+
+<h4>查尔斯</h4>
+<ul>
+<li><strong>性格特征</strong>：理性、学者气、对知识和真相执着，但运气成分和“被力量诱惑”的戏剧性也很强。前期更像稳定推进剧情的智识担当，后期则被模组主题直接拉入“力量的诱惑”。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与碕一起调查线索，承担大量研究与推理工作。</li>
+<li>在图书馆检定受挫时，依靠运气将调查勉强续上。</li>
+<li>终局吞下虫卵，精神被“勇气/力量”蛊惑，成为极具张力的转折点。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>“幸运推进线索”体现了他的戏剧性：不是最强的推理成功，而是关键时刻总能把局面扳回来。</li>
+<li>吞下虫卵后宣称要毁灭扭曲世界，这一幕既震撼又危险，是角色黑化/失控式高光。</li>
+<li><strong>角色弧光</strong>：从冷静研究者走向被力量吞噬的边缘，形成鲜明对照。查尔斯的“勇气”更像<strong>知道危险仍选择踏入深渊</strong>，但也因此最容易被“力量”反噬。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>安藤隼博士</h4>
+<ul>
+<li>事件起点人物。向PC求助，实际上是把他们引入真相的“第一块多米诺骨牌”。虽早早死亡，但其求助与惨死直接奠定了悬疑与危机感。</li>
+</ul>
+
+<h4>美月</h4>
+<ul>
+<li>重要线索提供者，承担“导航/引路人”作用。她把PC从混乱现场带到关键调查方向，是让剧情顺利推进的重要支点。</li>
+</ul>
+
+<h4>吉田阳介</h4>
+<ul>
+<li>与安藤隼相关的关键嫌疑人，也是虫化暴走的直接爆发点。其存在让“异常事件”从线索层面转化为实体威胁，承担第一轮大规模失控的功能。</li>
+</ul>
+
+<h4>中岛教授</h4>
+<ul>
+<li>真相披露者与牺牲者。通过临终遗言、办公室线索等方式揭示蓝色晶体来自陨石；其死亡则强调了研究者面对超常灾厄时的无力感。</li>
+</ul>
+
+<h4>陨石母体 / 完全体蟑螂怪</h4>
+<ul>
+<li>并非传统意义上的NPC，而是模组真正的“幕后灾厄实体”。它们代表蓝色晶体污染的源头，也象征着<strong>异化的根</strong>。最终它们的毁灭标志着主线冲突的阶段性终结。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 接获求助，踏入虫灾源头</h3>
+<p>记者碕与生物学家查尔斯受安藤隼博士求助，前往川崎酒店调查异常情况。二人抵达后并未见到委托人，反而发现博士已经惨死，现场残留明显的虫化痕迹，暗示此处并非普通凶案，而是某种超常生物灾害的开端。</p>
+
+<h3>2. 飞虫袭击与中毒异变</h3>
+<p>调查刚有眉目，飞虫便突然袭击两人，导致碕与查尔斯昏迷并被送医。醒来后，他们得知自己已经因蓝色晶体中毒而出现甲壳化变异，而且情绪越激动，恶化越快。这一设定同时制造了时间压力与心理压迫：PC不仅要破案，还要控制自己不被情绪拖垮。</p>
+
+<h3>3. 借助美月，前往东京大学追查</h3>
+<p>在美月提供线索后，二人把调查方向转向东京大学，开始追查蓝色晶体与安藤隼的关联。这里的剧情转入典型的资料搜集与推理阶段，PC需要从零散信息中拼出“谁在研究什么、谁和博士有关、晶体从何而来”。</p>
+
+<h3>4. 图书馆受阻，查尔斯运气续命</h3>
+<p>在图书馆检定中，调查一度受挫，进展停滞。但查尔斯凭借关键时刻的好运，勉强把线索链续上，最终锁定与安藤隼相关的吉田阳介。这里体现出模组节奏上的“失败不终止，只是延缓”的设计，也让角色特质更鲜明。</p>
+
+<h3>5. 潜入实验室，吉田虫化暴走</h3>
+<p>碕与查尔斯潜入实验室后，吉田阳介虫化失控，局面迅速恶化。暴走不仅让敌人实体化，也引发火灾，使得现场从“调查空间”变成“生存战场”。碕在濒死边缘觉醒为“红色战士”，战斗力骤增，和查尔斯一起冲出重围，完成第一轮真正意义上的正面突破。</p>
+
+<h3>6. 中岛临终遗言与陨石真相</h3>
+<p>两人根据中岛教授的临终遗言前往其办公室，进一步确认蓝色晶体来自陨石。中岛虽提供了关键情报，但也无法逃脱灾厄的后果，凸显研究真相往往伴随死亡代价。这一段将事件从“怪物袭击”提升到“宇宙级污染源”的层面。</p>
+
+<h3>7. 深入地下设施，发现陨石母体</h3>
+<p>PC继续深入研究所地下设施，终于接触到陨石母体，确认所有虫化与异常都源于此。这里是模组真相揭露的核心段落，也把故事的危机从局部感染拉升为源头歼灭战。</p>
+
+<h3>8. 完全体蟑螂怪现身，终局合击</h3>
+<p>完全体蟑螂怪连续袭击并杀死中岛教授，彻底断绝“靠研究解决问题”的幻想。最终，碕与查尔斯以变身状态合力将其击碎，完成主线战斗的胜利。</p>
+
+<h3>9. 代价与余波：力量的蛊惑</h3>
+<p>在胜利之后，故事并未给出轻松落点。查尔斯吞下虫卵，被“勇气/力量”蛊惑，宣称要毁灭这个扭曲世界；碕则在濒死边缘完成最终爆发。两人的胜利带着自毁性质，也为后续发展留下巨大的不确定性和悲剧感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：碕濒死觉醒为“红色战士”，这是典型的热血爆点，瞬间把调查剧拉升成英雄战斗剧。</li>
+<li><strong>最意外</strong>：查尔斯吞下虫卵并被“力量”蛊惑，瞬间从理性学者转向危险存在，反转力度很强。</li>
+<li><strong>最压迫</strong>：中毒后“情绪激动会加速恶化”的设定，让整个团都笼罩在“不能太激动也不能太怂”的诡异张力里。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>图书馆检定受挫</strong>：这是典型的“调查卡壳”场面，制造悬念与焦虑。</li>
+<li><strong>查尔斯的幸运推进</strong>：虽未必是传统意义上的大成功，但属于“关键检定救全场”的高光型结果。</li>
+<li><strong>碕的濒死觉醒</strong>：如果按表现来理解，这几乎就是模组最戏剧化的“成功”，把失败边缘直接翻盘成英雄变身。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“<strong>情绪激动会加速恶化</strong>”本身就是很有戏的设定，导致角色很可能一边怕死一边还得保持冷静，天然适合跑团时的嘴硬与崩溃并存。</li>
+<li>查尔斯在终局的“<strong>毁灭扭曲世界</strong>”宣言，既有黑化感也带一点邪典味道，属于极容易成为团内名场面的台词。</li>
+<li>碕从记者直接转成“红色战士”的瞬间，也很适合被玩家和旁观者反复调侃，形成“职业突然升级成特摄主角”的喜感。</li>
+</ul>
+
+<h3>总评亮点</h3>
+<p>本模组最成功的地方在于，把“调查异常”与“肉体变异”结合得很紧，并且用“勇气”这个主题把角色的行动与代价绑定起来。它不是单纯打怪，而是让玩家一路在<strong>求真、求生、变异、觉醒</strong>之间来回拉扯，最终形成一种既热血又悲剧的完成度。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

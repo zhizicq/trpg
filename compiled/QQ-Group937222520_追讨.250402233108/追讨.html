@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追讨 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>追讨</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《追讨》是一部以“刀与忍者的宿命”为核心的追猎型剧情模组。故事从远野家灭门惨剧展开：名刀“长恨歌”失踪、师父远野墨庵与护卫尽遭杀害，幸存者远野泽洛被迫接过“借眼公”，踏上追查真相与清算凶手的道路。</p>
+<p>模组的核心冲突有两层：其一，是外部的复仇与追缉——泽洛必须找出并击溃叛忍血盟“埒外”，回收失控的大业物“长恨歌”；其二，是内部的身份与价值抉择——作为“刀守”的泽洛，必须回答自己究竟是为刀而战、为仇而战，还是为了守护现世与日常而战。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>远野家在一场大雪后的惨剧中覆灭，远野泽洛目睹师父远野墨庵与护卫惨死，家宝名刀“长恨歌”失踪，自己则继承了兄弟刀“借眼公”。在刀媒人近卫登久子的引导下，泽洛得知凶手是叛忍血盟“埒外”，而这群人并非单纯的凶残匪徒，而是围绕“长恨歌”失控之谜分散潜伏、各怀目的的危险存在。</p>
+<p>泽洛开始一边调查一边战斗，逐步清理情报链条与敌方据点，先后击败宝藏院X、圣河豚之介与达木丁，借由这些遭遇拼出埒外的布局，同时在近卫的训练下习得新忍法【先发先至】。过程中，借眼公与泽洛展开长篇对话，揭示其作为“兄弟刀”的职责——它存在的意义，是阻止长恨歌再次失控，而不是单纯成为杀戮工具。泽洛也因此重新审视“刀守”的身份，确认自己并非为了报仇而活，而是选择继续守护现世、守护平静生活。最终，他循着达木丁留下的线索找出药师丸京的藏身处，并前往九州熊本岳连寺决战。此时真相揭开：药师丸竟是远野墨庵之女，曾受长恨歌蛊惑而亲手弑亲。经过多次高判定压制与机动追击，泽洛成功夺回长恨歌，埒外成员悉数落网，而药师丸则由回鸦带走。故事在罪与恨的清算后落回校园与修行的平静日常，形成强烈的“刀光之后仍要生活”的收束感。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>泽洛成功夺回长恨歌，埒外组织成员基本伏诛或落网；药师丸京虽被带走，但其悲剧性身世得到揭示，故事并未停留在“纯粹胜利”的复仇叙事上，而是保留了余韵。最终，泽洛回到校园与修行日常，象征他从灾变中存活下来，并选择将“刀守”的使命延续到下一阶段。结局偏向“苦尽甘来”，以稳定生活作为对血腥追猎的反差收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>远野泽洛（PC）</strong></h3>
+<ul>
+<li><strong>性格</strong>：沉稳、责任感强，遇到巨变后没有被复仇吞没，而是始终保有“守护”的方向感。</li>
+<li><strong>关键行为</strong>：继承借眼公后主动追查真相；一路击败多个敌人并整合情报；在与借眼公的对话中完成自我确认。</li>
+<li><strong>高光时刻</strong>：</li>
+</ul>
+<ol>
+<li>面对远野家灭门后的惨剧，没有崩溃，而是迅速接过使命。</li>
+<li>通过连续战斗与调查锁定埒外与药师丸京。</li>
+<li>在最终决战中夺回长恨歌，完成“刀守”的职责闭环。</li>
+</ol>
+
+<h3><strong>借眼公（兄弟刀/重要“角色型道具”）</strong></h3>
+<ul>
+<li><strong>性质与作用</strong>：作为“兄弟刀”，它不是单纯武器，而是有意志、有立场的存在。</li>
+<li><strong>剧情作用</strong>：</li>
+<li>引导泽洛理解长恨歌与“失控”的风险。</li>
+<li>通过对话将故事从“报仇”提升到“守护与责任”的主题层面。</li>
+<li><strong>高光时刻</strong>：明确表态“存在意义是阻止长恨歌再度失控”，让它从工具变成叙事核心之一。</li>
+</ul>
+
+<h3><strong>近卫登久子（刀媒人/NPC）</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：掌握大量信息、能够指导泽洛行动的关键引路人。</li>
+<li><strong>关键行为</strong>：</li>
+<li>传达远野家惨案与埒外情报。</li>
+<li>提供训练与支援，帮助泽洛习得忍法【先发先至】。</li>
+<li><strong>作用</strong>：相当于“任务发布者 + 培训师 + 情报枢纽”，稳固了模组的调查节奏。</li>
+</ul>
+
+<h3><strong>药师丸京（反派核心/NPC）</strong></h3>
+<ul>
+<li><strong>性格与动机</strong>：悲剧性极强的敌人，表面上是埒外成员，深层则是被长恨歌蛊惑、最终弑亲的受害者。</li>
+<li><strong>关键作用</strong>：</li>
+<li>她把整部模组的“敌人”从单纯恶人转化为“被灾厄扭曲的人”。</li>
+<li>她与远野墨庵的父女关系让终局更具情感冲击。</li>
+<li><strong>高光时刻</strong>：真相揭露那一刻，敌我界线被悲剧重新定义。</li>
+</ul>
+
+<h3><strong>远野墨庵（已故师父/NPC）</strong></h3>
+<ul>
+<li><strong>作用</strong>：作为远野泽洛的师父与远野家惨剧中心人物，为故事提供情感根基。</li>
+<li><strong>叙事意义</strong>：他的死亡是主线启动器，而其与药师丸京的父女关系，则在终局补上了整个悲剧的结构。</li>
+</ul>
+
+<h3><strong>埒外成员：宝藏院X、圣河豚之介、达木丁</strong></h3>
+<ul>
+<li><strong>作用</strong>：分散在各处的战斗节点，承担“逐步拼图”的功能。</li>
+<li><strong>叙事作用</strong>：</li>
+<li>宝藏院X：建立第一阶段对敌人的威胁感。</li>
+<li>圣河豚之介：进一步强化埒外成员的怪诞与危险。</li>
+<li>达木丁：提供通往药师丸藏身处的关键线索，是推进终局的情报节点。</li>
+</ul>
+
+<h3><strong>回鸦（NPC）</strong></h3>
+<ul>
+<li><strong>作用</strong>：在结局中接走药师丸京，起到收束与过渡作用。</li>
+<li><strong>叙事效果</strong>：让药师丸的命运没有停留在“被击败即结束”，而是保留后续处理空间。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一章：远野家惨剧与使命继承</strong></h3>
+<p>大雪过后的远野家陷入血腥惨案，远野泽洛回到现场，发现师父远野墨庵与护卫被杀，家中重宝大业物“长恨歌”失踪。作为幸存者，他继承了兄弟刀“借眼公”，并在刀媒人近卫登久子的协助下得知：凶手并非普通刺客，而是叛忍血盟“埒外”。</p>
+
+<h3><strong>第二章：追查“埒外”与分散的敌人</strong></h3>
+<p>泽洛开始沿线调查敌踪，发现埒外并非单一据点式组织，而是成员分散潜伏、各自承担不同职能。随着调查推进，他分别遭遇并击败宝藏院X、圣河豚之介与达木丁，逐步拆解敌方布局。每场战斗都不只是单纯的“打倒敌人”，更像是在收集拼图：他们透露出关于长恨歌、药师丸京以及埒外整体行动的碎片情报。</p>
+
+<h3><strong>第三章：近卫训练与自我确认</strong></h3>
+<p>在持续追踪的间隙，泽洛接受近卫登久子的特训，并习得新忍法【先发先至】。这一阶段从数值与战斗层面增强了泽洛的能力，也从主题上推动他完成“身份确认”。</p>
+<p>与此同时，借眼公与泽洛展开对话，明确表明自己作为“兄弟刀”的职责，是阻止长恨歌再次失控。泽洛因此意识到，自己并不是只为报仇而活，而是身为刀守，要为现世、秩序与平静生活负责。</p>
+
+<h3><strong>第四章：达木丁线索与熊本岳连寺决战</strong></h3>
+<p>击败达木丁后，泽洛从其秘密中找到药师丸京的藏身线索，最终赶赴九州熊本岳连寺展开终局对决。战斗中，泽洛凭借多次高判定压制与机动追击，逐渐逼近真相核心。</p>
+<p>此时药师丸京的真实身份被揭晓：她竟是远野墨庵之女，曾因被长恨歌蛊惑而弑亲。这个真相让此前的“追凶”升格为“悲剧清算”，敌人不再只是邪恶组织成员，而是被诅咒、被扭曲的受害者与施害者的叠合体。</p>
+
+<h3><strong>第五章：夺回长恨歌与回归日常</strong></h3>
+<p>最终，泽洛成功夺回长恨歌，埒外成员悉数落网，药师丸京则被回鸦带走。危险解除后，故事没有继续停留在复仇余波，而是让泽洛回到校园与修行的平静生活中。</p>
+<p>这一收束让模组主题落点清晰：真正重要的不是把仇恨延长，而是在灾厄之后依然能选择继续活下去，并守住“日常”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：熊本岳连寺终局战，尤其是泽洛一路高压推进、最终夺回长恨歌的过程，非常有“追猎到底”的爽感。</li>
+<li><strong>最意外</strong>：药师丸京竟然是远野墨庵之女，这个身份反转直接把单纯的追凶故事升级成家族悲剧。</li>
+<li><strong>最有张力</strong>：借眼公与泽洛围绕“刀守为何而战”的长谈，属于剧情核心升华点。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>多次高判定压制与机动追击</strong>：最终战的连环高判定强化了“主角一路追上并压制敌人”的英雄感。</li>
+<li><strong>近卫特训获得【先发先至】</strong>：不仅是数值成长，也像是主角战斗风格成型的标志。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>借眼公的自我定位</strong>：它不是“帮忙砍人的刀”，而是“防止灾厄重演的兄弟刀”，这个说法很有记忆点。</li>
+<li><strong>泽洛与平静生活的对照</strong>：经历过灭门、追杀、终战后，最终回到校园与修行日常，形成了很强的反差收束。</li>
+<li><strong>药师丸京的悲剧真相</strong>：在“敌人被打倒”的常规框架下插入亲缘悲剧，既冲击情绪，也增强了故事厚度。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续帮你把这份分析报告整理成：</p>
+<ol>
+<li><strong>更像论坛长评的版本</strong>，或</li>
+<li><strong>更像模组复盘PPT提纲的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

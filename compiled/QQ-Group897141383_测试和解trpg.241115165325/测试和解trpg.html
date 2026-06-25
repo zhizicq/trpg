@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>测试和解trpg - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>测试和解trpg</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《测试和解trpg》整体是一个以<strong>乐队经营、舞台对决、资源生存</strong>为核心的群像模组。玩家们并不是单纯追求“打赢敌人”，而是在高压演出环境中不断面对三个层面的冲突：</p>
+<ol>
+<li><strong>经济生存</strong>：接单、打工、付款、休息都与金钱挂钩，没钱就会有人退场，甚至直接撕卡。</li>
+<li><strong>舞台竞争</strong>：通过演出、合作、对邦、体育馆级高压舞台等形式争夺名气、人气与奖金。</li>
+<li><strong>团队关系</strong>：在不断输赢、解散与重组中维持团结力，处理“为了活下去”和“为了赢”之间的矛盾。</li>
+</ol>
+
+<p>它的基调非常鲜明：<strong>一边是残酷的经济与竞技压力，一边是极具喜感的失败与翻盘</strong>。因此整场跑团既像一部“乐队成长史”，也像一场不断爆金币、爆团、再重组的黑色喜剧。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>故事从年初开始，玩家们便被投入一场高度现实的乐队生存赛。最先到来的不是舞台荣耀，而是经济危机：有人因为扛不住资金压力直接撕卡退场，奠定了本模组“没钱就会死”的残酷基调。随后各队按照抽到的活动卡，在演出、合作、对决和休息之间不断切换，形成一种近乎流水线式却又充满随机性的推进节奏。前期有乐队靠高检定顺利接单、提升名气，也有队伍在对邦中惨败、亏钱又掉气势，整个局势在欢乐与惨烈之间反复摆动。</p>
+
+<p>四月后，舞台规格迅速升级，体育馆级高压演出与“地狱的对决”接连登场，比赛开始不只是比技术，更比风险承受能力。Duel曾在关键场次中打出极强表现，一口气收获大量金钱、名声与团结力，成为阶段性高光。与此同时，青鱼、AH等队也在高难对邦中经历胜负起伏，竞争愈发白热化。进入五月和六月，休息、付款、打工与训练交织，队伍们一边填补财政缺口，一边为更高强度的对决做准备；星野爱先后卷入两场硬仗，前一场被打退场，后一场虽拼尽全力仍遭AH逆转，AH则凭胜利拿下巨额收益，却也因此背负更重的“堕落”代价。八月炎夏，各队继续在演出和合作中挣扎求存，AH与青愚的合作演出大获成功，Rolling Girl也靠普通演出回血；但星野爱所在队伍再度遇强敌后惨遭完爆，最终走向解散。最后以季度人气评奖和额外奖金收束，在不断上升的舞台压力与反复解散的命运中，为这群乐队角色画下了一个又热闹又残酷的句点。</p>
+
+<h3>结局与收尾</h3>
+<p>结局并非传统意义上的“大团圆”，而是<strong>以季度评奖、额外奖金和多支队伍的生存结果</strong>作为收尾。部分队伍在激烈竞演中站稳脚跟，收获名气与资金；也有队伍在连续失利后分崩离析，星野爱相关队伍最终解散，成为模组中最具代表性的悲剧线。整体收尾强化了模组主题：<strong>舞台不是浪漫滤镜，而是残酷筛选机制</strong>，但也正因为如此，成功与高光才显得格外耀眼。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<p>> 由于日志摘要更偏向“队伍与事件”，PC名字未完整展开，因此以下按摘要中明确出现的角色/队伍进行分析。</p>
+
+<h3>1. 星野爱</h3>
+<ul>
+<li><strong>性格与定位</strong>：极具舞台感与冲劲，明显是那种“带着光登场”的核心角色。</li>
+<li><strong>关键行为</strong>：多次参与高难度硬仗，始终站在最前线；面对强敌时不退缩，即使战况不利也坚持拼到最后。</li>
+<li><strong>高光与低谷</strong>：</li>
+<li>高光在于她代表的队伍始终敢于挑战高风险舞台。</li>
+<li>低谷则是连续遭遇硬仗失利，先被打退场，后又在与AH的对抗中被逆转，最终队伍在后续强敌面前彻底崩盘解散。</li>
+<li><strong>角色弧光</strong>：她很像“被舞台吞没的偶像型核心”。越想在高压赛场证明自己，越能体现模组的残酷感。</li>
+</ul>
+
+<h3>2. AH</h3>
+<ul>
+<li><strong>性格与定位</strong>：强势、现实、胜负欲极高的队伍代表。</li>
+<li><strong>关键行为</strong>：在多场高难对邦中取胜，尤其是逆转星野爱所在队伍那一战，成为阶段性赢家。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>从硬仗中拿下大量收益。</li>
+<li>在关键对局中完成逆转，展现了战术与执行力。</li>
+<li><strong>代价与阴影</strong>：AH虽然赢得了钱、名气与资源，但也因此“堕落”增加，说明模组并非只奖励胜利，也在给强队施加副作用。</li>
+<li><strong>角色弧光</strong>：典型的“赢了但不完全赢”的队伍，越强越靠近代价线。</li>
+</ul>
+
+<h3>3. Duel</h3>
+<ul>
+<li><strong>性格与定位</strong>：高执行力、高爆发型队伍。</li>
+<li><strong>关键行为</strong>：在体育馆级高压舞台上打出极强表现，单场豪取金钱、名声与团结力。</li>
+<li><strong>高光时刻</strong>：这支队伍的高光非常明确——属于“把一场比赛打成资源收割机”的典型。</li>
+<li><strong>作用</strong>：Duel起到“模组里真正能把对局打成财务奇迹”的标杆作用，是其他队伍羡慕甚至需要仰望的对象。</li>
+</ul>
+
+<h3>4. 青鱼</h3>
+<ul>
+<li><strong>性格与定位</strong>：稳定但并非一路碾压型，属于能在高难环境中维持存在感的队伍。</li>
+<li><strong>关键行为</strong>：在高难对邦中经历起伏，说明其并不总是站在胜利方，但始终参与核心冲突。</li>
+<li><strong>作用</strong>：青鱼像是“中坚梯队”的代表，承担了让群像更立体的功能。</li>
+</ul>
+
+<h3>5. Rolling Girl</h3>
+<ul>
+<li><strong>性格与定位</strong>：偏保守、偏生存型的队伍。</li>
+<li><strong>关键行为</strong>：靠普通演出回血，没有依赖极端高风险打法。</li>
+<li><strong>作用</strong>：她们代表了“活下去比出风头更重要”的路线，也让整体叙事不至于只有对邦与爆炸。</li>
+</ul>
+
+<h3>6. 其他“先后因经济压力退场/解散”的队伍</h3>
+<ul>
+<li><strong>性格与定位</strong>：用于体现模组核心机制的压力测试样本。</li>
+<li><strong>关键行为</strong>：有人开局即撕卡退场，后续也有队伍在连续失利和资源崩坏后解散。</li>
+<li><strong>作用</strong>：这些角色/队伍是本模组最强的环境叙事工具：<strong>不是每个乐队都能熬到夏天</strong>。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+<ul>
+<li><strong>活动卡/赛事系统本身</strong>：几乎等同于“叙事引擎”，决定每回合的行动压力与剧情走向。</li>
+<li><strong>强敌/对手乐队</strong>：承担“检验队伍强度”的功能，尤其是让星野爱、AH等队伍在胜负中被塑造出不同命运。</li>
+<li><strong>季度评奖机制</strong>：作为阶段性总结器，把前面所有演出与对决的结果转化为名次、奖金与叙事收束。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：年初开局，经济危机与第一轮重组</h3>
+<p>故事从年初展开，最先出现的不是激情开演，而是现实打击——有人因经济压力直接撕卡退场。这一事件迅速定下模组基调：资源不够，连上台资格都可能保不住。随后各队开始按照抽到的活动卡行动，在演出、合作、对决与休息之间轮换，初步建立起队伍的节奏与差异。</p>
+
+<h3>第二阶段：早中期，演出与对邦的第一次分化</h3>
+<p>随着活动推进，部分队伍靠高检定拿下订单与演出机会，名气和资金双双上涨；也有队伍在对邦中惨败，不仅亏钱，还被打击士气。此阶段的剧情功能是让“会经营的队伍”与“会赌命的队伍”形成明显分层，观感上既像竞技联赛，也像生存经营模拟。</p>
+
+<h3>第三阶段：四月，高压舞台登场，赛事规格升级</h3>
+<p>进入四月后，模组开始明显加码。体育馆级高压舞台与“地狱的对决”连续出现，意味着比赛不再是普通演出，而是带有极大风险的核心战场。Duel在这一阶段打出极强表现，一举收割大量金钱、名声与团结力，成为一段典型高光；同时青鱼、AH等队伍也被卷入更难的对局，整个环境开始进入高烈度竞争状态。</p>
+
+<h3>第四阶段：五月至六月，休息、打工、训练与付款的压力循环</h3>
+<p>进入中段后，剧情节奏变成了“赚钱—花钱—训练—再赚钱”的循环。休息、付款、打工与训练交替进行，说明队伍不只是要在台上赢，还要在台下把生活续上。此时队伍间的资源差距开始累积，强队继续扩张，弱队则被财政和赛程双重挤压。</p>
+
+<h3>第五阶段：星野爱与AH的关键冲突</h3>
+<p>这一阶段是本章的情绪核心。星野爱先后卷入两场硬仗，前一场被直接打退场，后一次虽拼尽全力，却仍遭AH逆转。AH借此获得大量收益，但同时堕落值也随之增加，体现出“赢得越多，付出的代价也越重”的机制设计。这一连串对决让两边的命运分野更加清晰：星野爱线趋向崩塌，AH线则向强者的代价推进。</p>
+
+<h3>第六阶段：八月炎夏，最后的生存赛与队伍清算</h3>
+<p>进入八月后，各队继续通过演出和合作维持生存。AH与青愚的合作演出大获成功，证明合作路线在高压环境下仍有极高收益；Rolling Girl则凭普通演出回血，走稳健生存路线。相对地，星野爱所在队伍再次遭遇强敌，最终惨败并解散，成为一条明确的悲剧线。到这里，模组进入收束阶段：不是所有人都能走到最后，但每一次上台都算数。</p>
+
+<h3>第七阶段：季度人气评奖与额外奖金，正式收尾</h3>
+<p>最后以季度人气评奖和额外奖金作为终章，把前面所有演出、对邦和合作的成果进行统一结算。胜者拿到资源、名望和继续前进的资格；败者则在现实压力下被淘汰。整章在热闹的竞演表象下完成了冷酷清算，也让“测试和解”这个标题有了某种反讽意味：所谓和解，并不是所有队伍都能达成的结果。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>开局就有人因经济压力撕卡退场</strong>：非常直接地把模组的残酷性拉满，属于“还没热身就先破防”的名场面。</li>
+<li><strong>Duel在体育馆级高压舞台上的爆发</strong>：一场演出同时赚到金钱、名声、团结力，堪称“把副本打成资源矿场”。</li>
+<li><strong>星野爱队伍连续硬仗后最终解散</strong>：从热血挑战到彻底崩盘，戏剧性极强，悲剧感也最重。</li>
+<li><strong>AH赢得战斗却堕落加深</strong>：非常有味道的反差，像是在说“赢家也未必是纯粹赢家”。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>Duel的高检定成功</strong>：典型大成功效果，直接带来三重收益，是本章最醒目的“欧皇/强者时刻”。</li>
+<li><strong>多支队伍在对邦中的惨败</strong>：虽未逐一列出数值，但从结果看属于严重失利，直接造成亏损和士气打击。</li>
+<li><strong>星野爱两场硬仗中的退场与被逆转</strong>：是非常关键的失败节点，尤其第二次在拼尽全力后仍被翻盘，戏剧张力极强。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“赚钱、翻车、再赚钱”的循环感本身</strong>就是这章最有喜剧感的结构梗。</li>
+<li><strong>合作演出与普通演出回血</strong>形成了很强对比：有人靠豪赌，有人靠苟命。</li>
+<li><strong>“赢了很多，但堕落也更多了”</strong>这种结果特别耐人寻味，既像系统惩罚，也像角色命运的隐喻。</li>
+<li><strong>季度人气评奖收尾</strong>则像是给一整季疯狂舞台综艺做总决算，既现实又荒诞。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告进一步整理成：</p>
+<ol>
+<li><strong>更像“同人式复盘文”的版本</strong>，语言更生动；</li>
+<li><strong>更像“模组设计分析”的版本</strong>，突出机制、节奏和数值结构；</li>
+<li><strong>按队伍分别列出战绩表</strong>，方便归档。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

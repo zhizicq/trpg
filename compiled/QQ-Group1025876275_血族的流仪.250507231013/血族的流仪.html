@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>血族的流仪 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>血族的流仪</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《血族的流仪》以“百夜市连环血案”为开端，表面上是城市中接连发生的吸血事件，实则牵扯出<strong>吸血鬼、猎人家系、以及隐藏在暗处的“血社”忍者势力</strong>之间的多重博弈。</p>
+<p>核心冲突并不只是“找出凶手”，而是围绕一个更深层的问题展开：<strong>谁有资格定义“血族”的秩序，谁又能决定异类该被治愈、驱逐，还是被利用为试炼品？</strong></p>
+<p>玩家们最初作为调查者介入，却很快发现每个“可疑对象”都不简单：有人是伪装身份的上忍，有人是世代猎杀吸血鬼的家族成员，有人则掌握着关键情报与救治手段。血案因此不只是犯罪事件，更像是一场针对各方立场与能力的筛选和考核。</p>
+
+<h3><strong>主线剧情概要</strong></h3>
+<p>百夜市接连发生血案后，咲良芦花召集汉娜、怀月堂、日出等人展开调查。三名PC分头行动，分别接触了三木怜香、浅野羽、川澄丽矢等可疑人物，并通过各种手段逐步拼出真相。调查过程中，汉娜以【凭依术】成功突破浅野羽的伪装，发现其真实身份竟是血社上忍“魅羽”；怀月堂则从三木怜香身上逼问出更多线索，确认自己出身于吸血鬼猎人家系，并持有象征立场的银之大剑；日出则以【飞术】快速追查川澄丽矢，成功取得关键秘密。与此同时，咲良芦花遭遇疑似吸血鬼袭击，日出也在夜袭中受伤，令局势进一步紧张。随着多条线索汇聚，玩家们意识到这起血案并非单纯的猎杀事件，而是一次包裹着“治疗方法”情报、身份考核与势力试探的复杂局，所有人都被迫站到自己真正所属的位置上。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>现有摘要未完整披露最终决战与幕后真相的全部细节，但从已知信息看，模组收束于：<strong>调查者确认了各自阵营与身份线索，拿到了“治疗方法”相关情报，并在遭遇袭击与受伤后，进入更明确的阵营对抗阶段</strong>。</p>
+<p>本模组的收尾重点显然不只是“破案”，而是让玩家在真相揭晓后意识到：百夜市的血案只是更大结构的一角，真正的结局往往由“谁先理解规则、谁先掌握秘密”来决定。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>汉娜</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：果断、行动力强，偏向直接突破情报壁垒。</li>
+<li><strong>关键行为</strong>：对浅野羽使用【凭依术】并成功，说明她在调查中不满足于表层问答，而是主动寻找能揭穿伪装的手段。</li>
+<li><strong>高光时刻</strong>：成功识破浅野羽的真实身份，间接推动“血社上忍”这一核心真相浮出水面。</li>
+<li><strong>角色作用</strong>：汉娜承担了“揭皮”功能，是本模组中最典型的情报突破手。</li>
+</ul>
+
+<h4><strong>怀月堂</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：冷硬、审讯意识强，倾向用强压方式获取线索。</li>
+<li><strong>关键行为</strong>：对三木怜香使用【拷问术】成功，直接撬开关键信息；同时确认了自身作为吸血鬼猎人家系的立场。</li>
+<li><strong>高光时刻</strong>：拿到银之大剑，完成“身份与武装”的双重确认，具备强烈的宿命感。</li>
+<li><strong>角色作用</strong>：怀月堂是“立场具现化”的角色，一边调查，一边不断证明自己站在哪一方。</li>
+</ul>
+
+<h4><strong>日出</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：机动性强，行动迅速，擅长追击与现场支援。</li>
+<li><strong>关键行为</strong>：对川澄丽矢使用【飞术】成功，获取多名角色秘密；同时在夜袭中受伤，表现出前线调查者的风险性。</li>
+<li><strong>高光时刻</strong>：飞术追查线索的操作感很强，具备“速度压制对手”的风格。</li>
+<li><strong>角色作用</strong>：日出是典型的“机动力调查员”，负责把零散线索快速串联起来。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>咲良芦花</strong></h4>
+<ul>
+<li><strong>作用</strong>：任务发布者与剧情推动者。</li>
+<li><strong>功能定位</strong>：作为将三位PC召集起来的关键人物，她将“百夜市血案”定义为需要协作处理的重大事件，开场即建立悬疑与危机感。</li>
+<li><strong>剧情意义</strong>：她的遭袭进一步说明事件并非普通案件，而是会波及调查者自身。</li>
+</ul>
+
+<h4><strong>浅野羽 / 魅羽</strong></h4>
+<ul>
+<li><strong>作用</strong>：核心反转NPC。</li>
+<li><strong>功能定位</strong>：表面是可疑调查对象，实则为血社上忍“魅羽”，并掌握“治疗方法”的重要情报。</li>
+<li><strong>剧情意义</strong>：这个角色将“身份伪装”“阵营秘密”“任务考核”三条线合并，是模组中最关键的转折点之一。</li>
+</ul>
+
+<h4><strong>三木怜香</strong></h4>
+<ul>
+<li><strong>作用</strong>：信息来源与审讯对象。</li>
+<li><strong>功能定位</strong>：在怀月堂的拷问下提供线索，帮助确认更大背景。</li>
+<li><strong>剧情意义</strong>：属于“看似边缘，实则能打开真相”的典型辅助NPC。</li>
+</ul>
+
+<h4><strong>川澄丽矢</strong></h4>
+<ul>
+<li><strong>作用</strong>：线索承接者。</li>
+<li><strong>功能定位</strong>：被日出追踪并获得相关秘密，说明其与血案或各方势力存在联系。</li>
+<li><strong>剧情意义</strong>：负责把调查线向更深层推进。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：血案爆发，调查启动</strong></h3>
+<p>百夜市出现连环血案，城市氛围迅速转入恐慌。咲良芦花意识到这并非单纯治安事件，于是召集汉娜、怀月堂和日出三人协助调查。此时玩家尚处于“案件侦查”的表层阶段，但模组已经通过“吸血鬼所为”的预设将调查方向锁定在超自然层面。</p>
+
+<h3><strong>第二阶段：三线并进，接触可疑人物</strong></h3>
+<p>三名PC开始分头接触目标对象：汉娜对浅野羽进行突破，怀月堂对三木怜香施压，日出追查川澄丽矢。</p>
+<p>这一阶段的结构非常清晰，属于典型的“分头调查—逐步拼图”模式。每位PC都通过自己的专长获取不同类型的情报：有人揭身份，有人逼口供，有人追秘密，使剧情信息在短时间内大量展开。</p>
+
+<h3><strong>第三阶段：身份反转与阵营显形</strong></h3>
+<p>随着汉娜成功对浅野羽使用【凭依术】，浅野羽的伪装被彻底拆穿，其真实身份“血社上忍魅羽”浮出水面。与此同时，怀月堂确认自己是吸血鬼猎人家系，手握银之大剑，立场瞬间明确。</p>
+<p>这一阶段是模组的核心转折：<strong>调查者不再只是旁观者，而是被真相推到自身身份与阵营的前台</strong>。事件从“找凶手”升级为“辨明自己是谁”。</p>
+
+<h3><strong>第四阶段：袭击发生，危机升级</strong></h3>
+<p>就在线索逐渐成形时，咲良芦花遭到疑似吸血鬼袭击，日出也在夜袭中受伤。这个阶段为剧情注入了直接威胁，将“调查”推向“生存”。</p>
+<p>同时，袭击事件也暗示：幕后势力并不欢迎调查继续深入，玩家一旦接近真相，就会立刻遭到反制。</p>
+
+<h3><strong>第五阶段：关键情报汇合，指向治疗方法</strong></h3>
+<p>在一系列调查与对抗之后，玩家逐渐拼凑出更深层的信息：与其说血案是单纯杀戮，不如说它与某种“治疗方法”相关。这个信息使得模组主题发生变化——从猎杀、伪装、对抗，转向“如何处理血族存在本身”。</p>
+<p>至此，主线不再只是找到谁制造血案，而是进入对“血族秩序”和“救治路径”的思考与选择阶段。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：汉娜成功用【凭依术】直接掀开浅野羽的真实身份，这种“硬核破防”非常适合调查模组的爽点。</li>
+<li><strong>最意外</strong>：浅野羽不是普通嫌疑人，而是血社上忍“魅羽”，这个反转把整个案件从地方治安事件抬升为势力博弈。</li>
+<li><strong>最有戏剧张力</strong>：怀月堂确认自己是吸血鬼猎人家系，并拿到银之大剑，瞬间把个人背景和剧情主轴扣紧。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>汉娜【凭依术】成功</strong>：典型的大突破检定，直接推动核心反转。</li>
+<li><strong>怀月堂【拷问术】成功</strong>：强势型调查的代表，信息获取效率极高。</li>
+<li><strong>日出【飞术】成功</strong>：追踪型操作感很强，体现了机动调查的优势。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>咲良芦花的任务说明</strong>：“百夜市血案疑为吸血鬼所为，请三人协力调查。”</li>
+</ul>
+<p>这句开场台词非常标准，但也恰到好处地把玩家推入“全员上岗”的状态。</p>
+<ul>
+<li><strong>角色之间的信息错位感</strong>：每个人都以为自己在查“别人”，结果查着查着把自己的身份也一起查出来了，这种“查案查到自己头上”的味道很有TRPG特色。</li>
+<li><strong>血案与治疗并存的反差</strong>：一边是连续袭击与夜袭受伤，一边又浮现“治疗方法”情报，形成了“暴力事件背后藏着救赎可能”的双层悬念。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续帮你把这份报告整理成：</p>
+<ol>
+<li><strong>更像论坛长评的版本</strong></li>
+<li><strong>更像模组复盘文档的版本</strong></li>
+<li><strong>加上“主题解读 / 结构评价 / 跑团建议”的加强版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

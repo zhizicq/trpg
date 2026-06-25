@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利刃将会斩向谁？ - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>利刃将会斩向谁？</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《利刃将会斩向谁？》以一座名为“卡尔克萨乐园”的无人岛游乐园为舞台，外表是充满噱头的“一亿元寻宝活动”，内里却牵连着新兴宗教团体“救世之园”的神秘运作。模组的核心冲突在于：<strong>参与者以为自己是在参加一场奖励丰厚的娱乐活动，实际上却被卷入一场带有监控、操控与信仰包装的危险事件</strong>。</p>
+<p>标题中的“利刃”并不只是物理武器，也象征着真相、控制与代价：这把刀最终会落向谁，取决于玩家是否能看穿乐园的伪装，以及在异常侵蚀下如何保护自己。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>事务所收到一封匿名邀请信与一张夸张到近乎荒诞的宣传单，上面宣称只要前往“卡尔克萨乐园”参加寻宝活动，就有机会赢得一亿元大奖。旅与千早在调查后发现，活动主办方“救世之园”并非普通商家，而是一个近年迅速扩张的新兴宗教团体，且乐园被安排在一座无人岛上，处处透着不自然。两人带着警惕登船，旅在同行者中敏锐地识破一名少年其实并非普通游客，而是总支配人卷幡香织伪装而成，显示出主办方对整场活动的控制力远超表面。抵达乐园后，千早进一步发现入园手环内暗藏定位器，说明游客并非单纯“被邀请”，而是被系统性监视与追踪。随着众人进入园区，入口处散发出强烈的异常感，千早受到轻度理智冲击，确认这里并非普通游乐场，而是某种超常领域的门扉。至此，PC们已踏入一个以娱乐为外衣、以宗教与监控为骨架的危险舞台，真正的寻宝与逃离才刚刚开始。</p>
+
+<h3>结局与收尾</h3>
+<p>从现有摘要来看，本段内容仅到“入园前后”的展开，尚未涉及后续的宝藏争夺、事件真相揭露或最终脱离。就目前可见的收尾而言，故事结束在<strong>“真相初现、危险确认”</strong>的阶段：PC们成功察觉了宣传背后的异常、主办方身份与定位监控，但也因此正式进入了受污染的场域，付出了轻度理智损失的代价。</p>
+<p>因此，这一段更像是模组的开幕与压迫感建立：<strong>他们不是来领奖的，而是被请进局里的。</strong></p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>旅</h4>
+<ul>
+<li><strong>性格特点</strong>：沉稳、观察力强，偏向理性判断，擅长在表面叙事之外捕捉“不对劲”的细节。</li>
+<li><strong>关键行为</strong>：在登船阶段识破“同行少年的真身其实是总支配人卷幡香织”，这一点非常关键，说明旅具备较强的身份识别与局势预判能力。</li>
+<li><strong>高光时刻</strong>：识破伪装。这个行为不仅是信息层面的领先，也在叙事上建立起“玩家已经开始怀疑舞台本身”的张力，属于典型的先手洞察型高光。</li>
+</ul>
+
+<h4>千早</h4>
+<ul>
+<li><strong>性格特点</strong>：细致、谨慎、调查能力强，明显是团队中的信息搜集与风险排查担当。</li>
+<li><strong>关键行为</strong>：通过图书馆/教育检定查到“救世之园”的背景，确认其迅速扩张的新兴宗教属性；随后又在侦查/敏捷检定中发现手环内的定位器并将其取出。</li>
+<li><strong>高光时刻</strong>：拆解手环定位器。这个动作是整段剧情里最实质性的“拆穿控制手段”的行为，代表千早不只是发现异常，而是真正干预了异常。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<h4>卷幡香织</h4>
+<ul>
+<li><strong>作用</strong>：以伪装姿态出现在登船同行者中，疑似为总支配人或关键管理者。</li>
+<li><strong>剧情功能</strong>：她的存在说明主办方对参与者的接触与观察并非被动，而是主动嵌入旅途中，形成压迫感与不可信环境。</li>
+<li><strong>象征意义</strong>：代表“乐园的管理者并不在幕后，而在玩家身边”。</li>
+</ul>
+
+<h4>“救世之园”</h4>
+<ul>
+<li><strong>作用</strong>：模组的核心势力组织，新兴宗教团体。</li>
+<li><strong>剧情功能</strong>：作为活动主办方，提供“寻宝”外壳，但其真正目标尚未完全显露。</li>
+<li><strong>象征意义</strong>：把娱乐、信仰、操控与商业包装融合在一起，是模组异质感的来源。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 匿名邀请与异常宣传</h3>
+<p>事务所收到匿名信和宣传单，内容夸张地宣称“卡尔克萨乐园”将举办一亿元寻宝活动。起初看似是天降商机，但过于离谱的营销文案很快让人意识到，这绝不是正常的商业企划。</p>
+
+<h3>2. 调查主办方背景</h3>
+<p>旅与千早展开基础调查，千早通过图书馆/教育检定得知“救世之园”是近年来快速扩张的新兴宗教团体。这一点与宣传单中“欢乐游乐园”的形象严重不符，暗示活动背后存在包装与伪装。</p>
+
+<h3>3. 登船前后的身份异常</h3>
+<p>两人前往无人岛并登船。旅在同行者中敏锐察觉到一名少年身份可疑，最终识破其真身其实是总支配人卷幡香织。此时主办方的控制感开始从“资料层面”转为“现实接触层面”，使得整个旅程的危险性迅速上升。</p>
+
+<h3>4. 抵达乐园，发现监控痕迹</h3>
+<p>进入园区前，千早发现入园手环内部藏有定位器，并成功取出。这表明游客从一开始就被列入追踪系统之中，并非被当作普通游客对待，而是被精确管理的对象。</p>
+
+<h3>5. 进入异常场域</h3>
+<p>当PC正式踏入园区入口时，强烈异常感袭来，千早触发 SANC 0/1D3，失去 1 点理智。这个检定结果证明这里不是单纯的游乐设施，而是具有超自然污染或精神压迫效果的异常空间。故事在此完成开场定调：玩家已深入局中，真正的危机才刚刚开始。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最意外的场景</h3>
+<ul>
+<li><strong>旅识破同行少年真身是卷幡香织</strong>：这是开局非常漂亮的一次反转。原本以为只是普通游客，结果直接点出主办方高层潜伏在队伍中，压迫感瞬间拉满。</li>
+<li><strong>千早从手环里拆出定位器</strong>：非常“实用派侦探”式的高光，不是喊口号式的警觉，而是把监控设备实打实地拿出来了，效果简洁且有力。</li>
+<li><strong>入园即 SANC</strong>：乐园连门口都带异常感，说明“欢迎来到主题乐园”这句表面台词下藏着极强的恐怖氛围。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>图书馆 / 教育检定成功</strong>：把“救世之园”从抽象名词变成可疑宗教实体，为后续阴谋铺垫了可信的调查链条。</li>
+<li><strong>侦查 / 敏捷检定成功</strong>：发现并拆除手环定位器，是本段最具行动价值的成功检定。</li>
+<li><strong>SANC 0/1D3 后理智减 1</strong>：轻度失控但足以建立威胁感，属于非常标准、非常有效的开场理智检定。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“一亿元寻宝活动”这一设定本身</strong>就带着强烈的荒诞感，像是把综艺、邪教与死亡游戏揉在一起。</li>
+<li><strong>宣传单的夸张程度与实际风险的反差</strong>，构成了整个开局最有黑色幽默感的地方：越像骗人的广告，往往越接近真相。</li>
+<li><strong>“乐园入口触发理智损失”</strong>这类桥段很适合做跑团中的经典吐槽点：还没开始玩，先被乐园“欢迎”了一次。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“模组复盘文”的版本，比如加入：</p>
+<ol>
+<li><strong>主题与象征解析</strong></li>
+<li><strong>玩家决策点评</strong></li>
+<li><strong>主持人设计意图推测</strong></li>
+<li><strong>适合发帖用的简洁版总结</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

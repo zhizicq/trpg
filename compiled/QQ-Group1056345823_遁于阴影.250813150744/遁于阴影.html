@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遁于阴影 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>遁于阴影</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《遁于阴影》将舞台放在一栋因暴雨、断电而逐渐被洪水吞没的旧数码公司大楼中。表面上，这是一次“收留过夜”的临时避难；实际上，楼内外潜伏着入侵者、规则型替身力量以及多方势力的暗战。玩家一方面要维持“主人/接待者”的身份，借礼仪与规矩压制局势；另一方面则要在恶劣环境中布置无人机、水银瓶、替身武装等手段，守住大楼并反制潜入者。</p>
+<p>核心冲突不只是“谁先动手”，而是<strong>规则、环境与情报差</strong>的博弈：敌人以为只是普通的夜袭与追逐战，玩家却逐步发现这里本身被某种“规则”改写，追逐、攻击、翻找都可能触发未知代价，局面因此从单纯防御升级为对楼层空间、替身机制与水位变化的多维对抗。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>暴雨夜里，旧数码公司被洪水迅速围困，断电让整栋楼更显阴冷诡异。玩家组一边以“收留过夜”为名接待客人，一边暗中布置无人机、检查门窗、准备水银瓶等防线，预判会有潜入者趁乱行动。石川多次侦查，先发现窗边的潜入痕迹，随后又在三楼仓库发现血迹与异常，逐渐确认这不是单纯的失窃，而是多方势力已经渗入楼内。随着电气维修成功，玩家得以稳妥挂载水银瓶，形成第一层有效威慑。</p>
+<p>与此同时，数条诡异规则型替身效果接连出现：二楼禁止追逐、此地禁止攻击、以及“不要在收留你过夜的人家里乱翻乱动，这是礼仪”等带有强烈限制意味的规则，使这场危机从“抓贼”变成“在对方不完全理解规则前抢占解释权”的心理战。石川随后操控替身投掷铁钉，困难成功命中地上昏迷的小混混，强行打断局势并触发场景转移，众人被推入积水更深的区域。由于斯利普的遮挡，角色确认在水中并不需要呼吸、也不会因落水窒息，反而让敌方对水战风险判断失误。石川还在交战讨论中确认“高温”是粒子的弱点，为后续突破埋下关键伏笔。整场剧情由此从屋内攻防转向更大的环境战与信息战。</p>
+
+<h3>结局与收尾</h3>
+<p>本段摘要显示的结局并非最终收束，而是一次关键阶段性推进：玩家完成了对楼内情况的初步侦查、规则的确认与第一轮反击，并将战场推向更深的积水区域。最重要的收尾成果是：</p>
+<ol>
+<li>识破了潜入与异常的存在；</li>
+<li>以维修与布防稳住了局势；</li>
+<li>明确了部分规则型替身的限制；</li>
+<li>确认了“高温”这一针对性弱点；</li>
+<li>将敌我对峙从被动防守转为主动掌控节奏。</li>
+</ol>
+<p>这意味着本章更像是“局面确立与阶段反制”的终盘前奏，而不是故事完全结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+
+<h4>1）石川</h4>
+<ul>
+<li><strong>性格特征</strong>：冷静、细致、执行力强，擅长在混乱中抓住可操作信息。</li>
+<li><strong>关键行为</strong>：</li>
+<li>反复侦查窗边痕迹、仓库血迹和异常，说明他不是只看表象，而是会追踪“异常链条”。</li>
+<li>成功完成电气维修，体现出在高压环境下仍能保持稳定操作。</li>
+<li>谨慎挂载水银瓶，显示其对资源和布防有明确规划。</li>
+<li>用替身投掷铁钉命中昏迷小混混，且是困难成功，属于非常关键的战术打断。</li>
+<li>在讨论中确认“粒子”的高温弱点，体现出强烈的战斗分析能力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>困难成功命中目标，直接打断局势并推动转场。</li>
+<li>通过侦查把“入侵危机”升级为“规则对峙”的判断，帮助团队理解模组真实玩法。</li>
+<li><strong>角色弧光</strong>：石川更像团队的“侦察/判断核心”，从单纯执行者逐步承担起局势分析与战术定调的职责。</li>
+</ul>
+
+<h4>2）团队整体</h4>
+<ul>
+<li><strong>性格与风格</strong>：偏稳健、强调先布防再行动，善于利用“礼仪”“规则”和场景条件反制敌方。</li>
+<li><strong>关键行为</strong>：</li>
+<li>借收留名义周旋客人，既是社交掩护也是局势拖延。</li>
+<li>利用无人机与水银瓶进行预设防御，说明团队倾向于“以准备换主动权”。</li>
+<li>在规则型替身出现后迅速调整策略，没有执着于硬拼，表现出很强的适应性。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>通过一系列布置把战场从被动挨打变成可控空间。</li>
+<li>发现“水中无需呼吸”这一关键机制，避免在错误认知下做出低效判断。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1）潜入者/入侵者群体</h4>
+<ul>
+<li><strong>作用</strong>：推动冲突的外部压力源，迫使玩家从“收留客人”切换到“防御危机”。</li>
+<li><strong>剧情功能</strong>：他们让楼内的异常具象化，制造窗边痕迹、血迹和潜在袭击风险，促成悬疑升级。</li>
+</ul>
+
+<h4>2）昏迷的小混混</h4>
+<ul>
+<li><strong>作用</strong>：局势中的“脆弱节点”与战术打断目标。</li>
+<li><strong>剧情功能</strong>：石川命中他后触发转场，说明这个角色虽不起眼，却是推进场面变化的关键锚点。</li>
+</ul>
+
+<h4>3）规则型替身的相关存在</h4>
+<ul>
+<li><strong>作用</strong>：模组的真正机制核心。</li>
+<li><strong>剧情功能</strong>：二楼禁止追逐、此地禁止攻击、礼仪式禁令等规则，决定了整个冒险的交互逻辑；它们并非单纯的障碍，而是世界观层面的“法律”。</li>
+</ul>
+
+<h4>4）粒子</h4>
+<ul>
+<li><strong>作用</strong>：潜在敌对关键单位或战斗对象。</li>
+<li><strong>剧情功能</strong>：其弱点被确认是高温，说明后续战斗可围绕环境与属性克制展开。</li>
+</ul>
+
+<h4>5）斯利普</h4>
+<ul>
+<li><strong>作用</strong>：提供关键认知修正的存在。</li>
+<li><strong>剧情功能</strong>：通过遮挡或机制关联，让玩家确认“在水中不需要呼吸、也不会因落水窒息”，这是一次重要的规则澄清。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：暴雨封楼，伪装接待</h3>
+<p>旧数码公司在暴雨与断电中迅速被洪水围困，楼内环境恶化。玩家表面以“收留过夜”安置来客，实际则开始为即将到来的冲突做准备：布设无人机、准备水银瓶、检查楼内出入口，形成基础防线。</p>
+
+<h3>第二阶段：异常初现，侦查升级</h3>
+<p>石川开始多次侦查，先发现窗边有潜入痕迹，说明已有外部人员试图进入；随后又在三楼仓库发现血迹与异常，表明楼内并不只有一个行动链。此时玩家逐渐意识到，眼前危机并非孤立事件，而是多个未知因素叠加。</p>
+
+<h3>第三阶段：电力恢复，布防成形</h3>
+<p>在电气维修成功后，玩家得以稳妥挂载水银瓶，防御体系更完整。电力恢复虽然有限，但足以让玩家在黑暗洪水中保留反击手段，也让场面从纯粹的“摸黑应对”变成“有条件的战术部署”。</p>
+
+<h3>第四阶段：规则浮现，局势质变</h3>
+<p>随着对峙加深，规则型替身效果开始浮出水面：</p>
+<ul>
+<li>二楼禁止追逐；</li>
+<li>此地禁止攻击；</li>
+<li>不要在收留你过夜的人家里乱翻乱动，这是礼仪。</li>
+</ul>
+<p>这些规则将冲突从单纯战斗拉到“谁先破坏规则谁吃亏”的层面，迫使玩家重新定义行动方式。</p>
+
+<h3>第五阶段：战术打断，场景转移</h3>
+<p>石川操控替身投掷铁钉，困难成功命中地上的昏迷小混混，直接打断当前局面并触发转场。这个动作不仅是一次漂亮的进攻，更像是对局势的“强行重置”，让战场进入更深积水区域。</p>
+
+<h3>第六阶段：水域认知修正，进入下一战区</h3>
+<p>由于斯利普的遮挡与相关机制确认，玩家明确水中不需要呼吸，也不会因落水窒息。这一信息极大改变了战斗预期，也意味着敌方若继续以“落水”作为威胁手段，判断将出现偏差。同时，玩家在讨论中确认粒子怕高温，为下一轮推进提供了明确策略方向。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：石川用替身投掷铁钉，困难成功命中昏迷小混混，既精准又干脆，属于“看似小动作，实则改写节奏”的典型高光。</li>
+<li><strong>最意外</strong>：一连串“禁止追逐”“禁止攻击”“礼仪”式规则浮现，整个模组突然从动作悬疑转向规则怪谈，气质切换非常明显。</li>
+<li><strong>最有压迫感</strong>：暴雨、断电、洪水吞楼三件套叠加，天然就把场景气氛拉到最高。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>电气维修成功</strong>：这是极其实用的成功，直接让布防从“计划”变成“可实施方案”。</li>
+<li><strong>困难成功命中铁钉</strong>：典型的关键战斗检定成功，不仅造成效果，还推动剧情转场。</li>
+<li><strong>侦查多次发现异常</strong>：虽然未标明具体数值，但连续侦查成功构成了信息链，属于非常重要的“非战斗成果”。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“<strong>不要在收留你过夜的人家里乱翻乱动，这是礼仪。</strong>”</li>
+<li>这类带有强烈道德/规则暗示的话术，既像警告又像诅咒，非常有味道。</li>
+<li>“<strong>二楼禁止追逐 / 此地禁止攻击</strong>”</li>
+<li>像楼内告示，又像超自然法则，特别适合模组的怪异感。</li>
+<li>“<strong>在水中并不需要呼吸、也不会因落水窒息</strong>”</li>
+<li>这是典型的机制认知反转，既救命又让局势判断完全变味。</li>
+<li>“<strong>确认粒子高温为弱点</strong>”</li>
+<li>很像战术会议中的关键一句话，简短却极具后续价值。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像论坛复盘帖的版本</strong>，或</li>
+<li><strong>更偏“模组鉴赏/剧本评测”的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

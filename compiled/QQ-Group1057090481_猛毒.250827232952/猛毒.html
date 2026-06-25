@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猛毒 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>猛毒</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《猛毒》以一场发生在生物研究所内的“病毒泄漏—谋杀疑云—组织回收”事件为核心，舞台集中在<strong>牛王生物研究所</strong>。表面上，这是一次由“狡（Tricksy）”失窃引发的封锁事故；实际上，研究所内部早已被<strong>隐秘的任务、扭曲的执念与组织之间的博弈</strong>搅乱。</p>
+<p>核心冲突主要有三层：</p>
+
+<ol>
+<li><strong>真相与掩盖</strong>：博士被毒杀/感染的真相究竟是什么，谁在撒谎，谁在隐瞒。</li>
+<li><strong>夺回与销毁</strong>：失窃的“狡”究竟是什么，为什么各方都在争夺它；而当局最终却选择直接销毁研究所。</li>
+<li><strong>人性与失控</strong>：角色之间的关系并非单纯敌对，矢车小蛇对小万智博士近乎病态的爱意、百足川毒绪作为特工的职业冷酷，都让事件从事故升级为悲剧。</li>
+</ol>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>香取鳞粼接到小万智枭的求救电话，得知自己“已被毒杀”，遂赶往牛王生物研究所，与奉命处理“狡”失窃事件的水无濑弦也会合。抵达后，两人发现研究所气密室已被开启，病毒容器遭破坏，小万智博士也已感染濒死，封锁随即启动。调查逐渐揭开隐藏在研究所深处的真相：百足川毒绪表面是处理危机的人员，实则受不明基金会/势力指派，真正任务是回收“狡”；而矢车小蛇则因对博士怀有极端执念，亲手推动了博士的感染与失控。</p>
+<p>水无濑取得【感染者之血】与关键情报，香取则成功调配出【狡】的解毒剂，暂时缓解了局势。然而，研究所内突然爆炸，恐慌迅速蔓延，原本仍有缓和空间的局面彻底崩塌。随着真相浮出，矢车、百足川与PC彻底翻脸，战斗全面爆发。双方多次在生死边缘拉扯，百足川甚至以奥义扭转战局，但比良坂机关最终启动“烧毁处分”，迫使所有人撤离。研究所被大火吞没，官方以瓦斯爆炸掩盖一切，任务也以失败告终。尽管如此，幸存者后来仍收到慰问信与百足川的来信，为这场悲剧保留了一丝未完待续的余韵。</p>
+
+<h3>结局与收尾</h3>
+<ul>
+<li><strong>结局性质</strong>：失败结局 / 灭迹收束</li>
+<li><strong>最终结果</strong>：研究所被比良坂机关以“烧毁处分”方式处理，真相被官方掩盖为“瓦斯爆炸”。</li>
+<li><strong>角色命运</strong>：主要PC与部分NPC幸存，但事件没有被完全阻止，真相未能公开。</li>
+<li><strong>收尾氛围</strong>：悲剧中带有余波。官方将事件抹平，但慰问信与百足川的来信暗示：这不是结束，而是以后再会、再追查的起点。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 香取鳞粼</h4>
+<ul>
+<li><strong>性格特征</strong>：行动力强，调查意识明确，关键时刻能迅速做出实际贡献。</li>
+<li><strong>关键行为</strong>：</li>
+<li>第一时间响应小万智枭的求助，主动前往研究所。</li>
+<li>在危机中成功制作出【狡】的解毒剂，展现了较强的专业能力与临场应对。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>解毒剂的制作是整场事件中少数真正“挽回局势”的行动之一。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>更偏向“能做事的人”，在混乱中承担了稳定局势的功能，是队伍里解决问题的实干型角色。</li>
+</ul>
+
+<h4>2. 水无濑弦也</h4>
+<ul>
+<li><strong>性格特征</strong>：冷静、执行导向，具备较强的危机处理能力。</li>
+<li><strong>关键行为</strong>：</li>
+<li>奉命处理“狡”失窃危机，与香取会合后迅速进入调查节奏。</li>
+<li>成功取得【感染者之血】与关键情报，为后续推理提供核心证据。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在感染、封锁与恐慌并行的环境里仍能稳定推进调查，是典型的“沉着型调查者”。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>更接近组织体系内的执行者，但在面对研究所内部人际悲剧时，也被迫从“任务视角”转向“真相视角”。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 小万智枭 / 小万智博士</h4>
+<ul>
+<li><strong>作用</strong>：事件的起点与悲剧核心。</li>
+<li><strong>功能</strong>：</li>
+<li>作为求救电话的发出者，引导PC介入。</li>
+<li>其感染、濒死与失控状态，是整个事件升级的标志。</li>
+<li><strong>人物意义</strong>：</li>
+<li>既是受害者，也是被他人执念与组织利益裹挟的中心人物。</li>
+</ul>
+
+<h4>2. 矢车小蛇</h4>
+<ul>
+<li><strong>作用</strong>：情感型反派/悲剧推动者。</li>
+<li><strong>功能</strong>：</li>
+<li>因对小万智博士的病态爱意，推动并加剧了博士的感染与失控。</li>
+<li>在真相揭露后与PC彻底翻脸，进入战斗阶段。</li>
+<li><strong>人物意义</strong>：</li>
+<li>不是单纯“坏”，而是典型的“爱到扭曲、执念毁灭一切”的悲剧型角色。</li>
+</ul>
+
+<h4>3. 百足川毒绪</h4>
+<ul>
+<li><strong>作用</strong>：双面角色、组织执行者、战局变量。</li>
+<li><strong>功能</strong>：</li>
+<li>表面参与危机处理，实则受不明基金/势力指派，目标是回收“狡”。</li>
+<li>在战斗中以奥义强行扭转判定节奏，展现强烈的行动压迫感。</li>
+<li>结尾以来信形式留下余波。</li>
+<li><strong>人物意义</strong>：</li>
+<li>她是“组织的人”，但并非纯粹敌人；她更像是在使命、利益与现场混乱之间的冷峻执行者。</li>
+</ul>
+
+<h4>4. 比良坂机关</h4>
+<ul>
+<li><strong>作用</strong>：终局裁决者。</li>
+<li><strong>功能</strong>：</li>
+<li>启动“烧毁处分”，将事件从“可调查的事故”强行压成“必须抹消的灾害”。</li>
+<li><strong>人物意义</strong>：</li>
+<li>代表上层系统的冷酷逻辑：真相不重要，消除风险才重要。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：求援与集结</h3>
+<ul>
+<li>小万智枭打来求助电话，声称自己“已被毒杀”，请求香取鳞粼协助找出凶手。</li>
+<li>香取赶赴牛王生物研究所，与正在处理“狡”失窃问题的水无濑弦也汇合。</li>
+<li>二人确认研究所已进入高度危机状态，封锁与调查同时展开。</li>
+</ul>
+
+<h3>第二阶段：封锁中的调查</h3>
+<ul>
+<li>研究所气密室被开启，病毒容器遭破坏，小万智博士感染濒死。</li>
+<li>封锁启动，研究所内部人员开始恐慌。</li>
+<li>调查过程中，PC逐步挖出关键线索：</li>
+<li>百足川毒绪身份可疑，并非单纯工作人员。</li>
+<li>矢车小蛇与小万智博士之间存在异常亲密且扭曲的关系。</li>
+<li>水无濑取得【感染者之血】和关键情报，推动真相拼图成形。</li>
+<li>香取则完成【狡】解毒剂，暂时争取到处理窗口。</li>
+</ul>
+
+<h3>第三阶段：真相揭露与立场翻转</h3>
+<ul>
+<li>随着更多信息浮出水面，百足川、矢车与PC之间的立场彻底对立。</li>
+<li>百足川的真实任务曝光：她是被某不明势力指派来回收“狡”的特工。</li>
+<li>矢车则因对博士的病态爱意，成为导致事态恶化的重要推手。</li>
+<li>研究员与现场人员的情绪开始失控，研究所内部从“调查现场”变为“即将崩溃的灾难现场”。</li>
+</ul>
+
+<h3>第四阶段：爆炸与全面战斗</h3>
+<ul>
+<li>炸弹爆炸引发更大恐慌，局势失去控制。</li>
+<li>PC一边安抚研究员，一边继续追查，试图避免最坏结局。</li>
+<li>真相完全公开后，矢车、百足川与PC彻底翻脸，进入全面战斗。</li>
+<li>战斗中双方多次濒死拉扯，场面极为紧张；百足川甚至以奥义强行改变判定节奏，使局面一度倾斜。</li>
+</ul>
+
+<h3>第五阶段：烧毁处分与撤离</h3>
+<ul>
+<li>比良坂机关启动“烧毁处分”，强制终止现场一切活动。</li>
+<li>PC与残余人员被迫撤离，无法继续挽回研究所与证据。</li>
+<li>研究所最终化为废墟，大火吞没一切。</li>
+</ul>
+
+<h3>第六阶段：事后处理与余韵</h3>
+<ul>
+<li>官方将事故统一解释为“瓦斯爆炸”，完成掩盖。</li>
+<li>任务判定失败，但幸存者收到慰问信，百足川也寄来来信。</li>
+<li>这让事件虽然结束，却没有真正“终结”，而是留下日后再会的伏笔。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩 / 最搞笑 / 最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：真相揭露后，矢车、百足川与PC彻底翻脸，战斗全面爆发。这个节点把“调查剧”瞬间切换成“生死战”，戏剧张力非常强。</li>
+<li><strong>最意外</strong>：比良坂机关直接启动“烧毁处分”。这几乎是把所有努力强行按下终止键，形成强烈的无力感，也非常符合TRPG里“系统/组织高于个人”的冷酷感。</li>
+<li><strong>最有余味</strong>：任务失败后仍收到慰问信与百足川来信，给惨烈结局添上了“未完待续”的悬念。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>香取成功制作【狡】的解毒剂</strong>：这是全团最关键的正向成果之一，体现了玩家在绝境中的有效操作。</li>
+<li><strong>水无濑取得【感染者之血】与关键情报</strong>：属于典型的“调查成功推动剧情”的高价值检定。</li>
+<li><strong>百足川以奥义强行扭转判定节奏</strong>：这是战斗阶段最具压迫感的表现，能明显感受到对方作为“强敌/变量”的存在。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>开场电话“我已被毒杀、请帮我找凶手”</strong>：非常直接、非常有钩子，典型的强开局。</li>
+<li><strong>“瓦斯爆炸”官方定性</strong>：带着一种荒诞的黑色幽默，明明是封锁、感染、爆炸、战斗和烧毁处分，最后却被一句话抹平。</li>
+<li><strong>百足川来信</strong>：在废墟与失败之后出现的私人通信，既像道别，也像挑衅，更像留给玩家的下一章入口。</li>
+</ul>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像论坛复盘帖的风格</strong>，或</li>
+<li><strong>更像模组评测/GM点评的风格</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

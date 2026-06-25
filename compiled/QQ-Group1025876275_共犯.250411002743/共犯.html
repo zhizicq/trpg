@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>共犯 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>共犯</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《共犯》是一则以“处理尸体”为起点、却迅速滑向更深层阴谋与道德崩坏的现代悬疑模组。故事表面上是两名PC在深夜前往深山，试图掩埋尸体、销毁证据、抹平一起看似已经发生的杀人/事故现场；但随着翻查遗物、接到死者来电，以及刑警五十岚春斗的追查，事件逐渐显露出“死者并未真正彻底死亡”的异常。</p>
+<p>核心冲突因此分成两层：一层是<strong>现实层面的脱罪与善后</strong>，两名主角必须在警方逼近前掩盖现场；另一层则是<strong>真相层面的认知裂缝</strong>，尸体、手机来电与死者行程记录暗示这起事件远不只是单纯的杀人案，而是某种更隐秘、更不正常的“未完结事件”。标题“共犯”也点明了模组的伦理核心：主角并非单独犯罪，而是在互相掩护、互相配合中，主动成为彼此的同谋。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>夜色之下，伊东述理与宿木绯色带着一具尸体赶往深山，打算将其掩埋并彻底处理掉现场痕迹。途中，两人一边翻检死者遗物，一边通过多项检定确认了几个关键线索：死者随身物品中有手机、手账与名片夹；手账详细记载了死者当日行程，暗示其死前活动轨迹并不简单；更诡异的是，他们逐渐意识到死者似乎并未“彻底死亡”，案件背后还有尚未显形的秘密。就在两人试图稳住局面时，死者手机突然来电，刑警五十岚春斗由此介入，开始追问尸体与失联者的去向。伊东临场应变，以“刚和家人看电影”“之后会把手机交给派出所”等半真半假的说辞暂时敷衍过去。</p>
+<p>抵达夜神山后，两人继续执行掩埋与清理工作，尽力把一切做成“从未发生”。然而五十岚最终追查到现场，再次逼近并展开盘问。面对警方压力，伊东利用电子手段关闭定位、取消增援，宿木则与其默契配合，最终以霰弹枪枪托重创五十岚，宿木用《紧缚》将其压制制服。两人连同这位追查真相的刑警一起，把异常现场强行压回黑暗之中，维持住了表面上的“日常秩序”。故事在此收束：真相没有被揭露，罪行也没有被清算，主角们则在互为证人、互为帮凶的状态下，完成了“共犯”的最终确认。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局呈现为一种典型的“表面平静、内里腐烂”的收束方式：尸体被埋、痕迹被清、警方被暂时压制，夜神山恢复寂静。</p>
+<p>但这并不是解决，而是<strong>遮蔽</strong>。PC们通过协作完成了对现实的修补，也在精神上跨过了某条不可逆的线：从“参与善后”变成了“主动共谋”。五十岚的出现强化了“真相正在逼近”的紧张感，而他们的反应则将故事的伦理重心彻底推向灰色地带——为了自保、为了彼此、也可能为了某个尚未被说破的更大秘密，他们选择了沉默与暴力。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>伊东述理</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：冷静、反应快、擅长临场编造说辞，具有强烈的危机处理能力。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在死者手机突然来电、刑警追问时迅速编织谎言，表现出极强的应变能力。</li>
+<li>使用电子手段关闭定位、取消增援，说明他不仅会“说谎”，还会“操作系统”。</li>
+<li>在最终冲突中果断以霰弹枪枪托击倒五十岚，说明他不是被动逃避，而是愿意直接采取暴力措施。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>面对警方追查时的临场圆谎。</li>
+<li>用技术手段削弱警方支援，完成局势切断。</li>
+<li><strong>角色弧光</strong>：伊东从“试图处理问题的人”滑向“决定亲手解决问题的人”，其冷静表象下，是越来越明显的道德越界。</li>
+</ul>
+
+<h3><strong>宿木绯色</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：沉着、配合度高，但并非单纯从属；在关键时刻有明确的行动力与执行力。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与伊东共同翻查遗物，参与判断案件异常。</li>
+<li>在夜神山现场协助掩埋尸体、清理痕迹，体现强执行力。</li>
+<li>使用《紧缚》压制五十岚，展现出不只是“帮忙”，而是能在冲突中成为有效战力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>以技能控制刑警，配合伊东完成制服。</li>
+<li><strong>角色弧光</strong>：宿木的存在强化了“共犯关系”的对称性。他不是被动卷入，而是在关键节点上主动站队、主动出手，意味着他也已经默认或接受了这场越界行动的逻辑。</li>
+</ul>
+
+<h3><strong>五十岚春斗</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：敏锐、执着、具备刑警式的职业嗅觉。</li>
+<li><strong>关键行为</strong>：</li>
+<li>因死者手机来电而介入，推动剧情从“善后”转向“被追查”。</li>
+<li>赶到夜神山现场盘问，说明他并未轻易放弃对异常的怀疑。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为逼近真相的压力源，他的存在使PC们不得不暴露本性。</li>
+<li><strong>角色作用</strong>：五十岚是典型的“秩序代表”。他并不一定知道真相全部，但他的追查逼迫PC做出选择：坦白、逃跑，还是反击。最终被制服，也象征着秩序暂时败给了共谋。</li>
+</ul>
+
+<h3><strong>死者</strong></h3>
+<ul>
+<li><strong>角色作用</strong>：虽然未以直接行动驱动剧情，却是整起事件的中心诱因。</li>
+<li><strong>关键功能</strong>：</li>
+<li>手机、手账、名片夹构成线索链。</li>
+<li>手账记录行程，提供“死者生前行动轨迹”。</li>
+<li>“并未真正彻底死亡”的异常感，是模组悬疑性的关键来源。</li>
+<li><strong>象征意义</strong>：死者并非单纯的受害者，而像是某种未完成事件的残留核心，推动PC们从“处理尸体”走向“面对不安的真相”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 深夜出发：带着尸体前往深山</strong></h3>
+<p>故事从一场阴冷而急迫的夜行开始。伊东述理与宿木绯色驾车前往深山，目的明确：埋尸、灭证、让一切回到无人知晓的状态。</p>
+<p>这个开场奠定了模组的基调——不是“寻找真相”，而是“掩盖真相”。PC一开始就站在道德与法律的对立面，这使后续剧情天然带有压迫感与罪责感。</p>
+
+<h3><strong>2. 途中翻检遗物：线索浮现</strong></h3>
+<p>在前往山中的路上，两人翻查死者遗物，并通过第六感、忧郁、机械金弦、电子等检定获得关键线索：</p>
+<ul>
+<li>死者身上有手机、手账、名片夹；</li>
+<li>手账记录了死者当天的行动；</li>
+<li>尸体状态异常，似乎并未真正“彻底死亡”。</li>
+</ul>
+<p>这些信息让原本简单的“善后”行动变得复杂。PC开始意识到，自己处理的未必只是一个普通尸体，而可能牵涉到某种尚未终结的事件。</p>
+
+<h3><strong>3. 死者手机来电：五十岚介入</strong></h3>
+<p>正当两人试图维持镇定时，死者手机突然响起。电话另一端是刑警五十岚春斗，他开始就尸体与失联情况进行追问。</p>
+<p>伊东迅速启动应对策略，用“刚在和家人看电影”“之后会把手机交给派出所”之类的说法暂时拖延，勉强把局面按回可控范围。</p>
+<p>这一段的张力在于：真相并非被揭穿，而是被“临时压住”。这也体现出模组的核心玩法不是一次性爆雷，而是持续处于“险些暴露”的状态。</p>
+
+<h3><strong>4. 夜神山掩埋：共同完成第一层犯罪</strong></h3>
+<p>到达夜神山后，两人继续进行挖坑、埋尸、清理痕迹等动作。</p>
+<p>这不仅是物理意义上的处理现场，也是象征意义上的“把事情埋掉”。然而，随着前面获得的异常线索，埋尸行为不再只是简单的藏匿证据，而更像是在主动封印一段不愿面对的现实。</p>
+
+<h3><strong>5. 刑警追至现场：正面冲突爆发</strong></h3>
+<p>五十岚最终追到现场，对两人进行盘问，矛盾从“电话中的试探”升级为“面对面的对峙”。</p>
+<p>此时伊东利用电子手段关闭定位、取消增援，切断警方支援链条；宿木则与其形成默契配合，在局势失控前完成战术联动。</p>
+<p>这一段凸显了PC的“共犯”属性：他们不只是共享秘密，而是共享行动、共享风险、共享后果。</p>
+
+<h3><strong>6. 暴力收尾：制服五十岚，掩盖异常</strong></h3>
+<p>最终，伊东以霰弹枪枪托重创五十岚，宿木以《紧缚》压制对手，将其制服。</p>
+<p>这一结尾非常直接，也非常残酷：当真相即将逼近时，角色选择的不是解释，而是消灭阻碍。随后，连同现场异常一起被掩盖，事件被强行拉回表面的“日常”。</p>
+<p>这一幕也完成了模组标题的落点——他们不是偶然同谋，而是在共同承担、共同隐瞒、共同越界中，真正成为彼此的共犯。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>死者手机突然来电</strong>：这个桥段非常有悬疑感，也很有黑色幽默意味。明明是“死人相关案件”，手机却偏偏在关键时刻响起，瞬间把气氛从阴森拉到紧绷。</li>
+<li><strong>伊东临场圆谎</strong>：一句“刚在和家人看电影”这种过于日常的借口，在危险场景中反而显得异常真实，形成一种荒诞感。</li>
+<li><strong>最终联手制服刑警</strong>：从“偷埋尸体”一路升级到“打晕警察”，节奏推进相当猛，属于标准的“越描越黑，最后直接开打”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>第六感 / 忧郁 / 机械金弦 / 电子检定搜证</strong>：这组检定很好地把“翻尸体”写成了有层次的调查过程，不是单纯搜包，而是将人物感知与技术能力结合起来，制造出一种“异常就在手边”的感觉。</li>
+<li><strong>电子手段关闭定位、取消增援</strong>：这类检定或操作结果极具戏剧性，因为它直接改变了战场结构，让“警方支援”这一变量失效，显著提高了PC的成功率。</li>
+<li><strong>霰弹枪枪托重创五十岚</strong>：虽然不一定是高数值意义上的“大成功”，但在叙事上绝对是高光时刻，属于一击把局势从“审讯”打成“绑架/制服”的决定性动作。</li>
+<li><strong>《紧缚》压制对手</strong>：这一招不仅有效，而且画面感强，和前面的电子压制形成“技术+肉体”双重封锁，特别符合“共犯协作”的主题。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“刚在和家人看电影”</strong>：这类标准却又离谱的社会性借口，非常适合这种高压跑团场景，既荒诞又有真实感。</li>
+<li><strong>“之后会把手机交给派出所”</strong>：这是典型的“先稳住再说”的敷衍式说辞，带着强烈的临场社交伪装气息。</li>
+<li><strong>“把一切拉回表面的日常”</strong>：这一段尤其有味道。故事没有给出正义伸张，而是给出一种令人不安的安静，像是所有人都知道有问题，却默契地假装没发生。</li>
+</ul>
+
+<p>如果你愿意，我也可以继续把这份报告扩展成更像“跑团结团总结”的版本，包括：</p>
+<ol>
+<li><strong>主题分析</strong></li>
+<li><strong>模组结构与节奏评价</strong></li>
+<li><strong>PC关系变化图谱</strong></li>
+<li><strong>适合公开发表的精修文案版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

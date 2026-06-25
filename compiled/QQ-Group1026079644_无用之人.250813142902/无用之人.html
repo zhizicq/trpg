@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无用之人 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>无用之人</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《无用之人》是一则典型的“封闭空间异变”式恐怖模组：一场突如其来的暴雨与停电，将主角高野广困入一家早已废弃、却暗藏玄机的数码店“斯利普”。表面上，这里只是一个临时避雨点；实际上，它是被某种超自然规则操控的异化建筑，楼层之间存在明确而荒诞的禁忌，而“人”本身也在规则与污染中不断失真。故事的核心冲突，不在于单纯逃生，而在于：<strong>如何在不断崩坏的秩序中辨认“谁是人”、谁在被替代、以及如何活着离开这个会吞噬身份的地方。</strong></p>
+
+<h3>主线剧情概要</h3>
+<p>高野广在雨夜闯入废弃数码店“斯利普”避雨，意外遇见两名看似知情的住客：一个嘴碎警惕的小混混小鹿，以及一个气质诡异、身份不断摇摆的宅女松江。随着店内停电、积水倒灌，原本就阴森的环境迅速恶化，众人被迫转移到二楼。高野广在调查中逐渐发现，这座建筑并非普通废楼，而是被某种“替身”或“规则”所支配：一楼不能入水，二楼不能追逐，三楼不能攻击，且存在“其他禁止逃离”的诡异约束。小鹿先一步显露失控征兆，持刀袭击并引出不明液体；松江则在性别、身份与言行上不断出现割裂感，像是被附身、替换或人格覆盖。高野广虽多次凭借高难度检定捕捉危险征兆，却仍在混乱中遭液体灼伤并感染，最终在店长刻意隐藏的“荣誉室/秘密基地”中触及真相：这栋楼里真正可怕的并非某个单独怪物，而是一套持续吞噬人、复制人、取代人的机制。玩家在恐惧与误判中艰难前行，故事以“逃离”作为表层目标，以“辨识自我”作为深层主题收束。</p>
+
+<h3>结局与收尾</h3>
+<p>根据摘要可知，模组最终将谜底指向“替身规则”与“店长隐藏空间”的真相，高野广在确认楼内异常后完成了对场所本质的认知。结局收束并非完全来自战斗胜利，而更像是一种“生存性结案”：角色在污染、失踪风险和身份错乱的压迫下，勉强拼出真相并脱出。收尾重点落在“这栋楼究竟在替谁存在”——模组以一种阴冷的开放感结束，让人记住的不只是怪异事件，还有“无用之人”这一标题本身带来的残酷意味：当身份、能力、关系都可能被替代时，所谓“有用”与“无用”都成了可被规则任意改写的标签。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC：高野广</h3>
+<ul>
+<li><strong>性格特征</strong>：谨慎、观察力强、遇事会先判断环境；不是那种高调行动派，但在压力下能保持一定理性。</li>
+<li><strong>关键行为</strong>：</li>
+<li>雨夜选择进入废弃数码店避险，为事件开启提供合理切口。</li>
+<li>在众人混乱时持续进行侦查与灵感判断，是少数能不断拼出局势的人。</li>
+<li>以<strong>灵感极难成功</strong>察觉一楼将被洪水淹没，体现出强烈的危机直觉。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在环境即将失控前提前意识到洪水风险，帮助团队争取了转移时间。</li>
+<li>面对小鹿失控、松江异化时仍坚持摸索真相，没有被表面恐怖彻底带偏。</li>
+<li><strong>角色弧光</strong>：从一个被动避雨的普通人，逐渐变成“看穿异常规则的人”。他的成长不在于武力，而在于认知升级：他开始懂得，活下去靠的不是蛮干，而是读懂规则与异常。</li>
+</ul>
+
+<h3>PC/关键同伴：小鹿</h3>
+<ul>
+<li><strong>性格特征</strong>：嘴硬、警惕、带有小混混式的防御姿态，平时像是掌握信息的人，但内里情绪不稳。</li>
+<li><strong>关键行为</strong>：</li>
+<li>主动提醒高野广附近会有失踪案件，表现出“知情者”姿态。</li>
+<li>后期失控持刀，并被不明液体卷入，成为第一批明显异变/危险源。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>以一句“你一个人要小心点”制造了有效的悬疑感，也让其“知道得太多”。</li>
+<li><strong>人物意义</strong>：小鹿承担了“警示者”与“被吞噬者”的双重功能。他先抛出危险信号，再迅速沦为异常的一部分，强化了模组的无力感：即便是信息提供者，也未必能逃过规则。</li>
+</ul>
+
+<h3>关键同伴/NPC：松江</h3>
+<ul>
+<li><strong>性格特征</strong>：宅气、阴郁、话语与身份极不稳定，给人一种“这人不对劲”的持续违和感。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与小鹿一同提供规则信息，帮助玩家理解空间禁忌。</li>
+<li>身份与性别呈现反复摇摆，像是被附身、被替换或在不同人格间切换。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>其“似男似女”的不稳定状态成为全场最强异感来源之一。</li>
+<li><strong>人物意义</strong>：松江是“替身”主题的最佳载体。她/他不一定是怪物本体，但其存在方式本身就说明：这个空间已经在侵蚀人的身份边界。</li>
+</ul>
+
+<h3>重要NPC：店长</h3>
+<ul>
+<li><strong>作用</strong>：</li>
+<li>通过隐藏“荣誉室/秘密基地”这一空间，提示其对整栋楼的异常知情。</li>
+<li>作为“秩序背后的人”，很可能不是直接出手的怪物，而是与规则、装置或旧日秘密有深度关联。</li>
+<li><strong>剧情功能</strong>：店长是“幕后结构”的象征。他不一定始终在场，却让整起事件显得并非偶发，而是长期存在、被遮掩的系统性异常。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 雨夜误入：封闭空间的入口</h3>
+<p>高野广因大雨躲进废弃数码店“斯利普”，原以为只是临时避险，却在店内遇到小鹿与松江两名气质诡异的存在。两人似乎对周边的失踪事件有所了解，并隐晦提醒他不要掉以轻心。此阶段以环境铺陈和人物初遇为主，废墟店铺的荒凉感与对话中的不安为后续恐怖埋下伏笔。</p>
+
+<h3>2. 停电与积水：秩序开始崩坏</h3>
+<p>店内突发停电，紧接着洪水倒灌，原本就不稳定的空间迅速变成“活体陷阱”。高野广通过多次侦查、灵感与敏捷判断，意识到一楼即将被淹，众人被迫向二楼撤离。此处“空间危险”从背景噪音升级为直接威胁，模组开始进入规则恐怖阶段。</p>
+
+<h3>3. 规则显形：楼层禁忌被揭露</h3>
+<p>在二楼暂时喘息时，松江/小鹿等人逐渐说出这栋楼的异常规则：一楼禁止入水，二楼禁止追逐，三楼禁止攻击，其他禁止逃离。规则一经提出，整个模组的玩法逻辑随之明确——玩家不再只是“找出口”，而是在读懂一套会惩罚错误行为的空间法则。此处也是从传统惊悚转向“规则怪谈”风格的关键节点。</p>
+
+<h3>4. 异常加深：身份错乱与暴力失控</h3>
+<p>随着调查推进，小鹿开始持刀失控，不明液体袭人，场面迅速失序；高野广被液体灼伤并染病，进一步证明“接触本身就是代价”。与此同时，松江的性别、身份与存在状态不断反复，让人无法确认其真实性。两者共同将“人是否还是原来的那个人”这一主题推到台前。</p>
+
+<h3>5. 真相逼近：荣誉室与秘密基地</h3>
+<p>在混乱中，高野广最终发现店长隐藏的“荣誉室/秘密基地”，这成为整栋楼异常性质的实体证据。它说明店铺并非单纯的鬼屋，而是有人长期维持、掩盖并利用规则的场所。此处开始，剧情重心从“应对异常”转向“理解异常的来源”。</p>
+
+<h3>6. 规则背后的替身真相</h3>
+<p>结合前述现象，玩家逐步拼出“替身”机制：楼中存在某种可替代、可复制、可侵蚀人的力量，导致身份、性别、行为乃至人格都可能发生错位。高野广虽未必彻底击破这一机制，但已经在认知上完成“识破骗局”的关键一步。故事最终以对真相的触及和脱离危险作为收束，保留一层挥之不去的阴影。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：高野广以极难灵感成功预感到一楼即将被洪水淹没，这种“在崩坏前看见崩坏”的瞬间非常有恐怖片味道。</li>
+<li><strong>最意外</strong>：松江身份反复、似男似女的状态，让原本“避雨小屋”瞬间变成身份悬疑剧现场。</li>
+<li><strong>最搞笑/最微妙</strong>：小鹿一本正经地提醒“附近一段时间就会出现失踪案件，你一个人要小心点”，这种像黑帮前辈又像恐怖片路人甲的台词，既有压迫感又带点荒诞。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>灵感极难成功</strong>：高野广提前察觉洪水来临，属于典型的“救命式大成功”，直接改变团队风险判断。</li>
+<li><strong>多次侦查/敏捷/体质检定的成功与失败</strong>：这些检定共同构成了模组的节奏感——成功时让玩家获得线索，失败时让恐怖感和代价同步上升。</li>
+<li><strong>体质与感染相关结果</strong>：高野广被不明液体灼伤并染病，说明这个模组并不只是“看见怪物”，而是会让怪异直接污染角色状态。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>小混混的警告</strong>：“附近一段时间就会出现失踪案件，你一个人要小心点。”</li>
+<li>这句台词非常像恐怖片里“明知有鬼还硬要说”的标志性句子，简短但有效，瞬间把场子拉进悬疑氛围。</li>
+<li><strong>楼层规则宣言</strong>：“一楼禁止入水，二楼禁止追逐，三楼禁止攻击，其他禁止逃离。”</li>
+<li>这几乎是整场模组的核心魅力之一：规则简单、冷酷、且带有强烈的怪谈仪式感，既让人发笑又让人发毛。</li>
+<li><strong>店长的荣誉室/秘密基地</strong></li>
+<li>这种“看起来像儿童游乐式命名，实际上却是恐怖真相入口”的反差，本身就很有黑色幽默意味。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份报告扩展成：</p>
+<ol>
+<li><strong>GM向复盘版</strong>（包含节奏、信息投放、恐怖设计分析）</li>
+<li><strong>角色弧光版</strong>（每个角色的动机、转变、象征意义）</li>
+<li><strong>适合发表的精修版剧透总结</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

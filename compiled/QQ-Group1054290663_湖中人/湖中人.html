@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湖中人 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>湖中人</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《湖中人》是一则以<strong>失踪案、湖畔异象与邪祭遗迹</strong>为核心的都市惊悚/克系向模组。表面上，它是一起“朋友失踪、四处找人”的寻常事件；但随着调查推进，故事逐渐揭示出：湖畔公园并不只是普通的失踪现场，而是某种<strong>隐藏在城市边缘的献祭地点</strong>，连环失踪案与湖中的异物、黑色石柱、尸体堆积等诡异现象彼此勾连。</p>
+<p>本模组的主要矛盾有两层：</p>
+<ol>
+<li><strong>星龙马对好友海野风的寻找</strong>，推动了剧情的表层行动；</li>
+<li><strong>湖中邪祟与幕后操纵者的真相</strong>，构成了深层恐怖与危机。</li>
+</ol>
+<p>玩家在追查“人去哪了”的过程中，最终对上的是“湖里有什么、是谁在喂养它”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>星龙马为寻找失踪的好友海野风，开始在黑帮酒吧、便利店等地打探消息，却只零散拼出“海野风可能和附近连续失踪案有关，并曾在湖畔公园出现”这一危险线索。调查途中，他意外接触到被绑架后逃出的少女雪原伊莱。起初星龙马以强硬、甚至近乎威胁的方式逼问她情报，逼得雪原吐露自己曾被带到湖边、并目睹幕后主使被杀，这让“湖畔公园”从普通线索升级为诡异事件中心。随后，神情友善却处处可疑的送货员江口明智进入视野，进一步让事件显得扑朔迷离。</p>
+<p>在逼近真相的过程中，星龙马强行闯入公园，与门卫冲突，进入后又遭遇空间错乱与怪声干扰，像是被某种力量反复引导、驱逐。最终他与明智正面交锋，确认海野风确实曾被带到湖边。击败明智后，湖中异物骤然现身，将星龙马拖入水下；在濒死的湖底，他看见环绕尸体的黑色石柱，判断那是邪祭核心。凭借关键一击，他用网球拍击碎石柱，成功削弱怪物，并确认怪物并非海野风本人，而是一名中年男子。最终，他在湖边水管坑中找回昏迷的海野风，众人获救送医，次日海野风一家前来致谢，事件以“人回来了、灾厄暂歇”的形式收束。</p>
+
+<h3>结局与收尾</h3>
+<ul>
+<li><strong>海野风成功获救</strong>，并无生命危险地被找回。</li>
+<li><strong>湖中邪祟被重创</strong>，邪祭核心黑色石柱被击碎，危机解除。</li>
+<li><strong>雪原伊莱作为证言者</strong>，提供了关键的绑架与目击信息。</li>
+<li><strong>海野风一家向星龙马致谢</strong>，形成情感上的闭环：这不只是一次调查，也是一次“把朋友带回家”的完成。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>1. 星龙马（PC）</h3>
+<p><strong>性格特征</strong>：行动派、强硬、执着，带有明显的“先做再说”倾向。为了找回好友，他愿意冒险、追问、冲撞权威，甚至不惜使用恐吓手段。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>主动前往黑帮酒吧、便利店等场所进行调查，体现出强烈的目标导向。</li>
+<li>对雪原伊莱进行恐吓逼问，表现出压迫性与不择手段的一面。</li>
+<li>为进入公园与门卫发生冲突，说明他不是被动调查者，而是会硬闯局面的人。</li>
+<li>在湖底濒死时仍能抓住核心、击碎石柱，完成关键逆转。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li><strong>以武器击碎邪祭核心</strong>：这是全剧最“英雄式”的瞬间，直接决定了局势反转。</li>
+<li><strong>在绝境中确认怪物不是海野风</strong>：既避免了误判，也给后续救援提供了方向。</li>
+</ul>
+<p><strong>人物弧光</strong>：从“粗暴找人”到“在恐怖真相中完成救援”，星龙马的成长不在于变得温柔，而在于他将自己的强硬转化为<strong>对抗灾厄的有效力量</strong>。</p>
+
+<h3>2. 雪原伊莱（重要NPC/准证人）</h3>
+<p><strong>性格特征</strong>：受惊、警惕、创伤明显，但并非完全失去表达能力。她的反应常带有“活下来的人”的紧绷感。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>被星龙马逼问后，吐露自己曾被绑走并从湖边逃出。</li>
+<li>提供“湖畔公园湖边”这一关键坐标。</li>
+<li>目击“幕后主使被杀”，使事件从单纯失踪升级为更大规模的阴谋/献祭感。</li>
+</ul>
+<p><strong>作用</strong>：她是<strong>信息转折点</strong>。没有她，剧情可能只停留在“失踪案”层面；她把故事引向“湖里有东西、湖边有秘密”的恐怖核心。</p>
+<p><strong>印象</strong>：她是典型“被事件伤害过的幸存者”，同时也因被强硬盘问而让气氛更紧张。</p>
+
+<h3>3. 江口明智（重要NPC）</h3>
+<p><strong>性格特征</strong>：表面友善、行为可疑、信息感很强，属于“越客气越危险”的类型。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>以送货员身份登场，降低他人警戒。</li>
+<li>与星龙马发生正面对峙，成为推进真相的阻碍与试金石。</li>
+<li>其存在确认海野风确实被带来过湖边。</li>
+</ul>
+<p><strong>作用</strong>：他是<strong>人类层面的迷雾</strong>。相比湖中怪物，明智让事件先呈现出“有幕后帮凶”的社会犯罪面貌，之后才与超自然真相叠合。</p>
+<p><strong>印象</strong>：是那种“看起来很会说话，但每句话都像在藏东西”的NPC。</p>
+
+<h3>4. 海野风（失踪友人）</h3>
+<p><strong>性格特征</strong>：从摘要中无法完整展开，但作为被寻找对象，其存在感极强。</p>
+<p><strong>关键作用</strong>：</p>
+<ul>
+<li>是故事开端的动机核心。</li>
+<li>其失踪将星龙马引入湖畔公园与连续失踪案。</li>
+<li>最终被确认存活并找回，构成情感上的终点。</li>
+</ul>
+<p><strong>人物功能</strong>：不是“戏份最多的人”，却是<strong>整场模组的情感锚点</strong>。所有调查行动都围绕“他还在不在、在哪里”展开。</p>
+
+<h3>5. 门卫、黑帮酒吧相关人员</h3>
+<p><strong>作用</strong>：作为“日常社会系统”的边界人物，他们让调查具备真实感，也为星龙马的强行突破提供阻力。门卫冲突尤其强调了“正常世界”与“异界危险”之间的过渡门槛。</p>
+
+<h3>6. 湖中异物 / 邪祟本体</h3>
+<p><strong>作用</strong>：真正的最终威胁。它不是单一具象的怪，而是“尸体、石柱、祭仪、失踪”共同构成的恐怖实体。</p>
+<p><strong>意义</strong>：它把所有零散线索串成完整闭环，是“湖中人”之名的最终答案。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：从寻友到入局</h3>
+<p>星龙马为了寻找失踪的好友海野风，先后前往黑帮酒吧与便利店调查。起初他在酒吧中的侦查失败，没能立刻发现关键线索，但仍从周边人物的只言片语中听闻：海野风可能卷入了附近连续失踪案，并曾在湖畔公园出现。</p>
+<p>随后，星龙马意外遇到曾遭绑架、逃出后的少女雪原伊莱。她的状态明显不安，面对星龙马的追问起初保持警惕，但在恐吓之下被迫说出自己曾被带到湖边，并在那里见过幕后主使被杀。与此同时，另一个神秘角色江口明智也进入调查视野：他态度友善却莫测，像是在主动接近星龙马，又像在确认对方知道了多少。至此，失踪案不再只是寻人事件，而是逐渐显露出“湖边有秘密、且有人在掩盖”的危险轮廓。</p>
+
+<h3>第2章：公园深处的真相</h3>
+<p>星龙马继续追查，逐步确认线索都指向湖畔公园。他为进入公园甚至与门卫起冲突，表现出极强的行动意志。进入公园后，诡异声响、空间迷障等异常现象不断干扰他的方向感，仿佛整片区域都在阻止入侵者接近真相。</p>
+<p>随后，星龙马与江口明智正面冲突，最终确认海野风确实曾被带到湖边。击败明智后，湖中异物突然现身，将星龙马拖入水中。濒死之际，他在湖底看到大量尸体环绕着一根黑色石柱，迅速判断这就是邪祭核心。关键时刻，他用网球拍击碎石柱，削弱了怪物力量，并从怪物形态上确认海野风并未被同化，而是另有一名中年男子。最终，他在湖边的水管坑中找回昏迷的海野风，完成营救。事件结束后，两人被送医，次日海野风一家郑重向星龙马致谢，整段恐怖事件终于告一段落。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：星龙马在湖底濒死状态下仍成功击碎黑色石柱，直接扭转战局。</li>
+<li><strong>最意外</strong>：怪物并非海野风本体，而是<strong>中年男子</strong>，让“朋友变怪物”的猜测被推翻，真相更偏向邪祭与替身/吞噬结构。</li>
+<li><strong>最有压迫感</strong>：湖底看到尸体环绕石柱的瞬间，基本把模组的恐怖核心完全立住。</li>
+<li><strong>最搞笑/最有反差</strong>：用<strong>网球拍</strong>打碎邪祭核心，这种极生活化的武器在极端恐怖场景中异常有戏剧张力。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>侦查检定失败：D100=93/80</strong></li>
+<li>在酒吧初次调查未能发现关键细节，制造了“开局扑空”的真实感，也让后续线索更显珍贵。</li>
+<li><strong>恐吓检定成功：D100=41/80</strong></li>
+<li>对雪原伊莱的压迫式问询直接逼出“湖畔公园湖边”这一关键坐标，是推动剧情的决定性成功。</li>
+<li><strong>关键成功：击碎黑色石柱</strong></li>
+<li>虽然摘要未给出具体数值，但从结果看，这是全局最重要的成功检定/行动。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>雪原伊莱被逼问后吐露真相</strong>：从“我不想说”到“我不得不说”的转变，本身就很有戏。</li>
+<li><strong>门卫冲突</strong>：典型的“调查员与场地管理者”拉扯桥段，既现实又滑稽。</li>
+<li><strong>江口明智的友善与可疑并存</strong>：这种“礼貌得过分”的角色最容易让桌面气氛变得微妙。</li>
+<li><strong>次日海野风一家致谢</strong>：在前面一整段压抑后，这个收尾极大缓冲了恐怖余韵，也让冒险有了温度。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式跑团复盘文的版本</strong>，或</li>
+<li><strong>更偏戏剧化/小说化的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

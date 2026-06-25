@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>猛毒，我也喜欢吃 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>猛毒，我也喜欢吃</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组以“牛王生物研究所”内的病毒失窃与扩散危机为核心，表面上是一次常规的紧急求援，实则牵扯到研究所内部失控、感染者暴走、外部势力潜入，以及更深层的情报战与善后掩盖。</p>
+<p>核心冲突主要有三层：</p>
+
+<ol>
+<li><strong>生物灾害层面</strong>：名为“狡（Tricksy）”的病毒/毒物容器失窃并扩散，造成研究所封锁、感染者失控、污染风险升级。</li>
+<li><strong>战术对抗层面</strong>：PC需要在有限时间内救人、收集材料、制作解毒剂、压制暴走敌人，同时阻止研究所被进一步破坏。</li>
+<li><strong>情报与立场层面</strong>：百足川毒绪、小蛇等角色背后牵连不明基金与潜入行动，事件不仅是“处理事故”，更是一次围绕病毒、身份与真相的隐秘较量。</li>
+</ol>
+
+<hr>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>莲斗春人与须古星星日月接到牛王生物研究所的紧急求援后赶往现场，发现名为“狡（Tricksy）”的病毒容器失窃并已引发一级警戒。所长小万智枭在濒死状态下公开了认证密码与部分内幕，令两人得以迅速进入核心区域展开调查。随着他们一边搜集制作解毒剂所需的材料，一边逐步拼出事件真相，须古星还成功取得“狡”的配方，反向掌握了关键情报链。与此同时，研究所内另一条暗线逐渐浮现：百足川毒绪的秘密身份被揭穿，其实她是受不明基金操控潜入的特工，而在感染失控后彻底暴走，直接引发大规模混战。</p>
+
+<p>在混乱的对抗中，春人与须古星分工明确：一人负责疏散人员、稳住现场，一人负责压制敌人与推进情报，最终从感染者身上取得“血”与“狡”并成功调制出解毒剂，暂时遏止了局势恶化。随后，他们继续追查并公开气密室中的炸弹与污染风险，及时拆除隐患，阻止研究所遭到不可逆破坏。接着，百足川、小蛇与两名PC展开多轮忍法交锋，毒雾、麻痹、诅咒、忘却等效果层层叠加，战局一度极其混乱。所幸两位PC不断用情感修正彼此状态，在精神与战术上互相支撑。最终，须古星通过女忍术与反情报手段击破矢车小蛇，迫使对方投降；春人虽在激战中重伤退场，但研究所得以保全，事件也由比良坂部队接手并被官方压下，危机在高压与沉默中落幕。</p>
+
+<hr>
+
+<h3><strong>结局与收尾</strong></h3>
+<ul>
+<li><strong>研究所未被烧毁</strong>，污染与爆炸风险被及时处理。</li>
+<li><strong>解毒剂成功制作</strong>，感染扩散被暂时稳定。</li>
+<li><strong>百足川与小蛇的威胁被压制</strong>，局势由比良坂部队接管。</li>
+<li><strong>官方压下事件真相</strong>，对外维持低调处理。</li>
+<li><strong>春人重伤脱落</strong>，但整体任务达成，形成“胜利但代价不低”的收尾。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>莲斗春人</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：沉稳、可靠、偏行动派，危机中更擅长承担“把事情撑住”的角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在研究所混乱中负责疏散与现场控制。</li>
+<li>与须古星形成稳定分工，保证救援与战斗同步推进。</li>
+<li>在多轮忍法与精神污染中坚持到最后，属于团队的“抗压底盘”。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在混战中稳住研究所秩序，避免局面进一步失控。</li>
+<li>即使重伤也没有让战线崩盘，体现出极强的任务导向与耐久力。</li>
+<li><strong>角色弧光</strong>：春人更像“把团队从灾难里往前推的人”，他的价值不在于单次爆发，而在于持续支撑与落地执行。</li>
+</ul>
+
+<h3><strong>须古星星日月</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：聪明、敏锐、行动果断，兼具情报嗅觉与战斗机变。</li>
+<li><strong>关键行为</strong>：</li>
+<li>成功取得“狡”的配方，抢先掌握关键资料。</li>
+<li>持续推进情报链，查明百足川身份与不明基金的关联。</li>
+<li>在多轮对抗中运用女忍术与信息优势反制敌人。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>公开病毒秘密，逼迫矢车小蛇投降。</li>
+<li>用情报战打穿对手心理防线，体现“不是只会打架”的战斗风格。</li>
+<li><strong>角色弧光</strong>：须古星是典型的“脑力与技艺双修”型角色，她不仅在战斗中表现出色，更能通过信息与认知优势扭转战局，是推动剧情真相浮出水面的核心人物。</li>
+</ul>
+
+<hr>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+
+<h4><strong>小万智枭</strong></h4>
+<ul>
+<li>研究所所长，开场即濒死感染。</li>
+<li>作用：提供认证密码、公开部分真相，成为PC进入核心区域的“钥匙型NPC”。</li>
+<li>功能上类似“倒下的权威者”，让事件正式从求援转入调查与收束阶段。</li>
+</ul>
+
+<h4><strong>百足川毒绪</strong></h4>
+<ul>
+<li>表面上的研究所相关人员，实为不明基金潜入的特工。</li>
+<li>作用：关键反转角色，推动混战升级。</li>
+<li>她的失控让事件从“事故处理”转化为“敌我不明的灾害战”。</li>
+</ul>
+
+<h4><strong>矢车小蛇</strong></h4>
+<ul>
+<li>与百足川、小万智枭及PC对峙的重要敌对角色。</li>
+<li>作用：后段主要对手，承接忍法战斗与情报对抗。</li>
+<li>最终在须古星的反制下投降，承担“被击穿的对立面”功能。</li>
+</ul>
+
+<h4><strong>比良坂部队</strong></h4>
+<ul>
+<li>事件后的接管力量。</li>
+<li>作用：将危机从PC主导阶段过渡到官方回收阶段，完成模组收尾。</li>
+<li>他们的出现意味着“战斗结束，善后开始”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：紧急求援与进入研究所</strong></h3>
+<p>莲斗春人与须古星星日月接到牛王生物研究所求援，赶赴现场后得知“狡（Tricksy）”病毒容器失窃，研究所已进入一级警戒。所长小万智枭感染濒死，但仍将认证密码与部分内幕公开给两人，帮助他们进入关键区域。此时模组正式建立起“封锁、感染、失窃、调查”四重压力。</p>
+
+<h3><strong>第二阶段：调查、取材与解毒剂制作</strong></h3>
+<p>两人开始在研究所内一边调查一边搜集解毒剂所需材料。须古星成功取得“狡”的配方，推动事件从“知道有问题”进入“知道怎么解决”的阶段。随着材料逐步齐备，他们从感染者身上取得血液与“狡”本体/样本，最终调制出解毒剂，暂时稳住感染扩散。</p>
+
+<h3><strong>第三阶段：百足川身份揭露与暴走混战</strong></h3>
+<p>随着调查深入，百足川毒绪的秘密被揭穿：她其实是不明基金潜入的特工，并因感染失控而暴走闯入。研究所内部爆发混战，春人与须古星分别承担疏散、压制和支援工作，在混乱中坚持推进任务。这里的重点不只是打赢，而是“在场面彻底乱掉之前把关键问题解决”。</p>
+
+<h3><strong>第四阶段：污染隐患排除与气密室炸弹拆除</strong></h3>
+<p>在继续追查过程中，两人公开了气密室中的炸弹与污染风险，及时拆除装置，清除了场地隐患。这个阶段体现出模组的第二层核心：危机不是只靠打倒敌人结束，还要处理环境中的结构性危险。</p>
+
+<h3><strong>第五阶段：忍法交锋与情报反制</strong></h3>
+<p>百足川、小蛇与PC展开多轮交锋，战场被“毒炉”“恶血结界”等忍法搅得异常混乱，麻痹、忘却、诅咒等效果不断叠加。春人与须古星则多次通过情感修正互相支援，维持行动稳定。最终，须古星用女忍术与情报反制矢车小蛇，公开病毒秘密，迫使其投降。</p>
+
+<h3><strong>第六阶段：收束、接管与压下真相</strong></h3>
+<p>春人在战斗中重伤脱落，但事件整体仍由比良坂部队接管收尾。研究所得以保全，没有被烧毁，官方也将此次危机压下。模组在高压对抗后进入相对平稳的善后阶段，以“真相未被公开，但灾难被阻止”的方式结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：须古星用情报与忍术反制矢车小蛇，属于“不是靠蛮力，而是靠掌握真相赢下对局”的高光。</li>
+<li><strong>最意外</strong>：百足川毒绪竟然是潜入特工，而且还是感染失控后暴走，直接把“内部事故”升级成“间谍危机”。</li>
+<li><strong>最搞笑/荒诞感最强</strong>：一边是病毒失窃与濒死所长，一边是“毒炉”“恶血结界”这种忍法名词狂轰滥炸，整体气质非常混乱但也极具黑色喜感。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>须古星成功取得“狡”配方</strong>：这类情报型大成功非常关键，几乎直接决定后续解毒与反制的可行性。</li>
+<li><strong>春人多次在重压下稳定场面</strong>：虽然未必是单点爆发的高光，但属于关键时刻不掉链子的“持续性成功”。</li>
+<li><strong>若从叙事效果看</strong>，百足川的暴走与感染失控本身就像一次“剧情级大失败”，把所有局势都推向不可控。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>小万智枭濒死仍公开密码与内幕</strong>：这种“临终交代权限”的桥段很有灾难片味道。</li>
+<li><strong>春人与须古星的感情修正支援</strong>：在毒雾、麻痹、诅咒交织中还能靠彼此“拉回来”，带出一种荒诞中带热血的默契感。</li>
+<li><strong>“狡（Tricksy）”本身的命名感</strong>：中文摘要里保留了英文名与对应意象，给人一种既危险又狡猾的病毒设定印象，很贴合模组标题的“猛毒，我也喜欢吃”这种反差风格。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>更像正式模组复盘文档的版本</strong></li>
+<li><strong>更偏故事讲述、适合发帖的版本</strong></li>
+<li><strong>加入“主题提炼 / 剧本结构 / GM运作分析”的进阶版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

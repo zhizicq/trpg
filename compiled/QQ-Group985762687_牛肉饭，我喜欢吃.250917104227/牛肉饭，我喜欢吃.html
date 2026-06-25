@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>牛肉饭，我喜欢吃 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>牛肉饭，我喜欢吃</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《牛肉饭，我喜欢吃》表面上是一段“便利店/餐饮店打工”式的日常夜班故事，实则包裹着典型的都市怪谈与恶魔契约题材。舞台是24小时营业的牛肉饭店【肉林·陵园前店】，这里以“高薪、福利、轻松工作”为诱饵招募员工，但入职后的规则却极其诡异——最核心的一条便是“上班不能出门”。随着夜班进行，玩家逐步发现这家店并不只是“怪”，而是被某种超自然存在操控：店长利用合同束缚员工，店内客人与后厨空间也不断显露出非人化、血腥化、邪教化的异常。</p>
+
+<p>故事的核心矛盾，是<strong>打工者与恶魔契约体系之间的对抗</strong>。玩家一方面要维持“正常营业”，应付源源不断的怪客与离谱订单；另一方面又必须调查店铺内部的异常，寻找逃离合同与打破规则的方法。这个模组的精髓在于：它将“职场劳动”“夜班压迫”“绩效压力”与“怪谈恐怖”巧妙叠合，让玩家一边上班一边破局，形成强烈的荒诞感。</p>
+
+<h3>主线剧情概要</h3>
+<p>茉莉院悦也入职【肉林·陵园前店】，与资深店员宇津木直人组成夜班搭档。入职之初便被要求签下“上班不能出门”的试用期合同，令人隐隐不安。夜班开始后，店里陆续迎来一批行为诡异的顾客：有疑似非人的女性、有装醉等人的男子，还有之后持续搅动气氛的纸片女人与危险情侣。表面上，两人仍需按“优质服务”完成牛肉饭店的经营流程；而在这一过程中，悦也凭借冷静与应变，甚至用【化学】替代【烹饪】成功做出生鸡蛋，屡屡获得高评价与奖金，成为店内营业的稳定器。与之相对，直人在调查与目击中不断遭遇精神冲击：他靠【效率】大成功进入冷库，意外发现隐藏的第二冷冻室，里面堆满肉块与人头，所谓“秘密佐料”竟是可怕的谜之熏肉；随后又因“吉冈”相关事件、恐怖场景与持续怪异线索而连连判定失败，精神状态迅速恶化，陷入狂气。随着情侣争执升级为持刀杀人，店长却若无其事地收拾尸体，真相终于完全摊开：这家牛肉饭店本质上是恶魔经营的陷阱，通过高薪与契约诱骗打工者。最终，悦也与直人联手烧毁合同、击败店长，逃离这间吃人的职场地狱，成功辞职下班，并在经历共同危机后互留联系方式，关系也因此更进一步。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是典型的“打穿黑心职场并安全脱身”的胜利式收束。两位PC不仅活着离开了店铺，还通过销毁契约从根本上终结了店长的控制。与其说是“辞职”，不如说是完成了一场对恶魔劳动制度的反击。收尾上并没有走纯粹恐怖路线，而是落回到人情味和余韵：共同经历生死与诡异夜班后，悦也和直人互相留下联系方式，暗示他们的关系从普通同事上升为可继续延伸的羁绊。这一结尾很好地平衡了惊悚、荒诞与轻松感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 茉莉院悦也</h4>
+<ul>
+<li><strong>性格特征</strong>：适应力极强、务实、冷静，带点“既来之则安之”的打工人精神。面对怪异场面并非第一时间崩溃，而是优先处理眼前业务。</li>
+<li><strong>关键行为</strong>：</li>
+<li>入职后迅速进入状态，接受“不能出门”的离谱劳动条款。</li>
+<li>在做餐过程中用【化学】替代【烹饪】成功完成生鸡蛋，体现出极强的临场应变与规则利用能力。</li>
+<li>多次在怪谈与恐怖情境中维持营业，不让店铺秩序彻底失控。</li>
+<li><strong>高光时刻</strong>：</li>
+<li><strong>以非传统技能完成餐点并拿下高评价</strong>：这是最能体现其“理性打工人”气质的场面，也给模组注入了强烈喜剧感。</li>
+<li><strong>最终与直人共同销毁合同、击败店长</strong>：从“被迫工作”到“主动反抗”，完成角色立场上的收束。</li>
+</ul>
+
+<h4>2. 宇津木直人</h4>
+<ul>
+<li><strong>性格特征</strong>：经验丰富但神经逐渐被压垮，属于“明知不对劲仍要硬着头皮查下去”的类型。相比悦也更偏向调查、探索，但也因此更容易直面恐怖真相。</li>
+<li><strong>关键行为</strong>：</li>
+<li>作为资深店员带领悦也熟悉夜班，但同时也隐约知道店里有问题。</li>
+<li>通过【效率】大成功进入冷库并发现第二冷冻室，推动剧情核心真相曝光。</li>
+<li>在一连串恐怖与“吉冈”相关事件中连续失败，精神状态迅速下滑，陷入狂气。</li>
+<li><strong>高光时刻</strong>：</li>
+<li><strong>发现隐藏冷冻室</strong>：这是全模组最关键的信息点之一，直人以调查能力打开了“这家店不是普通怪异，而是系统性邪恶”的证据链。</li>
+<li><strong>在崩溃边缘仍参与最终反抗</strong>：即便狂气累积，仍完成了关键行动，体现出角色在压力下的悲剧性与韧性。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 店长</h4>
+<ul>
+<li><strong>作用</strong>：核心反派，恶魔契约的执行者与店铺怪谈的源头。</li>
+<li><strong>特征</strong>：表面平静、服务业式圆滑，实则冷酷而从容地操控尸体与员工命运。</li>
+<li><strong>剧情意义</strong>：他把“高薪福利”变成诱捕器，代表压榨型职场的终极怪物化版本。</li>
+<li><strong>高光表现</strong>：在情侣持刀杀人后若无其事处理尸体，这一幕直接把“店长不是普通人”的真相钉死。</li>
+</ul>
+
+<h4>2. 疑似非人的女性顾客</h4>
+<ul>
+<li><strong>作用</strong>：开场即建立模组的异常氛围。</li>
+<li><strong>意义</strong>：用于告诉玩家，这家店里“客人”本身就可能不属于正常人类范畴。</li>
+</ul>
+
+<h4>3. 装醉等人的男子</h4>
+<ul>
+<li><strong>作用</strong>：提供过渡线索，引导玩家继续深入探索异常。</li>
+<li><strong>意义</strong>：属于典型的怪谈“引路人”，通过异常言行暗示更深层危机。</li>
+</ul>
+
+<h4>4. 纸片女人</h4>
+<ul>
+<li><strong>作用</strong>：强化恐怖与超现实感。</li>
+<li><strong>意义</strong>：以视觉层面的怪异制造压迫感，也可能成为后续事件的象征性存在。</li>
+</ul>
+
+<h4>5. 危险情侣</h4>
+<ul>
+<li><strong>作用</strong>：将冲突从“诡异”推向“暴力失控”。</li>
+<li><strong>意义</strong>：情侣争执升级到持刀杀人，是剧情从怪谈转入血腥真相的重要转折点。</li>
+</ul>
+
+<h4>6. “吉冈”相关事件中的关联人物/线索</h4>
+<ul>
+<li><strong>作用</strong>：作为直人精神崩坏的重要触发器。</li>
+<li><strong>意义</strong>：虽然摘要中细节不多，但可确定其是导致连续判定失败与狂气堆积的关键心理压力源。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 入职与契约签订</h3>
+<p>茉莉院悦也进入24小时营业的牛肉饭店【肉林·陵园前店】，与资深店员宇津木直人搭档。入职时即签下“上班不能出门”的试用期合同，这条看似为了工作便利、实则限制人身自由的规定，为整部模组埋下恐怖伏笔。玩家初步接触到一家“福利很好但规矩怪得离谱”的店。</p>
+
+<h3>2. 夜班开始，第一批怪客登场</h3>
+<p>开工后，两人接待了疑似非人的女性顾客。这个场景迅速将“普通打工”切换为“怪谈服务业”。悦也在处理餐点时展现惊人临场发挥，用【化学】替代【烹饪】成功做出生鸡蛋，并因此获得高评价与奖金，说明这家店的评价体系本身也可能荒诞而扭曲。</p>
+
+<h3>3. 线索推进：装醉男子与店内异常</h3>
+<p>随后出现装醉等人的男子，引导玩家接触更深层的怪谈线索。此阶段剧情的重点不在直接冲突，而在于“信息逐渐变脏”——看似零散的客人行为，开始向同一个不祥核心收束。</p>
+
+<h3>4. 冷库调查与隐藏真相</h3>
+<p>直人以【效率】大成功进入冷库，发现第二冷冻室。这里堆满肉块与人头，现实与怪谈的边界彻底崩塌。所谓“秘密佐料”实际上是谜之熏肉，这一设定既荒诞又血腥，把餐饮元素与恐怖元素强行焊死在一起，完成模组最震撼的一次真相揭露。</p>
+
+<h3>5. 恐怖持续升级与直人狂气累积</h3>
+<p>在纸片女人、危险情侣等后续事件中，恐怖感没有下降，反而不断堆叠。直人因为恐怖场景与“吉冈”相关事件接连判定失败，精神状态越来越差，终于陷入狂气。与之形成反差的是，悦也始终维持着营业节奏，像真正的“职场活人”一样在怪谈里坚持把班上完。</p>
+
+<h3>6. 血腥爆发与店长露底</h3>
+<p>危险情侣的争执升级为持刀杀人，使店内局势从“怪”正式升级为“死”。然而店长对此表现得异常平静，甚至若无其事地处理尸体，彻底暴露其非人立场。此时玩家已经能够确认：店内的一切异常不是偶发事件，而是有组织、有规则、可重复运作的恶魔经营模式。</p>
+
+<h3>7. 最终反抗与离店收尾</h3>
+<p>在确认店长真面目后，悦也与直人联手烧毁合同，打破契约束缚，并击败店长。二人成功辞职下班，结束这场诡异夜班。故事最后，他们互留联系方式，给这段血腥而荒诞的共同经历留下了一个稍带温度的收尾。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>用【化学】替代【烹饪】做出生鸡蛋</strong></li>
+<li>这几乎是整场最具喜剧效果的瞬间：在恐怖打工怪谈里，角色靠“科学手段”完成餐点，还拿到高评价，荒诞感拉满。</li>
+<li><strong>第二冷冻室里堆满肉块与人头</strong></li>
+<li>这是最具冲击力的意外反转，直接把“牛肉饭店”从怪谈拉到血腥恐怖片级别。</li>
+<li><strong>店长若无其事处理尸体</strong></li>
+<li>一瞬间把反派从“可疑上司”升级为“真正的恶魔经营者”，冷静得令人发毛。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>直人【效率】大成功进入冷库</strong></li>
+<li>这是推动真相曝光的关键检定，没有这个大成功，隐藏冷冻室可能不会这么早被发现。</li>
+<li><strong>悦也用【化学】替代【烹饪】</strong></li>
+<li>虽不一定是传统意义上的“超神检定”，但属于非常符合模组气质的奇妙成功，既实用又好笑。</li>
+<li><strong>直人连续因恐怖与“吉冈”事件失败</strong></li>
+<li>这组失败极其重要，因为它不仅制造了角色的精神崩坏，也让“恐怖并非只在场景上，而是会真正侵蚀角色”这一点落地。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“上班不能出门”</strong></li>
+<li>这条合同条款本身就很有压迫感，也很有黑色幽默：听起来像普通劳动规定，实际却是超自然禁锢。</li>
+<li><strong>“秘密佐料”竟是谜之熏肉</strong></li>
+<li>名词越日常，内核越猎奇，形成很强的反差笑点。</li>
+<li><strong>情侣争执到持刀杀人，店长还淡定收尸</strong></li>
+<li>这不是单纯的恐怖，而是“把职场黑话/服务流程”与死亡流程并排展示，荒诞到令人发笑又发冷。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像跑团复盘文章的叙事版</strong></li>
+<li><strong>更像模组测评的优缺点评分版</strong></li>
+<li><strong>带“KP视角/玩家视角”双栏分析版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

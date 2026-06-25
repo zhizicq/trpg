@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>致命弯道 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>致命弯道</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《致命弯道》跑团模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组发生在一处被山林与迷雾封锁的偏远山区，核心地点是一座山顶古教堂。故事表面上是“调查邪灵作祟”，实则牵涉到<strong>记忆被夺、身份被替换、肉体被缝合改造</strong>等超自然事件。玩家角色岑鸣午以“被困山里的旅人”身份进入局面，与自称记者的高野广、以及一位看似普通却气息异常的神父接触，很快发现这座山并不只是迷路那么简单：空间会欺骗方向，教堂像在主动排斥外来者，而人与人之间的记忆和认知也在被悄然篡改。</p>
+
+<p>主要矛盾集中在三层：</p>
+<ol>
+<li><strong>生存层面</strong>：在鬼打墙与突发灾厄中逃离山林。</li>
+<li><strong>认知层面</strong>：辨别谁是“人”，谁已被污染、替换或附身。</li>
+<li><strong>真相层面</strong>：教堂、神父、记者与邻居死亡之间的关联，以及记忆缺失背后的阴谋。</li>
+</ol>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>岑鸣午进入被诡异山雾笼罩的山林后，很快陷入鬼打墙般的迷路状态，最终在山顶古教堂附近与自称前来调查邪灵的记者高野广、神父相遇。起初三人像是偶然同行的临时队伍，但岑鸣午在接触神父时就敏锐地感到一股熟悉而令人不安的气息——这气息竟与她前几天亲手杀死的邻居相似。随着调查推进，她发现教堂外围与地下存在更多异常：铁门通向地下深处，井边有陌生脚印和用过的水桶，暗示这里曾有人频繁出入，甚至可能藏有秘密设施。更重要的是，神父指出岑鸣午似乎失去了近三天的记忆，推断这片区域存在刻意抽离记忆的超自然现象。就在三人试图摸清状况时，教堂突发爆炸并起火，局势瞬间失控。岑鸣午与神父联手灭火后，却在地下铁门附近再度见到“马娘”记者——此时的高野广已沦为血肉缝合、近似人偶的怪物，明显与失忆、火灾以及整起事件的幕后黑手有关。随后，教堂周边被黑暗、尸臭与腐败气息吞没，岑鸣午在强烈精神压迫下尝试侦查、潜行并逃亡，甚至召唤替身“层流”自保，最终沿山坡跌落失足，灵魂似乎被某种未知力量带走，疑似已被捕获或死亡。整段剧情从“调查邪灵”迅速滑向“被邪灵吞没”，气氛也从悬疑转为彻底的绝望逃生。</p>
+
+<h3>结局与收尾</h3>
+<p>从日志可见，本模组并未走向传统意义上的“真相大白后成功逃脱”，而是以<strong>崩坏、追猎与疑似团灭式结尾</strong>收束。岑鸣午在极端压迫下尝试逃亡，最终坠落失足，灵魂被未知存在吸走，结局偏向悲剧。高野广则已确认沦为非人存在，神父身份与动机仍存悬念，但其“知道得太多”的姿态让他既像引路人，也像危险见证者。整体收尾强调：这不是一场单纯的神秘调查，而是一场从一开始就被“改写现实”的陷阱。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC：岑鸣午</h3>
+<ul>
+<li><strong>性格特征</strong>：警觉、冷静、善于试探，且对异常气息极度敏感。她不是那种会直接冲进去的角色，而是先观察、再验证，带有明显的生存主义倾向。</li>
+<li><strong>关键行为</strong>：</li>
+<li>以“被困旅人”的身份接近教堂，主动与神父和记者周旋。</li>
+<li>面对不安感时，坚持独立判断，不轻信神父说辞。</li>
+<li>在局势崩坏后，主动侦查、潜行、尝试逃亡，而非原地等死。</li>
+<li><strong>高光时刻</strong>：</li>
+<li><strong>灵感大成功</strong>：从神父身上感到与自己杀死的邻居相同的“熟悉气息”，这是她第一次真正锁定“神父不对劲”。</li>
+<li>在多次检定失败后仍坚持靠直觉与经验推进调查，体现出“理性失效时依旧不放弃”的硬核风格。</li>
+<li>召唤替身“层流”自保，表现出其在绝境中的战斗意识与求生本能。</li>
+<li><strong>角色弧光</strong>：她从“怀疑环境有问题”逐渐走向“意识到现实本身已被污染”，最终在失控局面中被卷入超自然吞噬，形成一种典型克系式坠落：知道得越多，死得越快。</li>
+</ul>
+
+<h3>PC/同行者：高野广（马娘记者）</h3>
+<ul>
+<li><strong>性格特征</strong>：自称记者，给人一种调查型、主动介入事件的形象，但后续证明其真实状态极不稳定。</li>
+<li><strong>关键行为</strong>：</li>
+<li>以“调查邪灵”名义进入山中，成为剧情导火索之一。</li>
+<li>在前期作为临时同行者提供了一个“正常人视角”的参照。</li>
+<li><strong>高光/反转</strong>：</li>
+<li>真正的戏剧性在于其身份的崩坏：最终变成血肉缝合、人偶化的怪异存在。</li>
+<li>她不是单纯的受害者，更像是事件吞噬的直接证明：失忆、替换、肉体改造都可以在她身上具象化。</li>
+<li><strong>角色作用</strong>：她承担了“诡异升级”的展示功能，从普通人到怪物的转变是模组恐怖感的核心节点之一。</li>
+</ul>
+
+<h3>NPC：神父</h3>
+<ul>
+<li><strong>性格特征</strong>：稳重、审慎、信息量大，讲话像是掌握真相却又不完全说明白的人。</li>
+<li><strong>关键作用</strong>：</li>
+<li>作为“本地宗教权威”与调查者身份的双重角色，推动主角进入教堂核心区域。</li>
+<li>点破岑鸣午的记忆缺失，明确提出“有人抽离了你们的记忆”这一关键信息。</li>
+<li>在剧情前半段承担“解释者”功能，但同时也强化了不安感，因为他身上带有死去邻居的诡异气息。</li>
+<li><strong>人物魅力/危险性</strong>：</li>
+<li>他像是唯一还在试图维持秩序的人，但其存在本身就不正常。</li>
+<li>既可能是被卷入的知情者，也可能是更深层阴谋的参与者。</li>
+</ul>
+
+<h3>NPC/提及角色：死去的邻居</h3>
+<ul>
+<li><strong>作用</strong>：虽然未直接出场，但其死亡与“熟悉气息”构成了剧情最重要的线索之一。</li>
+<li><strong>意义</strong>：他是岑鸣午判断神父异常的关键参照物，也是“人死后并不真正离开”的恐怖暗示。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：初入山林，异常初现</h3>
+<p>岑鸣午以“被困山林的旅人”身份接近教堂，首先接触到自称记者的高野广和神父。表面上看，三人只是偶遇并打算共同调查山中邪灵；但岑鸣午很快发现，山里存在一种近乎“鬼打墙”的迷失感，方向感被不断篡改，连教堂都散发出不自然的寒意。她在试探神父时心理学失败，没能立即看破对方底细，但随后灵感大成功，让她从神父身上感受到与前几天被自己杀死的邻居相同的诡异气息。这个发现使她迅速提高戒备。面对神父和马娘都要求先在教堂内调查的提议，岑鸣午选择更谨慎的路线：先找记者，再沿教堂边缘潜行搜查，试图避开正面陷阱。</p>
+
+<h3>第2章：三人同行，记忆疑云</h3>
+<p>岑鸣午在山中继续遭遇迷失与寒意，最终与自称调查邪灵的神父和记者高野广汇合，并一同前往山顶古老教堂。途中，她屡次以心理学、教育、侦查等方式试图确认神父身份，却接连失败，直到灵感困难成功，才再次确认那股“和死去邻居相似的熟悉气息”。这一连串失败强化了模组的压迫感：不是玩家不够努力，而是这个世界本身就拒绝被正常理解。神父在此时提出关键推论——岑鸣午似乎失去了三天内的记忆，且这并非偶然，而是某种“记忆抽离”现象。这个说法将剧情从单纯“邪灵调查”推进到“认知被篡改”的层面，也让三人临时结成的同盟显得更不稳固。</p>
+
+<h3>第3章：教堂失控，怪物现身，逃亡与坠落</h3>
+<p>岑鸣午在山中教堂醒来后，与记者和神父会合，开始查看教堂结构。她很快发现铁门通往地下，井边还有陌生脚印与使用过的水桶，说明教堂内部存在秘密活动。神父进一步指出她失去三天记忆，并推断有人在抽离他们的记忆，建议三人暂时结伴行动。然而，剧情随即急转直下：教堂突然爆炸起火，混乱中岑鸣午与神父合力灭火，随后在地下铁门附近再次见到“马娘”——此时的高野广已经变成血肉缝合、近乎人偶的怪物，明确揭示她与火灾、失忆和幕后操控存在直接联系。紧接着，教堂周边被黑暗、尸臭和腐坏气息吞没，岑鸣午在强烈精神压迫下尝试侦查、潜行与逃跑，并召唤替身“层流”自保，沿山坡和土路向外逃命。最终她因滑坡失足坠落，灵魂似乎被某种力量牵引吞没，留下一个极具悬念与恐怖感的结尾：她可能死了，也可能只是“被带走了”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：岑鸣午第一次用灵感大成功锁定神父“不对劲”，那一瞬间是整场调查从“疑神疑鬼”转为“确认危险”的分水岭。</li>
+<li><strong>最意外</strong>：高野广从“记者同行者”直接变成血肉缝合的人偶怪物，反转极具冲击力。</li>
+<li><strong>最压迫</strong>：教堂爆炸后，黑暗、尸臭、腐败同时降临，几乎是典型克系恐怖的总爆发。</li>
+<li><strong>最搞笑（黑色幽默）</strong>：在一系列检定失败后，岑鸣午依然靠“灵感”硬把真相闻出来，像是“所有学科都没用，最后还是第六感救场”。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>心理学失败</strong>：首次试探神父未能看破底细，强化了神父的神秘感。</li>
+<li><strong>教育失败、侦查大失败</strong>：连续失败让调查显得笨重而真实，也侧面说明敌方信息遮蔽极强。</li>
+<li><strong>灵感大成功/困难成功</strong>：这是本模组最关键的推进器，直接把“熟悉气息”与死去邻居联系起来，推动玩家进入高危认知。</li>
+<li><strong>潜行与逃亡类检定</strong>：虽然结果不理想，但在崩坏场面中承担了“还能不能活着离开”的戏剧张力。</li>
+<li><strong>坠落失足</strong>：如果这是对应的失败检定，那么它几乎就是结局的终结按钮，极具宿命感。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>神父自述</strong>：“我是本地的神父，受本地信众与教会的委托，来这里看看是否有邪灵作祟。”</li>
+</ul>
+<p>这句看似标准的调查宣言，在后续铺垫下反而显得特别可疑。</p>
+<ul>
+<li><strong>“有人抽离了你们的记忆”</strong></li>
+</ul>
+<p>这是整段日志中最关键的一句提示，直接把恐怖主题从“鬼怪”提升到“身份与认知被剥夺”。</p>
+<ul>
+<li><strong>记者变怪物的瞬间</strong></li>
+</ul>
+<p>从合作对象到怪物容器的转变，没有缓冲，属于模组中最强的“认知暴击”。</p>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析报告扩展成以下任一版本：</p>
+<ol>
+<li><strong>更像游戏评测的版本</strong></li>
+<li><strong>更像剧本杀/跑团主持复盘的版本</strong></li>
+<li><strong>增加“伏笔与回收”专栏的版本</strong></li>
+<li><strong>整理成“时间线 + 地点线 + NPC关系图”版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

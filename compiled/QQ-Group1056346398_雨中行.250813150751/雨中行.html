@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雨中行 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>雨中行</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《雨中行》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《雨中行》构建在一场突如其来的暴雨之中：玩家一行人为了躲避天气进入一栋店铺，却意外被困在逐层恶化的空间里。随着断电、涨水、血迹、隐藏门与“楼层规则”陆续出现，这栋看似普通的建筑迅速显露出超自然与诡异设定。</p>
+<p>核心冲突并不只是“如何逃出去”，而是<strong>在环境持续崩坏、彼此身份与立场逐渐不明的情况下，如何判断谁是人、谁已死、谁在操控局面</strong>。模组的恐怖感主要来源于：现实规则失效、空间结构异常、角色信息不对称，以及“同伴可能在下一秒变成异常”的不安感。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>暴雨倾盆之际，一行人为了避雨进入一家店铺，不料很快遭遇断电与一楼迅速涨水，原本安全的避难所瞬间变成封闭的危机空间。主角小鹤在行动中逐步暴露出非同寻常的能力：他能够借助替身绘画制造出类似窗户、绳索、替代电压箱等“道具”，以近乎作弊式的方式突破环境限制，推动队伍脱险。随着他们重返二楼，店长、小白、小鹿与小混混逐渐汇合，表面上形成临时合作关系，但诡异感并未消退。</p>
+
+<p>在搜寻与对话中，灵感检定揭开了更多线索：小鹿送出的毛巾上带有“日本最大邪教”的传教标志，这让原本看似普通的物品瞬间与宗教、洗脑或组织阴谋联系起来。与此同时，三楼出现血迹、隐藏门和关于“楼层规则”的谜团，暗示这栋楼并非单纯建筑，而更像一个遵循特殊逻辑运作的迷局。更令人不安的是，小混混一度疑似死亡，却又在后续情节中再次出现，进一步打破了队伍对现实的信任。整场剧情在“逃生”和“认知崩塌”之间反复拉扯，最终将悬念推至更高处。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>从摘要来看，本段剧情并未抵达彻底收束，而是停留在<strong>危机升级与谜团扩大</strong>的阶段。队伍成功从一楼洪水中脱困并在二楼重聚，但三楼的血迹、隐藏门以及“楼层规则”暗示更深层的异常才刚刚揭开。</p>
+<p>结局的功能更像是一个“过场收束”：人物暂时汇合、局势短暂稳定，但真正的答案尚未出现，后续仍将围绕邪教线索、空间规则与小混混生死反转继续展开。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）分析</strong></h3>
+
+<h4><strong>小鹤</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：临场应变能力极强，思路活、行动力高，偏向“用能力直接破局”的实战型角色。</li>
+<li><strong>关键行为</strong>：在断电与涨水的双重压力下，利用替身绘画制造出窗户、绳索等“虚构实物”，把抽象能力转化成实际逃生手段。</li>
+<li><strong>高光时刻</strong>：通过“画出可用道具”解决了原本极可能卡死的逃生局面，属于标准的机制与剧情双重高光。</li>
+<li><strong>角色弧光</strong>：他不仅是推进剧情的工具人，更像是逐渐暴露身份或能力边界的“异质存在”，让同伴和旁人都不得不重新审视他。</li>
+</ul>
+
+<h4><strong>小白</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：从摘要看更偏向队伍中的普通协作者或观察者，存在感不算最强，但在重聚与协同行动中承担了稳定队伍的作用。</li>
+<li><strong>关键行为</strong>：与其他角色一同回到二楼，参与场景推进。</li>
+<li><strong>高光时刻</strong>：在局势混乱中还能维持队伍关系，是典型的“维稳型”PC。</li>
+</ul>
+
+<h4><strong>小鹿</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：表面上友善，甚至会赠送毛巾，给人以关照、示好的印象；但她身上显然带有强烈的隐秘性。</li>
+<li><strong>关键行为</strong>：赠送带有“日本最大邪教”传教标志的毛巾。</li>
+<li><strong>高光时刻</strong>：物件线索成为关键破案点，说明她的“善意举动”其实是信息投放或身份暗示。</li>
+<li><strong>角色张力</strong>：她是本段剧情中最具“表里不一”感的人物之一，容易引发玩家对阵营、立场与真实目的的猜测。</li>
+</ul>
+
+<h4><strong>小混混</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：通常带有不稳定、惹事、难以信任的气质。</li>
+<li><strong>关键行为</strong>：在剧情中出现“疑似已死又重现”的诡异状态。</li>
+<li><strong>高光时刻</strong>：死亡/复现反转本身就是最大的戏剧点。</li>
+<li><strong>角色作用</strong>：承担恐怖与悬疑放大器的功能，强化“这栋楼里的死亡未必是终点”的世界观不安感。</li>
+</ul>
+
+<hr>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>店长</strong></h4>
+<ul>
+<li><strong>作用</strong>：作为场景的原始持有者或管理者，店长在封闭空间中天然承担“知情者”角色。</li>
+<li><strong>剧情意义</strong>：其存在让店铺不再是单纯避雨场所，而像是一个拥有内部规则的特殊空间。</li>
+</ul>
+
+<h4><strong>小白</strong></h4>
+<ul>
+<li>若此处为NPC而非PC，则其作用偏向陪伴与中介，负责在各方之间建立情绪缓冲与行动连接。</li>
+<li>但从摘要看更可能是队内重要成员，因此在此以“协作角色”理解更稳妥。</li>
+</ul>
+
+<h4><strong>小鹿</strong></h4>
+<ul>
+<li><strong>作用</strong>：信息投放者、线索提供者，同时也是潜在的邪教/组织关联者。</li>
+<li><strong>剧情意义</strong>：她的道具细节直接引爆了“宗教阴谋线”，是从日常物品切入异常世界的关键节点。</li>
+</ul>
+
+<h4><strong>小混混</strong></h4>
+<ul>
+<li><strong>作用</strong>：恐怖反转承载者。</li>
+<li><strong>剧情意义</strong>：他的“死而复现”极大削弱了角色对现实的信任，是本段最典型的惊悚元素之一。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：避雨入店，危机初现</strong></h3>
+<p>一行人因暴雨躲入店铺，本以为只是临时避难，却很快遭遇断电和一楼水位快速上升。建筑内环境迅速失控，安全感被完全剥夺。此时剧情基调从“困雨”转为“密室逃生”。</p>
+
+<h3><strong>第二阶段：小鹤能力显形，强行破局</strong></h3>
+<p>在逃生压力下，小鹤的替身绘画能力开始发挥作用。他通过“画窗户”制造视觉或结构上的突破口，又用“画绳索”之类的方式协助转移、攀爬或脱困，甚至尝试用绘画替代电压箱等设施。多轮聆听、侦查、美术、敏捷检定的成功与失败，共同推动了这一连串应急操作。</p>
+
+<h3><strong>第三阶段：二楼重聚，表面安全</strong></h3>
+<p>众人最终回到二楼，并与店长、小白、小鹿、小混混重聚。此时队伍重新聚合，局势看似稳定，但实际上只是把危机从“水灾”转入“信息不明的怪异调查”。</p>
+
+<h3><strong>第四阶段：线索浮现，邪教阴影出现</strong></h3>
+<p>一次灵感成功让角色认出小鹿送的毛巾上印有“日本最大邪教”的传教标识，说明这个看似普通的物件其实是宗教组织宣传物。这个发现将剧情从单纯的空间恐怖推向“组织阴谋”与“精神污染”的方向。</p>
+
+<h3><strong>第五阶段：三楼异常，规则感加强</strong></h3>
+<p>随着探索深入，三楼出现血迹、隐藏门与“楼层规则”相关线索，说明这栋建筑并非正常结构，而可能是一个分层控制、按规则触发事件的异常空间。此处剧情明显进入更高层级的谜题阶段。</p>
+
+<h3><strong>第六阶段：小混混死亡/复现，恐怖升级</strong></h3>
+<p>最令人震惊的是，小混混呈现出“疑似已经死亡却又再次出现”的状态。这一反转打破了队伍对生命、时间与空间连续性的基本认知，也让整个模组的恐怖主题从环境危机升级为存在论危机：在这里，死亡不再可靠，身份也不再稳定。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：小鹤用替身绘画“画出窗户、绳索”等道具，几乎把逃生流程变成了超能力施工现场，观感非常强。</li>
+<li><strong>最意外</strong>：小混混“疑似死了又出现”，这种反转天然带有惊悚喜剧式的荒诞感。</li>
+<li><strong>最有压迫感</strong>：断电+涨水的双重夹击，开局就把紧张感拉满。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>灵感成功</strong>：认出小鹿毛巾上的“日本最大邪教”传教标志，这是极具戏剧性的关键成功，等于把一个普通道具瞬间升级为重要阴谋证据。</li>
+<li><strong>检定链表现</strong>：聆听、侦查、美术、敏捷多次成功与失败，形成连续推进的节奏感，尤其适合这种高压逃生类剧情。</li>
+<li><strong>美术检定的戏剧性</strong>：在跑团中，“美术成功用于制造逃生手段”本身就很有记忆点。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“毛巾”线索桥段</strong>：一个看似贴心的小礼物，转眼被识别成邪教宣传品，这种反差很适合跑团现场的气氛转换。</li>
+<li><strong>“画窗户/画绳索”桥段</strong>：属于极富视觉感的创意解法，容易成为团内名场面。</li>
+<li><strong>“楼层规则”与隐藏门</strong>：这种逐层揭示的设定很适合制造讨论和猜谜氛围，也方便玩家在桌面上不断复盘与脑补。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“团后复盘文”的风格，或者补一版<strong>“适合发群里的精简总结”</strong>。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

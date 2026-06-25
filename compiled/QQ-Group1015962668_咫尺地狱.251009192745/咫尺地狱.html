@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咫尺地狱 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>咫尺地狱</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《咫尺地狱》是一则典型的“边境村庄求援—废墟据点清剿—牵出更大阴谋”的冒险模组。前威尔村长期遭受周边怪物与匪徒骚扰，村长哈维雇佣冒险者前往废弃堡垒调查并清剿，表面目标是解除村民威胁、恢复道路安全；但随着探索深入，事件逐渐从单纯的地精/兽人占据，升级为强盗团伙、隐藏联络人与疑似魔鬼交易的黑暗勾连。模组的核心冲突，便是“看似边缘的小据点，实则是更深层邪恶网络的一角”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>三位冒险者蕾雅、幽香与小麦抵达前威尔村，向村长哈维接下清剿废弃堡垒的委托。村民们时常被堡垒中的地精、兽人等势力威胁，哈维承诺150金作为报酬，并提供了基础情报。夜宿村长家后，三人前往堡垒侦察，确认南侧窗户可作为突破口，小麦凭借出色的开锁技巧潜入二楼神龛房间，并触发天使雕像的神秘绿光，得到了一项增益效果。随后她们在堡垒内部继续搜寻，途中遭遇地精袭击，蕾雅与幽香联手击溃敌人并俘获地精头目。通过审问，她们获得了金钥匙、鲁特西亚附近地图，以及关于地精堡垒、顶层仓库和周边部落的线索，进而决定利用俘虏继续深入探索。之后，三人转向清剿强盗据点，小麦尝试潜行暗杀持巨剑的敌人，却被对方重创昏迷；蕾雅及时以弓箭补刀，击杀目标并救回队友。清点尸体与信件后，她们发现强盗组织与“巴特尔”“雅门”存在联系，且似乎涉及魔鬼交易。最后，队伍使用雷管炸毁堡垒，带着战利品与一把诅咒长剑返回村庄，领取赏金，完成了表层委托，但也为后续更大的阴影埋下伏笔。</p>
+
+<h3>结局与收尾</h3>
+<p>本次任务以“村庄委托成功完成”告终：废弃堡垒被摧毁，村民威胁暂时解除，冒险者拿到150金报酬，并带回一把带诅咒的长剑作为战利品与隐患并存的纪念。更重要的是，日志中显露出强盗组织与神秘人物“巴特尔”“雅门”的联络，以及可能存在的魔鬼交易，让本次行动从简单清剿升级为“发现邪恶网络的一道裂口”。结局偏向阶段性收束，但阴谋线明显未完。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>蕾雅</h4>
+<ul>
+<li><strong>性格特征</strong>：冷静、实干、战斗反应快，属于团队中的稳定输出与收尾者。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在遭遇地精时与幽香协同作战，快速控制局面。</li>
+<li>强盗战中在小麦昏迷后果断补位，用弓箭完成击杀，体现了临危不乱的判断力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>用远程补刀救回小麦后，成功保住战局与队友。</li>
+<li><strong>角色功能</strong>：典型的战斗核心与“最后保险”，负责把失控场面重新拉回正轨。</li>
+</ul>
+
+<h4>幽香</h4>
+<ul>
+<li><strong>性格特征</strong>：稳健、配合度高，战斗上与蕾雅形成良好互补。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在地精遭遇战中与蕾雅配合击败地精头目。</li>
+<li>对情报搜集与审问阶段起到了支撑作用，表现出团队执行力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>与蕾雅合力击退敌方首领，直接瓦解了地精的抵抗意志。</li>
+<li><strong>角色功能</strong>：偏向副攻/支援型角色，擅长在关键战斗中形成合围与压制。</li>
+</ul>
+
+<h4>小麦</h4>
+<ul>
+<li><strong>性格特征</strong>：胆大、机敏、技术型玩家味道很浓，擅长潜入与操作性行动。</li>
+<li><strong>关键行为</strong>：</li>
+<li>成功开锁潜入神龛房间，触发天使雕像绿光并获得增益。</li>
+<li>之后尝试偷袭强盗持巨剑者，虽然战术上激进，但也导致自己重创昏迷。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>开锁潜入与触发神秘机关，展现出极强的探索价值。</li>
+<li><strong>槽点式高光</strong>：</li>
+<li>潜行刺杀本想“一击必杀”，结果被反杀到昏迷，属于典型的“刺客的浪漫与现实的铁拳”。</li>
+<li><strong>角色功能</strong>：侦察、开锁、潜入和风险行动担当，是推进剧情的“机关触发器”。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>村长哈维</h4>
+<ul>
+<li><strong>作用</strong>：任务发布者与村庄秩序代表。</li>
+<li><strong>剧情意义</strong>：提供委托、交代背景、承接玩家的行动动机，是整个事件的入口。</li>
+</ul>
+
+<h4>地精头目</h4>
+<ul>
+<li><strong>作用</strong>：前期敌对势力的代表。</li>
+<li><strong>剧情意义</strong>：被俘后成为情报来源，帮助玩家将“单纯打怪”推进为“追索据点结构与更大线索”。</li>
+</ul>
+
+<h4>持巨剑的强盗</h4>
+<ul>
+<li><strong>作用</strong>：堡垒战斗中的高危目标。</li>
+<li><strong>剧情意义</strong>：制造战场逆转，迫使队伍进入高压状态；其尸体与信件则直接揭示更深层阴谋。</li>
+</ul>
+
+<h4>“巴特尔”“雅门”</h4>
+<ul>
+<li><strong>作用</strong>：幕后关联人物，可能是组织链条中的关键节点。</li>
+<li><strong>剧情意义</strong>：他们的出现让模组从地方治安问题升级为涉及魔鬼交易的阴影故事，显著提升悬疑与黑暗感。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 接委托：前威尔村的求援</h3>
+<p>蕾雅、幽香与小麦来到前威尔村，向村长哈维了解情况。村中长期受废弃堡垒中的怪物与匪徒威胁，村民不堪其扰，哈维请三人协助护卫与清剿，报酬为150金。三人接受任务后暂宿村长家，正式开启调查。</p>
+
+<h3>2. 侦察堡垒：潜入与神秘绿光</h3>
+<p>第二天，队伍前往废弃堡垒外围侦察，确认南侧窗户可作为进入点，并且能通向二楼。小麦发挥技术优势，顺利开锁进入神龛房间，触发天使雕像发出的神秘绿光，获得了一项增益效果。此处不仅是战术突破口，也为模组注入了超自然色彩。</p>
+
+<h3>3. 初次交锋：地精伏击与俘虏审问</h3>
+<p>继续探索堡垒时，三人遭遇地精袭击。蕾雅和幽香在战斗中表现稳健，成功击败地精并俘获头目。随后，她们从俘虏处搜出金钥匙与鲁特西亚附近地图，并逼问出更多情报，包括地精堡垒、顶层仓库、附近部落等信息。玩家没有急于处决俘虏，而是将其转化为信息资源，推动剧情继续深入。</p>
+
+<h3>4. 强盗据点：潜行失败与战局翻转</h3>
+<p>在进一步清剿强盗据点时，小麦尝试潜行接近持巨剑的敌人进行偷袭，但未能一击解决，反被重创并昏迷。战局一度危险，所幸蕾雅迅速以弓箭补刀，击杀敌人并挽回局势。此战体现了模组的紧张感：潜行与爆发可以创造机会，但也可能因失败让战局骤变。</p>
+
+<h3>5. 战后搜查：信件揭露黑幕</h3>
+<p>队伍搜查尸体与信件后，发现强盗组织与“巴特尔”“雅门”之间存在勾连，并且疑似涉及魔鬼交易。这一发现把原本“清理匪巢”的任务，升级为触及更大黑暗势力网络的开端，也为后续模组内容埋下强烈钩子。</p>
+
+<h3>6. 爆破撤离：摧毁堡垒与回村领赏</h3>
+<p>在完成清剿后，三人使用雷管炸毁堡垒，彻底摧毁据点并安全返回前威尔村，向哈维交差领取报酬。她们还带回了一把带诅咒的长剑，成为本次冒险的战利品与后续风险来源。至此，本次任务形成闭环，但阴谋线仍未解决。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：蕾雅在小麦昏迷后果断射杀持巨剑强盗，硬生生把团灭风险拉回可控状态。</li>
+<li><strong>最意外</strong>：神龛中的天使雕像绿光增益，原本像是普通探索点，结果成了关键福利点。</li>
+<li><strong>最搞笑</strong>：小麦潜行偷袭本想上演“无声刺杀”，却被反手重创昏迷，形成经典反差喜剧。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>大成功</strong>：</li>
+<li>小麦的高超巧手开锁，直接打开关键路线。</li>
+<li>审问地精头目后拿到钥匙、地图与情报，属于信息战上的大成功。</li>
+<li><strong>大失败/代价型失败</strong>：</li>
+<li>小麦潜行刺杀强盗时失手，被重创昏迷，是本段最具戏剧性的失败。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>村长委托与任务报酬</strong>形成标准但有效的“冒险开场”，很有边境村庄委托味。</li>
+<li><strong>地精头目被俘后反向供情报</strong>，让原本单纯的敌人变成了“活体线索机”。</li>
+<li><strong>强盗信件揭露巴特尔、雅门与魔鬼交易</strong>，是典型“表层打怪、里层惊悚”的剧情转折。</li>
+<li><strong>带诅咒的长剑作为战利品</strong>，非常符合TRPG里“拿到宝物但顺手带回麻烦”的经典结尾气质。</li>
+</ul>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像官方模组复盘的版本</strong>，或</li>
+<li><strong>更偏玩家视角吐槽的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

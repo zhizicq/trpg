@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>驱魔人 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>驱魔人</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以一座偏僻山上的<strong>闹鬼旧教堂</strong>为核心舞台，外层包裹着“调查灵异事件”的典型驱魔人叙事，内里则是更偏<strong>认知污染、记忆剥夺、替身疑云与空间异化</strong>的克苏鲁式恐怖。主角扉知见作为教会派来的神父，开局便遭遇严重的“职业记忆丢失”，使他失去了大量与自身身份相关的知识，却仍保留“必须前往旧教堂”的任务本能。与此同时，他在路上又碰到两名充满谜团的同行者：一个自称记者却明显言行可疑的马耳女子，以及一个疑似刚杀过人、带着野兽般警觉的女汉。</p>
+<p>故事的核心冲突因此不只是“驱魔”，而是：<strong>在信息被剥夺、身份被扰乱、现实被扭曲的环境中，众人能否确认彼此身份，并找出旧教堂中真正的异常来源</strong>。教堂本身似乎拥有自我修复、吞噬光线、制造隔绝空间的能力，而“告解室”更像是这一切的关键节点，暗示模组真正的威胁并非单纯恶灵，而是某种能影响认知与空间结构的“存在”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>扉知见受教会之命前往山上的闹鬼旧教堂调查，却在上山途中惊觉自己出现了严重异常：与神职工作相关的记忆大面积丢失，但前往教堂的使命感仍在，像是被某种力量“选择性删改”过。他在路上先后遇见自称记者的马耳女子与一名面带凶相、疑似刚杀过人的女汉，三人彼此试探，互相隐瞒真实信息。扉知见通过心理学与推理判断出女汉有“野兽般直觉”，且身上带着杀人后的紧绷感，也逐渐怀疑此地存在替身、附身或第四人的可能性。随着众人接近教堂，外部环境也开始失控：教堂外围突然爆炸起火，三人协力灭火后，扉知见却被黑暗吞没，遭困于狭小空间中。</p>
+<p>在几近失明的情况下，他以水膜覆盖墙体，极难成功地感知到墙内与墙面上有十多处蠕动血肉，且分布在裂缝之中，像是在持续“修补”教堂结构。随后他直接一拳打破墙壁，引发落石，却仍无法看清内部实情；进一步确认后，他发现此处的黑暗并非普通遮蔽，而是彻底剥夺光线存在的异常力量，极可能与告解室所关联的诡异能力有关。至此，旧教堂不再只是被闹鬼，而是呈现出一种活体化、封闭化、并主动抵抗窥探的恐怖姿态。</p>
+
+<h3>结局与收尾</h3>
+<p>从现有摘要看，本段剧情尚未进入彻底解决阶段，收尾停在<strong>“教堂异常显形、三人确认威胁升级”</strong>的节点上。扉知见已经从“来调查闹鬼”推进到“面对会修复自身、吞噬光线的异质空间”，并初步锁定告解室或教堂内部某处为关键。结局并非传统意义上的驱魔完成，而是将悬念强力抬高：<strong>神父记忆为何被删、马耳女子到底是谁、女汉是否与案情有关、教堂内的血肉与黑暗究竟属于什么存在</strong>，都为后续章节埋下了明确伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC1：扉知见（神父）</h3>
+<p><strong>性格特征</strong></p>
+<p>扉知见给人的感觉是典型的“在失忆中仍保持职业本能”的调查型神职者：冷静、观察力强、判断快，哪怕记忆缺损也会依靠经验与直觉迅速重建局势。他并不是鲁莽型角色，但在关键时刻很敢做决定，属于那种“先分析，再硬上”的行动派。</p>
+
+<p><strong>关键行为</strong></p>
+<ul>
+<li>发现自己只失去了职业相关记忆，迅速推测遭遇了认知/记忆剥夺类影响。</li>
+<li>通过高难心理学成功识破女汉“刚杀过人”的状态。</li>
+<li>对周边的异常保持高度警觉，并持续试图建立逻辑模型，推断是否存在替身、附身或第四人。</li>
+<li>在黑暗空间中用水膜侦测墙体异常，再用拳头直接破坏墙壁，体现出很强的实战应对能力。</li>
+</ul>
+
+<p><strong>高光时刻</strong></p>
+<ul>
+<li><strong>极难成功心理学</strong>：几乎是开局最强的侦查点，直接把女汉的危险性和状态锁定。</li>
+<li><strong>对自身失忆的逆向推理</strong>：不是单纯“我失忆了”，而是迅速判断出“像是被定向删改”，非常符合神父调查者的专业感。</li>
+<li><strong>黑暗空间中的主动探索</strong>：在视觉被剥夺后仍能通过物理与神秘手段寻找真相，表现出硬核驱魔人的味道。</li>
+</ul>
+
+<hr>
+
+<h3>PC2：马耳女子 / 自称记者的女性</h3>
+<p><strong>性格特征</strong></p>
+<p>她的整体气质就是“可疑得很明显”。从自称记者却在基本职业信息上频频露馅来看，她要么身份有问题，要么极度不擅长伪装。她在对话中更多承担“制造疑云”的作用，让整个队伍的信任结构天然不稳。</p>
+
+<p><strong>关键行为</strong></p>
+<ul>
+<li>自称记者，但被追问采访经历、纸笔、摄像机等细节时明显露馅。</li>
+<li>在团队初期维持一种“我有信息但我不一定说真话”的状态。</li>
+</ul>
+
+<p><strong>高光时刻</strong></p>
+<ul>
+<li>她最大的高光并非战斗或检定，而是<strong>“露馅本身”</strong>：玩家一边问一边拆穿，这种尴尬又好笑的场面非常适合跑团气氛。</li>
+<li>作为“身份存疑者”，她成功把剧情的不确定性提升了一个层级。</li>
+</ul>
+
+<hr>
+
+<h3>PC3：女汉</h3>
+<p><strong>性格特征</strong></p>
+<p>女汉是“危险感很强但未必完全敌对”的典型角色。她的存在自带压迫感，像是经历过高压事件后形成的强戒备状态。她并非话多型，更多靠状态、动作和旁人推断来塑造人物。</p>
+
+<p><strong>关键行为</strong></p>
+<ul>
+<li>透露自己已经困在附近三天，疑似遭遇鬼打墙。</li>
+<li>被神父以心理学判断出“刚杀过人”，从而让她的角色危险度陡增。</li>
+<li>与神父和马耳女子一起面对教堂异常，承担“暴力与生存经验”这一类功能位。</li>
+</ul>
+
+<p><strong>高光时刻</strong></p>
+<ul>
+<li>她身上的“野兽直觉”被成功读出，说明她不是普通受害者，而是带着某种强烈生存本能的人。</li>
+<li>“刚杀过人”这一信息让她瞬间从普通路人变成剧情关键人物，极具戏剧张力。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC及其作用</h3>
+<p>由于摘要中NPC信息有限，能明确提炼的关键存在主要是“教会任务本身”和“教堂异常”背后的隐性力量。</p>
+
+<ul>
+<li><strong>教会派遣扉知见的上级/教会系统</strong>：提供任务动机与神父身份锚点，是扉知见即使失忆也仍继续前进的根本原因。</li>
+<li><strong>闹鬼旧教堂本体</strong>：严格意义上已接近“活体NPC”。它会制造爆炸、黑暗、空间封锁与血肉修复等异常，像一个具有意志的敌对场域。</li>
+<li><strong>告解室相关存在</strong>：虽然未直接现身，但已通过“黑暗彻底剥夺光线”的特性被强烈暗示为后续关键恐怖源。</li>
+<li><strong>可能的第四人/替身/附身者</strong>：这是剧情中被反复讨论的隐性NPC位，代表所有“你以为在场的人可能并不是真正的人”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：上山与初步试探</h3>
+<p>扉知见奉命前往闹鬼旧教堂调查，路途中遭遇一连串异常。首先是他本人出现记忆问题：职业相关知识大量遗失，像是被某种认知层面的力量针对，但前往教堂的目的却仍清晰存在，说明他被剥离的可能只是“身份功能”，而非全部人格。</p>
+<p>在途中，他遇到自称记者的马耳女子与一名女汉。三人虽然暂时同行，但彼此并不信任。扉知见通过高难心理学判断出女汉“刚杀过人”，同时也察觉她像野兽一样敏锐、戒心极强；与此同时，他持续尝试从自身异常中整理线索，推断自己可能遭到了认知类替身攻击，甚至怀疑是否存在记忆被选择性删除的机制。</p>
+<p>马耳女子则在“我是记者”这件事上暴露出明显破绽，被追问采访经历、笔和摄像设备等细节时支支吾吾，进一步坐实她身份可疑。女汉则透露自己已经被困在附近三天，疑似经历鬼打墙。最终三人抵达旧教堂前，空气压抑、气氛肃穆，像是某种更深层恐怖的入口。</p>
+
+<h3>第2章：教堂异常显形</h3>
+<p>抵达旧教堂后，扉知见与马耳女子、女汉继续进行试探与联合。一路上他不断遭遇认知与记忆异常，甚至一度连职业记忆都被抹去又恢复，强化了“此地会干扰身份与认知”的判断。神父凭借心理学大成功识破女汉的危险性，并开始讨论教堂中是否存在替身、附身或第四人的可能。</p>
+<p>紧接着，教堂外围突发爆炸与大火，局势瞬间升级。众人协力灭火后，扉知见却被黑暗吞没，困在狭小、封闭的空间里。面对失去视觉的危机，他没有坐以待毙，而是以水膜覆盖墙体，极难成功地感知到墙壁和内部存在十多处蠕动血肉，且这些肉块都分布在裂缝处，像是在不断修复建筑本身。随后他以拳力打破墙壁，引发落石，却依旧无法看见内部真相。进一步通过灵感确认，他得知这里的黑暗不是“看不见”，而是“光根本不存在”，这使异常从普通灵异直接跃升为超自然层级的空间/法则污染。</p>
+<p>这一章的核心不是推进战斗，而是让玩家明确：<strong>旧教堂本身就是怪物</strong>，而且是一个会修复、会封锁、会吞光的怪物。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>神父一边失忆一边继续办案</strong>：职业记忆都被抹了还能坚持执行任务，很有“系统出错但人还在上班”的荒诞感。</li>
+<li><strong>马耳女子自称记者却被当场盘问露馅</strong>：这段很适合做桌上名场面，越问越假，越假越尴尬。</li>
+<li><strong>教堂外围爆炸+大火+黑暗吞没</strong>：节奏一下从“调查”跳到“灾难片”，非常有压迫感。</li>
+<li><strong>墙里蠕动血肉修复教堂</strong>：这是本段最惊悚也最有画面感的场景，直接把“闹鬼教堂”升级成“活着的建筑”。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>心理学极难成功（D100=5/60）</strong></li>
+</ul>
+<p>这几乎是关键爆点。神父精准看穿女汉“刚杀过人”的状态，既强化了角色专业性，也为后续信任危机埋雷。</p>
+<ul>
+<li><strong>灵感极难成功 / 智力失败 / 多次侦查失败</strong></li>
+</ul>
+<p>这些结果叠加起来很有“越查越怪”的味道，尤其把“自己只失去职业相关记忆”的推断慢慢堆出来，形成一种可靠但不安的调查感。</p>
+<ul>
+<li><strong>极难成功发现墙内血肉</strong></li>
+</ul>
+<p>这是把恐怖从氛围落到细节的关键检定，既有实感，又让“教堂会修复自己”变成可确认的事实。</p>
+<ul>
+<li><strong>一拳打破墙壁</strong></li>
+</ul>
+<p>很有神父风格，属于“既然看不见，那就打穿它”的解决思路，暴力但有效。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“我是记者”但被问到采访工具和经历时明显说不圆。</li>
+<li>女汉表示自己困在附近三天，疑似鬼打墙，瞬间把恐怖氛围拉满。</li>
+<li>神父从自己失忆状态出发，反向推理“我不是整个人坏了，而是职业记忆被定向拿走了”，这种自我诊断非常有侦探感。</li>
+<li>对“替身、附身、第四人”的讨论，为后续的身份悬疑留下了非常好玩的空间。</li>
+</ul>
+
+<p>如果你愿意，我也可以继续把这份报告整理成更像“模组后记/团后复盘”的版本，或者进一步补成“人物关系图 + 剧情时间线表格”。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>敌意循环♯0 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>敌意循环♯0</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《敌意循环♯0》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组发生在沙漠商路与城邦势力交错的区域，核心围绕一批被黑市流出的<strong>吉斯特卡灵导械碎片</strong>展开。这些碎片并非普通违禁品，而是被人为嫁接了“<strong>情绪/灵能放大</strong>”的次级谐振，能够吸收并放大恶意、嫉妒、怨恨等负面情绪；一旦散逸至人口密集的拉玛萨拉，就可能形成大范围的精神污染，甚至诱发群体性的失控与暴乱。</p>
+<p>因此，故事表面上是一次“回收危险遗物、追查幕后黑手”的任务，实质上则是一次关于<strong>情绪传播、社会压迫与恶意循环</strong>的调查冒险。模组开场便通过商路检查站、贫困半身人夫妇被盘查等细节，提示玩家：危险不仅来自碎片本身，也来自制度、阶层与人心中不断被放大的敌意。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>雪菈受导师召唤前往炼金术师行会，见到尤利尼克斯大师。她凭借奥秘与历史检定识破了一批黑市流出的吉斯特卡灵导械碎片已被人为改造，碎片会吸收并放大负面情绪，一旦流入拉玛萨拉将造成严重的精神污染。尤利尼克斯意识到事态紧急，立即交给她追踪器、护符、介绍信与经费，委托她前往拉玛萨拉回收碎片并追查幕后黑手。</p>
+<p>在前往沙漠的途中，雪菈救下了被沙狼埋住的信使芬恩。芬恩告知自己正为塔哈·卡鲁德送信，但重要报告在遭遇袭击时被夺走，线索随之断裂。两人随后在沙漠中并肩作战，击退袭击者，并从沙狼遗骸中回收宝石与炼金材料。经历这次危机后，他们决定正式同行。旅途中，双方互相介绍身世与能力；芬恩提到自己与星弓旅行社、沙漠生存经验有关，雪菈则通过检定回忆起星弓旅行社及其负责人希露·星弓的情报。就在抵达目标地区前，二人来到阿斯本萨设立的商路检查站，目睹士兵盘查一对贫困半身人夫妇，场面压抑而不公，暗示这趟旅程所要面对的不只是失控的碎片，还有沙漠商路背后盘根错节的权力结构与社会裂痕。</p>
+
+<h3>结局与收尾</h3>
+<p>从目前摘要来看，本段内容属于模组开端与第一阶段推进，尚未进入最终对幕后黑手的揭露与碎片回收的收束。当前收尾停留在<strong>抵达检查站、目睹压迫性盘查</strong>这一节点：剧情从“明确的炼金异常案件”逐步转向“社会环境中的结构性敌意”。</p>
+<p>这一收尾很有效地把故事主题从单纯的物品回收，拓展为对<strong>恶意如何在现实制度中被制造、积累并扩散</strong>的思考，也为后续进入拉玛萨拉后的调查、冲突与道德抉择埋下了伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>雪菈</h4>
+<ul>
+<li><strong>性格特征</strong>：理性、敏锐、责任感强，带有明显的学者/施法者气质。她不是被动接受任务，而是能主动判断情势、迅速把危险与后果联系起来。</li>
+<li><strong>关键行为</strong>：</li>
+<li>通过奥秘与历史检定识破碎片的异常谐振，直接将“黑市违禁品”升级为“城市级精神污染风险”。</li>
+<li>在任务开始阶段承担了调查核心：联系导师、接受委托、获取装备与经费，体现出她在团队中的主导地位。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>识别出碎片被嫁接“情绪/灵能放大”效果的瞬间，是本段最关键的推理高光。</li>
+<li>以知识判断将局势从“货物失窃”提升为“潜在灾难”，展现了学术型PC的价值。</li>
+</ul>
+
+<h4>芬恩</h4>
+<ul>
+<li><strong>性格特征</strong>：务实、经历丰富、带有流动性与生存者气质；相比雪菈更接地气，擅长在荒漠环境中自保。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在被沙狼埋住后仍能提供重要情报，说明其职业素养较强。</li>
+<li>与雪菈协作应对沙漠袭击，成为可靠的旅伴。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>被救后迅速补充线索，推动剧情进入“双人同行”的结构。</li>
+<li>提及自己与星弓旅行社、沙漠生存经验的关联，为后续世界观展开提供了入口。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>尤利尼克斯大师</h4>
+<ul>
+<li><strong>作用</strong>：任务发布者、情报鉴定者、资源提供者。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>代表“学术/行会体系”的权威，负责将异常碎片定性为重大威胁。</li>
+<li>向雪菈提供追踪器、护符、介绍信与经费，是推动冒险正式启动的关键支点。</li>
+<li><strong>人物气质</strong>：审慎、专业、反应迅速，属于“看见问题立刻下重手部署”的典型导师型NPC。</li>
+</ul>
+
+<h4>塔哈·卡鲁德</h4>
+<ul>
+<li><strong>作用</strong>：信使/委托链条上的关键联系人。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>通过芬恩“为他送信”这一信息，将当前事件与更大的地方事务接上线。</li>
+<li>其重要报告被夺走，意味着调查链条并非单线，而是存在多方势力争夺信息。</li>
+</ul>
+
+<h4>希露·星弓</h4>
+<ul>
+<li><strong>作用</strong>：星弓旅行社负责人，作为背景情报中的重要人物。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>她的出现说明芬恩并非单纯路人，而是与沙漠运输、旅行与人脉网络存在联系。</li>
+<li>有助于将旅途冒险与本地势力、商业组织连接起来。</li>
+</ul>
+
+<h4>阿斯本萨检查站士兵</h4>
+<ul>
+<li><strong>作用</strong>：压迫性环境的具象化。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>通过盘查贫困半身人夫妇，呈现制度性不公与边境权力。</li>
+<li>他们未必是主要反派，但却很好地制造了“敌意循环”的主题氛围：敌意从不只来自怪物，也来自秩序本身。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 行会召集与异常碎片鉴定</h3>
+<p>雪菈收到导师召唤后前往炼金术师行会，见到尤利尼克斯大师。大师带来的并不是普通委托，而是一批黑市流出的吉斯特卡灵导械碎片。雪菈通过奥秘与历史检定发现，碎片已被人为嵌入“情绪/灵能放大”的次级谐振，会吸收并放大愤怒、嫉妒等负面情绪。尤利尼克斯据此判断，若碎片流入拉玛萨拉，后果将远超失窃案本身，可能造成群体精神污染。</p>
+
+<h3>2. 接受委托，踏上沙漠追索</h3>
+<p>尤利尼克斯随即分配追踪器、护符、介绍信与经费，要求雪菈前往拉玛萨拉回收碎片并调查幕后操盘者。这个阶段完成了从“知识发现”到“行动启动”的转折，也把模组目标明确为：追物、追人、追真相三线并进。</p>
+
+<h3>3. 沙漠途中救援芬恩</h3>
+<p>在前往目的地的路上，雪菈遇见被沙狼埋住的信使芬恩，并将其救出。芬恩说明自己正执行送信任务，但关键报告已在袭击中失落。这个事件让故事从单人调查扩展为双人同行，也把“信息被夺走”作为新的悬念投入主线。</p>
+
+<h3>4. 沙漠遭袭与临时结盟</h3>
+<p>随后两人在沙漠中遭遇袭击，联手击退敌人。战斗结束后，他们从沙狼遗骸中收集宝石与炼金材料，既补充资源，也强化了沙漠生存冒险的质感。经过共同作战后，二人关系从偶遇变成正式搭档，为后续长线调查建立信任基础。</p>
+
+<h3>5. 身世与世界观补完</h3>
+<p>旅途中，雪菈与芬恩互相介绍背景。芬恩提到自己与星弓旅行社、沙漠生存经验有关；雪菈则通过检定回忆起星弓旅行社以及负责人希露·星弓的信息。这一段完成了对世界网络的扩充，让“旅伴”不只是功能性队友，而是连接不同势力与社会系统的桥梁。</p>
+
+<h3>6. 阿斯本萨检查站与不公的预兆</h3>
+<p>临近抵达时，两人来到阿斯本萨设立的商路检查站，目睹士兵盘查一对贫困半身人夫妇。这里气氛压迫、秩序冷硬，成为本段剧情的情绪落点。它不仅展示了边境权力的任性，也预告玩家接下来将面对一个并不中立的世界：碎片所放大的敌意，可能早已存在于日常制度中。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：雪菈用奥秘与历史检定识破碎片真相。这个场景把“学者型PC”的价值发挥得非常彻底，且直接决定了整个委托的级别。</li>
+<li><strong>最意外</strong>：原本像是“失物追查”的开局，突然升级成“精神污染风险”与“社会层面的恶意扩散”，世界观一下子打开。</li>
+<li><strong>最有张力</strong>：阿斯本萨检查站盘查贫困半身人夫妇。没有爆炸性动作戏，却非常能压住气氛，让人意识到真正的压力来自制度与阶层。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>奥秘检定 + 历史检定成功</strong>：识破碎片的异常谐振，是本段最关键的大成功级表现。</li>
+<li><strong>回忆星弓旅行社背景</strong>：虽然不是生死攸关，但很好地丰富了世界关系网，属于“信息型高光”。</li>
+<li><strong>沙漠生存与遭袭应对</strong>：没有明确展示数值结果，但从剧情呈现看，团队协作稳定，起到了“让冒险成立”的作用。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>芬恩在被救后还能继续交代“重要报告被夺走”，让人感觉他不是单纯需要救援的NPC，而是自带任务线索的“活情报包”。</li>
+<li>雪菈与芬恩互相介绍身世的段落，很有典型TRPG队友初识感：一边确认身份，一边悄悄把彼此纳入可合作名单。</li>
+<li>检查站对贫困半身人夫妇的盘查，是一种“没有台词胜过有台词”的桥段，沉默本身就足够说明问题。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>更像模组复盘的版本</strong>（加入主题、结构、节奏、伏笔分析），或</li>
+<li><strong>更像玩家战报的版本</strong>（增加趣味吐槽与现场感）。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>
