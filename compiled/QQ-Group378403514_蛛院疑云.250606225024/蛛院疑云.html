@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蛛院疑云 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>蛛院疑云</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《蛛院疑云》是一则典型的“宅院妖祟 + 人心纠葛 + 邪术追凶”结构模组。故事发生在上官府，一场突如其来的妖蛛异变打破了原本封闭而讲究体面的府邸秩序。表面上，这是妖蛛缠身、邪祟作乱的怪异事件；但随着调查推进，众人逐渐发现，真正的源头并非单纯的异形邪物，而是有人借由道术、蛊毒与“咒恶”性质的法术，将怨念、人心与肉体一同污染，制造出会“传染目击者”的恐怖灾厄。</p>
+<p>核心冲突因此分成两层：外层是要解决不断扩张的妖蛛威胁，内层则是要解开上官府、司徒家、璞小姐婚事与江湖术士游浪之间盘根错节的旧怨。换言之，这不是“打倒怪物就结束”的故事，而是“怪物本身就是人心裂痕的具象化”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>上官府被妖蛛缠身后，上官云龙、道士林泽祁、侍女珍珠与侠客叶子成先以茶叙交换彼此掌握的线索，逐步拼出事件轮廓：妖蛛并非自然生成，而是由某名术士借“蛊毒外法”催生，且携带会侵染目击者的咒恶效应。林泽祁查出线索指向司徒家与江湖术士游浪的往来，上官云龙则根据府内踪迹锁定游浪居所，众人遂展开追查并与其交手，最终逼出其所持秘密与西域秘药，确认他确为施蛊害府之人。然而，游浪并不是单纯的黑手，事件背后还牵连司徒家旧怨，以及璞小姐婚事所形成的人情死结：真正困住上官府的，不只是邪术，还有无法放下的怨、疑与执念。</p>
+<p>随着夜间搜查和恐怖判定接连爆发，妖蛛阴影不断挑动众人的狂气，连珍珠也遭术法暗算。审讯游浪后，上官云龙意识到解除咒缚的关键不在药物本身，而在于化解“蛊结在人心”的结。于是林泽祁以中药调和众人情绪与关系，推动婚事与人际矛盾收束；珍珠也在主役场景中与柳文彦互诉真心，确认柳对璞小姐情意不改，并获得护身符护身。最终，众人合力迎战被削弱的妖蛛，林泽祁负责封印控场，珍珠与叶子成、上官云龙轮番输出，最后由上官云龙一刀斩杀妖蛛。残躯化烟后，林泽祁又暗中撮合叶子成与珍珠，上官云龙也默许珍珠按自己的心意选择去向，至此妖异阴影散尽，府中表里之患一并平息。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是“双重收束”的：</p>
+<ol>
+<li><strong>外部危机解除</strong>：妖蛛被彻底击杀，咒恶与污染源头被封住。</li>
+<li><strong>内部关系落点明确</strong>：璞小姐、柳文彦、珍珠等人的情感与婚事线得到安置，人物不再只是“被事件推动的棋子”，而是开始自主选择未来。</li>
+</ol>
+<p>整体收尾带有明显的“祟已除、人心未尽，但已能向前”的余韵，既完成了恐怖解谜，也完成了情感落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>上官云龙</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：强势、冷静、执行力极高，兼具贵族的威严与战场型角色的果断。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在调查中快速锁定游浪居所，体现其对府内局势的掌控力。</li>
+<li>审讯游浪时能够抓住核心信息，不被对方话术带偏。</li>
+<li>最终战中作为收割者，一刀斩杀妖蛛，承担“结束战斗”的英雄位。</li>
+<li><strong>高光时刻</strong>：最后斩杀妖蛛，是最具视觉冲击力的终结动作，也奠定他在队伍中的“压轴战力”定位。</li>
+<li><strong>人物弧光</strong>：从单纯的府主/贵族执行者，转向愿意默许他人自由选择，显示出他并非只会“管束”，也能理解关系的复杂性。</li>
+</ul>
+
+<h3><strong>林泽祁</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：理性、专业、擅长沟通调和，兼具道士的术法能力与“调停者”气质。</li>
+<li><strong>关键行为</strong>：</li>
+<li>从术法和药理角度识破妖蛛的蛊毒外法。</li>
+<li>以中药调和众人情绪，推动“人心结”被解开。</li>
+<li>最终战中承担封印与控场职责，属于典型的战术核心。</li>
+<li><strong>高光时刻</strong>：不仅破邪，还“破心”，真正点出模组主题——邪祟可除，关键在于人心能否解结。</li>
+<li><strong>人物弧光</strong>：林泽祁不只是输出型道士，更像是把团队从恐怖氛围中稳住的人。他的价值在于“解决问题的方式是把人重新连起来”。</li>
+</ul>
+
+<h3><strong>珍珠</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：细腻、敏感、情感驱动强，能在恐怖与压迫中保有个人欲望与判断。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在信息交换阶段承担府内视角的补充，提供情感线索。</li>
+<li>夜间搜查中被术法暗算，成为“咒恶侵染”具象化的受害者之一。</li>
+<li>主役场景与柳文彦互诉真心，完成了自己从被动侍女到主动表达者的转变。</li>
+<li><strong>高光时刻</strong>：与柳文彦确认彼此心意，是她最亮眼的情感场面，也让她不再只是“府中NPC式陪伴位”。</li>
+<li><strong>人物弧光</strong>：从被恐怖笼罩、被安排的人，成长为能够决定自己情感与去向的人。结尾获得护身符，也象征她开始拥有自我保护与自我选择的权利。</li>
+</ul>
+
+<h3><strong>叶子成</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：侠客气质鲜明，偏行动派，重义气，擅长在关键时刻补位。</li>
+<li><strong>关键行为</strong>：</li>
+<li>参与追查游浪并投入交战。</li>
+<li>在最终战承担输出职责，与珍珠、上官云龙形成稳定的战斗链条。</li>
+<li>被林泽祁暗中撮合，说明其角色在情感层面也有潜在展开。</li>
+<li><strong>高光时刻</strong>：最终战中的连番输出，体现了其“可靠的实战伙伴”定位。</li>
+<li><strong>人物弧光</strong>：虽然摘要中没有详写其内心，但他作为侠客并未只是打手，而是处在情感线的连接点上，带有后续可发展的余地。</li>
+</ul>
+
+<h3><strong>柳文彦</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：沉稳、克制、情感忠贞。</li>
+<li><strong>关键行为</strong>：与珍珠互诉真心，明确对璞小姐的情意不改。</li>
+<li><strong>高光时刻</strong>：在主役场景中完成感情确认，是推动婚事线收束的重要节点。</li>
+<li><strong>人物弧光</strong>：他代表的是“未被邪术扭曲的人情本心”，也是模组中少数真正让关系回归本真的角色。</li>
+</ul>
+
+<h3><strong>游浪</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：阴险、狡狯，典型术士/江湖邪人形象。</li>
+<li><strong>关键行为</strong>：</li>
+<li>作为施蛊害府的直接执行者。</li>
+<li>持有【秘密】与【西域秘药】，是事件技术层面的制造者。</li>
+<li>与司徒家旧怨、婚事纠葛形成背后钩子。</li>
+<li><strong>作用</strong>：</li>
+<li>作为前半段“谜底”，后半段“人祸”的具象化反派。</li>
+<li>虽然被揭穿，但并非故事全部罪魁，更多是把深层矛盾激活的人。</li>
+</ul>
+
+<h3><strong>司徒家 / 璞小姐</strong></h3>
+<ul>
+<li><strong>作用定位</strong>：事件的关系源头与情感牵连点。</li>
+<li><strong>剧情功能</strong>：将“邪术事件”与“婚事、旧怨、人情债”绑定，让模组不止是捉妖，更像在处理一场长期积累的家族纠纷。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：府中异变与初步结盟</strong></h3>
+<p>上官府遭妖蛛侵扰，气氛迅速从日常宅邸转为恐怖封锁场。上官云龙、林泽祁、珍珠与叶子成在茶叙中交换各自掌握的情报，开始搭建共同认知：妖蛛不是普通的妖物，而是带有咒恶和传染性质的邪异存在。此阶段重点在于“信息拼图”，通过多方视角把孤立事件变成可追踪的案件。</p>
+
+<h3><strong>第二阶段：线索收束与目标锁定</strong></h3>
+<p>林泽祁调查出司徒家与术士游浪的往来，说明事件背后有人为操控。上官云龙则以府内痕迹为依据，锁定游浪居所，正式将“模糊的邪祟”转化为“可以追捕的人”。这一步非常关键，因为模组从“怪物恐怖”切换为“人祸调查”，冲突从被动受害变成主动清算。</p>
+
+<h3><strong>第三阶段：追查游浪与揭开真相</strong></h3>
+<p>众人前往追查并与游浪交手，迫使其暴露【秘密】与【西域秘药】。游浪的存在证明妖蛛是由蛊毒外法催生，且并非孤立作案；它牵连司徒家旧怨，以及璞小姐婚事所造成的隐性矛盾。此时故事主题明显转向“邪术只是外壳，真正的毒在关系内部”。</p>
+
+<h3><strong>第四阶段：夜搜、恐怖判定与狂气侵蚀</strong></h3>
+<p>夜间搜查阶段，恐怖判定频繁爆发，妖蛛的阴影不断刺激众人狂气，营造出持续压迫感。珍珠也被术法暗算，进一步证明咒恶不仅伤身，还会污染感知与心理。这一阶段是模组气氛最浓的部分，强调“看见本身也会被污染”的危险。</p>
+
+<h3><strong>第五阶段：审讯、和解与人心解蛊</strong></h3>
+<p>上官云龙审讯游浪后得知，解除咒缚的关键不只是药，而是化解“蛊结在人心”的怨恨。林泽祁于是转向情感调和，使用中药与沟通推动人物关系收束。珍珠与柳文彦在主役场景中互诉真心，确认情感归属，并借护身符完成保护与安抚。这一段是模组最具“落地感”的部分：以情感和解作为破局条件。</p>
+
+<h3><strong>第六阶段：最终决战与收尾</strong></h3>
+<p>众人迎战被削弱的妖蛛，林泽祁负责封印与控场，珍珠、叶子成与上官云龙轮番输出，最终由上官云龙斩杀妖蛛。残躯化烟后，林泽祁继续在暗中撮合叶子成与珍珠，上官云龙则默许珍珠按自己的心意选择去向。故事在战斗胜利与关系安放中完成闭幕，诡异阴霾彻底散去。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：最终战上官云龙一刀斩杀妖蛛，属于典型“压轴终结技”，爽感十足。</li>
+<li><strong>最意外</strong>：模组并没有把“破解诅咒”落在单纯的驱邪上，而是落在“情感与怨恨的化解”，很符合恐怖宅邸类模组的反转逻辑。</li>
+<li><strong>最有戏</strong>：珍珠与柳文彦互诉真心，既补足情感线，也让整个故事从“妖祟事件”升格为“关系修复剧”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>高光型成功</strong>：</li>
+<li>林泽祁查出司徒家与游浪的往来，相当于把调查路线彻底打开。</li>
+<li>上官云龙锁定游浪居所，属于关键情报落地。</li>
+<li>最终战团队配合封印、输出、斩杀一气呵成，是战斗侧的整体大成功。</li>
+<li><strong>压力型失败/负面效果</strong>：</li>
+<li>夜搜阶段频繁触发恐怖判定，尤其珍珠被术法暗算，体现出模组对“精神污染”的持续压迫。</li>
+<li>妖蛛阴影挑动狂气，说明即使不是肉体重创，也会在心理层面造成连锁反应。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>茶叙交换情报</strong>：非常像“贵族宅邸版侦探会议”，把各自知道的碎片拼起来，节奏稳而有戏。</li>
+<li><strong>审讯游浪得知‘蛊结在人心’</strong>：这句几乎是整模组的主题点睛，等于把超自然案件翻译成人性问题。</li>
+<li><strong>林泽祁暗中撮合叶子成与珍珠</strong>：让本来偏严肃的驱邪故事多了一点人情味，也给结尾留出温度。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“模组复盘讲稿版”</strong></li>
+<li><strong>“适合发帖的精简版”</strong></li>
+<li><strong>“按PC分别写人物小传版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>回家，然后被给予小惊喜 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>回家，然后被给予小惊喜</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组的核心是一次“回家后的惊喜整蛊”与随后迅速失控的情感/支配互动。表面上，喜多川为回家的芒准备了一个带有“中毒”“搜集药材”“制作解药”要素的厨房冒险小游戏，试图用机关、束缚与惩罚感制造惊喜；但实际上，这场游戏很快从单向整蛊转变为双向拉扯，最终被芒反客为主，变成了带有调情、控制与报复意味的私密互动。模组的主要矛盾并不是传统意义上的生死危机，而是“谁掌控节奏、谁定义游戏规则”的关系博弈。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>芒回家后，喜多川先以一杯“红茶”作为开场，将她迅速迷晕，为后续的“惊喜”做铺垫。待芒醒来，喜多川宣称她“身中剧毒”，必须在家中各处完成一系列冒险任务来搜集制作解药的材料。整个流程被包装成一场居家版解谜闯关：玩家需要在厨房、阳台、卫生间等地点完成机关与检定，逐步解除限制、收集道具、推进剧情。原本应当是喜多川主导的整蛊表演，但芒在行动中展现出极强的适应性与控制力，不但几乎没有被难倒，甚至凭借高耐受与反应能力，逐渐将“被整蛊者”身份转化为“主导者”。随着机关推进，两人的互动开始偏离预设：任务不再只是找解药，而是演变为带有惩罚性质的调情、压制与反制。喜多川原本试图制造“惊喜”，最终却成为被节奏牵着走的一方。剧情的高潮不在于谜题解开，而在于关系结构被翻转——芒继续“惩罚”喜多川，场面在暧昧与支配欲中推进，最后以未完结的方式收束，留下后续空间。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局并未真正回归“解药完成、危机解除”的传统收束，而是停留在芒持续掌控局势、继续对喜多川施加“惩罚”的阶段。也就是说，模组的终点不是问题解决，而是角色关系进一步升温、互动张力被延长。以开放式、悬而未决的方式结尾，强化了“惊喜”本身的反转意味：喜多川准备的是游戏，但芒收获的是一场更进一步的主导权争夺战。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>芒</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：沉着、反应快、适应力强，且明显对喜多川的“整蛊”不陌生；同时具有很强的主动性和反客为主的倾向。</li>
+<li><strong>关键行为</strong>：</li>
+<li>被“红茶”放倒后仍能快速进入状态，说明她并不完全被动。</li>
+<li>在意志检定与强刺激环境中表现出很高的耐受度，体现出她对这种互动方式的接受甚至驾驭能力。</li>
+<li>后半段直接接管节奏，使原本的“解药游戏”变成自己的主场。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>对喜多川的调侃式回应：“小喜多川～今天这个小惊喜，是你之前答应我的那个吗♡～”</li>
+<li>在高强度刺激下仍能稳定通过意志检定，展现出“不会被轻易玩弄”的压迫感。</li>
+<li>从受害者迅速转为支配者，完成整场剧情最大的反转。</li>
+</ul>
+
+<h3><strong>喜多川</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：喜欢策划、擅长制造仪式感与惊喜，带有明显的戏弄、掌控和“我来安排”的倾向。</li>
+<li><strong>关键行为</strong>：</li>
+<li>先用“红茶”让芒昏睡，证明其前置布局能力。</li>
+<li>以“你现在身中剧毒，需要搜寻原材料给我来制作解药”作为核心设定，为整个居家冒险提供合理化外壳。</li>
+<li>试图通过机关、束缚与惩罚感来增强游戏的沉浸效果。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>开局建立气氛的那一刻，成功把普通回家场景变成了“事件”。</li>
+<li>作为惊喜设计者，虽然后续失控，但其“想要让对方记住这一天”的动机非常明确。</li>
+<li><strong>人物作用</strong>：</li>
+<li>是剧情的发动机，也是被反制的“初始掌控者”。他既是整场游戏的设计者，也是推动关系翻转的催化剂。</li>
+</ul>
+
+<h3><strong>PC关系与互动弧光</strong></h3>
+<p>这段剧情的核心不是单人冒险，而是双人关系动态：</p>
+<ul>
+<li>开局：喜多川主导，芒被动入局。</li>
+<li>中段：芒逐渐适应，开始理解并利用规则。</li>
+<li>后段：芒反客为主，喜多川失去掌控。</li>
+<li>结尾：互动从“整蛊游戏”升级为更亲密、更具张力的支配/惩罚关系。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 回家与“红茶”开场</strong></h3>
+<p>芒回家后，喜多川先端出准备好的“红茶”。这并不是普通饮品，而是用于迅速放倒对方的前置机关。芒喝下后很快昏睡，喜多川成功完成了自己设计的第一步：将日常场景转化为可操控的“冒险开端”。</p>
+
+<h3><strong>2. “身中剧毒”的任务宣布</strong></h3>
+<p>芒醒来后，喜多川正式公布剧情设定：她“中毒”了，必须在家里各处寻找原材料，才能制作出解药。这个设定把原本可能只是私下整蛊的行为包装成任务式闯关，形成轻度RPG/解谜的结构。芒接受了游戏框架，开始进入角色。</p>
+
+<h3><strong>3. 厨房、阳台、卫生间的机关闯关</strong></h3>
+<p>在厨房、阳台、卫生间等地点，芒依次完成不同机关任务，收集药材并逐步解除束缚。虽然摘要未详述每个机关的具体形式，但整体可以看出这是一个以空间切换为线索的分段式流程，强调“找线索—做检定—推进下一段”的节奏。芒在过程中表现得十分从容，几乎没有被难倒。</p>
+
+<h3><strong>4. 强刺激检定与角色翻转</strong></h3>
+<p>过程中出现强电刺激的意志检定：芒意志80，D100=19，困难成功，显示她对刺激的高耐受。后续又出现D100=15/0等失败记录，说明流程中存在进一步的刺激或压迫感。按剧情效果来看，这些检定并没有削弱芒，反而强化了她“不会被轻易控制”的形象。此时剧情的重点已经从“如何解毒”转向“谁更能承受、谁更能掌控”。</p>
+
+<h3><strong>5. 反客为主与惩罚性质互动</strong></h3>
+<p>随着剧情推进，芒逐渐接管节奏，开始反过来支配喜多川。原本喜多川想做的是惊喜与整蛊，后来却被芒带入带有惩罚感与调情意味的互动中。两人的角色发生明显互换，整个场景从任务游戏转变成关系上的压制与反制。</p>
+
+<h3><strong>6. 未完结收尾</strong></h3>
+<p>最终并没有明确的“解药完成”或“任务结束”。芒继续“惩罚”喜多川，剧情以尚未收束的状态结束，保留了后续发展空间。这个结尾强化了本模组的暧昧性：游戏不是终点，关系本身才是重点。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：芒从“被下药者”一路翻盘，最后反客为主。这种权力结构翻转是整段剧情的最大亮点。</li>
+<li><strong>最搞笑</strong>：喜多川认真宣布“你现在身中剧毒，需要搜寻原材料给我来制作解药。”结果对方并不按常规受控，而是顺势把整场戏变成自己的节奏。</li>
+<li><strong>最意外</strong>：原本以为是单向整蛊，结果剧情迅速滑向“双向调情+支配博弈”，模组性质发生了明显偏转。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>意志80，D100=19，困难成功</strong>：这是一个非常强势的成功，直观表现出芒的抗压与抗刺激能力。</li>
+<li>后续 <strong>D100=15/0 失败</strong>：虽然具体语境未展开，但从叙事效果看，这类检定更像是在加强场面张力，而不是让角色陷入真正困境。</li>
+<li>这些检定共同塑造了芒“很难被整到”的角色印象。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>喜多川：“你现在身中剧毒，需要搜寻原材料给我来制作解药。”</li>
+<li>这句很有“认真胡闹”的喜剧效果，把整蛊包装得十分正经。</li>
+<li>芒：“小喜多川～今天这个小惊喜，是你之前答应我的那个吗♡～”</li>
+<li>这句台词非常关键：既是挑逗，也是夺权宣言，直接暗示她对局势的理解远超喜多川预期。</li>
+<li>“剧情未完结收尾”</li>
+<li>作为跑团结构上的处理，恰好与本段内容的暧昧张力相符：没有真正结束，正说明关系还在继续发酵。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像论坛跑团复盘的文风</strong>，或</li>
+<li><strong>更像正式模组评测的文风</strong>，或</li>
+<li><strong>增加“主题解析 / DM设计点评 / 玩家反馈总结”三部分。</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

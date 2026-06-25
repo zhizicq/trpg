@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>“致命痴迷” - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>“致命痴迷”</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情是一场典型的现代/军事风格追捕行动：警方或特勤单位接获命令，前往森林中的破旧小屋，逮捕或击毙一名<strong>叛逃特工</strong>，并回收其携带或藏匿的<strong>失窃文件资料</strong>。核心冲突并不复杂，但张力很强——一边是必须尽快完成回收任务的行动组，一边是明显早有准备、在屋内布置了陷阱并持枪死守的目标。</p>
+<p>该模组的戏剧重点不在阴谋铺陈，而在于<strong>高风险突入、信息不对称、近距离火力交换，以及伤亡压力下的战术抉择</strong>。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>行动开始于一处偏僻林地中的破旧小屋。警方小组奉命前来执行突袭，目标是解决一名叛逃特工并夺回失窃文件。由于现场环境封闭且风险极高，队员先进行谨慎侦察，戴维斯成功发现了门边的细线诡雷，同时确认屋内至少有持械敌人埋伏。这一发现使原本可能正面硬冲的行动转变为更有准备的爆破突入。</p>
+<p>在破门爆破后，突击组迅速压入屋内，并率先击倒一名敌方嫌犯。然而屋内并非只有一人，第二名携带AKM的敌人随即展开猛烈伏击，火力优势极强，直接将夏朵打至重伤倒地，令前线推进顿时受阻。面对突发伤亡，戴维斯在支援狙击手的火力协助下稳住局面，成功压制并击瘫敌人，避免战斗进一步失控。尽管已经拿到战术上的局部优势，但由于夏朵失去行动能力，队伍难以继续冒进，最终选择撤退，等待更强的支援与后续处置。整体剧情呈现出一种“准备充分却仍被敌人反咬一口”的紧张感，强调了突袭行动中容错率极低的残酷现实。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本次突袭未能以“全歼并立即回收文件”的方式顺利结束，而是在<strong>击倒/击瘫敌人后因己方伤员倒地而主动撤退</strong>。结局偏向现实主义：任务目标未完全完成，但队伍保住了战力与后续行动可能性。剧情收在“等待更强支援”的节点上，为后续二次突入、搜查文件或后续追捕留出了空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：戴维斯</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：冷静、谨慎、具备战术意识，属于典型的前线执行型角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>侦查阶段成功发现门边细线诡雷，说明他不是只会冲锋的行动派，而是有明确风险意识。</li>
+<li>在突入后面对第二名敌人的压制火力，能稳住节奏并依靠支援协同处理敌人，体现出较强的临场判断力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>侦查发现诡雷，直接避免了可能的开门即减员。</li>
+<li>在夏朵倒地后仍能保持行动连贯，在支援狙击手配合下击瘫敌人，完成局部逆转。</li>
+</ul>
+
+<h3><strong>PC：夏朵</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动积极、承担突击职责，偏向前压型角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与戴维斯共同执行爆破突入，承担了高危的先头推进任务。</li>
+<li>在敌方AKM火力下重伤倒地，表现出该模组中前线突击的高风险与脆弱性。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为第一批破门进入者，体现出敢打敢拼的作风。</li>
+<li>虽然遭遇重伤，但其倒地也间接凸显了敌方火力的威胁等级，为剧情增加真实感。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+<ul>
+<li><strong>叛逃特工/屋内嫌犯</strong></li>
+<li>剧情核心目标人物，兼具“被追捕者”和“战斗威胁”双重身份。</li>
+<li>其存在推动了整个突袭行动，并通过陷阱与埋伏强化了对抗强度。</li>
+<li><strong>第二名持AKM敌人</strong></li>
+<li>关键战斗NPC，实际造成行动转折的主要威胁。</li>
+<li>他的伏击成功打伤夏朵，使原本顺利的突袭迅速变得危险。</li>
+<li><strong>支援狙击手</strong></li>
+<li>典型的远程火力保障角色。</li>
+<li>在近距离交火陷入劣势时提供压制与补枪空间，帮助戴维斯稳定战局。</li>
+<li><strong>行动简报/上级指令者</strong></li>
+<li>功能性NPC，通过简报明确任务目标：击毙或逮捕叛逃特工，回收文件。</li>
+<li>其作用是为事件设置明确目标与行动边界。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：任务下达与目标确认</strong></h3>
+<p>警方/特勤单位接到简报，任务是前往森林中的一间破旧小屋，处理一名叛逃特工，并夺回失窃文件。任务性质明确，但也预示了行动的敏感与危险：不仅要抓人，还要防止文件被销毁或转移。</p>
+
+<h3><strong>第二阶段：接近目标与战场侦察</strong></h3>
+<p>戴维斯与夏朵接近小屋前先进行侦查，戴维斯成功发现门边细线诡雷，同时确认屋内有人持械。这个阶段非常关键，因为它直接改变了后续战术：如果贸然开门，极可能造成突发伤亡。发现诡雷后，队伍决定使用更安全但更激进的方式——爆破破门。</p>
+
+<h3><strong>第三阶段：爆破突入与首轮交火</strong></h3>
+<p>突入阶段开始，爆破成功后，突击组迅速压入屋内，并在混乱中击倒首名敌人。此时战斗看起来似乎有机会快速结束，但这是“第一层威胁”被清除后的短暂喘息，并未真正解除风险。</p>
+
+<h3><strong>第四阶段：埋伏反击与人员减员</strong></h3>
+<p>就在局势尚未完全稳定时，第二名敌人持AKM展开伏击。其火力强度极高，夏朵在交火中被重伤倒地，且体质检定失败，暂时失去行动能力。这个转折使原本偏向成功的突袭迅速变成危险局面，突击组不得不从“清场”转为“保命”。</p>
+
+<h3><strong>第五阶段：支援介入与战术收束</strong></h3>
+<p>戴维斯在支援狙击手协助下继续压制敌人，并成功击瘫对方。虽然敌方威胁被削弱，但己方已有伤员失去行动能力，继续深入搜查或强行推进的成本过高。最终，行动组决定撤退，等待更强支援后再进行后续处理。剧情在此收束于一种“任务未竟，但局势暂稳”的状态。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：戴维斯侦查发现门边诡雷，属于“战前一眼救全队”的高光时刻。</li>
+<li><strong>最意外</strong>：刚刚爆破突入、击倒一名敌人后，马上被第二名持AKM的敌人反打，形成非常经典的“以为赢了，其实才刚开始”的反转。</li>
+<li><strong>最紧张</strong>：夏朵被火力直接重伤倒地，全队战术节奏瞬间崩紧，气氛一下从突击变成救急。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>大成功</strong>：戴维斯「侦查」成功发现细线诡雷，这是本段最关键的正向检定，直接避免了开门触雷的灾难。</li>
+<li><strong>关键失败</strong>：夏朵在遭受步枪火力后体质检定失败，导致暂时失去行动能力；这不仅是数值层面的失败，更是剧情节奏的急转直下。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>简报内容非常直接：“<strong>你们的目标是击毙或逮捕叛逃特工，回收失窃文件资料。</strong>”</li>
+<li>这种毫不花哨的任务定义，反而强化了行动的职业化与冷峻感。</li>
+<li>“先发现诡雷，再爆破突入”的过程也很有电影感，属于标准的<strong>特警突入桥段</strong>，很适合在复盘里作为模组的招牌场面。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以把这份报告进一步整理成：</p>
+<ol>
+<li><strong>更像跑团群公告的简洁版</strong>，或</li>
+<li><strong>更像正式复盘文档的扩展版</strong>（加入“主题解读 / 战术分析 / 叙事节奏评价”）。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

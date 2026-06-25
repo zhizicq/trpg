@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博德之门风云大会 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>博德之门风云大会</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《博德之门风云大会》表面上是一场汇聚各路强者、以竞技和庆典为核心的大型赛事，实则是多方势力围绕<strong>博德之门的未来控制权</strong>展开的暗战。城中贵族、义军、行会、神殿、焰拳与邪教势力在赛事期间层层渗透，借由大会作为掩护，争夺情报、盟友与舆论优势；而更深处，则是与<strong>午夜弩矢</strong>、<strong>邪恶同盟</strong>及<strong>巴尔相关阴谋</strong>相连的灾厄正在酝酿。</p>
+<p>本模组的核心矛盾并非单纯“赢比赛”，而是玩家一边在竞技场上争取荣誉与资源，一边在城市阴影中阻止一场足以撼动博德之门秩序的阴谋爆发。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>队伍自枭熊镇启程，在途中购置次元袋与防护斗篷，却意外卷入一场时空异动，来自异界的精灵艾莉娅因此加入队伍。抵达博德之门后，他们报名参加风云大会并入住运动员居所，很快察觉这场盛会远不止表面热闹：改建自旧贵族宅邸的场地暗藏机关，报名与招募流程异常宽松，暗门、潜伏者和邪教活动不断浮现。首夜，营地遭到暴徒与邪教徒突袭，焰拳、银龙与圣殿援军及时介入，玩家们也在混乱中成功守住阵地，救下伤员并初步确认敌意来源。</p>
+<p>随后，大会以多项赛事展开，越野马拉松、钓怪赛、冰湖滑冰、射击与团队攻防等轮番进行。涅墨、断莺与艾莉娅凭借出色检定和配合频频斩获佳绩，拿到冠军、铜牌与奖金的同时，也逐步拼凑出“午夜弩矢”、邪恶同盟与高公爵阴谋的线索。赛事与调查并行，贵族、义军、行会联盟等势力也不断试探、拉拢，令局势愈发扑朔迷离。最终，随着城中位面异象骤起，六方势力在至高大殿前彻底摊牌，玩家们在终局战中击溃邪教首领与巴尔化身，并借午夜弩矢扭转战局，成功阻止了博德之门的灾难性崩坏。</p>
+
+<h3>结局与收尾</h3>
+<p>结局以<strong>终局会战+阴谋瓦解</strong>收束：邪教首领与巴尔化身被击败，午夜弩矢发挥关键作用，城中危机解除。风云大会从一场“竞技庆典”变成揭露城内权力暗流的舞台，而玩家队伍则在完成任务的同时，收获了奖项、声望、盟友与一段极具城市史诗感的冒险经历。整体收尾强调：比赛可以结束，但博德之门的政治博弈不会停歇，玩家已在这座城中留下自己的名字。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>各PC（玩家角色）</h3>
+
+<h4>涅墨</h4>
+<ul>
+<li><strong>性格特点</strong>：行动力强、目标感明确，偏向“把事做成”的实干派。</li>
+<li><strong>关键行为</strong>：在多项赛事中表现稳定，是团队推进任务与拿分的主力之一。</li>
+<li><strong>高光时刻</strong>：越野马拉松、射击或团队攻防等项目中屡次以高检定取胜，体现出强执行力与竞技优势。</li>
+<li><strong>角色弧光</strong>：从单纯参与比赛，逐渐转为能在混乱信息中抓住主线的人，是队伍的“推进器”。</li>
+</ul>
+
+<h4>断莺</h4>
+<ul>
+<li><strong>性格特点</strong>：机敏、细腻，兼具观察力与临场应变能力。</li>
+<li><strong>关键行为</strong>：在赛事中和调查阶段都发挥了重要作用，能够把竞技、侦察和社交串联起来。</li>
+<li><strong>高光时刻</strong>：钓怪赛、冰湖滑冰或团队攻防中表现亮眼；在阴谋调查中也能从细节里挖出关键信息。</li>
+<li><strong>角色弧光</strong>：从“比赛型选手”成长为“情报整合者”，是队伍里非常关键的平衡型角色。</li>
+</ul>
+
+<h4>艾莉娅</h4>
+<ul>
+<li><strong>性格特点</strong>：带有异界来客的陌生感与新鲜感，兼具灵动与适应性。</li>
+<li><strong>关键行为</strong>：因时空异动加入队伍，既是剧情推进器，也是视角上的“外来者”。</li>
+<li><strong>高光时刻</strong>：在赛事中多次凭高强度检定与队友配合拿下成绩，并在行动中展现出和主世界规则逐步磨合的过程。</li>
+<li><strong>角色弧光</strong>：从“被卷入者”变成主动参与者，完成了对博德之门局势的接纳与介入。</li>
+<li><strong>特别价值</strong>：她的存在天然强化了“世界异常感”，让整场阴谋更具超自然色彩。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+
+<h4>焰拳</h4>
+<ul>
+<li><strong>作用</strong>：城内秩序维持者，在首夜袭击与后续局势中承担防线与支援职责。</li>
+<li><strong>意义</strong>：体现博德之门“官方力量并未完全失效”，但也侧面说明城防压力极大。</li>
+</ul>
+
+<h4>银龙</h4>
+<ul>
+<li><strong>作用</strong>：在袭击中作为援军介入，增强防守成功的可信度与史诗感。</li>
+<li><strong>意义</strong>：为玩家保命，同时让大战规模显得更高阶。</li>
+</ul>
+
+<h4>圣殿援军</h4>
+<ul>
+<li><strong>作用</strong>：提供宗教/神圣阵营的支援，说明事件已非单纯世俗冲突。</li>
+<li><strong>意义</strong>：凸显“邪教渗透”的宗教对抗性质。</li>
+</ul>
+
+<h4>贵族势力代表 / 高公爵相关人物</h4>
+<ul>
+<li><strong>作用</strong>：政治层面的拉扯者，向玩家释放试探、招揽或误导信息。</li>
+<li><strong>意义</strong>：将主线从“打怪”提升为“城市权力斗争”。</li>
+</ul>
+
+<h4>义军与行会联盟代表</h4>
+<ul>
+<li><strong>作用</strong>：多方势力之一，参与博德之门未来秩序的争夺。</li>
+<li><strong>意义</strong>：让剧情呈现复杂阵营博弈，而非单线正邪对抗。</li>
+</ul>
+
+<h4>邪教首领</h4>
+<ul>
+<li><strong>作用</strong>：终局战的直接反派，承接此前所有潜伏与袭击。</li>
+<li><strong>意义</strong>：是“阴谋具象化”的核心敌人。</li>
+</ul>
+
+<h4>巴尔化身</h4>
+<ul>
+<li><strong>作用</strong>：终盘BOSS级威胁，代表更高层次的灾厄来源。</li>
+<li><strong>意义</strong>：将剧情抬升到神话/末世级别，赋予结局重量。</li>
+</ul>
+
+<h4>午夜弩矢</h4>
+<ul>
+<li><strong>作用</strong>：关键道具，能在终局中扭转战局。</li>
+<li><strong>意义</strong>：是整部模组的“解法装置”和隐藏伏笔回收点。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 启程与异变同行</h3>
+<p>玩家们从枭熊镇出发，途中购买次元袋和防护斗篷，为后续大赛和潜在冲突做准备。旅程中发生意外的时空异动，来自异界的精灵艾莉娅被卷入队伍，成为新的同行者，也为后续“城市秩序被异象撕开”的主调埋下伏笔。</p>
+
+<h3>2. 抵达博德之门与风云大会入场</h3>
+<p>众人进入博德之门，参加风云大会报名并入住运动员居所。很快他们发现，大会的组织方式与场地构造都不寻常：旧贵族宅邸被改建为比赛设施，登记和招募流程松散得过头，像是刻意为某些人打开了入口。玩家开始意识到，这不只是竞技盛会，更像一场被人利用的城市舞台。</p>
+
+<h3>3. 首夜袭击与阵营现身</h3>
+<p>大会首夜，暴徒与邪教徒发动突袭，营地瞬间陷入混乱。焰拳、银龙与圣殿援军赶到支援，玩家与盟友一起稳住局面，并救下伤员。此战让他们确认：袭击并非偶发事件，而是有组织、有目标的行动；而围绕大会的暗流已经开始公开化。</p>
+
+<h3>4. 赛事展开：竞技与调查并进</h3>
+<p>风云大会进入正式赛事阶段，越野马拉松、钓怪赛、冰湖滑冰、射击、团队攻防等项目轮番上场。涅墨、断莺与艾莉娅在不同项目中持续交出优异表现，既积累奖牌与奖金，也借比赛接触各种场地、人群与势力代表。玩家利用赛事间隙搜集线索，逐渐拼出“午夜弩矢”、邪恶同盟和高公爵阴谋的轮廓。</p>
+
+<h3>5. 多方势力博弈与危机升级</h3>
+<p>随着调查深入，贵族、义军、行会联盟等势力陆续登场，彼此试探、拉拢、放话，既有合作可能，也有互相利用的成分。玩家愈发清楚，博德之门内部已经不是单纯的安全问题，而是一场围绕未来统治和城市走向的多边斗争；而邪教势力则在背后不断推动灾厄升级。</p>
+
+<h3>6. 终局异象与至高大殿摊牌</h3>
+<p>当城中位面异象骤起，所有隐藏矛盾被强行推到台前。六方势力在至高大殿前摊牌，真正的敌人与各方诉求终于不再遮掩。玩家站上战场中心，迎来最终决战：击溃邪教首领与巴尔化身，并依靠午夜弩矢扭转战局，阻止了博德之门陷入更大规模的毁灭与失序。</p>
+
+<h3>7. 事件落幕与余波</h3>
+<p>危机解除后，风云大会的“胜负”已不再只是奖牌归属，而是城市命运的转折点。玩家不仅证明了自己的实力，也在博德之门的政治与超自然版图中留下了名字。故事以危机平息、名声上升作为收尾，同时保留博德之门仍将持续波动的开放感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：终局在至高大殿前的摊牌与大战，把前期的竞技、侦查和阵营拉扯全部收束到一场史诗战斗里，结构非常漂亮。</li>
+<li><strong>最意外</strong>：本该是竞技大会，结果一路打成城市阴谋战、邪教清剿战、位面灾变阻止战，性质转变极大。</li>
+<li><strong>最有戏剧感</strong>：艾莉娅作为“来自异界的精灵”在时空异动中加入，天然自带“世界不稳定”的象征意味。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>大成功</strong>：涅墨、断莺、艾莉娅在越野马拉松、钓怪赛、冰湖滑冰、射击等项目中的高强度检定，直接决定了奖牌、奖金与队伍声望。</li>
+<li><strong>关键检定</strong>：调查“午夜弩矢”和邪恶同盟线索时的侦察、交涉、洞察类检定，属于决定主线推进速度的核心。</li>
+<li><strong>临场检定</strong>：首夜袭击时的战斗与支援检定，影响了营地是否能够稳住阵脚。</li>
+<li><strong>若从戏剧性角度看</strong>：赛事中高检定带来的“既拿名次又拿线索”的双重收益，是本模组非常爽的点。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>报名流程异常宽松</strong>、<strong>暗门和潜伏者混入赛事</strong>这类设定本身就很有黑色幽默感：看似正规的大赛，实际像个“谁都能进”的阴谋现场。</li>
+<li><strong>玩家一边比赛一边破案</strong>的节奏感很好：刚在赛场上冲刺夺牌，转头就去排查邪教与政治黑幕，反差极强。</li>
+<li><strong>多方势力轮番登场、互相试探</strong>的段落，适合跑团时产生大量机锋对白，容易出现“表面客套、背后拆台”的精彩社交戏。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份复盘整理成：</p>
+<ol>
+<li><strong>更像正式战报/团后总结的版本</strong></li>
+<li><strong>更偏文学化、故事讲述风格的版本</strong></li>
+<li><strong>按“剧情—人物—机制—体验”四栏的评测版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《冷雾迷踪》二周目 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>《冷雾迷踪》二周目</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《冷雾迷踪》二周目发生在一座与外界隔绝的废弃德国军港岛上。岛屿因历史遗留的军事设施、封闭的地下通道与不明怪物而弥漫着危险气息；同时，岛上还盘踞着掌握局势的武装人物，试图以“秩序”控制外来者。</p>
+<p>核心冲突表面上是“如何在陌生、封闭且充满威胁的岛上生存并逃离”，深层则是“在不可靠的情报与互相猜疑中，判断谁能信、谁在操控局势”。PC们一开始只是偶然登岛，但很快就被卷入失忆者、失事飞行员、持枪看守者、军港暗道与怪物阴影交织而成的谜团中。</p>
+
+<h3>主线剧情概要</h3>
+<p>三名冒险者乘船抵达一座废弃的德国军港岛，途中意外捡到一名失忆的少女朱莉娅，四人因此临时结伴。登岛后，他们在山林间遇见了坠机后幸存的飞行员莫里森；莫里森自称在海域执行任务时遭遇风暴，急需返回部队，并主动提供了有关军港、暗道与快艇的关键信息。众人继续前往灯塔，却遭遇持枪的珍妮与冉诺，被告知岛上存在怪物，且必须服从她们的安排。随着局势愈发紧张，队伍最终选择相信莫里森的路线，进入军港暗道寻找出路。过程中朱莉娅曾试图强行打开军用大门却失败并骨折，令逃生计划一度受阻；但格里德在关键时刻成功撬开操作室门，拿到了快艇钥匙。众人借快艇脱困，回到船上后又意外发现三箱黄金，最终平分财宝，完成了一场惊险但相对圆满的撤离。</p>
+
+<h3>结局与收尾</h3>
+<p>本模组以“成功逃离岛屿 + 意外收获黄金”收尾，整体基调偏冒险爽快。虽然岛上仍笼罩着怪物与军港秘密，但PC们并未继续深挖，而是以效率优先完成撤离。最终财宝平分，使故事在紧张求生之外增添了典型的TRPG“捡到宝箱”的喜感与满足感，形成了一个轻松、利落的圆满结局。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC角色分析</h3>
+
+<h4>1. 朱莉娅</h4>
+<ul>
+<li><strong>性格特征</strong>：行动力强，但判断上有些莽撞，属于“先冲再说”的类型。</li>
+<li><strong>关键行为</strong>：在队伍尚未完全掌握局势前，就试图强开军用大门，显示出她面对障碍时的直接反应方式。</li>
+<li><strong>高光时刻/槽点时刻</strong>：她的力量检定失败导致骨折，是本次日志中最典型的“勇猛但翻车”桥段。这个结果既让角色更鲜明，也为团队制造了现实压力，迫使其他成员接手推进任务。</li>
+<li><strong>角色弧光</strong>：从“以蛮力解决问题”转向“接受队友配合与局势限制”，虽然摘要中没有更深入的心理转变，但她的失败本身构成了团队协作的转折点。</li>
+</ul>
+
+<h4>2. 格里德</h4>
+<ul>
+<li><strong>性格特征</strong>：稳健、务实，关键时刻能承担行动责任。</li>
+<li><strong>关键行为</strong>：在最终脱离阶段，成功用力量撬开操作室门，拿到快艇钥匙，完成决定性的破局。</li>
+<li><strong>高光时刻</strong>：这是典型的“最后一击”式高光——不是战斗爆发，而是精准地解决逃脱链条中的关键节点。</li>
+<li><strong>角色定位</strong>：格里德更像是队伍中的执行者与补位者，擅长在别人失手后顶上，保证流程继续推进。</li>
+</ul>
+
+<h4>3. 三名冒险者中的队伍核心（未细分姓名）</h4>
+<ul>
+<li><strong>性格特征</strong>：整体偏向探索型、应变型，能在信息混乱中迅速做出临时决策。</li>
+<li><strong>关键行为</strong>：抵达岛屿、接纳朱莉娅、与莫里森合作、最终选择撤离路线，体现了较强的团队协作与生存意识。</li>
+<li><strong>高光时刻</strong>：在面对灯塔武装人员时，没有陷入无谓冲突，而是将注意力转向更可行的逃脱方案，说明他们并非纯莽，而是懂得权衡风险。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 莫里森</h4>
+<ul>
+<li><strong>作用</strong>：情报引导者、逃脱线路提供者、关键盟友。</li>
+<li><strong>剧情功能</strong>：他自报“被风暴卷入、需要返回部队”的身份，为自己争取可信度，并同时提供军港、暗道和快艇等关键资讯，直接把剧情从“岛上乱转”推进到“有明确目标的脱困行动”。</li>
+<li><strong>人物评价</strong>：他是典型的“带路型NPC”，在模组结构中承担着把玩家从悬疑感拉回行动线的功能。</li>
+</ul>
+
+<h4>2. 珍妮与冉诺</h4>
+<ul>
+<li><strong>作用</strong>：岛上秩序的掌控者/武装阻拦者。</li>
+<li><strong>剧情功能</strong>：她们在灯塔登场，以持枪和告诫的方式强化岛屿的危险与封闭感，并通过“岛上有怪物、必须听从安排”的说法制造压迫。</li>
+<li><strong>人物评价</strong>：她们并不一定是纯反派，更像是掌握局势、试图以强硬方式维持秩序的岛内势力代表；其存在让玩家意识到“岛上真正危险的不止怪物”。</li>
+</ul>
+
+<h4>3. 失忆的朱莉娅</h4>
+<ul>
+<li><strong>作用</strong>：队伍中的“谜团核心”之一，也是情感与风险并存的同行者。</li>
+<li><strong>剧情功能</strong>：失忆设定使她成为天然的悬念源，也解释了她为何容易被动跟随队伍。她的骨折事件还让队伍更直观地感受到岛屿的残酷。</li>
+<li><strong>人物评价</strong>：她既是剧情推进的起点之一，也是制造戏剧性后果的重要角色。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 乘船登岛：意外同行者加入</h3>
+<p>三名冒险者乘船来到废弃的德国军港岛，本意可能是探索、求生或完成某种任务，却在途中意外捡到一位失忆少女朱莉娅。这个“捡人”行为立刻改变了队伍构成，也为后续的群体合作埋下伏笔。朱莉娅身份不明、记忆缺失，使她既像负担又像谜题，队伍不得不在不清楚真相的情况下接纳她。</p>
+
+<h3>2. 山林遭遇：失事飞行员莫里森现身</h3>
+<p>进入岛上山林后，PC们遇见了失事飞行员莫里森。莫里森自称在周边海域执行任务时被风暴卷入，需要返回部队，并主动提供了军港、暗道与快艇的情报。这一阶段完成了重要的“信息补全”，让玩家从“漫无目的探索”转向“按线索推进”。莫里森在这里既像受困者，也像向导，身份上保留一定可疑性，但足以让玩家继续跟进。</p>
+
+<h3>3. 前往灯塔：武装人员的警告</h3>
+<p>众人前往灯塔途中，遭遇持枪的珍妮与冉诺。两人明确告知岛上存在怪物，并要求所有人听从她们的安排。此处剧情气氛骤然转向紧张，岛屿不再只是废弃军港，而是一个由怪物、火器和控制欲构成的封闭空间。玩家开始意识到，真正的难题不是“找到路”，而是“在别人的规则下活下去”。</p>
+
+<h3>4. 进入军港暗道：逃生方案成形</h3>
+<p>在莫里森的带领下，队伍转入军港暗道。这个阶段是模组的关键转折：剧情从表层冲突与巡游式探索，切换为明确的地下逃生。暗道既是军事遗迹，也是通往自由的唯一通路，象征着“废弃的系统”中仍残存着可利用的逃生缝隙。</p>
+
+<h3>5. 朱莉娅骨折：强行破门失败</h3>
+<p>朱莉娅试图强开军用大门，结果力量检定失败并骨折。这一事件一方面强化了岛屿环境的危险与现实代价，另一方面也让玩家从“硬开就行”的幻想中醒来。骨折不仅是数值上的失败，更是叙事上的提醒：这个岛不会因为你够莽就让路。</p>
+
+<h3>6. 格里德破门：关键物资到手</h3>
+<p>在最终脱困前，格里德用力量成功撬开操作室门，拿到了快艇钥匙。这个检定成功是模组中最重要的“推进性成功”，因为它直接决定了队伍能否离岛。相比朱莉娅的翻车，格里德的成功让团队结构更完整：有人失手，就有人补上。</p>
+
+<h3>7. 快艇撤离与黄金发现：圆满收尾</h3>
+<p>众人凭快艇离开岛屿，回到船上后发现了三箱黄金，并将其平分。此处剧情以明显的“宝藏奖励”收束，既缓解了前段的压迫感，也让冒险的代价得到物质回报。故事没有继续展开岛屿秘密，而是以及时撤离与财富到手作为终点，形成一则简洁有力的冒险结局。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>朱莉娅强开大门失败后骨折</strong>：这几乎是全段最有记忆点的桥段。它既有喜剧感，又让危险变得真实，属于“想靠蛮力解决一切，结果被模组教育”的经典场面。</li>
+<li><strong>船上发现三箱黄金</strong>：结尾惊喜感很强，属于非常TRPG的“逃出生天还顺手发财”式收尾，满足感拉满。</li>
+<li><strong>莫里森突然提供完整逃生情报</strong>：情节推进非常直接，像是“剧情导航NPC”上线，让玩家迅速找到主线。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>朱莉娅力量检定大失败</strong>：失败结果不是简单“没打开”，而是直接骨折，惩罚明确且戏剧化。</li>
+<li><strong>格里德力量检定成功</strong>：在关键时刻成功撬门，完成团队的生死转折，属于标准的“大成功救场”。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>莫里森自报来历</strong>：“我在周边海域执行任务被卷入风暴……需要返回部队。”</li>
+</ul>
+<p>这段台词非常实用，既交代身份又提供动机，还顺带把军港、暗道、快艇这些关键情报一口气抛出来，属于典型的“功能性台词”。</p>
+<ul>
+<li><strong>珍妮与冉诺的警告</strong>：她们以持枪和“岛上有怪物、要听从安排”建立压迫感，形成很好的反差：玩家以为是探索，实际上进入的是一个被武装秩序和怪物威胁双重包围的局面。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析报告整理成：</p>
+<ol>
+<li><strong>更像“跑团战报”的版本</strong></li>
+<li><strong>更像“模组复盘/主持人点评”的版本</strong></li>
+<li><strong>带“角色关系图”和“剧情时间轴”的版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

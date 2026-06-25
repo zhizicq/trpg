@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>“黑鹰坠落…吗？” - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>“黑鹰坠落…吗？”</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《“黑鹰坠落…吗？”》跑团模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组显然以“直升机坠毁后的孤立求生”为开端，整体氛围接近高压军事行动与战场求生题材。玩家角色夏朵莱斯作为坠机幸存者，在通讯尚存、装备有限、周边局势高度敌对的情况下，必须穿越受民兵/游击队控制的城区，抵达指定酒店顶层等待富尔顿回收。</p>
+<p>核心冲突并不在“是否完成任务”，而在于<strong>在敌对区域中保持隐蔽、避免接战、争取生还</strong>。然而日志显示，这种“稳妥撤离”的设计在实战中迅速滑向正面交火，形成了典型的“黑鹰坠落式”战场失控局面：孤军、误判、遭遇巡逻、火力升级、近身搏斗，最终以角色阵亡收束。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>夏朵莱斯从直升机坠毁现场醒来，在燃烧残骸中确认同伴失踪，随后搜集散落装备与反坦克筒，并通过无线电接通指挥部。指挥处告知：班组返程途中坠毁，当前唯一任务是前往五公里外的碧安卜楚莱酒店顶楼，等待富尔顿系统回收；但该区域附近存在民兵与游击队活动，行动必须谨慎。为了避开城区内更密集的敌对势力，夏朵莱斯选择从城郊绕行，试图以潜行方式降低暴露风险。可惜潜行检定失败，最终还是在路边与一辆皮卡巡逻队狭路相逢。面对车载重火力与地雷威胁，她抢先开火，以极难命中的步枪/榴弹手段精准击毁驾驶室，并引爆敌车上的地雷，造成巡逻队失控。随后剧情迅速滑向近距离混战：夏朵莱斯与幸存敌人贴身搏斗，短暂争夺局势主动权，但敌方最终凭借手枪三连发将其击倒。整个过程呈现出“本想绕开冲突，却被迫硬碰硬；本想撤离求生，却被战场吞没”的悲剧结构，且以任务失败、角色阵亡作为终局。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局非常直接：夏朵莱斯未能抵达酒店顶楼，富尔顿回收未能发生，任务失败，角色阵亡。</p>
+<p>从戏剧效果上看，这是一个典型的“孤胆兵在混乱战区中被随机遭遇吞噬”的结尾，强化了模组标题中的反讽意味——“黑鹰坠落”并不只是开场事故，更像是整个任务的命运基调。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：夏朵莱斯</strong></h3>
+<p><strong>性格倾向：</strong></p>
+<ul>
+<li>果断、现实主义，优先考虑路线与风险控制。</li>
+<li>具备一定战术意识：知道不能直接穿越城区，选择城郊绕行。</li>
+<li>不惧战斗，在遭遇敌人后敢于先发制人。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ol>
+<li><strong>坠机后迅速恢复行动能力</strong>：没有原地崩溃，而是立即检查生存状态、搜集装备。</li>
+<li><strong>主动联络指挥部</strong>：说明角色对任务流程和战场通讯有基本掌控。</li>
+<li><strong>选择绕行而非硬闯城区</strong>：体现谨慎思路。</li>
+<li><strong>遭遇敌车后抢先开火</strong>：在绝境中反应迅速，战术上非常符合“先手争夺”逻辑。</li>
+</ol>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>极难成功击毁敌车驾驶舱</strong>：这是本次日志最明确的“英雄时刻”。在潜行失败、局势暴露后，角色仍能以高难度射击精准命中目标，引爆敌车上的地雷，制造了一次极具视觉冲击力的反打。</li>
+<li>从叙事角度，这一击几乎是“临死前的燃烧一枪”，非常符合动作片式的高光收束。</li>
+</ul>
+
+<p><strong>悲剧性：</strong></p>
+<ul>
+<li>她的失败并不是因为怯懦，而是因为战场环境太恶劣、敌方火力与运气更好。</li>
+<li>这个角色的弧光更接近“冷静求生者被战场规则碾压”，而非传统英雄逆转。</li>
+</ul>
+
+<h3><strong>重要NPC/对手</strong></h3>
+
+<h4><strong>指挥部/无线电联络员</strong></h4>
+<p><strong>作用：</strong></p>
+<ul>
+<li>提供任务目标：前往碧安卜楚莱酒店顶层等待富尔顿回收。</li>
+<li>提供情报：提示附近有民兵/游击队活动。</li>
+<li>叙事功能上是“任务锚点”，也是将玩家从求生状态重新拉回“明确目标”的关键存在。</li>
+</ul>
+
+<h4><strong>皮卡民兵/游击队巡逻队</strong></h4>
+<p><strong>作用：</strong></p>
+<ul>
+<li>他们是本章真正的“战场压力来源”，也是任务失败的直接诱因。</li>
+<li>作为随机遭遇敌人，他们把“潜行撤离”强行转化为“战术交火”。</li>
+</ul>
+
+<p><strong>特征：</strong></p>
+<ul>
+<li>装备明显更重，甚至有KORD机枪与地雷，显示局势并非单纯地方武装，而是具备较强杀伤力的战斗单位。</li>
+<li>他们的存在让玩家意识到：这不是简单跑图，而是整个区域都可能是火力陷阱。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：坠机苏醒与首次遭遇</strong></h3>
+<p>夏朵莱斯在直升机坠毁现场醒来，四周是燃烧残骸与失联的队友。她迅速确认自身状态，拾取剩余装备与反坦克筒，随后通过无线电联系指挥部。指挥部告知班组在返程途中坠毁，现阶段任务是前往五公里外的<strong>碧安卜楚莱酒店</strong>顶层等待富尔顿回收。由于城区内有民兵和游击队活动，她决定避开主城区，改走城郊路线以降低被发现的风险。</p>
+<p>然而她的潜行检定失败，暴露在路边巡逻视野中。一辆载有民兵的皮卡向她逼近，车上还装备有KORD机枪与地雷。夏朵莱斯先发制人，用高难度射击打爆驾驶室，并在攻击中引发敌车上的地雷爆炸，成功制造混乱。但局势并未因此扭转，她随即被迫与幸存敌人近身搏斗，在混战中逐步失去主动权，最终被敌方手枪三连发击杀，任务在此中断。</p>
+
+<h3><strong>第2章：重复描述的同一场悲剧链条</strong></h3>
+<p>第2章与第1章在核心事件上高度一致，像是对同一段战斗流程的另一种摘要版本：坠机后苏醒、接收指挥部任务、城郊绕行、遭遇敌方皮卡、先手击毁驾驶室、近身格斗、被对方手枪连射击毙。</p>
+<p>从整合角度看，这一章进一步确认了故事的结构重点并不在支线探索，而是围绕一次“从坠机点到回收点”的生存撤离任务展开。玩家虽然在战术上做出了不错的选择（绕行、先手攻击、利用火力优势），但仍旧在敌方人数与近战收尾中败北，导致角色阵亡。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>“先发制人炸皮卡”</strong>：潜行失败后直接改打爆敌车驾驶舱，并连带引爆地雷，这一段非常有电影感，属于全模组最亮眼场面。</li>
+<li><strong>“本来是撤离任务，打成公路遭遇战”</strong>：剧情从“去酒店顶楼等回收”迅速变成“路边伏击与车战”，转折非常突然，也很有黑色幽默感。</li>
+<li><strong>“富尔顿还没来，人先没了”</strong>：标题式反讽效果很强。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>潜行失败：D100=76/70</strong></li>
+<li>这个失败非常关键，直接让“规避冲突”的方案失效，推动剧情进入战斗。</li>
+<li><strong>步枪极难成功：D100=97/70（奖励骰后极难成功）</strong></li>
+<li>这是整段里最漂亮的成功。数值很离谱，但在规则修正后依然成功，属于经典“险中取胜”的高光。</li>
+<li><strong>近战交替成败，最终被手枪三连发带走</strong></li>
+<li>结局十分干脆，战斗节奏从“反打”迅速坠入“被补枪”，很有战场残酷感。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>无线电任务指令</strong>：</li>
+</ul>
+<p>“班组返程坠毁，前往碧安卜楚莱酒店顶楼等待富尔顿回收。”</p>
+<p>这句极具军事任务味，也为后续悲剧埋下了冷静而残酷的基调。</p>
+<ul>
+<li><strong>“附近有民兵/游击队活动”</strong></li>
+</ul>
+<p>这是标准的危险提示，但在实际跑团中往往意味着：你一定会撞上他们。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>结语</h2>
+<p>这份日志呈现出一个非常典型、也非常有效的战场求生模组结构：<strong>明确任务目标、压迫性的环境威胁、一次错误/意外导致接战、短促而激烈的战斗、最终悲剧收束</strong>。</p>
+<p>夏朵莱斯的表现并不“失策”，反而相当符合一个受困士兵在混乱战区中的理性反应；真正让故事成立的是模组对“战场不可控”的强调。也正因此，这次失败不仅不是平淡的战损记录，反而是一段很有记忆点的“黑鹰式坠落”戏剧。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

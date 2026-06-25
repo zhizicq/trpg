@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kill - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>kill</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《kill》是一段以“恋人失踪、重逢、禁忌真相”为核心的超现实爱情模组。表面上看，它是一次祭典约会与失而复得的恋人重逢；实质上则围绕着“青音为何消失一个月”“她究竟在隐瞒什么”“两人的感情是否会招致灾厄”展开。故事将日常恋爱桥段、祭典游乐、试探与告白，逐步推向带有末日气息的真相：青音主动疏远史丹利，并非不爱，而是因为两人的相恋会引发世界毁灭。于是，最核心的矛盾不再是“能不能在一起”，而是“在注定毁灭的前提下，是否仍要选择相爱”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>史丹利在青音失踪一个月后终于与她重逢，最初以为她遭遇意外，实际却发现她一直在暗中关注本家状况，并刻意与自己保持距离。两人通过试探、闲聊与心理博弈确认彼此仍怀有深厚感情后，一起前往祭典约会。祭典流程几乎就是一场逐步升温的恋爱拉锯：捞金鱼、飞镖、买小吃、互相挑逗、牵手、接吻，乃至在许愿树下交换心愿。史丹利一边通过检定与对话识破青音的隐瞒，一边没有急于逼问，而是用陪伴与温柔让她逐渐放下防线；青音则在暧昧中持续投下“我在乎你”的证据，甚至写下希望史丹利平安顺遂的愿望。直到真相浮现，原来她之所以离开，是因为两人的恋情会招致世界毁灭。面对“谁该死”的极端命题，史丹利没有退缩，而是用话术、拥抱与亲吻将这场悲剧扭转为主动选择的浪漫：既然命运要求他们分离，那就偏要在末日前把爱贯彻到底。最终，这段故事以近乎殉情式的甜蜜收束，完成了从“失踪悬疑”到“神明见证的爱情宣言”的转变。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是明确的情感胜利：史丹利成功突破青音的心理防线，化解“谁该死”的冲突，没有让爱情停留在遗憾或牺牲上，而是将末日异象转化成被神明见证的誓言与拥吻。收尾的情绪基调非常鲜明——不是悲剧性的分离，而是“即使世界会毁灭，也要先爱到尽头”的浪漫胜利，标题《Love me, Darling》也因此具有强烈的反讽与宿命感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>1. 史丹利</h3>
+<p><strong>性格关键词</strong>：主动、敏锐、会撩、温柔但不失进攻性。</p>
+<p>史丹利是本章绝对的推动者。他既能在重逢时表现出担忧与克制，也能在祭典场景中持续输出暧昧与陪伴，把一场潜在的“追问失踪真相”变成“恋爱约会修罗场”。他最突出的能力不是单纯的高智商破局，而是<strong>懂得什么时候逼近、什么时候退后</strong>：明知青音在隐瞒，却不立刻逼问，而是通过行动证明“我会站在你这边”。</p>
+<p><strong>关键行为与高光时刻</strong>：</p>
+<ul>
+<li>在重逢时用试探与闲聊确认青音并未遭遇意外。</li>
+<li>祭典中持续陪伴，营造轻松氛围，让青音逐步卸防。</li>
+<li>通过心理学检定识破青音有所隐瞒，但没有戳破。</li>
+<li>在许愿树下偷看青音愿望，读出其真心。</li>
+<li>最终在“谁该死”的命题下，以话术与亲吻强行把悲剧转成浪漫结局。</li>
+</ul>
+<p>史丹利的高光并不在“破解谜题”，而在于他把“爱”变成了对抗命运的手段。</p>
+
+<h3>2. 青音</h3>
+<p><strong>性格关键词</strong>：温柔、隐忍、别扭、深情、带有自我牺牲倾向。</p>
+<p>青音是本作最具悲剧美感的角色。她并不是冷淡或背叛，而是带着极强的克制在行动：失踪一个月、暗中观察本家、刻意疏远史丹利，背后都指向她在承受某种超出个人能力的巨大压力。她一方面不断用细节证明自己仍然爱着史丹利，另一方面又努力把这份爱推开。</p>
+<p><strong>关键行为与高光时刻</strong>：</p>
+<ul>
+<li>主动出现在史丹利身边，却保持含蓄和隐瞒。</li>
+<li>在祭典中通过捞金鱼、飞镖等互动逐渐放松。</li>
+<li>在许愿树下写下“希望史丹利一生顺遂平安”的愿望，情感直球。</li>
+<li>以危险姿态站在山边制造抉择张力，凸显其“要么放手要么一起死”的极端困境。</li>
+<li>最终说出真相：两人相恋会引发世界毁灭。</li>
+</ul>
+<p>她的魅力在于：所有“拒绝”都不是不爱，而是爱得太重，以至于想替对方承担后果。</p>
+
+<h3>3. 岚（被提及的重要对象）</h3>
+<p>岚在摘要中并非直接出场的行动者，但作为史丹利愿望中“希望岚能更信任自己，不要总是一个人扛下所有”的对象，说明她/他是史丹利关系网里另一位重要人物。</p>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>作为“本家状况”的一部分，提示故事背后存在家族/组织层面的压力。</li>
+<li>也可能是史丹利想保护的另一位核心关系人，强化他“愿意替别人分担”的性格。</li>
+</ul>
+<p>虽然戏份少，但“岚”作为被祝福对象，承担了剧情中的情感延伸功能。</p>
+
+<h3>4. 重要NPC与其作用</h3>
+<ul>
+<li><strong>祭典摊主/环境NPC</strong>：功能性存在，承担捞金鱼、飞镖、小吃、寄物等日常戏的舞台搭建，让恋爱互动有了具象载体。</li>
+<li><strong>神明/命运象征</strong>：虽然未直接具象化，但许愿树与“世界毁灭”的设定，说明剧情背后有超自然或宿命力量在裁定两人的关系。它既是阻碍，也是最终的“见证者”。</li>
+<li><strong>本家/帮派相关势力</strong>：青音提到一直在暗中观察帮派，说明这里存在家族或组织矛盾，是她失踪和隐瞒的现实背景之一。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：重逢、试探与祭典升温</h3>
+<p>史丹利在青音失踪一个月后与她重逢，最初带着明显的担忧，以为她遭遇不测。但在零碎的试探与闲聊中，他确认青音并非单纯失踪，而是另有隐情，且一直在暗中关注本家事务。两人随后共同前往祭典，剧情由悬疑转入恋爱调情：在捞金鱼、飞镖、吃东西等传统祭典项目中，青音在史丹利的鼓励下接连命中，彼此气氛逐渐热烈。史丹利趁机发送短信表达心意，并通过心理学检定识破青音在隐瞒什么，但他并未逼问，而是选择继续陪伴她，一起前往中央许愿树。</p>
+<p>在树下，两人分别写下心愿。史丹利写下“还愿”，并进一步表达希望岚能更信任自己、不要总是独自承担一切；青音则写下不愿示人的愿望，后来被读出为“希望史丹利君接下来一生顺遂平安，无病无灾”。史丹利还偷看了她的愿望，确认了她深切而温柔的心意。第1章的核心任务不是揭谜，而是<strong>建立情感信任与暧昧张力</strong>，为后续真相爆发铺路。</p>
+
+<h3>第2章：真相逼近、危险告白与末日式拥吻</h3>
+<p>本章继续围绕史丹利与青音的重逢展开，但情绪更直接、更极端。两人从出租屋附近“背后相认”开始，史丹利在幸运与灵感上接连失手，显得像在装傻或故意拖延，而青音则主动回应，让重逢从试探正式转向确认彼此心意。随后两人前往祭典约会，边走边调情，边试探分离一个月的处境；青音坦言自己一直在暗中观察帮派，这让故事的现实背景与黑暗压力逐步显形。</p>
+<p>他们在许愿树前继续互诉心意，之后寄存物品、买小吃、玩捞金鱼与飞镖，甚至在林间牵手、接吻、共舞。青音的情绪在这些浪漫互动中不断累积，最终她带史丹利来到山边，以近乎威胁的方式制造抉择张力，试图把他推离自己。真相在此爆发：她之所以疏远，是因为两人相恋会导致世界毁灭。面对“为了世界而分开”还是“为了爱而违抗命运”的难题，史丹利没有放弃，而是用话术突破她的防线，拥抱并亲吻她，把“谁该死”的争执消解为共同选择的结局。最终，这场爱情赌局被转写成神明见证下的甜蜜死亡与誓言，以《Love me, Darling》的方式落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩 / 最搞笑 / 最意外的场景</h3>
+<ul>
+<li><strong>祭典约会全过程</strong>：本模组最成功的就是把高张力设定装进了非常日常、非常甜的约会壳子里，反差感极强。</li>
+<li><strong>许愿树偷看愿望</strong>：既有“偷看隐私”的小恶作剧感，又能瞬间确认真心，情感推进非常有效。</li>
+<li><strong>山边危险对峙</strong>：青音用“你过来我就跳下去”式的极端姿态制造压迫感，瞬间把恋爱戏推成命运对决。</li>
+<li><strong>末日变告白</strong>：世界毁灭并没有把故事拖向悲剧，反而成为史丹利强吻成功的浪漫燃料，意外而有效。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>心理学检定识破青音隐瞒</strong>：这是史丹利“明知有问题但不戳破”的关键节点，属于信息优势型大成功。</li>
+<li><strong>幸运/灵感连续失手</strong>：在重逢初期，史丹利屡屡表现得像在故意装傻，形成一种“明明很关键却总差一点”的喜剧效果。</li>
+<li><strong>捞金鱼、飞镖的命中表现</strong>：虽然不一定是数值上的神奇大成功，但它们承担了“气氛升温”的作用，是典型的剧情向高光检定。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>史丹利通过短信表达心意，带有一种克制又直球的暧昧感。</li>
+<li>青音写下“希望史丹利君接下来一生顺遂平安，无病无灾”，属于很标准的“嘴上隐瞒、行动告白”。</li>
+<li>史丹利对青音的愿望进行偷看，带点坏心眼，但结果完全是甜的。</li>
+<li>最终“谁该死”的争执被转化成拥抱与亲吻，属于典型的<strong>用恋爱技巧解决超自然灾难</strong>，戏剧效果极强。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像官方跑团复盘的正式版</strong>，或</li>
+<li><strong>更像同人向/乙女向的情绪化总结版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

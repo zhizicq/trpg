@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常夜之车 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>常夜之车</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《常夜之车》是一则典型的<strong>封闭空间式克苏鲁/超自然悬疑</strong>模组：一群乘客登上列车，本以为只是一次普通旅途，却因为一块能<strong>扭曲时间、引来异界存在的古老水晶</strong>，被卷入不断回卷的“列车时间循环”。</p>
+<p>核心冲突有两层：</p>
+<ol>
+<li><strong>表层冲突</strong>：列车上发生命案，乘客与警卫在封闭车厢中彼此怀疑、互相盘查，凶手与真相成谜。</li>
+<li><strong>深层冲突</strong>：富商查尔斯借助刻有日月星图样的石头与水晶进行回溯仪式，试图操控时间；而这种亵渎行为最终招来无法理解的神秘存在，令整列火车沦为献祭与实验场。</li>
+</ol>
+
+<p>玩家在不断重复的同一晚餐、同一夜晚中，逐渐意识到“死而复生”“剧情读档”并非幸运，而是更大的灾厄正在逼近。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>一行人乘火车赴约，途中罗伯特在餐车谈起自己于蒙特利尔考察时发现的“古老而强大的水晶”，称其能够扭曲时间并召来现实之外的存在。话音未落，列车便发生命案：罗伯特在包间被割喉身亡，警卫布鲁塔尔迅速封锁车厢并展开盘查。然而，当午夜钟声响起，所有人竟再次回到同一顿晚餐——他们这才确认，列车已陷入时间循环，而罗伯特的“死亡”并非终局，水晶则与循环直接相关。</p>
+<p>随着多次循环与尝试，众人开始搜查车厢、寻找钥匙、踹门查房、反复劝说罗伯特同行，逐步拼出真相：车厢末端的富商查尔斯正利用三块刻有日月星的石头，配合水晶与某种回溯仪式，强行改写时间。每到接近真相之时，黑雾便凝成疑似廷达罗斯猎犬的怪物逼近，伴随理智检定、恐慌与枪战不断爆发。比尔在反复死亡式试错中察觉“攻击富商会被读档回卷”的机制，却仍坚持正面对抗；目白麦昆则在贴脸射击中直接击杀查尔斯，代价是承受巨大的精神冲击。最终，仪式彻底失控，神灵降临并摧毁列车，但时间又被强行回卷到傍晚，水晶碎裂，循环解除。唯一的余波是，比尔因触碰真相而获得了额外的神话知识与法术，成为这场灾厄中少数真正“带走了东西”的人。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是<strong>灾厄被阻止，但代价极高</strong>：列车在神祇/异界存在的降临中被毁灭，时间却在最后一次回卷后恢复正常，循环解除，幸存者得以离开。</p>
+<p>收尾上偏向“克系式余震”：</p>
+<ul>
+<li>表面上，事件仿佛被抹平，旅途重新开始。</li>
+<li>实际上，真相已经留下不可逆的裂痕。</li>
+<li>只有比尔获得了神话知识与法术，说明他已不再是“普通乘客”，而是被世界另一面所标记。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC 角色分析</h3>
+
+<h4>1）比尔</h4>
+<ul>
+<li><strong>性格特征</strong>：理性中带着强烈的行动欲，擅长观察机制，属于会在混乱中主动寻找“规则”的类型。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在多次循环中识破“攻击富商会被读档回卷”的机制。</li>
+<li>即便知道可能会回卷，仍选择正面对抗，体现出强烈的责任感或硬派作风。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>发现时间循环的规律，成为团队理解机制的关键人物。</li>
+<li>最终获得神话知识与法术，象征他与真相建立了永久连接。</li>
+<li><strong>角色弧光</strong>：从“想办法解决眼前危机的人”变成“被真相改变的人”，是典型的从凡人到半步知情者的转变。</li>
+</ul>
+
+<h4>2）目白麦昆</h4>
+<ul>
+<li><strong>性格特征</strong>：果断、胆大，甚至有些冲动，但在关键时刻异常可靠。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在贴脸距离下击杀查尔斯，直接打断仪式核心。</li>
+<li>面对恐怖场景和精神冲击，依旧选择开枪而不是退缩。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>贴脸射击查尔斯这一幕极具戏剧性，是整段剧情的战术转折点。</li>
+<li><strong>角色弧光</strong>：她像是团队中的“执行者”，在众人仍在摸索时以最直接的方式终结威胁；代价则是心理压力与恐惧值的积累。</li>
+</ul>
+
+<h4>3）罗伯特</h4>
+<ul>
+<li><strong>性格特征</strong>：知识型、话痨型推进器，主动抛出关键信息。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在餐车谈及水晶与其超自然属性，为整场事件埋下引信。</li>
+<li>多次被劝说、围绕、甚至在循环中不断重复成为剧情中心。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为“信息投放器”把模组最核心的危险物——水晶——介绍给众人。</li>
+<li><strong>角色作用</strong>：表面上像受害者/讲述者，实际上是<strong>剧情触发器</strong>，没有他的叙述，事件不会那么快被玩家识破。</li>
+</ul>
+
+<h4>4）布鲁塔尔</h4>
+<ul>
+<li><strong>性格特征</strong>：纪律性强、执行力高的警卫。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在命案后第一时间封锁车厢、集中乘客盘查，制造了“密室侦探”式氛围。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>以强硬手段迅速控制局面，使案件从单纯凶杀升级为群体嫌疑与封锁调查。</li>
+<li><strong>角色作用</strong>：承担“秩序”的象征，代表人类在面对不可理解事件时最先采取的反应——隔离、盘问、控制。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>查尔斯</h4>
+<ul>
+<li><strong>剧情定位</strong>：幕后核心反派/仪式操作者。</li>
+<li><strong>作用</strong>：</li>
+<li>利用三块日月星石头与水晶进行回溯仪式。</li>
+<li>是时间循环的技术性来源，也是玩家能否终止循环的关键目标。</li>
+<li><strong>人物功能</strong>：他不是单纯“杀人犯”，而是一个试图掌控时间的狂妄实践者，最终反被自己启动的机制吞没。</li>
+</ul>
+
+<h4>疑似廷达罗斯猎犬的黑雾怪物</h4>
+<ul>
+<li><strong>剧情定位</strong>：追猎型超自然威胁。</li>
+<li><strong>作用</strong>：</li>
+<li>在关键时刻逼近，催生理智检定、恐慌与枪战。</li>
+<li><strong>人物功能</strong>：它是“时间异常”的具象化恐怖，提醒玩家：真正的敌人不是某个凡人，而是被打开的宇宙裂缝。</li>
+</ul>
+
+<h4>神灵/现实之外的存在</h4>
+<ul>
+<li><strong>剧情定位</strong>：终极灾厄与不可名状之物。</li>
+<li><strong>作用</strong>：</li>
+<li>在仪式失控时降临，摧毁列车。</li>
+<li><strong>人物功能</strong>：作为克系模组的收束点，它证明了人类对时间的亵渎终将引来超越理解的反噬。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：登车与引子</h3>
+<p>众人乘火车赴约，旅途表面平静。餐车里，罗伯特率先抛出关键设定，提到自己在蒙特利尔考察时发现的古老水晶，并称其具有扭曲时间、召唤现实之外存在的能力。这段看似闲聊的内容，实际上是整团噩梦的开端。</p>
+
+<h3>第二阶段：命案与第一次封锁</h3>
+<p>不久后列车发生命案，罗伯特在包间被割喉身亡。警卫布鲁塔尔迅速行动，封锁车厢并组织盘查，所有乘客都被卷入“谁是凶手”的嫌疑风暴中。此时玩家仍以为这是一个标准的密室杀人/列车悬疑故事。</p>
+
+<h3>第三阶段：时间回卷与循环确认</h3>
+<p>午夜一到，众人发现自己回到了同一顿晚餐，餐桌、对话、人物位置都回到原点。反复验证后，他们确认列车进入了时间循环。罗伯特并未真正死亡，而是剧情被重置；水晶成为解释这一切的关键物件。</p>
+
+<h3>第四阶段：反复试探与规则摸索</h3>
+<p>玩家开始多次尝试改变事件走向：劝说罗伯特同行、寻找钥匙、踹门搜房、试图提前介入。随着一轮轮尝试，他们逐渐拼出隐藏真相：车厢末端存在一场由富商查尔斯主导的回溯仪式，三块分别刻有日月星的石头与水晶共同构成了循环核心。</p>
+
+<h3>第五阶段：怪物逼近与理智崩塌</h3>
+<p>在接近真相的同时，黑雾凝聚成疑似廷达罗斯猎犬的怪物袭来。车厢内随即进入恐怖升级阶段：理智检定、惊慌、枪战交替出现，玩家不仅要处理谜题，还要应对持续逼近的实体威胁。这里的氛围从“推理”彻底转为“生存”。</p>
+
+<h3>第六阶段：对抗查尔斯与机制识破</h3>
+<p>比尔在多次循环中意识到，直接攻击富商会导致事件回卷，像是被某种“存档机制”强行覆盖。但团队仍决定正面突破。目白麦昆在贴脸距离上射击并击杀查尔斯，成功打断仪式核心，完成了一次极具戏剧性的高风险斩首。</p>
+
+<h3>第七阶段：仪式失控与终局</h3>
+<p>查尔斯被击杀后，仪式并未如愿平息，反而彻底失控。神灵/异界存在降临，整列火车被摧毁。就在毁灭之后，时间再次回卷到傍晚，但这一次水晶碎裂，循环终于解除。列车世界恢复“正常”，但所有经历过的人都已无法回到最初。</p>
+
+<h3>第八阶段：事后余波</h3>
+<p>事件结束后，比尔因接触并理解了真相，获得了神话知识与法术，成为唯一明显获得“后遗症收益”的角色。故事收尾带着克系常见的冷意：危机过去了，但认知污染、超自然知识与心理阴影已永久留下。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>“午夜一到又回到同一顿晚餐”</strong>：这是全模组最震撼的反转，瞬间把普通列车命案升级成时间循环恐怖。</li>
+<li><strong>反复劝说罗伯特同行、寻找钥匙、踹门搜房</strong>：这种“每轮都想稍微改一点点”的循环式试错，很有跑团实感。</li>
+<li><strong>目白麦昆贴脸射杀查尔斯</strong>：既暴力又干脆，是整场最具爆点的战术操作。</li>
+<li><strong>神灵降临摧毁列车后又回卷</strong>：极具史诗感与无力感，像是“你终于赢了，但宇宙不承认”。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<p>摘要里未明确列出具体数值，但从剧情效果看，以下节点最值得记忆：</p>
+<ul>
+<li><strong>理智检定连锁触发</strong>：黑雾怪物出现时，明显造成了连续的恐慌与精神压力。</li>
+<li><strong>贴脸射击命中查尔斯</strong>：可视为全场最关键的成功检定之一，直接改变局势。</li>
+<li><strong>多次失败导致回卷的机制验证</strong>：虽然不是传统意义上的“大失败”，但在剧情层面形成了非常强的“失败也会推进信息”的效果。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>罗伯特谈水晶的超自然属性</strong>：非常像“NPC突然开始发预告片”，在轻松聊天中埋下末日伏笔。</li>
+<li><strong>大家意识到自己又坐回同一顿晚餐时的震惊</strong>：这种“你以为是梦，结果是机制”的桥段最有TRPG味道。</li>
+<li><strong>比尔发现攻击会读档回卷</strong>：这几乎是玩家在系统层面破解模组，是非常有趣的规则外观察。</li>
+<li><strong>查尔斯的仪式被贴脸射击强行打断</strong>：带有一种“邪教仪式被最朴素的枪械暴力终结”的黑色幽默感。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像出版物的模组复盘文风</strong>，或</li>
+<li><strong>偏贴吧/群内复盘的轻松吐槽版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>春运奇谭 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>春运奇谭</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《春运奇谭》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《春运奇谭》把“春运返乡列车”这一极具现实感的场景，和“邪教传销、诡异矿石、远古灾变”缠绕在一起，形成一种前半段像社会怪谈、后半段像克苏鲁灾难的混合叙事。表面上，故事围绕一名迟到上车、热衷推销保健品的商人“王富贵”展开；深层则是某神秘企业以营销培训为掩护，实际传播与“玄君七章秘经”相关的邪教知识，并牵扯出一个会引来巨大钻地魔虫的异常“矿石”。</p>
+
+<p>模组的核心冲突并不是单纯“抓坏人”，而是<strong>人类社会中的贪婪与盲信</strong>，如何不知不觉把普通人卷进超自然灾厄：一边是邪教/传销式的精神控制，一边是真实存在的异界威胁；一边是车厢里对“保健品”“发财路”的半信半疑，一边是列车到站后逐步浮出水面的巨大灾难。玩家需要从零碎线索中判断：王富贵到底是骗子、受害者，还是更大阴谋中的搬运工；而那块“矿石”究竟是宝物、诅咒媒介，还是某种生物的卵。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>故事从春运返乡列车开车前开始。玩家们陆续检票上车，阴差阳错地挤进同一包厢，在封闭车厢这个典型“密室”环境里，迅速被一名迟到的男人打破平静——他自称深圳玄君科技营销经理“王富贵”，一上来便熟练推销所谓“疗神丹”保健品。起初众人只把他当成常见的车厢推销客，但随着奈乐察觉异常、林正英从风水角度感到不对劲，气氛逐渐转向诡异。列车运行中，乘警上车搜查“暴恐炸药”，反而从王富贵的公文包里查出一块诡异矿石。玩家通过博物学、地质学与灵感检定发现，这东西绝非自然矿物，而与“玄君七章秘经”、嘉靖年间大地震传说、以及公司内部带邪教色彩的培训资料互相勾连，拼出黄总公司极可能是借营销外衣传播邪典思想的事实。随后，王富贵在心灵低语的压迫下濒临崩溃，却仍执意护着石头不肯松手。众人报案后，公安接手，似乎事情就此告一段落。直到到站后的善后阶段，上级竟要求将石头带走处理，领导把石头搬到空地后，竟召来三只巨型钻地魔虫前来“取走”它，真相这才彻底揭晓：所谓矿石其实是神秘生物的幼崽。最终，旅琦缘凭借一次幸运大成功锁定关键真相，玩家们不仅挫败了邪教与其背后的阴谋，也阻止了更大的地下灾变，成功在另一场大地震爆发前拯救城市，拿下了 GOOD END。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是典型的“表面收束、深层翻盘”：前半段看似只是查获可疑商人和违法物品，后半段却通过领导“处理矿石”的离谱操作，把隐藏真相直接炸开——矿石并非矿石，而是引来巨型钻地魔虫的幼体/卵类存在。玩家最终确认整个事件背后既有邪教式组织的误导，也有更高层次的生态灾害风险。GOOD END 的达成说明：玩家没有在“传销骗子”层面止步，而是继续追查到超自然灾厄的核心，阻止了城市级别的地质灾难。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>玩家角色（PC）</h3>
+
+<h4>1. 奈乐</h4>
+<ul>
+<li><strong>性格印象</strong>：敏锐、谨慎，属于能第一时间察觉环境异样的人。</li>
+<li><strong>关键行为</strong>：开局通过侦查发现王富贵的异常，为后续一连串调查埋下第一根钉子。</li>
+<li><strong>高光时刻</strong>：在众人还处于“车厢里遇到推销员”的日常判断时，率先意识到事情不对，起到了“破局者”的作用。</li>
+<li><strong>角色功能</strong>：典型的“观察型侦探位”，负责把剧情从日常拉向异常。</li>
+</ul>
+
+<h4>2. 林正英</h4>
+<ul>
+<li><strong>性格印象</strong>：带有明显的民俗/风水思维，直觉强，判断风格偏“老派玄学派”。</li>
+<li><strong>关键行为</strong>：凭风水直觉看出王富贵“财路凶险”，说明其对人物气场、环境违和感十分敏感。</li>
+<li><strong>失误点</strong>：后续心理学检定误判，说明他虽然能“看气”，但对具体人心与伪装的辨识并不稳定。</li>
+<li><strong>高光与反差</strong>：前面像是“道行很深”的大师，后面却在心理学上翻车，形成很有戏剧性的反差。</li>
+<li><strong>角色功能</strong>：提供民俗恐怖氛围，也制造“直觉强但分析不稳”的张力。</li>
+</ul>
+
+<h4>3. 旅琦缘</h4>
+<ul>
+<li><strong>性格印象</strong>：运气型关键角色，关键时刻能把局势推向真相。</li>
+<li><strong>关键行为</strong>：最终凭幸运大成功锁定关键真相，是结局扭转的重要一锤。</li>
+<li><strong>高光时刻</strong>：大成功本身就是模组内最戏剧化的瞬间之一，直接帮助队伍确认事件核心。</li>
+<li><strong>角色功能</strong>：典型“天命之人”位，用高运检定完成真相闭环，适合这种层层误导式模组。</li>
+</ul>
+
+<h4>4. 其他PC（未在摘要中具体展开）</h4>
+<ul>
+<li>从摘要看，队伍整体呈现出“分工明确、信息逐步拼图”的结构：有人负责观察，有人负责民俗判断，有人负责关键幸运收束。</li>
+<li>这类模组的乐趣往往在于每个角色各持一把钥匙，合起来才能打开真相。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<h4>1. 王富贵</h4>
+<ul>
+<li><strong>表面身份</strong>：深圳玄君科技营销经理，推销“疗神丹”的商人。</li>
+<li><strong>实际作用</strong>：剧情核心载体，既是信息源，也是误导源。</li>
+<li><strong>人物特征</strong>：讲话极具推销味，带明显“传销/保健品销售”气质；在心灵低语与心理压力下崩溃，但仍死护矿石，说明他可能既是受害者又是被控制者。</li>
+<li><strong>功能定位</strong>：把现实中的“营销骗局”与超自然阴谋连接起来。</li>
+</ul>
+
+<h4>2. 乘警 / 公安</h4>
+<ul>
+<li><strong>作用</strong>：作为前中期“秩序力量”介入，负责把事态从私人调查推向官方处理。</li>
+<li><strong>叙事意义</strong>：他们提供了一个“看似可控”的社会秩序框架，但后续事实证明，单靠常规执法无法理解真正的异常。</li>
+<li><strong>功能定位</strong>：现实秩序代表，让超自然事件在社会系统中产生摩擦。</li>
+</ul>
+
+<h4>3. 领导</h4>
+<ul>
+<li><strong>作用</strong>：在结局阶段负责“处置石头”，并把真相以极其戏剧化的方式引爆出来。</li>
+<li><strong>剧情意义</strong>：他是最后的“误操作触发器”，一方面展示上级逻辑的草率，另一方面直接召来钻地魔虫，使隐藏真相彻底现形。</li>
+<li><strong>功能定位</strong>：典型“高层决策失误导致灾变暴露”的角色。</li>
+</ul>
+
+<h4>4. 黄总</h4>
+<ul>
+<li><strong>作用</strong>：虽未直接大量登场，但作为“公司/传销邪教链条”的核心象征存在。</li>
+<li><strong>意义</strong>：代表那套以商业培训、营销话术包装的邪教系统，是“社会性异端”的源头之一。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：春运列车开场，怪人上车</h3>
+<p>故事开局在春运返乡列车发车前，玩家们陆续检票上车，并被安排进同一包厢。封闭空间、拥挤人流、返乡氛围，构成了非常典型的“日常中埋恐怖”的开场。就在大家刚坐稳时，迟到的王富贵匆匆赶来，自称深圳玄君科技营销经理，开始推销“疗神丹”保健品。这个出场本身就带有强烈的现实荒诞感：春运列车上最不该出现的，恰恰是一个明显像传销头子的销售员。</p>
+
+<h3>第二阶段：第一轮察觉与人物判断</h3>
+<p>奈乐先通过侦查发现异常，让众人对王富贵的身份产生怀疑。林正英则从风水直觉上感到此人财路凶险、气场不正，进一步强化“这人不简单”的判断。然而，后续在心理学相关判断上出现误判，说明王富贵并非单纯以“骗子”的方式行动，而是带有更深层的伪装、精神污染或被控制状态。此阶段的重点是：玩家开始从“看起来像坏人”走向“他为什么坏、坏到什么程度”的追问。</p>
+
+<h3>第三阶段：乘警搜查，诡异矿石现形</h3>
+<p>列车运行过程中，乘警上车搜查所谓“暴恐炸药”，本是常规安全事件，却意外从王富贵的公文包中查获一块诡异矿石。这里剧情从“可疑乘客”正式转入“异常物件”。玩家随后通过博物学、地质学、灵感等检定，逐步发现这块石头并非天然形成，而是与“玄君七章秘经”、嘉靖年间大地震传说、以及公司内部邪教式培训手册存在串联。此时模组的真正骨架开始浮现：王富贵并不是单独作案，背后有一个借营销之名传播邪教/异常知识的组织。</p>
+
+<h3>第四阶段：王富贵崩溃，官方接手</h3>
+<p>随着低语、精神压迫与真相逼近，王富贵在心灵层面逐渐崩溃，但即便如此仍然死死护着矿石不放。这一幕很关键：它让角色从“可疑商人”变成“某种被物件或信念绑住的人”，也为后续“矿石不是普通货物”埋下最强伏笔。众人在报案后将事件交由公安处理，看似进入了常规结案流程，实际上只是危险被暂时收拢，并没有真正解决。</p>
+
+<h3>第五阶段：到站后的善后与离谱反转</h3>
+<p>真正的高潮出现在到站后的善后。上级竟然要求处置那块石头，领导把石头带到空地后，直接召来三只巨型钻地魔虫来取走“矿物”。这一段把前面所有的异常线索全部串起来：所谓矿石其实并不是矿石，而是神秘生物的幼崽。也就是说，前半段围绕“传销邪教与怪石”的迷雾，最终被更高维度的生物灾厄彻底揭开。这个反转既荒诞又震撼，也说明事件从一开始就不是单纯的人类阴谋。</p>
+
+<h3>第六阶段：关键真相锁定与GOOD END</h3>
+<p>在最后的收束中，旅琦缘凭借幸运大成功，成功锁定关键真相，帮助队伍完成最终判断与行动闭环。玩家们不仅确认了邪教/传销组织的危险性，还及时阻止了更大规模的地下灾难，最终从另一场大地震中拯救了城市。GOOD END 的成立意味着：这群人在没有完全依赖权力系统的情况下，靠调查、推理、灵感与关键骰运，把一场本可能升级成城市级事故的事件压了下去。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ol>
+<li><strong>春运列车上遇到营销经理推销保健品</strong></li>
+</ol>
+<ul>
+<li>这个开场既接地气又离谱，天然自带喜剧效果。</li>
+<li>“返乡列车 + 保健品销售 + 玄君科技”这组合非常有记忆点。</li>
+</ul>
+
+<ol>
+<li><strong>乘警搜查暴恐炸药，却翻出诡异矿石</strong></li>
+</ol>
+<ul>
+<li>从现实安检切入超自然物件，衔接得很顺。</li>
+<li>观众/玩家会自然以为“炸药”是重点，结果真正危险的是另一件东西。</li>
+</ul>
+
+<ol>
+<li><strong>领导处理石头，结果召来三只巨型钻地魔虫</strong></li>
+</ol>
+<ul>
+<li>这是全模组最大反转点。</li>
+<li>前面一直在查“石头是什么”，最后答案竟然是“生物的幼崽”，非常荒诞，也非常克味。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>奈乐的侦查</strong>：开局就把“普通推销员”拉进异常名单，属于奠定剧情方向的关键检定。</li>
+<li><strong>林正英的风水直觉</strong>：虽然后续心理学误判，但“先感到不对劲”的这一下非常有戏。</li>
+<li><strong>博物学 / 地质学 / 灵感联动</strong>：这组检定是拼图式破案的核心，成功把邪教传闻、嘉靖大地震与异常矿石连接起来。</li>
+<li><strong>旅琦缘幸运大成功</strong>：典型的“终局定音”检定，直接锁死真相，堪称模组收尾最佳一掷。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“深圳玄君科技营销经理”</strong> 这个头衔本身就很像邪教皮套公司，光是名号就已经够怪。</li>
+<li><strong>“疗神丹”保健品</strong> 既像现实骗局，又像邪典药丸，概念上很有黑色幽默。</li>
+<li><strong>王富贵死护石头不放</strong> 的表现很适合演绎成“嘴上是销售，精神上已被污染”的扭曲状态。</li>
+<li><strong>领导把石头带去空地处理</strong> 这个桥段很像“上级一拍脑袋，结果直接把怪物放出来了”，荒谬感和恐怖感并存。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份分析整理成：</p>
+<ol>
+<li><strong>更像跑团复盘文章的版本</strong></li>
+<li><strong>带有“主持人点评”的版本</strong></li>
+<li><strong>按“剧情树 + 角色弧光”格式重写</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

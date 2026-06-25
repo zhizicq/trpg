@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵应 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>灵应</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《灵应》是一则典型的封闭空间灵异通灵短篇，核心设定围绕“诡异通灵板”展开。两位PC在密闭房间中进行召灵仪式，却意外唤来一名身份模糊、行为像儿童却充满怨灵特征的蓝白病号服小女孩。故事的主要矛盾不在于“是否要打倒她”，而在于<strong>如何在不断被追逐与精神侵蚀的规则中活下来，并理解这场灵异游戏的真正意图</strong>。</p>
+<p>整场剧情以“捉迷藏”为互动核心：通灵对象通过游戏强迫PC躲藏、追逐，通灵板则持续以问答形式吸取精气，形成一种带有童谣式恐怖感的循环机制。表面上是灵异事件，实则是一次以“游戏”为外壳的诅咒接触与心理压迫。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>雪见草与山田凉在封闭房间内尝试使用一块来历不明的诡异通灵板召唤灵体。起初的问答尚能维持“灵媒仪式”的形式，但随着通灵板的回应逐渐具体，气氛迅速滑向不祥：回答从模糊的人称与词语，逐步变成“糖果”“mom”“捉迷藏”等带有儿童语感却又明显不属于活人的信息。最终，召来的并非寻常鬼魂，而是一名穿着蓝白病号服的小女孩。她并不直接以杀意压迫两人，而是提出“我来捉你们藏”的规则，把整个房间改造成一场超自然版捉迷藏。</p>
+<p>在这一过程中，通灵板不断问答、吸取精气，雪见草率先遭遇理智冲击，甚至出现高额理智损失，随后又靠幸运与意志支撑住崩溃边缘；山田凉则凭借敏捷与连续检定稳定周旋，多次躲避追逐，成为局势中的执行者与推进者。最终，当山田凉与小女孩正面交汇、完成“游戏”的结算时，灵异气息随之消散，事件表面上被终结。二人虽然带着通灵板撤离，但这场“游戏”更像是一次成功完成、却留下余味不散的接触：他们并非彻底净化了什么，而是从一个愿意“玩”的怨灵手里，勉强全身而退。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是<strong>阶段性脱离而非彻底解决</strong>：小女孩在捉迷藏完成后消失，灵异气息散去，场面恢复正常。PC带走通灵板撤离，意味着他们既结束了这次危机，也把“诅咒媒介”一并带离现场，给未来留下了隐患。收尾带有明显的“事件暂时平息，但阴影未尽”的余韵。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>雪见草</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：更偏向敏感、谨慎，面对灵异刺激时反应强烈，但并非完全失控；她的恐惧是真实的，也因此更贴近“普通人被卷入超自然事件”的体验。</li>
+<li><strong>关键行为</strong>：在通灵板问答中承担了最直接的精神冲击，率先吃下理智惩罚，成为恐怖氛围的承压点。</li>
+<li><strong>高光时刻</strong>：理智检定失败后并未直接崩溃，而是依靠幸运与意志检定强行稳住局面，体现了在极端恐惧下“硬撑到底”的韧性。她的高光不是反击，而是<strong>顶住了精神污染</strong>。</li>
+</ul>
+
+<h3><strong>山田凉</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动力强、冷静度较高，属于“遇事先做”的类型；在追逐与躲藏环节中表现出更强的实操能力。</li>
+<li><strong>关键行为</strong>：多次通过敏捷检定，在捉迷藏规则中稳住阵脚，并在最后与小女孩正面接触，推动事件进入终局。</li>
+<li><strong>高光时刻</strong>：连续成功的检定让他成为场上“活下来的那个人”，尤其是最终与小女孩完成结局，意味着他不仅是在逃命，更是完成了与灵体之间的规则闭环。</li>
+</ul>
+
+<h3><strong>重要NPC：蓝白病号服小女孩</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：她是本模组的核心灵异实体，也是整场戏剧的发动机。她不像传统恶灵那样依靠血腥和直接杀伤，而是通过“孩子气”的游戏规则制造压迫感。</li>
+<li><strong>形象意义</strong>：病号服、糖果、mom、捉迷藏，这些碎片共同勾勒出一个介于病患、幼童与怨灵之间的存在。她的恐怖点在于<strong>语言与行为的反差</strong>——越像孩子，越显得不正常。</li>
+<li><strong>叙事功能</strong>：她把通灵从“问鬼”变成“陪玩”，让PC不得不进入她设定的规则中，完成一场带有童年阴影感的超自然游戏。</li>
+</ul>
+
+<h3><strong>重要道具NPC：通灵板</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：通灵板几乎可以视为“第二个NPC”，它不只是媒介，更像是主动参与对话、诱导信息、吸取精气的邪异载体。</li>
+<li><strong>叙事意义</strong>：它把信息的揭示与危险同步化，每次回答都意味着更深一步的陷落。通灵板的存在让本作的恐怖感从“看见鬼”升级为“与鬼建立联系本身就有代价”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：封闭房间中的通灵尝试</strong></h3>
+<p>雪见草与山田凉在一个封闭房间中启动诡异通灵板，想要借由仪式召唤灵体或获取线索。起初的问答带有不明确的试探感，问题和答案都像碎片化的回声：包括“除了你之外的某个人吧”“糖果”“mom”等词语，逐渐暗示灵体拥有儿童视角或童年记忆。此时气氛已明显异常，但仍停留在“可解释的灵异互动”层面。</p>
+
+<h3><strong>第二阶段：身份显形与规则建立</strong></h3>
+<p>随着问答深入，通灵对象的轮廓逐渐稳定，最终显现为一名穿蓝白病号服的小女孩。她没有立即发起攻击，而是以“捉迷藏”为核心提出互动规则，或者说，她直接把这次通灵改写成她自己的游戏：<strong>“我来捉你们藏。”</strong> 这意味着PC已被迫进入对方的主场，房间也从普通空间转化为灵异竞技场。</p>
+
+<h3><strong>第三阶段：精神侵蚀与追逐展开</strong></h3>
+<p>通灵板持续运作、吸取精气，雪见草率先承受理智打击并失败，掉落大量理智值，显示出她对灵异威胁的敏感与脆弱。随后她通过幸运与意志检定勉强稳住，避免了彻底失控。与此同时，山田凉在躲藏与移动中频繁通过敏捷检定，成为维持局面的关键。他的成功不仅是“没被抓到”，更是给整场游戏带来持续运转的条件。</p>
+
+<h3><strong>第四阶段：完成游戏与事件终结</strong></h3>
+<p>在追逐与躲藏持续推进后，山田凉最终与小女孩正面相对。这个时刻不是传统战斗的决胜，而是游戏规则的完成节点——仿佛当“捉”的动作抵达终点，诅咒也随之失去驱动力。小女孩消失，灵异气息散去，房间恢复正常。两名PC带着通灵板离开，事件表面上结束，但通灵板作为遗留物件，也给故事留下了后续不安的可能。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：小女孩从模糊问答中逐步显形，并将通灵直接改造成“捉迷藏”游戏，这种从“问鬼”到“陪鬼玩”的转折非常有记忆点。</li>
+<li><strong>最意外</strong>：灵异事件没有走向追杀或解谜，而是以儿童游戏的形式推进，恐怖感反而更强，因为它带着一种近乎天真的残酷。</li>
+<li><strong>最有画面感</strong>：病号服小女孩在封闭房间里提出“我来捉你们藏”的瞬间，既像童年游戏，又像死亡宣告。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>雪见草理智检定失败</strong>：直接掉3点理智，说明这段通灵并非“轻度惊吓”，而是实打实的精神冲击。</li>
+<li><strong>随后幸运通过、意志大成功</strong>：这是很典型的“先崩一下再硬撑回来”的戏剧性反转，强化了角色在恐惧中强行稳定的表现。</li>
+<li><strong>山田凉敏捷连续成功</strong>：在追逐环节稳得像在过关，把“捉迷藏”从纯受害局面变成了仍有操作空间的动态场景。</li>
+<li><strong>最终与小女孩完成结局</strong>：这个“完成规则”比单纯跑掉更有模组味，说明事件不是打败敌人，而是理解并走完了她的游戏逻辑。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>通灵板给出的碎片化回答如“糖果”“mom”“捉迷藏”，非常像从儿童记忆里渗出的残影，既无厘头又不安。</li>
+<li>“我来捉你们藏”这句本身就很适合作为模组名场面：语法略显别扭，却恰好强化了非人感与孩童口吻的扭曲。</li>
+<li>通灵板一边问答一边吸取精气的设定，也很有“会说话的危险物件”味道，让对话本身成为威胁。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/跑团群总结的轻松口吻版</strong></li>
+<li><strong>更正式的模组评测版</strong></li>
+<li><strong>带“剧情树+角色关系图”的结构化版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

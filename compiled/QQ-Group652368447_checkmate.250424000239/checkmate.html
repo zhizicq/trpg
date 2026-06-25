@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>checkmate - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>checkmate</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《checkmate》的核心舞台是一处被“棋局规则”扭曲的异空间：队伍原本在船上，却意外与“本该死去”的大法官厄尔根重逢，并被强行拖入黑白棋盘战场。厄尔根以近乎审判者、棋手与暴君三重身份出现，宣布这场战斗遵循残酷的“胜者通吃”逻辑——黑白双方必须在棋局中以脑力与武力决一死战，败者不仅会失去生命，也会失去一切象征性的“所有权”。</p>
+<p>故事的主要矛盾并非单纯“打败Boss”，而是<strong>在对方制定的规则里寻找破局办法</strong>：队伍必须一边承受黑方棋子与厄尔根本人的高压进攻，一边调整站位、资源分配和输出节奏，把一场看似完全被压制的死局翻盘成“将死”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍在航行途中意外与死而复生的大法官厄尔根重逢，对方并未以“复活者”身份解释缘由，而是直接将众人拖入一片黑白棋盘构成的异空间，宣布要用一场棋局决胜，胜者可征服一切，败者则失去一切。战斗初期黑方借助权杖与棋子联动建立压制，黑兵火力凶猛，优先打击白方后排与脆弱目标，白王与前排一度陷入巨大压力。面对强攻，白方没有硬顶到底，而是迅速调整站位与资源分配，通过充能、疗伤、王车易位等手段重新稳定阵型。</p>
+<p>在拉锯中，蚊持续以远程攻击精准命中，多次制造可观伤害；征服骑士则斩碎黑兵，为队伍争得局部优势。厄尔根随后亲自下场，展现出极强的压迫感，黑车与主教相继反击，甚至一度用夺命之手将埃俄罗直接打至0 HP，但埃俄罗顶住威压，反而为团队争取到关键喘息时间。战局后段，莫提斯以一记至圣斩打出43点爆发，几乎将厄尔根逼入绝境；unknown则通过回生术、治疗与指挥效果稳住全队，再以闪击和持续输出将胜势逐步锁定。最终，白方在多轮调整与集火后完成“将死”，击杀厄尔根。厄尔根留下带有棋局寓意的独白后消散，队伍也带着战斗所得遗产与棋盘脱离战场。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是典型的“逆风翻盘式击杀”：厄尔根从规则制定者与压迫者的位置上被拉下，白方通过坚持、配合和关键爆发完成将死。收尾上，厄尔根并未以单纯恶役的姿态消失，而是留下带有宿命感与棋理意味的独白，使这场战斗带有“他在执念中败北”的悲剧气质。队伍最终脱离棋盘空间，携带战利品与“棋局遗产”回到现实，模组以一种胜利但余韵未尽的方式结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC角色表现</strong></h3>
+
+<h4><strong>埃俄罗</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：明显是队伍前排或承伤核心，能在高压环境下硬扛局面。</li>
+<li><strong>关键行为</strong>：被厄尔根强力打至0 HP后仍成功抵抗威压，没有直接崩盘。</li>
+<li><strong>高光时刻</strong>：在濒死边缘顶住压力，给团队争取到极其宝贵的喘息窗口。</li>
+<li><strong>评价</strong>：属于“站住了就等于赢了一半”的防线型角色，表现出极强韧性。</li>
+</ul>
+
+<h4><strong>莫提斯</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：爆发输出型，偏向关键斩杀手。</li>
+<li><strong>关键行为</strong>：以至圣斩打出43点爆发，几乎直接改写战局。</li>
+<li><strong>高光时刻</strong>：这次高伤害是全场最醒目的爆点之一，体现了其“终结者”属性。</li>
+<li><strong>评价</strong>：是队伍最需要的那种“关键回合能把局面打穿”的角色。</li>
+</ul>
+
+<h4><strong>unknown</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：强辅助/指挥/续航核心，兼具战场节奏控制。</li>
+<li><strong>关键行为</strong>：使用回生术与治疗稳住全队，同时还承担指挥、闪击和持续输出。</li>
+<li><strong>高光时刻</strong>：在全队承压时完成救场，让团队没有被黑方滚雪球打崩。</li>
+<li><strong>评价</strong>：如果说莫提斯负责“收割”，unknown就是把局面“续命并翻盘”的人，团队价值极高。</li>
+</ul>
+
+<h4><strong>蚊</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：稳定远程输出位，擅长持续压血线。</li>
+<li><strong>关键行为</strong>：多次远程命中并打出高额伤害，属于战斗中的长期贡献者。</li>
+<li><strong>高光时刻</strong>：在黑方强压之下依旧能稳定出手，说明其输出环境管理不错。</li>
+<li><strong>评价</strong>：不是那种一锤定音型角色，但是胜利不可或缺的“持续施压器”。</li>
+</ul>
+
+<h4><strong>征服骑士</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：前排近战/破阵手。</li>
+<li><strong>关键行为</strong>：一刀击碎黑兵，承担局部突破任务。</li>
+<li><strong>高光时刻</strong>：清理棋子单位的瞬间很关键，帮助白方解除被围殴的局面。</li>
+<li><strong>评价</strong>：典型的“把杂兵砍穿，给主力创造操作空间”的角色。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+
+<h4><strong>厄尔根</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：本场模组的核心Boss、规则制定者、异空间的裁判与暴君。</li>
+<li><strong>剧情功能</strong>：以“本该死去却重现”的方式制造悬念，并通过棋局规则将战斗升级为象征意义极强的生死对弈。</li>
+<li><strong>表现特点</strong>：压迫感极强，既有战斗能力，也有台词塑造的哲学感与宿命感。</li>
+<li><strong>结局作用</strong>：作为被将死者，他的败亡标志着玩家团队真正完成了对规则的突破。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 船上重逢：死者归来</strong></h3>
+<p>队伍在船上遭遇本应已经死亡的大法官厄尔根。这个设定迅速打破了原本的安全感，也为后续剧情埋下“他为何归来”的悬念。厄尔根并未给出温和解释，而是直接将队伍拉入自己掌控的棋局空间。</p>
+
+<h3><strong>2. 进入黑白棋盘：规则宣告</strong></h3>
+<p>众人被带到一个由黑白棋盘构成的异空间。厄尔根在此宣布规则：黑白双方要在棋局中以脑力与武力决一死战，胜者征服一切，败者失去一切。此时模组的主题已非常明确——不是单纯的战斗，而是“在对方规则内争取胜利”。</p>
+
+<h3><strong>3. 开局压制：黑方先手猛攻</strong></h3>
+<p>战斗刚开始，黑方凭借权杖与棋子联动建立优势。黑兵集火压制白方前后排，给白王和前线角色施加巨大压力。黑方这一轮的目标很明确：先打乱白方阵型，再通过数量与连动机制滚出优势。</p>
+
+<h3><strong>4. 白方调整：稳住阵脚</strong></h3>
+<p>白方没有在开局崩盘，而是迅速做出应对：通过充能、疗伤与王车易位等手段调整站位、重新分配资源，逐步恢复阵型稳定。这个阶段体现出队伍并非纯靠火力硬吃，而是有明确战术意识。</p>
+
+<h3><strong>5. 中盘拉锯：各自爆发</strong></h3>
+<p>蚊不断用远程攻击命中目标，打出持续伤害；征服骑士则斩碎黑兵，削弱黑方杂兵压力。黑方并未示弱，黑车与主教轮番反击，厄尔根本人也亲自施压，让战场进入高烈度消耗阶段。</p>
+
+<h3><strong>6. 濒死危机：厄尔根压倒前排</strong></h3>
+<p>厄尔根以夺命之手将埃俄罗打至0 HP，这一段是白方最危险的节点之一。幸好埃俄罗顶住威压，没有直接瓦解防线，使队伍得以保住节奏。这一回合非常像真正棋局中的“失先不失势”，虽然局部受挫，但整体没有被一波带走。</p>
+
+<h3><strong>7. 反攻转折：爆发与续航并行</strong></h3>
+<p>莫提斯以至圣斩打出43点高爆发，几乎直接让厄尔根进入残血状态；unknown则用回生术和治疗兜住队友，再辅以指挥、闪击与持续输出，把队伍从“能打”推进到“能赢”的状态。这里是整场战斗的关键转折。</p>
+
+<h3><strong>8. 将死收尾：击杀厄尔根</strong></h3>
+<p>白方抓住节奏完成最后的压制与击杀，成功“将死”厄尔根。厄尔根在败北后留下棋局式独白，随后消散，黑白棋盘空间也随之结束。队伍携带战利品与棋盘遗产脱离战场，模组收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：莫提斯那发<strong>43点至圣斩</strong>，属于标准的“战局翻面”瞬间。</li>
+<li><strong>最意外</strong>：厄尔根“本该死去却重现”，并且直接把战斗拉进棋盘空间，开局就很有BOSS登场仪式感。</li>
+<li><strong>最紧张</strong>：埃俄罗被打到0 HP那一刻，白方前排几乎要崩，但居然硬撑住了。</li>
+<li><strong>最像棋局</strong>：白方通过“王车易位”式调整稳住阵脚，和主题贴合度非常高。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>大成功级表现</strong>：</li>
+<li>莫提斯的高爆发斩击，几乎把Boss送进斩杀线。</li>
+<li>unknown的回生术与治疗，属于关键救场，等同于“把崩盘的局重新接上”。</li>
+<li><strong>压迫感检定</strong>：</li>
+<li>厄尔根的夺命之手将埃俄罗压至0 HP，这种Boss级威胁非常有震撼力。</li>
+<li><strong>团队执行成功</strong>：</li>
+<li>黑方高压下白方仍能调整站位并完成最终将死，说明团队协作检定整体是成功的。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>厄尔根以“<strong>胜者征服一切，败者失去一切</strong>”开场，台词很有终局审判味道，既中二又压迫。</li>
+<li>整场战斗围绕“棋局”展开，但实际又是高烈度战斗，形成了“<strong>表面是下棋，实则是互殴</strong>”的反差感。</li>
+<li>厄尔根最后的棋局独白，为这个模组增加了“不是单纯被打死，而是被规则击败”的味道，收尾非常有戏剧性。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/论坛风格的复盘帖</strong></li>
+<li><strong>更正式的模组鉴赏文章</strong></li>
+<li><strong>带“玩家吐槽口吻”的轻松版复盘</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硕鼠 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>硕鼠</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《硕鼠》发生在一个看似闭塞、实则暗流涌动的南方乡村“三城村”。村中由谢、姜、邓三姓宗族长期维持着微妙平衡，端午游神、民间神祇“刘玄仙君”等地方信仰，则是维系秩序与解释灾异的文化外壳。表面上，调查员受市局委派，伪装成刘爱国的亲戚前来查访失踪民警王勇与逃犯谢明涛；但随着调查深入，案件很快从“失踪案”滑向“村落级异变事件”——人、神、虫三者之间的界限被彻底打破。</p>
+<p>核心冲突在于：一边是调查员试图依靠现代法制、证据链与理性判断还原真相；另一边则是根植于地方宗族、民俗仪式和诡异“灵验”中的超自然污染逐步爆发。最终，真正威胁村庄的并不是单个罪犯，而是以神像、仪式和人体为载体不断繁殖、扩散的虫灾。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>三名调查员以刘爱国亲戚的身份进入三城村，表面上是走亲访友，实则暗查失踪民警王勇与在逃犯谢明涛。初入村中，他们便感受到谢、姜、邓三族之间紧绷的关系，以及端午游神这一地方仪式对村民生活的统摄力。调查员在招待所落脚后，刘爱国却突然失踪，厕所中仅留下袖章、手表、钢笔等个人物品，令事态迅速转向不祥。随后通过走访与检定，他们逐步确认“刘玄仙君”并非寻常传说，而是本地明代坐化成神的民间信仰，游神仪式则是其信仰实践的重要环节。</p>
+<p>随着线索推进，众人跟随游神队伍寻找真相，在谢家祠堂发现神像底部开裂，隐约指向失踪事件与神像内部有关；又在邓建设家中见到精神崩溃的谢明涛，从其口中得知王勇曾遭遇“由蠕虫构成的人形怪物”，而所谓仙君曾以极端诡异的方式“治好”张建英。原本似乎可被安抚的局势在游神中突然失控：张建英体内虫群爆发，原本无害的人群中接连出现异常，虫灾迅速扩散。调查员被迫焚衣自保，面对蠕虫尸堆步步逼近，只能乘上邓建设的金杯车，在盘守山接手驾驶后冲破封锁，狼狈逃离三城村，赶往绿都市向警方通报。最终，警方返村实施消杀并推动全省防虫行动，灾情被压制，调查员也因在事件中的功劳获得表彰与晋升。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是典型的“逃出生天后完成善后”式收束：调查员未能在村内完成彻底净化，而是在灾变全面爆发前及时脱身，将情报上报给更高层级的公安系统。随后官方力量介入，返村消杀并将事件定性为需要全省范围防控的重大虫灾。模组以“人力无法单独压制超自然污染，但能争取时间、阻止扩散”为收尾基调，调查员则以实绩获得奖励，形成相对正面的职业结局。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+<p>由于摘要未提供完整姓名设定，这里按行动特征归纳三位调查员的角色气质。</p>
+
+<h4>1. 詹岚：知识型、敏锐型调查员</h4>
+<ul>
+<li><strong>性格与定位</strong>：明显偏向学识与观察，擅长从历史、宗教与神秘学角度切入问题，属于团队里的“解释世界的人”。</li>
+<li><strong>关键行为</strong>：通过历史与神秘学检定确认“刘玄仙君”的地方神格来源；在游神中锁定手缠绷带的可疑男子，体现出较强的现场洞察。</li>
+<li><strong>高光时刻</strong>：她的知识检定几乎把模组的民俗背景“翻译”成调查语言，让团队从“听故事”走向“抓结构”。在这种村落神秘事件里，知识型角色的价值被放大到了核心级别。</li>
+</ul>
+
+<h4>2. 张雷锋：偏行动/通灵或直觉型调查员</h4>
+<ul>
+<li><strong>性格与定位</strong>：从“问神”得到答告这一行为看，张雷锋可能是更依赖仪式、直觉或本地信仰互动的角色，或者至少愿意尝试非典型路径。</li>
+<li><strong>关键行为</strong>：参与游神与问神，试图从信仰系统内部寻找答案。</li>
+<li><strong>高光时刻</strong>：问神得到“事态会向好发展”的回应，这一段在叙事上形成强烈反差——预言式的安抚与下一秒的灾变爆发构成极佳的戏剧效果，也让角色行为与剧情反转之间形成了记忆点。</li>
+</ul>
+
+<h4>3. 盘守山：稳健、执行力强的行动担当</h4>
+<ul>
+<li><strong>性格与定位</strong>：从“接手驾驶、冲破封锁逃离”的表现看，盘守山更像团队里的现场执行者、临危不乱的实干派。</li>
+<li><strong>关键行为</strong>：在突发虫灾中承担逃生驾驶职责，协助全队脱险。</li>
+<li><strong>高光时刻</strong>：在局势崩盘时还能完成交通接管与突围，说明角色在“关键时刻能把事办成”，属于典型的团队稳定器。</li>
+</ul>
+
+<p>> 总体来看，这组PC结构很完整：一个负责解释，一个负责尝试与连接仪式系统，一个负责行动与撤离，分工清晰，推动了事件从调查、验证到逃生的完整链条。</p>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+
+<h4>刘爱国</h4>
+<ul>
+<li><strong>作用</strong>：作为调查员身份伪装的关联人物，也是进入村庄的“合法外壳”。</li>
+<li><strong>剧情功能</strong>：其突然失踪并留下物品，直接把“走访调查”升级为“人身危机”，是悬疑氛围的第一波爆点。</li>
+</ul>
+
+<h4>王勇</h4>
+<ul>
+<li><strong>作用</strong>：失踪民警，案件起点之一。</li>
+<li><strong>剧情功能</strong>：他代表“已经被卷入真相的人”，虽然未必在正面出场，但他的遭遇为超自然灾害提供了最初证词。</li>
+</ul>
+
+<h4>谢明涛</h4>
+<ul>
+<li><strong>作用</strong>：逃犯，同时也是关键目击者/幸存者。</li>
+<li><strong>剧情功能</strong>：提供“蠕虫人形怪物”的核心信息，是让调查员意识到灾难性质的关键NPC。</li>
+</ul>
+
+<h4>刘玄仙君</h4>
+<ul>
+<li><strong>作用</strong>：地方民间信仰中的神祇形象，既是民俗核心，也是异常源头的象征。</li>
+<li><strong>剧情功能</strong>：它让“神迹”与“怪异治疗”共存，是本模组最重要的暧昧存在：到底是神还是灾变媒介，始终吊着玩家的判断。</li>
+</ul>
+
+<h4>张建英</h4>
+<ul>
+<li><strong>作用</strong>：被“治好”的对象，也是后续灾变爆发的核心载体之一。</li>
+<li><strong>剧情功能</strong>：其身体成为虫灾的爆发点，使前期看似有效的“神迹”彻底反转成恐怖证据。</li>
+</ul>
+
+<h4>邓建设</h4>
+<ul>
+<li><strong>作用</strong>：提供场景与交通支持的重要村民。</li>
+<li><strong>剧情功能</strong>：其家中出现谢明涛，且后续金杯车帮助众人逃离，属于“无意中帮了大忙”的功能性NPC。</li>
+</ul>
+
+<h4>盘守山之外的村民群像（如哑巴等）</h4>
+<ul>
+<li><strong>作用</strong>：用来展示虫灾扩散后的群体异常。</li>
+<li><strong>剧情功能</strong>：他们让灾异不再是个体事件，而是社区层面的污染扩散。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 受命入村，伪装调查</h3>
+<p>三名调查员受市局委派，伪装成刘爱国的亲戚前往三城村，任务是追查失踪民警王勇与逃犯谢明涛。进入村庄后，他们很快感受到这里并不普通：谢、姜、邓三姓宗族分庭抗礼，村庄秩序深受血缘与人情网络支配；与此同时，端午游神作为重要民俗活动正在临近，村民对其极为重视。调查员在招待所落脚，表面安顿，实则开始摸排线索。</p>
+
+<h3>2. 刘爱国失踪，案件氛围骤变</h3>
+<p>刚刚展开调查，刘爱国便突然失踪。厕所里留下了他的袖章、手表、钢笔等物品，这些遗留物让“失踪”呈现出一种近乎被瞬间剥离的恐怖感。与此同时，村内开始流传谢、邓两家冲突，以及与“刘书记”相关的暧昧传闻，各种话语像是在暗示某种长期压抑的秘密即将浮出水面。</p>
+
+<h3>3. 民俗与神秘学解码：刘玄仙君登场</h3>
+<p>詹岚通过历史与神秘学检定，确认“刘玄仙君”是当地明代坐化成神的民间信仰，并进一步掌握了游神仪式的流程。这个发现将调查重心从“普通失踪案”推向“地方信仰与异常现象之间的联系”。调查员意识到，许多村民所相信的“神”，可能正是此案的关键节点。</p>
+
+<h3>4. 跟随游神，祠堂与神像出现裂痕</h3>
+<p>调查员跟随游神队伍寻找线索，在仪式流动中观察村民反应，并最终在谢家祠堂发现神像底部开裂。这一发现强化了他们的猜测：失踪、异常、游神、神像之间存在隐秘关联。祠堂不再只是宗族象征，而像是某种封印或容器。</p>
+
+<h3>5. 目击幸存者，得知“虫形怪物”</h3>
+<p>在邓建设家中，调查员见到精神崩溃的谢明涛。他提供了决定性的目击情报：王勇曾遭遇“由蠕虫构成的人形怪物”。同时，谢明涛还提到“仙君”曾以极其诡异的方式“治好”张建英。至此，调查员对事件性质的理解完成跃迁——这不是单纯的谋杀或失踪，而是带有生物污染、民俗伪装和超自然效应的复合型灾难。</p>
+
+<h3>6. 游神中的异常信号与短暂误判</h3>
+<p>詹岚在游神中锁定一名手缠绷带的可疑男子，说明敌对或异常源头已混入人群。张雷锋的问神也得到“答告”，似乎预示事态将趋向好转。这个段落很重要：它制造了一个“看似被安抚、实则更危险”的叙事误导，让玩家与角色都可能产生短暂松懈。</p>
+
+<h3>7. 灾变爆发，虫灾失控</h3>
+<p>紧接着，张建英体内虫群爆发，哑巴等人也显露异常，虫灾开始迅速扩散。前一刻还在游神、问神、看热闹的村民，下一刻就变成了污染传播者。场面从民俗悬疑瞬间切换成生物恐怖与群体灾难。调查员被迫焚衣自保，说明虫群具有强烈的附着与感染风险，衣物甚至可能成为传染媒介。</p>
+
+<h3>8. 突围逃村，向警方报信</h3>
+<p>在蠕虫尸堆逼近的绝境中，调查员乘上邓建设的金杯车撤离。盘守山接手驾驶，冲破封锁后成功逃离三城村，前往绿都市向警方报信。这个结尾兼具紧张与爽感：他们没有彻底解决灾厄，但完成了最重要的任务——把灾难从“村内秘密”上升为“公共危机”。</p>
+
+<h3>9. 官方介入，灾后收束</h3>
+<p>警方返村展开消杀，平息虫灾，并推动全省防虫行动。事件从地方异常上升为跨区域公共安全问题，说明其传播性与严重程度已超出普通案件范畴。调查员们因功受表彰与晋升，形成职业路径上的正向反馈，也为模组落下一个较为明快的结局。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：谢明涛吐露“蠕虫构成的人形怪物”时，案件性质瞬间翻转，悬疑、民俗、怪物恐怖三条线同时收束到同一真相上，冲击力很强。</li>
+<li><strong>最意外</strong>：张雷锋问神得到“会向好发展”的答告，结果下一刻就全面虫灾爆发，这种“神谕打脸”式反差非常有戏剧感。</li>
+<li><strong>最紧张</strong>：张建英体内虫群爆发、众人焚衣自保、蠕虫尸堆逼近的段落，典型的高压逃生桥段，视觉感和压迫感都很强。</li>
+<li><strong>最搞笑/黑色幽默</strong>：村里围绕“刘书记”流传的暧昧传闻，以及调查员伪装成亲戚混入村中的设定，本身就带有浓厚的乡土黑色喜剧味道。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>大成功级别</strong>：</li>
+<li>詹岚的<strong>历史与神秘学检定</strong>：直接确认刘玄仙君的背景与游神流程，属于推动核心真相的关键检定。</li>
+<li>詹岚在游神中<strong>锁定可疑绷带男</strong>：在群体仪式中精准抓人，体现高质量现场观察。</li>
+<li><strong>大失败/反转型结果</strong>：</li>
+<li><strong>问神得到好兆头</strong>却立刻灾变爆发，这种叙事层面的“判定反杀”效果极佳，等同于一次极具戏剧性的失败预判。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>刘玄仙君“治好”张建英</strong>这一设定本身就很有味道：表面是灵验，实则像是更深层污染的伪装。</li>
+<li><strong>厕所里遗留袖章、手表、钢笔</strong>的细节很有侦探味，也非常阴间，几乎像是“人被一键拆包”。</li>
+<li><strong>焚衣自保</strong>这一段既恐怖又很有临场感，说明灾变规则已经足以让玩家自发形成“民间防护措施”。</li>
+<li><strong>金杯车突围</strong>则是非常典型的跑团名场面：从宗族村庄一路冲出去，既狼狈又带点公路片式爽感。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>适合发帖的精简版复盘</strong></li>
+<li><strong>带剧透警告的模组推荐/避雷点评</strong></li>
+<li><strong>按“开局-中盘-高潮-结局”四幕式重写成更像故事简介的版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

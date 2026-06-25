@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>霍比特人 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>霍比特人</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>这是一段以《霍比特人》世界观为底色、带有明显“异界投放/跨位面求生”框架的跑团故事。甘道夫将一群并非原生于中土的角色召集并摊牌：他们若想回到原本的世界，必须加入索林的孤山远征队，沿着“护送—穿越—遭袭—追踪—支援”这一典型冒险链条前进，并最终以史矛革宝藏作为报酬与回归条件。</p>
+<p>故事的核心冲突，表层是索林远征队对抗荒野威胁、黑森林蜘蛛与奥克部队；深层则是“被迫上路的异乡人”如何在陌生世界中建立协作、分工、战术与信任，并逐渐从生存者转变为团队成员。敌人不仅是怪物与敌军，更是黑暗森林的压迫、路线的不确定性，以及被“魔苟斯子嗣”影响的邪恶扩散。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>一群被投放到中土的角色在甘道夫的说明下得知，想要回家就必须参与索林的孤山屠龙远征。众人于是先在霍比屯外研究地图、搜集钢材与齿轮，尝试为后续旅途和战斗做机械准备，并逐渐形成各自分工。进入旅程后，队伍在水潭与河边接连遭遇火蛇、水元素怪以及追击而来的奥克。花与叶莲娜联手斩杀火蛇，巡里光则在混战中救下差点被拖走的同伴，显示出团队协作初成。夜间侦察到悬崖对岸奥克与坐狼逼近后，众人意识到局势已恶化，甘道夫提出逃离、突袭或寻找德鲁伊巫师三条应对路线。随后队伍进入黑暗森林，风间遭巨型蜘蛛偷袭濒死，巡里与史悦子及时赶到反杀敌人，并从毒死的熊尸中提取毒腺制作毒药；他们沿血迹前进，发现一座被三只黑蛛围困的木屋。借助瑞达加斯特式巫师的协助，众人疗伤并得知蜘蛛受魔苟斯子嗣影响，决定前往风云顶寻找进一步线索。另一边，多萝西与叶莲娜在河谷伏击奥克，意外发现敌军押送独角兽，遂以烟火、陷阱和近战展开阻击；叶莲娜学会“回旋斩”式群攻，多萝西则骑坐狼夺武支援，最终击退奥克、收拢战利品并以京观示威，最后队伍与索林一行重新汇合，推进到更大的远征主线中。</p>
+
+<h3>结局与收尾</h3>
+<p>从现有摘要看，本段剧情并未抵达“屠龙终局”，而是处于远征中前期到中期的收束：队伍成功从频繁的遭遇战中站稳脚跟，明确了黑森林邪恶势力的来源，并在德鲁伊巫师的建议下决定前往风云顶。与此同时，另一支行动线完成了对奥克军的伏击与反击，既削弱敌方兵力，也通过战利品与京观示威强化了队伍气势。最终，主角团与索林队伍完成重新汇合，意味着“外来者”正式嵌入《霍比特人》主线，后续可继续向孤山、史矛革与更大的阵营冲突推进。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+
+<h4>1. 甘道夫</h4>
+<ul>
+<li><strong>性格/定位</strong>：信息中枢、任务发布者、路线规划者。</li>
+<li><strong>关键行为</strong>：开局直接摊牌“回家条件”，把玩家从迷茫状态拉进主线；在局势失控时提供三条战略路径（逃离、突袭、找德鲁伊）。</li>
+<li><strong>高光时刻</strong>：不是传统“挥杖开无双”的高光，而是他以“导师/GM内嵌NPC”的方式稳定队伍方向，属于叙事上的锚点人物。</li>
+</ul>
+
+<h4>2. 花</h4>
+<ul>
+<li><strong>性格/定位</strong>：前线战斗型、敢冲敢打。</li>
+<li><strong>关键行为</strong>：与叶莲娜联手击杀火蛇，体现出明确的输出能力和协同意识。</li>
+<li><strong>高光时刻</strong>：火蛇战中作为强攻核心之一，奠定了团队初次成功对抗高威胁怪物的信心。</li>
+</ul>
+
+<h4>3. 叶莲娜</h4>
+<ul>
+<li><strong>性格/定位</strong>：战斗适应性强、成长速度快，兼具冷静与爆发。</li>
+<li><strong>关键行为</strong>：与花合斩火蛇；河谷伏击中习得“回旋斩”式群攻，战斗风格完成跃迁。</li>
+<li><strong>高光时刻</strong>：在奥克战中通过新学技能实现范围压制，是典型的“在战斗中成长”的角色弧线。</li>
+</ul>
+
+<h4>4. 巡里光</h4>
+<ul>
+<li><strong>性格/定位</strong>：救援型、可靠的近战/支援位。</li>
+<li><strong>关键行为</strong>：在水边混战中救下同伴；在蜘蛛袭击后与史悦子赶来反杀，承担“把人从死亡边缘拽回来”的职责。</li>
+<li><strong>高光时刻</strong>：两次关键救援都非常抢眼，属于团队安全感来源。</li>
+</ul>
+
+<h4>5. 风间</h4>
+<ul>
+<li><strong>性格/定位</strong>：容易成为先手受袭的目标，可能偏侦查或脆皮位。</li>
+<li><strong>关键行为</strong>：被巨型蜘蛛偷袭险死，成为黑森林危险性的直观体现。</li>
+<li><strong>高光时刻</strong>：虽然未见显著反击，但“差点被秒”本身强化了剧情紧张度，也推动队伍改变行动方式。</li>
+</ul>
+
+<h4>6. 史悦子</h4>
+<ul>
+<li><strong>性格/定位</strong>：实用派、资源利用者、后勤与战斗兼顾。</li>
+<li><strong>关键行为</strong>：与巡里一起反杀蜘蛛；从毒死的熊尸中提取毒腺制成毒药。</li>
+<li><strong>高光时刻</strong>：毒腺提取与制药这一段极有“TRPG玩家会做的离谱但合理操作”味道，既体现了系统利用，也很有记忆点。</li>
+</ul>
+
+<h4>7. 多萝西</h4>
+<ul>
+<li><strong>性格/定位</strong>：机敏、胆大，擅长奇袭与战场骚操作。</li>
+<li><strong>关键行为</strong>：河谷伏击奥克；发现敌军押送独角兽后，使用烟火、陷阱与近战打阻击；甚至骑坐狼夺武支援。</li>
+<li><strong>高光时刻</strong>：骑坐狼夺武是强烈的视觉名场面，兼具戏剧性与荒诞感，极易成为全团笑点/高光。</li>
+</ul>
+
+<h4>8. 其他参与者（如叶莲娜在另一线协同）</h4>
+<ul>
+<li><strong>定位</strong>：与多萝西形成双线打击，体现小队在不同战场的分兵能力。</li>
+<li><strong>作用</strong>：在多线作战中使剧情不至于完全聚焦单一队伍，而是呈现“前方接敌、侧翼截击、后方追击”的更大规模战争感。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC及其作用</h3>
+
+<h4>甘道夫</h4>
+<ul>
+<li>任务发布者、方向指引者、危机中的路线咨询师。</li>
+<li>把“本应由玩家自由探索的中土”收束进一条明确主线，确保模组推进效率。</li>
+</ul>
+
+<h4>索林·橡木盾及其远征队</h4>
+<ul>
+<li>虽然在摘要中存在感主要是“重新汇合”的目标，但其功能是整条主线的合法性来源。</li>
+<li>他们代表了“屠龙远征”的正统叙事主轴，主角团与之汇合后，故事正式挂接到原作框架。</li>
+</ul>
+
+<h4>瑞达加斯特式巫师</h4>
+<ul>
+<li>提供治疗、情报与自然侧线索。</li>
+<li>告知蜘蛛受魔苟斯子嗣影响，起到“世界观解释器”的作用，也把简单的怪物遭遇升级为邪恶污染的阴影叙事。</li>
+</ul>
+
+<h4>奥克部队与坐狼</h4>
+<ul>
+<li>作为主要敌对势力，承担追杀、围剿、压迫感制造。</li>
+<li>既是战斗目标，也是驱动角色成长和战术选择变化的外部压力。</li>
+</ul>
+
+<h4>黑暗森林蜘蛛</h4>
+<ul>
+<li>黑森林章节的核心威胁。</li>
+<li>它们把“荒野”从风景变成具有主动攻击性的敌方地带，是恐怖感与资源消耗的主要来源。</li>
+</ul>
+
+<h4>独角兽（被押送者）</h4>
+<ul>
+<li>这是一个很有戏剧性的“意外发现”。</li>
+<li>作为被敌军俘获的神秘生物，它既可能是战利品，也可能暗示更深层的阵营阴谋，给伏击战赋予额外目标感。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 异界投放与任务说明</h3>
+<p>开局众角色并非直接置身中土，而是以“被投放”的方式进入剧情。甘道夫向众人说明现状：若想回到原本世界，必须协助索林展开孤山屠龙远征，并以史矛革宝藏分配作为条件。这个设定迅速将玩家从“我是谁、我在哪”导入“我必须做什么”。</p>
+
+<h3>2. 霍比屯外的准备阶段</h3>
+<p>队伍开始整理资源，研究地图、搜集钢材与齿轮，准备制造机械或补强装备。这个阶段主要是在建立角色分工：有人负责战斗，有人负责资源管理，有人负责侦察与后勤。虽然没有大规模战斗，但它奠定了团队协作的基础，也让后续冒险不显得突兀。</p>
+
+<h3>3. 水潭、河边遭遇战</h3>
+<p>队伍沿水域前进时，先后遭遇火蛇、水元素怪，并被后续追来的奥克威胁。火蛇战中，花与叶莲娜配合完成击杀；在混战中，巡里光救下了差点被拖走的同伴，避免队伍减员。此段把“环境危险”与“敌军追击”叠加，形成连续压迫。</p>
+
+<h3>4. 悬崖侦察与局势升级</h3>
+<p>夜里，队伍侦察到悬崖对岸有奥克和坐狼逼近，说明敌人并非偶发遭遇，而是有组织追猎。面对恶化的形势，甘道夫提出三种应对方案：逃离、突袭或寻找德鲁伊巫师。这一决策节点是第一次明显的战略分岔，体现模组并非纯线性推进。</p>
+
+<h3>5. 黑暗森林与蜘蛛袭击</h3>
+<p>进入黑暗森林后，危险从“明面上的敌人”转为“看不见的猎手”。风间遭巨型蜘蛛偷袭险死，紧接着巡里与史悦子赶来反杀，成功扭转局面。战后，队伍从毒死的熊尸中提取毒腺制作毒药，显示出他们已开始把环境资源转化为战术优势。</p>
+
+<h3>6. 追踪血迹与木屋围困</h3>
+<p>众人沿血迹前进，发现一间被三只黑蛛围困的木屋。这个场景将“救援任务”与“丛林恐怖”合并：不仅要战斗，还要判断是否进入、如何解围，以及如何面对蜘蛛群带来的持续威胁。</p>
+
+<h3>7. 瑞达加斯特式巫师救治与邪恶溯源</h3>
+<p>在巫师协助下，队伍得到疗伤和情报补给。对方指出蜘蛛受魔苟斯子嗣影响，这让普通怪物袭击上升为黑暗势力渗透的表现。于是队伍决定前往风云顶，继续追查更深层线索。这一段是重要的剧情“解释环节”，把碎片遭遇串成完整威胁链。</p>
+
+<h3>8. 河谷伏击奥克与独角兽事件</h3>
+<p>另一条行动线中，多萝西与叶莲娜在河谷伏击奥克，意外发现敌军正押送独角兽。原本的伏击行动因此变成“打断运输与抢夺战利品”的复合目标。两人使用烟火、陷阱与近战发起阻击，叶莲娜借此学会回旋斩式群攻，多萝西则骑坐狼夺武支援，战斗风格极其鲜明。</p>
+
+<h3>9. 击退敌军与重逢</h3>
+<p>伏击战最终成功，奥克被击退，战利品被收拢，并以京观方式进行示威，强化了对敌方的心理打击。战后，队伍与索林一行重新汇合，至此本段剧情完成“散兵游勇”向“远征主队”的合流，正式接回《霍比特人》主线。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>花与叶莲娜联手斩杀火蛇</strong>：标准的团队开局高光，既有战斗张力，也让“互相配合”成为团队基调。</li>
+<li><strong>风间被巨型蜘蛛偷袭险死</strong>：非常有黑暗森林味道，紧张感拉满。</li>
+<li><strong>从熊尸里提毒腺制毒药</strong>：典型玩家式“就地取材”，既实用又很有黑色幽默。</li>
+<li><strong>多萝西骑坐狼夺武支援</strong>：本段最具画面感的场景之一，荒诞、凶猛、充满即兴感，几乎是天然名场面。</li>
+<li><strong>发现奥克押送独角兽</strong>：意外之上再加意外，把原本的伏击战升级成带有奇幻异兽元素的战场事件。</li>
+<li><strong>京观示威</strong>：极具反差的收尾动作，直接把“胜利”变成“威慑”。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<p>由于摘要未明确给出具体点数，但从结果推断可视为：</p>
+<ul>
+<li><strong>叶莲娜的回旋斩学习/应用</strong>：很像一次关键成功检定，直接带出成长技能。</li>
+<li><strong>巡里光救下同伴</strong>：应为关键成功，若失败极可能造成减员。</li>
+<li><strong>风间被蜘蛛偷袭险死</strong>：这类“差点没命”的结果很像一次危险场景中的大失败或被动检定失手，成功塑造危机。</li>
+<li><strong>毒腺提取成功</strong>：属于非常有趣的资源运用成功，往往是全团印象深刻的检定结果。</li>
+<li><strong>多萝西骑坐狼夺武</strong>：若按跑团表现，多半是多个检定串联成功的成果，属于高风险高回报操作。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>甘道夫开场摊牌</strong>：“想回家就得去打孤山”这类直接把主线条件说清的桥段，非常适合跑团开局。</li>
+<li><strong>三选一路线讨论</strong>：逃离、突袭、找巫师，体现队伍策略讨论的真实跑团感。</li>
+<li><strong>“被投放到中土”的设定</strong>：本身就带一点诙谐的元叙事感，让《霍比特人》世界观和玩家角色形成了天然反差。</li>
+<li><strong>京观</strong>：带着一种“我们已经不是来旅游的了”的黑色幽默气质，为整体冒险增添了野性与反差。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“团后复盘文档”的版本，例如加入：</p>
+<ol>
+<li><strong>剧情结构图</strong></li>
+<li><strong>角色关系表</strong></li>
+<li><strong>战斗/探索/社交三维度评价</strong></li>
+<li><strong>模组改编优缺点总结</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

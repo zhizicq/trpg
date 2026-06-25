@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>史丹利的寓言 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>史丹利的寓言</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以一座看似普通、实则被异常空间与超自然灾厄侵蚀的商超为起点，逐步揭露出“旁白式命运干预”“替身能力觉醒”以及“社王町四次死亡灾厄”三层核心谜团。表面上是一起商超命案与失踪事件，实则是主角白龙被卷入一场围绕“生存、预知、命运是否可被改写”的超现实对抗：敌方替身使者试图以压迫与臣服支配空间中的幸存者，而白龙则在濒死与觉醒中获得【风中尘】，开始拥有提前感知危险、扭转战局的能力。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>白龙为调查一桩发生在商超中的命案，独自深入现场，却很快发现这里早已不是常识所能解释的地方：空间结构异常，人员不知去向，楼层间存在诡异的“门”和楼梯陷阱，甚至连“旁白”都像某种看不见的剧本提示，提前警告她危险将至。随着调查推进，白龙逐步拼出一条恐怖的生存路线：商超并非单纯的案发现场，而是被某种替身能力扭曲成猎场的异空间。她在四楼遭遇自称拥有替身【弥诺陶洛斯】的敌人，对方以“只有臣服才能离开”为威胁，意图通过压迫和战斗彻底吞噬她的意志。白龙没有退缩，先用弓箭反击并击伤敌人，随后在生死边缘觉醒替身【风中尘】，借由预知与强化箭矢的能力反败为胜，将敌人卷飞、贯穿整个商超，完成一次极具视觉冲击力的逆转。战斗结束后，她从人偶与后续线索中得知，自己已被卷入更大的灾厄网络：目标不止是商超，而是指向“社王町”以及一个名为“四次死亡”的连续性诅咒。白龙虽重伤，但也由此踏上了真正的主线。</p>
+
+<h3>结局与收尾</h3>
+<p>本段落以战斗收束：白龙击退敌方替身使者，成功在商超异常空间中活下来，并以重伤代价获得关键信息。收尾并不是事件终结，而是“下一阶段调查”的开启：人偶揭示白龙已觉醒替身【风中尘】，并将“社王町”“四次死亡”作为核心线索抛出，明确了后续剧情的目的地与灾厄性质。结局呈现出一种“从局部事件升级为全域真相”的转场感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>白龙</h3>
+<ul>
+<li><strong>性格特征</strong>：冷静、警觉、行动果断，具备很强的独立调查能力与危机应对意识。</li>
+<li><strong>关键行为</strong>：</li>
+<li>独自深入商超调查命案，展现出强烈的主线推进意志。</li>
+<li>在空间异常与敌人威胁下，仍持续搜集信息，说明她不是单纯的战斗型角色，也有调查型思维。</li>
+<li>战斗中先以弓箭反击，之后顺势接纳觉醒的替身能力，说明她并不排斥未知力量，而是会迅速将其转化为实战优势。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>多次困难成功识破异常，提前规避致命危机。</li>
+<li>以弓箭击伤替身敌人。</li>
+<li>觉醒【风中尘】后，通过预知与增幅完成“贯穿商超”的夸张反杀，成为本段最大的战斗高光。</li>
+<li><strong>角色弧光</strong>：从“单人侦查的普通调查者”转向“能够感知并对抗灾厄的替身使者”，完成了从被动卷入到主动对抗的转变。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>“替身”使者敌人 / 拥有【弥诺陶洛斯】者</h4>
+<ul>
+<li><strong>作用</strong>：本段主要敌对者，负责构成商超空间中的直接威胁与压迫感。</li>
+<li><strong>表现</strong>：以“臣服才能离开”为核心话术，体现出强烈的支配欲与猎杀者姿态。</li>
+<li><strong>剧情功能</strong>：既是战斗关卡，也是替身系统与灾厄规则的“说明书式对手”，通过其登场让玩家明白此处不是普通凶案，而是替身战场。</li>
+</ul>
+
+<h4>人偶 / 高松灯</h4>
+<ul>
+<li><strong>作用</strong>：战后信息投放者，负责将故事从“商超事件”引向“社王町”与“四次死亡”主线。</li>
+<li><strong>表现</strong>：揭露自身身份与能力，说明白龙觉醒的替身【风中尘】具有预知灾难的特性。</li>
+<li><strong>剧情功能</strong>：承担“真相中继站”职责，把本章的结尾钉向下一章的核心目标。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 商超命案调查启动</h3>
+<p>白龙为了调查商超命案，独自进入现场。很快她发现这里的异常远超预期：空间结构不稳定，楼层与门的分布不合常理，部分区域似乎被某种力量“折叠”或改写。与此同时，现场人员几乎消失，氛围像是一个被清空的巨大陷阱。更诡异的是，她开始接收到某种类似“旁白”的预警，仿佛有人在剧本层面提示她危险将至。</p>
+
+<h3>2. 线索搜集与异常识别</h3>
+<p>在探索过程中，白龙通过多次灵感、侦查、幸运等关键成功，逐步拼出商超的异常特征：存在“两扇门”、楼梯附近有死亡痕迹、某些路径会直接导向危险。她数次在致命袭击或坠落前凭借预感躲开，说明她已经开始被某种超自然规则“标记”，但也因此获得了提前感知危险的机会。</p>
+
+<h3>3. 四楼遭遇替身敌人</h3>
+<p>白龙来到四楼后，正式遭遇敌对替身使者。对方自称拥有【弥诺陶洛斯】，并用“只有臣服才能离开”来恐吓她，试图在精神上先行压制。这个阶段的冲突不只是肉搏，更是意志与立场的对抗：是接受控制，还是坚持反击。</p>
+
+<h3>4. 反击与替身觉醒</h3>
+<p>白龙率先以弓箭发动攻击，成功击伤对手，打破了敌方的气势。紧接着，她在战斗压力下觉醒了替身能力【风中尘】。该能力兼具预知危险与强化/放大箭矢的效果，使她能在对局中迅速找到战机。这个觉醒不仅让她从被猎杀者变成猎杀者，也确立了她后续战斗风格的核心。</p>
+
+<h3>5. 夸张反杀与战斗结束</h3>
+<p>借助【风中尘】，白龙将箭矢威力推到极限，最终把敌人卷飞并贯穿整个商超，完成一场极具视觉冲击力的反杀。战斗结束后，她虽然身受重伤，但成功活了下来，并夺得了继续推进剧情的资格。</p>
+
+<h3>6. 真相投放：社王町与“四次死亡”</h3>
+<p>战后，人偶揭露自己是高松灯，并说明白龙已觉醒替身【风中尘】。同时，新的主线线索被明确抛出：社王町，以及名为“四次死亡”的灾厄。至此，本章从“解决商超命案”升级为“追查灾厄源头”的开端。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：白龙觉醒【风中尘】后，以箭矢贯穿整座商超反杀敌人，视觉表现力极强，属于典型“突然开挂但非常合理”的高燃桥段。</li>
+<li><strong>最意外</strong>：原本只是调查命案，结果迅速升级为替身战斗与灾厄主线，剧情转向速度极快，且信息量爆发式增长。</li>
+<li><strong>最有压迫感</strong>：旁白提前预警危险，让“游戏规则”本身都像敌人，氛围营造很出色。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>多次困难成功</strong>：白龙在灵感、侦查、幸运等检定中连续成功，尤其是在发现“两扇门”“楼梯附近死亡”等异常上，体现出调查型角色的强度。</li>
+<li><strong>致命危机前的闪避成功</strong>：在坠落或袭击前靠预感脱险，这类成功很能体现“命悬一线但总能抓住一丝生机”的紧张感。</li>
+<li><strong>战斗中关键命中</strong>：弓箭击伤敌人是整场反击的起点，属于“先手打破僵局”的决定性成功。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>敌方台词“只有臣服才能离开”</strong>：这句非常贴合替身系反派的压迫感，也把战斗主题从“打赢”提升到“拒绝被支配”。</li>
+<li><strong>旁白式预警</strong>：这种把叙事工具本身拟人化的设计很有《史丹利的寓言》味道，既荒诞又诡异。</li>
+<li><strong>战后线索投放</strong>：人偶揭露身份并直接抛出“社王町”“四次死亡”，有种“刚打完一关，结果只是新地图的开场”的感觉，节奏利落。</li>
+</ul>
+
+<p>如果你愿意，我也可以继续把这份分析整理成：</p>
+<ol>
+<li><strong>更像“剧本杀复盘”的版本</strong>，或</li>
+<li><strong>更像“TRPG主持人点评”的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

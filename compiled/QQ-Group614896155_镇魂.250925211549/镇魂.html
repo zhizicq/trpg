@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>镇魂 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>镇魂</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《镇魂》的故事发生在台风过境后的<strong>常叶村</strong>。表面上，主角们是奉命前往调查“忍神封印是否因灾害受损”，实则踏入了一座被长期隐瞒真相的“伪村”。村中村民对外人充满敌意，黑色芋虫遍布各处，空气中弥漫着异常而腐败的气息。</p>
+<p>核心冲突集中在两层：</p>
+<ol>
+<li><strong>“封印是否还能维持”</strong>——忍神与其相关秘宝的封存状态，关系到灾后局势与村落安危。</li>
+<li><strong>“村庄真相是否被揭开”</strong>——整个常叶村早已不是活人聚落，而是被某种名为“黑虫大人”的力量维系的伪生者共同体；茵家与茵回子则是维持这一谎言的关键核心。</li>
+</ol>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>早苗与鬼月凛奉命前往常叶村，调查台风是否冲毁了忍神封印。抵达后，她们立刻察觉到村庄的异常：村民态度排外，黑色芋虫四处蠕动，整座村子像是被某种阴湿、腐败的意志包裹。早苗借助凭依术与死灵术展开探查，确认茵家祠堂地下确实存在封印神明的玄室与经书，但神明气息已经被解放，说明真正的封印状态早已出现变化。与此同时，她从茵佐佐里的反应中隐约感觉到，对方对自己怀有强烈恐惧。</p>
+<p>随着调查深入，早苗与凛遭遇茵回子及虫群、蛹等敌对存在，展开多轮激战，并在战斗中逐渐拼凑出惊人真相：常叶村的“村民”其实早已死亡，如今只是被“黑虫大人”强行维持形体的伪生者。茵回子的棺椁中空无一物，意味着她本人仍然存活，甚至极可能长期诈死，以幕后身份操控局势。战局陷入胶着时，鬼月凛通过公会广播将真相公开，直接击穿了村民的认知与支撑体系，伪生者们随即露出腐朽本相，整座村庄的真实面貌被彻底揭开。最终，失去维系的茵回子败亡安息，早苗与凛成功完成封印忍神的任务，平安返回里宫。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是典型的“<strong>真相揭露型收束</strong>”：当伪装与维系的谎言被摧毁，依附其上的所有存在也随之崩解。茵回子作为核心操盘者走向终局，村民以腐朽尸骸的真面目退场，而早苗与凛则以完成任务、查明真相的方式离开常叶村。模组在“镇魂”主题下完成了从<strong>调查、战斗、揭露、送葬</strong>的完整闭环。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>早苗</h3>
+<p><strong>性格特征</strong>：冷静、敏锐、擅长从异常现象中抽丝剥茧，属于强调查型与灵异感知型角色。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>使用凭依术与死灵术侦查地下玄室与经书，准确确认封印相关信息。</li>
+<li>从茵佐佐里的反应中察觉“恐惧”这一细节，说明她不只看事实，也能捕捉人心裂缝。</li>
+<li>在战斗与调查中承担“信息整合者”的角色。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>通过灵术手段确认神明气息已被解放，为后续真相揭露提供关键依据。</li>
+<li>她对村庄“死气”的敏感判断，是整个故事推理链条的重要起点。</li>
+</ul>
+<p><strong>人物弧光</strong>：早苗更多体现为“以术法洞见真相”的侦测型主角，她的弧光不在情绪爆发，而在一步步把藏匿的死亡真相揭出来。</p>
+
+<h3>鬼月凛</h3>
+<p><strong>性格特征</strong>：果断、敢于正面揭露、具有较强的行动力与舆论意识。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>在局势胶着时，通过公会广播公开真相，直接打破敌方维持的叙事结构。</li>
+<li>在战斗中与早苗协作，承担冲锋和压制作用。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>“广播揭露真相”是本段剧情最有戏剧性的操作之一，堪称战术与剧情双重爆点。</li>
+<li>她不是单纯打赢战斗，而是选择让敌人的谎言在众目睽睽下崩塌。</li>
+</ul>
+<p><strong>人物弧光</strong>：凛的弧光体现为“从战斗解决问题”升级为“利用信息优势终结伪装”，非常符合团队中的破局者定位。</p>
+
+<h3>茵回子</h3>
+<p><strong>性格特征</strong>：神秘、阴沉、极具控制欲，是整个常叶村谎言结构的核心人物。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>作为敌方首脑或关键执行者，指挥/支配虫群与蛹，与PC正面对抗。</li>
+<li>棺椁为空，暗示其长期诈死并隐藏真实身份。</li>
+</ul>
+<p><strong>剧情作用</strong>：</p>
+<ul>
+<li>她是“伪村”的象征，也是谎言维系者。</li>
+<li>她的败亡标志着整个系统性骗局的终结。</li>
+</ul>
+<p><strong>人物定位</strong>：典型的“装死幕后黑手”，把死亡、封印、信仰和村落秩序捆绑成一个密不透风的骗局。</p>
+
+<h3>茵佐佐里</h3>
+<p><strong>性格特征</strong>：并非明确敌对的前线战斗者，更像是夹在谎言与恐惧之间的受压者。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>在早苗的观察下显露出对她的恐惧。</li>
+</ul>
+<p><strong>剧情作用</strong>：</p>
+<ul>
+<li>作为细节型NPC，承担“泄露真相边角”的功能。</li>
+<li>她的反应说明早苗或其术法在村中拥有某种威慑力，也暗示茵家内部并非铁板一块。</li>
+</ul>
+
+<h3>黑虫大人 / 黑色芋虫群</h3>
+<p><strong>性质</strong>：更像是超自然系统或寄生性“秩序”的体现。</p>
+<p><strong>剧情作用</strong>：</p>
+<ul>
+<li>维持村民伪生者状态的支柱。</li>
+<li>也是视觉与氛围层面最强的恐怖元素之一。</li>
+</ul>
+<p>它不是单一角色，却是本模组最关键的“无形反派机制”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 受命前往常叶村</h3>
+<p>早苗与凛接到任务，前往常叶村调查台风后忍神封印的状况。任务表面上是灾后巡查，实则一入村便感到不对劲：村民对外来者冷淡乃至敌视，环境中到处是黑色芋虫，整个村落像是被死亡与腐坏吞没。</p>
+
+<h3>2. 村庄异状与初步侦查</h3>
+<p>早苗开始使用凭依术、死灵术进行深入探查，试图从灵性层面确认村中“看不见的真相”。她锁定茵家祠堂地下存在玄室与经书，证明这里曾是封印核心之一，但同时也发现神明气息已经被解放，说明封印状态远非表面所见。</p>
+
+<h3>3. 人际异样与恐惧浮现</h3>
+<p>在与村中人物接触的过程中，早苗察觉茵佐佐里对自己有明显恐惧。这个细节让玩家意识到，村民并不只是排外，而是“怕被看穿”。此时常叶村的恐怖感从环境层面升级为社会层面：不是村子在隐瞒秘密，而是整个村子本身就是秘密。</p>
+
+<h3>4. 茵回子现身，虫群与蛹战斗爆发</h3>
+<p>早苗与凛遭遇茵回子及其麾下的虫群、蛹，战斗正式打响。敌方不仅数量多，还兼具诡异的生体异变感，使战斗兼具压迫与猎奇气质。两人通过合作击退敌人，并趁机获得秘宝【常世经典】。</p>
+
+<h3>5. 真相拼图完成：村民早已死亡</h3>
+<p>在战斗与调查交错推进下，关键信息被逐一串联：</p>
+<ul>
+<li>常叶村村民早已死去；</li>
+<li>他们现在只是被“黑虫大人”维持的伪生者；</li>
+<li>茵回子的棺椁为空，说明她本人未死，甚至可能一直在背后操控一切。</li>
+</ul>
+<p>这一阶段是整段剧情的认知翻转点。</p>
+
+<h3>6. 广播揭露与系统崩坏</h3>
+<p>战斗胶着时，鬼月凛通过公会广播把真相彻底公开。这个举动极具戏剧性：不是偷偷拆穿，而是当众击破。村民们在听到真相后当场崩溃，伪生之躯开始腐朽，所有依托谎言建立的秩序瞬间瓦解。</p>
+
+<h3>7. 茵回子败亡，任务完成</h3>
+<p>失去“维持”的力量后，茵回子最终败亡安息。早苗与凛成功完成封印忍神的任务，带着调查结果与收获返回里宫。常叶村的事件以“真相大白、亡者归土”的方式收束，符合模组题目“镇魂”的主题表达。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：鬼月凛在公会广播里直接揭露真相。这个操作把“推理成功”升级成“全村社死”，戏剧张力极强。</li>
+<li><strong>最意外</strong>：常叶村村民竟然早已死亡，只是被维持成伪生者，这种“整村都不是活人”的设定冲击力很强。</li>
+<li><strong>最有气氛</strong>：黑色芋虫遍地爬行的场面，极其适合恐怖系TRPG的视觉表达。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li>虽然摘要中未明确给出具体数值检定，但<strong>早苗通过凭依术与死灵术成功探查地下玄室、确认神明气息解放</strong>，等同于一次决定性的“关键成功”。</li>
+<li><strong>凛的广播揭露</strong>可视作一次高风险高收益的“社会性大成功”——不是传统掷骰大成功，但在剧情效果上堪称爆骰级操作。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>茵佐佐里对早苗的恐惧</strong>是很值得回味的细节：一句话没说透，却已经把“你知道得太多了”的紧张感拉满。</li>
+<li><strong>棺椁为空</strong>这种桥段属于非常经典的恐怖反转，配合“诈死操盘”意味，直接把茵回子的形象从“疑似亡者”提升为“幕后黑手”。</li>
+<li><strong>广播公开真相</strong>的行为也很有趣，带点现代战场信息战的味道，和传统灵异村落形成强烈反差。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>更像正式跑团后记的版本</strong>，</li>
+<li><strong>带有“KP视角点评”的版本</strong>，或者</li>
+<li><strong>提炼成人物关系图与剧情时间线表格</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

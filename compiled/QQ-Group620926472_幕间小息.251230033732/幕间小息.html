@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>幕间小息 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>幕间小息</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《幕间小息》是一段带有强烈日常喜剧与超常惊悚混搭气质的短篇跑团剧情。故事发生在一次任务后的临时据点中，队员们本应在“幕间”短暂休整，却因现场残留的灵性污染物——“鬼魂粉尘”——引发了一场完全失控的意外。核心冲突并不在于外部敌人，而在于<strong>错误误食、灵性污染、以及队员之间极其微妙的应急协作</strong>：一边是上野受到污染后欲望与理智失衡的危机，一边是森川在震惊、尴尬与责任感中，努力以各种“非标准手段”压制事态。</p>
+<p>这个模组的精髓在于：<strong>危机很严重，但处理过程非常荒诞；后果很危险，但当事人又不得不以一种极度社死的方式解决。</strong></p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>故事从森川与上野返回临时据点开始。两人原以为只是普通的收尾与休整，却意外发现上野误把装有“鬼魂粉尘”的东西当成咖啡粉喝下，导致她遭到灵性污染。与其说是“附身”，不如说是残留的鬼魂力量放大了她的欲望与冲动，使她的理智迅速滑向失控边缘。上野的异常表现很快让局面变得微妙而危险，森川则在极度震惊和尴尬中迅速展开处置：先通过侦查确认污染源，再凭灵感判断问题本质不是传统意义上的附灵，而是欲望被恶性放大。</p>
+<p>随后，森川不得不采用一系列应急手段对上野进行压制和稳定，过程中还在房间角落里发现了那根决定命运走向的按摩棒，成为全场最具喜剧性的“道具焦点”。在多次检定与临场应对后，上野终于恢复清醒，但对森川的处理方式极为恼火。最终，两人决定将此次事件以“现场销毁”方式上报，以避免更大范围的追责；上野则前往总社进修，顺带要求森川补习应急处理知识。剧情在一场狼狈、暧昧又极具黑色幽默的收尾中落幕。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局采用了典型的“<strong>危机解除，但关系留下后遗症</strong>”式收束：</p>
+<ul>
+<li>事件层面：污染被压制，现场处理完毕，选择上报“现场销毁”。</li>
+<li>角色层面：上野恢复正常，但对森川心存恼火；森川则因这次事故被迫反思并补学应急处理。</li>
+<li>氛围层面：没有宏大胜利，只有一种“事情算是解决了，但大家都很难再直视彼此”的余韵。</li>
+</ul>
+<p>这一结尾非常适合短篇模组：既完成了闭环，也为角色关系留下了轻微但鲜明的后续张力。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>森川</strong></h3>
+<p><strong>性格特征：</strong></p>
+<p>冷静中带点手忙脚乱，关键时刻能扛事，但显然不擅长处理这种高度尴尬且超出常识的状况。</p>
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>在发现异常后迅速侦查并确认污染来源。</li>
+<li>通过灵感判断上野并非真正附身，而是欲望被放大。</li>
+<li>在混乱中持续做应急处理，硬生生把危机压下去。</li>
+</ul>
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>侦查从失败到成功再到大成功，逐步锁定粉尘、咖啡粉袋与按摩棒，属于“靠搜索把剧情拼出来”的典型高光。</li>
+<li>灵感成功明确了事件性质，避免剧情滑向更复杂的驱邪路线。</li>
+</ul>
+<p><strong>角色弧光：</strong></p>
+<p>从“被突发状况砸懵”到“承担责任并完成收尾”，森川展现出一种非常实用主义的可靠感。虽然过程充满社死，但他确实是把局面拉回来的那个人。</p>
+
+<h3><strong>上野</strong></h3>
+<p><strong>性格特征：</strong></p>
+<p>行为上更容易受环境与欲望影响，带有一点被动卷入混乱的喜剧属性；同时，她对自身状态变化有较强的存在感，恢复后也会明确表达不满。</p>
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>误食鬼魂粉尘后失控，成为事件的直接触发点。</li>
+<li>在异常状态下推动剧情进入“必须立即处理”的紧急模式。</li>
+<li>恢复清醒后对森川的处理方式表达恼火，形成剧情后的关系张力。</li>
+</ul>
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>作为“被污染者”，她并非完全失去主体性，而是让整场剧情围绕她的异常反应运转起来。</li>
+</ul>
+<p><strong>角色弧光：</strong></p>
+<p>上野的弧光并不在于战胜敌人，而在于从失控边缘回归清醒，并以愤怒和抗议的方式重新夺回自我。她的“恼火”本身就是人格回归的证明。</p>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+<p>本段摘要中未出现大量独立NPC，人物重心几乎完全落在森川与上野的互动上。若从“功能性角色”角度理解，可以将以下元素视作剧情中的关键推动者：</p>
+<ul>
+<li><strong>鬼魂粉尘</strong>：本质上是“无形NPC”，它不是角色，却是整个危机的发动机。</li>
+<li><strong>按摩棒</strong>：在叙事中承担了非常夸张的“道具型NPC”功能，几乎单靠它就把场景气氛从惊悚扭转为社死喜剧。</li>
+<li><strong>总社</strong>：作为后续收尾的制度性存在，负责承接“上报”“进修”“补学应急处理”等结局处理。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：返抵据点，日常表象下的隐患</strong></h3>
+<p>森川与上野结束外出任务后返回临时据点，表面上只是一次普通回程与休整，实际上危险早已潜伏在收尾环节之中。上野误将“鬼魂粉尘”当作咖啡粉，导致灵性污染悄然进入体内。故事在这里建立起最经典的反差：一切看起来都像普通日常事故，但其后果却远超日常承受范围。</p>
+
+<h3><strong>第二阶段：异常显现，危机升级</strong></h3>
+<p>随着污染生效，上野开始出现欲望与理智失衡的症状。剧情气氛从“回据点”迅速转向“必须紧急处置”。森川意识到情况不对后开始调查，试图确认到底是附身、污染还是其他类型的灵异异常。此时，剧情张力来自两方面：一是上野状态越来越危险，二是森川必须在极度尴尬中保持判断力。</p>
+
+<h3><strong>第三阶段：侦查与推理，真相逐步拼合</strong></h3>
+<p>森川先后经历侦查失败、成功、大成功，逐渐找到关键线索：</p>
+<ul>
+<li>粉尘本身的存在；</li>
+<li>被误认的咖啡粉袋；</li>
+<li>房间角落里的按摩棒。</li>
+</ul>
+<p>这些看似零散的发现最终拼成完整真相。与此同时，森川灵感成功，判断上野并非真正被鬼魂附体，而是被鬼魂残留物放大了欲望与冲动。这个判断非常关键，它让事件从“宗教/驱邪式解决”转向“应急/压制式解决”。</p>
+
+<h3><strong>第四阶段：紧急处理，尴尬中的控制</strong></h3>
+<p>确认性质后，森川开始对上野进行连续的应急处置。过程中伴随多次敏捷、意志检定，说明这不是纯粹的推理局，而是一场需要身体控制与心理稳定共同介入的现实危机。最终，上野的失控被压制下来，恢复清醒。</p>
+<p>这一段是整场剧本的喜剧高潮：危险是真危险，处理也是真处理，但所有行为都带着一种无法回避的“我现在到底在干什么”的荒诞感。</p>
+
+<h3><strong>第五阶段：事后清算与关系重置</strong></h3>
+<p>上野恢复后明显对森川十分恼火，说明她不仅保住了理智，也保住了对事件的“羞耻记忆”。两人最后决定以“现场销毁”方式上报，将事故尽量压低处理。上野则前往总社进修，同时要求森川补学应急处理知识。</p>
+<p>剧情在这里完成收束：事件解决了，但角色关系更复杂了；组织层面的麻烦被化解了，但个人层面的尴尬会继续残留。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>上野误食鬼魂粉尘</strong>：这是整段剧情最意外、也最能制造喜剧反差的起点。</li>
+<li><strong>森川一边震惊一边做应急处理</strong>：危险与社死并存，是本作气质的集中体现。</li>
+<li><strong>房间角落里的按摩棒被侦查大成功发现</strong>：几乎是“剧情道具直接抢戏”的名场面。</li>
+<li><strong>最后决定上报现场销毁并去总社进修</strong>：收尾极其现实，也极其好笑，像是灾后问责与情侣/搭档修罗场的结合体。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>侦查：失败→成功→大成功</strong></li>
+</ul>
+<p>这种连续推进很有戏剧性，像是从“完全摸不着头脑”一路过渡到“证据链闭合”。</p>
+<ul>
+<li><strong>灵感成功</strong></li>
+</ul>
+<p>直接决定了解题路线，避免剧情陷入更复杂的附身/驱魔分支。</p>
+<ul>
+<li><strong>敏捷/意志检定多次出现</strong></li>
+</ul>
+<p>说明这场戏不是单次判定定胜负，而是持续压制、持续挣扎的过程，增强了临场感。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>“鬼魂粉尘被误当咖啡粉”本身就是一段足以让人记住的设定。</li>
+<li>森川发现按摩棒时的反应，几乎可以想象成跑团桌上所有人一起憋笑的瞬间。</li>
+<li>上野恢复后直接对森川恼火，这种“我活下来了但我一点也不感谢你”的态度非常生动。</li>
+<li>“补学应急处理”这一句收尾很妙，既像任务总结，又像关系层面的严肃吐槽。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以继续把这份报告整理成更像“正式跑团复盘文档”的版本，或者进一步补成<strong>“适合发帖的轻小说风复盘”</strong>。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

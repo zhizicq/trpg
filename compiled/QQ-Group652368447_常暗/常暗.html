@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常暗 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>常暗</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《常暗》从已给出的日志片段来看，明显是一部带有<strong>克系悬疑/都市秘密调查</strong>气质的模组。其核心并不在于“事件本身已经展开了什么”，而是更像一种<strong>被压抑的过去重新浮出水面</strong>的开端：调查员们再次进入故事，而椎名立希所提交的《立希为什么隐藏她调查员的历史》一文，直接把“身份隐瞒”“旧日经历”“不可告人的调查员历史”推到台前。</p>
+
+<p>从现有信息看，模组的主要矛盾大致可以概括为：</p>
+<p><strong>角色们试图进入新故事，但旧故事并没有真正结束。</strong></p>
+<p>在《常暗》这样偏氛围向的标题之下，故事很可能围绕“黑暗始终存在、真相被遮蔽、调查员不得不面对自己过去的阴影”展开。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>根据摘要，现阶段的剧情几乎处于<strong>序幕/启程</strong>状态，尚未出现明确的任务目标、场景推进或实体冲突，但已经通过开场提示和角色资料投放建立了强烈的故事预期。系统以“新的故事开始了，祝旅途愉快！”作为开场宣告，意味着调查正式启动；与此同时，椎名立希主动提交了一份名为《立希为什么隐藏她调查员的历史》的文档，这份资料本身就是故事的关键钩子：她并非以“白纸一张”的身份进入，而是带着一段需要刻意掩藏的调查员经历。</p>
+<p>因此，这一模组的叙事重点更像是“身份与记忆的解封”。主线很可能会沿着立希的旧案、旧同伴、旧创伤逐步展开，并在调查过程中牵出一系列被隐藏的真相：她为何选择隐去过去？那段调查经历究竟带来了怎样的代价？而“常暗”又象征着怎样的黑暗领域——是现实中的阴谋，是心理上的阴影，还是克苏鲁式不可名状之物？</p>
+<p>虽然目前日志没有出现具体事件，但从开场配置可以判断，《常暗》注重的不是立刻给出答案，而是先让玩家意识到：<strong>你们进入的不是一个全新的世界，而是一段尚未结清的过去。</strong></p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>从现有摘要看，模组尚处在<strong>开局阶段</strong>，没有出现实际的结局推进。</p>
+<p>目前唯一明确的“收尾”是：<strong>故事正式开启，调查员资料已进入记录系统，立希的过去被作为关键伏笔摆上台面。</strong></p>
+<p>这意味着后续剧情大概率会围绕她的历史展开，并逐步将“隐藏”变成“揭露”，最终在真相与自我认知之间做出抉择。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>椎名立希</strong></h3>
+<ul>
+<li><strong>性格侧写</strong>：从文件标题来看，立希是一个对自身经历有明显保留、甚至刻意遮掩的人。她并非被动卷入故事，而是主动把“调查员历史”这个关键词放上桌面，说明她的角色定位很可能是<strong>带着秘密行动的人</strong>。</li>
+<li><strong>关键行为</strong>：提交《立希为什么隐藏她调查员的历史.docx》，等于把个人背景变成剧情引擎。</li>
+<li><strong>高光时刻</strong>：虽然没有现场行动描写，但在开局就抛出如此强烈的背景钩子，本身就是一种“角色高光”——她不是单纯的参与者，而是<strong>故事矛盾的承载者</strong>。</li>
+</ul>
+
+<h3><strong>克蕾雅</strong></h3>
+<ul>
+<li><strong>角色作用</strong>：克蕾雅承担了<strong>开场引导/叙事启动者</strong>的职责。</li>
+<li><strong>关键行为</strong>：以“新的故事开始了，祝旅途愉快！”正式宣布开跑，完成了氛围定调。</li>
+<li><strong>高光时刻</strong>：她的开场台词简洁但有效，像一记发令枪，让整场跑团从“准备状态”切换到“故事状态”。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+<ul>
+<li><strong>从摘要中无法确认具体NPC登场</strong>：当前日志没有出现真正意义上的剧情NPC，因此暂时只能判断，模组的“重要角色功能”还主要由系统提示与PC背景承担。</li>
+<li><strong>系统/记录载体</strong>：在这段日志里，系统本身更像一个“元叙事NPC”，负责宣告开始、承载文件、推动玩家进入正式流程。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：序幕开启，旧历史浮现</strong></h3>
+<p>本章几乎完全是开场准备与故事启动。系统宣布《常暗》新故事开始，随后开启记录，标志跑团正式进入运行状态。在这个过程中没有明显的场景描写、行动指令或冲突事件，但椎名立希提交了一份名为《立希为什么隐藏她调查员的历史》的文档，成为本章唯一且最重要的信息点。该文件暗示她并非普通新人，而是拥有一段需要刻意隐瞒的调查员经历，这立刻为后续故事埋下强烈伏笔。</p>
+<p>整体上，第1章的功能是完成世界与角色的“门槛设置”：先让玩家进入故事，再通过“隐藏的历史”提示本次模组的核心主题——过去不会消失，只会在黑暗中等待被重新翻开。</p>
+
+<h3><strong>第2章：正式开场，伏笔确认</strong></h3>
+<p>第二章与第一章内容高度相似，依旧围绕“新的故事开始了”这一提示展开，并再次确认记录开启。尽管没有新增剧情行动，但椎名立希上传的背景文件被再次强调，说明这一设定并非可有可无，而是系统/叙事层面都认可的重要线索。</p>
+<p>这一章的作用更接近“重复强调”与“印象加深”：它让玩家意识到，立希的过去将会是模组关键；同时也将整个团的基调固定在一种<strong>先慢后快、以伏笔和心理悬念驱动</strong>的风格上。可以说，第二章不是推进事件，而是在推进“期待”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：开局没有任何现场跑团动作，反而是“角色背景文件”先抢戏，尤其是《立希为什么隐藏她调查员的历史》这个标题，像是剧情刚开始就先把“秘密”亮出来一半，悬念感非常强。</li>
+<li><strong>最有氛围</strong>：克蕾雅的“新的故事开始了，祝旅途愉快！”虽然短，但很有仪式感，像主持人宣布舞台灯光亮起。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li>由于摘要中<strong>没有出现任何检定</strong>，所以这一项暂时只能记为“暂无记录”。</li>
+<li>但从日志结构看，这种“未开检定先开伏笔”的方式，本身就是一种叙事节奏上的成功。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>克蕾雅</strong>：“新的故事开始了，祝旅途愉快！”</li>
+</ul>
+<p>这句很像跑团开场白中的标准答案，但也正因简洁，显得格外适合作为故事切入点。</p>
+<ul>
+<li><strong>椎名立希</strong>上传文件《立希为什么隐藏她调查员的历史.docx》</li>
+</ul>
+<p>这个文件名本身就很有戏剧性，像是角色自己在对空气交代前情提要，带着一点“我先承认我有秘密”的冷幽默感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结</h2>
+<p>目前《常暗》日志呈现的是一个<strong>高度依赖背景伏笔与心理悬念的开局</strong>：事件尚未展开，但角色秘密已经先行登场。椎名立希的“隐藏历史”几乎可以视作全模组最重要的起爆点，而克蕾雅的开场宣言则完成了节奏上的定场。</p>
+<p>虽然现有摘要内容极少，但恰恰因为“少”，反而让这个故事显得像一扇刚刚推开的门——门后面是什么，还没有被写出来，但黑暗已经在门缝里了。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

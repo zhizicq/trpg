@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈基山的曼波打不打瓦 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>哈基山的曼波打不打瓦</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《哈基山的曼波打不打瓦》是一场带有强烈“海贼王梗化”和“时间错位”色彩的穿越型冒险。PC们在不明原因下被召唤到哈基国曼波岛，卷入一场围绕<strong>“见证马尔莎的一生”</strong>展开的试炼。表面上，这是一个要通过观察、经历与理解某个女孩人生来回到原处的任务；但随着剧情推进，真相逐渐偏离“单纯的人生见证”——马尔莎、巫女、村庄、海贼船、海蛇、古代残页与异常年份彼此缠绕，形成一个<strong>时间线混乱、因果倒置、神秘力量与地方传说交织</strong>的岛屿阴谋。</p>
+
+<p>核心冲突主要有三层：</p>
+<ol>
+<li><strong>生存冲突</strong>：刚落地就被狼群包围，必须在诡异环境中活下来。</li>
+<li><strong>信息冲突</strong>：马尔莎与现实、村民说辞与残页记载互相矛盾，世界观不断被推翻。</li>
+<li><strong>逃离冲突</strong>：岛屿似乎是一个封闭试验场，PC必须寻找船只、线索与出路，才能脱离被操控的命运。</li>
+</ol>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>三名玩家角色在莫名其妙的穿越后醒于地下室，被告知必须“见证马尔莎的一生”才可返回原处。地下室外血迹、腐烂熊尸与徘徊狼群让这个请求显得像一场生存赌局，而非温情故事。PC们在废宅中搜集资源、利用火堆与熊皮自保，确认自己被困在一个时间与常理都失效的地方。随着与马尔莎、守军和村民的接触，他们逐步发现这座岛并非普通村落，而是被巫女势力、古怪传说与异常历史撕裂的异常区域。村中流传“巫女抓孩子炼怪物”的恐慌，而港口残页、墓地线索与废船记录则指向更深处：海怪并非天灾，而是被束缚的海蛇；岛上的混乱，也并非偶然，而像是某种长期掩盖的结果。</p>
+
+<p>为寻找答案与出路，PC们不断奔走于村庄、海岸、墓地、暗洞与沉船之间：翔太郎以暴力和检定推进局面，羽辉以观察与判断补足情报，卢奇诺则在环境探索、装备整备与海底潜行中发挥关键作用。众人先后解决海蛇、半人马怪、紫熊等威胁，并从海贼船与沉船残骸中拼出岛屿更大的秘密：这里曾经存在与“时时果实”、空岛、海图与悬赏令相关的远古线索，马尔莎本人也与巫女力量有着不可切割的联系。最终，PC们虽暂时在危机中存活并获得部分关键物资与特性，却也因减压症、昏厥与同伴濒危而被迫停留在这座岛上，故事在“尚未真正脱离局势”的悬念中收束。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>目前日志所示并未完成彻底结局，而是停在一个<strong>强悬念节点</strong>：</p>
+<ul>
+<li>卢奇诺因深海潜行后的减压症昏厥；</li>
+<li>同伴状况濒危，需要回村救治；</li>
+<li>“时时果实”悬赏令的出现暗示岛上还藏着更高阶的时间系秘密；</li>
+<li>马尔莎、巫女、村庄与海贼船之间的关联尚未完全揭开。</li>
+</ul>
+
+<p>因此，这一阶段的收尾更像是：<strong>PC们成功从“单纯见证人生”的框架中挣脱，转而踏入岛屿真相的核心区域</strong>。他们已经不是旁观者，而是被卷入历史结构中的行动者。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>右翔太郎</strong></h3>
+<p><strong>性格与定位</strong>：</p>
+<p>典型的前排行动派、推进器型角色。面对危机时反应直接，善于以强力手段解决眼前问题，属于“先打再说”的类型。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>力量检定踹开木门，直接打开行动局面。</li>
+<li>在夜里通过判断与战斗协助确认狼群威胁。</li>
+<li>用电击、骑士踢等方式重创海蛇，体现高输出与高执行力。</li>
+<li>甚至能用火炮零件制作土炸弹，说明他不只是莽，也能在乱局中迅速转化资源。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>踹门后成功获得关键情报；</li>
+<li>对海蛇的连环打击，既有战斗压制，也有“硬核骑士”式的角色表现。</li>
+</ul>
+
+<h3><strong>羽辉</strong></h3>
+<p><strong>性格与定位</strong>：</p>
+<p>更偏观察、分析与侦查的角色，属于团队里的“脑力/情报担当”。在混乱环境中，他负责把碎片线索拼成方向。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>判断狼群数量与行动模式，帮助团队理解局势。</li>
+<li>识破海蛇可能依靠声波定位，为战斗方式提供理论依据。</li>
+<li>在墓地发现金盒和巫女线索，推动主线情报。</li>
+<li>触发诡异诅咒，说明他和神秘机制有较强互动。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>以观察和推理为战斗前提，准确识别敌方机制。</li>
+<li>在港口、墓地等地带挖出关键线索，是剧情拼图的重要一环。</li>
+</ul>
+
+<h3><strong>卢奇诺</strong></h3>
+<p><strong>性格与定位</strong>：</p>
+<p>属于资源整合、环境利用与技术/生存能力突出的一位角色，行动中带着强烈的“实用主义探索者”气质。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>用熊皮制作皮甲并整理装备，增强团队生存能力。</li>
+<li>在海洞与海贼船相关剧情中起到核心探索作用。</li>
+<li>通过贝壳装置、排击贝、闪光贝、鱼叉等工具击杀紫熊。</li>
+<li>获得“勇气”特性，象征其在面对压迫与未知时完成了成长。</li>
+<li>潜入沉船调查，带回“时时果实”悬赏令，是最接近真相的人之一。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>单独应对紫熊并成功反杀；</li>
+<li>海底潜行与沉船探索，体现强烈的冒险者气质；</li>
+<li>因减压症昏厥也很有“硬核换线索”的代价感。</li>
+</ul>
+
+<h3><strong>马尔莎</strong></h3>
+<p><strong>角色性质</strong>：关键引导NPC，同时又像剧情核心与真相容器。</p>
+
+<p><strong>作用</strong>：</p>
+<ul>
+<li>以“召唤者”身份把PC拉入局中，并提出“见证一生”的任务框架。</li>
+<li>她的说法与现实不断冲突，暗示其身份并不简单，可能与巫女、时间异常或古魔法有直接关联。</li>
+<li>她既像受害者，也像推动剧情的中枢。</li>
+</ul>
+
+<h3><strong>村民与士兵</strong></h3>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>提供“巫女抓孩子”“村庄将遭灾”的民间叙事。</li>
+<li>但他们的说法并不完全可信，更多承担<strong>世界观噪音与社会压迫</strong>的功能。</li>
+<li>守军对PC的质疑，反映岛屿内部的封闭与戒备。</li>
+</ul>
+
+<h3><strong>巫女</strong></h3>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>主要反派/幕后威胁。</li>
+<li>她与怪物军团、村庄恐慌、诡异传闻和时间错位关系密切。</li>
+<li>其存在让整个岛屿的异常从“怪谈”升级为“有组织的灾厄”。</li>
+</ul>
+
+<h3><strong>海贼船长/船长日志相关人物</strong></h3>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>通过航海日志、海图、空岛经历与女儿娜塔莎等信息，连接到更宏大的海贼冒险叙事。</li>
+<li>其资料提供了“岛外世界”的参照，扩展了模组的纵深。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：落地、求生与第一层异常</strong></h3>
+<p>PC们在穿越后醒于地下室，马尔莎说明他们必须“见证她的一生”才能离开。屋内腐熊、血迹和空盒子构成不祥开局。众人搜查出火药、古书、猎具等物资后，翔太郎踹开木门，确认外面有十只狼潜伏。狼群怕火但不退，迫使PC采取守夜与篝火防御策略。卢奇诺整理装备、利用熊皮做皮甲，团队在最初一夜成功撑住。然而月亮高悬、天色不变，说明这里的时间流速或日夜规律已被扭曲，故事从一开始就建立起“不正常”的基调。</p>
+
+<h3><strong>第2章：村庄、港口与巫女传闻</strong></h3>
+<p>在与马尔莎及村民接触后，PC们逐步得知岛上流传“巫女抓孩子炼怪物”的说法。守军与民众对他们并不友好，村庄本身也处在战争前夜。众人被黑书强制转移至废弃港口，开始从残页与日志拼凑岛屿历史：村长失踪、东边暗洞藏船、巫女势力扩张。此时“海怪”也被重新定义为被束缚的海蛇。剧情从单纯求生正式转入探索真相与收集关键道具的阶段。</p>
+
+<h3><strong>第3章：海岸战、海蛇与战斗型推进</strong></h3>
+<p>在海边，PC们遭遇被束缚的海蛇。羽辉根据声波与定位机制提出判断，翔太郎则以电击、骑士踢等强硬手段重创敌人，使其坠入海底。此处战斗不只是“打赢”，更是通过机制推断敌人弱点并完成压制，体现团队配合。</p>
+
+<h3><strong>第4章：东侧暗洞、墓地与紫熊事件</strong></h3>
+<p>随后众人前往海崖与丛林寻找船只与出路。羽辉在墓地找到金盒和巫女相关线索，提示岛上存在更早期、更诡异的诅咒结构。卢奇诺与翔太郎在丛林中被紫熊追击，最终卢奇诺在海洞中找到海贼船，并通过贝壳武器系统击杀紫熊，获得“勇气”特性。这里明显是一个典型的“探索——追逐——反杀——奖励成长”的段落。</p>
+
+<h3><strong>第5章：海贼船、日志与世界观扩张</strong></h3>
+<p>众人登上海贼船后，翻阅船长日志与海图，得知这艘船曾抵达空岛，且日志被马尔莎取走过。日志里提到“One Piece”和娜塔莎，直接将模组的气质从本地怪谈扩大到宏大海贼冒险。随后他们准备启航北上，但海王类威胁逼迫他们返回南岸，说明真正能离岛的路径并未开放，故事仍受海域怪物封锁。</p>
+
+<h3><strong>第6章：沉船调查与真相逼近</strong></h3>
+<p>卢奇诺借珍珠贝下潜调查沉船，发现船体被锁链拖曳，且深处存在海蛇骨架痕迹，进一步证实海怪传闻并非自然形成。他还带回一张指向“时时果实”的10亿悬赏令，使岛上秘密与时间主题正式扣合。最终卢奇诺因减压症昏厥，被队友送回村中救治，章节在险象环生中结束，也把“更大秘密仍未揭晓”的悬念拉满。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>开局踹门确认世界是否正常</strong>：翔太郎以力量检定直接把“恐怖氛围”踹成“动作片开场”。</li>
+<li><strong>篝火守夜对抗狼群</strong>：明明是生存恐怖段，结果因为火堆与轮班，呈现出极强的“临时营地求生”喜感。</li>
+<li><strong>海蛇被打成坠海事件</strong>：从“巨大海怪压迫感”迅速转为“被电击和骑士踢送走”，反差很大。</li>
+<li><strong>卢奇诺海洞寻船并反杀紫熊</strong>：非常有硬核RPG冒险感，且“贝壳武器打熊”本身就很有画面。</li>
+<li><strong>世界观突然扩张到空岛与One Piece</strong>：原本像民俗恐怖与岛屿怪谈，突然拐到海贼主线，属于全团都得重新理解剧情的意外转折。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>翔太郎踹门成功</strong>：典型高强度突破检定，直接改变场景节奏。</li>
+<li><strong>自然/察觉判断狼群数量与惧火特性</strong>：属于关键情报型成功，让团队从盲目防守转为主动应对。</li>
+<li><strong>羽辉识破海蛇依靠声波定位</strong>：这是非常有价值的机制推断，直接决定战斗策略。</li>
+<li><strong>卢奇诺制作皮甲、使用贝壳装置杀熊</strong>：属于把环境资源玩出花的成功案例。</li>
+<li><strong>减压症昏厥</strong>：从剧情效果上看，这是典型“成功拿线索但付出代价”的漂亮收束。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>“必须见证马尔莎的一生才能回去”这种任务描述本身就极具荒诞感。</li>
+<li>“召唤英灵”的说法与“她其实只是想用古魔法救人”之间的反差，形成了很强的人物误会喜剧感。</li>
+<li>村民关于“巫女抓孩子炼怪物”的传闻，既像民俗恐怖，又像带点夸张的乡野八卦。</li>
+<li>船长日志里突然出现“One Piece”和“娜塔莎”，是最强的跨次元式梗点之一。</li>
+<li>“海王类”最后被解释为被困海蛇，也让前期的宏大称谓带来意外反转。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续帮你把这份报告<strong>整理成更像正式团后复盘文档的版本</strong>，或者进一步补一份：</p>
+<ol>
+<li><strong>剧情时间线表格版</strong></li>
+<li><strong>NPC关系网图谱版</strong></li>
+<li><strong>PC成长弧光总结版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

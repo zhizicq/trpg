@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神秘 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>神秘</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段《神秘》剧情呈现出一种典型的“异界迷失者求生”开局：角色被传送到陌生草原，资源匮乏、环境未知，只能靠最原始的求生本能与临场应变寻找生路。核心冲突并不复杂，却很有效——<strong>饥饿与未知环境下的生存需求</strong>，以及<strong>对“看似善意的陌生存在”进行接近后引发的误判与冲突</strong>。</p>
+<p>故事的张力主要来自卢奇诺的狼狈求助、构装体少女的半敌半友立场，以及珍珠贝的“潜入厨房”把局面从社交博弈直接扯回战斗对抗。</p>
+
+<h3><strong>主线剧情概要</strong></h3>
+<p>卢奇诺被传送到一片陌生草原后，立刻遭遇“生存资源告急”的问题：他饥饿难耐，甚至误食野草充饥。为了找到食物，他循着希望走向远处的小屋，试图向屋内的居民求助。屋中住着一位构装体少女，显然并非普通人类。面对语言与身份上的隔阂，卢奇诺只能用夸张的肢体动作和表演来传达“自己快饿死了”的处境；所幸他成功博取同情，获得了半块饼，短暂缓解了危机。</p>
+<p>然而，这份短暂的安宁并未持续太久。卢奇诺随后派珍珠贝潜入厨房，行动本意或许是侦查或获取更多资源，却意外被少女发现，局势瞬间恶化。少女的立场从施舍者转为防卫者，冲突升级为正面交锋。关键时刻，珍珠贝以冰冻射线先发制人，成功瘫痪少女、破坏其装甲并冻结关节，最终让众人摆脱了当下危机。整个章节节奏紧凑，从“饥饿求生”迅速过渡到“误会冲突”，展现了跑团中常见的荒诞感与临场反转。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段摘要对应的结局是一次<strong>以战斗脱困收场的短篇危机</strong>：卢奇诺通过社交与表演拿到了食物，但随后因潜入行动触发冲突，最终依靠珍珠贝的先手与冰冻射线将构装体少女压制，暂时脱离危险。</p>
+<p>从叙事上看，这一段并没有完全解决“他们为何被传送到这里、后续要去哪里”的更大谜团，而是完成了一个很明确的阶段性结果：<strong>生存危机暂时解除，且与本地势力的关系由友善迅速转向警戒甚至敌对</strong>。这为后续剧情留下了继续探索与对抗的空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>卢奇诺</strong></h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>极度务实，优先考虑生存，尤其是“吃”的问题。</li>
+<li>在资源匮乏时并不死板，愿意放下姿态，用夸张表演换取同情。</li>
+<li>行动上带有明显的试探性：先求助、再派遣小型单位潜入，说明他不是纯粹莽撞，而是有一点“能骗就骗、能偷就偷”的策略思维。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>误食野草充饥，凸显其饥饿状态与生存压力。</li>
+<li>用游说和表演成功让构装体少女理解自己的困境，并拿到食物。</li>
+<li>随后派珍珠贝潜入厨房，展现出对“补给最大化”的执念，也直接推动冲突爆发。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>表演检定19</strong>：用极度夸张的哭嚎成功打动少女，这一幕非常有画面感，既好笑又体现角色的临场应变。</li>
+<li>在异界语言/沟通不畅的情况下，仍能把“我很饿”传达出去，说明其并非单纯搞笑担当，也有一定情境处理能力。</li>
+</ul>
+
+<hr>
+
+<h3><strong>珍珠贝</strong></h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>行动果断，偏向主动解决问题。</li>
+<li>很像一张“能干活的小牌”：适合潜入、侦查、补刀。</li>
+<li>面对突发冲突时反应迅速，战术执行明确。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>潜入厨房，触发了与少女的正面冲突。</li>
+<li>在先攻上压制对方，率先出手。</li>
+<li>使用冰冻射线造成关键控制效果，打断了对方的行动能力。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>先攻21</strong>：极高的先手让局势完全偏向己方。</li>
+<li><strong>冰冻射线命中并造成14点伤害</strong>：不仅伤害可观，还直接“击坏装甲并冻结关节”，属于典型的控场型高光，既实用又有视觉冲击。</li>
+</ul>
+
+<hr>
+
+<h3><strong>构装体少女</strong></h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>起初较为温和，愿意在理解对方需求后施以援手。</li>
+<li>明显具备防卫意识，对陌生入侵非常敏感。</li>
+<li>她并非纯粹敌人，更像是“善意未稳、立场可转”的本地居民。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>给予卢奇诺半块饼，体现其并非冷酷无情。</li>
+<li>发现厨房潜入后立刻进入敌对或防御状态，说明她对领地/安全高度警觉。</li>
+<li>虽被控制，但其存在引出了“构装体”这一环境特色，强化模组的神秘感。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>“分饼”这一举动很短，却非常关键：它让角色关系先建立了一层信任，也让后续冲突更具反差感。</li>
+<li>她被冻住后失去行动能力，虽然是受害者，但也让剧情产生了明显转折。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：被传送到草原，生存危机立刻爆发</strong></h3>
+<p>卢奇诺醒来或抵达后，发现自己身处陌生草原，周围没有明显援助，且饥饿感迅速压倒理性。他甚至误食野草，说明已经到了极度不适的状态。此阶段的重点并非战斗，而是“求生本能”与“环境陌生化”带来的压迫感。</p>
+
+<h3><strong>第二阶段：寻找食物，抵达远处小屋</strong></h3>
+<p>为了活下去，卢奇诺朝远处的小屋移动，希望找到食物或能交流的对象。这里剧情从纯生存转入“社会接触”，小屋成为第一处可能的文明痕迹，也象征着从荒野进入未知人烟。</p>
+
+<h3><strong>第三阶段：与构装体少女初次接触</strong></h3>
+<p>卢奇诺面对语言或身份不通的情况，只能依靠肢体动作、表演和夸张的情绪表达来沟通。他先通过游说让对方大致理解“自己很饿”，再以一场极其戏剧化的哭嚎成功赢得同情，拿到了半块饼。这一段是典型的“低级资源换取高情绪价值”的跑团喜剧桥段，也证明角色并没有因为绝境而完全失去人际判断力。</p>
+
+<h3><strong>第四阶段：潜入厨房，误触警戒线</strong></h3>
+<p>在暂时得到食物后，卢奇诺没有收手，转而派珍珠贝潜入厨房。这个举动可能出于侦查、补给、试图获取更多资源，或单纯想看看屋内情况，但无论动机如何，它都跨过了“被接济者”的界限。构装体少女发现异常后，局势立刻从温情转为对抗，说明这间屋子并不是可以随意取用的安全区。</p>
+
+<h3><strong>第五阶段：冲突爆发，冰冻射线压制目标</strong></h3>
+<p>珍珠贝在战斗中率先行动，先攻高达21，直接抢下节奏，并用冰冻射线命中少女，造成14点伤害，进一步打坏其装甲、冻结关节。这个结果不仅在数值上压制了对方，也在叙事上将“潜在的交流可能”暂时切断，迫使队伍用武力摆脱局势。最终众人成功脱离危机，但也很可能为后续埋下了敌意或未解误会。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>卢奇诺误食野草</strong>：一出场就把“饥饿到失智”的状态拉满，喜剧效果很强。</li>
+<li><strong>夸张哭嚎换半块饼</strong>：这段既可怜又好笑，属于“靠演技活下去”的经典跑团名场面。</li>
+<li><strong>从求食到潜入厨房的急转直下</strong>：刚建立起一点信任就开始行动升级，反差非常大，也很符合跑团中“玩家总想多摸一点资源”的真实风格。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>游说15成功</strong>：虽然数值不算极高，但在“用最少语言沟通最关键需求”这件事上非常有效。</li>
+<li><strong>表演19大成功感十足</strong>：这次检定是整段剧情的情绪核心，真正把“我真的快饿死了”的窘迫演出来了。</li>
+<li><strong>珍珠贝先攻21</strong>：先手决定了战斗节奏，属于关键性数值碾压。</li>
+<li><strong>冰冻射线命中并造成14点伤害</strong>：不仅是输出，更是强控制，属于“打得漂亮又打得有用”的典型场面。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>“我很饿”这件事没有靠语言，而是靠<strong>表演+肢体语言</strong>说出来，本身就很有戏。</li>
+<li>构装体少女先施舍后敌对，像是在提醒玩家：<strong>善意并不等于可以越界</strong>。</li>
+<li>珍珠贝潜入厨房这一举动，天然带有“明明刚拿到饼，为什么还要去偷”的黑色幽默感，十分符合TRPG里玩家和角色动机常常错位的趣味。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/论坛风格的跑团复盘</strong>，或</li>
+<li><strong>更正式的模组剧情解析文档</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

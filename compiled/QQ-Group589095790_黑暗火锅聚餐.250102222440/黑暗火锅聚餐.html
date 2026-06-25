@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑暗火锅聚餐 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>黑暗火锅聚餐</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以“新年聚餐”为表层外壳，实则是一场围绕<strong>人造妖魔【暗锅】</strong>展开的离谱食物战斗。斜齿研究员制造了这口会“让食材变得更好吃”的锅，但代价是食材会被妖力异化，并形成一套诡异的强制规则：<strong>夹到自己碗里的食材必须吃下</strong>，而食材的效果与副作用会直接影响战局。</p>
+<p>核心冲突不在于“打倒谁”，而在于：<strong>在疯狂抢食、互相妨碍和效果暴走中，尽可能吃到有利食材并避免吃到灾难食材</strong>。因此，这场战斗本质上是“美食争夺战 + 妖术对抗 + 规则博弈”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>四位忍者在新年聚餐时来到户口簿家，原本只是普通的吃火锅闲聊，却很快发现这口锅并不简单：它是斜齿研究员制造的人造妖魔【暗锅】。暗锅会把锅内食材妖魔化并强化其“美味”，但也会让夹取行为变成一种无法回避的承诺——只要把食材夹进自己碗里，就必须在后续把它吃掉。玩家们在确认规则后，开始围绕食材展开极具喜剧感的抢夺战。樱井沙树率先公开【食材乱序表】，让所有人意识到这场聚餐的危险与混乱程度，正式将局势推入战斗阶段。</p>
+<p>进入第二回合后，现场迅速失控：鲱鱼罐头、臭豆腐、白袜、纳米机器人、剧毒蝎子、僧帽水母等诡异食材轮番登场，玩家在近战、机锋和妖术中不断互相干扰、抢夺和反制。各种“大成功”“逆止”“变调”让命中和回避频繁翻盘，局势如同脱缰火锅。户口、郁美、沙树、纱乐四人各自为了有利食材出手，又不得不承受副作用与状态叠加。最终在第四至第七回合的追击与清场中，户口连续追击击倒沙树，又击退抢到僧帽水母的郁美，最后自己吃下僧帽水母，获得暗物质与随机变调。随着锅内食材被消耗殆尽，战斗落幕，众人成功“收获”这口不可思议的【暗锅】作为战利品。</p>
+
+<h3>结局与收尾</h3>
+<p>结局呈现为一种典型的“打完之后大家都不太对劲，但事情总算结束了”的喜剧收束：暗锅被作为战利品保留，战斗中的异常效果、重伤与忘却状态虽然给角色留下了后遗症，但也构成了整场模组最鲜明的记忆点。所谓“胜利”并不是击败某个终极敌人，而是<strong>在一场食材与规则都失控的聚餐中活着吃完、并把锅拿走</strong>。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC角色分析</h3>
+
+<h4>1. 户口</h4>
+<ul>
+<li><strong>性格特征</strong>：执行力强，偏稳健但在混乱环境中会被迫转向追击型打法。</li>
+<li><strong>关键行为</strong>：在后半程连续追击、补刀，成为局势收束的主导者。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>多次在复杂判定中坚持推进战线。</li>
+<li>连续尾随击倒沙树，展现出稳定收割能力。</li>
+<li>斩落抢到僧帽水母的郁美，体现对关键目标的压制力。</li>
+<li>最终亲自吃下僧帽水母，完成“风险回收”，拿到暗物质与随机变调，成为最典型的“明知有毒也得吃”的战斗收尾者。</li>
+<li><strong>角色弧光</strong>：从应对混乱，到主动承担“吃下后果”的责任，像一个在火锅桌上逐渐变成最终收锅人的角色。</li>
+</ul>
+
+<h4>2. 樱井沙树</h4>
+<ul>
+<li><strong>性格特征</strong>：信息掌控欲强，擅长制造节奏与公开情报。</li>
+<li><strong>关键行为</strong>：成功公开【食材乱序表】，为全场混乱提供了明确规则框架。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为规则揭示者，成功把这场“普通聚餐”转化成真正的机制战。</li>
+<li>在前中期多次参与抢食和攻防，既是局势推动者，也是后期被追击的关键对象。</li>
+<li><strong>角色弧光</strong>：沙树像是“把锅局面板打开的人”。她的存在让整场战斗从无序喜剧变成了有规则的失控喜剧。</li>
+</ul>
+
+<h4>3. 郁美</h4>
+<ul>
+<li><strong>性格特征</strong>：偏进攻、贪图收益，倾向于抢占高价值食材。</li>
+<li><strong>关键行为</strong>：在多轮争夺中参与核心食材的抢食，并在后期与户口正面冲突。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>抢到僧帽水母，显示其对高风险高收益食材的追逐欲。</li>
+<li>虽然最终被户口斩落，但其行动直接推动了终局的收束。</li>
+<li><strong>角色弧光</strong>：她代表了“在暗锅里为了更好吃而赌上自己”的典型玩家心理。</li>
+</ul>
+
+<h4>4. 纱乐</h4>
+<ul>
+<li><strong>性格特征</strong>：带有强烈的戏谑感和搅局倾向，敢于先手试毒。</li>
+<li><strong>关键行为</strong>：最先吃下鲱鱼罐头，直接引爆局势，也多次在战斗中参与妨碍与对抗。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>鲱鱼罐头试吃成为全场最具破坏性的开局之一。</li>
+<li>多次以“我要使用奥义，完——全妨碍”式的宣言参与节奏破坏，强化了模组的荒诞喜感。</li>
+<li><strong>角色弧光</strong>：纱乐像是“把桌上气氛推向失控”的发动机，负责把聚餐变成灾难现场。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 斜齿研究员</h4>
+<ul>
+<li><strong>作用</strong>：暗锅的制造者，属于幕后源头型NPC。</li>
+<li><strong>剧情功能</strong>：提供模组核心异常物【暗锅】的来源，代表“技术失控导致的妖魔化日常”这一主题。</li>
+<li><strong>象征意义</strong>：科学/研究的恶趣味产物，间接制造了整场火锅灾难。</li>
+</ul>
+
+<h4>2. 暗锅（人造妖魔）</h4>
+<ul>
+<li><strong>作用</strong>：虽然不是传统意义上的NPC，但它是整个模组最核心的“对抗对象”。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>让食材获得异常强化。</li>
+<li>强制夹菜与进食规则，制造不可逆后果。</li>
+<li>通过食材特效不断扭曲战斗节奏。</li>
+<li><strong>象征意义</strong>：它把“吃”这件日常行为变成了战斗与契约，是本模组的真正主角。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：新年聚餐与规则发现</h3>
+<p>四位忍者在户口簿家进行新年聚餐，起初只是边吃边聊、互相调侃的轻松场面。随着对火锅内容的逐步探索，众人发现这口锅并不是普通锅，而是斜齿研究员制造的人造妖魔【暗锅】。暗锅会对锅内食材施加妖力，使其变得“更好吃”，但也让夹菜行为成为风险承诺：一旦把食材夹进自己碗里，就必须在后续吃掉。玩家们随即确认了“夹菜判定”“抢菜阻止”“享用暗锅”等规则，开始意识到这不是一顿饭，而是一场机制化战斗。</p>
+
+<h3>第二阶段：公开情报，战斗正式开始</h3>
+<p>樱井沙树成功公开【食材乱序表】，让所有人对锅内食材的随机性与危险性有了明确认知，现场气氛由此从“观察”转为“争夺”。食材不再只是菜，而是带有效果与代价的资源。此时各人开始围绕食材站位、抢菜、阻止与反抢，整场对局正式进入回合制攻防阶段。</p>
+
+<h3>第三阶段：鲱鱼罐头引爆的混战</h3>
+<p>第二回合起，局面迅速失控。纱乐率先吃下鲱鱼罐头，成为全场第一个“主动试毒”的人，直接把火锅桌的节奏扭成异常状态。随后户口、郁美、沙树、纱乐开始围绕羊尾油、大苦瓜、臭豆腐、白袜、纳米机器人、剧毒蝎子等食材展开连续争夺。</p>
+<p>这部分最精彩的地方在于，食材本身的离谱程度与战斗行为形成高度叠加，玩家既要打人，也要抢菜，还要防止自己的碗里被塞进灾难品。各种“奥义”“妨碍”频繁宣告，使局面在命中、回避、阻断和反制之间来回翻转。</p>
+
+<h3>第四阶段：判定暴走与状态叠加</h3>
+<p>随着数次大成功、逆止与变调结算出现，场面彻底进入失控状态。户口的命中判定受鬼影影响而屡次波折，角色们不断在重伤、忘却等状态中挣扎。此时战斗已经不只是“谁抢到食材”，而是“谁能在各种异常效果下活下来并把手上的锅吃完”。</p>
+<p>这一阶段的趣味性主要来源于：规则依旧清晰，但每个人都在用规则做出极其不清晰的行为，形成一种高度结构化的混乱。</p>
+
+<h3>第五阶段：追击收束与终局</h3>
+<p>进入第四至第七回合后，战斗开始向收尾推进。户口连续追击击倒沙树，再斩落抢到僧帽水母的郁美，逐步清除竞争者。最后户口自己吃下僧帽水母，获得暗物质与随机变调，完成终局风险兑现。随着场上食材耗尽，战斗结束，众人将【暗锅】作为战利品收入囊中，整场“新年聚餐”也在一种荒诞而完整的胜利中落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩 / 最搞笑 / 最意外的场景</h3>
+<ul>
+<li><strong>“新年聚餐变暗锅战”</strong>：从家庭火锅一路滑向妖魔规则战，反差感极强。</li>
+<li><strong>鲱鱼罐头开局</strong>：纱乐先手试吃直接把桌上气氛炸穿，非常适合作为全团记忆点。</li>
+<li><strong>抢食比打人更重要</strong>：玩家不是在“输出”，而是在“争夺谁先把灾难塞进自己碗里”。</li>
+<li><strong>最后由户口收锅</strong>：从混战到收尾的过渡非常流畅，像是从一场喜剧闹剧中被迫长大了一点。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>樱井沙树公开【食材乱序表】成功</strong>：这是把整场战斗从“乱吃”变成“按规则乱吃”的关键大成功。</li>
+<li><strong>“我要使用奥义，完——全妨碍”式宣言</strong>：这种宣言不仅是战术动作，也是全场笑点来源。</li>
+<li><strong>多次大成功、逆止与变调连锁</strong>：让战局不断翻盘，强烈体现出暗锅模组“看似吃饭，实则赌命”的机械魅力。</li>
+<li><strong>户口受鬼影影响的命中波折</strong>：既体现压力，也制造了高强度的不确定性。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“夹菜判定”“抢菜阻止”“享用暗锅”这些规则名本身就很有喜感，像把火锅桌直接写进战斗手册。</li>
+<li>“我要使用奥义，完——全妨碍”这种夸张宣言极具跑团现场感，既中二又贴合喜剧风格。</li>
+<li>各种食材名称：<strong>大苦瓜、臭豆腐、白袜、纳米机器人、剧毒蝎子、僧帽水母</strong>，天然具备荒诞喜剧效果，几乎不需要额外修饰就能引发笑点。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续帮你把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式团后总结的版本</strong>，或</li>
+<li><strong>更像贴吧/群聊风格的爆笑复盘版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

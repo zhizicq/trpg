@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不义之财 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>不义之财</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《不义之财》是一则以<strong>战火流民、失落财物与道德抉择</strong>为核心的短篇冒险。故事发生在战乱后的边境地带，城市被攻破、乡村被洗劫，普通人的家园与秩序一夕崩塌。PC们作为逃离战火的幸存者，暂时栖身小镇酒馆，接受制甲师莱斯顿的委托：前往被匪徒焚毁的旧宅，寻找妻子的遗体与遗失财物。表面上这是一个典型的“失物寻回”任务，但随着调查深入，队伍逐渐发现：所谓“山贼劫掠”背后，既有流民的生存挣扎，也有委托人家庭的悲剧，还牵出地下工坊、藏匿财物与死者怨灵等层层反转。模组的核心冲突并非简单的善恶对立，而是<strong>在灾难时代，资源、责任与人性底线该如何取舍</strong>。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>四名幸存者从战火中逃入小镇酒馆，结识了失去家园的制甲师莱斯顿。莱斯顿委托他们前往被匪徒纵火焚毁的旧宅，找回至少价值千金的财物，并尽可能带回妻子的遗体。队伍接下任务后上路，杰奎琳靠欺诈骗过士兵哨卡，众人途中又遭山贼袭击、倒木阻路，并救下一名被毒蛇咬伤的路人，换得金钱与药水。抵达目标地点后，他们通过侦察与潜行率先袭杀守卫，再与山贼头目及其手下爆发混战，最终将其击倒并俘虏。审讯后得知这些人并非纯粹恶徒，而是逃荒流民。搜索焚毁宅邸时，队伍确认一具焦黑女尸疑似莱斯顿之妻，又在废墟中发现一扇受强力保护的精致活板门，借钥匙开启后进入地下空间，揭开了制甲工坊与酒窖的秘密。最终他们还追查到被转移的财物，发现藏匿者同样是为生计所迫的逃难者，队伍选择不以武力掠夺，而是留足补给、取回委托物，完成了任务，也在乱世中做出了一次更接近“人的选择”。</p>
+
+<h3>结局与收尾</h3>
+<p>根据三段摘要整合，模组结局是<strong>偏克制、偏人道的完成式收尾</strong>：PC们找到了莱斯顿妻子的遗体，确认财物并非被单纯恶徒吞没，而是经由逃难者转移与保管。最终，他们没有把“夺回财物”简单演成屠杀与洗劫，而是选择在查明真相后与对方达成相对体面的处理，带回委托物返程。若说任务层面是圆满完成，那么情感层面则是带着遗憾的：妻子已亡，家园不复，莱斯顿得到的不是团圆，而是确认与终结；PC们得到的也不是酬金式爽感，而是一场关于战争中“谁更不义”的道德回望。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 杰奎琳</h4>
+<ul>
+<li><strong>性格画像</strong>：机敏、圆滑、擅长临场应变，明显是团队中的“社交突破口”与“先手发动机”。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在士兵哨卡前成功欺诈，帮助队伍顺利通过封锁。</li>
+<li>抵达目标后率先潜行暗杀守卫，打响行动第一枪。</li>
+<li>在面对俘虏与后续收尾时，继续发挥欺诈与说服能力，推动敌人投降或降低冲突烈度。</li>
+<li><strong>高光时刻</strong>：</li>
+<li><strong>哨卡欺诈</strong>：这一成功让队伍避开了无谓纠缠，也奠定了她“靠脑子开路”的角色定位。</li>
+<li><strong>潜行刺杀</strong>：她不是单纯的输出者，而是能够把侦察、潜入、开战串成一条完整行动链的人。</li>
+<li><strong>角色作用</strong>：团队中的“节奏掌控者”，擅长把原本会拖长的冲突压缩成可控局面。</li>
+</ul>
+
+<h4>2. 真木麻稀</h4>
+<ul>
+<li><strong>性格画像</strong>：更偏正面作战与承伤型，属于能顶在前线的稳定角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在路上与山贼交战时受伤，体现其参与正面冲突的承担。</li>
+<li>在地下室遭遇怨灵时被吸取生命重创，成为危机中的主要受害者之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li><strong>在怨灵战中的承压表现</strong>：虽然遭受重创，但并未因此导致队伍崩盘，反而促使团队更积极地使用药水和魔法进行救援。</li>
+<li><strong>角色作用</strong>：团队的“硬度体现”与“危险提醒器”，他/她的受伤让剧情从普通战斗转向更具恐怖感的超自然阶段。</li>
+</ul>
+
+<h4>3. 第三、第四名PC</h4>
+<ul>
+<li><strong>性格画像</strong>：摘要未明确点名，但从行动结构看，团队中至少还有两位成员分别承担了<strong>侦察、支援、输出、治疗或补给管理</strong>等职责。</li>
+<li><strong>关键行为</strong>：</li>
+<li>参与猫头鹰侦察、潜行包围、混战压制。</li>
+<li>在怨灵事件中使用药水与魔法进行救治与超度。</li>
+<li>在最终追查财物时与队伍共同作出“避免强夺”的选择。</li>
+<li><strong>角色作用</strong>：补足队伍功能链条，使任务从“有勇无谋”升级成“侦察—突袭—审讯—调查—谈判”的完整调查冒险。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 莱斯顿</h4>
+<ul>
+<li><strong>身份</strong>：制甲师，失去家园的委托人。</li>
+<li><strong>作用</strong>：</li>
+<li>是任务的起点与道德锚点。</li>
+<li>他给出的委托表面是寻财，实则把PC引入战乱后的生存伦理题。</li>
+<li><strong>人物意义</strong>：</li>
+<li>莱斯顿并非传统意义上“发布任务的工具人”，他的存在提示玩家：这不是纯粹的寻宝，而是一个被战争撕裂的家庭悲剧。</li>
+<li>他的委托附带钥匙、马车与地图，也强化了“旧宅之下另有秘密”的悬疑感。</li>
+</ul>
+
+<h4>2. 山贼老大</h4>
+<ul>
+<li><strong>身份</strong>：盘踞废宅附近的武装首领。</li>
+<li><strong>作用</strong>：</li>
+<li>作为第一阶段的武力障碍与战斗高潮。</li>
+<li>被击倒并审讯后，揭示其并非纯粹恶徒，而是逃难流民。</li>
+<li><strong>人物意义</strong>：</li>
+<li>他把“敌人”从脸谱化反派拉回到乱世中的普通人，强化模组主题：战争会把人逼成谁都说不清的模样。</li>
+</ul>
+
+<h4>3. 被俘的小弟们</h4>
+<ul>
+<li><strong>作用</strong>：</li>
+<li>提供情报与反转视角。</li>
+<li>让队伍意识到局势复杂，不能简单以“剿匪”理解一切。</li>
+<li><strong>意义</strong>：</li>
+<li>审讯结果削弱了传统冒险中的“杀光就完事”逻辑，推动剧情进入灰色地带。</li>
+</ul>
+
+<h4>4. 莱斯顿之妻（亡灵/怨灵）</h4>
+<ul>
+<li><strong>身份</strong>：火灾中死去的委托人妻子。</li>
+<li><strong>作用</strong>：</li>
+<li>是情感高潮与超自然高潮的叠加点。</li>
+<li>她的出现把“找遗体”变成“与悲剧本身面对面”。</li>
+<li><strong>人物意义</strong>：</li>
+<li>她不是单纯的怪物，而是被火灾与绝望扭曲的亡者。超度她意味着对灾难后果的承认与告别。</li>
+</ul>
+
+<h4>5. 逃难军人吉奥及其女儿</h4>
+<ul>
+<li><strong>身份</strong>：藏匿财物的实际持有人。</li>
+<li><strong>作用</strong>：</li>
+<li>解释财物去向，完成最终反转。</li>
+<li>让PC在“是否夺回财物”上面临伦理选择。</li>
+<li><strong>人物意义</strong>：</li>
+<li>他们代表的是“在灾难中偷走他人财物的人”，但动机并非贪婪，而是求生。</li>
+<li>这个设定让模组标题中的“不义之财”变得更复杂：谁的不义？谁的财？谁有资格说自己正义？</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：逃亡、委托与初步冲突</h3>
+<p>战火吞没城市后，四名幸存者逃入小镇酒馆，暂时获得喘息。此处他们结识了制甲师莱斯顿。莱斯顿失去了家园，旧宅遭匪徒纵火，他希望队伍前往废宅取回财物，并尽可能找回妻子的遗体。他给予钥匙、马车等协助，形成明确的行动动机。</p>
+
+<p>队伍启程后，杰奎琳在士兵关卡前施展欺诈，成功带队通过，显示出团队的社交优势。随后他们遭遇山贼伏击，又碰上倒木阻路，路途不再是单纯移动，而是被战乱环境不断侵蚀的生存试炼。期间，他们救下一名被毒蛇咬伤的路人，换得金币与治疗药水，也为“乱世里仍可行善”提供了第一层轻度回报。</p>
+
+<p>抵达目标地点附近后，队伍先以猫头鹰侦察敌情，再潜行突袭守卫，迅速进入战斗状态。面对赶来的山贼老大及其手下，众人展开混战并最终取胜，老大被击倒，小弟被俘。审讯后得知这伙人并非纯恶匪徒，而是逃荒流民。这个信息使“剿匪”变成了“认识灾民”的过程。最后，队伍在废墟中找到焦黑女尸，确认可能是莱斯顿之妻，并在废屋深处发现一扇制作精良、受强力保护的活板门。杰奎琳用钥匙开启它，地下秘密随之浮现。</p>
+
+<h3>第2章：废屋探索与真相初显</h3>
+<p>队伍继续清理烧毁宅邸，在战后焦土中逐渐拼出更完整的图景。表面上，这里只是被匪徒洗劫过的贵重住宅，但地下工坊的存在说明莱斯顿一家并不只是普通匠人，房屋下方还藏有制甲制作与存储空间。火灾使地上部分成为废墟，地下部分则保留着更隐秘的结构，也让玩家意识到：委托的“旧宅”远比想象中复杂。</p>
+
+<p>此阶段的重点是<strong>发现遗体、确认死亡</strong>，以及探索地下活板门所引出的悬疑。女尸的出现终结了“是否还活着”的幻想，剧情重心从“救人”转向“收尾与调查”。地下空间的存在则提示，这起纵火案或许并不只是抢劫，而是与财物、工坊秘密或藏匿路线相关。</p>
+
+<h3>第3章：怨灵、藏匿财物与道德落点</h3>
+<p>第三段摘要补全了最大反转：活板门下方并非单纯密室，而是酒窖兼制甲工坊，同时盘踞着因火灾绝望而化作怨灵的莱斯顿之妻。怨灵战斗让真木麻稀一度被重创，团队依靠药水与魔法才将其超度。这一幕把“寻回遗体”真正推向悲剧高潮——他们面对的不是可安置的尸身，而是仍未放下执念的亡者。</p>
+
+<p>随后，队伍确认财物早已被转移，沿河追踪至山洞，找到了逃难军人吉奥和他的女儿。对方并非偷盗成性的恶徒，而是同样在战火中求生。PC们没有选择硬抢，而是留下必要补给，带走委托物，完成任务。这一收束方式非常关键：它让模组从单纯的“拿回不义之财”升格为“理解不义如何产生”。最终回程的意义，不只是交差，更是把一次原本可能沦为掠夺的冒险，处理成了保有人性边界的善后行动。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：潜行突袭守卫、击倒山贼老大那一段。节奏紧凑，信息与战斗同步推进，典型的“先侦察后下手”成功范例。</li>
+<li><strong>最意外</strong>：山贼被审讯后发现竟是逃荒流民，直接打破“剿匪=正义”的预设。</li>
+<li><strong>最有氛围</strong>：地下活板门开启、怨灵现身的转折，让原本偏写实的战乱寻财故事突然带上了恐怖与悲怆色彩。</li>
+<li><strong>最有温度</strong>：面对逃难军人吉奥和女儿时，队伍选择留下补给而不是强夺，属于乱世题材里很加分的处理。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>杰奎琳欺诈士兵放行</strong>：这是全局最关键的开门红，直接让剧情从“可能被盘查拖延”变成“顺利进入任务状态”的大成功。</li>
+<li><strong>猫头鹰侦察</strong>：虽然没有明确描述数值，但这一环节显然是成功掌控了敌情，为后续突袭奠定了战术优势。</li>
+<li><strong>潜行先杀一人</strong>：属于“把战斗变成可控开局”的关键检定成果。</li>
+<li><strong>真木麻稀在怨灵战中的受创</strong>：虽然不一定是“大失败”，但效果上相当显眼，制造了战斗中的危机拐点。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“找妻子遗体+找财物”这种委托本身</strong>就很有味道：既现实又沉重，不是标准宝物任务。</li>
+<li><strong>审讯出“他们只是流民”</strong>后，敌我关系瞬间复杂化，是典型的跑团高质量反转。</li>
+<li><strong>杰奎琳用钥匙开活板门</strong>这一幕很像“早就埋好的钥匙终于派上用场”，有解谜式满足感。</li>
+<li><strong>最终没有强夺财物，而是留下补给</strong>，这类“明明能赢却不把事做绝”的桥段最容易让玩家和观众记住。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/长评风格的复盘文案</strong>，或</li>
+<li><strong>更正式的模组测评模板</strong>，包括“难度、节奏、战斗设计、叙事完成度”的打分版。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

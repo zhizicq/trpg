@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咕呱 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>咕呱</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《咕呱》的故事发生在盐沼镇及其周边的灰暗边境地带。这里表面上是一个依赖贸易、矿业和地方治安维持运转的小镇，实际上却被<strong>海盗走私、地方议员腐败、神秘组织渗透</strong>等阴影层层包裹。玩家一开始接受安德斯议员的委托，去调查南侧“鬼屋”中的海盗走私线索，看似是一次标准的清剿任务，实则牵扯到镇内外多股势力的暗中博弈。</p>
+
+<p>核心冲突主要有两层：</p>
+<ol>
+<li><strong>表层冲突</strong>：玩家探索鬼屋、清除怪物、寻找失踪者与走私证据。</li>
+<li><strong>深层冲突</strong>：盐沼镇的部分权力者与走私犯存在勾连，所谓“失踪者”“线索”“委托”背后，真正目的是争取时间、转移视线、掩盖更大的阴谋。</li>
+</ol>
+
+<hr>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>众人最初受安德斯议员委托，正式签下合同，前往盐沼镇南侧的鬼屋调查海盗走私线索，报酬高达400gp，但期限只有两天。抵达后，他们从枯井、门厅、楼梯等区域开始细致搜查，很快便发现这栋废弃建筑并不只是“闹鬼”那么简单：毒蛇、巨鼬、巨蜈蚣、虫群、蜘蛛、蚊蝠等一连串伏击接踵而至，逼迫队伍在狭窄空间中反复作战、逐步清理整栋房屋。探索过程中，他们还找到壁炉暗格、穿板甲的尸体、长剑盾牌、装有淡水与食物的背包，以及一颗精致水晶球，说明这座宅邸曾被人长期利用并隐藏过重要物资。最终，在楼上发现了被绑缚的奈德，但伊卡洛斯通过洞悉察觉此人并非单纯受害者。后来斯凯林揭露真相：奈德实际上是替走私犯争取时间的密探，所谓营救对象本身就参与了骗局。任务因此在50gp的低额结算中匆匆收尾。</p>
+<p>随后队伍在酒馆中接触到“夸力许装置”与羽毛徽章等新线索，伊卡洛斯接下了矿井委托，却因局势变化转而参加火诞安排的森林前哨巡逻，并获得轻弩装备。巡逻途中，他们遭遇藏匿的海盗并成功击退，从侧面得知议员格兰因勾连走私犯已被处刑，但盐沼与猩红兄弟会的阴影仍未真正散去。回营后，队伍完成伤员处理、战利品分配与任务汇报，确认火诞正在等待他们领取下一阶段更重要的使命。</p>
+
+<hr>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段剧情并非真正意义上的终局，而是一个<strong>“任务完成—真相揭开—更大风暴前的过渡收尾”</strong>。鬼屋委托以奈德身份反转告终，玩家拿到了较低结算，体现出委托本身存在欺骗与利用。随后新的线索、新的装备、新的巡逻任务接连出现，说明故事已经从单独的清剿事件转向更宏大的阵营与阴谋线。结尾留有明确钩子：火诞的新任务、猩红兄弟会的残影、以及盐沼镇背后未尽的权力清算。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC角色分析</strong></h3>
+
+<h4><strong>伊卡洛斯</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：冷静、敏锐、观察力强，擅长从细节中判断人心。</li>
+<li><strong>关键行为</strong>：在鬼屋任务中通过洞悉察觉奈德“不完全无辜”，是推动真相反转的重要角色。</li>
+<li><strong>高光时刻</strong>：在发现奈德问题时展现了极强的判断力，避免了队伍被表面受害者叙事完全带偏。</li>
+<li><strong>角色作用</strong>：典型的“侦察/审视型”人物，是队伍里负责识破谎言、还原事实的核心。</li>
+</ul>
+
+<h4><strong>斯凯林</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：务实、果断，对任务真相的接受度高，行动上不拖泥带水。</li>
+<li><strong>关键行为</strong>：在最终揭示奈德实为密探后完成了关键信息揭露。</li>
+<li><strong>高光时刻</strong>：承担了“点破真相”的职责，使整个案件逻辑闭环。</li>
+<li><strong>角色作用</strong>：偏向“总结与定论者”，在信息收束阶段起到关键作用。</li>
+</ul>
+
+<h4><strong>伊卡洛斯所在队伍的其他成员</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：整体上是能打、能探索、也能接受任务变化的务实冒险者。</li>
+<li><strong>关键行为</strong>：面对连续的怪物伏击与狭小空间战斗时保持推进，完成了整栋鬼屋的清理；在后续巡逻中也能快速适应轻弩装备与前哨任务。</li>
+<li><strong>高光时刻</strong>：在鬼屋中持续清房、在森林前哨击退躲藏海盗，体现了团队战斗与执行能力。</li>
+<li><strong>角色作用</strong>：作为剧情推进的执行者，他们并不只是“打怪”，而是不断将零散线索拼接成更大的图景。</li>
+</ul>
+
+<hr>
+
+<h3><strong>重要NPC及其作用</strong></h3>
+
+<h4><strong>安德斯议员</strong></h4>
+<ul>
+<li>作为最初委托人，提供了任务入口与合同框架。</li>
+<li>代表地方权力层的“合法面孔”，但其委托也带有政治与信息筛选意味。</li>
+</ul>
+
+<h4><strong>奈德</strong></h4>
+<ul>
+<li>表面上是被绑架的受害者，实际却是为走私犯争取时间的密探。</li>
+<li>他的存在构成了剧情的第一次明显反转，让“救人”与“追查”之间的关系发生变化。</li>
+</ul>
+
+<h4><strong>斯凯林</strong></h4>
+<ul>
+<li>虽然更像PC或关键同伴，但在摘要中承担了揭露真相的功能。</li>
+<li>作为信息终结者，负责将奈德的身份定性。</li>
+</ul>
+
+<h4><strong>火诞</strong></h4>
+<ul>
+<li>后续任务的安排者/引导者。</li>
+<li>他代表新的任务链与更高层级的阵营目标，是剧情后半段的重要推动者。</li>
+</ul>
+
+<h4><strong>格兰因</strong></h4>
+<ul>
+<li>勾连走私犯的议员，后已被处刑。</li>
+<li>他的结局说明镇内权力斗争已进入清算阶段，但并不意味着问题被根除。</li>
+</ul>
+
+<h4><strong>猩红兄弟会</strong></h4>
+<ul>
+<li>虽未正面登场，但作为阴影势力被多次提及。</li>
+<li>是贯穿盐沼镇危机的背景敌对组织，暗示后续仍有更大冲突。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 接受委托：鬼屋调查启动</strong></h3>
+<p>众人受安德斯议员委托，签下正式合同，目标是盐沼镇南侧的“鬼屋”。任务要求他们在两天内调查海盗走私线索，报酬高达400gp，显然是个高风险高回报的差事。这个开场将故事直接定调为：<strong>表面是调查委托，实则是危险而复杂的遗迹探索</strong>。</p>
+
+<h3><strong>2. 鬼屋探索：怪物伏击与逐层清理</strong></h3>
+<p>到达鬼屋后，队伍从枯井、门厅、楼梯等地点开始搜索。随着探索深入，各种怪物轮番登场：巨毒蛇、巨鼬、巨蜈蚣、虫群、蜘蛛、蚊蝠等伏击不断，形成明显的“房屋生态异常”氛围。玩家并不是一次击败核心敌人，而是在持续不断的空间压迫中逐步推进，体现出模组偏重“清房”“搜证”“逐段揭露”的结构。</p>
+
+<h3><strong>3. 遗迹中的物证：暗格、尸体与神秘物品</strong></h3>
+<p>在清扫过程中，队伍发现了壁炉暗格、穿板甲的尸体、长剑盾牌、装有淡水和食物的背包，以及一颗精致水晶球。这些道具共同说明鬼屋并非纯粹废弃之地，而是曾经被人系统利用：有人隐藏物资、有人死在这里、有人可能在此活动过。水晶球尤其像是一个带有神秘色彩的关键物品，为后续剧情埋下伏笔。</p>
+
+<h3><strong>4. 奈德登场与身份反转</strong></h3>
+<p>在楼上，队伍找到了被绑着的奈德。乍看之下，他符合“被囚禁者”的典型设定，但伊卡洛斯通过洞悉发现他不完全无辜。最终，斯凯林揭露奈德是替走私犯争取时间的密探。这个反转令原本的救援任务变成了“拆穿骗局”的任务，也体现出委托方与目标对象之间并不可靠的关系。</p>
+
+<h3><strong>5. 任务结算与信息延伸</strong></h3>
+<p>鬼屋委托以50gp收尾，报酬与最初承诺形成明显落差，进一步加深“任务被利用”的感觉。之后，队伍在酒馆中听闻“夸力许装置”与羽毛徽章等新线索，意味着故事进入更复杂的线索网。伊卡洛斯接下矿井委托，但后续局势变化使他们转而执行火诞安排的森林前哨巡逻。</p>
+
+<h3><strong>6. 森林巡逻：遭遇海盗与局势升级</strong></h3>
+<p>队伍在巡逻中得到了轻弩装备，并在森林中遭遇躲藏的海盗，最终将其击退。与此同时，他们获知议员格兰因勾连走私犯已被处刑，说明盐沼镇内部的腐败正在被清算。可即便如此，盐沼与猩红兄弟会的影响依旧没有结束，海盗与地下势力仍在活动。</p>
+
+<h3><strong>7. 回营收尾：伤员、战利品与新任务</strong></h3>
+<p>回到营地后，众人汇报进展、处理伤员并分配战利品，完成阶段性结算。火诞明确表示正等待他们领取更重要的新任务，至此本段剧情在“完成旧委托—获得新线索—准备进入下一阶段”的结构中收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：奈德的身份反转。原本以为是被害者，结果却是替走私犯拖时间的密探，直接把“救援任务”变成“识破骗局”。</li>
+<li><strong>最有压迫感</strong>：鬼屋连续遭遇各种虫蛇鼠蝠类怪物，像是整栋建筑本身都在排斥入侵者。</li>
+<li><strong>最有阶段感</strong>：从鬼屋委托到森林巡逻的任务切换，让剧情从局部案件迅速延展到更大的阵营冲突。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>伊卡洛斯的洞悉</strong>：这是本段最关键的“成功检定”之一，直接让奈德的伪装露出破绽。</li>
+<li><strong>斯凯林的真相揭露</strong>：虽未明确写成检定结果，但从剧情效果看，这是决定任务定性的关键成功。</li>
+<li><strong>连续战斗中的生存与推进</strong>：在多次伏击下仍能清理整栋鬼屋，说明队伍整体战斗检定与战术执行都相当稳定。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>高报酬但短时限的委托</strong>，天然带出“这活不简单”的氛围。</li>
+<li><strong>“被绑者不一定无辜”</strong>这一桥段非常适合TRPG的阴谋味道：玩家以为在救人，实际上可能是在帮敌人拖延时间。</li>
+<li><strong>酒馆线索与任务转接</strong>也很有跑团味：刚结束一个坑，又被新的情报和委托一脚踢进下一段冒险。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“适合发在群里的短版复盘”</strong></li>
+<li><strong>“更像模组评测的专业版分析”</strong></li>
+<li><strong>“按NPC/线索/战斗拆成表格版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

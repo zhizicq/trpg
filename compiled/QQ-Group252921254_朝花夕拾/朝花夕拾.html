@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朝花夕拾 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>朝花夕拾</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《朝花夕拾》以日本地方山村“夜鸣山”与麻摩里町为舞台，融合了现代都市传说、神道秘仪、历史回溯与妖怪奇谈。故事表面是一起“山中失踪案”调查，实则牵扯出<strong>黄泉门、三神器碎片、百年前旧案、附身灵异、时间回溯</strong>等多重核心谜团。</p>
+<p>核心矛盾主要有三层：</p>
+
+<ol>
+<li><strong>现代失踪案与山中异象</strong>：村民失踪、尸体怪异、浓雾与磁场紊乱，让夜鸣山成为不容靠近的禁地。</li>
+<li><strong>历史真相与命运循环</strong>：百年前与1921年的灾厄并未真正终结，旧日事件通过墓碑、遗物、残片不断回返当下。</li>
+<li><strong>拯救与代价</strong>：玩家需要在“阻止夜鸣山覆灭”和“避免改写历史引发更大灾难”之间寻找平衡，最终面对的是一个被神秘力量扭曲、反复吞噬人命与记忆的地方。</li>
+</ol>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>众人受京都神社委托前往长野夜鸣山调查失踪案，途中便因天象异变与“荧惑守心”凶兆意识到此行绝非寻常。抵达麻摩里町后，他们从新闻、诊所、村墓与神社逐步拼出夜鸣山的轮廓：此地常年大雾、磁场错乱，疑似古代黄泉门，近年失踪与暴毙频发，而村中流传的“祭祀”“封山”“怨灵”传说，似乎都在指向同一件旧事。随着调查深入，上川由衣身份前后矛盾，令队伍对其产生戒心；与此同时，队伍也找到了八咫琼勾玉残片、八尺镜、古书与铜器等关键道具，逐渐确认它们与三神器和封印仪式有关。</p>
+
+<p>在夜探村长家、墓地与神社后，玩家发现历代村长似乎代代隐瞒着某种真相；“真琴”与由衣的关系、由衣的附身显灵状态、以及旧日灾厄的起点逐渐浮出水面。借由八尺镜，队伍进入1881年等过去时空，追查镜子的来源与使用代价，并在真琴与村长的协助下，确认1921年的灾变与神社失控、人祭和封印崩坏密切相关。此后，他们在现代、过去与妖怪街市之间来回奔走，收集三神器、调查器官贩卖与猎巫线索，最终踏入黄泉区域，在近似平安京化的古战场上与鵺、黄泉怪物展开决战。虽然战斗中一度遭遇重创，但在真琴、滑瓢等妖怪盟友帮助下，队伍稳住阵脚，逐渐逼近事件核心，朝着拯救夜鸣山的目标前进。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>从摘要看，模组并非以“单纯解谜结束”收束，而是以<strong>逐步揭露真相、建立跨时空因果链</strong>作为结局基础。队伍最终确认：夜鸣山的灾厄并不是单一事件，而是由古代封印、神社失控、旧时人祭、历代村长隐瞒与当代异变共同叠加形成的循环诅咒。</p>
+<p>收尾重点落在：</p>
+<ul>
+<li>由衣/真琴与旧事件的深度关联被彻底揭开；</li>
+<li>三神器与黄泉门的关系基本明晰；</li>
+<li>玩家已具备阻止夜鸣山继续崩坏的关键线索与行动条件。</li>
+</ul>
+<p>整体结局气质偏向<strong>“苦涩的真相被拼齐，拯救尚未完全结束，但命运已被撬动”</strong>，非常符合带有神话感与历史回溯结构的日式怪谈模组。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>各PC（玩家角色）的性格、关键行为和高光时刻</strong></h3>
+
+<h4><strong>上野雪沂</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：敏锐、直觉强，对异常现象极度警觉，属于“第一时间闻到不对劲的人”。</li>
+<li><strong>关键行为</strong>：在旅途中率先看到“荧惑守心”，为全队提供了最早的灾兆警报。</li>
+<li><strong>高光时刻</strong>：作为最早注意天象异常的角色，承担了“气氛预警”的功能，帮助全队将事件性质从普通失踪案提升为超自然危机。</li>
+</ul>
+
+<h4><strong>黑柳佳子</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：理性中带有强烈的神秘学倾向，擅长从征兆、器物与传统知识中推理。</li>
+<li><strong>关键行为</strong>：用神秘学判定“荧惑守心”为大凶之兆；后续又与残片、八尺镜等神器线索紧密关联。</li>
+<li><strong>高光时刻</strong>：接到“八尺镜”时具备极强的剧情分量，成为队伍关键道具的承接者之一，几乎是“真相与仪式核心”的枢纽人物。</li>
+</ul>
+
+<h4><strong>小夜</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：细腻、行动灵巧，对细节和现场线索有很强的把握能力。</li>
+<li><strong>关键行为</strong>：从猫下找到疑似八咫琼勾玉的琥珀残片，是整个神器线索链的重要起点之一。</li>
+<li><strong>高光时刻</strong>：她的发现将故事从“地方怪谈”直接抬升为“日本三神器级别的大谜团”，起到了强力推主线的作用。</li>
+</ul>
+
+<h4><strong>希林</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：观察力强，喜欢把零散线索串成体系，偏推理担当。</li>
+<li><strong>关键行为</strong>：与佳子一起推断琥珀残片与日本三神器有关；在多次信息整合中承担“逻辑拼图”的职责。</li>
+<li><strong>高光时刻</strong>：在由衣身份混乱、线索大量堆叠时，仍能维持调查方向，是队伍不至于迷失的关键稳定器。</li>
+</ul>
+
+<h4><strong>上川由衣 / 真琴</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：情绪极不稳定，身份与存在状态复杂；从表层看是委托人，实则与旧案深度绑定。</li>
+<li><strong>关键行为</strong>：其身份前后矛盾，引发队伍怀疑；后来确认其“其实是附身显灵”的状态，成为剧情最大反转之一。</li>
+<li><strong>高光时刻</strong>：她/她们不仅是线索的中心，也是悲剧的承载者。由衣的崩溃离场与后续真相揭露，极大强化了角色悲剧性与宿命感。</li>
+</ul>
+<p>若按剧情功能看，<strong>由衣是真相入口，真琴是真相本体</strong>。</p>
+
+<hr>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+
+<h4><strong>上川由衣</strong></h4>
+<ul>
+<li>初始委托人，负责把PC引入夜鸣山事件。</li>
+<li>前期身份矛盾、行动可疑，是悬念制造机。</li>
+<li>其情绪崩溃与离场，反而强化了她与旧案之间的复杂关系。</li>
+</ul>
+
+<h4><strong>村长</strong></h4>
+<ul>
+<li>代表“地方传统权威”与“隐瞒真相的旧秩序”。</li>
+<li>临终前交出八尺镜，明确告诉玩家“这是解决一切的关键”。</li>
+<li>是连接现代调查与百年前历史的核心见证人。</li>
+</ul>
+
+<h4><strong>古河</strong></h4>
+<ul>
+<li>牵出警方旧调查线索的人物。</li>
+<li>作为目击者/幸存者类型NPC，帮助玩家理解“失踪不是最近才发生”的历史连续性。</li>
+</ul>
+
+<h4><strong>真琴</strong></h4>
+<ul>
+<li>兼具悲剧性、神秘性与协助性的重要角色。</li>
+<li>在过去与现在都起到“补完真相、提供援助”的作用。</li>
+<li>还承担了模组中少见的轻松桥段功能，比如演示化形术，缓解高压剧情。</li>
+</ul>
+
+<h4><strong>滑瓢、鵺等妖怪势力</strong></h4>
+<ul>
+<li>作为“非人盟友/非人敌人”并存的存在，丰富了模组生态。</li>
+<li>鵺是战斗与灾厄具象化的代表；滑瓢等则在关键节点提供支援，使剧情不至于完全陷入绝望。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：凶兆降临，夜鸣山初探</strong></h3>
+<p>众人从京都神社接下上川由衣的委托，前往长野调查夜鸣山失踪案。旅途中天空异变，上野雪沂目睹“荧惑守心”，黑柳佳子则从神秘学角度判断这是大凶之兆，直接把整趟旅途的基调定为“不祥”。抵达麻摩里町后，队伍先确认由衣提供的信息，再通过新闻与资料逐渐拼出夜鸣山的怪异背景：大雾、磁场紊乱、死状诡异、失踪频发，甚至被怀疑是古代“黄泉门”之一。</p>
+
+<p>调查中，小夜从猫下找到疑似八咫琼勾玉的琥珀残片，希林与佳子随即推断其与日本三神器有关，模组主线开始正式抬升到“神话级案件”。随后队伍分头搜集村内情报：诊所线索指向古河曾参与警方调查并亲眼目睹同伴死于山中；墓地里又出现“小早川乱步”的墓碑，暗示百年前旧案与雾气起源有关。夜访村长家时，重病昏迷的村长短暂醒来，将一件被确认是“八尺镜”的铜器交给佳子，称其为解决一切的关键。与此同时，失踪人数已增至七人，由衣也因持续被怀疑而情绪崩溃离场。最终，众人赶往墓地，遭遇疑似百年前村长的幽影，对方望向夜鸣山低喃“真琴”，并留下另一枚琥珀残片，使上川姐妹与旧日事件的联系愈发明确。第一章结束时，队伍决定先返回整理线索，剧情从“调查”正式进入“追因”。</p>
+
+<h3><strong>第2章：神器、旧案与时间回溯</strong></h3>
+<p>第二章中，队伍从京都再次出发，围绕夜鸣山展开更深入的调查，确认这座山与怨灵、封山祭祀、黄泉门和历代灾厄密切相关。玩家逐步取得八尺琼勾玉残片、古书、铜器等物，拼出一条“神社—村长家—墓地—失踪案—旧灾厄”的线索链。随着夜探与追查深入，历代村长的秘密、永箧与初印、真琴与由衣的关系，以及“由衣其实是附身显灵”的真相逐渐浮出。</p>
+
+<p>随后，玩家借八尺镜穿越至1881年，正式进入“历史层”。在这里，他们一边追查镜子与村庄起源，一边确认这件神器每次使用都会倒退时间、甚至改变历史，极具危险性。随着真琴与村长的协助，玩家进一步确认1921年的灾厄源于神社失控与人祭，夜鸣山的诅咒并不是自然形成，而是人为压住、又因失败而反噬的结果。为阻止夜鸣山覆灭，队伍在现代与过去往返，一面收集三神器，一面调查器官贩卖与猎巫线索，并逐步锁定山中“黄泉”区域、早良亲王与大内里的位置。最终，故事将玩家推向近似平安京化的古战场：鵺与黄泉怪物现身，战斗强度急剧上升。尽管队伍一度遭受重创，但在真琴、滑瓢等妖怪盟友帮助下稳住局势，并在紧张的救世主线中穿插了妖怪街市采购、情报交换，甚至让真琴现场演示化形术的轻松桥段，为沉重剧情提供了少有的喘息。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>“荧惑守心”天象+神秘学判定凶兆</strong>：开局就把气氛拉满，属于典型的“命运不妙但大家还得上车”。</li>
+<li><strong>由衣身份前后矛盾</strong>：从“委托人”到“高危可疑对象”再到“附身显灵”的真相，这一转折非常抓人。</li>
+<li><strong>村长临终交出八尺镜</strong>：标准的“临终交代神器”场景，仪式感很强。</li>
+<li><strong>妖怪街市与真琴演示化形术</strong>：在高压主线里突然出现的生活感与轻松感，反差特别好笑，也让世界观更鲜活。</li>
+<li><strong>百年前村长幽影低喃“真琴”</strong>：既诡异又悲伤，是极强的悬念爆点。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功 / 大失败）</strong></h3>
+<ul>
+<li><strong>大成功类高光</strong>：</li>
+<li>小夜在猫下找到八咫琼勾玉残片，直接将线索推入神器级别。</li>
+<li>佳子对铜器/镜子的判定与解读，让道具迅速获得剧情权重。</li>
+<li>众人围绕古书、墓碑、诊所信息不断拼图，体现出调查类模组里“信息整合”的成功快感。</li>
+<li><strong>高压失败风险</strong>：</li>
+<li>由衣持续被怀疑而精神崩溃，虽然不是传统意义上的检定失败，但在叙事上相当于一次“关系判定失败”。</li>
+<li>战斗中遭重创，说明模组后段并不只是解谜，而是真正进入生死对抗。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“这是大凶之兆。”</strong> 这一类开局判断，天然适合被玩家反复拿来当梗。</li>
+<li><strong>村长说“八尺镜是解决一切的关键”</strong>：非常典型的日式神秘道具交付台词，简洁但重量极大。</li>
+<li><strong>“真琴”这个名字被幽影念出</strong>：一瞬间把所有已知线索重新洗牌。</li>
+<li><strong>真琴现场演示化形术</strong>：在死人、封印、黄泉、失踪案之间插入这类桥段，非常有“跑团桌面味”。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式模组测评的版本</strong></li>
+<li><strong>更像论坛复盘帖的版本</strong></li>
+<li><strong>按“剧情—人物—机制—优缺点”四栏表格版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

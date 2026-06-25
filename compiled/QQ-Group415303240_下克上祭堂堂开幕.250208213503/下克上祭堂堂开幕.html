@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>下克上祭堂堂开幕 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>下克上祭堂堂开幕</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《下克上祭堂堂开幕》是一场以地下斗技场为舞台的忍者权谋战。表面上，它是宣扬“上忍发言权”、鼓励下位者挑战权威的盛大赛事；实际上却是被道贺妙乐长期操控的黑幕秀场。真正的核心冲突，不只是“谁能赢得比赛”，而是“谁有资格决定忍者世界的秩序”。优胜奖品《阳炎忍法帖》被传疑似带有诅咒，而历届优胜者接连遭到暗杀，也让整场祭典笼罩在“胜利即灾厄”的阴影下。玩家扮演的四名忍者一边作为参赛者向上攀升，一边逐步揭开大会真相，最终把“下克上”的口号从宣传语变成了真正的反抗行动。</p>
+
+<h3>主线剧情概要</h3>
+<p>四名忍者受邀参加地下斗技场“下克上祭”，在开幕式后迅速投入连场淘汰赛。随着比赛推进，他们发现优胜奖品《阳炎忍法帖》并不简单：它不仅牵涉诅咒传闻，还与历届优胜者的离奇死亡有关。几人在救护室与走廊交换情报，确认幕后主办人道贺妙乐并非单纯的赛事组织者，而是曾靠不正当手段夺冠、失去忍神资格后，反过来以大会为工具巩固自身势力的人。她高举“上忍发言权”的旗号，实则一面暗中清除可能接触秘宝的优胜者，一面操控舞台维持虚假的秩序。玩家们先后潜入VIP室掌握敌情，随后在赛场上展开极具忍术风格的连番战斗：冰见以先手强攻打出压制，秋满与冰见在决赛中激斗九回合，靠着拆招、反制与耐力决胜，最终夺得《阳炎忍法帖》。但真正的终局并不在夺冠，而在赛后联手对抗道贺本人与其保镖的高潮战。四名忍者在战斗中完成从竞争者到同盟者的转变，最终通过广播公开大会黑幕与道贺罪行，宣布下克上祭废止，让这场以“上位者统治”为底色的闹剧，在揭露与反抗中落幕。</p>
+
+<h3>结局与收尾</h3>
+<p>最终，玩家并没有以处刑或私刑解决道贺妙乐，而是选择将真相公之于众：大会黑幕、秘宝阴谋、历届优胜者遭暗杀的事实被广播揭露，令下克上祭失去正当性并被当场废止。这个收尾非常符合模组标题的“下克上”精神——真正的胜利不是赢得奖品，而是夺回叙事权与规则解释权。四名PC在经历竞技、猜疑、结盟与决战后，完成了从“被卷入赛事的忍者”到“推翻赛事结构的反抗者”的角色转变。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 冰见</h4>
+<ul>
+<li><strong>性格特征</strong>：偏冷静、强战斗意识、出手果断，属于典型的“先读场面再一击制敌”型角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在赛场上率先使用「奈落」打出先手压制，直接击倒星见，体现了其进攻判断和控制节奏的能力。</li>
+<li>在多方混战中保持战术价值，是队伍里最能迅速把情报转化成行动的人之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>先手击倒对手的场面，让冰见成为整场比赛节奏被改变的重要起点。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>从单纯的参赛者逐渐转变为同盟中的战术支点，强化了“行动派忍者”的定位。</li>
+</ul>
+
+<h4>2. 秋满</h4>
+<ul>
+<li><strong>性格特征</strong>：韧性强、斗争欲旺盛，属于越打越强、越压越不退的类型。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与冰见展开长回合胶着决赛，整场对抗几乎成为“技术与耐力”的展示。</li>
+<li>在关键轮次中运用「铳躏」「奈落」「乱独乐」等招式拆解对手攻势，体现出优秀的应变能力。</li>
+<li>最终夺得《阳炎忍法帖》，成为表面上的大会优胜者。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>第九回合才分出胜负的决赛，是整场最具竞技张力的段落。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>从“与人竞争的强者”转变为“知道胜利代价后仍选择揭露真相的胜者”，让优胜更像责任而非荣耀。</li>
+</ul>
+
+<h4>3. 晓乌</h4>
+<ul>
+<li><strong>性格特征</strong>：更偏团队协作型，擅长在关键时刻介入局势，属于“稳定输出与补刀收束”角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在对道贺的围攻中发挥稳定压制作用。</li>
+<li>与其他PC联手时表现出极强的配合意识，是将“短暂结盟”落实成实战的关键人物之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>高潮战里参与对道贺的围剿，让最终胜利显得是团队合力而非单人英雄主义。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>从旁观赛事的参与者，成长为主动参与推翻黑幕的行动者。</li>
+</ul>
+
+<h4>4. 星见</h4>
+<ul>
+<li><strong>性格特征</strong>：兼具战斗性与情感表达，明显带有“既能打也能说”的社交/角色驱动属性。</li>
+<li><strong>关键行为</strong>：</li>
+<li>曾被冰见以「奈落」先手击倒，但随后迅速回到局势核心。</li>
+<li>使用《魔精》《魔冠》与情感交流建立与秋满的联结，是全团最具戏剧张力的互动点之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在高潮战中对道贺的压制，以及与秋满之间的情感联结，让她不只是战斗单位，也成为叙事情绪的推动者。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>从被压制、被动应战，到主动以情感与战术双重手段参与反击，人物层次较为鲜明。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>道贺妙乐</h4>
+<ul>
+<li><strong>定位</strong>：大会主办者、真正的幕后黑手、终局Boss。</li>
+<li><strong>作用</strong>：</li>
+<li>表面上倡导“上忍发言权”，实则利用祭典操控忍者之间的竞争与淘汰。</li>
+<li>曾通过不正当手段夺冠、失去忍神资格，因此对《阳炎忍法帖》怀有复杂执念。</li>
+<li>暗中暗杀历届优胜者，阻止任何人接触秘宝，维持自己掌控下的秩序。</li>
+<li><strong>评价</strong>：</li>
+<li>是那种“理念包装得很漂亮，但手段极度肮脏”的典型反派，最有说服力之处在于她的表演性与自洽性：她并不只是想赢，而是想让别人永远赢不了。</li>
+</ul>
+
+<h4>保镖群</h4>
+<ul>
+<li><strong>定位</strong>：道贺的武力屏障。</li>
+<li><strong>作用</strong>：</li>
+<li>在剧情后半段作为最终冲突的阻碍者，负责将“揭黑”变成“必须打赢的最后一战”。</li>
+<li><strong>评价</strong>：</li>
+<li>功能性较强，主要服务于高潮战节奏。</li>
+</ul>
+
+<h4>历届优胜者（背景NPC）</h4>
+<ul>
+<li><strong>定位</strong>：黑幕牺牲者、诅咒传闻的来源之一。</li>
+<li><strong>作用</strong>：</li>
+<li>他们的遭遇是玩家怀疑大会真相的重要线索，构成“奖品有问题、比赛有问题、人也有问题”的整体阴影。</li>
+<li><strong>评价</strong>：</li>
+<li>虽未直接登场，但在背景层面很关键，是整个阴谋可信度的支点。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 开幕：下克上祭登场</h3>
+<p>四名忍者受邀或主动参加地下斗技场“下克上祭”。开幕式营造出一种极具煽动性的气氛：这是一场允许下位者挑战权威、以实力争夺上位发言权的忍者盛会。然而这种“热血公平”的外壳很快就显露出不对劲的味道。奖品《阳炎忍法帖》成为众人追逐的目标，同时也伴随着“秘宝诅咒”“优胜者不祥”等传闻，为整场赛事埋下不安的伏笔。</p>
+
+<h3>2. 赛程推进：连场晋级与信息拼图</h3>
+<p>玩家们在斗技场中一路晋级，表面上是在争夺优胜，实际上是在逐步拼合真相。随着对大会历史与参赛者动向的观察，四人开始意识到：这不是单纯的竞技，而是一场被人为设计过的筛选与清除机制。</p>
+
+<h3>3. 救护室与走廊：情报交换与临时结盟</h3>
+<p>在救护室和走廊中，PC们交换到关键情报，确认彼此对大会黑幕的怀疑并非错觉。此阶段的重点不是战斗，而是“敌我重新划分”。原本的竞争对手开始变成共同面对主办方阴谋的临时盟友，为后续合力对抗道贺打下基础。</p>
+
+<h3>4. 潜入VIP室：确认敌情与幕后布局</h3>
+<p>在掌握部分线索后，众人潜入VIP室进一步确认敌情，确认道贺妙乐确实掌控着整个赛事流程，并拥有超出常规主办人的资源与手段。此处完成了“传闻→证据”的转化，让黑幕不再只是猜测，而是事实。</p>
+
+<h3>5. 关键战：冰见先手压制，赛场局势加速</h3>
+<p>进入正式战斗后，冰见以「奈落」先手击倒星见，迅速改变局势。这个开局不仅展示了忍术的压制力，也让比赛从单纯的轮次推进进入“谁掌握节奏谁就活”的高压状态。随后局势不断变化，阵营间的关系也逐渐明朗。</p>
+
+<h3>6. 决赛：秋满与冰见的九回合鏖战</h3>
+<p>秋满与冰见展开长回合决赛，成为本模组最核心的竞技段落。双方围绕「铳躏」「奈落」「乱独乐」等招式进行拆招与反拆，节奏紧凑，胜负极其胶着。战斗拖到第九回合才分出胜负，秋满最终夺得《阳炎忍法帖》。这场决赛不仅是战斗上的高潮，也是“谁有资格接触真相”的象征性争夺。</p>
+
+<h3>7. 真相揭露：道贺妙乐的黑幕浮现</h3>
+<p>在夺冠之后，四人没有被胜利冲昏头脑，而是转向更大的敌人——道贺妙乐。真相逐渐明朗：她曾以不正当手段夺冠，后因失去忍神资格而转身操纵大会；所谓“上忍发言权”不过是包装话术，实际目的是阻止任何人接触《阳炎忍法帖》并维持自己的统治逻辑。历届优胜者的“失踪/死亡”也因此变得合理而恐怖。</p>
+
+<h3>8. 高潮战：四人合围道贺与保镖</h3>
+<p>最后阶段，晓乌、星见、秋满等人轮番压制道贺与保镖，形成明确的群战高潮。星见还通过《魔精》《魔冠》与情感交流建立联结，令战斗不仅是数值和招式的对轰，也成为人物关系的再确认。四人由此真正完成“临时联盟”的整合，以团队之力击倒幕后黑手。</p>
+
+<h3>9. 结尾：广播揭黑，祭典废止</h3>
+<p>最终，玩家没有选择处决道贺，而是利用广播公开她的罪行与大会黑幕，将事件从“谁胜谁负”转化为“谁掌握真相”。下克上祭因此被废止，所有人的行动不再只是赢下一场比赛，而是亲手推翻一套腐坏的规则系统。故事以“揭露”而非“屠杀”收束，收得非常干净。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：秋满与冰见的九回合决赛。</li>
+</ul>
+<p>这场战斗堪称整团的技术展示，节奏非常稳，且双方都在不断拆解对方的进攻逻辑，观感像一场高水平忍者对决。</p>
+<ul>
+<li><strong>最意外</strong>：优胜者并不是故事真正的终点。</li>
+</ul>
+<p>大家本以为夺冠就是结局，结果夺冠后才发现真正的Boss在奖品背后，模组结构非常典型地“赛后才开始正式主线”。</p>
+<ul>
+<li><strong>最搞笑/最戏剧化</strong>：在严肃黑幕中穿插情感交流与战斗拆招。</li>
+</ul>
+<p>这种“刚在认真打架，下一秒又开始建立联结”的反差感，让整场看起来既中二又有情绪张力。</p>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>冰见以「奈落」先手击倒星见</strong>：非常像一记关键大成功，直接改写开场局势。</li>
+<li><strong>秋满决赛拖到第九回合才胜出</strong>：这类长时间胶着通常会让人印象深刻，属于“每一轮都在续命”的经典高张力时刻。</li>
+<li><strong>道贺最终被合围击倒</strong>：虽然未必是单一检定的结果，但整体上像是团队多次成功累积后的最终崩盘。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“上忍发言权”与实际黑幕的反差</strong>：这句口号本身就很有讽刺味道，越喊越像反派包装话术。</li>
+<li><strong>星见用《魔精》《魔冠》配合情感交流建立联结</strong>：这是非常有记忆点的桥段，让战斗从纯粹输出变成了关系推进。</li>
+<li><strong>广播公开罪行、宣布废止祭典</strong>：结尾既像政变宣言，也像赛后公告，荒诞与庄严并存，很符合“地下斗技场政变片”的气质。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续补一份：</p>
+<ol>
+<li><strong>“模组结构与叙事设计分析”</strong></li>
+<li><strong>“各角色关系图/势力图”</strong></li>
+<li><strong>“适合发到社群的精简版复盘文”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

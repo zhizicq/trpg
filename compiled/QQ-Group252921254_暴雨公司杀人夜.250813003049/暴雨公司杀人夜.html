@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暴雨公司杀人夜 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>暴雨公司杀人夜</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>- <strong>模组背景与核心冲突</strong></h3>
+<p>《暴雨公司杀人夜》是一则典型的“暴风雨山庄”式封闭空间恐怖模组：暴雨、停电、洪水、失踪案、秘密房间与超常物质“斯利普”粒子共同构成了一个逐步失控的密室舞台。玩家们本是因恶劣天气躲进一家电器维修店避难，却被卷入店长隐藏的黑暗秘密之中。表面上是收留避雨，实则牵扯到失踪者加工、替身现象、怪异能力与某种超自然污染。核心冲突由“求生与调查”展开，逐渐升级为“揭露真相与压制失控暴力”的对抗。</p>
+
+<h3>- <strong>主线剧情概要</strong>（300-500字）</h3>
+<p>暴雨夜，几位角色被迫进入一家电器维修店避难。店长起初热情接待，将众人安排到二楼过夜，但他对三楼堆放的货物、店内的异常空间与过度殷勤的态度，都显出明显的遮掩感。随着天气恶化，突如其来的大停电与洪水几乎同时降临，一楼迅速被淹，整栋楼变成半封闭的危机现场。玩家们开始分头搜查：一边试图在黑暗与积水中找寻安全路线，一边追索失踪案、秘密房间以及店长和“斯利普”粒子之间的联系。调查过程中，屋内接连出现替身、异常作画与能力交锋，局势从悬疑迅速滑向超现实混战。战斗方面，高野广因马娘化获得异常强力的身体素质，凭借多次大成功、极难成功反复脱困、压制对手，并在楼梯间与石川雄一展开近身缠斗；另一边，伊与田知鹤利用照片里的“路灯”进行作画，制造出提灯坠落般的诡异场景，成功点亮楼梯口，却也引发理智崩坏。最终，洪水与电流在战场中交织，高野广将石川雄一按入水中，使其沉底消失；与此同时，开司找到了被加工成“人偶”的失踪受害者，整起失踪案的真相被收束，事件以新闻报道形式告终，留下一个“真相大白但代价沉重”的收尾。</p>
+
+<h3>- <strong>结局与收尾</strong></h3>
+<p>结局以“失踪案破局”告终：受害者被发现已遭加工成“人偶”，店长及其背后的异常产业链也随之暴露。石川雄一在洪水与电击交织中被高野广彻底制服，处理方式极具暴力与象征性，带有“沉底永恒”的恐怖美感。最后事件被新闻报道收束，意味着超自然与犯罪层面的真相并未彻底公开，但在叙事层面已完成闭环：幸存者活下来了，秘密被挖出，然而那间电器维修店与暴雨夜中的怪异记忆，仍会成为角色们无法轻易抹去的阴影。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC1：高野广</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动派、压迫感强，危机中极具爆发力；在“马娘化”后更是从普通角色跃迁为战场核心。</li>
+<li><strong>关键行为</strong>：多次大成功、极难成功脱困和反制，显示出极强的运势与战斗执行力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在楼梯间与石川雄一近身缠斗，成为正面战场的绝对主力。</li>
+<li>最终将石川按入水中，完成“沉底”式终结，既解决了威胁，也形成了极强的收尾画面。</li>
+<li><strong>角色弧光</strong>：从避难者转为终结者，体现出“在极端环境下被迫承担暴力责任”的成长路线。</li>
+</ul>
+
+<h3><strong>PC2：伊与田知鹤</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：偏向诡奇、艺术化思维，处理危机时更有创意而非纯粹硬碰硬。</li>
+<li><strong>关键行为</strong>：利用照片中的“路灯”作画，把现实空间与图像意象相互嵌套，制造超现实效果。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>通过“作画”引发提灯坠落般的异象，成功照亮楼梯口，直接改变战场视野与节奏。</li>
+<li><strong>角色弧光</strong>：她的行动不是单纯“辅助”，而是将艺术行为转化为实战干预，体现了“认知/象征即力量”的模组风格。</li>
+</ul>
+
+<h3><strong>PC3：开司</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：调查推进型角色，务实、敏锐，承担了找真相与收尾的重要职责。</li>
+<li><strong>关键行为</strong>：在混乱中找到了被加工成“人偶”的受害者，成为揭开失踪案真相的关键。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>发现受害者已非普通失踪，而是遭到“加工”的产物，使案件性质从失踪升级为恐怖犯罪/异化事件。</li>
+<li><strong>角色弧光</strong>：从旁观者式的参与者，转化为“看见真相的人”，承担起把事件完整收束的功能。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+
+<h4><strong>店长</strong></h4>
+<ul>
+<li><strong>作用</strong>：故事的入口人物，也是最大嫌疑人之一。</li>
+<li><strong>功能</strong>：表面热心收留，实际上对三楼与店内结构刻意回避，暗示其与失踪案、秘密房间和“斯利普”粒子有直接关联。</li>
+<li><strong>叙事价值</strong>：他是“暴风雨夜中的伪善庇护者”典型，负责制造不安与怀疑。</li>
+</ul>
+
+<h4><strong>石川雄一</strong></h4>
+<ul>
+<li><strong>作用</strong>：对抗型NPC/敌对核心。</li>
+<li><strong>功能</strong>：在楼梯间与高野广形成直接冲突，是战斗线的主要压迫对象之一。</li>
+<li><strong>叙事价值</strong>：他的存在推动了模组后段从调查转向肉搏与失控，最终被洪水吞没式处理，具有强烈的戏剧性。</li>
+</ul>
+
+<h4><strong>“被加工成的人偶”受害者</strong></h4>
+<ul>
+<li><strong>作用</strong>：真相的证据本身。</li>
+<li><strong>功能</strong>：揭示失踪案不是“失踪”，而是某种可怕的再加工与物化。</li>
+<li><strong>叙事价值</strong>：使故事从“找人”升级为“面对非人化的犯罪”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：暴雨避难，踏入异常空间</strong></h3>
+<p>暴雨夜来袭，PC们为了躲避恶劣天气，进入一家电器维修店。店长主动收留，并安排众人到二楼休息，看似体贴，实则有意无意地回避三楼区域。此时玩家已经能感受到这家店“空间不对劲”：货物堆放、楼层禁区、店长态度，都在暗示这里并不只是普通商铺。</p>
+
+<h3><strong>第二阶段：停电与洪水，封闭环境形成</strong></h3>
+<p>随着剧情推进，大停电与洪水接连爆发，一楼迅速被淹没。原本还能维持的“避难”状态瞬间瓦解，所有人被困在店内，无法脱身。环境压力直接放大了调查的紧迫性，也让任何冲突都变成高风险事件。店内空间被黑暗、积水与不明威胁共同分割，典型的密室恐怖氛围形成。</p>
+
+<h3><strong>第三阶段：分头调查，失踪案浮出水面</strong></h3>
+<p>玩家们开始搜索店内各处，逐步挖出店长与失踪案之间的关系，并发现秘密房间及“斯利普”粒子的踪迹。随着线索逐步拼接，店铺不再是单纯的避难点，而像是某种加工、藏匿与实验的场所。与此同时，屋内还出现了替身与异常能力的对抗，说明这里的危险不仅来自人类，也来自超自然污染。</p>
+
+<h3><strong>第四阶段：战斗升级，楼梯间成为主战场</strong></h3>
+<p>冲突在楼梯间爆发。高野广在马娘化加持下，表现出惊人的机动与力量，多次通过大成功、极难成功摆脱困局、反扑对手，成为战局核心。石川雄一与其正面对抗，双方在狭窄楼梯间展开近身缠斗，空间压迫感让战斗显得格外凶险。与此同时，伊与田知鹤用“照片中的路灯”进行作画，制造出提灯坠落般的异样景象，既点亮了战场，也让人精神受挫，引发理智检定失败，进一步加剧混乱。</p>
+
+<h3><strong>第五阶段：洪水、电流与终局清算</strong></h3>
+<p>战斗进入终盘后，洪水与电流交错成致命环境。高野广抓住机会，将石川雄一按入水中，借助积水与电流形成极具视觉冲击力的终结方式，让对方“沉底永恒”。随后，开司成功找到被加工成“人偶”的受害者，失踪案真相彻底坐实。整个事件最终被新闻报道收束，意味着这一夜的恐怖被以“社会新闻”的方式记录下来，形成冷静但阴影浓重的结尾。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>- <strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>高野广马娘化后战力暴走</strong>：从普通避难者变成近战怪物，反差感极强，既荒诞又带感。</li>
+<li><strong>楼梯间近身缠斗</strong>：狭窄空间、积水、停电、追逐与反制叠在一起，战场感非常强。</li>
+<li><strong>伊与田知鹤的“照片路灯作画”</strong>：这个操作非常有TRPG味道，既像艺术行为，又像邪门仪式，效果诡异且喜感并存。</li>
+<li><strong>石川雄一被按进水里沉底</strong>：终结方式非常有画面感，既恐怖又带一点黑色幽默。</li>
+</ul>
+
+<h3>- <strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>高野广多次大成功、极难成功</strong>：这是本场最强检定表现，几乎把“运气与战斗力”写在脸上。</li>
+<li><strong>伊与田知鹤引发理智检定失败</strong>：说明她的行为不仅改变现实，也成功撼动了旁人的精神状态，属于典型的“怪招有效但后果也怪”。</li>
+<li>如果从模组节奏看，这类“成功导致更混乱”的检定，非常符合恐怖跑团的喜剧性。</li>
+</ul>
+
+<h3>- <strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>店长热情收留却对三楼讳莫如深</strong>：这类“你越不让看我越要看”的桥段，是密室恐怖最经典也最有效的诱因。</li>
+<li><strong>“提灯坠落”的视觉描写</strong>：一边像民俗恐怖，一边又像玩家临场发挥出的怪诞艺术，十分有记忆点。</li>
+<li><strong>“永恒沉底”式结局</strong>：这个措辞本身就很有味道，既像最终处刑，也像克苏鲁式的不可逆消失，压迫感很足。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像跑团复盘文章的叙述版</strong>，或</li>
+<li><strong>更适合发布到社媒/论坛的精炼版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

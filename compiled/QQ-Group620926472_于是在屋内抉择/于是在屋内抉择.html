@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>于是在屋内抉择 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>于是在屋内抉择</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《于是在屋内抉择》是一则以<strong>封闭公寓、怪谈规则与关系驯化</strong>为核心的心理恐怖/黑色喜剧模组。故事表面上是贫困女大学生/打工人喜多川优奏被债务与房租逼入绝境，实际上则是她被卷入一场由“屋内怪谈”主导的<strong>生存、服从与亲密关系定义</strong>的试炼。</p>
+<p>本模组最核心的矛盾并非单纯“逃出房间”，而是：</p>
+<ol>
+<li><strong>物理层面的逃脱</strong>——在密闭房间、循环楼层、温度异常与机关陷阱中找到出路；</li>
+<li><strong>规则层面的理解</strong>——怪谈并非无脑杀人，而是要求参与者接受某种“房主/客人”“宠物/主人”的身份秩序；</li>
+<li><strong>情感层面的选择</strong>——优奏必须决定自己是继续抗拒、短暂妥协，还是彻底进入芒所构建的关系体系。</li>
+</ol>
+
+<p>因此，这不是一场单纯的“解谜逃生”，而是一场关于<strong>债务、控制、依赖、欲望与同意</strong>的互动博弈。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>喜多川优奏在破旧出租屋中被债主莲白堵门讨债，走投无路之下，她被迫参与一系列带有怪谈色彩的赌局与房间试炼，以筹码换取生存空间。神秘女子芒始终在场，她并不直接解释规则，而是以冷静旁观、挑逗、协助与威逼并行的方式，迫使优奏逐步理解“屋内抉择”的逻辑：房间不是普通居所，而是一个会根据温度、身体状态与角色关系变化的封闭怪谈场域。优奏先后经历21点、乞丐、骰子等赌博，经历短暂翻盘后很快失利；随后又在自行车、钢丝、闷热被褥、水池电鳗等机关中频繁遭难，只能依靠侦查、灵感、体质与意志检定，在衣柜、床底、厕所等处收集数字线索，拼出密码5431打开房门。</p>
+<p>然而，打开门并不意味着自由：整栋楼已被怪谈同化，楼道循环、门锁异常、温度变化都在暗示，逃离某一间屋子并不能逃离“屋内”的规则。随着“生物增温”“情欲刺激”等线索逐渐明朗，芒将优奏进一步逼入“宠物”的身份框架，并提出“做我的宠物吧♡”作为通关与关系确认的条件。优奏在反复试探与对抗后，最终选择接受，以宠物身份换取脱离循环、偿还债务，也正式与芒建立起长期主宠契约。后续剧情中，二人围绕“爱是否等于控制”爆发激烈冲突，芒最终软化道歉，关系从压迫转向修复；随后的一场国王游戏将众人卷入失控的调情与惩罚风暴，最终在混乱、和解与共同生活的安排中收束。</p>
+
+<h3>结局与收尾</h3>
+<p>结局并非“击败怪谈”，而是<strong>与怪谈达成关系上的妥协与重构</strong>。优奏获得了离开循环屋内的资格，也暂时解决了债务问题；芒则从单纯的控制者，逐渐变成会道歉、会征求意见、会维持关系平衡的同居/伴侣型存在。小墨在混战后失去抵抗能力，最终被纳入共同生活安排，象征这间“屋内”的秩序不再是单一压迫，而是转化为某种带着欲望、互相牵制与共居意味的新平衡。整体收尾兼具怪谈感、恋爱喜剧感与一点点“大家都被房子绑架了”的荒诞感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+
+<h4>1）喜多川优奏</h4>
+<p><strong>性格特点：</strong></p>
+<ul>
+<li>表面上是穷困、疲惫、反应很快的现实主义者。</li>
+<li>面对压迫时第一反应不是爆发，而是<strong>试探、妥协、赌命式周旋</strong>。</li>
+<li>在精神和身体都被压到极限时，仍保留强烈的求生欲与机敏。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>通过借贷与赌博不断试图“翻盘”，体现了她对资源匮乏处境的熟悉与不甘。</li>
+<li>在怪谈机关中积极搜集线索、拼密码，展现出极强的生存本能。</li>
+<li>面对芒的“宠物”定义并非全盘抗拒，而是先反复确认规则与代价，最后才做出选择。</li>
+<li>在后半段关系冲突中，她不是纯受害者，而是能反过来用规则、心理压力与言语逼迫芒让步。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>独自从循环房间中拼出密码5431并脱出。</li>
+<li>在情感对抗中迫使芒正视“控制”和“爱”的边界。</li>
+<li>国王游戏中借助规则反制局面，体现出“弱者掌握局势”的聪明。</li>
+</ul>
+
+<p><strong>角色弧光：</strong></p>
+<p>从“被债务和怪谈逼到墙角的求生者”，成长为“懂得利用规则、甚至能反向定义关系的人”。她最终接受宠物身份，不完全是屈服，更像是在极端处境下做出的带有主动性的生存选择。</p>
+
+<hr>
+
+<h3>重要NPC分析</h3>
+
+<h4>1）芒</h4>
+<p><strong>作用：</strong> 核心推动者、规则代言人、压迫与诱惑的双重来源。</p>
+<p>芒不是单纯反派，而是模组中最关键的“关系塑形者”。她以调戏、控制、惩罚和帮助并存的方式，引导优奏认识屋内规则，并将“宠物”作为一种身份与关系方案抛给她。</p>
+<p>她的厉害之处在于：</p>
+<ul>
+<li>不直接告诉答案，而是让优奏在被迫中理解规则；</li>
+<li>会制造压迫感，也会在关键时刻提供通过方式；</li>
+<li>后期能从控制者转向能道歉、能协商的关系参与者。</li>
+</ul>
+
+<p>她的存在让模组从“逃生”上升为“亲密关系伦理”的讨论。</p>
+
+<h4>2）莲白</h4>
+<p><strong>作用：</strong> 债务压力的具象化、剧情启动器。</p>
+<p>莲白以债主身份登场，象征现实世界的压迫。他不是主要怪谈机制的一部分，但正是因为他的到来，优奏才被迫进入赌博、换筹码与规则试炼。</p>
+<p>他使“屋内抉择”从单纯超自然事件，变成现实困境与怪异规则的叠加。</p>
+
+<h4>3）小墨</h4>
+<p><strong>作用：</strong> 情绪冲突与群像失控的引线。</p>
+<p>在后半段的关系/聚会混乱中，小墨成为情绪爆点。其崩溃与反扑推动了群体冲突升级，也让最终“共同生活”的结局更具戏剧性。</p>
+<p>他更像是一个把“玩笑”“占有”“失控”都推到台前的角色。</p>
+
+<h4>4）風</h4>
+<p><strong>作用：</strong> 混乱局面的参与者与规则扩散器。</p>
+<p>風在国王游戏等环节中被卷入，作为群像中的一员增强了场面张力，也使“屋内”从单人密室转向多人关系剧场。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：讨债、赌博与怪谈入侵</h3>
+<p>故事一开始，喜多川优奏就被困在破旧出租屋内，面对债主莲白的逼迫。她试图通过赌博获得筹码来解决问题，先后尝试21点、乞丐与骰子等项目，期间有过短暂的翻盘，但很快又被运气与局势打回原形。</p>
+<p>与此同时，屋内出现诸多异常：诡异自行车、异常阵容、墙上的温度计、“房主/客人”的提示……这一切都说明她已经进入怪谈规则支配的空间。接着，房间开始循环化，优奏在自行车机关、钢丝束缚、闷热被褥与水池电鳗等事件中不断受挫，清醒度也随之下降。</p>
+<p>为了脱出，她不得不在衣柜、床、厕所等处搜集数字线索，靠多次检定一点一点拼凑出密码。最终，她成功整合出“5431”，打开了房门。此时她已经意识到，眼前并非普通“闹鬼屋”，而是一场必须遵守规则的屋内试炼。</p>
+
+<h3>第2章：离开房间，却未离开屋内</h3>
+<p>优奏打开门后，发现自己并未真正脱离困境。整栋楼都受怪谈影响，楼道呈现循环结构，门锁、温度与通行条件都发生了异常变化。外界的空间与屋内本质上已经连通为同一个怪谈场。</p>
+<p>芒在这个阶段不再只是旁观者，她开始更明确地介入剧情，以“宠物”“驯鹿”等身份称谓不断逼迫优奏接受关系定义。与之相对，优奏也在逐渐明白：这场怪谈并不只想要她的身体或筹码，更想要她对某种角色秩序的认可。</p>
+<p>后半段冲突逐渐转向情感问题。优奏与芒围绕“爱是否意味着控制”爆发激烈争执，双方通过心理学、意志与力量等方式反复拉扯。最终，芒被迫软化并道歉，承认自己过度控制的做法。</p>
+<p>随后进入国王游戏，氛围彻底从压迫切换为混乱的派对式失控：惩罚、调情、命令与反制不断上演，芒、小墨、風等人都被卷入其中。小墨最终情绪崩溃并反扑，但在混战里被压制昏厥。事件结束后，芒征求优奏的意见，决定让小墨与众人一起生活，故事也在“修复关系后的共居”中落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>“做我的宠物吧♡”</strong>：既是通关条件，也是全模组最具代表性的关系宣言，荒诞、暧昧、压迫感并存。</li>
+<li><strong>循环房间解谜段</strong>：自行车、钢丝、床铺、水池、电鳗等机关轮番上阵，压迫感极强，节奏也很戏剧化。</li>
+<li><strong>国王游戏失控现场</strong>：本来像社交小游戏，结果演变成关系测试、惩罚升级和群体混乱，喜剧效果拉满。</li>
+<li><strong>芒从强势控制者到道歉者的转变</strong>：意外但很有效，让角色关系不只是“被压迫—反抗”，而是进入真正的情感协商。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>密码线索收集与拼出5431</strong>：多个小检定累积成关键突破，是典型的“靠脑子把自己救出来”的高光。</li>
+<li><strong>体质/意志相关检定</strong>：在闷热、束缚、刺激和疲劳累积下仍能持续行动，凸显优奏的生存韧性。</li>
+<li><strong>情感对抗中的心理学、意志与力量拉扯</strong>：这部分不是单纯数值胜负，而是“角色关系”层面的检定胜利，非常有戏剧张力。</li>
+<li><strong>小墨崩溃后的压制</strong>：混战中的失败与昏厥，让场面从暧昧喜剧瞬间滑向失控戏码，反差很强。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>芒一边调戏一边讲规则的说话方式，形成一种“你不听就会吃苦头，但我还挺照顾你”的危险魅力。</li>
+<li>优奏面对“宠物”定义时的试探、质疑与反制，让对话既像审问又像情感谈判。</li>
+<li>“房主/客人”提示与后续“宠物/主人”关系的并置，构成了很妙的主题呼应：屋内不只区分身份，也在重新定义亲密关系。</li>
+<li>结尾把失控冲突收束成“共同生活”，带着一点荒诞现实主义意味，既像和解，也像继续掉进更复杂的屋内秩序。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续补一版：</p>
+<ol>
+<li><strong>更像正式跑团复盘文的版本</strong>；或</li>
+<li><strong>带“主持人视角/玩家视角点评”的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

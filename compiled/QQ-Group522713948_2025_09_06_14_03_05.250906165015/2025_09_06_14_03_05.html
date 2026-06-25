@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_09_06_14_03_05 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_09_06_14_03_05</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组的舞台位于一处被邪气侵蚀的地下洞窟系统。队伍在先前已经遭遇蛛母巢穴与追缉事件，随后继续向洞窟北侧深入，逐步逼近魔气源头。整个故事的核心冲突，是<strong>冒险者小队试图封印/击溃邪祟源头，夺回或守护被封存的四神兵，并阻止潜伏于地下的魔君化身破封作乱</strong>。</p>
+<p>副线则围绕“追缉的大盗首领”“地下水道中的尸体”“丹阳残灵”等线索展开，构成了一个兼具遗迹探索、机关解谜、资源管理与终局BOSS战的完整模组结构。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>队伍离开蛛母巢穴后继续向洞窟北侧推进，沿途逐渐感受到来自魔气源头的精神压迫。除丁真外，其余成员都通过了精神对抗检定，确认前方存在极强邪气，气氛也因此从单纯探索转入高压戒备。进入兵器库后，丁真成功侦察出门卫雕像实为机关，队伍凭借三枚令牌解锁了被封存的四神兵，并为几名成员换装山文甲，战力得到显著提升。随后众人进入地下水道，意外发现此前被追缉的大盗首领已成尸体，而其背后竟潜伏着真正的危险——魔君化身。四神兵的共鸣先一步压制了邪祟，战斗由此爆发。</p>
+<p>终局战中，队伍逐渐摸清“碧光菇”机制，发现它能持续削弱敌方，无论对小怪还是魔君都颇具效果，因此战术重心从硬拼转向控场与持续压制。魔君一度暴走，释放无差别魔焰，战况险些失控；关键时刻，丹阳残灵现身援助，给予全队临时护盾、资源回复与行动优势，帮助队伍稳住阵脚。最终，杀珀天凭借连续高额输出将魔君打入濒死并完成斩杀，四神兵随之归位，地下河口恢复平静。主线与隐藏任务一并结算，冒险者们带着胜利与收获成功返程。</p>
+
+<h3>结局与收尾</h3>
+<p>最终战胜魔君化身后，四神兵完成归位，地下河口的邪气被压制并逐渐恢复平静。队伍不仅完成了主线目标，也一并结算了隐藏任务，属于“探索—获取遗物—斩杀邪祟—安全撤离”的标准高完成度收束。整体结局偏正向，且带有明确的“遗迹恢复秩序”意味。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）</h3>
+
+<h4>丁真</h4>
+<ul>
+<li><strong>性格与定位</strong>：偏探索型、谨慎且敏锐，承担了队伍前排侦察与机关识别的关键职责。</li>
+<li><strong>关键行为</strong>：在兵器库中成功侦察出门卫雕像是机关，直接帮助队伍规避了潜在风险并推进剧情。</li>
+<li><strong>高光时刻</strong>：作为少数在精神压迫检定中承受较大压力的角色之一，仍能稳定完成侦查任务，体现出“关键时刻不掉链子”的作用。</li>
+</ul>
+
+<h4>杀珀天</h4>
+<ul>
+<li><strong>性格与定位</strong>：明显是队伍的主输出核心，风格偏强攻型，擅长在终局战中打出连续爆发。</li>
+<li><strong>关键行为</strong>：在魔君战中连续高额输出，最终完成斩杀，是击败BOSS的决定性角色。</li>
+<li><strong>高光时刻</strong>：收尾阶段将魔君打入濒死并完成击杀，属于典型的“终结者”式高光。</li>
+</ul>
+
+<h4>其他队员（未明确命名）</h4>
+<ul>
+<li><strong>性格与定位</strong>：整体呈现出较强的团队协作意识，尤其在面对精神压迫、资源管理与持续削弱机制时，能迅速调整打法。</li>
+<li><strong>关键行为</strong>：通过精神对抗检定、协助解锁四神兵、配备山文甲、在战斗中配合碧光菇机制与丹阳残灵增益，显示出集体执行力。</li>
+<li><strong>高光时刻</strong>：在魔君暴走、无差别魔焰的高危局面中保持阵型未崩，说明团队整体抗压能力不错。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<h4>丹阳残灵</h4>
+<ul>
+<li><strong>剧情作用</strong>：终局战中的关键援助NPC，属于“战况翻盘器”。</li>
+<li><strong>功能表现</strong>：提供临时护盾、资源回复与行动优势，在魔君暴走阶段稳住局势。</li>
+<li><strong>叙事意义</strong>：不仅是战斗支援，更像是前代力量/遗迹意志的象征，为四神兵归位和邪祟镇压赋予了仪式感。</li>
+</ul>
+
+<h4>魔君化身</h4>
+<ul>
+<li><strong>剧情作用</strong>：终章BOSS，是地下邪气源头的具体化身。</li>
+<li><strong>功能表现</strong>：具备压迫感强、会暴走、会释放无差别魔焰等特点，负责制造终局危机。</li>
+<li><strong>叙事意义</strong>：它将前期的探索、机关、遗物收集全部统一到“最终必须击败的敌人”上，是模组的核心矛盾具象化。</li>
+</ul>
+
+<h4>大盗首领（尸体）</h4>
+<ul>
+<li><strong>剧情作用</strong>：虽未以活体登场，但其尸体是剧情转折点之一。</li>
+<li><strong>功能表现</strong>：作为“被追缉对象已死”的线索，帮助队伍意识到地下并不只是单纯的追捕任务，而是更深层的邪祟布局。</li>
+<li><strong>叙事意义</strong>：强化了阴谋感和“有人先一步遭殃”的危险氛围。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 离开蛛母巢穴，感知邪气逼近</h3>
+<p>队伍在结束蛛母巢穴的阶段性探索后，继续向洞窟北侧推进。随着深入，空气中的压迫感越来越明显，众人开始受到魔气源头影响，进入精神紧绷状态。除丁真外，其他人都成功通过精神对抗检定，确认前方存在强大邪气。这一段主要承担“氛围升级”的作用：从地底怪物的常规威胁，过渡到更高层级的邪祟危机。</p>
+
+<h3>2. 进入兵器库，机关识破与四神兵解封</h3>
+<p>众人来到兵器库，丁真通过侦察发现门卫雕像其实是机关，避免了误触风险。随后队伍利用三枚令牌解锁了封存已久的四神兵，并为数名成员配备山文甲，整体战力显著提升。这一段是典型的“资源获取章节”，既奖励了前期探索，也为后续Boss战做了充分铺垫。四神兵不只是装备，更是剧情上的重要伏笔与战斗中的压制核心。</p>
+
+<h3>3. 进入地下水道，发现尸体与真正敌人</h3>
+<p>队伍转入地下水道后，意外发现正在被追缉的大盗首领已经是一具尸体。尸体本身虽然不复杂，但它背后潜伏的魔君化身才是本段的真正威胁。四神兵在此处产生共鸣，先一步压制邪祟，随后战斗正式打响。此处剧情完成了从“线索搜集”到“直面真相”的切换，让玩家意识到敌人远比表面情节更危险。</p>
+
+<h3>4. 魔君战：机制探索、暴走与援助</h3>
+<p>战斗开始后，队伍逐步试出了“碧光菇”机制，发现其对小怪与魔君都有持续削弱效果，因此战术逐渐从正面硬拼转向持续压制与控场。魔君一度暴走，释放无差别魔焰，场面极其危险。关键节点上，丹阳残灵现身，为全队提供临时护盾、资源回复和行动优势，强行把崩盘边缘拉回可控局面。这一段是整场跑团的高潮，兼具规则理解、临场应变与剧情援护三重张力。</p>
+
+<h3>5. 终结魔君，四神兵归位，任务结算</h3>
+<p>在丹阳残灵支援与碧光菇削弱的共同作用下，队伍逐步压低魔君血线。最终由杀珀天完成连续高额输出，将魔君打入濒死并完成斩杀。随着敌人倒下，四神兵也随之归位，地下河口恢复平静。主线与隐藏任务一并结算，队伍安全返程，整段冒险以较为完整且干净利落的方式收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：魔君暴走阶段，全队在高压下没有崩盘，反而靠机制理解和丹阳残灵支援逐步扭转战局，属于非常标准的“绝境翻盘”名场面。</li>
+<li><strong>最意外</strong>：追缉的大盗首领已成尸体，这个转折很有“人还没抓到，线索对象先凉了”的地下迷局感。</li>
+<li><strong>最有成就感</strong>：四神兵解封并共鸣压制邪祟，给人一种“前期探索终于兑现为终局战力”的爽感。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>丁真侦察门卫雕像为机关</strong>：属于关键性成功检定，直接避免团队在兵器库中踩雷。</li>
+<li><strong>精神对抗检定</strong>：除丁真外全员通过，说明队伍虽然被邪气压迫，但整体意志足够稳，成功营造了“危险逼近”的氛围。</li>
+<li><strong>杀珀天终局连续高额输出</strong>：从叙事效果看相当于多次命中/高值爆发的决定性成功，是最具结算感的检定表现。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“门卫雕像是机关”</strong>这一发现本身就很有TRPG味道：看似摆设，实则埋雷，符合典型模组机关设计。</li>
+<li><strong>碧光菇机制被逐步试出来</strong>的过程很有桌面感，体现了玩家通过试错把战斗从混乱变为可控的思路。</li>
+<li><strong>丹阳残灵的登场</strong>像是剧情和战斗双重“救火”，既合理又带有一点“天降外挂”的爽快感。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份分析报告整理成更适合发布的版本，例如：</p>
+<ol>
+<li><strong>贴吧/论坛复盘风格</strong></li>
+<li><strong>更像官方模组点评的专业风格</strong></li>
+<li><strong>带“玩家评分/DM评价/机制复盘”三栏的增强版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

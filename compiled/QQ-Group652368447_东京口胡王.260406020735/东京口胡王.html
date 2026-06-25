@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>东京口胡王 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>东京口胡王</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《东京口胡王》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组的舞台设在东京的一家 wargame 店，表面上是普通的送货事故，实则迅速滑向“疑似军火/爆炸物事件”的荒诞喜剧。核心冲突并不在真正的犯罪对抗，而在于：<strong>一件超重神秘货物为何会出现在店里、它到底是什么、以及相关人员如何在警察介入下证明自己的清白</strong>。故事的张力主要来自误会层层升级，玩家则在“普通物流工作”与“刑事案件嫌疑人”之间被迫切换。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>桃井太郎作为送货员，将一个明显异常的超重巨箱送到东京某家 wargame 店。箱子体积惊人、重量离谱，连搬运都成问题，但店主却显得格外兴奋，似乎早已知道这批货的特殊性，并急忙签收。就在交易刚完成不久，警察突然上门，将现场迅速拉入刑事案件的氛围。经过调查与询问，众人震惊地发现，箱内并非普通道具，而是疑似带有爆炸物性质的“巨型炮弹”——这让原本看似离谱的配送事故，瞬间变成了“军火走私未遂”的高危事件。</p>
+<p>在随后的一连串录口供、解释与排查中，PC们虽然暂时洗清了直接嫌疑，但“爆炸物究竟来自何处、是谁寄送、为何会流入这家店”仍未得到明确答案。最终，众人被释放并送回店里，案件表面平息，却留下了足以继续追查的悬念。整个模组以强烈的误会喜剧开场，在警方介入后将无厘头推向荒诞，再以“尚未查明的来源”收束，既保留了闹剧感，也埋下了后续展开的空间。</p>
+
+<h3>结局与收尾</h3>
+<p>本次事件中，PC们未被定性为嫌犯，短暂配合调查后被送回店内；真正的问题——爆炸物来源与货物性质——仍未彻底解决。结局是典型的“<strong>人回来了，麻烦没走</strong>”：外部危机解除，内部谜团保留，为模组留下余韵。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）</h3>
+
+<h4>桃井太郎</h4>
+<ul>
+<li><strong>性格特征</strong>：务实、直接、略带“被卷入麻烦也只能硬着头皮干”的打工人气质。</li>
+<li><strong>关键行为</strong>：负责搬运和送货，是事件的直接触发者。</li>
+<li><strong>高光时刻</strong>：尽管是最普通的物流环节承担者，却成为整起“军火误会案”的中心人物，角色存在感极强。</li>
+<li><strong>表现亮点</strong>：他的失败并不削弱戏剧性，反而成为荒诞升级的起点——越想把货送稳，事情越往失控方向发展。</li>
+</ul>
+
+<h3>其他PC/共同行动者</h3>
+<p>由于摘要信息较少，其他PC的具体人格与个人弧光无法完整还原，但从整体流程看，玩家群体的核心功能主要是：</p>
+<ul>
+<li>在警方到场后共同解释、应对盘问；</li>
+<li>在“看起来很像犯罪现场”的气氛中制造笑点与反差；</li>
+<li>作为旁观者/参与者推动误会的进一步发酵。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<h4>店主</h4>
+<ul>
+<li><strong>作用</strong>：事件的关键接货人，也是“异常货物为何被收下”的核心见证者。</li>
+<li><strong>行为特点</strong>：对超重巨箱异常兴奋，似乎期待这批货的到来。</li>
+<li><strong>剧情功能</strong>：他强化了“这不是普通包裹，而是有特殊背景的货”的疑云，也让警方更容易怀疑此处存在秘密交易。</li>
+<li><strong>人物效果</strong>：给人一种“知道很多但不说透”的神秘感，是喜剧误会的重要助推器。</li>
+</ul>
+
+<h4>警察</h4>
+<ul>
+<li><strong>作用</strong>：外部秩序的介入者，将原本的物流荒诞升级为刑事调查。</li>
+<li><strong>剧情功能</strong>：通过突如其来的搜查与询问，让玩家从“搬货”瞬间进入“录口供”模式，制造强烈的场景反差。</li>
+<li><strong>人物效果</strong>：不是单纯反派，而是推动真相浮现的程序性力量；他们的出现本身就成为笑点。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 送货抵达：异常巨箱登场</h3>
+<p>桃井太郎将货物运到东京的一家 wargame 店。箱子不仅超重，而且明显超出一般商品的合理范围。这个开场马上向玩家释放危险信号：这不是普通快递，而是某种足以引发麻烦的特殊货物。店主却对这箱子表现出明显兴奋，似乎早已预料到它的重要性。</p>
+
+<h3>2. 交接异常：店主签收，疑云加深</h3>
+<p>店主迅速签收，几乎没有犹豫，这种反常态度反而让“货里到底是什么”变得更可疑。此时剧情已从单纯的送货转向“黑箱交易”的既视感。玩家原本只是来完成工作，却逐渐意识到自己正站在一件危险事件的边缘。</p>
+
+<h3>3. 警方突袭：案件性质升级</h3>
+<p>就在现场交接完成后，警察突然赶到。整个场面从日常直接跳转到刑事调查，张力陡增。警方很快发现，这个巨箱里装着的并非普通道具，而是疑似带爆炸物的巨型炮弹。原本只是“奇怪的大包裹”，瞬间升级成“可能涉及爆炸物的危险案件”。</p>
+
+<h3>4. 录口供与排查：嫌疑暂解，但真相未明</h3>
+<p>PC们被带去录口供，接受询问与调查。虽然最终暂时洗清嫌疑，但案件源头并没有被彻底查明：爆炸物从何而来、是谁寄送、又为何会送到这家店，依旧悬而未决。这一阶段的重点不是战斗，而是逻辑上的自证与误会解除。</p>
+
+<h3>5. 事件暂告段落：送回店内，留下后续悬念</h3>
+<p>在完成必要程序后，PC们被送回店里，事件表面上平息。可真正的谜题——货物来源与其真实用途——仍然存在。模组在此收束于“暂时安全、但问题未解”的状态，为后续剧情或二次展开保留空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最意外</strong>：一个普通的送货任务，硬生生转成了“疑似爆炸物案件”，反差极强。</li>
+<li><strong>最搞笑</strong>：店主对超重巨箱的兴奋态度，与警方到场后形成鲜明对比，仿佛所有人都默认这批货“很正常”，只有外部世界觉得不对劲。</li>
+<li><strong>最有戏剧性</strong>：警察突然登场的瞬间，把整个故事从生活流拉成刑侦喜剧，是典型的“天降大事”。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>力量检定失败</strong>：桃井太郎尝试搬运超重包裹，`力量 D100=72/20 失败`。</li>
+</ul>
+<p>这个失败极好地奠定了开局氛围：不是玩家不努力，而是这箱子真的离谱地重。它既提供了喜剧效果，也为后续“这货肯定不正常”提供了合理铺垫。</p>
+<ul>
+<li><strong>多次随机检定高点数</strong>：包裹重量、内容物、军火储备等连续掷出高值。</li>
+</ul>
+<p>这种“数字层层加码”的方式让危险感不断升级，同时也让玩家从概率上逐步接受：这不是误会一闪而过，而是系统在认真告诉你——这里真的有大问题。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>店主签收时的异常兴奋</strong>：这种“明知不对劲却照单全收”的表现非常像黑帮交易前的戏码，极具口胡感。</li>
+<li><strong>警方到场后的瞬间切换</strong>：从商业配送到刑事调查，节奏断裂感本身就是笑点。</li>
+<li><strong>“暂时洗清嫌疑，但来源待查”</strong>：这句结果非常有黑色幽默意味，等于告诉玩家：你们没事了，但故事真正麻烦的地方才刚刚开始。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结</h2>
+<p>《东京口胡王》这一段日志体现了非常典型的“日常任务→荒诞升级→警方介入→真相未明”的喜剧型模组结构。它的魅力不在复杂谜题，而在于<strong>把一个小小的送货事故，层层推成足以进警局的爆炸物事件</strong>。桃井太郎的搬运失败、店主的可疑兴奋、警察的突然登场，共同构成了一个极具画面感的荒诞故事，既好笑又带点紧张感，十分适合做成短篇高密度的黑色幽默跑团。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

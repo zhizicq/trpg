@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗山雪影 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>暗山雪影</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《暗山雪影》是一则典型的“雪山逃生”型副本，但其外壳之下包裹着更浓厚的末世废墟与遗民守望主题。故事发生在一处被暴风雪、污染粉尘和战争遗留物彻底隔绝的山地废镇：铁路中断、人员撤离、军队与不明追猎者游荡，唯一的生路似乎只剩下一列藏在北山谷里的蒸汽列车。</p>
+<p>核心冲突很明确：<strong>玩家必须在环境伤害、追兵威胁与资源匮乏的三重压力下，找到离开雪山的方法</strong>；而在“逃离”这一生存命题背后，又埋着一个更安静的主题——<strong>这座小镇与留守者Xier的命运是否会被人记住</strong>。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>戴维斯与叁被所谓“代理主神”强行投入雪山副本，开局就被暴风雪、腐蚀性污染粉尘与未知追猎者逼得一路狂奔。叁用风水占卜得出“凶！死兆将至”，很快便应验：他们遭遇苍狼拦截，双双带伤逃入一座死寂的废弃山镇。镇上残留的警局、杂货店与车票信息拼出一段末世往事——终末战争、污染扩散、铁路受阻后居民被迫撤离，唯有某些人或某些存在还留在这里。两人随后进入剧院，遇见独守此地的仿生少女Xier，在有限交流中确认了小镇的孤绝与她的存在意义。</p>
+<p>离开剧院前往月台的途中，严寒成为新的敌人：戴维斯体质检定大失败，几乎当场冻垮，叁也严重掉血，只得先折返剧院借热水和毛毯恢复。得知离开小镇的唯一可靠交通工具是北山谷蒸汽列车后，二人再次赶往月台，却发现旧机车因燃料冻结无法启动。关键时刻，戴维斯依靠接连的幸运与灵感检定，用火把与“光学隐身”般的奇思妙想成功点燃燃料，让列车重新运转。与此同时，追来的防化服骷髅部队不断开火，叁先行迎敌却被弩箭射杀退场，戴维斯也在列车驶离前被乱枪击中濒死。最终，列车冲出雪山，玩家成功逃离，而这座小镇与Xier的故事则被风雪永久掩埋。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是标准的“成功逃脱，但代价惨重”。蒸汽列车最终启动并驶离雪山，证明了主线目标达成；但从叙事上看，这不是一个圆满胜利，而是一次带着失落与无力感的撤离。叁与戴维斯都在终局前后承受了高强度伤害，分别以“被射杀”和“濒死命中”方式退场，强化了副本的残酷性。</p>
+<p>更重要的是，Xier与废弃小镇并没有被真正拯救，只是被短暂照亮了一次。玩家离开了，故事却留在风雪里，形成一种很有余韵的“见过、触碰过、但无法带走”的结尾。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC：戴维斯</h3>
+<p><strong>性格与定位</strong>：</p>
+<p>戴维斯的表现偏向“实干型/技术型生存者”，在极端环境下不断用行动解决问题，尤其擅长临场应变。相比叁的玄学警示，戴维斯更像是那个真正推动剧情前进的人：侦查车票、寻找出路、摸索机车启动方式，都是他在承担。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>在警局/杂货店等地点进行侦查，挖掘出铁路与城镇背景信息。</li>
+<li>在机车失效时，凭借连续检定与创造性思路尝试点燃冻结燃料。</li>
+<li>面对严寒和追兵压力，始终在为“怎么走”而非“要不要走”找方案。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>用火把和“光学隐身”式操作成功让蒸汽机车启动，是全团最关键的推进点。</li>
+<li>连续幸运/灵感表现，体现出“在绝境里靠脑子与运气硬翻盘”的戏剧性。</li>
+</ul>
+
+<p><strong>人物弧光</strong>：</p>
+<p>戴维斯不是那种情绪表达强烈的角色，但他的弧光体现在“从被丢进副本的被动者，变成真正把大家带出去的人”。他最后虽然也倒在枪火下，却完成了任务意义上的胜利。</p>
+
+<hr>
+
+<h3>PC：叁</h3>
+<p><strong>性格与定位</strong>：</p>
+<p>叁明显带有玄学、直觉和仪式感色彩，是团队中的“预兆解读者”。他对危险的感知非常敏锐，但表达方式偏夸张，充满“死兆将至”的戏剧效果。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>通过风水占卜提前给出凶兆判断，起到气氛制造与风险提示作用。</li>
+<li>在苍狼拦截、严寒消耗与追兵战中承担正面压力。</li>
+<li>在关键时刻先冲上去迎敌，体现出硬扛和断后的倾向。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>“凶！死兆将至”这类预警既是笑点也是伏笔，后续一一应验，极具模组观感。</li>
+<li>明知危险仍主动迎敌，表现出角色的胆气与不服输。</li>
+</ul>
+
+<p><strong>人物弧光</strong>：</p>
+<p>叁的弧光更像“预见了结局，却仍选择前进”。他并没有改变命运，但他的存在让这趟雪山逃亡更像一场命运对抗。最终阵亡也让他的预言感显得格外沉重。</p>
+
+<hr>
+
+<h3>重要NPC：Xier</h3>
+<p><strong>身份与作用</strong>：</p>
+<p>Xier是废弃剧院里独守的仿生少女，是本模组最具情感温度的NPC。她既是剧情信息源，也是氛围锚点，负责把“废墟”从单纯地图变成“仍有人在此生活/守望”的地方。</p>
+
+<p><strong>作用分析</strong>：</p>
+<ul>
+<li>她让玩家意识到镇子并非空无一物，而是仍有某种残存的生命与意识。</li>
+<li>她的存在与剧院空间相呼应，强化“终末之地的静默表演”意象。</li>
+<li>虽然摘要里没有完整展开她的对话细节，但可以看出她承担了温柔、疏离、遗留记忆的叙事功能。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC/势力：代理主神</h3>
+<p><strong>作用</strong>：</p>
+<p>“代理主神”是副本的强制投放者，也是故事的起点。它不直接参与雪山危机，却决定了PC必须进入这场生存挑战。</p>
+<p>从叙事结构看，它是“外部意志”的代表：把人扔进灾难里，再让他们自己找出口。其存在感虽然不是剧情核心，却是模组整体压迫感的重要来源。</p>
+
+<hr>
+
+<h3>重要敌对势力：苍狼与防化服骷髅部队</h3>
+<p><strong>苍狼</strong>：前期的野外威胁，负责把“逃亡”氛围立起来。它们让玩家刚进副本就体会到自然与怪物双重压力。</p>
+<p><strong>防化服骷髅部队</strong>：终局追兵，既有末世军事残响，又带有超现实恐怖感。它们的出现把“废弃山镇”与“战争遗留”这一背景彻底钉实，并以火力压迫推动结局列车逃离。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 被投入雪山副本，开局即逃亡</h3>
+<p>戴维斯与叁被“代理主神”强行送入雪山任务场景。暴风雪、污染粉尘和未知追猎者构成最初的生存压力，二人几乎是被环境推着向前跑。叁在途中进行风水占卜，直接抛出“凶！死兆将至”的判断，为整个副本定下高危基调。</p>
+
+<h3>2. 苍狼拦路，逃入废弃山镇</h3>
+<p>不久后，苍狼在途中拦截，两人遭遇正面冲突并受伤，只得放弃野外路线，仓皇逃进一座死寂的废弃小镇。这里的建筑仍保留着功能残骸，像是时间突然断裂后的遗址，空气里只有寒意和旧时代的残影。</p>
+
+<h3>3. 调查镇内残留信息，拼出末世往事</h3>
+<p>在警局与杂货店中，戴维斯进行了侦查，逐步得知：这座镇子因终末战争、污染蔓延和铁路受阻而最终撤离。与此同时，他还发现了一张通往品品市的火车票，为“这里曾连接外界”提供了具体证据，也让“离开”的概念从抽象变成可追索的现实线索。</p>
+
+<h3>4. 进入剧院，遇见独守的仿生少女Xier</h3>
+<p>随后两人进入剧院，在这里见到Xier。她的出现让整座废镇突然有了“仍在运作的心脏”。玩家开始尝试交涉，并寻找逃离路线。剧院不仅是剧情转折点，也像是这座城镇残存文化记忆的容器。</p>
+
+<h3>5. 前往月台，严寒成为新的敌人</h3>
+<p>离开剧院后，玩家决定去月台寻找交通工具。但雪山的寒冷远比想象中致命：戴维斯体质检定大失败，几乎冻垮；叁也因寒冷而掉血严重。二人被迫回剧院，借助热水、毛毯与NPC帮助恢复体力。这段剧情的重点在于：<strong>敌人不只是怪物，环境本身就是杀手</strong>。</p>
+
+<h3>6. 确认唯一出路：北山谷蒸汽列车</h3>
+<p>恢复后，玩家得知离开小镇的最可靠方式是北山谷的蒸汽列车。这个信息相当关键，因为它把前半段的探索目标统一成“去火车那边”，也让故事从散点调查转向明确撤离。</p>
+
+<h3>7. 机车失灵，戴维斯以多次检定逆转局面</h3>
+<p>重返月台时，旧蒸汽机车因燃料冻结无法启动，撤离任务几乎陷入死局。戴维斯在这一段连续进行幸运与灵感检定，最终用火把与近似“光学隐身”的奇策把冻结燃料点燃，使列车重新具备启动条件。这是整场模组最关键的技术性成功，也是剧情真正翻盘的节点。</p>
+
+<h3>8. 追兵压境，叁战死，戴维斯濒死</h3>
+<p>就在列车准备脱离雪山时，防化服骷髅部队追至并开火。叁选择先行迎敌，结果被弩箭射杀退场；戴维斯也在列车驶离前遭乱枪击中，濒死退出。尽管代价极大，但这恰恰说明他们确实是在“火线撤离”中完成任务，而不是轻松脱困。</p>
+
+<h3>9. 蒸汽列车驶离雪山，故事归于风雪</h3>
+<p>最终列车成功脱离雪山，玩家完成副本目标。可与此同时，废弃小镇、剧院、Xier以及那些未被讲完的往事，也都重新沉入暴风雪中。结局不是“英雄拯救世界”，而是“活着离开了，但很多东西留在了那里”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>叁开场就占卜出“凶！死兆将至”</strong>：经典的“你说得很对，但你马上就会发现更对”的预言桥段，既有喜感又很有压迫感。</li>
+<li><strong>戴维斯靠火把和“光学隐身”启动蒸汽列车</strong>：这是整段最离谱也最精彩的逆转，充满“玩家把不可能当可交互对象来处理”的跑团美感。</li>
+<li><strong>废弃剧院里遇见独守的仿生少女Xier</strong>：在满是雪、血与腐蚀粉尘的剧情里，突然插入一个安静、孤独、带点童话感的NPC，非常意外，也最容易让人记住。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>戴维斯体质大失败，险些冻垮</strong>：严寒环境的惩罚感拉满，直接证明本模组不是单靠战斗就能过的。</li>
+<li><strong>戴维斯多轮幸运/灵感成功</strong>：这组检定几乎等于“奇迹启动器”，把整列车救活。</li>
+<li><strong>叁在正面迎敌后被弩箭射杀</strong>：虽然具体未明确是检定结果，但作为结局性的战斗退场，冲击力很强。</li>
+<li><strong>戴维斯最终被乱枪命中濒死</strong>：让“逃出生天”保留了代价感，没有变成无伤通关。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“凶！死兆将至”</strong>：一句话就把整场跑团的宿命感拉满。</li>
+<li><strong>“唯一可靠方式是北山谷的蒸汽列车”</strong>：典型的废土逃生叙事关键句，像在宣告下一阶段任务。</li>
+<li><strong>“火把 + 光学隐身 = 启动机车”</strong>：非常适合复盘时被反复提起的神操作，属于玩家创造力胜利的代表。</li>
+<li><strong>Xier独守剧院</strong>的氛围本身就是一段沉默的好戏：没有大段对白，也足够让人印象深刻。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“战报/复盘文档”的版本，或者补一版“偏文学叙事”的模组赏析。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

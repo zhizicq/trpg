@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《冷雾迷踪》 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>《冷雾迷踪》</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《冷雾迷踪》是一则典型的“孤岛秘宝 + 封闭环境 + 人性贪念”式冒险模组。故事发生在一座被遗弃的德军军港及其周边山地、灯塔与地下设施中：旧军港曾在一战时期秘密运入来自南美的黄金与宝物，如今则被血迹、残骸与废墟包裹，像一座被历史和罪恶共同冻结的坟场。</p>
+<p>模组的核心冲突并不只是“寻找宝藏”，而是<strong>外来者对未知遗址的掠夺欲</strong>与<strong>岛上残存者的警惕与自保</strong>之间的碰撞。玩家一方面试图通过搜证、交涉和探索确认宝藏存在，另一方面却因武装姿态与行事冲动，将本可缓和的局面迅速推向暴力终局。</p>
+
+<h3><strong>主线剧情概要</strong></h3>
+<p>一支乘坐破旧蒸汽船来到废弃德军军港的队伍，在血迹、地下设施与旧账本中逐渐拼凑出一段被掩埋的历史：这里曾是秘密转运南美黄金与珍宝的地点，财富并未真正消失，而是以另一种方式被封存在岛上。沿着线索，他们进入山路，发现坠毁飞机与幸存者莫里森，又前往灯塔，遇见持枪少女珍妮与态度强硬的冉诺。原本可以通过解释、合作或暂时退让来避免冲突，但队伍内部的克莱因在对峙中率先暴起，打破谈判平衡，引发枪战。最终，玩家队伍在枪火中全灭，模组以一种近乎黑色幽默的方式收束：<strong>贪婪、误判与冲动共同酿成“愚蠢贪婪者的落幕”</strong>。整个故事的张力来自于“宝藏近在眼前”与“理性几乎无法战胜欲望”的反讽。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局为全员团灭，没有形成传统意义上的“胜利收尾”，而是以悲剧讽刺作结。军港宝藏的真相虽被部分揭开，但玩家并未真正掌握其完整命运；相反，他们在灯塔对峙中因先发制人的暴力行为葬送了自己。模组最终强调的不是“找到黄金”，而是<strong>谁有资格触碰黄金、谁能在贪欲与恐惧之间保持克制</strong>。从叙事角度看，这种结局强化了模组的冷峻气质，也为“迷踪”这一标题提供了双重含义：不仅是宝藏的迷失，也是人心的迷失。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<p>> 由于分段摘要中未完整给出所有PC姓名与行动细节，目前能明确抓取到的核心角色是克莱因；其余成员可归纳为“团队整体”。</p>
+
+<h4><strong>克莱因</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：冲动、好斗、缺乏风险评估，带有明显的“先动手再说”倾向。</li>
+<li><strong>关键行为</strong>：在灯塔与珍妮、冉诺对峙时贸然暴起，直接打破僵局，引发枪战。</li>
+<li><strong>高光/失误时刻</strong>：他的“高光”实际上是反面教材式高光——以极快速度把本可交涉的局面带入失控，成为团灭导火索。</li>
+<li><strong>角色评价</strong>：克莱因在本模组中承担了“灾难触发器”的叙事功能。他并非没有行动力，而是行动力完全压过了判断力，最终让队伍从“探索遗迹”变成“死于自己手上”。</li>
+</ul>
+
+<h4><strong>队伍整体</strong></h4>
+<ul>
+<li><strong>性格倾向</strong>：偏主动探索，愿意搜集线索、调查账本、追踪坠机与灯塔。</li>
+<li><strong>关键行为</strong>：登岛后迅速推进剧情，对军港、地下设施、飞机残骸等地点进行连贯探索，说明团队对“谜题式冒险”接受度高。</li>
+<li><strong>问题所在</strong>：在关键社交节点缺乏统一策略，尤其面对持枪未知势力时，没有建立明确的谈判边界，导致局面被单点失控拖垮。</li>
+<li><strong>团队弧光</strong>：从“试图弄清真相的外来者”迅速滑向“被误判为威胁的武装入侵者”，最终以团灭证明：在高压环境中，团队协作与克制比火力更重要。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>莫里森</strong></h4>
+<ul>
+<li><strong>作用</strong>：坠机幸存者，承担“第二段线索的过渡角色”。</li>
+<li><strong>性格与表现</strong>：高度警觉、抗拒接触，看到玩家后第一反应是保持距离，明确表达“离我的飞机远点”。</li>
+<li><strong>剧情功能</strong>：他提供了“孤立幸存者”这一氛围元素，也让玩家意识到岛上并非完全无人。但其拒绝合作，反而增加了神秘感与不信任感。</li>
+<li><strong>意义</strong>：莫里森像是一个被环境吓坏的人，既是线索节点，也是“岛上没人值得轻信”的提醒。</li>
+</ul>
+
+<h4><strong>珍妮</strong></h4>
+<ul>
+<li><strong>作用</strong>：灯塔处的持枪少女，是潜在的沟通窗口。</li>
+<li><strong>性格与表现</strong>：相对犹疑，愿意相信玩家可能只是落难者。</li>
+<li><strong>剧情功能</strong>：她为剧情提供了“尚可和平解决”的可能性，是冲突前最后的柔软面。</li>
+<li><strong>意义</strong>：珍妮的犹豫体现了岛上仍存在善意，但这种善意被克莱因的暴起彻底碾碎。</li>
+</ul>
+
+<h4><strong>冉诺</strong></h4>
+<ul>
+<li><strong>作用</strong>：灯塔冲突中的强硬对立者。</li>
+<li><strong>性格与表现</strong>：警惕、果断、充满防备心，直接将玩家描述为“武装到牙齿的暴徒”，并警告珍妮不要轻信。</li>
+<li><strong>剧情功能</strong>：他是“理性防卫”的代表，强化了外来者入侵感。</li>
+<li><strong>意义</strong>：冉诺的判断未必完全错误，至少从岛上视角看，玩家确实高度可疑。他在道德上并不亲和，但在逻辑上站得住脚。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：抵达军港，揭开血色遗址</strong></h3>
+<p>队伍乘坐一艘破旧蒸汽船抵达一座废弃的德军军港。港口并非真正“废弃”，而是长期无人维护、却残留大量暴力痕迹的封闭场所：血迹、地下设施、陈旧军备与一份关键账本共同说明，这里曾长期进行隐秘运输。账本中写明，1916年曾有“南美洲宝物和黄金”入库，证明此地曾是秘密宝藏的转运节点。</p>
+<p>在初步调查后，玩家沿山路深入，找到坠毁飞机与幸存者莫里森。莫里森对玩家充满戒备，不愿透露过多信息，甚至要求他们远离飞机。玩家尝试以话术或威吓逼问，但均未奏效，只得暂时放松控制，让其离开。此阶段的气氛已明显从“调查”转向“互相猜疑”：港口的旧账本提供了宝藏存在的硬证据，而莫里森则进一步加深了岛上信息碎片化、人物彼此不信任的局面。</p>
+
+<h3><strong>第2章：灯塔对峙，误判引爆枪战</strong></h3>
+<p>继续沿线索推进后，队伍来到灯塔，遇见持枪少女珍妮及同行的冉诺。这里本有机会通过解释身份、澄清动机来换取合作，但双方在第一轮接触中就已充满火药味。珍妮尚有一定同情心，认为这些人也许只是落难者；冉诺则直接将他们视为“海盗或帝国敌人”，态度强硬且不留余地。</p>
+<p>就在局势尚未完全失控时，克莱因突然暴起，打破了所有谈判可能。枪声随之响起，灯塔对峙迅速演变为致命战斗。最终，玩家队伍全灭，所有积累的线索、探索与宝藏期待都在这一刻被暴力清空，模组也以“愚蠢贪婪者的落幕”作为结尾，形成强烈讽刺。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：克莱因在灯塔对峙中突然暴起，直接把“可能还能谈”的局面炸成团灭。这种从社交局秒切战斗局的断崖式转折，非常有戏剧张力。</li>
+<li><strong>最有氛围</strong>：废弃德军军港、地下设施、血迹与账本的组合，极适合营造“历史阴影下的冷雾感”。</li>
+<li><strong>最黑色幽默</strong>：玩家辛苦追踪黄金线索，最后却死在宝藏入口前的枪战中，堪称“离财富最近的一次，也是离死亡最近的一次”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>莫里森相关交涉失败</strong>：玩家对莫里森的劝说、话术和恐吓均未奏效，说明该NPC设定上就极不信任外人，也体现了玩家在信息控制上的无力。</li>
+<li><strong>灯塔冲突的关键失控</strong>：虽然未明确写出某个检定数字，但从结果看，灯塔场景的“社交稳定检定”相当于大失败。克莱因的先手行为可以视作一次彻底失败的局势判断。</li>
+<li><strong>账本线索解读成功</strong>：账本中“1916年南美洲宝物和黄金”的记载是全团最重要的认知推进点，等于是模组的“真相点亮”。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>莫里森</strong>：“你们是什么人，离我的飞机远点。”</li>
+</ul>
+<p>简短但极具角色性格，直接把“幸存者的排斥感”拉满。</p>
+<ul>
+<li><strong>冉诺的质问</strong>：“你们是什么人？”</li>
+</ul>
+<p>配合“这些武装到牙齿的暴徒”这一判断，让他像一位过度警戒但并非毫无道理的守门人。</p>
+<ul>
+<li><strong>珍妮试图相信玩家</strong></li>
+</ul>
+<p>这是本模组最可惜的一点：她代表了谈判的最后窗口，却没能改变结局，因此反而显得更有悲剧感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结评价</h2>
+<p>《冷雾迷踪》是一则结构清晰、氛围浓重、结局极具讽刺意味的短篇调查冒险。它的核心卖点在于：<strong>线索链明确、地点切换自然、历史秘宝与当代冲突结合紧密</strong>。而其最大的戏剧爆点，则来自玩家阵营自身的失控——尤其是克莱因的冲动，直接将模组推向“悲剧团灭”路线。</p>
+<p>从复盘角度看，这个模组最值得强调的不是“宝藏到底有多少”，而是“玩家如何一步步错失把故事变成合作冒险的机会”。这让《冷雾迷踪》成为一则非常典型的TRPG反面教材：<strong>在未知与恐惧面前，枪并不总是最有效的答案。</strong></p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

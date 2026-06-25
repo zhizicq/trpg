@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百灵鸟不会成为黄油女主 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>百灵鸟不会成为黄油女主</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本作的舞台建立在一个<strong>濒临崩坏的奇幻世界</strong>：魔王释放“魔种”，导致世界正在走向毁灭。玩家角色在主神任务的安排下，被迫卷入一场“协助勇者完成试炼”的冒险之中。</p>
+<p>核心冲突主要有两层：</p>
+
+<ol>
+<li><strong>宏观层面</strong>：世界末日将至，勇者试炼是拯救世界的关键。</li>
+<li><strong>微观层面</strong>：PC作为外来者既被任务裹挟，又因彼此立场、判断与信任问题，和教会阵营迅速产生对立。</li>
+</ol>
+
+<p>本段日志中，真正推动剧情的并不是“魔王有多强”，而是<strong>玩家与教宗立希之间的信任崩塌</strong>：立希本来愿意协助他们返回原世界，甚至提供情报，但PC们因怀疑其动机、沟通不畅以及洞悉失败，最终把本可成为盟友的人推向敌对，导致被关进封印结界，继而引发失控召唤与怪物战斗。</p>
+
+<h3>主线剧情概要</h3>
+<p>众人从昏迷中醒来时，已经身处教堂地下室，并接到了来自主神的明确任务：协助勇者完成试炼。此时他们接触到教宗立希与修女若叶睦，得知世界正因魔王释放魔种而濒临毁灭。立希一开始对他们并无敌意，甚至愿意帮助他们返回原来的世界，但PC们对其态度与立场存疑，反复试探与质疑，使双方关系迅速恶化。立希认为自己遭到冒犯与不信任，转而将众人投入封印结界，限制其行动。被困后的林晓梅试图利用法术仪式寻求脱困办法，在成功拿到仪式知识后却因后续检定失控，误召唤出一只蝎尾狮，局面从“交涉失败”直接升级为“战斗爆发”。这一段剧情完成了从信息揭露、阵营初接触，到误会激化、失控召唤的完整起落，也为后续更大的试炼与冒险埋下了“信任成本极高”的基调。</p>
+
+<h3>结局与收尾</h3>
+<p>本段剧情的收尾并非传统意义上的“解决问题”，而是一个典型的<strong>恶化收束</strong>：</p>
+<ul>
+<li>PC与教会阵营的关系破裂；</li>
+<li>众人被关入封印结界；</li>
+<li>林晓梅失控召唤蝎尾狮，战斗开始；</li>
+</ul>
+
+<p>因此，这一幕更像是模组的<strong>开局危机</strong>或“序章爆点”。它没有解决世界毁灭的主线，反而通过一场失控事件把角色们推入更危险、更被动的处境，完成了开场的戏剧性抬升。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 林晓梅</h4>
+<ul>
+<li><strong>性格特征</strong>：谨慎中带有强烈的求生欲，行动力强，遇事倾向于先找办法脱困，而不是等待他人安排。</li>
+<li><strong>关键行为</strong>：在被困后主动尝试借法术仪式传送，体现出她不愿坐以待毙。</li>
+<li><strong>高光时刻</strong>：奥秘检定成功拿到仪式知识，说明她具备较强的探索与技术型思维。</li>
+<li><strong>失误与反转</strong>：d90=67导致召唤失控，直接把“脱困尝试”变成“怪物事故”。这一幕是典型的“聪明反被聪明误”，也制造了非常强的喜剧/灾难效果。</li>
+</ul>
+
+<h4>2. 白明</h4>
+<ul>
+<li><strong>性格特征</strong>：敏感、警惕、偏理性判断，容易关注环境中的隐性威胁。</li>
+<li><strong>关键行为</strong>：多次尝试洞悉立希，但未能成功说服对方。</li>
+<li><strong>高光时刻</strong>：察觉结界内存在监视与限制，说明其对环境控制机制有较强的警觉性。</li>
+<li><strong>角色作用</strong>：白明像是团队中的“风险雷达”，负责看穿表象背后的控制结构。虽然交涉失败，但她的观察为后续“这地方不对劲”提供了依据。</li>
+</ul>
+
+<h4>3. 斯莉扎</h4>
+<ul>
+<li><strong>性格特征</strong>：和白明一样偏向试探、判断局势，可能更倾向于通过洞察和对话寻找破绽。</li>
+<li><strong>关键行为</strong>：多次洞悉失败，未能说服立希。</li>
+<li><strong>高光时刻</strong>：虽然没有成功压过立希，但她在交涉阶段持续施压，体现出不轻易接受权威的姿态。</li>
+<li><strong>角色作用</strong>：她代表了团队中对“权威叙事”保持怀疑的一侧，与白明共同构成了“质疑教宗”的主力。</li>
+</ul>
+
+<h4>4. 团队整体表现</h4>
+<ul>
+<li><strong>共同特征</strong>：PC们对陌生环境与权威人物天然不信任，倾向于先确认对方是否值得合作。</li>
+<li><strong>剧情效果</strong>：这种风格本身并无问题，但在本段中因为沟通失败和关键洞悉失败，最终把可争取的盟友推远，形成了强烈的“误判代价”。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 立希（教宗）</h4>
+<ul>
+<li><strong>身份作用</strong>：教会领袖，承载世界观说明与阵营立场展示的关键NPC。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>向PC揭示“世界要毁灭了”的主线危机；</li>
+<li>曾愿意帮助PC回到原世界，显示其并非纯粹敌对；</li>
+<li>因PC的怀疑和冒犯而翻脸，将其投入封印结界，成为本段冲突升级的直接推动者。</li>
+<li><strong>人物特征</strong>：立希并非模板式反派，而是典型的“有原则、有判断、但不容挑衅”的权威角色。她的转向使剧情更有张力，也让玩家切身感受到“言语选择”的后果。</li>
+</ul>
+
+<h4>2. 若叶睦（修女）</h4>
+<ul>
+<li><strong>身份作用</strong>：陪同教宗出现的辅助NPC，承担气氛缓冲、场景补充与教会形象展示。</li>
+<li><strong>剧情功能</strong>：在教宗与PC之间形成柔性的中介感，强化教会不是单一暴力阵营的印象。</li>
+<li><strong>人物特征</strong>：从目前信息看，她更像是礼貌、温和、观察局势的陪衬型角色，但也能让整个教堂场景更完整、更有生活感。</li>
+</ul>
+
+<h4>3. 主神</h4>
+<ul>
+<li><strong>身份作用</strong>：任务发放者与“超然规则”的象征。</li>
+<li><strong>剧情功能</strong>：用“协助勇者完成试炼”将PC绑定进主线，说明玩家并不是自发进入冒险，而是被某种更高层的力量拉入棋局。</li>
+<li><strong>人物意义</strong>：强化了“被迫参与”的宿命感，也为后续的试炼结构预留空间。</li>
+</ul>
+
+<h4>4. 魔王与魔种</h4>
+<ul>
+<li><strong>身份作用</strong>：世界末日的根源性威胁。</li>
+<li><strong>剧情功能</strong>：虽然尚未正式登场，但作为背景危机已足够塑造压迫感。</li>
+<li><strong>人物意义</strong>：它们是整个模组的终极敌对目标，也是勇者试炼存在的原因。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 苏醒与任务降临</h3>
+<p>PC们醒来后发现自己身在教堂地下室，同时接到主神任务，要求他们“协助勇者完成试炼”。这一开场迅速确立了两件事：</p>
+<ul>
+<li>他们被卷入了一个不熟悉的世界；</li>
+<li>他们的行动目标并非单纯“逃离”，而是与“勇者试炼”绑定。</li>
+</ul>
+
+<h3>2. 教会接触与世界观揭示</h3>
+<p>众人随后接触到教宗立希与修女若叶睦。立希直接抛出核心信息：<strong>世界要毁灭了。</strong></p>
+<p>她解释当前危机来自魔王释放魔种，导致世界濒临崩坏。这一段是本模组的世界观宣告，也是玩家理解后续行动必要性的关键节点。</p>
+
+<h3>3. 立希的初始善意与信任破裂</h3>
+<p>立希最初其实是愿意帮忙的，甚至考虑过送PC回原世界。</p>
+<p>但PC们并未完全接受她的说法，白明与斯莉扎多次洞悉失败，无法说服立希；与此同时，白明察觉结界内存在监视与限制，进一步加深了他们对教会的警惕。</p>
+<p>这种“你怀疑我、我也怀疑你”的局面，使双方很快从潜在合作关系变成对峙关系。</p>
+
+<h3>4. 被投入封印结界</h3>
+<p>在持续的怀疑与沟通失败后，立希翻脸，将众人丢进封印结界。</p>
+<p>这一转折非常关键：</p>
+<ul>
+<li>它将剧情从“交涉线”直接切换到“困境线”；</li>
+<li>也说明立希并非能够靠嘴炮无限沟通的对象；</li>
+<li>同时给玩家施加了明确压力，迫使他们寻找强制性的脱困方案。</li>
+</ul>
+
+<h3>5. 林晓梅尝试法术仪式脱困</h3>
+<p>在被困状态下，林晓梅试图借来法术仪式传送，证明她是最积极尝试解决问题的人。</p>
+<p>她先通过奥秘检定成功获取了仪式知识，显示出一种“找到了可行路径”的希望。但随后掷出 <strong>d90=67</strong>，造成召唤失控，结果不是传送成功，而是召唤出了蝎尾狮。</p>
+
+<h3>6. 蝎尾狮登场，战斗爆发</h3>
+<p>召唤事故将剧情从“封印困局”直接推入“怪物战斗”。</p>
+<p>这不仅是一次单纯的随机灾难，也象征着：</p>
+<ul>
+<li>PC的处境已经失控；</li>
+<li>他们无法依赖顺利的外交解决问题；</li>
+<li>任何操作都可能引发更大麻烦。</li>
+</ul>
+<p>至此，本段剧情以战斗开端收尾，为后续章节留下强烈悬念。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ol>
+<li><strong>立希直球宣告“世界，要毁灭了。”</strong></li>
+</ol>
+<p>简洁、强硬、信息量巨大，属于非常有冲击力的开场台词。</p>
+<ol>
+<li><strong>林晓梅从“借仪式脱困”到“召唤蝎尾狮”</strong></li>
+</ol>
+<p>这个反转非常有跑团味：前一秒还在认真研究术式，后一秒就把自己和队友一起送进更大的麻烦。</p>
+<ol>
+<li><strong>教宗从“愿意帮忙送回原世界”到“直接翻脸扔结界”</strong></li>
+</ol>
+<p>这种由于信任破裂导致的阵营转向，戏剧性很强，也很好笑——尤其是当玩家原本可能只是在试探的时候。</p>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>林晓梅奥秘检定成功</strong>：说明她确实找到了正确方向，属于“方法对了，但骰子不站你这边”。</li>
+<li><strong>d90=67导致召唤失控</strong>：典型大失败名场面，直接引爆剧情。</li>
+<li><strong>白明/斯莉扎多次洞悉失败</strong>：虽然没有改变局势，但非常符合“越想看穿局面越看不穿”的戏剧效果。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“世界，要毁灭了。”</strong></li>
+</ul>
+<p>这句几乎是本段最具代表性的台词，既是世界观说明，也是剧情起爆点。</p>
+<ul>
+<li><strong>“主神任务要求协助勇者完成试炼”</strong></li>
+</ul>
+<p>典型的模组钩子式设定，干脆直接，把“被卷入冒险”的氛围立住了。</p>
+<ul>
+<li><strong>玩家怀疑NPC，NPC反过来怀疑玩家</strong></li>
+</ul>
+<p>这是本段最有张力的桥段。不是单方面的“NPC解释、PC接受”，而是互相试探、互相否定，最终导致局势升级。</p>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/复盘帖的口语版</strong>，或</li>
+<li><strong>更正式的“模组观测报告”风格</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

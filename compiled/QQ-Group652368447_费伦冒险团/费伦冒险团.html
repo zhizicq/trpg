@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>费伦冒险团 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>费伦冒险团</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以“毕业考核”作为引子，却很快从学院任务扩展成一场横跨海港、海底遗迹、古代书库与城市阴影的冒险。表层上，费伦冒险团要完成资助者认可、借书调查、追查异常事件等一系列委托；深层里，则牵扯出<strong>蓝烛遗迹、海底巨人文明、沙华鱼人繁殖/献祭活动、怪物书与白鲸异象</strong>等多条线索。整个故事的核心冲突，是<strong>“新生冒险者”与“古老力量、失控知识、被伪装的委托人”之间的对抗</strong>：他们不断接到看似合理的任务，却发现每一步都通向更大的谜团，且所有线索都与海洋、知识、契约和异变生命有关。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>费伦冒险团在学院毕业规则变动后，改为前往蓝烛城争取资助者认可。他们先在海上遭遇鱼人袭击，抵达后又接受海洋学者拉普的邀请，乘潜水钟深入海底调查蓝烛气泡矿与相关遗迹。众人发现海底据点与沙华鱼人活动、卵群、巨人造物碎片有关，并在争夺神器“蓝烛之息”的战斗中付出代价，沙维尔一度阵亡后被卷轴救回。返岸后，他们识破拉普身份有诈，完成了第一次真正意义上的“冒险者课程”。随后团队在幕间成长、交易与训练中逐渐变强，却也因阿尔菲拉的危险契约埋下隐患。接着，千早交付新委托，要求他们前往烛堡取书。一路上白鲸袭船、风暴与海上意外不断，抵达后又在一座充满谜题的宅邸与地下实验室中，面对活化书籍、拟身怪、夸赛魔等怪物，逐步拼出“人工生命、炼金术、星图机关与怪书”之间的联系，带回关键书籍。返程后，众人将调查范围扩展到博德之门的可疑书摊与更广阔的阴谋网络，同时白鲸异象仍在加深，暗示模组真正的主线才刚刚展开。</p>
+
+<h3>结局与收尾</h3>
+<p>目前日志阶段并未抵达终局，整体属于<strong>“第一阶段主线完成、第二阶段线索铺开”</strong>的结构。已完成的收尾包括：</p>
+<ol>
+<li>蓝烛城任务阶段结束，拉普身份暴露并被击倒；</li>
+<li>烛堡取书任务完成，获得《马兹弗罗斯杂谈》等情报；</li>
+<li>队伍在多次战斗和事故后成功升级至3级；</li>
+<li>博德之门部分线索被接上，众人准备转向上城区集市继续追查。</li>
+</ol>
+
+<p>因此，这段模组更像一个连续展开的调查型长篇冒险的前半部，收尾重点不在“终局胜利”，而在于<strong>确认世界的危险性与主线谜团的层级升级</strong>。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 清雨</h4>
+<ul>
+<li><strong>性格</strong>：冷静、机敏、行动力强，属于团队里稳定的前排与观察者。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在鱼人袭击中以长棍和察觉能力扭转局面；</li>
+<li>在海底与后续战斗中多次承担近战压力；</li>
+<li>对异常线索较敏感，能迅速把战斗、碎片、遗迹联系起来。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>甲板战斗中稳定控场；</li>
+<li>发现蓝色碎片并意识到其价值；</li>
+<li>在多次危机里保持团队节奏。</li>
+<li><strong>角色定位</strong>：典型“稳场型前排”，是团队处理突发战斗时的可靠支柱。</li>
+</ul>
+
+<h4>2. 洛</h4>
+<ul>
+<li><strong>性格</strong>：反应快、法术运用果断，行动上有明显的战术意识。</li>
+<li><strong>关键行为</strong>：</li>
+<li>开局以睡眠术迅速控场；</li>
+<li>在海底和后续战斗中贡献法术支持；</li>
+<li>在多次危机中承担控制与救场角色。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>早期战斗中一发睡眠术稳定局势，体现“低等级神技”；</li>
+<li>与队伍配合完成多次围剿。</li>
+<li><strong>角色定位</strong>：团队里的节奏法师，擅长用低消耗法术建立优势。</li>
+</ul>
+
+<h4>3. 沙维尔</h4>
+<ul>
+<li><strong>性格</strong>：冒进、冲劲足，带点“先上再说”的莽感。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在海底战斗中一度冲得过头，导致倒地甚至阵亡；</li>
+<li>后续靠卷轴救回，成为团队最有“血条故事”的角色之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>虽然经常是风险来源，但也因此制造了最具戏剧性的战斗转折。</li>
+<li><strong>角色定位</strong>：高风险前排/搅局者，负责把战斗推向更刺激的局面。</li>
+</ul>
+
+<h4>4. 浮士德</h4>
+<ul>
+<li><strong>性格</strong>：理性、追问型，关注真相和背景，不满足于表层答案。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在白鲸异梦后向千早求证，主动补全世界观；</li>
+<li>在烛堡任务与后续线索中持续参与调查。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>从梦境与传闻中判断白鲸、巨人、巨龙和邪术师之间的关联，体现调查型玩家价值。</li>
+<li><strong>角色定位</strong>：剧情推进型角色，负责把零碎传闻整理成“可追踪的阴谋”。</li>
+</ul>
+
+<h4>5. 阿尔菲拉</h4>
+<ul>
+<li><strong>性格</strong>：大胆、功利心强、对力量有明确追求，同时带点“愿意赌一把”的危险气质。</li>
+<li><strong>关键行为</strong>：</li>
+<li>为换取九环/高阶卷轴签下危险魔契；</li>
+<li>幕间主动进行高风险交易与资源换取；</li>
+<li>参与团队行动时也不缺执行力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>以风险换力量，体现角色欲望与代价并存的弧光。</li>
+<li><strong>角色定位</strong>：典型“力量与代价”型角色，为团队引入契约、地狱条款、禁忌交易的主题张力。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 千早</h4>
+<ul>
+<li><strong>作用</strong>：学院/任务中枢式人物，负责发布委托、调配资源、推动剧情转场。</li>
+<li><strong>特点</strong>：强势、掌控欲高，手段直接。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>让队伍接到蓝烛、烛堡等关键任务；</li>
+<li>处理拉普事件的收尾；</li>
+<li>为团队垫付、担保、联络，既像上级也像保护伞。</li>
+</ul>
+
+<h4>2. 齐哈娅</h4>
+<ul>
+<li><strong>作用</strong>：蓝烛城的资助者/贵族型委托人。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>提供宅邸、安全联络、卷轴等关键资源；</li>
+<li>让“毕业条件”从单纯考核转化为社会关系与契约认可；</li>
+<li>是团队进入蓝烛城剧情的门槛人物。</li>
+</ul>
+
+<h4>3. 拉普</h4>
+<ul>
+<li><strong>作用</strong>：前期的学者型委托人，后期反转为伪装者/敌对者。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>通过海底调查引导玩家接触蓝烛遗迹；</li>
+<li>作为“看似中立的知识提供者”，让玩家误入更深层阴谋；</li>
+<li>身份揭穿后完成一次明确的剧情反转。</li>
+</ul>
+
+<h4>4. 老船长/特殊船员</h4>
+<ul>
+<li><strong>作用</strong>：海上航程中的经验NPC。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>讲述白鲸袭船传闻；</li>
+<li>在白鲸战中以特殊火绳枪完成致命一击，提供老练冒险者的“传承感”。</li>
+</ul>
+
+<h4>5. 马特瑞斯</h4>
+<ul>
+<li><strong>作用</strong>：烛堡宅邸/书库线索的核心人物，虽然本人不一定长期出场，但其宅邸和遗留信息是关键。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>其房屋谜题与研究资料构成烛堡章节主体；</li>
+<li>连接实验、人工生命、书中怪物等谜题。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：毕业条件变更与蓝烛初探</h3>
+<p>学院将毕业要求改为获得蓝烛城资助者认可，费伦冒险团启程前往蓝烛。途中遭鱼人袭击，洛用睡眠术控场，清雨以长棍稳住局势，并在尸体上发现带防护灵光的蓝色碎片。抵达深水城后，队伍接受港口盘问，并经海洋学者拉普介绍，乘潜水钟下海调查蓝烛气泡矿。之后拜访资助人齐哈娅，获得宅邸、联络道具与回生术卷轴，也确认碎片与巨人造物有关。</p>
+<p>深入海底据点后，他们发现沙华鱼人踪迹、鱼卵与神器“蓝烛之息”，随即遭伏击。清雨、洛、阿尔菲拉与浮士德清剿敌人，沙维尔一度冒进倒地，最终由卷轴救回。返岸后，他们带着战利品与鱼卵领赏，却因神器归属与拉普爆发冲突，千早揭穿拉普真实身份并当场击倒他。随后众人进入幕间整备；阿尔菲拉更以危险契约换取强力卷轴。接着千早发布新任务，要求前往烛堡取书，队伍在海上先后经历塔罗斯信徒同船、白鲸来袭等事件，航程充满波折。</p>
+
+<h3>第2章：烛堡借书与宅邸谜题</h3>
+<p>在白鲸袭扰后，众人抵达烛堡，寻找牧师马特瑞斯却发现对方不在，只留下充满谜题的住处。凭借口令“scepter”，队伍进入魔法宅邸，开始探索超维度空间中的秘密房间。他们先后遭遇活化书群、拟身怪、断手、活化长剑与夸赛魔，战斗与解谜交错推进。随着调查深入，线索逐渐指向实验室、召唤法阵、人工生命和炼金术实验，说明这里并非单纯藏书之地，而是某种危险研究的遗留现场。最终，队伍在天文馆解开星图机关，取得可同调锁链，并带回任务书残本《马兹弗罗斯杂谈》。尽管雇主跑路，但任务仍算完成，众人也借此补足情报并升至3级。</p>
+
+<h3>第3章：海上余波与博德之门追索</h3>
+<p>第二阶段中，队伍继续围绕书籍、白鲸和巨人遗产展开调查。浮士德因白鲸梦境向千早求证，得知牵连古代巨人、巨龙与邪术师宗主，世界观进一步扩大。随后新任务指向烛堡取书，海路途中再遇白鲸袭击，众人联手击退巨兽。抵达目的地后，他们继续在教诲之柱、传送宅邸、地下实验室和天文馆中展开探索，并逐步拼出线索链：怪书、实验、人工生命、星图与某种收集知识的机制。</p>
+<p>返程途中，线索开始指向博德之门的可疑书摊与城中流通的危险书籍。众人一路上还遭遇鼠人与巨鼠伏击，体力与资源消耗极大。最终回到博德之门时，已负债累累，且因沙维尔狂野魔法导致旅店被炸毁，只能在千早担保下暂避牢狱。队伍暂时停在“城市调查”阶段，准备转去上城区集市继续追查主线。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>白鲸袭船战</strong>：海上大场面，浪、酸液、落水、绳索、法术、豁免全都上了，氛围非常强，属于整段日志里最“电影感”的战斗之一。</li>
+<li><strong>沙维尔倒地又复活</strong>：反复濒死带来极强戏剧性，既紧张又很好笑，堪称团队“事故制造机”。</li>
+<li><strong>拉普身份反转并被千早当场击倒</strong>：从学者委托人变成伪装者，这个反转很利落，收尾也相当干脆。</li>
+<li><strong>烛堡宅邸大乱斗</strong>：活化书、拟身怪、断手、夸赛魔、长剑齐上阵，像是一本“活过来”的魔法书灾难现场。</li>
+<li><strong>旅店被炸毁</strong>：典型TRPG名场面，且把前面一路积累的压力以最荒诞的方式爆发出来。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>洛的睡眠术控场</strong>：虽然不是传统意义上的检定，但效果极像“开局大成功”，直接决定了海上遭遇战的节奏。</li>
+<li><strong>清雨的察觉与现场判断</strong>：在多个场景里都体现出关键发现能力，尤其是碎片与敌情判断。</li>
+<li><strong>白鲸战中的连环豁免与落海</strong>：这类“全员拼骰子”的场面最能体现桌游紧张感。</li>
+<li><strong>沙维尔在海底战中的冒进倒地</strong>：非常像一次标准大失败，引发团队资源消耗与救援压力。</li>
+<li><strong>阿尔菲拉的危险契约交易</strong>：不是骰点大失败，而是“剧情选择大赌博”，属于代价极高的冒险型决策。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“蓝烛资助者认可”变成毕业门槛</strong>：从学术毕业突然转向社交关系与政治背书，颇有现实感。</li>
+<li><strong>借书却借出了一整个超维度鬼屋</strong>：任务名很朴素，过程却极其离谱。</li>
+<li><strong>千早揭穿拉普身份并开炮击倒</strong>：这类“上级直接清场”的桥段十分爽快。</li>
+<li><strong>白鲸异梦与巨人/巨龙/邪术师的远古往事</strong>：把地方委托逐步推向史诗级阴谋，层层加码很有味道。</li>
+<li><strong>旅店爆炸后还要继续查书</strong>：充分体现了这个团“日常就是灾难、但事情必须继续做”的冒险者气质。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像“模组讲义”的版本</strong>，</li>
+<li><strong>更像“团务复盘”的版本</strong>，或</li>
+<li><strong>补一份“剧情线索图/势力关系图”</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

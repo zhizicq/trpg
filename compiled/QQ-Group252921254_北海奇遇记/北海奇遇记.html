@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北海奇遇记 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>北海奇遇记</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<ul>
+<li><strong>模组背景与核心冲突</strong></li>
+</ul>
+<p>《北海奇遇记》发生在一座名为“北海九号”的北海钻井平台上。故事表面上是一次记者团、游客与工作人员共处的例行接待，但很快被平台底层爆炸、浓雾弥漫、通讯中断与“看不见的怪物”打破。核心冲突从“事故调查与现场救援”迅速转为“在封闭环境中求生并揭开灾难真相”。</p>
+<p>一边是平台管理层、工人、保安、记者与调查人员的分歧与协作；另一边是雾中潜伏、依靠听觉行动、并能腐蚀人体的异常存在。更深层的矛盾则来自平台运营压力、安吉洛的家庭困境，以及“明知可能有问题仍被迫维持运转”的现实性悲剧。</p>
+
+<ul>
+<li><strong>主线剧情概要</strong>（300-500字）</li>
+</ul>
+<p>玩家们在“北海九号”迎接记者团与游客的过程中，先经历了一段看似平静的寒暄与试探。然而平台底层突然爆炸，紧接着浓雾从下层蔓延开来，对讲机失灵、通讯中断、甲板与信号塔周边出现坠落的人类尸块，整座平台从工业事故现场迅速变成密闭恐怖场。调查组在混乱中分头行动：有人去总管办公室寻找线索，有人进入医务室与宿舍搜查，也有人在甲板与生活层间艰难穿行，逐渐拼出平台总管安吉洛因女儿重病与财务压力而长期焦虑的处境。与此同时，玩家们多次在雾中遭遇一只“看不见却会听声辨位”的怪物，只能依靠潜行、侦查与临时防护维持生存。随着调查深入，众人确认雾气会腐蚀皮肤，保安已出现严重灼伤；医务室内医生死亡，底层走廊和库房被死亡与怪物占据。为了恢复联络，大家一度尝试修理服务器与供电系统，但下方通道已被多只怪物封锁，撤离希望逐渐破灭。最终，幸存者只能放弃继续下探，转而冲向甲板与救生艇区域，成功脱离正在倾斜下沉的钻井平台，亲眼目睹“北海九号”在北海中缓缓沉没。</p>
+
+<ul>
+<li><strong>结局与收尾</strong></li>
+</ul>
+<p>结局是典型的“逃出生天，但代价惨重”。平台没有被拯救，通讯也未能恢复，深入下层的道路被怪物和尸体封死，众人只能在最后关头转向撤离。虽然部分角色成功带走了防化服、护目镜等关键装备，并暂时控制了伤势，但整个平台最终被腐蚀、倾斜并沉入海中，意味着事件真相与很多线索一同埋葬。故事在“幸存者逃离”与“灾难不可挽回”之间落下帷幕，余韵偏向冷峻与海雾般的压抑。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）</h3>
+
+<p>> 由于日志摘要未完整列出所有角色名，下述以行动特征归纳其功能与弧光。</p>
+
+<ul>
+<li><strong>擅长行动与侦查的核心调查者</strong></li>
+<li><strong>性格特征</strong>：谨慎、观察力强、在高压环境中能保持一定冷静。</li>
+<li><strong>关键行为</strong>：多次负责搜查总管办公室、医务室、宿舍、厨房等关键区域；在雾中潜行、试探怪物机制；参与修复服务器与供电系统。</li>
+<li><strong>高光时刻</strong>：通过调查逐步拼出安吉洛的压力来源、识别对讲机问题并非硬件故障而是信号干扰、确认雾气的腐蚀性，为团队生存策略提供关键情报。</li>
+</ul>
+
+<ul>
+<li><strong>偏前线、敢于冒险的行动派</strong></li>
+<li><strong>性格特征</strong>：胆大、执行力强，面对未知不完全退缩。</li>
+<li><strong>关键行为</strong>：在平台甲板、信号塔、地下走廊间频繁穿梭；尝试引怪、摸索路线、为队友争取通道。</li>
+<li><strong>高光时刻</strong>：在通信几乎崩溃的情况下，仍能推动局部修复与撤离准备；在多人理智与状态恶化时承担“去试一把”的职责。</li>
+</ul>
+
+<ul>
+<li><strong>失误频发但极具戏剧张力的角色</strong></li>
+<li><strong>性格特征</strong>：紧张、容易被环境压迫影响判断。</li>
+<li><strong>关键行为</strong>：在尸堆、雾气、怪物逼近时出现潜行失败、理智失控等情况，导致队伍多次被迫更换路线或临时躲避。</li>
+<li><strong>高光时刻</strong>：虽然“糟糕的检定”带来不少危机，但也制造了强烈的恐怖效果，让团队对怪物威胁有了真实体感。</li>
+</ul>
+
+<ul>
+<li><strong>临场救援与支援型角色</strong></li>
+<li><strong>性格特征</strong>：务实、能补位，倾向保护同伴。</li>
+<li><strong>关键行为</strong>：使用急救与药品控制灼伤伤势，帮忙分发防化服、护目镜等装备；在撤离阶段配合转移。</li>
+<li><strong>高光时刻</strong>：在保安面部灼伤、团队精神压力高企时提供关键支援，避免情况进一步恶化。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<ul>
+<li><strong>安吉洛</strong></li>
+<li><strong>作用</strong>：平台总管，也是故事的人类悲剧核心。</li>
+<li><strong>剧情功能</strong>：他不是单纯的“管理者”，而是被女儿重病与经济压力压垮、仍努力维持平台运作的人。玩家通过办公室、病历与私人线索拼出他的处境，使“事故”具有人性层面的重量。</li>
+<li><strong>人物意义</strong>：代表“现实压力导致的系统性脆弱”，为灾难增添了可悲而非纯粹邪恶的底色。</li>
+</ul>
+
+<ul>
+<li><strong>医生</strong></li>
+<li><strong>作用</strong>：提供医务室相关线索的关键人物。</li>
+<li><strong>剧情功能</strong>：其尸体证明危机早已不是普通设备事故，而是已经进入平台内部的致命事件。</li>
+<li><strong>人物意义</strong>：让玩家确认“救治窗口”已经迅速关闭，推动局势从调查转向生存。</li>
+</ul>
+
+<ul>
+<li><strong>厨师</strong></li>
+<li><strong>作用</strong>：信息反差型NPC。</li>
+<li><strong>剧情功能</strong>：藏身于厨房/冷库，对外界几乎一无所知，形成“底层人员并未掌握全貌”的现实感。</li>
+<li><strong>人物意义</strong>：强化平台内部信息割裂，也让玩家意识到危机来得极快、蔓延极深。</li>
+</ul>
+
+<ul>
+<li><strong>保安</strong></li>
+<li><strong>作用</strong>：受害者与现场警示牌。</li>
+<li><strong>剧情功能</strong>：严重面部灼伤，直接向玩家展示雾气的腐蚀效果。</li>
+<li><strong>人物意义</strong>：是危险机制最直观的证据，承担“让玩家意识到必须防护”的功能。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：危机爆发与初步试探</h3>
+<p>北海九号在接待记者团与游客后，表面上仍维持着工业平台的日常秩序。玩家们先在食堂展开试探性交谈，试图判断场上的人员关系与平台状态。没过多久，平台底层突然发生爆炸，随后浓雾迅速上涌，通讯系统和对讲机开始失灵。安吉洛立即下令停工并封锁下层，工人、保安、记者与调查者被迫分头行动。众人前往甲板、信号塔和生活区探查，却在雾中遭遇难以辨认的恐怖景象：坠落的人类尸块、看不见却能靠声音定位的怪物，以及越来越严重的环境压迫感。</p>
+
+<h3>第2章：平台内部调查与真相逼近</h3>
+<p>调查组进一步进入总管办公室、医务室和宿舍，逐步拼出安吉洛的私人困境：女儿重病、经济压力巨大、平台运行不容中断。与此同时，医务室发现的医生尸体确认事态严重程度远超事故处理范畴。众人随后在雾中持续潜行，冒险进入厨房、库房和冷库，找到一直躲藏的厨师，也确认对讲机故障并非设备损坏，而是受到异常信号干扰。保安的严重面部灼伤则证明雾气本身具备腐蚀性，必须佩戴防化服和护目镜才能在下层行动。</p>
+
+<h3>第3章：深入下层、失控与撤退</h3>
+<p>为了恢复联络与推进调查，玩家们穿上防化装备，继续向服务器与供电区前进，试图修复系统、恢复通讯。然而下层通道已被尸堆和多只怪物占据，潜行、侦查与理智检定接连承压，出现多次失败与混乱。伦道尔孤身潜入时重伤，只能依靠枪击逼退怪物；佐伊与艾玛冒险引怪、修电、确认腐蚀源头，勉力维持团队行动。可最终通讯修复失败，通往下层的路已彻底被堵死，所有人只能接受撤离现实，沿甲板奔向救生艇区域。</p>
+
+<h3>第4章：逃离沉没的北海九号</h3>
+<p>在最后的撤离阶段，幸存者们抢在平台全面崩坏前成功脱身。众人回望之时，北海九号已经因腐蚀与结构失衡而开始倾斜、下沉，巨大的钻井平台像一座失败的钢铁城堡般缓缓沉入北海。这个结尾既完成了“活下来”的目标，也把所有未解之谜、更多尸体与真相一并封入海底，形成强烈的灾难余响。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<ul>
+<li><strong>最精彩的场景</strong></li>
+<li>浓雾骤起、信号中断、平台瞬间从“接待场”变成“密室恐怖现场”的转折，非常有电影感。</li>
+<li>玩家在甲板与生活层间借潜行与侦查“摸黑找路”，一步步确认怪物机制，是典型的高压求生桥段。</li>
+<li>最后目睹北海九号沉没，收束感极强，极具灾难片结尾的震撼。</li>
+</ul>
+
+<ul>
+<li><strong>最搞笑/最意外的场景</strong></li>
+<li>原本是记者团与游客的正常接待，结果立刻变成“全员封锁、全平台求生”，反差本身就很黑色幽默。</li>
+<li>厨师躲在冷库里对外界一无所知，这种“外面天塌了，里面还在苟着”的反差很有戏。</li>
+</ul>
+
+<ul>
+<li><strong>令人印象深刻的检定</strong></li>
+<li><strong>大失败/失误类</strong>：潜行失败、理智失控、被迫躲进柜子避难等，持续推高紧张感。</li>
+<li><strong>关键成功类</strong>：用侦查确认对讲机并非损坏而是信号干扰；发现雾气腐蚀性；带走防化服与护目镜，为后续行动提供生存保障。</li>
+<li><strong>硬核对抗类</strong>：伦道尔孤身潜入时重伤仍靠枪击逼退怪物，属于“用命换局部突破”的典型高燃时刻。</li>
+</ul>
+
+<ul>
+<li><strong>有趣的对话或桥段</strong></li>
+<li>安吉洛的“强撑式管理”与他背后病重女儿、经济压力之间的反差，形成很强的人物悲剧感。</li>
+<li>玩家在恐怖环境中仍要完成“先寒暄、再试探、再装作没事”的社交流程，带来一种诡异的现实感。</li>
+<li>“不是机器坏了，是雾在搞事”这种逐步排除式真相揭露，特别适合跑团现场的紧张氛围。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析报告扩展成以下任一版本：</p>
+<ol>
+<li><strong>更像模组复盘的专业版</strong>（含主题、节奏、难点设计、战斗/调查占比）</li>
+<li><strong>更像故事梗概的叙事版</strong>（适合发群公告或同人整理）</li>
+<li><strong>按PC逐个命名整理版</strong>（如果你提供角色名，我可以补全每位角色专属弧光）</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>
