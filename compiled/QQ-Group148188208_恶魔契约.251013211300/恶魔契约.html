@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>恶魔契约 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>恶魔契约</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《恶魔契约》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组以“被强行拉入神秘聊天室的死亡游戏”为核心框架，玩家们一开始便被剥夺常规的安全感与选择权，卷入由“黑幕”操控的生存竞赛。游戏规则极具压迫性：众人必须在谈话阶段交换情报、判断彼此立场；在杀戮阶段则面临怪物与受害者的指派，依靠积分兑换道具勉强求生。故事的核心冲突并非单纯“打败怪物”，而是“在无法确认规则真伪、身份归属与彼此信任的情况下，争夺活下去的资格”。</p>
+
+<h3><strong>主线剧情概要（300-500字）</strong></h3>
+<p>众人毫无征兆地被拖入一个由水管员主持的神秘聊天室，得知自己置身于一场名为“黑幕”的死亡游戏中。游戏规则简单却残酷：每轮分为谈话与杀戮阶段，玩家需要通过交流、推断和交易积累积分，再用积分兑换道具应对即将到来的怪物测试；而每轮中“黑幕”必须指定怪物和受害者，否则自己将成为被反噬的对象。随着剧情推进，玩家不断尝试从规则、主持人口风与彼此反应中挖掘真相，试图判断谁是黑幕、谁是受害者、是否有人已被暗中选中。整个过程充满了延迟、反复与不确定性：杀戮阶段多次开启又被推后，紧张感在“即将死亡”的预期中持续堆积。玩家们在猜测、试探和应对中逐渐意识到，这场游戏的恐怖不只来自怪物，更来自规则本身对人性的逼迫。最终，黑暗突然退去，所有异常像一场醒不过来的噩梦般消失，但地上留下的兑换物无声证明：这场死亡游戏并非幻觉，众人确实曾经在其中挣扎过。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局采用了“似梦非梦”的收束方式：黑幕与黑暗消散，仿佛一切都未曾发生，但现场遗留的兑换物成为硬证据，确认这场游戏真实存在。收尾并未明确揭示黑幕身份或死亡游戏的本质来源，而是以开放式终止让恐惧感延续到模组之外，留给玩家大量余味与猜想空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<p>> 由于日志摘要未提供具体PC姓名与完整台词，本部分以“玩家整体表现”与“主持人角色”为主进行分析。</p>
+
+<h3><strong>PC群像分析</strong></h3>
+<h4><strong>1. 谨慎怀疑型PC</strong></h4>
+<p>这类角色在游戏初期最先意识到规则中的危险性，倾向于反复确认“水管员是否可信”“黑幕是否真存在”“杀戮阶段是否只是恐吓”。他们的核心行为是试图通过逻辑推理拆解系统，避免被主持人的信息控制牵着走。高光点通常在于：抓住“黑幕必须指定怪物与受害者，否则自己会成为受害者”这一规则漏洞，尝试反向利用规则争取生机。</p>
+
+<h4><strong>2. 交涉与社交型PC</strong></h4>
+<p>这类角色更擅长在谈话阶段建立同盟、交换信息、缓和紧张气氛。他们的价值不在硬碰硬，而在于把“人人自危”的局面尽量转化为“暂时合作”的局面。在这种结构性恐怖模组里，社交型PC往往是维持团队不崩盘的关键，尤其在多轮杀戮延后时，他们能够持续提供心理缓冲。</p>
+
+<h4><strong>3. 激进试错型PC</strong></h4>
+<p>面对黑幕与怪物威胁，有些PC会采取更冒险的方式：直接挑战规则、主动推动阶段结算、尝试验证主持人说辞真假。这类角色的高光通常伴随风险——也许会因为莽撞触发更糟局面，但也最容易推动真相浮出水面，让剧情从“被动受威胁”转向“主动逼问系统”。</p>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+<h4><strong>1. 水管员</strong></h4>
+<p>水管员是本模组最核心的规则宣告者与秩序执行者。其功能类似“系统管理员”或“死亡游戏主持人”，负责发布规则、解释阶段机制、暗示黑幕存在，并不断用模棱两可的说法制造压力。他既像引导者，也像审判者：一方面提供游戏框架，另一方面又维持高度不透明，让玩家始终处于猜疑状态。</p>
+<p><strong>作用总结</strong>：推进规则、制造悬念、强化压迫感、承担“真相未明”的叙事中枢。</p>
+
+<h4><strong>2. 黑幕</strong></h4>
+<p>黑幕是模组中最关键的隐形对抗者。它未必总以实体登场，但其存在决定了整个游戏的运转：必须选择怪物、必须选择受害者、必须承担后果。黑幕的魅力在于它并不需要被明确展示，光是“可能已经在玩家中间”这一点就足够制造巨大心理恐惧。</p>
+<p><strong>作用总结</strong>：代表不可见的操控者，是游戏规则背后的“恶意意志”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：被拉入聊天室，死亡游戏开幕</strong></h3>
+<p>玩家们在毫无预兆的情况下被强制拉入神秘聊天室。水管员现身，宣布这不是普通交流空间，而是一场由“黑幕”掌控的生存游戏。最初的气氛是强烈的不真实感：众人既震惊又警惕，不知道自己是被绑架、被卷入超自然事件，还是陷入了某种精神层面的试炼。</p>
+
+<h3><strong>第二阶段：规则发布，生存逻辑建立</strong></h3>
+<p>水管员开始详细说明游戏机制：全员目标只有一个——活到最后一人。每轮分为“谈话阶段”和“杀戮阶段”；前者用于沟通、推理、交易，后者则是怪物与受害者的现实化威胁。积分系统同步出现，玩家可用积分购买道具，为对抗怪物做准备。与此同时，水管员强调“黑幕”必须在规则内选择怪物与受害者，否则黑幕自己会成为受害者，从而把“秩序”与“死亡”绑定在一起。</p>
+
+<h3><strong>第三阶段：多轮拉扯，杀戮阶段反复延后</strong></h3>
+<p>随着游戏推进，玩家们不断围绕黑幕身份展开猜测：谁在撒谎？谁掌握额外信息？有没有人已经被选中？水管员多次暗示甚至近乎确认“已经有人被选为黑幕”，使局势持续升温。杀戮阶段并未顺畅落地，反而多次开启又被延后，形成一种“死亡始终在门外”的悬置感。玩家一边试图在谈话阶段争取时间，一边尝试分析规则中的空隙，争取活到下一轮。</p>
+
+<h3><strong>第四阶段：真相未明，黑暗消散</strong></h3>
+<p>在紧绷到极点之后，黑暗突然退去，游戏宣告结束。众人从异常状态中脱离，周围仿佛恢复正常，像一场集体幻觉。然而，地面上留下的兑换物成为无法否认的证据，证明这并非单纯梦境。水管员曾说“没人死就结团了”，最终也确实以“无人员死亡”的方式终止了本次事件。模组在此收束，未将黑幕彻底揭穿，而是将谜团留在余波中。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：水管员公布死亡游戏规则时，玩家从“疑惑”迅速转入“高压生存”的瞬间，完成了模组气氛的断崖式转折。</li>
+<li><strong>最意外</strong>：黑暗最终散去、场景似乎恢复正常，但地上居然留下兑换物，直接把“这不是梦”的事实砸在玩家脸上。</li>
+<li><strong>最有压迫感</strong>：杀戮阶段多次开启又延后，像是死亡一直悬在头顶却迟迟不落下，这种拖延比直接杀戮更折磨人。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<p>摘要未提供具体检定结果，但从剧情结构看，最关键的“检定”应当是：</p>
+<ul>
+<li><strong>对规则真伪的判断</strong></li>
+<li><strong>对黑幕身份的推断</strong></li>
+<li><strong>对杀戮阶段临界点的把握</strong></li>
+</ul>
+
+<p>如果玩家在某次推理中成功逼近“已经有人被选为黑幕”的事实，那就是全局性质的关键成功；反之，若将水管员的说法当成绝对真理而错失对规则漏洞的利用，则会形成高压环境下的典型失误。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“只能活到最后一人”</strong>：一句话就把竞赛性质从合作游戏转为残酷零和博弈。</li>
+<li><strong>“黑幕必须选怪物和受害者，否则自己成为受害者”</strong>：这条规则让主持人/幕后操控者也被纳入风险，极大增强了规则张力。</li>
+<li><strong>“没人死就结团了”</strong>：这句收束非常有TRPG特色，既像规则说明，又像对整场混乱的荒诞总结。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结评价</h2>
+<p>《恶魔契约》这个模组的核心魅力在于：它不是靠复杂战斗或多层谜题取胜，而是依靠<strong>规则压迫、身份猜疑和死亡临界感</strong>制造持续紧张。水管员与黑幕形成了“明示规则、暗藏恶意”的双重结构，使玩家始终处在不确定之中。最终的开放式结局与现实遗留物的反差，也成功将恐怖感从剧内延伸到剧外，是一个以氛围和悬念见长的死亡游戏型模组。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>
