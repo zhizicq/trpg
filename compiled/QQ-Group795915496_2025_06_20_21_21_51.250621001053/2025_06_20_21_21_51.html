@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_20_21_21_51 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_20_21_21_51</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以“耶尔维”这一边境聚落为舞台，围绕<strong>寒地村落的生存危机、失踪事件与隐秘势力的干扰</strong>展开。表面上是一次常规的会合与物资调度，实则牵扯出当地渔猎村在恶劣环境下的经济困境：人口稀少、产出单一、硬通货稀缺，再加上“雪女”传说引发的失踪风波、商人压价与绿龙势力的阴影，让整片地区笼罩在不安之中。</p>
+<p>核心冲突并不只是“怪物作祟”，而是<strong>生存、秩序与信息不对称</strong>之间的拉扯：村民需要活下去，外来者需要获得情报与通行资源，而隐藏在暗处的未知存在，则不断制造误导与恐惧。</p>
+
+<h3>主线剧情概要</h3>
+<p>队伍抵达耶尔维后分头行动，逐步拼接出寒地村落的真实面貌。哈吉米前往西侧偏僻的渔猎村，调查“雪女”与失踪猎人事件，并顺带为后续行动准备卷轴。他通过交涉从村民处了解了这里以渔猎为生、货币紧缺、长期受商人压价以及近来因“雪女”传闻导致猎人失踪的困境，确认这并非单纯的民俗怪谈，而是严重影响生计的现实危机。与此同时，拉科尔留在营地等待公主车队抵达，负责整理粮车与卸货流程，稳定后勤节奏；但夜间一次察觉检定让他意外发现斯尼奇藏在纸箱里偷听，随之引发追逐与打闹，给原本紧张的局势增添了荒诞喜感。哈吉米最终购得“自然之路”卷轴返回客栈，队伍重新集结，为后续深入调查与护送任务做准备。整体上，这一段是典型的“情报铺陈+阵营落位”章节：玩家先摸清环境，再从琐碎日常中嗅出危险的轮廓。</p>
+
+<h3>结局与收尾</h3>
+<p>本段摘要所示剧情暂未进入真正的事件爆发或终局决战，收尾停留在<strong>情报收集完成、队伍回到客栈待命</strong>的阶段。哈吉米成功带回卷轴，拉科尔完成营地后勤安排，而斯尼奇的偷听与闹剧则成为一个轻松的过场插曲。整体结尾是“静中有动”的：表面恢复平静，实际已为之后围绕雪女、失踪猎人和当地势力的进一步推进埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>1）哈吉米</h3>
+<p><strong>性格特征</strong>：务实、主动、信息导向型。</p>
+<p><strong>关键行为</strong>：独自前往偏远村落调查情报，并以交涉方式与村民建立沟通；同时兼顾资源准备，购入“自然之路”卷轴。</p>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>在陌生且信息闭塞的寒地村中，通过分两轮交涉稳定地摸出完整情报链，体现出很强的社交推进能力。</li>
+<li>他不是只问“发生了什么”，而是能从产业、货币、商压、失踪等多个维度拼出问题全貌，说明其思路清晰。</li>
+</ul>
+<p><strong>角色作用</strong>：作为团队的“调查前锋”，哈吉米承担了把模组背景从传闻变成事实的功能，是推动主线认知升级的关键人物。</p>
+
+<h3>2）拉科尔</h3>
+<p><strong>性格特征</strong>：负责、稳重，但周围总会被拖进戏剧性事件。</p>
+<p><strong>关键行为</strong>：留守营地，调整粮车并安排卸货，确保公主马车抵达后的后勤顺畅。</p>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>在团队分工中扮演“后勤支柱”，体现出可靠的组织能力。</li>
+<li>夜间察觉到斯尼奇藏在纸箱中偷听，显示出不错的警觉性。</li>
+</ul>
+<p><strong>角色作用</strong>：拉科尔是本段剧情的“秩序维持者”，负责把散乱事务收束到可执行的状态；同时，他的察觉成功又把原本平静的营地变成了一场小型喜剧现场。</p>
+
+<h3>3）斯尼奇</h3>
+<p><strong>性格特征</strong>：机灵、爱偷听、带点滑稽感。</p>
+<p><strong>关键行为</strong>：躲在“纸箱子”里偷听，随后引发追逐与打闹。</p>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>以极具画面感的方式出场，制造了明显的戏剧冲突和笑点。</li>
+</ul>
+<p><strong>角色作用</strong>：虽然在当前摘要中戏份不多，但明显是团队中的“搅局者/喜剧担当”，负责打破严肃节奏，增强桌面互动感。</p>
+
+<h3>4）公主与其车队（未详名NPC群）</h3>
+<p><strong>作用</strong>：作为需要被等待与护送的关键对象，公主车队的抵达构成了营地行动的时间轴中心。</p>
+<p><strong>剧情功能</strong>：她/他们不是本段的主要对话对象，但作为“任务目标”和“政治/身份压力”的来源，决定了后续行动的紧迫性与正式性。</p>
+
+<h3>5）村民与当地猎人群体</h3>
+<p><strong>作用</strong>：信息来源与事件承受者。</p>
+<p>他们提供了关于雪女、失踪猎人、绿龙压价、硬通货等现实信息，是哈吉米调查能够成立的基础，也让“灾异传说”落回到社会经济层面的真实痛点。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一章：耶尔维会合与任务分流</h3>
+<p>队伍在耶尔维完成会合后，迅速进入分工模式。哈吉米被派往西边偏僻的渔猎村，目标是调查“雪女”与失踪猎人事件，同时为后续行动准备卷轴类资源。拉科尔则留在营地，专注于迎接公主车队：他需要调整粮车位置、安排卸货流程，保证后勤衔接不出差错。此阶段看似平静，实际上已经明确了剧情的双线结构——一边是外出调查，一边是营地待命。</p>
+
+<h3>第二章：渔猎村调查与情报拼图</h3>
+<p>哈吉米进入村中后，先从整体环境观察入手，确认了这里是一个人口稀少、靠渔猎维生的寒地村落。随后他通过交涉检定进行分轮询问，从当地人那里逐步拼出完整信息：村里的硬通货情况、主要产业、商人压价所带来的长期损失，以及“雪女”相关的失踪事件。这里的“雪女”并非单纯传说，而是与人员失踪、经济衰退紧密相连的现实威胁。哈吉米在信息收集上较为高效，成功把零散传闻整合成可供团队下一步行动使用的线索。与此同时，他还买到了“自然之路”卷轴，为之后的行动储备了工具。</p>
+
+<h3>第三章：营地后勤与夜间异动</h3>
+<p>拉科尔在营地执行后勤任务，调整粮车并为公主车马抵达做准备，整体节奏偏稳。然而夜幕降临后，察觉检定触发了一个意外插曲：他发现斯尼奇居然藏在“纸箱子”中偷听。这个发现直接打破了营地的沉稳气氛，随之展开追逐与打闹。这个桥段既体现出拉科尔的警觉，也为原本偏调查向的章节注入了轻松的喜剧节拍。</p>
+
+<h3>第四章：回归客栈与短暂整备</h3>
+<p>哈吉米购买卷轴后返回客栈，与等待中的同伴重新汇合。此时队伍已经获得初步情报，也完成了阶段性准备：调查路线清晰了，后勤基本到位了，接下来只待进一步行动。章节在此收束，为之后更深入地追查雪女、失踪猎人与地方势力铺平道路。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>斯尼奇躲进纸箱偷听</strong>：非常有画面感，几乎是“跑团现场喜剧”式名场面。</li>
+<li><strong>哈吉米在村中逐步盘出真相</strong>：不是单点爆破式揭露，而是层层问出产业、货币、压价、失踪等信息，属于“稳扎稳打型精彩”。</li>
+<li><strong>寒地村落的现实困境</strong>：把“雪女”从纯怪谈变成和经济压迫、人口流失相关的综合问题，这种设定反转很有味道。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>哈吉米的交涉检定成功</strong>：分两轮打听信息，说明并非一次过，而是通过持续沟通完成情报获取，体现出调查过程的真实感。</li>
+<li><strong>拉科尔的察觉检定成功</strong>：精准抓到藏在纸箱中的斯尼奇，属于剧情推动性强的检定，直接引发后续追逐戏。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“<strong>纸箱子偷听</strong>”这一设定本身就很喜剧，兼具荒诞与可爱。</li>
+<li>哈吉米与村民围绕产业、货币、雪女的问答，虽然没有完整原话，但从摘要看明显是那种“从表面闲聊一路问到核心问题”的经典调查桥段。</li>
+<li>拉科尔负责后勤、斯尼奇负责偷听，两者形成了很鲜明的反差：一个在搭秩序，一个在拆秩序，效果很有桌游感。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“正式复盘文档”的版本，或者按<strong>“GM视角 / 玩家视角 / 剧情结构图”</strong>三种不同角度再重写一版。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

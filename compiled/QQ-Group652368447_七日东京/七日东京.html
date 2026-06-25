@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七日东京 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>七日东京</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《七日东京》构建在一个“东京突然异变”的都市怪谈框架下：现实空间被替换、地标错位、住址失效，甚至熟悉的人与事都像被重写。表面上是灵异事件、失踪案与连环凶案，深层则是<strong>“怪谈化的城市”与“被吞噬的人性”</strong>之间的冲突：一边是求生者在失真的东京里寻找真相与同伴，另一边则是由饥饿、实验、异化与旧日执念交织成的灾厄网络。RING livehouse、羽丘相关人物、怪异水族馆与“喰种”真相，将都市传说、青春乐队与血腥恐怖揉成一体。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>故事从东京异变后的第一夜开始。莫礼、维娅等PC先后在陌生街区遭遇现实错位：导航失灵、住址与联系人被篡改，仿佛整座城市都被“翻面”。在寻找落脚点与求助过程中，他们撞见惨烈尸体与异常啃食者，理智受挫，也意识到这不是单纯的犯罪现场，而是某种超越常识的污染。随后，众人循着血迹、鳞片、学生证与“回头会去往另一个世界”的怪谈，逐步锁定RING livehouse与羽丘相关乐队成员，发现这座城市的异常与学生乐队、失踪者和隐藏的怪物现象紧密相连。随着调查深入，千早爱音、椎名立希、丰川素世、高松灯等人物陆续登场，表面上的乐队日常迅速滑向恐怖真相：灯的饥饿、素世的翅膀、立希的追查、RING的血迹与断臂，都指向某种“人已不再只是人”的改造或异化。最终，线索将众人引向封闭的水族馆，那里陈列着尸骸、海草般的银白纹路与扭曲生物，“歪歪扭扭”的传说在现实中具象化。PC们在精神污染与生存压力下，终于确认东京的异常并非局部事件，而是一张吞没整座城市的怪谈与怪物之网。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局并非彻底解决，而是<strong>揭开一层更深的恐怖</strong>：高松灯并未失踪，而是被饥饿与实验/污染逼迫成异常存在；立希之死、素世的异化与水族馆中的怪物都说明东京已成为“异常者”的栖息与加工场。PC们获得了“能够看见喰种/异常者”的新能力，意味着他们不再只是受害者，而是被迫成为能直视真相的人。众人带着新增的情报暂时撤离并报警，模组在“真相被掀开，但灾厄远未结束”的氛围中收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>莫礼</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：警觉、现实感强，但面对超自然崩坏时情绪反应极大；典型“先分析、后崩溃”型。</li>
+<li><strong>关键行为</strong>：在鬼打墙与血腥现场中承担了最直接的冲击位；积极参与调查，能迅速把现场残留物、学生证、鳞片等拼成线索。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>发现并直面“腰斩JK啃食社畜”的恐怖场景，虽然理智受损，但也促使团队真正意识到危险等级。</li>
+<li>在线索整合中起到推动作用，把RING、羽丘、现场物证串联起来。</li>
+<li><strong>角色弧光</strong>：从“普通受害者”成长为被迫接受异常规则的调查者，恐怖体验越强，越凸显其求真意志。</li>
+</ul>
+
+<h4><strong>维娅 / 卡科维娅</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：更偏观察型、信息整合型，敏感、冷静度相对较高，遇事会优先确认环境与现实逻辑。</li>
+<li><strong>关键行为</strong>：第一时间察觉住址、门牌、联系人和地标错乱；通过图书馆检定取得封锁与宵禁情报；追踪大叔找到临时民宿落脚。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>发现“RING”凭空出现，确认自己周边现实已被替换。</li>
+<li>夜里看到高楼间掠过“四翼天使”般的身影，成为视觉恐怖与世界观扩张的重要节点。</li>
+<li><strong>角色弧光</strong>：从“环境异常的观察者”转变为“主动调查者”，她的冷静让团队在混乱中有了锚点。</li>
+</ul>
+
+<h4><strong>星濑</strong></h4>
+<ul>
+<li><strong>性格特点</strong>：行动力强，偏搭档型角色，擅长与莫礼形成互补。</li>
+<li><strong>关键行为</strong>：与莫礼结成临时搭档后，共同调查小巷与RING，推进线索闭环。</li>
+<li><strong>高光时刻</strong>：在莫礼失去理智的冲击阶段，星濑承担了维持队伍前进的功能。</li>
+<li><strong>角色作用</strong>：偏“协作中枢”，让调查不至于因恐惧而断线。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>椎名立希</strong></h4>
+<ul>
+<li><strong>作用</strong>：RING的关键情报节点，既是守门人也是受害者/知情者。</li>
+<li><strong>功能</strong>：她提供预约记录、怪谈信息与联系方式，帮助PC确认RING与异常事件的关联。</li>
+<li><strong>人物质感</strong>：表面警惕、嘴硬，但并非纯粹敌对；她“愿意交换情报”的姿态，使她成为真相链的重要节点。</li>
+<li><strong>剧情意义</strong>：立希连接了“乐队日常”与“血腥异变”，也是模组中非常典型的“知情却无法说清”的角色。</li>
+</ul>
+
+<h4><strong>千早爱音</strong></h4>
+<ul>
+<li><strong>作用</strong>：带路人、过渡型社交节点，同时也是情绪与暴力倾向爆发的触发器之一。</li>
+<li><strong>功能</strong>：通过她，PC得以进入民宅并接触更多异常证据。</li>
+<li><strong>剧情意义</strong>：她把“青春系人物”与“恐怖调查”自然衔接起来，使剧情不至于完全变成硬核侦查。</li>
+</ul>
+
+<h4><strong>丰川素世</strong></h4>
+<ul>
+<li><strong>作用</strong>：关键反转人物。</li>
+<li><strong>功能</strong>：以“血肉翅膀”等强烈视觉冲击登场，直接把异常从“怪谈”升级为“非人异变”。</li>
+<li><strong>剧情意义</strong>：她承载了“人性裂解”与“优雅外表下的怪物性”的反差感，是模组气氛骤变的重要开关。</li>
+</ul>
+
+<h4><strong>高松灯</strong></h4>
+<ul>
+<li><strong>作用</strong>：真相核心人物。</li>
+<li><strong>功能</strong>：其饥饿、失踪、暴食异化与最终现身，揭示了怪异与实验/污染的深层联系。</li>
+<li><strong>剧情意义</strong>：灯并非单纯受害者，而是被灾厄塑形的人；她让故事从“找失踪者”变成“面对已经变质的故人”。</li>
+</ul>
+
+<h4><strong>大叔 / 民宿线人物</strong></h4>
+<ul>
+<li><strong>作用</strong>：临时避难与情报引导者。</li>
+<li><strong>功能</strong>：帮助PC获得落脚点，提供一种“普通人还在试图适应异常东京”的背景感。</li>
+<li><strong>剧情意义</strong>：强化城市整体失序后的日常破碎感。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：异变东京的开局与第一次目击</strong></h3>
+<p>东京异变后的第一夜，莫礼与维娅在陌生街区相遇。两人起初都处于高度戒备状态，但很快发现环境已经彻底不对：莫礼迷路、导航失效，像陷入鬼打墙；维娅则震惊地发现自己住处附近多出了名为“RING”的livehouse，门牌、联系人乃至生活痕迹都像被人悄悄替换。更可怕的是，小巷垃圾箱后方出现了血腥命案：半截JK正在啃食被腰斩的社畜。莫礼惊恐逃离，翻墙脱险，最后与维娅会合并报警。维娅则尾随一名大叔找到临时民宿，依靠图书馆检定获得东京多地封锁、即将宵禁的情报。夜深时，她又目击高楼间掠过“四翼天使”般的异常身影，彻底确认这座城市已不属于常态。</p>
+
+<h3><strong>第2章：线索拼接与RING登场</strong></h3>
+<p>莫礼与维娅继续在异常东京中摸索。他们先回到昨日出事的小巷调查，虽现场已被清理，但仍发现血迹、菱形鳞片、高档衣物碎片以及一张毁容女高中生学生证，开始把怪物事件与羽丘、RING联系起来。随后，他们进入仍在营业却外观如遭爆炸破坏的RING livehouse，从椎名立希处查到中岛世以子、高松灯等预约记录，也听到了“回头就会被带去另一个世界”的怪谈。立希虽态度防备，却愿意交换情报并留下联系方式，暗示自己也在追查真相。离店时，众人还偶遇一位元气粉毛少女，为后续人物关系埋下新钩子。</p>
+
+<h3><strong>第3章：怪谈升级，灯与素世的真相浮出</strong></h3>
+<p>东京在这一阶段彻底异化。莫礼和维娅一度失散又重逢，住处变成密码门、导航与联络彻底失灵，现实被重写得更加明显。调查继续深入后，他们通过爱音进入民宅，发现卫生间血迹、隐藏空洞、怪异收藏和被咀嚼的创可贴，异常感持续升高。接着素世现身并展露血肉翅膀，说明这早已不是普通怪谈，而是人类形态崩坏后的非人存在。与此同时，灯失踪、乐队旧事与“喰种”真相逐步拼合；RING内外又接连发生血迹、断臂、重伤者事件，立希更被素世带走，局势急转直下。最终，PC们确认高松灯已因暴食异化，素世与立希也被卷入其中。为阻止进一步灾难，他们前往封闭的水族馆，见到诡异尸骸、银白“海草”花纹与水箱中的扭曲生物，“歪歪扭扭”传说正式与现实怪物重合，莫礼直视后遭受精神污染。</p>
+
+<h3><strong>第4章：真相落地与暂时撤退</strong></h3>
+<p>在最后阶段，PC们在诡异东京中继续推进调查，完成从“遇见异常”到“理解异常结构”的关键跨越。RING、学生乐队、失踪案件、水族馆与怪物现象被统一为一个完整的灾厄系统：人被饥饿、实验或污染扭曲，城市空间又像被某种规则重新编排，导致“看见的人”与“普通人”活在两个东京里。最终，众人得到一种新的感知能力，能够看见喰种/异常者，意味着他们已被彻底卷入事件中心。虽然无法在此阶段终结灾厄，但他们成功撤离、报警并带走部分真相，故事收束于“暂时脱离危险，但东京仍在继续腐烂”的状态。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>“半截JK啃食社畜”</strong>：开局即核爆级冲击，迅速把模组的调性从悬疑拉到恐怖。</li>
+<li><strong>“RING livehouse居然还在营业”</strong>：外观像爆炸现场，里面却能正常查预约记录，这种反差非常有都市怪谈味。</li>
+<li><strong>“四翼天使”目击</strong>：纯视觉型惊吓，兼具宗教感与非人感。</li>
+<li><strong>素世展开血肉翅膀</strong>：本作最具反转感的高能点之一，把“文艺系角色”直接推向怪物化。</li>
+<li><strong>灯在储藏区与大量扭曲尸体共处一室安睡</strong>：静态画面反而最恐怖，极具“违和感压迫”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>图书馆检定获取宵禁与封锁情报</strong>：非常实用，帮助PC建立宏观局势，属于“信息型大成功”。</li>
+<li><strong>现场调查发现鳞片、衣物碎片、学生证</strong>：这种细节检定的成功让调查线索能顺利闭环。</li>
+<li><strong>莫礼在直视怪物/异常时的理智崩塌</strong>：属于符合气氛的大失败，强化了调查恐怖的代价。</li>
+<li><strong>水族馆相关直视导致精神污染</strong>：是典型“知道得越多，伤得越深”的跑团式惨烈结果。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“回头就会被带去另一个世界”</strong>：这类怪谈台词非常有味道，简短但极有效。</li>
+<li><strong>立希一边警惕一边交换情报</strong>：嘴硬但办事，人物魅力很强。</li>
+<li><strong>民宿、大叔、图书馆、报警这些现实操作与超自然灾厄并置</strong>：让故事既接地气又荒诞。</li>
+<li><strong>“住处、联系人、门牌信息全都错乱”</strong>：这种生活被抹除的设定，比单纯鬼怪更令人不安。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“适合发帖的精简版复盘”</strong></li>
+<li><strong>“更像TRPG团后总结的口语版”</strong></li>
+<li><strong>“按时间线列出关键事件与伏笔回收表”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

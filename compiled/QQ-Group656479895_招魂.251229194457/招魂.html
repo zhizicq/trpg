@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>招魂 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>招魂</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《招魂》的核心设定，是一个<strong>恶魔帕祖祖借尸复苏</strong>、在教堂与地下空间中游荡的灵异故事。故事的表层冲突是“恶魔如何摆脱束缚并获取新的操控对象”，而更深层的矛盾则是：<strong>帕祖祖作为恶意与诱导的化身，试图利用环境、他人弱点与信息差来扩张影响；而灵魂少女铃科茉莉身上带有“圣性”，使其既成为关键变量，也成为帕祖祖无法直接掌控的阻碍。</strong></p>
+<p>在这个框架下，剧情主要围绕“恶魔的试探、游说、欺瞒”和“目标对象的警惕与反抗”展开，呈现出一种典型的<strong>压迫式恐怖与操控博弈</strong>。</p>
+
+<h3><strong>主线剧情概要</strong></h3>
+<p>故事从恶魔帕祖祖附身于一具尸体开始。它在教堂地下室中苏醒，却并未立即获得完全的自由，反而先陷入短暂受困的状态。此时，马娘“记者”梦旅意外接触到了帕祖祖，双方在地下空间中形成第一次近距离接触。帕祖祖迅速意识到局势复杂：灵魂少女铃科茉莉并非普通可利用对象，她身上携带的“圣性”让帕祖祖无法像操控常人那样直接操纵她。于是，帕祖祖转而采取更典型的恶魔手段——<strong>诱导与借刀杀人</strong>。</p>
+
+<p>在一系列游说与欺瞒未能完全成功的情况下，帕祖祖仍通过持续施压、话术与局势设计，诱导茉莉与自己一同袭击女野人。尽管计划不算完美，最终女野人还是在逃跑途中失足坠崖身亡，形成了一个带有“恶魔间接达成目标”的黑暗结局。与此同时，铃科茉莉对帕祖祖的警惕显著上升，双方关系从“接触”迅速转向“敌意与防备”。这一段剧情建立了整个模组的基调：<strong>恶魔不一定需要强行控制，只要能让别人替它走向毁灭，它就赢了一半。</strong></p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>目前摘要所示剧情停留在“首次重大事件”阶段：<strong>女野人死亡、茉莉警惕加深、帕祖祖初步推进局势</strong>。这一收尾并非真正意义上的终局，而更像是模组前段的一个黑暗节点：恶魔证明了自己能影响局面，但也暴露了圣性目标的危险性。结局气氛偏向阴冷与悬疑，留下后续更大冲突的伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>帕祖祖</strong></h4>
+<ul>
+<li><strong>性格与定位</strong>：典型的操控型反派/主导型玩家角色，擅长利用语言、环境与他人心理弱点推进目标。</li>
+<li><strong>关键行为</strong>：</li>
+<li>以尸体为载体苏醒后，先观察局势再行动，显示出谨慎与策略性。</li>
+<li>面对茉莉的特殊“圣性”，没有硬碰硬，而是转换思路走诱导路线。</li>
+<li>通过持续施压与话术，推动茉莉参与对女野人的袭击，体现出“恶魔式的间接控制”。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在游说与欺瞒判定失败的情况下，依然靠持续RP把剧情推向目标方向，说明其不是靠纯骰子，而是靠角色逻辑和临场操控制造成果。</li>
+<li><strong>角色弧光解读</strong>：</li>
+</ul>
+<p>帕祖祖的弧光并非“成长”，而是“暴露本性”：它越是接近成功，越显出其诱骗、寄生与制造悲剧的本质。它不是单纯的强权压制者，而是善于把他人拖入自己阴影中的存在。</p>
+
+<h4><strong>铃科茉莉</strong></h4>
+<ul>
+<li><strong>性格与定位</strong>：灵魂少女，带有“圣性”的关键人物。她不是被动的工具人，而是具备辨识危险和产生警惕意识的角色。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在与帕祖祖接触后，明显对其保持戒备。</li>
+<li>在恶魔试图影响局势时，她的“不可直接操控性”成为剧情核心障碍。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>识别并察觉帕祖祖的危险性，这一反应让她从“潜在被利用者”变成“主动防御者”。</li>
+<li><strong>角色弧光解读</strong>：</li>
+</ul>
+<p>茉莉的戏剧张力在于“纯净/圣性”与“被卷入恶意现实”之间的冲突。她并非强势战斗型角色，但她的存在本身就构成了恶魔剧情的重要反制力量。</p>
+
+<h4><strong>梦旅</strong></h4>
+<ul>
+<li><strong>性格与定位</strong>：马娘“记者”，属于<strong>信息接触型角色</strong>，往往承担发现、见证、记录和介入局面的功能。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在教堂地下室接触到苏醒的帕祖祖，作为第一批与恶魔产生直接互动的对象之一。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>她的“记者”身份使其天然具备调查与求证气质，能把灵异事件从“诡异遭遇”转化为“可叙述的事件线索”。</li>
+<li><strong>角色弧光解读</strong>：</li>
+</ul>
+<p>梦旅的作用更偏向“见证者”和“连线者”。她未必在本段内有大动作，但她的存在帮助把超自然事件与人类叙事连接起来。</p>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>女野人</strong></h4>
+<ul>
+<li><strong>作用</strong>：本段剧情中的牺牲者与推动事件升级的导火索。</li>
+<li><strong>剧情意义</strong>：她的死亡标志着恶魔影响开始产生现实伤害，也把“诱导”变成了“致命后果”。</li>
+<li><strong>功能定位</strong>：典型的事件推进型NPC，其命运强化了恐怖氛围与悲剧色彩。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一段：帕祖祖苏醒与环境确认</strong></h3>
+<p>恶魔帕祖祖附身于一具尸体，在教堂地下室中苏醒。起初它并未掌握全部主动权，甚至处于某种受困状态。这一阶段主要是“恶魔重新认识世界”的过程：它评估自己的处境、身体状态和周遭环境，为后续行动做准备。</p>
+
+<h3><strong>第二段：与梦旅接触</strong></h3>
+<p>马娘“记者”梦旅进入或接触地下区域，与帕祖祖形成第一次正面交流。作为信息型角色，她的出现让剧情从单纯的“恶魔复苏”变成“人与恶魔的互动博弈”。帕祖祖借此试图测试对方反应，同时寻找可利用的突破口。</p>
+
+<h3><strong>第三段：识破茉莉的圣性</strong></h3>
+<p>帕祖祖很快发现灵魂少女铃科茉莉拥有特殊的“圣性”。这意味着她不能被自己直接操控，至少不能用对普通人那套方式施加影响。这一发现成为剧情转折点：恶魔失去“直接支配”的便捷路径，不得不转而采用更复杂、更阴险的策略。</p>
+
+<h3><strong>第四段：游说与欺瞒尝试失败</strong></h3>
+<p>帕祖祖先后进行游说与欺瞒，但关键检定均未成功：</p>
+<ul>
+<li>游说检定失败：`1d20=3 + 5 = 8`</li>
+<li>欺瞒检定失败：`1d20=2 + 5 = 7`</li>
+</ul>
+<p>表面上看，它的说服与伪装并未达到理想效果，但帕祖祖并没有因此停手，而是继续通过话术、压迫感和局势操作推进目标。这说明本模组并不完全依赖单次检定结果，而是鼓励角色通过持续RP扭转局面。</p>
+
+<h3><strong>第五段：诱导茉莉卷入袭击</strong></h3>
+<p>在无法直接控制茉莉的情况下，帕祖祖改为诱导她与自己一同袭击女野人。这一段是恶魔最典型的“让受害者参与加害”的手法：即便不能完全操纵，也要让对方在行为上与自己产生共谋感，削弱其道德与心理边界。</p>
+
+<h3><strong>第六段：女野人坠崖死亡</strong></h3>
+<p>女野人在逃跑过程中失足坠崖身亡，事件以黑暗且带有偶发性的方式结束。虽然表面看像是“意外”，但实际是前面一系列诱导、施压和混乱造成的结果。帕祖祖通过间接方式达成目的，完成了第一次显著推进。</p>
+
+<h3><strong>第七段：茉莉警惕升级</strong></h3>
+<p>事件结束后，铃科茉莉对帕祖祖的警惕明显增强。她不再是单纯的接触对象，而成为可能与恶魔对立的角色。由此，剧情从“恶魔试探世界”转为“恶魔与目标之间的明面敌对前奏”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>帕祖祖明知无法直接操控茉莉，仍强行改走诱导路线</strong>：这很有恶魔味，体现出“坏不是靠蛮力，而是靠让别人替自己做坏事”。</li>
+<li><strong>女野人最终坠崖身亡</strong>：表面像意外，实则是恶魔操作链条的结果，这种“间接达成目的”的黑暗感很强。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>游说失败：8</strong></li>
+<li><strong>欺瞒失败：7</strong></li>
+</ul>
+
+<p>这两个判定都不高，且都失败了，特别有一种“话术明明不顺，但剧情照样被硬拽着往前走”的喜感与戏剧性。</p>
+<p>可以说是：<strong>骰子不给面子，恶魔只好靠嘴硬。</strong></p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>帕祖祖在发现茉莉带有圣性后，没有放弃，而是立刻切换策略，这种“反派职业素养”本身就很有戏。</li>
+<li>“无法直接操纵，就把你带进我的行为链条里”这一思路，属于非常经典且令人背脊发凉的恶魔桥段。</li>
+<li>梦旅作为“记者”出现在地下室本身就有一种荒诞感：仿佛灵异现场真的需要一个记录者来证明“这事发生过”。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像论坛复盘帖的版本</strong></li>
+<li><strong>更像模组测评/GM点评的版本</strong></li>
+<li><strong>带“人物关系图 + 剧情时间线”的增强版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>侦探可有翅膀吗 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>侦探可有翅膀吗</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《侦探可有翅膀吗》表面上是一起“失踪/异常行踪调查”委托，实质却逐步揭露出一桩<strong>以儿童为对象的秘密实验案件</strong>。故事核心冲突有三层：</p>
+<ol>
+<li><strong>表层委托</strong>：委托人担心外甥女岛本结依璃行为异常，频繁外出、拒绝他人进入房间。</li>
+<li><strong>中层谜团</strong>：结依璃与年轻家教佐原彻关系暧昧可疑，两人频繁出入咖啡店、拉面店和“医院”，行为显然并不只是普通补习。</li>
+<li><strong>深层真相</strong>：羽田医院实为秘密研究所，进行与米戈相关的儿童脑部实验；结依璃并非单纯受害者或普通少女，而是主动参与某种危险计划的人，背后还牵连到千早与旅的过去。</li>
+</ol>
+
+<p>模组标题中的“翅膀”既可指向异形存在、被改造的“飞行”能力，也像是在问：<strong>侦探、孩子、受害者、怪物，究竟谁才“有翅膀”——谁拥有逃离现实的能力？</strong></p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>侦探社接到委托，调查少女岛本结依璃近期频繁外出、行为古怪的原因。众人先从委托人、朋友和常去店铺入手，逐渐拼出她与大学生家教佐原彻的活动轨迹：两人每周数次同行，常去咖啡厅、拉面店，甚至提到“医院”“研究所做实验”。与此同时，结依璃房间里的相册、数学物理草稿、蜂蜜酵母、长笛、酒精液体和机关暗格，也暗示她在秘密准备某个计划。调查过程中，侦探组遭遇不良少年冲突，千早不仅打退对方，还意外收编小弟，意外地让气氛多了几分喜剧色彩。</p>
+<p>随着线索深入，众人锁定羽田医院，并发现其表面废弃、实则暗中运行，内部保存着脑扫描、X光、MRI等研究资料，明显涉及人体实验。夜间的梦境与回忆进一步揭示：千早童年曾被白衣人用于实验，而旅曾在关键时刻救过他，两人过去都与这项黑暗研究有关。最终，侦探组潜入医院地下，在与异常生物和研究设施的冲突中逐步逼近真相——结依璃、佐原彻以及医院背后的势力都与米戈相关。战斗中旅显露非人本质，与千早协力击败敌人；而在旧儿童房中，千早恢复了部分记忆，确认自己曾是实验品，并在最后选择不抹去记忆、继续与旅并肩前行。案件从“少女的异常行踪”收束为“创伤、操控与自我选择”的故事。</p>
+
+<h3>结局与收尾</h3>
+<p>结局并非传统意义上的“抓捕真凶、恢复日常”，而是更偏向<strong>揭开真相后的关系重组</strong>：</p>
+<ul>
+<li>羽田医院的秘密研究被揭露，实验性质的黑幕被确认。</li>
+<li>千早恢复了关于童年实验与旅相救的记忆。</li>
+<li>旅的非人身份被摆到台面上，但没有导致决裂，反而成为两人关系进一步确认的契机。</li>
+<li>千早拒绝让旅清除自己的记忆，选择保留创伤与真相，也保留了与旅共同承担的未来。</li>
+</ul>
+
+<p>因此，收尾不是“治愈式终结”，而是带着伤痕的并肩：<strong>他们没有摆脱过去，但终于不再被过去单独控制。</strong></p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 千早</h4>
+<p><strong>性格特征</strong>：行动力强、观察敏锐、运气极佳，带一点“总能把事情搞歪但又歪出成果”的喜剧感。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>多次承担侦查与关键检定，成功从咖啡厅外聆听到关键信息。</li>
+<li>在结依璃房间里靠恐龙钥匙链开抽屉，虽然触发机关，但也因此把异常感彻底坐实。</li>
+<li>与不良少年发生冲突时果断出手，还意外收下“小弟”，形成强烈反差喜剧。</li>
+<li>在医院与异形/敌怪交战时表现出极强的推进力，最终成为揭露真相的重要执行者。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>侦查与幸运检定连续命中，逐步把“医院”和“实验”串成完整证据链。</li>
+<li>在童年回忆场景中确认自己是实验受害者，情绪与叙事重量都达到顶点。</li>
+</ul>
+<p><strong>人物弧光</strong>：从“以调查为中心的侦探”转向“直面自身创伤的当事人”，最后选择保留记忆，意味着他不再只是案件旁观者，而是主动承担真相的人。</p>
+
+<h4>2. 旅</h4>
+<p><strong>性格特征</strong>：沉稳、专业、压抑感强，像是总在关键时刻兜底的人；同时其身上带着巨大的秘密。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>在结依璃房间机关触发后及时治疗千早，承担“后勤救援”职责。</li>
+<li>在医院场景中表现出对地点的强烈忌惮，心理学检定显示其压抑与愤怒，暗示其与医院/实验有深层关系。</li>
+<li>最终在战斗中显露非人真身，亲自确认其并非普通人类。</li>
+<li>在收尾阶段面对千早不愿被清除记忆，默认并接受了对方的选择。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>从“可靠的治疗者”转变为“非人真相的持有者”，身份反转带来强烈冲击。</li>
+<li>童年回忆中疑似曾救下千早，使他从单纯神秘角色变成“被千早选择留下”的重要对象。</li>
+</ul>
+<p><strong>人物弧光</strong>：旅的核心不是“揭露”，而是“被揭露后如何被继续接纳”。他从可能被视作危险异类，最终变成千早主动留下的同伴。</p>
+
+<h4>3. 结依璃</h4>
+<p><strong>性格特征</strong>：聪明、好学、内敛，喜欢毛茸茸的东西，外表像普通小学生，实际上高度可疑且具有强烈行动目的。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>频繁与佐原彻外出，被多方目击。</li>
+<li>房间内藏有数学物理资料、蜂蜜酵母、长笛、酒精液体与暗格，说明她在进行某种准备。</li>
+<li>最终在医院场景中与“基基”存在明确关联，甚至能召唤/操控异形存在。</li>
+</ul>
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>她不是被动等待拯救的女孩，而是把侦探们一步步引向真相的关键人物。</li>
+</ul>
+<p><strong>人物功能</strong>：</p>
+<ul>
+<li>作为“被调查对象”，她连接了家宅、学校、医院与异常研究四个空间，是剧情真正的核心枢纽。</li>
+</ul>
+
+<h4>4. 佐原彻</h4>
+<p><strong>性格特征</strong>：表面是“可靠的东京大学学生家教”，实际极可能是实验链条中的执行者或中间人。</p>
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>频繁带结依璃外出，出入医院、研究所等地点。</li>
+<li>被多方描述为“可靠”，形成典型的“外表可信、实则可疑”反差。</li>
+</ul>
+<p><strong>人物功能</strong>：</p>
+<ul>
+<li>是把“家庭日常”与“秘密研究”连接起来的桥梁，起到迷惑调查、维持表象的作用。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC分析</h3>
+
+<h4>委托人 / 外甥女监护人</h4>
+<ul>
+<li>起始委托的提出者。</li>
+<li>他的担忧推动调查展开，也代表“普通亲属在不知情下对异常的无力感”。</li>
+<li>其信息相对有限，但功能明确：开启案件。</li>
+</ul>
+
+<h4>咖啡厅、拉面店、点心店店员</h4>
+<ul>
+<li>典型的“碎片证词提供者”。</li>
+<li>他们共同确认了结依璃与佐原彻的出行规律，给出“大学生带小学生”“提到医院”等关键证词。</li>
+<li>这些NPC虽戏份不重，却承担了把零碎日常拼成异常图景的作用。</li>
+</ul>
+
+<h4>不良少年与“收编小弟”</h4>
+<ul>
+<li>本质上是战斗/喜剧型路障。</li>
+<li>他们没有推动主线真相，却在节奏上提供了很强的舞台感：</li>
+<li>一方面制造冲突，给千早表现机会；</li>
+<li>另一方面让剧情在沉重调查之间出现一段轻快荒诞的插曲。</li>
+</ul>
+
+<h4>羽田医院内部人员/研究相关存在</h4>
+<ul>
+<li>作为“系统性恶”的代表，不一定需要具体姓名，但其存在构成了模组真正的敌对核心。</li>
+<li>其功能不是单独塑造个体，而是展示一个将儿童、记忆与身体当作研究对象的冷酷结构。</li>
+</ul>
+
+<h4>米戈相关存在</h4>
+<ul>
+<li>是故事终极超自然背景。</li>
+<li>它将“医疗机构异常”提升到克系/异界层面，使案件从现实犯罪转向宇宙恐怖与非人技术的混合体。</li>
+<li>也解释了旅的异常本质和结依璃的特殊性。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：从日常异常切入</h3>
+<p>侦探社接到委托，首先从委托人处确认结依璃的家庭状况：母亲问题使她暂住他人家中，父亲长期缺席，而真正负责辅导她的是东大的学生佐原彻。随后调查组开始走访结依璃常去的场所——咖啡厅、拉面店和点心店。店员们提供了统一且可疑的证词：每周数次，一个大学生模样的男性会带着小学生女孩来店里，二人常坐角落，偶尔提到“医院”。</p>
+<p>千早等人把这些碎片拼起来，开始怀疑“哥哥般的照顾者”与少女之间关系并不普通。途中与不良少年起冲突，千早不但击退对方，还意外让场面变成“收小弟”的社团喜剧。最后众人回到结依璃家中，翻出相册、数学物理资料、蜂蜜酵母、长笛和酒精味液体，还在带机关的暗格中被拳击手套和胡椒粉反制，异常感瞬间拉满。</p>
+
+<h3>第2章：医院与实验的阴影</h3>
+<p>随着更多走访，大家得知结依璃喜欢学习和毛茸茸的东西，而佐原彻常带她外出，并提到“去羽田医院的研究所做实验”。千早在咖啡厅外的聆听检定中捕捉到关键对话，基本坐实医院线索。</p>
+<p>调查进一步推进到废旧医院，但大门紧闭、环境阴冷，旅对这里表现出明显抗拒与压抑。夜里，千早梦见童年实验场景：白衣人、被束缚的自己，以及疑似旅的救援画面，提示这座医院并非第一次出现在他们生命里。与此同时，千早继续从结依璃房间里提取线索，反复侦查、幸运成功，甚至用恐龙钥匙链开启机关，结果反被拳击手套和胡椒粉喷了一脸，只能由旅出手治疗。房间里的资料越来越清楚地表明：结依璃正在秘密准备某件与实验有关的事。</p>
+
+<h3>第3章：秘密研究所与异形显现</h3>
+<p>委托人再次说明外甥女近期的异常：偷跑、拒绝他人进房、行踪不明。侦探组继续沿着人际网络调查，确认结依璃与佐原彻频繁出入各地，还从店员和朋友口中拼出更多细节。</p>
+<p>他们最终潜入羽田医院，发现这并不是废弃设施，而是仍在运作的秘密研究所：内部保留着被改造的资料、脑扫描照片以及MRI/X光设备，显然在做儿童相关的异常实验。进入病房后，千早救下结依璃，并击退一只甲壳类怪物。此时结依璃召唤出名为“基基”的翼状异形生物，将怪物带走，等于正式把她与超自然存在的联系摆到台面上。剧情由“调查失踪”彻底转入“直面异界与实验真相”。</p>
+
+<h3>第4章：真相确认与记忆回收</h3>
+<p>在最终章节，调查继续深入医院地下与旧儿童房。千早与旅合作击败敌人，旅也在战斗中暴露非人真身，印证了此前一切关于“异常”的猜测。</p>
+<p>当他们进入与童年相关的旧房间时，千早恢复记忆：自己曾是实验对象，而旅曾在那段过去中救过自己。至此，医院的秘密实验、米戈的参与、结依璃与佐原彻的真实立场，以及旅的身份都得到了统一解释。</p>
+<p>收尾时，千早拒绝让旅清除这段记忆，选择把创伤、真相与情感一起留下。案件没有以“回到日常”结束，而是以“承认彼此的不正常，并继续同行”落幕。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩 / 最搞笑 / 最意外的场景</h3>
+<ul>
+<li><strong>千早与不良少年冲突后“意外收编小弟”</strong></li>
+</ul>
+<p>这是全团最明显的气氛转折点，原本紧张的侦查突然变成街头热血喜剧。</p>
+<ul>
+<li><strong>恐龙钥匙链开暗格失败，触发拳击手套+胡椒粉机关</strong></li>
+</ul>
+<p>兼具荒诞与实用的机关设计，非常有“这房间到底在防什么”的喜感。</p>
+<ul>
+<li><strong>旅在废弃医院前的压抑反应</strong></li>
+</ul>
+<p>这里是全剧最重要的悬疑压点之一，把“这地方和他绝对有关”写在脸上。</p>
+<ul>
+<li><strong>结依璃召唤“基基”</strong></li>
+</ul>
+<p>从“聪明好学的小女孩”一下跳到“与异形共存/可操控异形”的层次，反转效果非常强。</p>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>千早的聆听/幸运检定成功，听到咖啡厅外关键对话</strong></li>
+</ul>
+<p>这是最核心的“拼图”型成功，让医院线索真正落地。</p>
+<ul>
+<li><strong>千早在结依璃房间的连续侦查与幸运成功</strong></li>
+</ul>
+<p>通过一次次细节检定，把房间从“孩子房间”还原成“秘密研究/行动准备室”。</p>
+<ul>
+<li><strong>恐龙钥匙链开启抽屉的幸运成功，紧接着触发机关</strong></li>
+</ul>
+<p>这类“成功但也吃到代价”的桥段非常有TRPG味道，既推进剧情又制造笑点。</p>
+<ul>
+<li><strong>旅的医学救治成功</strong></li>
+</ul>
+<p>在高危机关后及时止血，属于稳定队伍节奏的关键支援型高光。</p>
+<ul>
+<li><strong>心理学检定看出旅的压抑怒火</strong></li>
+</ul>
+<p>这是少见的“读角色”成功，让玩家和观众都更早意识到旅的秘密不是一般的大。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“<strong>大学生带着小学生</strong>”这一目击证词，天然带着可疑与喜剧并存的效果。</li>
+<li>“<strong>去医院</strong>”“<strong>去羽田医院的研究所做实验</strong>”这种看似平静的口吻，与其背后可怕真相形成强烈反差。</li>
+<li>“<strong>可靠的青年</strong>”佐原彻标签极具误导性，越可靠越可疑。</li>
+<li>结依璃房间里出现的<strong>蜂蜜、酵母、长笛、酒精液体、数学物理草稿</strong>，组合起来像某种“天才儿童的失控实验台”。</li>
+<li>千早“<strong>收小弟</strong>”的桥段，与后续严肃克系真相形成鲜明对照，使整段跑团既有轻松感也更显后半段沉重。</li>
+</ul>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>“模组剧情时间线表格版”</strong></li>
+<li><strong>“PC与NPC关系网图解版”</strong></li>
+<li><strong>“适合发帖的短评/长评版本”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

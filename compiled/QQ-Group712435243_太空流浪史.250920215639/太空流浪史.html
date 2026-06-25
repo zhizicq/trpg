@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>太空流浪史 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>太空流浪史</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2># 《太空流浪史》模组分析报告</h2>
+
+</div>
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《太空流浪史》讲述了一支虫族探险队在宇宙中寻找“新家园”的漂泊历程。与传统“开拓殖民”叙事不同，本模组的核心冲突并不在于对外战争，而在于<strong>“家园究竟应当是什么”</strong>：是安全、适宜生存的土地，是能承载族群延续的生态系统，还是某种能回应个体欲望与记忆的精神归宿。</p>
+<p>探索过程中，队伍连续接触四颗候选星球：活体星球、蓝色精神污染星、气体行星，以及虫族文明遗迹所在的星球/卫星体系。每颗星球都以近乎“伪乌托邦”的方式呈现某种诱惑，同时又藏着足以吞噬人的风险。于是，模组的真正矛盾逐渐从“找地方住”转变为“每个人要如何定义自己的未来”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>虫族探险队在漫长漂流后，抵达被称作“虚空星球”的区域，开始对四颗候选星球进行连续勘探。每一轮探索都通过多次d6检定生成星球特征：地表、天空、植被、动物、气候、秘史等要素共同决定星球的“可居住性”与“危险性”。这些检定不是单纯的数值判定，而是直接塑造了整段旅程的叙事方向——有的星球看似完美却暗藏灾厄，有的星球环境恶劣却存在文明线索与情感召唤。</p>
+<p>在探索中，队伍逐步发现：四颗星球都不是传统意义上的“普通宜居星”。其中有活体星球，充满异质生命逻辑；有蓝色星球，表面瑰丽、生态完美，却伴随强烈精神污染；有气体行星，难以常规登陆；还有虫族文明相关星体，带来族群历史与政治选择。队员们在一次次风险判断中，开始从“共同求生”转向“分道扬镳”。最终，圆头选择留在“翻斗花园”发展畜牧，建立稳定而朴实的新生活；Iris被蓝星的蓝色幻象与精神牵引，返回那颗既美丽又危险的星球；奥比则前往浮木星卫星，尝试联络原住民，继续承担探索与沟通的责任。故事没有以统一胜利收束，而是以三人各自奔向不同的新家园结束，留下开放而温柔的余韵。</p>
+
+<h3>结局与收尾</h3>
+<p>结局属于典型的“分流式收官”：没有最终Boss，也没有单一胜利者，而是让每位角色依据自身倾向作出归宿选择。</p>
+<ul>
+<li><strong>圆头</strong>留在“翻斗花园”扎根，走向建设与生产。</li>
+<li><strong>Iris</strong>回到蓝星，拥抱诱惑与未知，带着精神污染的风险追逐幻象。</li>
+<li><strong>奥比</strong>前往浮木星卫星，与原住民建立联系，延续探索和外交。</li>
+</ul>
+
+<p>这种结尾强化了模组主题：<strong>家园不是一个答案，而是每个人选择承受的未来。</strong></p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC角色分析</h3>
+
+<h4>1. 圆头</h4>
+<ul>
+<li><strong>性格特征</strong>：务实、稳定、偏向生活建设型，面对宏大宇宙时更重视“能不能过日子”。</li>
+<li><strong>关键行为</strong>：最终选择留在“翻斗花园”发展畜牧，说明他对秩序、生产与可持续生活有强烈偏好。</li>
+<li><strong>高光时刻</strong>：不是最冒险的那一个，却是最能把“家园”落到实处的人。相比追逐神秘或使命，他代表的是落地、繁衍与安居。</li>
+</ul>
+
+<h4>2. Iris</h4>
+<ul>
+<li><strong>性格特征</strong>：感性、好奇、容易被美丽事物吸引，带有浪漫主义和某种自我沉溺倾向。</li>
+<li><strong>关键行为</strong>：被蓝色幻象与蓝星的精神氛围吸引，主动回到那颗危险星球。</li>
+<li><strong>高光时刻</strong>：她的选择是全团最具戏剧性的“明知危险仍奔赴”的行为，体现出角色并非只追求安全，而是在寻找某种精神上的“被召唤感”。</li>
+</ul>
+
+<h4>3. 奥比</h4>
+<ul>
+<li><strong>性格特征</strong>：责任感强，倾向于沟通、探索与联系外部世界。</li>
+<li><strong>关键行为</strong>：前往浮木星卫星联络原住民，显示其关注“关系建立”而非单纯占领。</li>
+<li><strong>高光时刻</strong>：作为连接不同群体的中介，他把故事从生存问题推进到文明接触与族群共处的层面。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+<p>由于摘要中未明确列出具体NPC姓名，模组中的“重要存在”更多体现为<strong>星球本身作为叙事角色</strong>：</p>
+<ul>
+<li><strong>翻斗花园</strong>：几乎等同于一个温暖、适居、可经营的“准NPC”。它代表现实生活与安稳收容。</li>
+<li><strong>蓝蓝蓝星/蓝星幻象</strong>：以精神污染为代价提供诱惑，是典型的“魅惑型NPC/环境角色”。</li>
+<li><strong>浮木星卫星原住民</strong>：承担文化接触与外交线索功能，代表“未知他者”。</li>
+<li><strong>虫族文明星</strong>：为族群历史、身份认同与文明传承提供背景支点。</li>
+</ul>
+<p>这些存在共同构成了模组的人物关系网：不是人与人对抗，而是人、环境与文明记忆之间的拉扯。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：进入虚空星域，确定探索目标</h3>
+<p>虫族探险队来到被称为“虚空星球”的区域，开始寻找适合作为新家园的行星。此阶段主要通过连续d6检定来定义星球特征：地表、天空、植被、动物、气候与秘史等。</p>
+<p>这套机制使得每颗星球都不是预设成品，而是由掷骰共同塑造出的“随机宇宙”，让探索感与未知性极强。</p>
+
+<h3>第二阶段：勘探第一批星球——从表层宜居到隐秘危险</h3>
+<p>队伍先后观察到若干候选星球，初步印象不断翻转：</p>
+<ul>
+<li>有的星球生态表现优异，却不是普通的自然行星；</li>
+<li>有的星球在局部属性上堪称完美，但秘史或特殊属性直接改变其价值判断；</li>
+<li>有的则看似无法居住，却暗藏文明、联系或资源线索。</li>
+</ul>
+<p>这一阶段的叙事重点是：<strong>“漂亮的数据不等于安全的生活。”</strong></p>
+
+<h3>第三阶段：翻斗花园——稳定、适居、可经营</h3>
+<p>翻斗花园在检定中表现极佳，尤其是天空、动物等维度非常理想，最终成为最接近“真正家园”的选择。</p>
+<p>它不像其他星球那样充满超自然诱惑，而更像一个能够长期耕作、发展畜牧、建立族群生活的实用据点。圆头因此选择留下，意味着他认可这份朴素但可靠的未来。</p>
+
+<h3>第四阶段：蓝蓝蓝星——美丽到危险的精神陷阱</h3>
+<p>蓝蓝蓝星/蓝星在植物与天空方面几乎完美，是整段故事里最“令人向往”的星球之一。然而，它同时带有严重的精神污染，甚至让队员一度濒危。</p>
+<p>这种设计制造了强烈反差：表面上是乌托邦，实际上是侵蚀意志的深渊。Iris在此被深深吸引，最终选择返回蓝星，体现出她对美、幻象与情感召唤的抵抗力较低，但也正因如此，她的结局最具宿命感。</p>
+
+<h3>第五阶段：浮木星与卫星——与原住民接触</h3>
+<p>奥比走向浮木星卫星，与原住民建立联络。相比前两条路线，这条线更偏向外交、沟通和文明互动。</p>
+<p>它暗示模组并未将“找到家园”简化为登陆与定居，而是进一步扩展为：如何与已有居民共存、如何在陌生文明中找到自己的位置。奥比因此成为连接未来与过去的行动者。</p>
+
+<h3>第六阶段：分道扬镳，各自奔赴新家园</h3>
+<p>故事最终没有收束为统一结局，而是让三位PC依据自身性格各自选择归宿：</p>
+<ul>
+<li>圆头留下建设生活；</li>
+<li>Iris回归蓝色幻梦；</li>
+<li>奥比继续外联与探索。</li>
+</ul>
+<p>这一分流式收尾让每个角色都获得了“属于自己”的结局，也让模组的主题从群体生存自然延伸到个人命运。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：蓝蓝蓝星“美到危险”的反差。视觉与氛围上的完美感，直接与精神污染形成冲击，极具科幻恐怖味道。</li>
+<li><strong>最意外</strong>：玩家最终不是统一定居，而是分成三条路线，各自选择不同的新家园，这种结局非常有角色弧光。</li>
+<li><strong>最有趣</strong>：圆头留在翻斗花园发展畜牧，给整体偏宇宙史诗的故事带来一种“回归田园”的反差喜感。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>多次d6决定星球特征</strong>是本模组最核心的机制亮点。</li>
+<li>有的检定让星球直接接近“天堂模板”，</li>
+<li>有的则把它推向“致命危险”或“精神污染”。</li>
+<li><strong>翻斗花园的高质量判定</strong>让它成为最现实的落脚点。</li>
+<li><strong>蓝蓝蓝星的完美表征与精神污染并存</strong>，可视作一次“数值上大成功，叙事上大失败”的经典案例。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“一颗星球怎么能又完美又危险？”这类认知反差本身就是模组的趣味来源。</li>
+<li>圆头选择种田、Iris奔赴幻象、奥比继续外交，三人路线像是对“宇宙人生三种活法”的幽默总结：<strong>务实派、浪漫派、责任派</strong>。</li>
+<li>整个模组最有味道的地方在于：它不是让角色拯救宇宙，而是让他们认真决定“以后住哪儿”。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析报告扩写成：</p>
+<ol>
+<li><strong>更像正式跑团复盘文档的版本</strong></li>
+<li><strong>更像故事讲述/同人叙事的版本</strong></li>
+<li><strong>按“主持人视角”整理成可复用的模组总结模板</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

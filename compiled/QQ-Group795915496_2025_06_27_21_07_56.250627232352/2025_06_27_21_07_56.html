@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_27_21_07_56 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_27_21_07_56</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本段剧情发生在一个被多方势力撕扯的边境城镇/据点中：一边是正在扩张影响的<strong>绿龙势力</strong>，另一边则是城内与周边仍未完全失控的人类阵营与地方守军。与此同时，城中还潜伏着与超自然传说相关的<strong>雪女情报</strong>、<strong>沉船线索</strong>等支线危机，显示出这个地区并非单纯的军政冲突，而是被怪异与阴谋共同笼罩。</p>
+<p>核心矛盾可以概括为：<strong>如何在局势失控前稳住城内权力结构，并为之后对抗更强大的龙类势力争取主动权</strong>。海蒂一行人在混乱中既要处理人际与情报，也要制定行动方案，逐步从“被动应对”转向“主动设局”。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>海蒂醒来后，发现同伴雅尔正因女儿莫妮卡在温泉中衣物被偷而暴怒。海蒂先介入安抚情绪，避免事态继续恶化，同时趁机对雅尔进行法术处理，取走其血与发丝，为后续潜在的仪式、追踪或施法准备材料。随后，她利用镜视联络散落各地的同伴，逐步拼接出当前局势：一方面获取了关于雪女的传闻，另一方面得知沉船相关线索，以及城内各方势力的现实状态。</p>
+<p>在多线信息汇集后，海蒂与高铎斯迅速达成共识：与其被动等待赛卢卡塔守将或绿龙势力进一步动作，不如主动出击，计划于次日前往埋葬龙尸的大树下设伏，争取控制局面。这个决策标志着队伍从“搜集零碎情报”进入“战略布局阶段”。虽然本段没有直接呈现战斗，但已明确埋下未来冲突的关键节点：赛卢卡塔守将、龙尸地点、绿龙势力压迫，以及可能存在的超自然误导情报，都会在后续成为推进主线的重要变量。</p>
+
+<h3>结局与收尾</h3>
+<p>本段以<strong>“明日于埋龙尸的大树下伏击赛卢卡塔守将”</strong>作为阶段性收束。队伍暂时没有进入正面交锋，而是完成了信息整合、同伴联络与行动部署，为下一阶段的军事/阴谋对抗做好准备。整体收尾呈现出一种典型的“战前静默”：表面上剧情短促，实则已经把接下来的冲突焦点清晰钉死在伏击行动与城内控制权之争上。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>各PC（玩家角色）的性格、关键行为和高光时刻</h3>
+
+<h4>海蒂</h4>
+<ul>
+<li><strong>性格特征</strong>：冷静、机敏、行动导向强，擅长在混乱中迅速整理信息并做出判断。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在雅尔情绪爆发时主动介入安抚，避免冲突扩大。</li>
+<li>用法术取走雅尔的血与发丝，表现出她对资源与未来伏笔的敏感把控。</li>
+<li>通过镜视联系分散同伴，整合雪女、沉船、城内局势等多线情报。</li>
+<li>最终拍板与高铎斯拟定伏击方案。</li>
+<li><strong>高光时刻</strong>：不是单纯“会法术”，而是展现出典型的<strong>幕后调度者</strong>风格——她把情绪安抚、情报统筹和战略部署一气呵成，说明她不仅能“做事”，更能“控局”。</li>
+</ul>
+
+<h4>雅尔</h4>
+<ul>
+<li><strong>性格特征</strong>：强烈的保护欲与家长式愤怒，情绪直接、爱憎分明。</li>
+<li><strong>关键行为</strong>：</li>
+<li>因女儿莫妮卡在温泉被偷衣服而暴怒，说明她对家人极其在意。</li>
+<li>在海蒂安抚下情绪被缓和，显示其虽易怒但并非不可沟通。</li>
+<li><strong>高光时刻</strong>：她的愤怒实际上强化了角色的温度——不是工具人，而是一个把“家人受辱”视为重大事件的人。</li>
+</ul>
+
+<h4>高铎斯</h4>
+<ul>
+<li><strong>性格特征</strong>：务实、偏战术思维，重视局势控制。</li>
+<li><strong>关键行为</strong>：</li>
+<li>与海蒂共同商定伏击赛卢卡塔守将的计划。</li>
+<li>在局势未明时选择主动设伏，体现其策略倾向。</li>
+<li><strong>高光时刻</strong>：作为“能跟上海蒂节奏”的决策搭档，高铎斯在本段体现出可靠的行动执行与战局判断能力。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+
+<h4>莫妮卡</h4>
+<ul>
+<li>雅尔的女儿，虽未直接出场主导剧情，但她在温泉衣物被偷一事中成为冲突源。</li>
+<li>她的遭遇推动了雅尔的情绪爆发，也让这段剧情从单纯的情报整理多了一层生活化与人际张力。</li>
+</ul>
+
+<h4>赛卢卡塔守将</h4>
+<ul>
+<li>本段中最重要的潜在对手之一。</li>
+<li>虽未正式登场，却已被明确设定为伏击目标，代表着“城内秩序/军权”的关键节点。</li>
+<li>他的存在使剧情从民间异闻转向更明确的政治军事对抗。</li>
+</ul>
+
+<h4>雪女相关传闻对象</h4>
+<ul>
+<li>严格来说不是单一NPC，而是一类情报指向的超自然存在。</li>
+<li>它在剧情中的作用是制造迷雾：海蒂的宗教判断显示“雪女通常是怨念女性死后化成的鬼魂，且一般不具备巫术能力”，这意味着现有传闻很可能掺杂误导或伪装，后续需要进一步鉴别真伪。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 醒来与冲突导火索：温泉失窃事件</h3>
+<p>海蒂醒来后，第一时间面对的是雅尔的怒火。原来莫妮卡在温泉遭遇了衣物被偷的事件，这件看似琐碎的小事却足以引爆雅尔的情绪。海蒂判断局面若继续发酵，容易引起更大混乱，于是先行介入，用安抚方式稳定住雅尔的状态，避免让私人情绪干扰后续行动。</p>
+
+<h3>2. 取血与准备：为后续法术留伏笔</h3>
+<p>在安抚雅尔之后，海蒂顺势施法，取得了雅尔的血液与发丝。这个行为说明队伍并不只是围绕眼前问题行动，而是在为后续仪式、定位、诅咒、占卜或追踪类用途提前准备材料。此处体现了海蒂高度的前瞻性：她的每一步都不是单一事件处理，而是把眼下的互动转化为后续资源。</p>
+
+<h3>3. 情报整合：镜视联络分散同伴</h3>
+<p>随后，海蒂使用镜视与分散的同伴取得联系，从而汇总到多条关键情报：包括雪女相关线索、沉船线索，以及城内局势变化。这里的叙事重点不在具体信息的全部内容，而在于“碎片拼接”这一过程：队伍明显处于多线调查阶段，每条线索都可能指向不同危机，但最终都汇入同一个战略判断——当前最重要的是控制局势。</p>
+
+<h3>4. 宗教判断：识破雪女情报的疑点</h3>
+<p>海蒂进行了宗教检定，并凭借结果判断：常见意义上的雪女多为怨念女性死后形成的鬼魂，且通常不具备巫术能力。这一判断很重要，因为它意味着当前获得的雪女信息很可能不完全可靠，或者有“人为包装”的痕迹。换言之，剧情进入“辨伪”阶段：不是所有传闻都值得相信，队伍必须小心被误导。</p>
+
+<h3>5. 战前决议：伏击赛卢卡塔守将</h3>
+<p>在情报归拢后，海蒂与高铎斯达成共同战略：次日于埋龙尸的大树下伏击赛卢卡塔守将。这个地点本身就带有强烈象征意义——龙尸、树下、伏击，意味着过去的灾厄遗骸将成为当下斗争的战场。此举的目的不是单纯杀敌，而是通过控制关键人物来争夺局势主动权，并为后续对抗绿龙势力做准备。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：海蒂从安抚雅尔情绪，到顺手收集血发，再到联络同伴整合情报，最后直接敲定伏击计划——一整套操作非常“谋定后动”，展现出强烈的指挥感。</li>
+<li><strong>最意外</strong>：雅尔的爆发点居然是“女儿在温泉被偷衣服”，这种事件本身带着一点荒诞日常感，但在剧情里却成功拉起了人物情绪张力。</li>
+<li><strong>最有味道</strong>：把“埋龙尸的大树”作为伏击地点，氛围感极强，像是把历史残骸当作下一场战争的舞台。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>察觉检定大失败</strong>：海蒂 `d20+2=6`</li>
+</ul>
+<p>睡醒后依旧迷糊，没能得到额外有效信息。这种“刚醒脑子没转过来”的结果很符合角色状态，也为后续由宗教检定补足信息形成了对比。</p>
+<ul>
+<li><strong>宗教检定成功</strong>：海蒂 `d20+12=18`</li>
+</ul>
+<p>成功辨认雪女的常见设定，直接指出情报可能存在偏差。这个检定的价值在于，它不仅提供知识，还帮助队伍避免被表面传闻带偏。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“温泉偷衣服”引发的怒火</strong>：生活化事件引爆强烈情绪，形成反差萌，也让角色关系更立体。</li>
+<li><strong>海蒂的处理方式</strong>：先安抚、再取样、再联络、再决策，整段流程像是把人际、法术与战略揉成了一套流水线，十分有“老练队长/幕后操盘手”气质。</li>
+<li><strong>关于雪女的判断</strong>：从民间传说切回宗教常识，让剧情从“听说有怪物”变成“这些情报可能是假的或被改造过”，这类反转很适合推进悬疑感。</li>
+</ul>
+
+<hr>
+
+<p>如需，我也可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式团后总结的版本</strong>，或</li>
+<li><strong>更偏小说化、叙事感更强的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

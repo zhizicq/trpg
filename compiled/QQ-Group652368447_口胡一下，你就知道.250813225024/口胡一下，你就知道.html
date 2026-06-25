@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口胡一下，你就知道 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>口胡一下，你就知道</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组发生在罗马街头，表面上是一起披着“邪教仪式”外衣的连环凶杀案，实则是两个凶手针对男同性恋群体的恶意仇杀。核心冲突围绕着：<strong>众人误把凶案当成神秘学事件调查，最后却发现所谓仪式只是烟雾弹；而主角团一边负债、一边破案，在荒诞与暴力中把案子硬生生“口胡”出来。</strong></p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>故事从罗马街头的一场离奇斗殴开始。神秘学家克莱尔因为体质太差，在一次关键检定中被撞得当场晕倒；而邪教徒兼意面商艾力士则因“飞踢”和误会卷入冲突。两人被警察带走后，意外得知本地正发生一桩连环凶杀案。为了偿还医药费和债务，他们不得不边蹭饭边查案，在信息零碎、推理混乱的情况下逐步接近真相。</p>
+
+<p>调查过程中，克莱尔试图从法阵和诗句入手，推断凶手是按“十四行诗”的结构和顺序行凶，案件因此被包装成一场带有仪式色彩的神秘犯罪。然而随着线索收束，警方给出了更残酷也更朴素的答案：法阵其实是乱画的，真正的作案动机并非邪教献祭，而是两名凶手对男同性恋群体的定向仇杀。最终，众人在意面馆遭到袭击，主角团当场反杀并制服凶手，案件告破。只是破案之后，所有人依旧没能摆脱“金钱诅咒”——有人欠债，有人赔光了钱，胜利显得相当狼狈而荒唐。</p>
+
+<h3>结局与收尾</h3>
+<p>案件成功侦破，凶手被制服，所谓“邪教仪式”真相大白：只是仇恨犯罪的伪装。主角团虽然保住了命，也完成了调查，但代价是<strong>医疗费、债务和财务清零</strong>，形成了一个典型的“案子破了，钱包也破了”的收尾。整体结局偏黑色喜剧，正义到场，但众人收获的是现实的窘迫而非体面的胜利。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>克莱尔</h3>
+<ul>
+<li><strong>性格特征</strong>：典型的“知识型角色”与“身体弱鸡”反差体，擅长从神秘学和文本中找规律，但现实抗打击能力极差。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在斗殴中因体质检定失败直接被撞晕，成为“先倒下的调查者”。</li>
+<li>后续负责解读法阵与诗句，提出“十四行诗”顺序的推断，体现其分析能力与学术直觉。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>虽然身体脆弱，但能从杂乱线索中抓住结构性规律，成为推动真相拼图的重要一环。</li>
+<li><strong>角色魅力</strong>：</li>
+<li>其存在强化了模组的荒诞感：一个研究神秘学的人，最先不是“见鬼”，而是“被打晕送医”。</li>
+</ul>
+
+<h3>艾力士</h3>
+<ul>
+<li><strong>性格特征</strong>：兼具邪教徒标签与市井商人的双重身份，气质滑稽、行动直接，带有强烈的街头生存感。</li>
+<li><strong>关键行为</strong>：</li>
+<li>因飞踢和误会卷入斗殴，属于事件的“搅局者”。</li>
+<li>在调查中以“蹭饭、周旋、硬扛”的方式维持行动，表现出极强的现实适应力。</li>
+<li>最终在意面馆遭袭时参与反杀，完成从嘴炮/误会角色到实际战斗角色的转变。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在混乱局面里仍能把自己“活成剧情推进器”，是整场黑色喜剧的发动机之一。</li>
+<li><strong>角色魅力</strong>：</li>
+<li>“邪教徒/意面商”这一设定本身就非常有戏剧张力，既能制造反差笑点，也让他在案发地“意面馆”场景中天然绑定。</li>
+</ul>
+
+<h3>重要NPC</h3>
+
+<h4>警察</h4>
+<ul>
+<li><strong>作用</strong>：承担信息转交、案件引入与秩序代表的功能。</li>
+<li><strong>剧情意义</strong>：</li>
+<li>将原本街头斗殴的乱局转化为正式的凶杀案调查。</li>
+<li>在结尾给出真正动机，完成“反转说明书”的功能。</li>
+</ul>
+
+<h4>凶手（二人）</h4>
+<ul>
+<li><strong>作用</strong>：案件核心反派。</li>
+<li><strong>剧情意义</strong>：</li>
+<li>他们表面制造神秘仪式假象，实际上进行针对男同的定向仇杀。</li>
+<li>负责把模组从“神秘学悬疑”拽回“现实犯罪”的残酷层面。</li>
+<li><strong>评价</strong>：</li>
+<li>属于“动机不复杂但非常恶劣”的类型，真相越朴素，反而越刺痛。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 罗马街头的意外开场</h3>
+<p>故事起点是罗马街头的一场突发冲突。神秘学家克莱尔和邪教徒/意面商艾力士因“飞踢”与误会陷入斗殴，场面混乱得像是随机生成的闹剧。克莱尔在关键体质检定中惨败，被直接撞晕送医，成为这场事件里第一个“物理意义上掉线”的人。</p>
+
+<h3>2. 警局与案件引入</h3>
+<p>斗殴双方被警察带走后，众人才得知当地正发生连环凶杀案。原本只是街头冲突的两名角色，因被卷入现场与后续讯息而被迫参与调查。与此同时，医药费与债务问题浮上台面，调查动机从“弄清真相”变成了“得先想办法活下去”。</p>
+
+<h3>3. 边蹭饭边查案</h3>
+<p>主角团开始零碎搜集线索，在调查过程中逐渐接触到“邪教仪式”“法阵”“诗句”等表层线索。克莱尔凭借神秘学知识与文本敏感性，尝试将案发模式纳入结构化推理，提出凶手可能按照“十四行诗”的顺序行动。这一判断一度让案件看起来像是某种有仪式逻辑的连环犯罪。</p>
+
+<h3>4. 意面馆伏击与反杀</h3>
+<p>在调查逐渐推进之际，主角团在意面馆遭遇袭击。这里既是艾力士身份的自然落点，也是最终冲突爆发的舞台。面对凶手的突袭，众人临场反击，最终成功制服对方。这个场景把“餐馆日常”与“血腥案件”硬生生叠在一起，形成强烈的黑色喜剧效果。</p>
+
+<h3>5. 真相揭晓</h3>
+<p>案件告破后，警方给出了最终解释：法阵并非真正仪式，而是乱画的掩饰；连环凶杀的根本动机也不是超自然邪教，而是两名凶手专门针对男同性恋实施仇杀。此前所有神秘学包装，都是为了掩盖现实中的恶意与偏见。</p>
+
+<h3>6. 结案与代价</h3>
+<p>真相揭晓后，主角团完成了破案，但现实账单仍旧没能解决。医药费、欠债、赔光的钱，让胜利带着浓厚的“我赢了但我更穷了”的味道。模组以这种荒诞又辛辣的方式收束，形成了典型的“黑色幽默式结局”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>开局飞踢引发连锁事件</strong>：本来只是街头误会，结果直接把主角团踢进连环凶案里，开局就充满喜剧性。</li>
+<li><strong>克莱尔被撞晕送医</strong>：学者型角色在第一波冲突里直接倒下，极具反差萌，也非常符合“TRPG里知识分子先倒地”的经典笑点。</li>
+<li><strong>意面馆决战</strong>：在卖意面的地方遭遇凶手袭击，场景本身就带有荒诞的戏剧感，像是把日常生活和命案强行揉成一锅。</li>
+<li><strong>真相反转</strong>：原本以为是邪教仪式，最后却是仇杀男同；“法阵是乱画的”这一揭示，把前面所有神秘感瞬间拆掉，形成冷峻的反差。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>体质检定大失败</strong>：克莱尔体质35，D100=95/35失败，直接被撞晕。</li>
+</ul>
+<p>这个检定几乎完美定义了角色的“纸糊感”，也是整段日志里最具记忆点的机械结果之一。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“十四行诗”式推理</strong>：克莱尔从法阵与诗句中抽丝剥茧，试图把凶案串成结构化叙事；虽然最终被证明真相更简单粗暴，但这段推理过程本身很有神秘学侦探味。</li>
+<li><strong>“邪教徒/意面商”设定</strong>：这一身份组合天然带梗，使得角色在任何与食物、聚会、餐馆有关的场景中都充满喜感。</li>
+<li><strong>“边蹭饭边查案”</strong>：主角团的行动方式非常接地气，破案的艰难程度被直接具象化为“先把饭解决了再说”。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以继续把这份分析报告整理成：</p>
+<ol>
+<li><strong>更像贴吧/论坛风格的复盘版</strong></li>
+<li><strong>更像正式模组测评的专业版</strong></li>
+<li><strong>带“GM视角问题总结”的战报版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈哈我一定要活下去！ - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>哈哈我一定要活下去！</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《哈哈我一定要活下去！》是一则典型的现代都市恐怖短篇：独居青年青池在某个夜晚突然被一封乱码邮件“选中”，随后自家公寓迅速滑向超自然失控。房屋漏水、电子设备失灵、空间异变与尸体幻象接连出现，最终牵出一桩被压抑、被遗忘的家庭惨剧——楼上夫妻曾杀害并分尸婴儿，怨念与记忆残留在这栋房子里，而青池本人也被这场事件波及，失去了部分记忆。</p>
+
+<p>本模组的核心冲突并不是“打倒怪物”，而是“在恐怖记忆复苏的过程中，如何理解并安抚被困住的怨灵”，同时让主角在不断恶化的环境中维持理智与生存。邮件看似诡异，却像一位催促者/引路人，逼迫玩家面对埋藏已久的真相。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>青池在独居夜晚收到一封乱码邮件，内容断续而诡异，像是在引导他“找到那些藏起来和被藏起来的婴儿”。很快，家中开始出现不可能的异常：门窗封死、电子设备失灵、厨房与浴室里接连浮现烤熟的婴儿尸体、断手等恐怖景象。随着玩家调查【家】中的线索，青池逐步拼回被封存的记忆：楼上夫妻曾因某种扭曲的家庭悲剧杀婴分尸，而自己也在当年的事件中受到牵连，导致记忆缺损与长期压抑。邮件并不是单纯的恶意骚扰，而更像一种“任务通知”，要求青池去面对怨灵的来源，并将那些因恐惧与憎恨而无法安息的婴儿送走。</p>
+
+<p>在不断恶化的超自然现象中，玩家通过【整理】成功整合家中资料，触发“遗忘的记忆”真相；随后多次进行【安抚】检定，逐步化解婴儿怨灵的攻击与哀鸣。最终，青池不是靠战斗获胜，而是以理解、安抚与接纳的方式，让怨婴退去，房屋异状消散。故事结尾回到日常表层：青池与熟客约定次日上门看房，仿佛一切都能恢复正常，但那段被挖开的记忆已无法再被完全埋回去。</p>
+
+<h3>结局与收尾</h3>
+<p>结局为<strong>安抚式胜利</strong>：怨婴被送走，房屋恢复平静，青池暂时存活并回归“正常生活”的外壳。收尾带有明显的余韵——表面上是“事情解决了”，实则青池已经知晓自己与这栋房子的恐怖真相，后续可能仍背负阴影与记忆碎片。结尾约好次日看房，也让故事带上了黑色幽默式的日常回归感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>1）青池（PC）</h3>
+<p><strong>性格特征</strong>：</p>
+<p>青池给人的印象是一个独居、日常化、被动但并不软弱的角色。他最初面对异常时显得震惊、困惑，说明他对“超自然”并无准备；但在恐怖不断升级后，他依然愿意整理资料、追索真相，体现出相当强的求生意志和现实感。</p>
+
+<p><strong>关键行为</strong>：</p>
+<ul>
+<li>面对乱码邮件，没有直接忽视，而是顺着信息进入事件核心。</li>
+<li>在房屋异象爆发后，以调查和整理资料的方式推进真相拼图。</li>
+<li>最终不是逃跑或硬刚，而是通过安抚检定完成驱灵，展现了“活下去”而非“赢到底”的实用主义。</li>
+</ul>
+
+<p><strong>高光时刻</strong>：</p>
+<ul>
+<li>成功【整理】家中线索，触发“遗忘的记忆”，是整段剧情从纯恐怖转向真相揭露的关键。</li>
+<li>多次【安抚】成功，说明他在精神层面逐渐理解怨灵，而不是单纯对抗它。</li>
+</ul>
+
+<h3>2）楼上夫妻（重要背景NPC/事件核心）</h3>
+<p><strong>作用</strong>：</p>
+<p>这对夫妻是整个模组的悲剧根源。他们杀婴、分尸的行为制造了怨灵，也成为青池记忆断裂的原点。虽然他们未必以“活人角色”形式频繁登场，但他们的罪行是整栋房屋异象的逻辑发动机。</p>
+
+<p><strong>剧情意义</strong>：</p>
+<ul>
+<li>代表“家庭内部的暴力”与“被掩埋的罪恶”。</li>
+<li>他们的行为让空间本身成为记忆与怨念的容器。</li>
+</ul>
+
+<h3>3）婴儿怨灵/怨婴（核心超自然存在）</h3>
+<p><strong>作用</strong>：</p>
+<p>怨婴既是恐怖来源，也是需要被理解的“受害者”。它们并非纯粹恶意的怪物，而是被杀害后陷入畏惧、憎恨与困锁中的残留意识。邮件中“拯救被困住的婴儿”这条指令，实际上点明了本模组的情感方向：恐怖的对象同时也是悲剧的承受者。</p>
+
+<p><strong>剧情意义</strong>：</p>
+<ul>
+<li>提供视觉恐怖与心理压迫。</li>
+<li>作为最终被安抚的对象，完成“怨念解套”的收束。</li>
+</ul>
+
+<h3>4）陌生邮件的发送者/引导者（隐性NPC）</h3>
+<p><strong>作用</strong>：</p>
+<p>这一存在更像一种叙事装置：它不断发出提示，把青池从被动受害者推向调查者。邮件文本“【它就在这里，你发现它了吗？】”“去找到那些藏起来和被藏起来的、畏惧着并憎恨着的婴儿们吧。”带有强烈的“任务发布”语气，像是某个知情者、见证者，甚至可能是记忆本身在召唤。</p>
+
+<p><strong>剧情意义</strong>：</p>
+<ul>
+<li>负责定调：这是“解谜式恐怖”，不是纯粹的猎杀。</li>
+<li>引导玩家注意“寻找被藏起来的东西”，而非只看表面怪谈。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 开局：乱码邮件与异常入侵</h3>
+<p>青池独自在家时收到一封乱码陌生邮件，内容诡异且充满指向性。邮件不像普通骚扰，更像某种强行唤醒记忆的命令。与此同时，家中开始出现一连串不符合常理的现象：门窗异常、电子设备失灵，空间秩序被彻底打乱。恐怖氛围由“信息异常”逐步升级为“环境失控”。</p>
+
+<h3>2. 恐怖具现：厨房与浴室中的尸体异象</h3>
+<p>随着异常加剧，青池在厨房和浴室里发现令人毛骨悚然的恐怖物：烤熟的婴儿尸体、断手等。这些画面既是视觉冲击，也是被压抑真相的具象化。房屋不再只是住处，而像一个会吐出罪证的记忆容器。玩家在此阶段会明显感受到“这里不只是闹鬼，而是有历史、有罪行”的信息。</p>
+
+<h3>3. 线索整理：真相碎片回流</h3>
+<p>青池开始整理家中的旧资料，并通过【整理】调查【家】成功，解锁厨房、浴室等线索。随着资料与环境线索互相拼接，青池逐渐想起楼上夫妻杀婴分尸的真相，也意识到自己曾与事件存在关联，导致记忆缺失。这一段是整模组最关键的叙事翻转：恐怖不再只是外部袭击，而是被遗忘的过去重新侵入当下。</p>
+
+<h3>4. 任务明确：邮件揭示“拯救婴儿”</h3>
+<p>邮件进一步给出明确目标：“去找到那些藏起来和被藏起来的、畏惧着并憎恨着的婴儿们吧。”这句话将模组从单纯求生，转变为“寻找、面对、安抚”三位一体的流程。玩家意识到自己要做的不是驱逐所有怪物，而是安置这些因悲剧而滞留的灵体。</p>
+
+<h3>5. 终局：安抚怨灵，房屋恢复</h3>
+<p>在最后阶段，青池通过多次【安抚】检定逐步压制怨婴的骚乱，并最终将其送走。房屋内的异常现象随着怨灵退去而消散，故事冲突结束。这个结尾没有宏大的胜利宣言，而是以一种疲惫、克制、近乎日常化的方式收场：青池活下来了，并与熟客约好次日上门看房，仿佛世界仍能继续运转。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：青池在厨房、浴室连续遭遇婴儿尸体与断手异象的段落。视觉冲击极强，且和“日常家庭空间”形成强烈反差。</li>
+<li><strong>最意外</strong>：结局并非驱魔大战，而是通过“安抚”把怨婴送走，逻辑上更接近情感修复而非战斗通关。</li>
+<li><strong>带黑色幽默的收尾</strong>：刚经历完恐怖事件，转头还和熟客约好“明天上门看房”，这种日常回归感有种荒诞的反差喜感。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>【整理】调查【家】成功</strong>：这是全局最关键的成功检定，直接把零散恐怖碎片连成真相。</li>
+<li><strong>多次【安抚】成功</strong>：属于终局推进检定，既是规则层面的胜利，也是叙事层面的情感落点。</li>
+<li>摘要未明确提到大失败，但从氛围推断，这类模组最容易在“看见异象但无法解释”的阶段制造恐惧张力；若有失败，通常会体现在更强的精神压力或更密集的幻象上。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>邮件提示语非常有记忆点：</li>
+</ul>
+<p><strong>“【它就在这里，你发现它了吗？】”</strong></p>
+<p><strong>“去找到那些藏起来和被藏起来的、畏惧着并憎恨着的婴儿们吧。”</strong></p>
+<p>这两句把“怪谈”“任务提示”“怨灵悲鸣”揉成一种诡异的双关，既像系统引导，也像鬼魂控诉。</p>
+<ul>
+<li>青池从恐惧到整理资料、再到安抚怨灵的过程，本身就是一条很完整的“从受害者到见证者”的角色弧光，属于安静但扎实的高光。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析<strong>整理成更像“跑团复盘PPT”的版本</strong>，或者补一份：</p>
+<ol>
+<li><strong>主题解读</strong>，</li>
+<li><strong>模组结构优缺点评估</strong>，</li>
+<li><strong>适合带团时的演绎建议</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

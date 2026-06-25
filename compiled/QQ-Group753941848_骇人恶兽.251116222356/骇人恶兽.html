@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>骇人恶兽 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>骇人恶兽</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组发生在一栋名为“公司大楼”的超现实职场环境中，玩家扮演的是刚入职的外勤人员，在“总经理”小七的带领下执行异常收容任务。这里的世界观带有明显的黑色喜剧与职场讽刺色彩：大楼内部既是办公空间，也是异常频发的封闭战场，所有问题都必须在楼内解决，不能拆楼、不能真杀员工、也不能直接用涟漪枪处理异常，否则就会引发更高层级的处罚与“福利”剥夺。</p>
+<p>本次核心冲突，是一只名为“耄耋”的橘猫异常在楼内失控游走，外勤队伍一边要遵守荒诞严苛的公司规章，一边还得在混乱、误伤、申诫累积与现场失控中完成收容。模组的戏剧张力主要来自“规则束缚下的应急处理”与“众人对一只猫异常的围追堵截”之间的反差。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>新人外勤在总经理小七的带领下完成入职演练：先在顶楼接受规训、领取装备和福利酸奶，再按楼层巡查六楼食堂、五楼咖啡厅等重点区域。小七在过程中反复强调收容规则：异常必须在大楼内解决，不能拆楼，不能真杀员工，也不能直接用涟漪枪击杀异常；若混沌与申诫累积过高，还会影响冷冻酸奶福利。看似一场普通的新手训练，却在四楼巡查时骤然变成实战——一只会乱窜的橘猫异常突然现身，引发队伍的混乱与笑闹。由于胡闹、吐痰误伤咖啡师等行为，队伍触发申诫，异常也趁乱逃脱。</p>
+<p>随后，小田在战斗中变身假面骑士“天马形态”，依靠强化感官追踪毛发与抓痕，将队伍引向三楼办公区。最终，众人发现这只橘猫“耄耋”正与职员缠斗，场面一度变成集体围观与仓促围堵并存的灾难现场，过程中甚至有人被咬断手指、多人受伤。关键时刻，甜姐通过改写现实补出“曾喂流浪猫、口袋里留有猫条”的因果链，并成功拿出猫条暂时安抚耄耋，随后再以快速射击击穿其右后腿将其压制，最终装入手提箱完成收容。任务虽然完成，但小七事后指出众人聚众“虐猫”被拍到，嘉奖并未到手，反而需要所有人吸取教训，成为一场“成功但很难看”的新人首秀。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>异常“耄耋”被成功压制并收容进手提箱，任务表面上顺利结束；但由于执行过程过于混乱，且被拍到类似“虐猫”的画面，小七没有给予嘉奖，反而以严厉口吻要求众人复盘自省。结局呈现出鲜明的黑色幽默：外勤队伍完成了收容，却以狼狈、受伤和负面记录收场，既体现了模组对“合规执行”的强调，也为后续团队磨合埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）表现</strong></h3>
+
+<h4><strong>小田</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：行动派、反应快，具备一定战斗直觉与追踪能力。</li>
+<li><strong>关键行为</strong>：在混乱中变身“假面骑士天马形态”，利用强化感官追踪猫的毛发、抓痕与移动痕迹，属于全队最明确的“追踪推进器”。</li>
+<li><strong>高光时刻</strong>：通过感官能力把失控战场重新拉回可追踪状态，是推进追缉链条的核心人物。</li>
+</ul>
+
+<h4><strong>甜姐</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：嘴硬、会整活，但在关键时刻拥有极强的临场应变与现实改写能力。</li>
+<li><strong>关键行为</strong>：先因吐痰误伤咖啡师触发申诫，制造第一轮混乱；后在关键节点补出“曾喂流浪猫、口袋里留有猫条”的因果链，以情境与道具安抚异常。</li>
+<li><strong>高光时刻</strong>：一边大成功、一边吃处罚，形成强烈喜剧反差；最终通过猫条和快速射击完成压制，是收容成功的决定性人物。</li>
+</ul>
+
+<h4><strong>其他外勤PC</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：整体呈现出“新手上岗、纪律感不足、临场胡闹但又愿意配合”的群像特征。</li>
+<li><strong>关键行为</strong>：在巡查过程中插科打诨、围观、误伤、追逐，放大了现场失控感。</li>
+<li><strong>高光时刻</strong>：集体围堵耄耋的混乱阵仗本身就是模组喜剧张力的来源；虽然没有特别凸出的单点英雄行为，但他们共同构成了“惨烈而好笑”的新人外勤初阵。</li>
+</ul>
+
+<h3><strong>重要 NPC</strong></h3>
+
+<h4><strong>小七</strong></h4>
+<ul>
+<li><strong>身份/作用</strong>：总经理、带训者、规则解释器。</li>
+<li><strong>剧情功能</strong>：负责发放装备与福利、说明制度、提示收容边界，也是最终的评价者和“结果裁判”。</li>
+<li><strong>人物形象</strong>：冷静、严格、带有明显的企业式管理风格；既像领导也像教官，负责把荒诞规则讲得非常正式。</li>
+<li><strong>作用总结</strong>：小七是整个模组秩序的代表人物，任务能否“算数”最终由她来定义。</li>
+</ul>
+
+<h4><strong>耄耋</strong></h4>
+<ul>
+<li><strong>身份/作用</strong>：本次异常主体，一只橘猫异常。</li>
+<li><strong>剧情功能</strong>：以“可爱外表+危险失控”的反差制造强烈戏剧性。</li>
+<li><strong>人物/异常特征</strong>：乱窜、攻击性强、会造成肢体伤害，且容易引发围观与情绪失控。</li>
+<li><strong>作用总结</strong>：它不是传统意义上的怪物，而是将“收容、同情、混乱、伤害”揉成一体的核心矛盾点。</li>
+</ul>
+
+<h4><strong>咖啡师/职员</strong></h4>
+<ul>
+<li><strong>身份/作用</strong>：被误伤、被卷入的公司员工。</li>
+<li><strong>剧情功能</strong>：作为“不能真杀员工”规则的现实牵制，也推动了申诫与现场紧张度上升。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 顶楼入职与规训</strong></h3>
+<p>新人外勤在顶楼集合，由总经理小七正式带训。她先发放装备、福利酸奶，随后宣讲公司内部的特殊纪律：异常收容只能在大楼内完成，不能拆楼，不能真杀员工，涟漪枪不能直接打死异常；混沌与申诫累积还会影响后续福利。此阶段主要是建立世界观、规则约束和职场黑色幽默基调。</p>
+
+<h3><strong>2. 楼层巡查与日常表象</strong></h3>
+<p>队伍依次巡查六楼食堂、五楼咖啡厅等楼层，表面上像是普通的日常巡检，实际上是在摸排异常痕迹。随着小七不断强调流程与纪律，新人们的“入职演练”逐渐显出实战意味。此时的氛围仍偏轻松，但已经埋下“混乱随时可能发生”的伏笔。</p>
+
+<h3><strong>3. 四楼突发异常与第一轮失控</strong></h3>
+<p>在巡查至四楼时，橘猫异常突然现身。队伍因胡闹、吐痰等行为导致咖啡师受伤，触发申诫，场面迅速失控。异常趁乱逃脱，队伍从“观察与巡逻”立刻切换到“追击与堵截”，新人们也第一次真正体会到公司异常收容的高压感。</p>
+
+<h3><strong>4. 追踪阶段与小田高光</strong></h3>
+<p>小田在战斗中变身假面骑士天马形态，借助强化感官追踪毛发、抓痕和气味，帮助队伍锁定异常的移动路径。这个阶段是典型的“能力解题”环节：面对四处乱窜的目标，追踪能力成为把混乱重新组织起来的关键。</p>
+
+<h3><strong>5. 三楼办公区遭遇战</strong></h3>
+<p>众人一路追到三楼办公区，终于发现异常“耄耋”正在与职员缠斗。现场瞬间变得极其混乱：有人围观、有人围堵、有人受伤，甚至出现被咬断手指的惨烈情况。此段同时保留了恐怖、滑稽与职场荒诞三种气质，令“猫异常”既可笑又危险。</p>
+
+<h3><strong>6. 甜姐改写因果、猫条安抚与最终压制</strong></h3>
+<p>甜姐在关键时刻通过改写现实补全“曾喂流浪猫、口袋中留有猫条”的因果链，让自己能够合理拿出猫条安抚耄耋。异常被短暂稳定后，甜姐又以快速射击击穿其右后腿，将其压制并装入手提箱，完成正式收容。这个阶段是整个模组的收束点，也是最具“靠脑子补剧情”特色的解决方案。</p>
+
+<h3><strong>7. 任务结束后的处罚与反思</strong></h3>
+<p>小七事后现身，指出众人聚众围观、行为失当，甚至被拍到“虐猫”画面。尽管任务完成，但没有嘉奖，反而要求队伍吸取教训。结尾以“收容成功但评价很差”的方式落幕，强化了模组的黑色职场讽刺。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>橘猫异常突然现身</strong>：可爱与危险并存，反差感极强。</li>
+<li><strong>众人围堵却像围观</strong>：明明是紧急收容，却莫名演成了集体看热闹现场。</li>
+<li><strong>“虐猫”被拍到</strong>：结尾的评价方向非常意外，把严重异常事件收束成了职场舆情事故。</li>
+<li><strong>小田变身假面骑士天马形态</strong>：硬核超展开，为追踪段落提供了非常强的戏剧张力。</li>
+<li><strong>甜姐补因果链喂猫条</strong>：把“合理性”临场补回来，属于跑团里非常讨喜的应对方式。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>甜姐吐痰检定大成功，但仍吃处罚</strong>：典型的“结果很强，代价也很强”，既好笑又很有规则感。</li>
+<li><strong>甜姐猫条安抚与后续射击压制</strong>：这是最关键的成功检定组合，直接决定收容成败。</li>
+<li><strong>小田追踪检定/感官追踪表现</strong>：推动了整个追缉流程，是战术层面最重要的成功之一。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>小七反复强调“不能拆楼、不能真杀员工、不能直接打死异常”的规矩，本身就带有很强的公司式荒诞感。</li>
+<li>“福利酸奶”与“混沌/申诫影响冷冻酸奶”这种设定，让严肃收容和奇怪员工福利形成强烈反差。</li>
+<li>甜姐一边制造混乱、一边成为关键救场人，形成“先闯祸后补锅”的经典戏剧结构。</li>
+<li>最终没有嘉奖、只有“吸取教训”，非常贴合该模组黑色喜剧的调性。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩展成：</p>
+<ol>
+<li><strong>更像正式跑团战报的版本</strong></li>
+<li><strong>带“模组结构拆解/机制分析”的版本</strong></li>
+<li><strong>带“GM视角复盘建议”的版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

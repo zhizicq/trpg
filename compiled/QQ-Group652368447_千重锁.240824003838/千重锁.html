@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千重锁 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>千重锁</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《千重锁》是在《驱魔道长》世界观下展开的一段“修炼—驱邪—失联—邪墓突围”的复合型剧情。玩家们先在中元节后的镇子里跟随九叔修行，试图在道法与武艺上快速成长；但平静很快被打破，教堂地下、乱葬岗异象、隔壁村僵尸、以及九叔离奇失踪接连发生。故事核心冲突逐渐从“跟着九叔学本事”转为“在一处被符箓、雾阵与邪墓机制重重封锁的地脉中，寻找九叔并阻止更深层的邪祟复苏”。</p>
+
+<p>这场模组的核心张力在于：一边是传统驱魔片式的民俗恐怖与师徒传承，一边是典型主神空间式的任务压力与阵营抉择。角色们既要应对视觉冲击极强的僵尸、幻象、机关与邪墓守关者，也要面对“是否继续完成恐怖片、是否保全同伴”的终极选择。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>众人兑换进入《驱魔道长》世界后，落脚于中元节后的镇子，得九叔收留并指导修炼。九叔对镇上教堂地下室严加封锁，红线符箓布阵封印森严，众人也因此初步意识到此世界并不只是普通僵尸片，而是存在更深的邪祟源头。修炼约二十日后，众人武艺渐长，九叔安排他们去隔壁村处理僵尸，并提醒需备糯米；与此同时，奈乐追踪九叔常去的乱葬岗，意外遭遇红白双煞幻象，被撞昏落河，虽然被救回，却一度精神偏执、濒临失控。</p>
+
+<p>随后，众人顺着九叔失踪的线索北上，误入被符箓与浓雾封锁的枫林、流沙河与山道，一路遭遇巨蟒、砂螺怪、红衣僵尸及天桥强风等险阻。一路上九叔边赶路边透露：此地实为九龙抬棺养出的邪墓，九叔与众人并非只是除邪，更是在硬闯一个被地势与术法共同“锁死”的死亡迷宫；真正守关者是无首长老，唯有至阳至刚之物方能克制。最终，在黑气侵蚀愈发严重之际，千早以一剑贯穿旅琦缘心窝，强行中断邪异侵蚀与局势失控。时间静止后，“南炎洲引导者”现身，要求旅琦缘在“成为队长、结束恐怖片”与“放弃同伴”之间做出抉择。她最终选择同伴，部分队员得以传回主神空间，而九叔则选择留在原地继续死战，故事在强烈的牺牲感与未竟之战中收束。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是典型的“阶段性脱险、代价式撤离”：主角团并未彻底消灭邪墓核心，而是在关键时刻由时间静止与主神介入强行切断剧情，将部分成员送回主神空间。旅琦缘做出了“保同伴而非单人通关”的选择，意味着这次模组的情感重心落在团队羁绊上。九叔未能跟随众人离开，留在原地继续战斗，形成了很强的师徒/守护者式悲壮收尾，也给后续可能的再会或续作留下空间。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>千早</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：果断、冷静、偏行动派，面对危机时更相信“先解决眼前问题”。</li>
+<li><strong>关键行为</strong>：在最危险的局势下，以一剑贯穿旅琦缘心窝，阻断黑气侵蚀与局势进一步恶化。</li>
+<li><strong>高光时刻</strong>：这一击不仅是战术上的止损，也体现出她对团队整体生存的优先判断，是全场最具决断力的场面之一。</li>
+<li><strong>人物弧光</strong>：千早的成长体现在她从“参与者”转变为“关键决策执行者”，她的行动冷酷却有效，强调了在高压恐怖片里“情感与理智必须分离”的代价。</li>
+</ul>
+
+<h4><strong>奈乐</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：好奇心强、追踪欲强，带有明显的探索倾向，但精神韧性相对脆弱。</li>
+<li><strong>关键行为</strong>：追踪九叔常去的乱葬岗，触发红白双煞幻象后被撞昏落河。</li>
+<li><strong>高光/转折</strong>：她的“主动追查”推动了剧情揭示，但遭遇幻象后陷入偏执疯狂，也让她成为模组中“恐怖体验最直接的承受者”。</li>
+<li><strong>人物弧光</strong>：从调查者滑向受害者，体现了民俗恐怖对心理的侵蚀；她的经历也强化了“这个世界不是单靠战斗能解决”的氛围。</li>
+</ul>
+
+<h4><strong>叁擅</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：手快、胆大、容易犯险，带有明显的试错型行为模式。</li>
+<li><strong>关键行为</strong>：触碰教堂地下室骨灰，触发雷火机关，险些当场殒命。</li>
+<li><strong>高光/槽点并存</strong>：既是推进剧情的“作死担当”，也是制造紧张感的关键人物。</li>
+<li><strong>人物弧光</strong>：他的行为反映出团队初期对环境危险性的误判，也为后续众人更加谨慎地对待封印与禁区埋下伏笔。</li>
+</ul>
+
+<h4><strong>旅琦缘</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：在团队中更偏向承受压力、承担抉择的位置。</li>
+<li><strong>关键行为</strong>：在最终的时间静止与主神抉择中，成为“是否结束恐怖片”的核心决策者。</li>
+<li><strong>高光时刻</strong>：面对“成为队长结束恐怖片”与“放弃同伴”二选一，明确选择了同伴。</li>
+<li><strong>人物弧光</strong>：她的选择是整场模组最具情感重量的落点，体现她对队伍关系的重视，也让“胜利”不再是纯机械通关，而是带着牺牲与遗憾的保全。</li>
+</ul>
+
+<p>> 由于摘要信息有限，若实际跑团中还有其他PC，建议将其定位为：</p>
+<p>> - <strong>前排战斗位</strong>：承担僵尸、蟒蛇、怪物接敌</p>
+<p>> - <strong>术法/侦查位</strong>：负责追线索、找NPC、识别符箓与阵法</p>
+<p>> - <strong>承伤/控场位</strong>：在终局为队伍争取撤离窗口</p>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>九叔</strong></h4>
+<ul>
+<li><strong>作用</strong>：核心引路人、修行导师、剧情真相揭示者。</li>
+<li><strong>功能定位</strong>：九叔前半段负责“带队教学”，后半段则转为“带队破局”。他不仅是战力支柱，也是民俗恐怖世界规则的解释者。</li>
+<li><strong>关键表现</strong>：</li>
+<li>严禁众人接近教堂地下室，显示其对危险的敏锐判断；</li>
+<li>布置修炼任务，提升PC战力；</li>
+<li>提醒处理僵尸要带糯米，保留经典民俗驱邪风味；</li>
+<li>在北上途中揭示“九龙抬棺养出邪墓”“无首长老”等核心设定。</li>
+<li><strong>人物气质</strong>：经验老道、沉稳克制、永远在危机前一步；同时也带有“知道很多但不能全说”的宿命感。</li>
+<li><strong>剧情意义</strong>：九叔是整场模组的精神支柱，也是传统港式驱魔片气质的载体。最后留在原地死战，强化了英雄式悲壮。</li>
+</ul>
+
+<h4><strong>南炎洲引导者</strong></h4>
+<ul>
+<li><strong>作用</strong>：主神空间规则化的最终裁决者。</li>
+<li><strong>功能定位</strong>：在时间静止后出现，迫使旅琦缘面对“继续剧情”与“保留团队”之间的终极抉择。</li>
+<li><strong>剧情意义</strong>：将民俗恐怖突然拉回轮回者体系，形成强烈风格反差，也完成了模组的“主神框架”收束。</li>
+</ul>
+
+<h4><strong>无首长老</strong></h4>
+<ul>
+<li><strong>作用</strong>：邪墓真正守关者、终极威胁的具象化。</li>
+<li><strong>功能定位</strong>：作为最后的门槛存在，代表“不是普通僵尸，而是更高规格的邪祟守门人”。</li>
+<li><strong>剧情意义</strong>：他的存在使得前期一切遭遇从分散事件串成完整谜题：乱葬岗、符箓封锁、雾阵、怪物袭击，都指向这座“锁起来的墓”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一阶段：入世界与修炼开局</strong></h3>
+<p>众人兑换进入《驱魔道长》世界，落点在中元节后的镇子。九叔仍在镇中驻守，带着浓厚的民俗驱邪氛围：烧纸、镇邪、避讳、压煞，一切都显示这里并不太平。九叔收留众人，并开始指导他们在此世界内修炼，给了团队一个相对安全的缓冲期。与此同时，九叔对教堂地下室的封印极为警惕，红线与符箓层层封锁，禁止任何人靠近。</p>
+
+<h3><strong>第二阶段：禁区试探与首次死亡威胁</strong></h3>
+<p>在好奇与失误驱动下，叁擅触碰骨灰，直接触发雷火机关，险些当场殒命。这一事件让团队意识到：这里的“封印”不是摆设，而是实打实会要命的机关。此后约二十日，众人在九叔指导下修炼，战斗能力显著提升，也为后续离开镇子做了基础铺垫。</p>
+
+<h3><strong>第三阶段：隔壁村僵尸任务与乱葬岗异变</strong></h3>
+<p>修炼后，九叔交代众人前往隔壁村处理僵尸，并提醒务必携带糯米，延续了传统僵尸片的对抗方式。与此同时，奈乐顺着线索追踪到九叔常去的乱葬岗，却遭遇红白双煞幻象，被撞昏并落河。虽然最后被救回，但她的精神状态受到强烈冲击，一度变得偏执疯狂，给团队带来新的不稳定因素。</p>
+
+<h3><strong>第四阶段：追索九叔与误入邪墓封锁圈</strong></h3>
+<p>随着九叔失踪线索浮现，众人北上追踪，逐渐进入一片被符箓和浓雾封锁的危险区域。枫林、流沙河与山道形成连续的地形陷阱：先后遭遇巨蟒、砂螺怪、红衣僵尸，以及横跨险路的天桥强风。每一段地形都像是“锁链”中的一环，把团队往邪墓深处逼。</p>
+
+<h3><strong>第五阶段：真相揭示与终局抉择</strong></h3>
+<p>在险路推进中，九叔边赶路边揭示真相：此地是由九龙抬棺养出的邪墓，整个地势与术法共同构成了一个巨大的“封锁系统”。真正的守关者是无首长老，唯有至阳至刚之物能够克制。随后，局势进一步恶化，黑气侵蚀逼近失控边缘。关键时刻，千早以一剑贯穿旅琦缘心窝，强行阻断侵蚀。时间静止后，南炎洲引导者现身，要求旅琦缘决定是否以“成为队长、结束恐怖片”的方式通关，还是保留同伴。旅琦缘最终选择同伴，部分队员回归主神空间，而九叔留在原地继续死战，剧情在悲壮与未竟之中结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：千早贯穿旅琦缘心窝的瞬间。虽然残酷，但作为“阻断黑气侵蚀”的战术动作，极具戏剧张力，也成为全团最强记忆点。</li>
+<li><strong>最意外</strong>：九叔并非单纯“给任务的NPC”，而是一路带队、一路揭示邪墓真相，最后还选择留下死战，完成了强烈的英雄收束。</li>
+<li><strong>最搞笑/最典型跑团味</strong>：叁擅碰骨灰触发雷火机关，堪称“看见禁区就要上手”的经典作死桥段。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>大失败感最强</strong>：叁擅触发骨灰机关，几乎当场暴毙，属于那种“一个动作把全队气氛从探秘变成抢救”的灾难性失误。</li>
+<li><strong>精神检定最惨烈</strong>：奈乐遭遇红白双煞后落河并陷入偏执疯狂，这是典型的恐怖模组精神压迫效果，后劲很大。</li>
+<li><strong>战术成功最关键</strong>：千早对旅琦缘的致命一击，表面像失败，实际上是全局止损式成功。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>九叔反复提醒带糯米</strong>：经典僵尸片语境一下就立住了，既有怀旧感，也有实用性。</li>
+<li><strong>“别靠近教堂地下室”与“偏要去看”</strong>之间的反差：形成了非常标准但非常有效的跑团戏剧结构。</li>
+<li><strong>主神最终抉择</strong>：“成为队长结束恐怖片”与“放弃同伴”二选一，把模组从民俗驱魔片提升为轮回者命运剧，情绪冲击极强。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式跑团复盘稿的版本</strong>，或</li>
+<li><strong>带“模组优缺点评分”的评测版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

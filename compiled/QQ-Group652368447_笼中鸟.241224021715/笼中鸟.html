@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笼中鸟 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>笼中鸟</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《笼中鸟》的舞台是一座早已死寂、却仍在地下运转的工业遗迹——搁浅的地下潜艇/港口、废弃工厂、实验室与机房层层相套，像一座埋在城市尸体里的“活体墓穴”。表面上，这里是一处通往传说中“超脱之钥”的入口；实质上，它是一个曾经服务于战争与死灵技术研究的黑暗工厂，长期进行着幼体培养、恐惧激素诱导、黏菌改造与机械死灵化实验。</p>
+<p>核心冲突并不只是“逃出地下”或“打倒怪物”，而是：主角们一边要在崩塌、污染、守卫与异界机关的威胁下存活，一边逐步拼出这座工厂真正的历史，并判断“超脱之钥”究竟是救赎、武器，还是另一重更大的囚笼。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>千早、猫猫与断莺在搁浅的地下潜艇/港口中醒来，迅速意识到自己身处一处连接“超脱之钥”的地下设施。随着地面震动与塌方加剧，三人被迫放弃原路线，转而搭乘电梯深入废弃工厂。他们依靠地图、侦查与现场痕迹逐层梳理结构，在医疗区与实验区的废墟中救下一名重伤少女小绿，同时发现工厂曾用维生舱运输“样本”，而第三具舱体仍被遗留在更深处，像某种尚未完成的收尾。另一边，里昂与鼠公爵在荒野中挖出异界法阵与石板，通过神秘学读解出这里曾利用幼体、恐惧激素与黏菌技术制造低级不死者，并发展出带现代化特征的死灵机械。两人更借由仪式共享能力，随后在工厂地上层一路击毁狙击手、猎犬与机械守卫，切断生产线，并搜获研究记录与“晶格武器”线索。随着队伍在办公室、医疗室与实验室会合，众人拼出运输网络、客户“天狼星”以及战争年代的研究脉络，确认整座死城与“超脱之钥”深度绑定。最终，他们在晶格尘污染的废墟中找到隐藏通道，进入解剖室，启动医疗舱救回昏迷的小绿，并在随后爆发的机甲战中合力击破守卫。结尾时，众人从机房暗格中带出完整核心、晶格尘炸弹与《机械电改造导论》，将医疗舱设为临时据点，继续向工厂深处推进，准备面对“更核心”的真相。</p>
+
+<h3>结局与收尾</h3>
+<p>本段剧情并未彻底终结模组，而是完成了“地下设施前半段”的攻略与真相拼图：</p>
+<ul>
+<li>成功救回关键角色小绿；</li>
+<li>关闭部分生产线并夺取重要资料；</li>
+<li>找到完整核心、晶格尘炸弹与改造导论等高价值情报/道具；</li>
+<li>将医疗舱作为据点，进入“继续深入”的阶段。</li>
+</ul>
+
+<p>收尾氛围明显是“暂时安全、但更大的危险仍在前方”：主角团已经从单纯求生者转变为主动揭露真相、推进核心层的探索者。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+
+<h4>千早</h4>
+<ul>
+<li><strong>性格特点</strong>：行动谨慎、观察力强，偏向“先确认环境再推进”的稳健型角色。</li>
+<li><strong>关键行为</strong>：在地下设施中依靠地图与侦查梳理层级结构，是团队推进路线的重要“定锚点”；在后续机甲战中与里昂、奈乐联手完成击破，体现出稳定的战斗协作能力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>逐层确认工厂结构，避免团队盲目深入；</li>
+<li>在关键战斗中参与破局，成为“不是最吵但很可靠”的核心输出之一。</li>
+<li><strong>角色气质总结</strong>：千早像是团队里的“理性导航员”，不一定最戏剧化，但在高压环境中能有效压住局势。</li>
+</ul>
+
+<h4>猫猫</h4>
+<ul>
+<li><strong>性格特点</strong>：机敏、灵活，可能带有较强的吐槽感或轻快的互动风格。</li>
+<li><strong>关键行为</strong>：与千早、断莺一同行动，承担探索、侦查与临场应对的功能；在救援小绿与清理隐藏通道等场面中，属于团队推进的重要一环。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在复杂废墟环境中参与搜查与确认隐藏路径；</li>
+<li>在医疗舱救援链条中为团队提供了关键支持。</li>
+<li><strong>角色气质总结</strong>：猫猫的存在感更像“气氛调节器+灵巧执行者”，让阴郁的地下探索保有一点轻盈感。</li>
+</ul>
+
+<h4>断莺</h4>
+<ul>
+<li><strong>性格特点</strong>：沉着、偏硬核执行，整体更像行动派或压阵型角色。</li>
+<li><strong>关键行为</strong>：与千早、猫猫组成最初的地下探索组，在塌方与工厂结构崩坏的压力下保持推进；参与救援、转移与后续合流。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在地下潜艇/港口崩塌后及时改道；</li>
+<li>在行动链中承担“把事情做完”的部分。</li>
+<li><strong>角色气质总结</strong>：断莺的优势在于稳定与执行力，适合在混乱环境里做“收束者”。</li>
+</ul>
+
+<h4>里昂</h4>
+<ul>
+<li><strong>性格特点</strong>：强烈的主动性、战术意识与探索欲，偏“研究+战斗双栖”。</li>
+<li><strong>关键行为</strong>：与鼠公爵在荒野中挖出异界法阵与石板，并通过神秘学解读揭开工厂真相；借助仪式共享能力后，迅速投入地上层战斗，击毁狙击手、猎犬与机械守卫，关闭生产线。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>解读法阵与石板，直接推进世界观核心；</li>
+<li>战斗中承担“切断敌方系统”的关键职责；</li>
+<li>为后续情报整合提供大量关键资料。</li>
+<li><strong>角色气质总结</strong>：里昂是典型的“又能查又能打”的推进型角色，既是调查核心，也是破局发动机。</li>
+</ul>
+
+<h4>鼠公爵</h4>
+<ul>
+<li><strong>性格特点</strong>：神秘、狡黠、带有异质感，似乎与常规秩序保持距离。</li>
+<li><strong>关键行为</strong>：与里昂共同挖出法阵石板并进行神秘学解读；参与仪式共享能力，增强团队的超自然适应性。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在异界法阵解读中提供关键视角；</li>
+<li>以“仪式共享能力”的方式将剧情从单纯调查推向超自然对抗。</li>
+<li><strong>角色气质总结</strong>：鼠公爵是典型的“怪而强”的辅助型核心，像一把带着诡秘味道的钥匙。</li>
+</ul>
+
+<h4>奈乐</h4>
+<ul>
+<li><strong>性格特点</strong>：战斗向、行动果断，适合在危机爆发时做迅速决策。</li>
+<li><strong>关键行为</strong>：在最终机甲战中与千早、里昂联手破敌，是收尾阶段的重要战力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>参与击破机甲守卫，体现出与主角团的高契合度。</li>
+<li><strong>角色气质总结</strong>：奈乐在剧情中是“稳战线”的角色，虽未占据大量叙事篇幅，但关键节点含金量很高。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC分析</h3>
+
+<h4>小绿</h4>
+<ul>
+<li><strong>作用</strong>：典型的“被救者/剧情钥匙型NPC”。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>她的重伤与昏迷，让团队在探索之外多了一层“救援责任”；</li>
+<li>她被医疗舱救回，说明工厂系统仍有一定活性，也暗示她可能掌握关键信息或与工厂实验直接相关。</li>
+<li><strong>人物意义</strong>：小绿不仅是情感上的“必须救”，也像是连接工厂内幕的活体线索。</li>
+</ul>
+
+<h4>天狼星</h4>
+<ul>
+<li><strong>作用</strong>：隐藏在研究网络背后的重要“客户/关联方”。</li>
+<li><strong>剧情功能</strong>：通过资料与运输网络被提及，说明工厂并非孤立运作，而是有外部需求、订单或势力支持。</li>
+<li><strong>人物意义</strong>：天狼星把故事从“单一废墟事件”扩展成更大的势力结构。</li>
+</ul>
+
+<h4>工厂的机械守卫/狙击手/猎犬</h4>
+<ul>
+<li><strong>作用</strong>：敌对生态系统的前线执行者。</li>
+<li><strong>剧情功能</strong>：它们不是单纯的杂兵，而是工厂仍在运作的证明；尤其狙击手与猎犬组合，形成了压迫感与场面张力。</li>
+<li><strong>人物意义</strong>：它们共同塑造出“这地方不是死了，而是还在呼吸”的恐怖感。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 潜艇/港口苏醒与初步摸索</h3>
+<p>千早、猫猫与断莺在搁浅的地下潜艇/港口中醒来，对环境几乎一无所知。三人首先确认这里与“超脱之钥”存在某种通路联系，但尚未能完全理解其含义。随着设施震动加剧、塌方发生，原本可行的路线被迫中断，队伍只能顺势改走电梯，向更深层的地下工厂推进。</p>
+
+<h3>2. 进入工厂、确认结构、救出小绿</h3>
+<p>在工厂内部，三人依靠地图、侦查与各区域痕迹，逐步确认了层级结构：办公室、医疗/实验区、解剖室等多个功能区并非孤立，而是互相连通的旧时代工业网络。在搜索过程中，他们救下一名重伤少女小绿，同时发现工厂曾使用维生舱运输样本，且第三具维生舱仍被保留在更深处，暗示实验尚未结束，或者某个“最终样本”仍在待命。</p>
+
+<h3>3. 荒野法阵与工厂真相拼图</h3>
+<p>另一边，里昂与鼠公爵在荒野中挖出异界法阵与石板。通过神秘学解析，他们确认这里曾以幼体、恐惧激素与黏菌技术制造低级不死者，并将这些技术进一步工业化，发展出更现代化的死灵机械生产体系。这个发现直接将工厂定位为战争时期的黑暗兵工厂，而不是单纯的生化实验场。</p>
+
+<h3>4. 仪式共享能力与地上层清剿</h3>
+<p>里昂与鼠公爵通过仪式共享能力后，迅速投入地上层战斗。他们与工厂残余武装交火，依次击毁狙击手、猎犬与机械守卫，成功关闭生产线，并从中获取研究记录与“晶格武器”情报。这一阶段等于把“敌方仍在生产”的链路先切断，极大削弱了工厂的活性。</p>
+
+<h3>5. 队伍汇合与研究脉络整合</h3>
+<p>随着探索推进，千早、猫猫、断莺与里昂、鼠公爵等人完成汇合，开始在上层办公室与实验区整合资料。通过运输网络、客户“天狼星”以及战争时期研究记录，大家逐渐拼出这座死城与“超脱之钥”的关系：它不仅是设施的终点，更是整个计划的枢纽。这里埋藏的不只是武器，而是某种能改变生死边界的技术与权力结构。</p>
+
+<h3>6. 晶格尘污染废墟、隐藏通道与医疗舱救援</h3>
+<p>在晶格尘污染的废墟中，队伍清理出一条隐藏通道，进入解剖室后成功启动医疗舱，将昏迷的小绿救回。这个过程既是剧情上的“救活关键NPC”，也是对工厂残余技术的一次利用：曾经用于分解与改造生命的设施，如今反过来成为救命工具。</p>
+
+<h3>7. 机甲战与核心回收</h3>
+<p>救援后不久，工厂残存的机甲守卫展开反击。千早、里昂、奈乐协同作战，最终击破守卫，稳定局面。随后，队伍从机房暗格中搜出完整核心、晶格尘炸弹与《机械电改造导论》，这些收获标志着他们已经从“外围探索”深入到“可直接决定模组走向”的核心层。</p>
+
+<h3>8. 以医疗舱为据点，继续向深处推进</h3>
+<p>团队将医疗舱作为临时据点，在补给、整理情报与修整后，准备继续向工厂深处推进。此时的他们已经不再只是误入者，而是掌握部分主动权的揭密者；但更深处究竟隐藏着什么，仍是未解之谜。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：里昂与鼠公爵在荒野中挖出法阵石板，并由此反推出工厂的死灵工业链条。这个桥段非常像“考古式破案”，把信息揭露和世界观扩张做得很漂亮。</li>
+<li><strong>最意外</strong>：工厂并不是单纯废弃，而是仍有生产线、守卫系统和样本运输机制在运作，给人一种“死城其实还在上班”的诡异感。</li>
+<li><strong>最有压迫感</strong>：晶格尘污染废墟中的隐藏通道和解剖室，兼具探索奖励和尸检恐怖双重味道，特别适合模组氛围。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>地图与侦查逐层确认结构</strong>：这类成功检定直接让团队避开盲冲，属于标准的“信息型大成功”，极大提升了剧情推进效率。</li>
+<li><strong>成功启动医疗舱救回小绿</strong>：这类操作通常很容易失败或附带风险，但一旦成功，剧情价值极高，属于“救援类关键成功”。</li>
+<li><strong>击毁狙击手、猎犬与机械守卫</strong>：连续战斗压制体现了团队配合和节奏掌控能力，属于战斗端的稳定高光。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>“<strong>超脱之钥</strong>”这个概念本身就很有反差：名字听起来像救赎，实际却像通往更深囚笼的门。</li>
+<li>“<strong>低级不死者</strong>”与“<strong>现代死灵机械</strong>”并列出现，形成了一种非常荒诞的工业化恐怖感：死亡被做成了流水线产品。</li>
+<li>“<strong>将医疗舱作为临时据点</strong>”也很有味道：本来是救命设备，结果在地下工厂里变成了大家短暂喘息的家，颇有“在敌人的器官里暂住”的不适感。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续帮你补一版：</p>
+<ol>
+<li><strong>更像跑团复盘文风的版本</strong>（更有叙事感），或</li>
+<li><strong>更像模组评测报告的版本</strong>（偏机制、节奏、优缺点分析）。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

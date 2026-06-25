@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主神空间日常 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>主神空间日常</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《主神空间日常》显然是一场以“主神空间”这一常见轮回者设定为背景的轻松向日常模组。与其说核心冲突来自生死危机，不如说来自“在异世界生存与维持日常秩序”的反差喜剧：一群身处轮回环境的人，明明可能随时面对任务、兑换、回归倒计时和未知敌人，却在本次剧情里把重心放在了做饼干、喝茶、聊天、找人和练习日常技能上。</p>
+<p>本章最突出的矛盾不是外部敌对，而是角色们各自的行为习惯与日常秩序之间的碰撞：叁想悄悄行动却动静极大，试图独自找人却误入厨房助攻；而旅琦缘则以稳重、照顾他人的姿态维持了整个场面的节奏，像是临时把“高危轮回世界”稳定成了“温柔家常场景”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>本段剧情从叁试图偷偷去找旅琦缘开始，但他的“潜行”几乎毫无隐蔽性可言，噪音大到像是主动宣布了自己的存在。最终，他非但没能完成“秘密接触”，反而一路闯进旅琦缘的房间，撞上了对方正在进行的“做饼干”日常。原本带有一点探访意味的行动，迅速演变为一场热热闹闹的厨房协作：叁不仅加入帮忙，还因偷吃生饼干液被旅琦缘当场教育，挨了一记手刀后乖乖认错。之后众人围坐在饼干、茶与书之间，闲聊起兑换、回归100天、找九叔/师傅练习等日常琐事，气氛轻松而温暖。期间叁尝试用罗盘找人却失败，进一步强化了这场“找人不成、误入日常”的喜剧节奏。最终，饼干分发完毕，叁在吃饱喝足后睡去，整个章节以一种安稳、柔和的方式收束，像是主神空间中难得的一段平静时光。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本章没有传统意义上的任务胜负与战斗收束，而是以“日常完成”作为结局：饼干烤好、茶喝完、对话结束、找人失败、叁心满意足睡去。收尾非常生活化，带着明显的治愈感，也让“主神空间”这个通常紧张的舞台呈现出一种反差极强的居家气氛。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>叁</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动力强但不够谨慎，带点莽撞与天然呆式的冒失；想偷偷行动，却总是把“偷偷”做成“高调登场”。</li>
+<li><strong>关键行为</strong>：</li>
+<li>试图潜行找旅琦缘，结果大失败。</li>
+<li>在厨房里积极参与“做饼干”日常。</li>
+<li>偷吃生饼干液，体现其嘴馋与不自控。</li>
+<li>曾尝试舞剑，结果在狭小空间里摔倒。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>不是传统战斗高光，而是“失败得很有喜感”的高光：潜行失败、偷吃被抓、舞剑摔倒，构成了极强的喜剧人物标签。</li>
+<li>最终在吃饱后安稳睡去，也体现出这个角色在团队中的“能量消耗型”定位。</li>
+</ul>
+
+<h3><strong>旅琦缘</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：温和、稳重、具有照顾他人的气质，像团队里的秩序维持者与情绪缓冲器。</li>
+<li><strong>关键行为</strong>：</li>
+<li>主导或参与做饼干。</li>
+<li>及时阻止叁偷吃生食，用手刀教育。</li>
+<li>在闲聊中承担“日常对话中心”的角色。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>经典台词“好孩子，不能吃生的，知道吗？”既有教育意味，也非常有生活感，直接奠定角色的温柔管教形象。</li>
+<li>她的存在让原本可能混乱的场面变得有条不紊，是本段剧情的稳定核心。</li>
+</ul>
+
+<h3><strong>其他PC/参与者</strong></h3>
+<ul>
+<li>摘要中未明确点出其他具体角色名字，但从“众人围着饼干、茶和书展开闲聊”来看，现场还有其他PC或同伴参与其中。</li>
+<li><strong>整体作用</strong>：</li>
+<li>负责烘托“主神空间日常”的群像氛围。</li>
+<li>通过闲聊兑换、回归时间、练习对象等内容，补足世界观和队伍关系的生活切面。</li>
+</ul>
+
+<h3><strong>重要NPC</strong></h3>
+<ul>
+<li><strong>旅琦缘</strong>：从本段描述看，她更像是本章最重要的中心人物，承担“照顾者”“规训者”“日常维系者”三重功能。</li>
+<li><strong>九叔/师傅</strong>：虽未直接登场，但在对话中被提及，说明其在角色训练或成长链条中占有一席之地，是潜在的重要指导者。</li>
+<li><strong>罗盘所指向的“人”</strong>：作为找人目标虽未明确身份，但推动了叁的行动，并反衬出“找人失败”的喜剧效果。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一段：偷偷找人，结果动静太大</strong></h3>
+<p>叁原本打算悄悄去找旅琦缘，但他的潜行能力显然不支持这个计划：检定失败导致行动声势过大，几乎等同于公开拜访。这个开场迅速奠定了轻松搞笑的基调，也让“想装神秘却完全藏不住”的叁形象立住了。</p>
+
+<h3><strong>第二段：误入厨房，卷入饼干制作</strong></h3>
+<p>叁一路摸进旅琦缘的房间，发现对方正在做饼干。原本的“找人”行动就此变成“帮忙做点心”的日常插曲。这个转折非常自然，也很符合模组标题“日常”的定位：剧情并不追求强烈冲突，而是强调角色之间的互动与陪伴。</p>
+
+<h3><strong>第三段：偷吃生食，被温柔制裁</strong></h3>
+<p>在制作过程中，叁忍不住偷吃生饼干液，结果被旅琦缘一记手刀教育。她的制止既不严厉到压迫，也不放任其胡来，而是恰到好处地表现出“像照顾小孩一样照顾同伴”的气质。叁则迅速认错：“知道了。”这一句简短对话，把角色关系中的亲近感和微妙的管教感展现得很到位。</p>
+
+<h3><strong>第四段：饼干、茶与闲聊时间</strong></h3>
+<p>饼干烤制、茶水摆上、书本摊开，众人围坐聊天，话题涉及兑换、回归100天、找九叔/师傅练习等。这里剧情的重点从“动作”转向“信息交换与关系铺垫”，虽然没有激烈推进主线，却有效拓展了角色间的生活面与团队关系。主神空间不再只是任务场，而成了可以坐下来喝茶说话的地方。</p>
+
+<h3><strong>第五段：罗盘找人失败，叁吃饱睡着</strong></h3>
+<p>之后众人尝试用罗盘找人，但结果失败。这个失败并未引出新的危机，反而像是一个轻描淡写的收尾动作：找人没找成，日常也未因此中断。叁吃完饼干后满足睡去，整段剧情在轻松、安定和略带滑稽的氛围中结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>叁的“潜行”</strong>：本想偷偷行动，结果一路噪音十足，反差感极强。</li>
+<li><strong>误入做饼干现场</strong>：从“找人”变成“帮忙做饼干”，剧情转折自然又好笑。</li>
+<li><strong>偷吃生饼干液</strong>：非常生活化且具有角色个性，像小孩偷尝面糊一样，瞬间把气氛拉得很日常。</li>
+<li><strong>吃饱睡去</strong>：结束方式极其朴素，却意外有一种“大家都平安”的治愈感。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>叁「潜行」 D100=92/20 失败</strong></li>
+</ul>
+<p>这是本章最关键的喜剧检定之一，直接让“秘密行动”变成“公开表演”。</p>
+<ul>
+<li><strong>叁「剑」 D100=74/60 失败</strong></li>
+</ul>
+<p>在狭小空间里舞剑还摔倒，既反映了环境限制，也强化了叁“想帅但总翻车”的人物风格。</p>
+<ul>
+<li><strong>罗盘找人失败</strong></li>
+</ul>
+<p>虽然未给出具体数值，但这个失败在剧情功能上很重要：它让“技术手段找人”这一条路也宣告无效，进一步把故事推回日常与闲聊。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>旅琦缘</strong>：“好孩子，不能吃生的，知道吗？”</li>
+<li><strong>叁</strong>：“知道了。”</li>
+</ul>
+
+<p>这段对话极短，却非常有画面感：前者像温柔而坚定的照顾者，后者像被抓包后立刻老实认错的小孩，二人的互动关系一下子就立住了。</p>
+<p>此外，“围着饼干、茶和书闲聊”本身也是一种很有味道的桥段——没有惊天动地，却充满了团队关系逐渐熟络的温度。</p>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告扩写成更像“跑团评测文”的版本，或者整理成“模组复盘+人物关系图”的格式。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

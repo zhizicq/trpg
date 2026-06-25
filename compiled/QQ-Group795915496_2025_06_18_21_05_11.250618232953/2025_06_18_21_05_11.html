@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_18_21_05_11 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_18_21_05_11</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本段剧情发生在一场明显带有<strong>部族冲突、政治清洗与逃亡护送</strong>色彩的冒险中。塞卢卡塔部落内部显然已陷入危机：一方面，公主与雅尔一家遭到威胁，需要紧急转移；另一方面，围绕拉格利玛宰相的死亡，说明更大的权力斗争已经浮出水面。整段故事的核心矛盾，是<strong>“如何在追兵、混乱与政治真空中，把关键人物安全送出险境，并维持局势不至于彻底失控”</strong>。海蒂与同伴们的行动不只是单纯的护送，更是在为后续阵营重组与权力交接争取时间。</p>
+
+<h3>主线剧情概要</h3>
+<p>海蒂在紧急状态下成功营救了塞卢卡塔部落雅尔全家，将他们带入冷杉森林暂避。随后，她与牢高、蕾娜联络，众人在耶尔维顺利会合。牢高向公主说明，她的父亲雅尔已被海蒂救出，暂时安全；与此同时，他也坦白自己已经击杀并处理了拉格利玛宰相的尸体，这无疑意味着局势已从“单纯营救”升级为“政治事件后的善后与隐匿”。两队人马最终都在耶尔维旅馆暂住，暂时摆脱追兵与野外风险。海蒂则在夜里忙着赶制止血带，体现出队伍仍处于持续高压之下：他们不仅要躲，还要为接下来可能发生的战斗、伤病与撤离做准备。整体来看，这一段是典型的<strong>危机后的短暂喘息</strong>，但也是更大风暴前的临时安置。</p>
+
+<h3>结局与收尾</h3>
+<p>本段以“<strong>耶尔维旅馆暂住</strong>”作为收尾，意味着队伍终于获得一个相对安全的落脚点。雅尔一家被成功救出并与公主取得信息联通，拉格利玛宰相之死也被处理妥当。虽然危险并未完全解除，但至少本阶段的核心目标——<strong>救人、汇合、脱险</strong>——已经完成。海蒂连夜制作止血带，则让收尾带有一种非常“跑团后勤向”的真实感：胜利并非凯旋，而是以疲惫、伤痕和准备下一步的物资工作为结尾。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>1. 海蒂</h3>
+<p><strong>性格与定位：</strong></p>
+<p>海蒂是这一段剧情中的绝对行动核心，表现出极强的责任感、执行力和危机处理能力。她并不是那种只会冲锋的角色，而是兼具判断、护送、联络与后勤能力的“实干型”人物。</p>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>成功将雅尔全家从危险中救出；</li>
+<li>通过与公主的对话稳定局势；</li>
+<li>安排转移路线，选择先往东进入林地，再前往耶尔维；</li>
+<li>夜里赶工制作止血带，体现对后续伤患风险的预判。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>“安全了，出来吧”“先往东走，在林子里躲一天”——这几句非常像战地指挥与安抚兼具的台词，显示她不仅能做事，还能稳住人心。</li>
+<li>生存检定成功将雅尔一家带出森林并抵达耶尔维，属于实打实的剧情推进型高光。</li>
+</ul>
+
+<h3>2. 公主</h3>
+<p><strong>性格与定位：</strong></p>
+<p>公主在这一段里主要承担“被营救对象”和“政治象征”的双重身份。她的存在不是单纯的NPC，而是事件合法性与未来秩序的关键承载者。</p>
+
+<p><strong>关键表现：</strong></p>
+<ul>
+<li>在危机中被安置、被告知“安全了”；</li>
+<li>接收关于父亲雅尔获救的信息；</li>
+<li>在局势剧烈变化中，需要依赖队伍提供判断与庇护。</li>
+</ul>
+
+<p><strong>作用：</strong></p>
+<p>公主的存在把这一段从“逃亡”抬升到“政局”层面。她不仅需要生存，更是后续权力继承、部族稳定的焦点。</p>
+
+<h3>3. 牢高</h3>
+<p><strong>性格与定位：</strong></p>
+<p>牢高在这一段里显得更加硬核和直白，属于那种会在关键时刻把最糟糕但最必要的消息直接说出来的人。</p>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>向公主说明雅尔已被救出，完成信息同步；</li>
+<li>透露自己击杀并处理了拉格利玛宰相的尸体。</li>
+</ul>
+
+<p><strong>作用：</strong></p>
+<p>牢高的功能非常重要：他一方面承担“消息传递者”的职责，另一方面，他关于宰相尸体的处理说明他并不是被动参与，而是深度卷入冲突核心的人。这个信息也暗示队伍正在主动清理政治遗留问题，避免被追查。</p>
+
+<h3>4. 蕾娜</h3>
+<p><strong>性格与定位：</strong></p>
+<p>从摘要看，蕾娜主要参与联络与汇合流程。虽然没有更多直接行为描写，但她在队伍重新集合中扮演了协调者角色。</p>
+
+<p><strong>作用：</strong></p>
+<p>她的存在说明团队并非单线行动，而是多线并行后汇合，具备一定组织性。她是让“救援”转化为“有序重组”的关键一环。</p>
+
+<h3>5. 雅尔</h3>
+<p><strong>性格与定位：</strong></p>
+<p>雅尔是被救出的核心对象之一，同时也是公主父亲，这使他不仅是家庭成员，更是政治结构中的重要人物。</p>
+
+<p><strong>作用：</strong></p>
+<p>他被成功救出意味着危机没有发展到“斩首式崩盘”，而是保住了关键血脉与象征人物。雅尔的安全是这一段的核心成果之一。</p>
+
+<h3>6. 拉格利玛宰相</h3>
+<p><strong>性格与定位：</strong></p>
+<p>虽然已经死亡，但他是本段剧情中最重要的“缺席型驱动力”。他的尸体被处理，说明其死亡并非简单背景信息，而是政治斗争的重要节点。</p>
+
+<p><strong>作用：</strong></p>
+<p>他的死代表旧秩序的崩解，也为后续可能的权力真空、追责、清算埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第一阶段：紧急救援与脱离险境</h3>
+<p>海蒂在局势紧迫时，成功救出塞卢卡塔部落雅尔一家，并带领他们进入冷杉森林暂避。她在行动中并非仅凭蛮力，而是通过明确路线与时机选择，将“撤离”变成可执行的安全转移。这里的关键不在于战斗，而在于<strong>不惊动追兵地把人带出来</strong>。她的生存检定成功，也说明这次逃亡不是单纯叙述性过场，而是经过了有风险的实操。</p>
+
+<h3>第二阶段：联络队友与情报汇总</h3>
+<p>在将雅尔一家安置后，海蒂与牢高、蕾娜取得联系，各方最终在耶尔维汇合。这一阶段的重点从“带人逃跑”转向“确认局势”。众人开始拼接情报，了解目前谁还活着、谁已脱险、谁正在被追查。耶尔维成为临时集散点，也是整个团队重新组织的起点。</p>
+
+<h3>第三阶段：向公主说明真相</h3>
+<p>牢高向公主汇报，明确告知她父亲雅尔已经获救。对于公主而言，这无疑是一条能稳住心神的好消息。同时，牢高还透露自己已经击杀并处理了拉格利玛宰相的尸体，这让公主和团队都必须面对一个事实：他们已经不只是逃难者，而是卷入了足以改变权力结构的事件。此时剧情从“生存压力”升级为“政治善后”。</p>
+
+<h3>第四阶段：耶尔维落脚与后勤整备</h3>
+<p>两队人马最终都在耶尔维旅馆暂住，获得短暂喘息。海蒂则在夜里赶工制作止血带，显示出队伍并没有真正脱离危险，只是从外部追杀转入内部整备。这个阶段的叙事重点很微妙：没有宏大战斗，却通过缝制止血带这种细节，体现出冒险的真实感和持续性压力。故事在此暂时收束，等待下一轮事件爆发。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最意外的场景</h3>
+<ul>
+<li><strong>海蒂成功把雅尔一家带出森林</strong>：这是最扎实的高光场面，属于“在混乱中把人完整带回来”的胜利，尤其适合作为团队信任建立的重要节点。</li>
+<li><strong>牢高直接说出“我把宰相尸体处理了”</strong>：这句信息量极大，既有黑色幽默感，也一下子把剧情从救援拉入政治风暴中心，冲击力很强。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>生存检定 d20+2=7 成功</strong></li>
+</ul>
+<p>虽然数值不高，但结果成功，带有一种“差点翻车但硬是过了”的紧张感。这样的检定常常最有戏，因为它让玩家真切感受到撤离的风险，而不是轻松过场。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>海蒂对公主：“安全了，出来吧”“先往东走，在林子里躲一天”</strong></li>
+</ul>
+<p>这段对话简洁、可靠，很像危机现场的标准安抚语句，既有保护欲也有执行力。</p>
+<ul>
+<li><strong>海蒂彻夜赶工制作止血带</strong></li>
+</ul>
+<p>这一桥段很有“跑团后勤美学”，不靠宏大台词出彩，而靠细节塑造人物：她不是只负责赢，而是负责让队伍活下去。</p>
+
+<h3>槽点/可吐槽处</h3>
+<ul>
+<li>这一段虽然推进很稳，但<strong>信息量高度集中在“安全、汇合、处理尸体”上</strong>，整体更像高压逃亡后的喘息章节，戏剧冲突略偏内收。</li>
+<li>牢高关于宰相尸体的处理过于干脆，虽然非常酷，但也容易让人有种“你到底干了多少离谱的事”的黑色喜感。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我也可以继续把这份分析报告扩展成更“像正式团后总结”的版本，包括：</p>
+<ol>
+<li><strong>主题提炼</strong>、2. <strong>伏笔与后续预测</strong>、3. <strong>GM叙事节奏评价</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

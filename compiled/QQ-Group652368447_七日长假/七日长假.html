@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>七日长假 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>七日长假</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《七日长假》表面上是一次被“代理系统”强制安排的90年代美国小镇度假，实质却是围绕<strong>失踪儿童、冰淇淋车、精神污染与寄生怪物</strong>展开的生存调查模组。</p>
+<p>核心冲突分为两层：</p>
+<ol>
+<li><strong>表层冲突</strong>：四名PC在陌生时代与陌生城镇中，必须迅速拼凑线索，找出一连串失踪案的真相。</li>
+<li><strong>深层冲突</strong>：真正的敌人并不是单纯的人类罪犯，而是能伪装、寄生、操控尸体并引发精神污染的怪物；同时，城镇秩序、警方系统与NPC人际关系也被污染和扭曲，导致“敌人不止一个，且可能就在身边”。</li>
+</ol>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>四名PC本以为会在“代理系统”安排下享受一段90年代美国小镇假期，结果刚落地就被落魄男子赫尔姆斯拦住求助：他手持装满照片、名单和线索的公文包，声称儿子戴维失踪，且冰淇淋商人与连环诱拐案密切相关。玩家们从图书馆旧报纸、医院、警局、公园和街头逐步调查，拼出失踪案沿南北线路移动的规律，最终把嫌疑锁定在镇上的冰淇淋车及其相关人物身上。随着调查深入，众人发现车内夹层中的胶状物会造成失忆与精神污染，说明所谓“商人”背后潜伏着某种能变形、操纵、寄生的怪物。与此同时，劳伦斯、通缉、定制枪等线索不断把怀疑导向某些NPC，戴维斯又在污染与“红色梦魇”的影响下反复失控，造成队伍内部混乱。案件逐渐升级为生存战：警方系统并不可靠，怪物甚至可能渗透进了警局。最终，PC们在确认感染源后，于车库迎来真正的决战——戴维斯已被寄生并化为触手怪，众人靠枪火、照明与燃烧瓶苦战，合力将其焚毁，才勉强为这场失控的调查画上句号。</p>
+
+<h3>结局与收尾</h3>
+<p>结局并非传统意义上的“抓到幕后黑手、恢复秩序”，而是一次<strong>有限胜利</strong>：</p>
+<ul>
+<li>冰淇淋车及相关线索被警方接手或暂时控制；</li>
+<li>真正的感染源/寄生体被玩家在决战中焚毁；</li>
+<li>但警方内部已出现死亡与污染迹象，城镇秩序受到严重破坏；</li>
+<li>PC在主神空间中复盘、吐槽、下注，说明这次任务以“活下来并完成主要目标”为收尾，而不是彻底清除所有威胁。</li>
+</ul>
+<p>整体收束感偏“惨烈后遗症式结束”，既有胜利，也保留了诡异与不安。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1. 旅琦缘</h4>
+<ul>
+<li><strong>性格特征</strong>：观察力强、推理积极，属于典型的“调查推进者”。</li>
+<li><strong>关键行为</strong>：在图书馆、街头和车辆调查中承担大量信息整合工作；对胶状物、污染机制和怪物性质有较敏锐的判断。</li>
+<li><strong>高光时刻</strong>：从失踪案分布规律与车辆异常中拼出“案件不是单点事件，而是有路线和伪装机制”的核心逻辑，帮助团队从“找人”推进到“找怪”。</li>
+</ul>
+
+<h4>2. M</h4>
+<ul>
+<li><strong>性格特征</strong>：行动力强，但在污染与压力下较容易被牵动情绪与状态，属于高风险高波动型角色。</li>
+<li><strong>关键行为</strong>：在调查与现场冲突中承担实操角色；多次处在被队友针对或被情况波及的位置。</li>
+<li><strong>高光/危险时刻</strong>：曾遭戴维斯失控掐住，体现出其在团队中的“受害者位”与现场紧张感；也侧面凸显了团队保护压力。</li>
+</ul>
+
+<h4>3. 戴维斯</h4>
+<ul>
+<li><strong>性格特征</strong>：最不稳定的成员，受精神污染和“红色梦魇”影响严重，表现出明显失控倾向。</li>
+<li><strong>关键行为</strong>：多次出现异常反应，甚至在警局引发斗殴、在睡梦中暴走伤人。</li>
+<li><strong>高光时刻</strong>：从“疑似被污染的队友”到“最终直接变身的寄生宿主”，其角色弧线实际上是<strong>恐怖悬疑的爆点载体</strong>。他从人到怪物的坠落，是整团最戏剧化的转折。</li>
+</ul>
+
+<h4>4. 第四名PC（日志中未明确姓名）</h4>
+<ul>
+<li><strong>性格特征</strong>：偏支援/补位型，主要负责和局势对接，协同推进调查。</li>
+<li><strong>关键行为</strong>：在图书馆、警局、医院等场景中提供行动支持；在战斗和搜证中作为团队稳定器。</li>
+<li><strong>高光时刻</strong>：与其他人一起完成车库决战与收尾，承担了“活到最后并把事办完”的功能性高光。</li>
+</ul>
+
+<h3>重要NPC分析</h3>
+
+<h4>1. 赫尔姆斯</h4>
+<ul>
+<li><strong>作用</strong>：委托人、引线人、故事发动机。</li>
+<li><strong>特点</strong>：落魄、焦急、执念极强；公文包里的照片与名单是整个调查的起点。</li>
+<li><strong>剧情功能</strong>：把PC从“度假模式”直接拽入案件核心，是模组开场最关键的触发器。</li>
+</ul>
+
+<h4>2. 戴维</h4>
+<ul>
+<li><strong>作用</strong>：失踪案核心目标之一，也是恐怖真相的关键承载者。</li>
+<li><strong>特点</strong>：从“被寻找的儿子”转化为“寄生宿主/怪物本体”。</li>
+<li><strong>剧情功能</strong>：承担反转核心，令“救人”与“战斗”在结尾合并。</li>
+</ul>
+
+<h4>3. 胖警官</h4>
+<ul>
+<li><strong>作用</strong>：相对可靠的警方协助者。</li>
+<li><strong>特点</strong>：能提供确认、协助与一定秩序感。</li>
+<li><strong>剧情功能</strong>：帮助玩家建立“警方并非完全无能”的信任基础，也让后续“警方被渗透”更具反差。</li>
+</ul>
+
+<h4>4. 里昂</h4>
+<ul>
+<li><strong>作用</strong>：辅助型警局NPC，提供协作与现场支持。</li>
+<li><strong>剧情功能</strong>：在搜证、确认袭击者特征与控制局面中起到补位作用。</li>
+</ul>
+
+<h4>5. 劳伦斯</h4>
+<ul>
+<li><strong>作用</strong>：高度可疑的误导性NPC。</li>
+<li><strong>特点</strong>：与通缉、定制枪、反常行为联系紧密。</li>
+<li><strong>剧情功能</strong>：承担“嫌疑人”功能，制造调查中的错误方向与心理压力，是典型的悬疑烟雾弹。</li>
+</ul>
+
+<h4>6. 阿瘦</h4>
+<ul>
+<li><strong>作用</strong>：被害警员/警局污染证据。</li>
+<li><strong>特点</strong>：以惨死形式出现，强化怪物已渗透体制。</li>
+<li><strong>剧情功能</strong>：证明“危险不是只在街上，也在警局里”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：度假开局变成委托调查</h3>
+<p>四人刚被代理系统送到90年代美国小镇，正以为是一次轻松假期，便遭遇赫尔姆斯拦路求助。赫尔姆斯带着装满照片、名单与线索的公文包，焦急说明儿子戴维失踪，且连环诱拐案与冰淇淋商人密切相关。玩家没有直接相信单一说法，而是立刻分头调查，从图书馆旧报纸开始梳理失踪案件的时间与路线，发现案件分布呈现明显的北到南移动规律，最终指向本镇。随后，队伍又在街头、医院、警局、公园等地点反复搜证，逐渐把“冰淇淋车”与异常事件联系起来。</p>
+
+<p>在调查过程中，玩家发现冰淇淋车内存在诡异胶状物，能够引发失忆与精神污染，说明案件背后远不止人口失踪这么简单。劳伦斯、通缉信息、定制枪等线索让团队开始怀疑某些NPC，尤其是“谁是凶手”“谁在隐瞒什么”成为主要讨论方向。与此同时，戴维斯在污染与“红色梦魇”影响下频频失控，甚至一度险些掐死M，后来又在警局附近引发冲突。最终，在胖警官、里昂等人的协助下，众人确认部分袭击者特征并暂时稳住局势，将冰淇淋车交给警方处理，转而前往警局避险，等待下一步更深的调查。</p>
+
+<h3>第2章：真相逼近，怪物现形</h3>
+<p>随着调查深入，PC逐渐拼出更完整的阴谋：失踪案并非孤立事件，而是沿着固定路线持续发生；冰淇淋车表面正常，实则是怪物活动与寄生传播的掩护工具。玩家在图书馆、医院和警局之间来回奔波，一边收集证据，一边应对来自精神污染的持续压力。为了提高生存率，他们购入武器、防弹衣，并开始按“可能有战斗”的方式来准备，而不是单纯做侦探。</p>
+
+<p>然而，局势并未因此缓和，反而不断恶化：有人被通缉，有人梦中暴走，有人开始怀疑警方内部可能存在感染者。胖警官确认“红色梦魇”相关异常，并发现同僚阿瘦惨死，进一步说明污染已经渗透到体制内。玩家逐渐意识到，最危险的并不只是车里的怪物，而是<strong>怪物已经通过寄生、伪装和污染，潜入了他们的信任链条</strong>。最终，在车库确认感染源后，真正的反转出现：戴维斯早已被寄生，变身为触手怪，与队友爆发正面冲突。PC们使用燃烧瓶、照明棒与枪火展开苦战，硬是将其逼入绝境并焚毁。任务在惨烈的战斗与事后复盘中结束，留下的是胜利后的疲惫、吐槽和对这一切荒诞性的回望。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最意外</strong>：原本的“七日长假”直接变成90年代美国小镇恐怖调查，反差感极强。</li>
+<li><strong>最精彩</strong>：车库决战中，寄生后的戴维斯以触手怪形态现身，瞬间把悬疑片切换成生存恐怖片。</li>
+<li><strong>最好笑</strong>：主神空间里的复盘与吐槽、赌局收尾，让一整场惨烈任务在荒诞喜感中落幕，形成强烈反差。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>大成功感</strong>：玩家通过旧报纸、地理分布和车辆特征拼出失踪案规律，这类“信息整合型成功”最能体现调查本的爽点。</li>
+<li><strong>大失败感</strong>：戴维斯多次失控、掐人、暴走，属于典型的灾难性结果，直接把局势从可控拖入混乱。</li>
+<li><strong>战斗检定亮点</strong>：燃烧瓶、照明棒与枪火的组合使用，让最终战具有很强的临场感与“绝地反杀”味道。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>赫尔姆斯提着满是照片和线索的公文包冲出来求助，本身就很有“剧情发动机”气质。</li>
+<li>玩家从“冰淇淋商人”一路追到“车内夹层怪物”，信息层层翻转，悬疑感很足。</li>
+<li>“我们来度假”到“我们得先买枪买防弹衣”的转变，堪称整模组最经典的气氛坠落桥段。</li>
+<li>戴维斯从疑似精神异常到最终确认寄生，既是恐怖点，也是团队内部最强戏剧冲突来源。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结评价</h2>
+<p>《七日长假》是一则典型的<strong>从日常假期滑向克苏鲁式失控恐怖</strong>的高张力模组。它的优势在于：</p>
+<ul>
+<li>开局钩子强，迅速把玩家从轻松心态拉进危机；</li>
+<li>线索设计有层次，能够把“失踪案—冰淇淋车—寄生怪物—警方渗透”串成完整闭环；</li>
+<li>团队失控与恐怖反转兼具，尤其是戴维斯的崩坏，显著提升戏剧性。</li>
+</ul>
+
+<p>其风格关键词可概括为：<strong>诡异、失控、调查推进、队友污染、惨烈但好笑的收尾</strong>。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

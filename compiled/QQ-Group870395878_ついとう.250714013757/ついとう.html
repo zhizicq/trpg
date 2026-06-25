@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ついとう - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>ついとう</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《ついとう》的故事核心，是一场由“师门血仇”与“妖刀诅咒”共同推动的追猎之旅。远野墨庵遭药师丸京率领“埒外”突袭重伤身亡，临终前将弟刀“借眼公”托付给觉心，请其继承遗志，追讨能斩断因缘与宿命的长恨歌，并封印妖刀、为师复仇。</p>
+<p>故事的主要矛盾，表面上是觉心对药师丸京的复仇，深层则是“人与刀是否能共同承担执念”的命题：复仇是为了终结仇恨，还是会将自己也变成仇恨的一部分？</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>远野墨庵在“埒外”势力袭击下身受重伤，临终将弟刀借眼公交予觉心，嘱托其继承追讨长恨歌、封印妖刀并替自己讨回公道。觉心在悲痛中与借眼公立誓，以“共赴生死”的方式建立起超越主从的羁绊，随后踏上修行与调查之路。为了接近药师丸京，他们逐步击败宝藏院X、圣河豚之介与达木丁等阻碍，积累情报与战力，并在借眼公的协助下习得新奥义【必杀一击】，将之命名为【复仇戏码】，象征这场旅程已从单纯的追杀转化为一幕由执念编织的命运剧场。</p>
+<p>随着调查深入，觉心逐渐掌握了药师丸京奥义【一只眼】的情报，也明确了最终决战必须以“看破”破局。最终在岳连寺，觉心与药师丸京正面对峙，在关键回合中凭借【看破】识破并压制对方奥义，逐步扭转战局，最终成功斩断长恨歌，完成复仇与封印。然而战后揭露，借眼公与药师丸京之间并非只有师徒仇怨，更存在更深层的旧恨与宿命牵连，使本次复仇不只是师门清算，也成为一段更长因果链的切面。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局为觉心成功击败药师丸京、斩断长恨歌，完成了师门遗志与个人复仇。战后剧情补足了“借眼公—药师丸京”之间的旧怨信息，让本作从单线复仇上升为双重宿命纠葛：一边是觉心与墨庵的师徒情，一边是借眼公与药师丸京的旧账。整体收尾偏向“复仇完成，但余韵未尽”，既有终结感，也留下了因缘尚未完全解释的空白，强化了故事的悲剧气质。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：觉心</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：重情重义、行动力强、带有典型的“为师复仇”型主角气质。</li>
+<li><strong>关键行为</strong>：在师父死后迅速接过责任，与借眼公结下誓约，并主动投入修行、情报搜集与连续战斗。</li>
+<li><strong>高光时刻</strong>：最终决战中利用【看破】识破药师丸京奥义，稳住战局并完成反杀。</li>
+<li><strong>角色弧光</strong>：从“继承遗志的弟子”成长为真正能独当一面的追讨者，完成了从情感驱动到技艺成熟的转变。</li>
+</ul>
+
+<h3><strong>PC/重要搭档：借眼公</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：与觉心形成强烈共鸣的武器/盟友型存在，带有“见证者”与“助推者”的双重属性。</li>
+<li><strong>关键行为</strong>：在远野墨庵临终托付后接纳觉心，陪同修行、提供指导，帮助其习得【必杀一击】并将其命名为【复仇戏码】。</li>
+<li><strong>高光时刻</strong>：不仅是战斗支援核心，也是推动剧情进入“誓约式复仇”的情感纽带。</li>
+<li><strong>角色意义</strong>：借眼公不只是武器，而是承载因缘与仇恨的媒介；战后揭露其与药师丸京的旧怨，更使其成为整部作品宿命感的关键节点。</li>
+</ul>
+
+<h3><strong>远野墨庵</strong></h3>
+<ul>
+<li><strong>身份与作用</strong>：故事导火索、师门遗志的象征人物。</li>
+<li><strong>剧情功能</strong>：以死亡启动主线，并以临终托付赋予觉心明确目标。</li>
+<li><strong>人物气质</strong>：虽出场不多，但其“将责任转交给弟子”的行为奠定了全作的情感基调，属于典型的沉重型师父角色。</li>
+</ul>
+
+<h3><strong>药师丸京</strong></h3>
+<ul>
+<li><strong>身份与作用</strong>：主敌、复仇对象、宿命冲突的核心。</li>
+<li><strong>剧情功能</strong>：作为“埒外”袭击的幕后执行者/领军者，他是觉心行动的直接目标。</li>
+<li><strong>战斗象征</strong>：其奥义【一只眼】代表压迫感与认知差距，迫使主角必须通过“看破”来应对。</li>
+<li><strong>人物意义</strong>：不仅是单纯反派，也在战后被揭露与借眼公存在旧怨，使其成为更复杂的宿命链条的一环。</li>
+</ul>
+
+<h3><strong>宝藏院X / 圣河豚之介 / 达木丁</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：阶段性阻碍与试炼对手。</li>
+<li><strong>功能定位</strong>：通过多场战斗推进觉心成长、强化模组的“逐个击破”节奏。</li>
+<li><strong>意义</strong>：这三人不只是杂兵或过渡敌人，更承担了“让主角从能战到善战”的训练功能。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 师父遇袭，遗志托付</strong></h3>
+<p>远野墨庵遭药师丸京率领的“埒外”突袭，重伤后不治身亡。临终之际，他将弟刀“借眼公”交给觉心，要求他继承自己的使命：追讨长恨歌、封印妖刀、替师复仇。这一幕直接确立了模组的情感主轴，也让觉心从“弟子”身份被迫迈入“继承者”身份。</p>
+
+<h3><strong>2. 誓约成立，羁绊成形</strong></h3>
+<p>觉心与借眼公立誓共赴生死，建立起极深的羁绊。这个阶段并非单纯的装备继承，而是一次“人与刀共同承担因缘”的契约成立，借眼公也从工具变成伙伴、引导者与战斗中的同伴。</p>
+
+<h3><strong>3. 修行与狩猎阶段展开</strong></h3>
+<p>在复仇目标明确后，觉心开始修行并搜集情报，逐步清理沿途阻碍。先后击败宝藏院X、圣河豚之介与达木丁，不断提升自身战力与对战经验。这个阶段的功能在于“铺路”：既是剧情推进，也是玩家角色能力成长的展示。</p>
+
+<h3><strong>4. 新奥义习得与战术确立</strong></h3>
+<p>在借眼公的指导下，觉心学会新奥义【必杀一击】，并将其命名为【复仇戏码】。这一命名非常关键，它将个人复仇、表演性决斗与宿命感绑定在一起。同时，觉心也获得了药师丸京奥义【一只眼】的情报，为后续决战中使用【看破】做了充分准备。</p>
+
+<h3><strong>5. 岳连寺决战</strong></h3>
+<p>最终，觉心在岳连寺与药师丸京正面对决。战斗中，觉心依靠【看破】识破并压制对方奥义【一只眼】，在不断的攻防转换中逐渐掌握主动，最终成功斩断长恨歌，完成复仇并封印妖刀。此战是全模组的高潮，也是所有前期准备的集中兑现。</p>
+
+<h3><strong>6. 战后真相浮现</strong></h3>
+<p>战后，剧情揭示借眼公与药师丸京之间还有另一层旧怨。也就是说，觉心所参与的并不只是单纯的“为师报仇”，而是卷入了一段更长久、更复杂的历史纠葛。这个收尾让故事从个人恩仇延伸到宿命与因果，余韵更强。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>临终托刀</strong>：远野墨庵将借眼公托付给觉心，师徒生死交接的瞬间非常有戏剧张力。</li>
+<li><strong>“共赴生死”的立誓</strong>：让武器不再只是武器，而成为共同背负仇恨的同伴，这个设定很有仪式感。</li>
+<li><strong>终战识破奥义</strong>：觉心以【看破】破解【一只眼】，属于典型的“前期铺垫，终局兑现”，爽感很足。</li>
+<li><strong>战后旧怨揭露</strong>：本以为复仇已经画上句号，结果又翻出借眼公与药师丸京之间的宿怨，意外增强了故事厚度。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>【看破】对【一只眼】的压制</strong>：这是全场最关键的战术检定/应对，直接决定终战走向。</li>
+<li><strong>【必杀一击】的习得与命名</strong>：虽然未必是传统意义上的检定高光，但“新奥义学会后立刻被赋予剧情名称”这一点非常有记忆点，等于把技能从数值层面抬升到叙事层面。</li>
+<li><strong>连续击败宝藏院X、圣河豚之介、达木丁</strong>：体现出角色成长的稳定性，属于“把路打通”的一连串实绩。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“复仇戏码”这个命名</strong>：带着强烈的舞台感和黑色浪漫，仿佛觉心已经把自己的命运写成了一出戏。</li>
+<li><strong>借眼公的指导定位</strong>：既像师傅又像战友，还像一件会说话的遗物，这种混合身份本身就很有趣。</li>
+<li><strong>战后补设定</strong>：在复仇成功后才揭露更深层旧怨，属于很“尾声再补一刀”的叙事手法，既意外又耐人回味。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“更像正式跑团复盘文”的版本</strong></li>
+<li><strong>“更像同人剧情解析”的版本</strong></li>
+<li><strong>“带时间轴与因果链图解”的版本</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

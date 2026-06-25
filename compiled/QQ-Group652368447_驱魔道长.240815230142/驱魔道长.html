@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>驱魔道长 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>驱魔道长</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>《驱魔道长》是一场典型的中式民俗驱邪+西式哥特邪祟混合风格模组。舞台设定在一座已被僵尸、幻术与西洋吸血鬼势力污染的小镇：表面上是寻常民居与教堂并存的乡镇，实则早已被邪气侵蚀，尸变、幻觉、埋伏与内鬼层层叠加。玩家们的主线目标非常明确——<strong>撑过三天，或者设法击杀神父</strong>。但随着剧情展开，生存挑战逐渐升级为“守阵、救人、破幻、找出真相、在不断崩坏的局势里完成反杀”。</p>
+
+<p>故事的核心矛盾有两条：</p>
+<ol>
+<li><strong>人类阵营的脆弱与分散</strong>：九叔受伤、镇中环境恶化、补给不足、夜战频发，队伍必须在不断消耗中维持秩序。</li>
+<li><strong>邪祟阵营的层层压制</strong>：僵尸只是表象，真正可怕的是神父与其修士们借助黑炎、蝠火、影遁、幻术操控战场，让玩家始终处于被动。</li>
+</ol>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>十天后的传送将五名旧人和四名新人投放到一座中式木屋中，开局便遭黄袍道士阿星与僵尸围攻，混乱中众人救下中了尸毒的九叔林正英。九叔揭示镇子早已被僵尸与西洋吸血鬼势力污染，教堂沦为尸巢，并要求众人以四象阵分守北潭、南院、西场、东林四处阵点，在守卫的同时修补镇内封印。队伍在分散防守中遭遇持续高压战斗：尸群、树精、骷髅、地道尸窟、巨型怪影轮番登场，千早、旅琦缘、奈乐、M等人多次在濒死边缘硬拼翻盘，叁则靠风水、占卜和破幻能力屡次识破敌方伎俩，维持了战线稳定。随着探索推进，镇长父子、幻术陷阱与内斗诱导不断加剧局势，众人逐渐逼近教堂与神父本体。最终在衙门外的总决战中，里昂完成对九叔的关键急救，并抓住神父破绽；陈战与其余队友合力牵制，里昂以一次极难成功的致命攻击将神父击杀。光束随后将全员送回主神空间，结算时所有人状态回满，三天生存与斩杀神父的目标双双达成。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是标准的“任务完成式胜利”：神父被当场击杀，邪祟势力崩溃，队伍被主神传送回空间。令人安心的是，本章奖励非常干脆——<strong>全员满血满SAN</strong>，属于“虽然过程惨烈，但收尾极其爽快”的典型跑团胜利结尾。叙事上没有留下太多悬案，而是把重点放在“众人靠协作与奇迹硬生生打穿高压模组”的成就感上。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>各PC（玩家角色）的性格、关键行为和高光时刻</h3>
+
+<h4>1. 里昂</h4>
+<ul>
+<li><strong>性格与定位</strong>：团队里的关键救火员，行动果断，关键时刻敢于上前承担风险。</li>
+<li><strong>关键行为</strong>：在最后决战中成功急救九叔，并抓住神父破绽完成终结一击。</li>
+<li><strong>高光时刻</strong>：那记“极难成功”的致命攻击是全团收尾的决定性瞬间，属于真正意义上的战场终结者。</li>
+</ul>
+
+<h4>2. 九叔林正英（NPC但几乎是核心战术支点）</h4>
+<ul>
+<li><strong>性格与定位</strong>：传统驱邪体系的权威导师，负责给出任务框架与战术指导。</li>
+<li><strong>关键行为</strong>：在受尸毒侵蚀的情况下仍坚持指挥，提出四象阵分守策略，明确了镇子格局与敌情。</li>
+<li><strong>高光时刻</strong>：被救回后继续作为“知识与秩序”的象征存在，为团队撑起了民俗驱邪的世界观骨架。</li>
+</ul>
+
+<h4>3. 千早</h4>
+<ul>
+<li><strong>性格与定位</strong>：高爆发、高风险的近战核心，打法激进。</li>
+<li><strong>关键行为</strong>：以大成功剑技杀穿尸群，极具压制力。</li>
+<li><strong>高光时刻</strong>：她的“大成功”不仅带来战斗收益，也体现了“杀得太猛会反噬”的模组特色；因煞气反噬暴走昏迷，更让角色气质从“锋利”变成“危险的刀”。</li>
+</ul>
+
+<h4>4. M</h4>
+<ul>
+<li><strong>性格与定位</strong>：偏控制与法术辅助，擅长稳定战局。</li>
+<li><strong>关键行为</strong>：使用冰冻法术进行控场，帮助团队减压。</li>
+<li><strong>高光时刻</strong>：在尸潮混战中用范围控制稳住阵线，是典型“没有她这仗会更难打”的功能型贡献。</li>
+</ul>
+
+<h4>5. 叁</h4>
+<ul>
+<li><strong>性格与定位</strong>：队伍中的洞察与破解担当，偏智谋、风水、占卜。</li>
+<li><strong>关键行为</strong>：多次识破幻术与邪法，带队守住阵点，维持战术秩序。</li>
+<li><strong>高光时刻</strong>：在敌方大量依赖幻觉、伪装和诱导的环境下，叁的存在等于“拆谜题的人”，对局势稳定作用极大。</li>
+</ul>
+
+<h4>6. 旅琦缘</h4>
+<ul>
+<li><strong>性格与定位</strong>：偏前线作战与应急支援型角色。</li>
+<li><strong>关键行为</strong>：多次在尸群和高压环境里硬拼，参与守点与混战。</li>
+<li><strong>高光时刻</strong>：在多线作战中能持续站住，属于“战线不塌”的重要支柱。</li>
+</ul>
+
+<h4>7. 奈乐</h4>
+<ul>
+<li><strong>性格与定位</strong>：战斗中机动性较强的角色，常处在危险边缘。</li>
+<li><strong>关键行为</strong>：在尸潮与怪影袭击中参与反击，并与队友一起完成濒死翻盘。</li>
+<li><strong>高光时刻</strong>：在整体局势极差时仍能维持输出和存活，属于典型“险中求生”的代表。</li>
+</ul>
+
+<h4>8. 陈战</h4>
+<ul>
+<li><strong>性格与定位</strong>：团队协同型前排/输出。</li>
+<li><strong>关键行为</strong>：在最终决战中与众人合力牵制神父，给里昂创造击杀窗口。</li>
+<li><strong>高光时刻</strong>：并非单点爆发型高光，而是“把神父按在团战里”的稳定贡献，属于决战不可缺的拼图。</li>
+</ul>
+
+<h4>9. 新人群体</h4>
+<ul>
+<li><strong>性格与定位</strong>：初入局时经验不足，但很快被高压环境逼成合格战斗员。</li>
+<li><strong>关键行为</strong>：在守点、救援和撤离中逐步融入队伍。</li>
+<li><strong>高光时刻</strong>：新旧人混编开局本来极易崩盘，但他们能在第一轮袭击后迅速接管局面，说明开局磨合相当成功。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+
+<h4>1. 林正英（九叔）</h4>
+<ul>
+<li><strong>作用</strong>：世界观讲解者、驱邪指挥官、团队的精神核心。</li>
+<li><strong>意义</strong>：没有他，玩家很难快速理解镇子的异常结构与四象阵任务。</li>
+</ul>
+
+<h4>2. 黄袍道士阿星</h4>
+<ul>
+<li><strong>作用</strong>：开局敌对战斗引子。</li>
+<li><strong>意义</strong>：负责把故事从“传送落地”迅速推入“遭遇战+危机状态”。</li>
+</ul>
+
+<h4>3. 神父</h4>
+<ul>
+<li><strong>作用</strong>：最终Boss，西洋邪祟势力的核心。</li>
+<li><strong>意义</strong>：他是“教堂尸巢”“吸血鬼污染”“黑炎影遁”等线索最终收束的中心，也是全模组的主终点目标。</li>
+</ul>
+
+<h4>4. 修士</h4>
+<ul>
+<li><strong>作用</strong>：神父的战斗辅助与压场单位。</li>
+<li><strong>意义</strong>：通过蝠火、影遁、黑炎等能力强化神父阵营的压迫感。</li>
+</ul>
+
+<h4>5. 镇长父子</h4>
+<ul>
+<li><strong>作用</strong>：幻术与内斗诱导的中间节点。</li>
+<li><strong>意义</strong>：他们把“外敌压迫”升级成“内部猜疑”，增加模组的心理战层次。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 传送落地与首次遭袭</h3>
+<p>十天后，五名旧人和四名新人被传送到中式木屋，主线目标被直接告知：<strong>生存三天或击杀神父</strong>。众人刚汇合，黄袍道士阿星便率僵尸突袭，局面立刻失控。混战之中，队伍救下了被尸毒侵蚀的九叔林正英，也由此开启后续的驱邪主线。</p>
+
+<h3>2. 九叔现身，四象阵成形</h3>
+<p>九叔说明镇子早已被僵尸与西洋吸血鬼污染，教堂已沦为尸巢，并立即组织玩家分守北潭、南院、西场、东林四个方位，借四象阵维持镇内秩序、修补封印。这个阶段是模组的战术教学期：玩家不仅要打怪，还要理解“守点”“补阵”“控线”的重要性。</p>
+
+<h3>3. 四线守点与尸潮消耗战</h3>
+<p>接下来是连续不断的高压守点战。尸群一波接一波压来，旅琦缘、千早、奈乐、M等人不断投入战斗。M用冰冻术控场，千早以大成功剑技强势破局，但因煞气反噬暴走昏迷，呈现出“战力越强代价越大”的模组特色。众人在阴气侵蚀、补给短缺与守夜压力下持续消耗。</p>
+
+<h3>4. 幻术、埋伏与镇内迷局</h3>
+<p>随着深入探索，镇内环境开始显露出高度诡异的一面：路径错乱、宅邸埋伏、教堂阴影、树精偷袭、打更骷髅、地道尸窟、巨型怪影等事件接连发生。镇长父子还试图借幻术挑拨内斗，使队伍在“真假难辨”的情境中消耗大量资源和耐心。叁在此阶段贡献巨大，多次以风水与占卜识破伪装，避免队伍彻底被带偏。</p>
+
+<h3>5. 神父与修士登场，局势压到极限</h3>
+<p>随着敌方核心露面，战斗难度进一步抬升。神父和修士使用黑炎、蝠火、影遁等能力压制全场，让玩家反复陷入撤退、救援、重组的循环。此时已经不是单纯的“打怪”，而是典型的“在敌方强压与地形诡计中寻找破绽”。</p>
+
+<h3>6. 衙门外终局决战</h3>
+<p>最终，战斗在衙门外迎来收束。里昂成功急救九叔，稳住了整个战局的精神支柱；陈战与队友协同牵制神父，为关键输出创造窗口；最后里昂抓住神父破绽，以一次极难成功的攻击完成斩首。神父当场死亡，剧情以玩家方全面胜利收尾。</p>
+
+<h3>7. 回归主神空间</h3>
+<p>光束将众人送回主神空间，所有人满血满SAN，模组正式结束。经历了长时间的高压作战后，这种“奖励极稳、回收极干净”的结尾让整场跑团显得非常利落。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：衙门外决战的终结一击，里昂极难成功击杀神父，属于“所有铺垫都在这一刻兑现”的经典高潮。</li>
+<li><strong>最意外</strong>：千早大成功剑技杀穿尸群，但随之煞气反噬暴走昏迷，形成“战神刚起飞就掉线”的戏剧效果。</li>
+<li><strong>最有压迫感</strong>：神父与修士携黑炎、蝠火、影遁登场时的战场压制，几乎把队伍逼到不断撤离的状态。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>大成功</strong>：千早的剑技大成功，直接把尸群切穿，是最亮眼的战斗检定之一。</li>
+<li><strong>极难成功</strong>：里昂最后的致命一击，直接决定模组成败，属于全章最高价值检定。</li>
+<li><strong>关键反制成功</strong>：叁多次通过风水、占卜识破幻术与邪法，这类“看似不起眼但极其关键”的检定，实际上是队伍不崩盘的基础。</li>
+<li><strong>反噬型失败</strong>：千早的煞气反噬昏迷，将“成功”瞬间转化为代价，十分符合恐怖跑团的味道。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>九叔一登场就把局面定性为“镇子被污染、教堂成尸巢”，这种直给式说明非常有港式驱邪片的味道。</li>
+<li>四象阵分守的安排，让整个模组突然从“活下去”变成“边打边修阵”，战术感一下拉满。</li>
+<li>镇长父子借幻术诱发内斗的桥段，既阴险又荒诞，是模组中最“险恶人心”的一段。</li>
+<li>全员最终满血满SAN回归，形成一种“过程惨烈，结算却异常舒适”的反差喜剧感。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式模组复盘的版本</strong>，</li>
+<li><strong>更像群聊语气的轻松吐槽版</strong>，或</li>
+<li><strong>按“战斗—探索—人物弧光”三条线重写成长文版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

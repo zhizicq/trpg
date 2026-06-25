@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_05_04_22_59_27 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_05_04_22_59_27</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组的舞台建立在一个宗教权威与城市秩序同时崩坏、又试图重建的时代节点上。蒙耶城经历了“妖僧”或类似伪宗教统治者的侵蚀后，教会内部积弊深重，外部又面临清剿异类、安抚民心与重整权力的三重压力。阿玛迪斯作为女神圣骑士，在局势最混乱之际接管大教堂，试图以“清除邪祟、肃正教会、重建秩序”为名，将一座被污染的圣域重新拉回正轨。</p>
+<p>核心矛盾则体现在两条线上：一是<strong>宗教改革与旧秩序残余的冲突</strong>，二是<strong>道德正义与现实处置之间的张力</strong>。玩家们在进入教堂后所见到的，不只是兽人清查后的尸横遍地，更是一个权威重构过程中的粗粝、残酷与不稳定。西塞特公使事件则进一步提示：即便在“正义阵营”内部，也并非完全清白无瑕，如何处理罪责、权力与程序，成为本段剧情的重要隐线。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>众人回到大教堂时，迎接他们的并不是庄严肃穆的神圣场面，而是一座刚经历大规模清查与肃反的混乱据点：教堂内四处都是尸体，气氛压抑而血腥。阿玛迪斯已实际接管教会，并以圣骑士的身份开始清理“妖僧遗毒”，试图彻底整顿蒙耶城的宗教体系。途中，玩家发现斯尼奇正试图前去探视被关押的西塞特公使，这一插曲让众人得知：西塞特因涉嫌奸淫妇女，已被圣骑士控制，但并未遭到虐待，只是被暂时束缚。</p>
+<p>随后阿玛迪斯将众人带入会客室，明确表达自己接管教会并非为了夺权，而是出于“女神的圣骑士必须为善后负责”的信念。他坦承当前局势仍混乱，但已准备清除前任统治留下的腐化痕迹，并就蒙耶的未来与众人展开商议。此处剧情的重点并不在于战斗，而在于<strong>秩序重建的政治宣言</strong>：玩家们被拉入一个更宏大的问题——这座城市接下来将由谁治理、以何种方式治理、又将付出什么代价。整段剧情以沉重的现场景观、道德审判与政治重构为基调，奠定了后续模组可能围绕“清算、改革与新秩序”展开的叙事方向。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段摘要对应的是模组中的过渡章节，并未出现最终结局；目前收尾停留在阿玛迪斯接管教会、与众人商议城市未来的阶段。就这段情节本身而言，它的“结局”是一个<strong>秩序重建的正式开端</strong>：旧权威已倒，新的掌权者宣布承担责任，玩家则被纳入协商圈层，成为未来局势的重要参与者。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>阿玛迪斯</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：坚定、强硬、具有强烈的使命感与宗教正统立场。</li>
+<li><strong>关键行为</strong>：接管大教堂与教会事务，清理混乱现场，并公开表态要对“妖僧遗毒”进行善后与改革。</li>
+<li><strong>高光时刻</strong>：他的核心高光不在武力，而在政治与道德立场的宣示——“既然他以女神的名义接管了这个城市并作了这么多恶，我作为女神的圣骑士就有责任善后。”</li>
+<li><strong>人物作用</strong>：阿玛迪斯是本段剧情的秩序重建者，也是“正统宗教能否自我纠错”的象征。他既是权力接管者，也是未来冲突的中心人物。</li>
+</ul>
+
+<h3><strong>斯尼奇</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动性强、关切具体事务，可能偏向机灵或钻营型角色。</li>
+<li><strong>关键行为</strong>：试图前去见被关押的西塞特公使。</li>
+<li><strong>高光时刻</strong>：他的出现起到了“把抽象的肃清结果具象化”的作用，让玩家立刻感知到这场清查不是空话，而是真正波及到高位人物。</li>
+<li><strong>人物作用</strong>：斯尼奇充当剧情触发器，推动玩家注意到西塞特事件，并把矛盾从“清剿兽人”扩展到“如何处理被拘禁者”的道德层面。</li>
+</ul>
+
+<h3><strong>西塞特公使</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：从摘要看，其形象并不完全由个人言行塑造，而是更多作为被指控者和被拘禁对象存在。</li>
+<li><strong>关键行为</strong>：涉嫌奸淫妇女，因此被圣骑士控制。</li>
+<li><strong>人物作用</strong>：西塞特是“权力失范”的具体案例，也是阿玛迪斯强调改革正当性的反面教材。他的存在说明：即使是有身份的公使，也可能因罪行而失去庇护。</li>
+</ul>
+
+<h3><strong>圣骑士群体</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：纪律性较强，执行控制但自认分寸得当。</li>
+<li><strong>关键行为</strong>：束缚西塞特，但未加伤害。</li>
+<li><strong>人物作用</strong>：他们代表阿玛迪斯新秩序的执行层，证明这场整顿并非单人独断，而是有组织的宗教武力介入。</li>
+</ul>
+
+<h3><strong>玩家角色整体</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：从摘要看，PC们更像是“回到中心局势后被纳入决策”的参与者，而非单纯旁观者。</li>
+<li><strong>高光方式</strong>：他们通过“回到大教堂”这一动作进入局势核心，具备见证与影响未来政治走向的资格。</li>
+<li><strong>叙事功能</strong>：PC是调停者、见证者，也是未来蒙耶命运的潜在共谋者。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一章：回归大教堂，见证清查后的废墟</strong></h3>
+<p>众人返回大教堂，本应是进入安全据点，却发现教堂内部正处于高度混乱状态。为清剿兽人而进行的清查导致现场血腥惨烈，尸体遍地、秩序崩坏。这样的场景一方面说明前线战事或肃清行动刚刚结束，另一方面也立即营造出“胜利并不体面”的氛围：即便敌人被清除，留下的仍是破碎的信仰空间与沉重后果。</p>
+
+<h3><strong>第二章：斯尼奇的探访与西塞特事件</strong></h3>
+<p>在大教堂内部，玩家发现斯尼奇正准备去见被关押的西塞特公使。经过交谈，得知西塞特因涉嫌奸淫妇女而被圣骑士扣押。此处没有进一步扩大为冲突，圣骑士明确表态：他们没有虐待他，只是暂时束缚，且自认“知道分寸”。这一段剧情将“正义执法”与“程序边界”并置，揭示出新秩序的原则和底线，也让玩家意识到目前的教会行动并非无约束的暴力。</p>
+
+<h3><strong>第三章：阿玛迪斯接管教会，宣示改革</strong></h3>
+<p>阿玛迪斯出场，将众人带入会客室，正式说明自己已经接管教会事务。他直言前任或“妖僧”留下了严重的恶果，自己作为女神圣骑士，有责任为城市善后。此处他不只是表达立场，更是在对玩家进行政治动员：教会将被整顿，蒙耶未来需要重新设计。这个阶段的剧情功能，是把原本散乱的灾后现场，转化为一个具备明确目标的改革行动。</p>
+
+<h3><strong>第四章：讨论蒙耶未来</strong></h3>
+<p>在会客室内，众人与阿玛迪斯开始商议蒙耶的未来。虽然摘要未展示具体方案，但可以确定，剧情已从“清扫残局”进入“共同制定新秩序”的阶段。玩家的意见与选择很可能将在之后影响这座城市的治理方向、宗教面貌以及相关人物命运。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：原本应当神圣庄严的大教堂，竟然是“尸体遍地”的清查现场，强烈反差直接建立了紧张压抑的氛围。</li>
+<li><strong>最精彩</strong>：阿玛迪斯的接管宣言，带有强烈的角色信念感和政治张力，让人感觉这不是普通善后，而是一次宗教秩序的重新夺权。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li>本段摘要未提供明确的骰点检定结果，因此无法确认大成功/大失败。</li>
+<li>但从剧情表现看，<strong>斯尼奇试图接触被关押公使</strong>这一行为本身就很像一次高风险的社交/潜行类行动前置，值得在完整日志中重点关注。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>阿玛迪斯的宣言</strong></li>
+</ul>
+<p>> “既然他以女神的名义接管了这个城市并作了这么多恶，我作为女神的圣骑士就有责任善后。”</p>
+<p>这句话非常有角色味：既是审判，也是自我赋权，简洁地概括了他“以神圣名义重建秩序”的立场。</p>
+
+<ul>
+<li><strong>圣骑士的澄清</strong></li>
+</ul>
+<p>> “我们没有伤害他！只是暂时束缚住了他，我们知道分寸。”</p>
+<p>这句台词很好地体现出“看似强硬的宗教武装”在程序上仍试图维持正当性，甚至带一点自证清白的紧张感，令人印象深刻。</p>
+
+<h3><strong>整体评价</strong></h3>
+<p>这一段虽然信息量不算庞大，但作为模组的权力过渡章节非常有效：它用一座混乱的大教堂、一个被拘押的公使、以及一位誓言改革的圣骑士，迅速把故事从“清剿事件”抬升到“城市重建”的层面。其最大优点在于<strong>氛围稳、立场强、后续可延展性高</strong>；若说槽点，则是摘要中缺乏更具体的玩家互动与冲突细节，使得这段更像宏观叙事铺垫，而非戏剧性爆发段落。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

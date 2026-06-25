@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_24_21_03_10 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_24_21_03_10</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情发生在科尔皮西尔塔，一个被多重压力挤压的小村落。村子一方面遭受“东边商人”的恶性压价与经济控制，另一方面又被狗头人势力驱赶、压迫，连基础的粮食、铁器与猎物都极度短缺。雪女的出现进一步加剧了生存危机，导致猎人失踪、外出风险上升。玩家队伍在此落脚后，逐步意识到：这并非单一怪物事件，而是“自然灾害/超自然威胁 + 人为剥削 + 地域权力失衡”叠加下的系统性困局。主线冲突因此从“讨伐雪女”扩展为“在资源匮乏、敌对势力环伺的情况下，如何帮助村庄重新获得生存空间”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍抵达科尔皮西尔塔后，并未立刻进入战斗，而是先将注意力放在情报收集与局势判断上。拉科尔与哈吉米分头向村民和摊贩打听，逐渐拼凑出村庄当前的困境：东边来路不明的商人长期压低收购价，控制物资流通；狗头人则在外围不断驱赶与骚扰，进一步切断村民获取食物与铁器的渠道。与此同时，雪女活动频繁，甚至让猎人失踪，使得村庄在“打猎—交易—防御”三个关键环节上全面失衡。卡路亚则明确表示愿意参与行动，对付雪女的立场十分坚决，但现实问题也摆在眼前：想要真正出发作战，还需要准备坐骑等必要装备。随着情报逐步明晰，队伍开始将目标从单纯的“打怪”转向更完整的“调查酋长与交易网络、处理商人势力、寻找村庄困局的突破口”。这一阶段虽没有爆发大规模战斗，却有效完成了剧情铺垫，也让后续冲突拥有了更明确的社会背景与行动方向。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段日志尚未进入事件解决阶段，整体停留在“调查—确认立场—制定后续方案”的中前段。结尾处，队伍已经确认了村庄受压迫的结构性原因，并决定继续围绕酋长、交易情况以及东边商人的势力展开调查，同时为讨伐雪女与后续行动做准备。卡路亚的明确参战意愿，为团队提供了一个稳定的战力与情绪支点。整体收尾偏开放式，属于典型的“进入主线行动前的整备与情报整合阶段”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>各PC（玩家角色）的性格、关键行为和高光时刻</strong></h3>
+
+<h4><strong>拉科尔</strong></h4>
+<ul>
+<li><strong>性格表现</strong>：务实、主动，倾向于先了解环境再行动。</li>
+<li><strong>关键行为</strong>：与哈吉米一起向村民和摊贩打听情报，承担了“信息整合者”的职责。</li>
+<li><strong>高光时刻</strong>：通过主动走访，推动队伍迅速确认了村庄的核心问题，不让剧情停留在表层“有怪打怪”的认知上。</li>
+</ul>
+
+<h4><strong>哈吉米</strong></h4>
+<ul>
+<li><strong>性格表现</strong>：配合度高，行动上偏谨慎但不拖沓。</li>
+<li><strong>关键行为</strong>：参与情报搜集，与拉科尔形成互补，帮助把零散传闻串联起来。</li>
+<li><strong>高光时刻</strong>：在村落调查中承担了实地沟通的一部分，使情报收集更完整、更具可信度。</li>
+</ul>
+
+<h4><strong>卡路亚</strong></h4>
+<ul>
+<li><strong>性格表现</strong>：态度直接、战斗意志明确，带有强烈的行动派色彩。</li>
+<li><strong>关键行为</strong>：表态愿意参战，并明确提出协助对付雪女。</li>
+<li><strong>高光时刻</strong>：那句“<strong>如果我不去的话今天也不会来这里了</strong>”非常有角色味道，既体现她的决心，也隐含一种“既然来了就不会袖手旁观”的豪迈感。</li>
+<li><strong>角色功能</strong>：她是队伍里最清晰的战斗承诺者，能稳定团队对“接下来要打”的共识。</li>
+</ul>
+
+<h4><strong>斯尼奇</strong></h4>
+<ul>
+<li><strong>性格表现</strong>：偏向于社交、观察与情报获取，可能更擅长从对话中挖出隐藏信息。</li>
+<li><strong>关键行为</strong>：在商人/交涉检定中取得33的成功，获得关键背景信息。</li>
+<li><strong>高光时刻</strong>：高成功检定直接揭示了商人来源与其借绿龙势力欺压村民的模式，是本段最重要的情报突破之一。</li>
+<li><strong>角色功能</strong>：典型的“情报开锁器”，把模糊的敌对关系具体化为可追查的势力链条。</li>
+</ul>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+
+<h4><strong>村民与摊贩</strong></h4>
+<ul>
+<li><strong>作用</strong>：提供环境信息与民间视角，呈现村庄的真实生存状况。</li>
+<li><strong>剧情意义</strong>：他们不是单纯的背景板，而是让“压价、短缺、失踪、恐惧”具体化的人证，使危机具有真实感。</li>
+</ul>
+
+<h4><strong>东边商人</strong></h4>
+<ul>
+<li><strong>作用</strong>：核心经济压迫者。</li>
+<li><strong>剧情意义</strong>：他们通过压价和借势欺压，扮演了“温和外衣下的剥削者”角色，是村庄贫困化的重要推手。</li>
+<li><strong>关联势力</strong>：商人来自基维西尔塔或塞卢卡塔，并与绿龙势力存在利用关系，暗示背后有更大范围的利益网络。</li>
+</ul>
+
+<h4><strong>狗头人</strong></h4>
+<ul>
+<li><strong>作用</strong>：外部压力与物理阻隔者。</li>
+<li><strong>剧情意义</strong>：他们的驱赶让村子进一步失去资源来源，也使“生存困境”从经济层面延伸至安全层面。</li>
+</ul>
+
+<h4><strong>雪女</strong></h4>
+<ul>
+<li><strong>作用</strong>：超自然威胁与直接灾害源。</li>
+<li><strong>剧情意义</strong>：雪女导致猎人失踪，是村庄恐慌的具象化对象；同时，她也是玩家后续可能面对的主要敌对目标之一。</li>
+</ul>
+
+<h4><strong>酋长</strong></h4>
+<ul>
+<li><strong>作用</strong>：村庄内部权力与信息节点。</li>
+<li><strong>剧情意义</strong>：队伍后续会继续调查酋长与交易状况，说明酋长可能在村中局势里承担关键决策或隐性协调角色。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 抵达科尔皮西尔塔，开始分头调查</strong></h3>
+<p>队伍在科尔皮西尔塔落脚后，没有急于推进主线战斗，而是先选择分工行动。拉科尔与哈吉米开始与村民、摊贩交谈，试图厘清当地的资源状况、主要矛盾以及潜在敌人。此时剧情氛围已明显显示出村庄的萧条与紧绷：生活物资不足，猎物减少，外部环境危险，所有线索都指向“这里已经被持续压迫很久了”。</p>
+
+<h3><strong>2. 村庄困局逐步浮现</strong></h3>
+<p>通过交谈，队伍确认村子面临的是复合型危机。东边商人长期压价，令村民无法通过正常交易换取必要物资；狗头人的驱赶又切断了外围的生存空间；雪女则让猎人失踪，进一步削减了食物获取能力。粮食与铁器的短缺说明村子不仅“缺钱”，而是已经接近基础生存崩溃的边缘。此时剧情的重心开始从“怪物威胁”转向“社会结构性问题”。</p>
+
+<h3><strong>3. 卡路亚表态参战</strong></h3>
+<p>在了解局势后，卡路亚直接表示自己愿意协助对付雪女，并且态度非常坚决。她的发言不仅是战力上的承诺，也在情绪上为队伍注入了一个明确的行动导向。与此同时，她也提到自己还需要准备坐骑等装备，说明当前并不适合立刻开打，仍需先完成整备。</p>
+
+<h3><strong>4. 关键情报突破：商人势力的来源与手段</strong></h3>
+<p>斯尼奇在商人/交涉相关检定中获得33点成功，成功打听到关键情报：这些商人主要来自基维西尔塔或塞卢卡塔，而且常常借绿龙势力来欺压村民。这一信息非常关键，因为它把原本模糊的“东边商人”从普通交易者，明确为带有外部势力背书的剥削者，进一步扩展了剧情冲突的层级，也为后续调查提供了明确方向。</p>
+
+<h3><strong>5. 制定下一步计划，调查酋长与交易关系</strong></h3>
+<p>随着信息逐步清晰，队伍决定继续调查酋长和交易情况，并讨论如何应对商人势力。当前阶段的目标不再只是“对付雪女”，而是要先弄清楚村庄内部与外部势力的关系网，再决定如何介入。整段剧情在“弄清楚谁在压迫谁、谁和谁勾连”的政治调查气氛中收束，为后续行动埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：斯尼奇成功打穿商人情报链，一口气把“东边商人”从模糊敌人升级成“有明确来源、借势欺压”的势力，信息量非常足。</li>
+<li><strong>最意外</strong>：原以为只是个雪女讨伐任务，结果很快变成“村庄经济压迫 + 外部势力操控 + 超自然灾害”的综合危机，模组层次一下就立起来了。</li>
+<li><strong>最有角色感</strong>：卡路亚那句“如果我不去的话今天也不会来这里了”，有种直球式的热血感，简短但很能代表人物气质。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>斯尼奇的检定33</strong>：本段最关键的成功检定。它不仅提供了商人的来源，还揭示了其背后依附的绿龙势力，直接改变了队伍对敌对关系的理解。</li>
+<li><strong>暂无明显大失败</strong>：摘要里没有出现灾难性失败，整体偏向稳扎稳打的调查推进。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>卡路亚的宣言</strong>：“如果我不去的话今天也不会来这里了。”</li>
+</ul>
+<p>这句话既像是战士式的决心表态，也像一种“既然已经站到这里，就不会后退”的态度总结，简单却很有记忆点。</p>
+<ul>
+<li><strong>村民口中的现实困境</strong>：压价、驱赶、失踪、缺粮、缺铁器这些词连在一起，本身就形成了很强的压迫感，是一种不靠战斗也能让人感到紧张的叙事桥段。</li>
+</ul>
+
+<p>如果你愿意，我也可以继续把这份报告整理成更像“团后复盘文档”的版本，例如补上<strong>主题解读、冲突结构图、伏笔整理、后续走向预测</strong>。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

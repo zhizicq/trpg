@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annie - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>Annie</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《Annie》是一则带有明显悲剧底色的“寻人”故事：表面上委托人是请冒险者寻找失踪的罗恩·格雷，实质上则是追索一段被时间、海难与记忆吞噬的旧日誓约。故事围绕“失忆的幸存者、消失的精灵恋人、每年一次的约定、以及被修复的涅瓦星台”展开，核心冲突并不是单纯的生死安危，而是“是否要让一段已经被命运拆散的关系，以新的方式完成”。</p>
+
+<p>这次冒险里最重要的对立，是<strong>现实中的终结</strong>与<strong>情感上的延续</strong>：罗恩在失忆后仍执着于彗星、天文台和一位金发精灵；而真相揭开后，等待他的并不是重逢的欢喜，而是“安妮早已离世”的残酷现实。最终，模组并没有用传统的“团圆”解决冲突，而是将答案落在一种极具仪式感的告别上——以石化的方式让两人并肩相依，冻结于永恒，成为“永不分离”的最后见证。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>塔尔塔在猎人之眼接下格雷家的寻人委托后，开始追查失踪者罗恩·格雷的下落。调查过程中，她得知罗恩曾在一场海难后失忆，却始终对彗星、天文台与一位金发精灵抱有近乎执念的记忆碎片。塔尔塔先后前往观星学社与港口打探消息，确认罗恩昨夜独自租船向东出海，随即孤身追踪至礁石密布的危险海域。她在那里救下重伤的罗恩，并继续追向修复过的涅瓦星台。面对星台门前复杂的日期魔法锁，塔尔塔历经多次尝试，最终以2250401成功开启，强行突破后又击毁袭来的构装体供能水晶，硬闯入星台内部。</p>
+
+<p>在星台中，她找到安妮留下的游记，终于拼合出罗恩的过往：他其实是“罗恩／劳伦斯”，与精灵安妮曾有每年4月1日于星台相会的约定；然而安妮早已离世，而罗恩长期被失落的记忆与等待牵引。真相揭晓后，罗恩并未崩溃，反而在与安妮遗骸重逢后平静死去。故事最后，塔尔塔带夏洛特前来见父亲，夏洛特说出“带我去见父亲吧”，随后她与塔尔塔一同使用美杜莎合剂，将两人石化为相拥的姿态，用一种静止的永恒，为这段跨越生死的守候画下终章。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是典型的<strong>悲剧性圆满</strong>：人物没有获得生者层面的团聚，但完成了情感与誓约层面的“最后一次见面”。罗恩得以在真相中释怀，安妮以遗留文书保住了故事的轮廓，而塔尔塔则充当了“把真相送达的人”，让这段长久等待不至于湮灭。最终的石化仪式带有强烈的象征意味——不是死亡的终止，而是“永恒相伴”的凝固；既令人唏嘘，也带着某种温柔的安放感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：塔尔塔</strong></h3>
+<p><strong>性格特征</strong></p>
+<p>塔尔塔在本次模组中表现出极强的行动力、执行力与独行侠气质。她不是那种依赖团队层层推进的调查者，而是会在获得线索后立刻追踪、迅速转入实地行动的类型。她的作风果断、冷静，且在关键时刻非常“能扛事”——无论是孤身下海救人，还是强行开启魔法锁、与构装体正面对抗，都体现出她不惧风险、以结果为先的行动风格。</p>
+
+<p><strong>关键行为</strong></p>
+<ul>
+<li>主动接下寻人委托并推进调查。</li>
+<li>在观星学社与港口完成线索拼接，锁定罗恩出海方向。</li>
+<li>孤身追踪至危险海域，并在鲨鱼环伺下救回重伤的罗恩。</li>
+<li>面对星台门锁，多次尝试后用2250401成功破解。</li>
+<li>强行进入后击毁供能水晶，确保进入内部并阻止机关继续运作。</li>
+<li>作为“真相的送达者”，带夏洛特完成最后的见面与告别。</li>
+</ul>
+
+<p><strong>高光时刻</strong></p>
+<p>塔尔塔的高光不是“华丽击杀”，而是<strong>高压环境下的可靠与决断</strong>。她几乎以一己之力把整个故事从“失踪案”推进到“真相揭露”，最后又亲手完成告别仪式的前置条件。她在剧情里像一个稳稳落地的锚，把漂浮的记忆、遗憾与等待都重新系回现实。</p>
+
+<hr>
+
+<h3><strong>PC：夏洛特</strong></h3>
+<p><strong>性格特征</strong></p>
+<p>从摘要看，夏洛特虽然出场不多，但她的出现极具情感重量。她更像是“情感结尾的参与者”，而不是前期调查的主导者。她的那句“带我去见父亲吧”，直接把剧情从“调查真相”推向“完成告别”，语气简短，却承载了压抑许久的愿望与接受。</p>
+
+<p><strong>关键行为</strong></p>
+<ul>
+<li>在故事末尾进入父亲的最终面前。</li>
+<li>主动请求见父亲，完成最后的情感收束。</li>
+<li>参与使用美杜莎合剂，与塔尔塔一起完成石化仪式。</li>
+</ul>
+
+<p><strong>高光时刻</strong></p>
+<p>夏洛特的高光在于她的<strong>一句话</strong>。这类台词之所以打动人，是因为它不是煽情式宣告，而是非常克制地表达“我已经准备好面对结局”。她在最后承担了“遗族与见证者”的角色，使结尾不只是旁观者替别人收尸，而是家人自己参与完成告别。</p>
+
+<hr>
+
+<h3><strong>重要NPC：罗恩·格雷 / 劳伦斯</strong></h3>
+<p><strong>作用与定位</strong></p>
+<p>罗恩是这条故事线的核心谜题。他既是委托中的失踪者，也是故事情感的承受者。失忆后的他将残存的执念投向彗星、星台与金发精灵，像被某种本能牵引着走向旧约地点。真相揭示后，他的身份“罗恩／劳伦斯”也说明他可能承载着过去与当下的双重记忆碎片，是整个悲剧的承接点。</p>
+
+<p><strong>剧情作用</strong></p>
+<ul>
+<li>驱动玩家调查的委托核心。</li>
+<li>作为“失忆但仍被情感召唤”的人物，制造悬念。</li>
+<li>在真相揭开后完成情绪爆点：与安妮遗骸重逢后平静死去。</li>
+</ul>
+
+<p><strong>角色意义</strong></p>
+<p>罗恩不是传统意义上的“被拯救者”，而是一个被等待和遗忘共同塑造的悲剧人物。他最后的平静死亡让故事从悬疑转向宿命论，强化了“有些约定只能在死后完成”的主题。</p>
+
+<hr>
+
+<h3><strong>重要NPC：安妮</strong></h3>
+<p><strong>作用与定位</strong></p>
+<p>安妮是标题级人物，也是整部模组真正的情感中心。她通过游记、旧约和遗骸三重方式存在：生前是约定的对象，死后是被追索的真相，留下文字则成为将故事从迷雾中解锁的钥匙。</p>
+
+<p><strong>剧情作用</strong></p>
+<ul>
+<li>作为罗恩长期痴迷与执念的对象。</li>
+<li>通过游记揭示每年4月1日相会的约定。</li>
+<li>她的死亡构成核心反转：所谓重逢其实已隔阴阳。</li>
+<li>她的遗骸成为罗恩最后平静的终点。</li>
+</ul>
+
+<p><strong>角色意义</strong></p>
+<p>安妮是“缺席者”却也是“最强在场者”。她本人未真正作为活动中的行动角色出现，但所有线索都围绕她展开，最终也由她完成了整个故事的定义——这是一段被时间封存的爱。</p>
+
+<hr>
+
+<h3><strong>重要NPC：格雷家委托人</strong></h3>
+<p><strong>作用与定位</strong></p>
+<p>格雷家族是故事的引子，提供“寻人委托”的外壳，把玩家带入事件。虽然摘要中未展开其具体戏份，但他们的存在说明故事起点仍保留着现实层面的社会关系：家属的焦虑、失踪者的谜团、以及对返回的期待。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 接下委托：失踪者罗恩·格雷</strong></h3>
+<p>塔尔塔在猎人之眼接到格雷家的寻人委托，任务表面上是寻找一名失踪男子罗恩·格雷。委托开启后，玩家迅速得知：罗恩并非普通失踪，他在一次海难后失忆，之后似乎被某些模糊的记忆碎片牵引，对彗星、天文台以及一位金发精灵产生强烈兴趣。这个阶段的剧情功能主要是建立悬念：罗恩为什么会执着这些事物？他究竟在寻找谁？</p>
+
+<h3><strong>2. 城中调查：观星学社与港口线索</strong></h3>
+<p>塔尔塔先前往观星学社，随后去港口打听消息。两处调查逐步把“抽象的执念”落到现实：罗恩昨夜独自租船，向东出海。这一阶段的戏剧张力在于，线索并不复杂，但信息整合后足以判断“事情不妙”，于是故事迅速从案头调查转向海上追踪，节奏明显加快。</p>
+
+<h3><strong>3. 海上追踪：礁石、鲨鱼与救人</strong></h3>
+<p>塔尔塔孤身追踪到危险海域，在鲨鱼环伺的礁石区发现重伤的罗恩，并成功将其救下。这个场景是前半段最具冒险味道的部分：它既是肉体层面的危机，也是叙事层面的转折。罗恩不再只是“失踪者”，而是一个已经接近真相门槛、并被海洋与命运逼入绝境的人。</p>
+
+<h3><strong>4. 涅瓦星台：日期魔法锁与构装体</strong></h3>
+<p>塔尔塔继续带着罗恩前往修复过的涅瓦星台。星台门前的日期魔法锁构成第一道关键机关，塔尔塔多次尝试后，最终以2250401成功开启。虽然开锁过程带有试错，但成功后她仍被电流伤到，表现出“解谜不是和平行为”的代价。进入后，袭来的构装体进一步证明星台内部已被某种防御系统占据，塔尔塔击毁供能水晶，才得以彻底控制局面。</p>
+
+<h3><strong>5. 真相揭露：安妮的游记与旧约</strong></h3>
+<p>在星台内部，塔尔塔找到安妮留下的游记，故事真相被完整拼合出来：罗恩／劳伦斯与精灵安妮曾约定每年4月1日于星台相会。那些模糊的彗星、星台和精灵记忆，原来都指向这一段跨越时间的约定。但残酷的是，安妮其实早已离世，罗恩一路追寻的并不是现实中的重逢，而是记忆残影与永远无法抵达的过去。</p>
+
+<h3><strong>6. 终局：遗骸重逢与石化相依</strong></h3>
+<p>当罗恩与安妮的遗骸重逢后，他平静死去，像是终于被允许停止等待。章节末，塔尔塔带夏洛特前来见父亲，夏洛特那句“带我去见父亲吧”成为情感落点。最后，塔尔塔与夏洛特共同使用美杜莎合剂，将两人石化为相依的姿态，让他们以静止的方式永远相伴。这个结局把死亡、爱情与告别凝结成一个不可逆的仪式，既残酷又温柔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：塔尔塔孤身在鲨鱼环伺的礁石区救回重伤罗恩，并继续推进到星台，整个过程非常有“单人英雄片”气质。</li>
+<li><strong>最意外</strong>：真相并不是“失踪者找到了恋人”，而是“他一直在追逐一段早已结束的关系”。这个反转把模组从寻人故事直接翻成悲剧爱情故事。</li>
+<li><strong>最有仪式感</strong>：最后的石化相依，极其像一场另类婚礼或葬礼，荒诞里带着庄严。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>日期魔法锁</strong>：多次尝试后以 <strong>2250401</strong> 成功开启，属于典型的“答案看似离谱但实际正确”的高光瞬间，极有记忆点。</li>
+<li><strong>电流伤害</strong>：开锁成功后仍被电流伤到，体现“解谜成功不等于零代价”。</li>
+<li><strong>击毁构装体供能水晶</strong>：这个动作虽未详细写出判定结果，但从叙事上看，是确保进入与推进的关键强行突破，具有很强的战术感。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>夏洛特的那句“带我去见父亲吧”</strong>：简短、克制、杀伤力极强，是全篇最容易让人记住的台词之一。</li>
+<li><strong>从调查到出海的转场</strong>：线索拼出来后，塔尔塔立刻孤身追踪，节奏干净利落，像侦探故事突然切成冒险故事。</li>
+<li><strong>“永恒相伴”的结尾处理</strong>：用美杜莎合剂把两人石化成相依姿态，这种处理既让人错愕，又非常贴合本作的悲情主题，属于非常有模组风格的收束方式。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式模组复盘的版本</strong>，</li>
+<li><strong>偏故事赏析的版本</strong>，或</li>
+<li><strong>适合发在社群/群公告里的短评版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

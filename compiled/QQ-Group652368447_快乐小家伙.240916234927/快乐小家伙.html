@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>快乐小家伙 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>快乐小家伙</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《快乐小家伙》发生在一个已经严重崩坏、几近废土化的异世界中。玩家角色旅琦缘被突然传送到一座废弃小镇，并迅速意识到这里并不是“可探索的普通异界”，而是一个早已被灾难和异变吞噬的残破世界。这个世界中存在失控的蒸汽列车、疑似感染体的怪物、被遗弃的工厂，以及以“制造活人器官”为核心的黑暗生产线，整体氛围兼具蒸汽朋克、末世废土与生物恐怖。</p>
+
+<p>故事的主要矛盾集中在两层：</p>
+<ol>
+<li><strong>生存与逃离</strong>：旅琦缘必须在危机四伏的废墟中活下来，并找到满足系统条件的“离开钥匙”。</li>
+<li><strong>救助与见证</strong>：在这个已经注定毁灭的世界里，她遇到了失语少女燕，以及被封存为“王子”的AI人格。旅琦缘在撤离前，选择先帮助他们完成重逢，让这片绝望废墟里仍保留一点人性与温情。</li>
+</ol>
+
+<h3><strong>主线剧情概要</strong></h3>
+<p>旅琦缘被传送到一座荒废小镇，开局便遭遇失控的蒸汽列车与感染怪物的双重威胁。她在艰难战斗中击杀敌人，并及时处理抓伤，避免感染进一步恶化。随后，她开始系统性地探索这座世界，逐步确认这里早已被灾难摧毁，幸存者极少，环境中处处是危险与异化的痕迹。就在旅琦缘不断深入废墟时，她遇见了失语的银发少女“燕”。起初二人靠糖果、药膏与简单照料建立起脆弱的信任，而燕也逐渐将她带向更核心的秘密——一座隐藏在废墟深处的工厂。工厂内部并非普通生产设施，而是一个以“制造活人器官”为目标的恐怖流水线，机械、肉体与生物组织被残酷地拼接在一起。随着虫群暴走、工厂疑似启动自毁，局势迅速失控，旅琦缘趁乱夺得关键芯片，系统判定她已满足离开条件。最终，她将芯片插入“王子”体内，唤醒了其AI人格，使王子与燕得以重逢。旅琦缘在确认两人能够互相陪伴后，将复制芯片留作联络之用，自己返回主神空间。她没有改变世界的毁灭结局，却在离开前，为两个被命运遗忘的人留住了一点未来。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是典型的“撤离型完结”：主角成功完成任务并脱离副本，剧情没有彻底逆转世界末日，而是将重点放在“留下什么”而不是“拯救一切”。旅琦缘把燕留给王子照看，三人完成短暂却真挚的告别。王子与燕重逢象征着记忆与情感的延续，复制芯片则为这段关系提供了后续联系的可能。整体收尾克制、温柔，带有废墟中的童话感：世界注定毁灭，但仍有人彼此记得、彼此等待。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC：旅琦缘</strong></h3>
+<p><strong>性格特点：</strong></p>
+<ul>
+<li>冷静务实，危机中反应快，优先处理生存问题。</li>
+<li>行动力强，擅长边探索边修正策略。</li>
+<li>虽然处于高压环境，却保有明显的同情心与照护欲。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>开局面对蒸汽列车与感染体威胁时没有慌乱，成功规避或击杀。</li>
+<li>被抓伤后能及时自我处理感染风险，显示出较强的危机意识。</li>
+<li>遇到燕后，没有将其视作“情报点”或“任务道具”，而是先用糖果、药膏建立信任。</li>
+<li>在工厂真相揭露后，仍能保持目标清晰，趁乱取得关键芯片。</li>
+<li>最终选择把燕留给王子照顾，而不是强行带走，体现出她对“他人幸福”与“剧情后果”的尊重。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>击杀疑似感染体并及时处置伤口：体现专业与果断。</li>
+<li>面对工厂恐怖真相仍稳定推进主线：体现心理承压能力。</li>
+<li>让王子与燕重逢：从“任务完成者”转变为“善意的促成者”。</li>
+</ul>
+
+<hr>
+
+<h3><strong>NPC：燕</strong></h3>
+<p><strong>作用定位：</strong></p>
+<ul>
+<li>故事中的情感枢纽与信息引导者。</li>
+<li>她是废墟中残存的人性象征，也是通往工厂真相的关键媒介。</li>
+</ul>
+
+<p><strong>人物特征：</strong></p>
+<ul>
+<li>失语、银发、脆弱而神秘，带有明显的“受创者”气质。</li>
+<li>在信任建立后，愿意带领旅琦缘深入危险区域，说明她并非完全被动，而是有自己的目标或立场。</li>
+<li>她与王子之间存在显著的情感牵连，是结局中最重要的“被保护者”。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>初次出现时带来强烈的氛围反差：在荒芜世界中出现一个安静而纯净的形象。</li>
+<li>引领主角进入工厂，推动剧情进入真相层。</li>
+<li>与王子重逢时，完成情感落点。</li>
+</ul>
+
+<hr>
+
+<h3><strong>NPC：王子</strong></h3>
+<p><strong>作用定位：</strong></p>
+<ul>
+<li>被封存的AI人格/核心存在，承担“旧世界记忆”和“关系修复”的功能。</li>
+<li>是燕的情感归宿，也是模组标题“快乐小家伙”所指向的温柔核心之一。</li>
+</ul>
+
+<p><strong>人物特征：</strong></p>
+<ul>
+<li>先前应处于沉眠或失能状态，需要芯片唤醒。</li>
+<li>被唤醒后与燕重逢，说明其并非单纯机器，而是具备人格与情感的存在。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li>芯片插入后人格苏醒的瞬间，是剧情从恐怖转向温情的重要节点。</li>
+<li>赠予可联络的复制芯片，强化“后日谈”的延续感。</li>
+</ul>
+
+<hr>
+
+<h3><strong>NPC：工厂/系统/感染源（功能性反派）</strong></h3>
+<p><strong>作用定位：</strong></p>
+<ul>
+<li>代表这个世界的结构性邪恶。</li>
+<li>工厂制造“活人器官”的设定，将生物恐怖推到顶点。</li>
+<li>虫群暴走、自毁机制、失控列车与感染怪物共同构成环境型敌对系统。</li>
+</ul>
+
+<p><strong>剧情作用：</strong></p>
+<ul>
+<li>提供压迫感与探索阻力。</li>
+<li>将故事从“废土求生”推向“伦理恐怖”。</li>
+<li>与燕、王子的温情线形成强烈对照。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一章：降临废镇，危机开局</strong></h3>
+<p>旅琦缘被传送至一座废弃小镇，四周空无生气，只有失落与危险。她很快遭遇失控的蒸汽列车，在千钧一发之际成功躲避。紧接着，她又碰上疑似感染体的怪物，进入战斗状态。战斗结束后，她确认自己曾被抓伤，立刻处理感染风险，避免了更严重的后果。这一阶段主要完成了模组的“环境定调”：这是一个会随时杀人的世界，且感染、机械失控与废墟气息并存。</p>
+
+<h3><strong>第二章：废墟侦查，真相渐显</strong></h3>
+<p>在短暂稳定后，旅琦缘开始系统侦查周边区域。她逐步意识到这座世界早已满目疮痍，甚至可以说文明彻底崩坏，幸存者稀少或已不在表层活动。整个探索过程强化了“孤立感”和“被遗弃感”，同时也为后续的工厂发现埋下伏笔。旅琦缘并非盲目推进，而是沿着环境线索持续深入，表现出较强的调查能力。</p>
+
+<h3><strong>第三章：邂逅燕，建立脆弱信任</strong></h3>
+<p>在废墟深处，旅琦缘遇见了失语的银发少女燕。这个角色的出现改变了故事的情绪色调：从纯粹的生存恐怖，开始向人物关系推进。旅琦缘没有贸然接近，而是借助糖果、药膏和照料等小动作慢慢建立信任。这些看似微不足道的行为非常关键，它们让燕愿意接纳旅琦缘，也为后续带路埋下基础。燕的沉默与脆弱，使她既像幸存者，也像这座废土世界最后残留的“孩子”。</p>
+
+<h3><strong>第四章：工厂真相，活体器官流水线</strong></h3>
+<p>在燕的带领下，旅琦缘进入隐藏工厂，真相也随之揭开：这里竟在进行“制造活人器官”的恐怖生产。这个设定将模组的黑暗程度直接拉满，工业化流程与人体异化结合，形成强烈冲击。随后，虫群暴走，工厂疑似启动自毁，现场陷入全面混乱。旅琦缘趁乱夺取关键芯片，完成了模组要求的核心目标之一，并由系统提示已满足离开条件。这一章是整个模组的危机高潮。</p>
+
+<h3><strong>第五章：唤醒王子，短暂团聚</strong></h3>
+<p>拿到芯片后，旅琦缘没有立刻离开，而是将芯片插入“王子”体内，唤醒其AI人格。王子苏醒后与燕重逢，剧情由恐怖转向温情，形成强烈反差。旅琦缘进一步赠予可联络的复制芯片，为日后联系留下可能。三人依依道别后，旅琦缘将燕交给王子照看，自己返回主神空间。收尾不喧闹，却非常完整：任务完成、关系闭合、余韵留存。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：工厂真相揭露——“制造活人器官”的设定足够震撼，且与前半段的废墟探索形成强烈升级。</li>
+<li><strong>最意外</strong>：原本以为只是废土求生，结果一路推进到“AI人格重逢+情感收尾”，反差很大。</li>
+<li><strong>最温柔</strong>：旅琦缘用糖果、药膏建立信任，这种细节让剧情在残酷之外多了“照顾别人”的温度。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>高光检定/决策</strong>：躲过失控蒸汽列车，属于极具压迫感的开局危机处理。</li>
+<li><strong>关键成功</strong>：战斗中击杀感染体并及时处置抓伤，避免剧情在开局就滑向失败。</li>
+<li><strong>关键达成</strong>：夺得芯片并触发离开条件，属于任务推进的决定性成功。</li>
+<li>若从叙事效果看，<strong>芯片唤醒王子</strong>可视为“剧情层面的大成功”，直接把结局从单纯脱出抬升成情感闭环。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>糖果、药膏与照料换来信任</strong>：非常典型的“最朴素但最有效”的互动方式，温柔得很有记忆点。</li>
+<li><strong>燕引路进入工厂</strong>：从“安静少女”到“真相向导”，身份转折很有戏剧性。</li>
+<li><strong>王子与燕重逢</strong>：虽然摘要里没有完整对白，但这一幕本身就足以成为全模组的情绪落点。</li>
+<li><strong>留复制芯片以便联络</strong>：既实用又带点“后日谈”的浪漫感，像是把故事从一次性冒险延伸成了长久陪伴。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份分析报告整理成更像“跑团战报/模组复盘”的版本，或者补一版“主持人视角点评”（比如节奏、恐怖氛围、NPC塑造、玩家决策效果）。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

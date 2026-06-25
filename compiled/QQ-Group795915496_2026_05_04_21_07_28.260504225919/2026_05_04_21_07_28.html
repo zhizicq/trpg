@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_05_04_21_07_28 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_05_04_21_07_28</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情发生在一场围绕“蒙耶局势”展开的战后清算与权力重组中。玩家们先前经历了与妖僧的激烈战斗，并在其被彻底击杀后，进入后续的战场整理与城内局势观察阶段。核心冲突不再只是“如何打倒敌人”，而是“如何在混乱中稳定秩序、处理战利品与掌握主动权”。</p>
+<p>与此同时，城内权力已由阿玛迪斯掌控，他通过安抚民众、处理兽人尸体等手段，迅速塑造出“秩序恢复者”的形象；而教会军则已明显溃退，意味着旧有阵营失势，新秩序正在形成。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>高铎斯一行人终于将反复倒地、又几乎“死不透”的妖僧彻底解决，为这一段高压战斗画上句号。战斗结束后，他们乘坐狮鹫返回营地，映入眼帘的却不是凯旋的欢呼，而是教会军溃退后的混乱景象：战线崩塌、士气低落，局势已悄然逆转。众人趁机搜刮妖僧遗物，并通过鉴定获得了几件价值极高的战利品，包括经匣、魅惑之眼、+4体质腰带以及高等生命之息护身符。尤其是魅惑之眼，不但带有诅咒，还限定必须信仰奥普迪欧才能使用，成为一件“强大但危险”的典型遗物。</p>
+<p>随后，高铎斯等人随男爵进城，进一步确认蒙耶的实际控制权已经落入阿玛迪斯之手。阿玛迪斯在广场公开现身，一边安抚民众情绪，一边处理兽人尸体，用极具政治智慧的方式稳定秩序、重建信任。他不只是在“收拾残局”，更是在借乱局完成权力整合，宣告自己已成为当地局势中最有分量的人物。至此，本段剧情从战斗收束自然过渡到战后政治格局的重塑。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段没有进入终局决战，而是以“妖僧死亡、战利品到手、城内局势被阿玛迪斯稳定”作为收尾。整体是一个典型的战后整理章节：一方面为后续冒险积累资源，另一方面也明确了新的政治格局——教会军退场，阿玛迪斯上位，蒙耶进入新的秩序阶段。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>高铎斯</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：行动果断、实战导向，面对强敌有耐心，也具备战后处理战利品的实用主义思维。</li>
+<li><strong>关键行为</strong>：</li>
+<li>参与击杀“几次才彻底死去”的妖僧，体现出在高韧性敌人面前的持续压制能力。</li>
+<li>通过察觉检定找到遗物，说明他不仅是战斗主力，也承担了战场清理与收益获取的职责。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在战斗结束后迅速转入搜刮与局势判断，是典型的“打赢之后还能把收益拿满”的冒险者风格。</li>
+</ul>
+
+<h3><strong>阿🦌</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：偏向知识型/宗教型角色，对神秘物件有较强辨识能力。</li>
+<li><strong>关键行为</strong>：</li>
+<li>通过宗教检定成功辨出“魅惑之眼”的诅咒与使用限制，避免队伍在不了解代价的情况下误用强力道具。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>精准识别出这件战利品并非无代价的宝物，而是带有阵营/信仰门槛的危险遗物，极具情报价值。</li>
+</ul>
+
+<h3><strong>男爵</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：区域权力结构中的合法统治者/引路人。</li>
+<li><strong>关键行为</strong>：</li>
+<li>亲自带队入城，象征性地将玩家们引入新的政治核心。</li>
+<li><strong>剧情作用</strong>：</li>
+<li>作为“过渡桥梁”，将战场阶段与城内政治阶段连接起来，让玩家从军事行动转入政局观察。</li>
+</ul>
+
+<h3><strong>阿玛迪斯</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：极具政治手腕的秩序塑造者，擅长在危机中建立权威。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在广场公开安抚民众。</li>
+<li>处理兽人尸体，传达“我在收拾烂摊子”的治理姿态。</li>
+<li><strong>剧情作用</strong>：</li>
+<li>通过公开行动稳住蒙耶局势，完成权力展示与民心收拢，是本段最重要的NPC之一。</li>
+</ul>
+
+<h3><strong>妖僧</strong></h3>
+<ul>
+<li><strong>性格与定位</strong>：顽强、诡异、极难彻底杀死的敌对核心单位。</li>
+<li><strong>关键行为</strong>：</li>
+<li>作为本段战斗的终点目标，即使反复被击倒也未能立即终结。</li>
+<li><strong>剧情作用</strong>：</li>
+<li>既是战斗压力来源，也是遗物掉落的来源，其死亡象征着旧敌势力的衰败。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 妖僧终结战</strong></h3>
+<p>高铎斯等人经过多轮交战，终于将那名“几次才彻底死去”的妖僧击杀。这个敌人显然具备某种顽强生存或复起能力，因此战斗过程充满拉锯感，直到最后才彻底结束。此役既是一次危险清除，也是对队伍战斗资源的一次消耗检验。</p>
+
+<h3><strong>2. 乘狮鹫返营，战后局势初显</strong></h3>
+<p>战斗结束后，众人乘狮鹫返回营地，途中或返程后便察觉到战场大势已变：教会军出现溃退。这个信息意味着前线局势已从“争夺”转向“崩盘”，也说明本次行动很可能成为局势逆转的重要节点。</p>
+
+<h3><strong>3. 搜刮战利品并完成鉴定</strong></h3>
+<p>玩家们对妖僧遗体进行搜刮，并通过察觉与宗教检定识别遗物。最终得到：</p>
+<ul>
+<li>经匣</li>
+<li>魅惑之眼</li>
+<li>+4体质腰带</li>
+<li>高等生命之息护身符</li>
+</ul>
+
+<p>其中“魅惑之眼”最具戏剧性，不仅强力，还被判定带有诅咒，且必须信仰奥普迪欧才能使用。这使得战利品不只是奖励，更是一种带选择成本的诱惑。</p>
+
+<h3><strong>4. 随男爵入城，确认新秩序已形成</strong></h3>
+<p>众人随男爵进入城内，发现阿玛迪斯已经实际掌控局势。与其说是“夺权成功”，不如说他已经完成了秩序接管。玩家们在广场看到他安抚民众、处理兽人尸体，说明他不仅在军事层面占优，也在公共舆论与民心层面稳住了局面。</p>
+
+<h3><strong>5. 蒙耶局势稳定，章节收束</strong></h3>
+<p>本段以阿玛迪斯公开展示治理能力作为收尾。教会军退势明显，玩家队伍则在战后获得资源与情报双重收益。剧情从战斗胜利自然过渡到政治重构，完成了一个清晰的阶段性闭环。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>妖僧“几次才彻底死去”</strong>：这种敌人设定天然带来压迫感，也很容易让玩家产生“怎么又站起来了”的心理阴影。</li>
+<li><strong>阿玛迪斯在广场处理兽人尸体</strong>：非常有视觉冲击力，也很有政治表演意味，像是在用行动告诉民众“我已经接管了秩序”。</li>
+<li><strong>战后立刻搜刮高价值遗物</strong>：从生死战无缝切到摸尸环节，冒险者味道十足，节奏非常“TRPG式现实主义”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>高铎斯的察觉检定 15、12</strong></li>
+</ul>
+<p>成功找到了妖僧身上的遗物，为队伍带来实质收益。</p>
+<ul>
+<li><strong>阿🦌的宗教检定成功</strong></li>
+</ul>
+<p>准确识别“魅惑之眼”的诅咒与信仰限制，避免了队伍误判这件道具的性质。</p>
+<p>这个检定的价值不在于“炫技”，而在于直接决定队伍是否会踩坑。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“几次才彻底死去”的妖僧</strong></li>
+</ul>
+<p>这类描述本身就很有戏剧张力，带一点夸张的黑色幽默感。</p>
+<ul>
+<li><strong>“魅惑之眼”需信仰奥普迪欧才能使用</strong></li>
+</ul>
+<p>既让道具显得神秘又危险，也埋下了后续角色信仰与利益冲突的潜在戏点。</p>
+<ul>
+<li><strong>阿玛迪斯公开稳局</strong></li>
+</ul>
+<p>不是单纯讲话，而是结合“安抚民众+处理尸体”双重操作，属于非常会做政治形象的NPC桥段。</p>
+
+<p>如需，我也可以把这份报告进一步整理成“<strong>模组复盘PPT风格</strong>”或“<strong>适合发群里的精简版战报</strong>”。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

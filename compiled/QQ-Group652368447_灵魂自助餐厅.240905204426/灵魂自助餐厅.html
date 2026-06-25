@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灵魂自助餐厅 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>灵魂自助餐厅</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<ul>
+<li><strong>模组背景与核心冲突</strong></li>
+</ul>
+<p>《灵魂自助餐厅》表面上是一间经营诡异、气氛暧昧的餐馆，实际上是一处以“灵魂调料”诱捕并献祭人类的邪教祭坛。主神将两名角色强行投放进这座空间，剥夺装备与安全感，让她们在“被当作食材”的处境中挣扎求生。故事的核心冲突有两层：一层是<strong>生存与逃脱</strong>——在封闭厨房、冷库、地下密室中寻找线索并打破餐厅结构；另一层是<strong>意志与污染的对抗</strong>——“调料”会放大饥饿、依恋与欲望，让角色在身体和精神上逐渐失守，最终必须在邪教仪式完成前击败主厨祭司佐藤稔。</p>
+
+<ul>
+<li><strong>主线剧情概要</strong>（300-500字）</li>
+</ul>
+<p>两名角色被主神强行传送到“灵魂自助餐厅”的厨房冰柜里，醒来时不仅身陷险境，还被剥夺手铐、颈环与装备，几乎已成为待处理的“食材”。她们先合力撞开冰柜门，从厨房、冷库与垃圾堆中摸索出餐厅的真实结构：菜单、手册、蜂蜜色的异常“调料”，以及它会放大饥饿与依恋的可怕效果。旅在意志检定失败后误饮液体，项圈随之升级，心理与生理都被进一步束缚；千早也逐渐受气味牵引，和环境产生诡异的情绪共鸣。继续深入后，两人从垃圾桶、活板门与地下密室里翻出人肉、饲料肉、被锁链束缚的灵体怪物，以及邪教仪式遗迹和《Y的禁锢术》，确认这里不是普通餐馆，而是以“料理”为幌子进行献祭与灵魂吞食的祭坛。她们从佐藤稔的日记中掌握“血液调味料”能削弱敌人的情报，随即闯入宴会厅，对峙自称“献给神”的主厨兼祭司。佐藤稔显出异形真身并企图将她们绑上餐桌，但千早以剑与净化药水命中其触手，成功削弱其魔力与烙印。最终，佐藤稔被击败，空间崩坏，墙体内涌出的巨型腐肉怪吞噬残骸，众人也因理智冲击昏厥。再醒来时，她们已回到床上，仿佛从未离开海贼王世界；危机虽告一段落，但千早与达斯琪之间留下的暧昧与“社死”八卦，却让这趟灵魂自助餐厅之行在表面平静下延续出新的关系变化。</p>
+
+<ul>
+<li><strong>结局与收尾</strong></li>
+</ul>
+<p>佐藤稔被击败后，餐厅空间彻底崩塌，巨型腐肉怪完成“清场式吞噬”，模组以一种近乎噩梦醒转的方式收束。角色们在理智受损后失去意识，随后在原本世界的床上醒来，危机表面解决。收尾并未止于“活下来”，而是转向关系余波：千早与达斯琪之间被留下暧昧痕迹，引发全船流言与调侃，成为后续长期的社交爆点。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC 1：旅</h3>
+<ul>
+<li><strong>性格特征</strong>：行动直接、偏硬派，危机中以求生为第一优先；在精神污染面前出现波动，但总体仍能维持实战判断。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在被关进冰柜、失去装备的情况下，依然选择主动破局，和千早配合冲门搜查。</li>
+<li>面对“灵魂调料”时出现意志失败，说明她并非完全免疫诱惑，但也侧面强化了模组的压迫感。</li>
+<li>参与调查地下密室、确认敌方机制，并在战斗前后起到承接线索与推进节奏的作用。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在极端受困状态下仍保持推进剧情的主动性。</li>
+<li>与千早共同完成从“待宰食材”到“反击者”的身份翻转。</li>
+</ul>
+
+<h3>PC 2：千早</h3>
+<ul>
+<li><strong>性格特征</strong>：敏锐、克制，但对异常气味与情绪牵引有明显反应；实战中有明确的攻击判断与支援意识。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在厨房与冷库阶段不断搜证，推动发现菜单、手册、调料和密室痕迹。</li>
+<li>在获得“血液调味料”削弱敌人的情报后，果断在最终战中执行针对性打击。</li>
+<li>使用剑配合净化药水精准命中佐藤稔的触手，直接造成重创，是击败主厨的关键输出。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>最终战中那一下“剑+净化药水”的命中，是整场模组最明确的翻盘点。</li>
+<li>在被污染氛围包围时仍能保留战斗判断，体现出角色稳定的核心气质。</li>
+<li><strong>角色弧光</strong>：</li>
+<li>从被气味与情绪引导的“受影响者”，成长为能将污染机制反向利用、并对敌人实施定点打击的行动者。</li>
+</ul>
+
+<h3>重要NPC：佐藤稔</h3>
+<ul>
+<li><strong>身份与作用</strong>：主厨兼祭司，餐厅的实际掌控者，也是模组核心反派。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>作为“温和餐厅表象”与“献祭邪教真相”之间的桥梁，负责把世界观的恐怖核心具体化。</li>
+<li>通过日记、仪式痕迹与异形真身三重揭示，完成从“可疑店主”到“邪神祭司”的反转。</li>
+<li><strong>人物特征</strong>：</li>
+<li>自称“献给神”，体现其价值观彻底扭曲、将献祭合理化的宗教狂热。</li>
+<li>战斗中显露触手与异形真身，强化了餐厅“吞食灵魂”的怪诞意象。</li>
+</ul>
+
+<h3>重要NPC：主神</h3>
+<ul>
+<li><strong>作用</strong>：虽然不是传统意义上的剧情NPC，但其“强制传送、剥夺装备”的行为构成模组的开局暴力。</li>
+<li><strong>功能</strong>：</li>
+<li>将角色直接抛入险境，迫使玩家在无准备状态下应对恐怖。</li>
+<li>在叙事上制造“被观察/被玩弄”的宿命感，是整个模组荒诞与残酷的源头。</li>
+</ul>
+
+<h3>重要配角：达斯琪</h3>
+<ul>
+<li><strong>作用</strong>：更偏向后续关系与气氛余波的承接者。</li>
+<li><strong>意义</strong>：</li>
+<li>千早与达斯琪之间留下的暧昧痕迹，把一个偏恐怖、探索向的模组，延伸成带有情感八卦与社死喜剧的后日谈。</li>
+<li>她的存在让收尾不只是“打完怪”，而是进入“关系后遗症”的阶段。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 冰柜醒来：被当作食材的开局</h3>
+<p>两名角色一开始就被主神丢进灵魂自助餐厅的厨房冰柜里，身上装备、手铐、颈环全失，处境极其被动。她们在近乎“待宰”的状态下醒来，第一目标不是战斗，而是从封闭空间里活着出来。两人合力撞开冰柜门，正式踏入这个诡异餐厅的内部。</p>
+
+<h3>2. 厨房与冷库探索：异常调料与污染开始渗透</h3>
+<p>离开冰柜后，她们搜查厨房与冷库，逐渐发现菜单、手册以及蜂蜜色的“调料”。这些物品不只是道具，更是机制本身：它会放大饥饿、依恋和心理倾向，让角色在无意识中更容易被空间“同化”。旅在意志检定失败后喝下液体，项圈随之升级，象征束缚加深；千早也被气味和情绪影响，开始感受到模组特有的诱导与压迫。</p>
+
+<h3>3. 线索扩展：垃圾桶、活板门与地下密室</h3>
+<p>继续深入后，两人从垃圾桶、活板门和地下密室中挖出更直观的恐怖证据：大量人肉、饲料肉、被锁链束缚的灵体怪物，以及邪教仪式痕迹。她们找到《Y的禁锢术》，并通过现场残留物与文档逐步拼出真相——这不是“食物加工”，而是以餐厅为外壳、以料理为名义的灵魂献祭现场。</p>
+
+<h3>4. 真相确认：日记中的献祭逻辑</h3>
+<p>在主厨兼祭司佐藤稔的日记中，角色确认了整个餐厅的运作方式：通过“灵魂调料”诱骗、控制、献祭人类，再将其制作成料理奉献给某个神秘存在。这个阶段是叙事上的真相揭示点，前面所有不自然的气味、欲望放大、冷库异常与菜单细节，都被统一解释成“仪式的一部分”。</p>
+
+<h3>5. 最终战前准备：血液调味料的战术价值</h3>
+<p>在掌握情报后，角色发现“血液调味料”可以削弱敌人。这个设定让模组从单纯恐怖调查转向带有解谜和战术规划的战斗流程。她们不再只是逃跑，而是开始主动准备反击，为最终对峙做足铺垫。</p>
+
+<h3>6. 宴会厅对峙：主厨显露真身</h3>
+<p>两人闯入宴会厅，与自称“献给神”的佐藤稔正面交锋。对方很快显露异形真身，企图把她们绑上餐桌完成献祭。这里的恐怖感达到顶点：餐厅不再是“奇怪”，而是彻底暴露为一座吞人的祭坛。</p>
+
+<h3>7. 反击与击杀：千早的精准重创</h3>
+<p>在战斗中，千早以剑配合净化药水准确命中佐藤稔的触手，成功重创敌人并削弱其魔力与烙印。这个动作是整场模组的关键胜负手，也象征角色从被动受害者转为主动猎杀者。随后佐藤稔被击败，剧情正式进入崩坏收束阶段。</p>
+
+<h3>8. 场景崩坏与回归：腐肉怪吞噬残骸</h3>
+<p>敌人倒下后，空间本身开始崩坏，墙内涌出巨型腐肉怪吞噬残骸。这个结尾很有“场景本身也是怪物”的意味，强调灵魂自助餐厅并非一个可被正常清理的场所，而是一个会自我消化、掩埋证据的活体邪构造。众人理智受创后昏厥，再醒来时已回到床上，仿佛什么都没发生。</p>
+
+<h3>9. 后日谈：社死与暧昧余波</h3>
+<p>虽然主线危机解除，但千早与达斯琪之间留下的暧昧痕迹，使这次事件在船上掀起流言与八卦。模组最终没有停在“打倒邪教”这一层，而是把情感后果继续推进：恐怖事件变成社交事故，成为全船津津乐道的话题。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<ul>
+<li><strong>最精彩/最搞笑/最意外的场景</strong></li>
+<li>最精彩：千早在最终战中用剑配合净化药水命中佐藤稔触手的瞬间，直接完成压制与翻盘。</li>
+<li>最搞笑：从“被主神丢进冰柜、差点被当食材”到“打完怪回床上”，这种极端落差很有荒诞喜剧感。</li>
+<li>最意外：战斗结束后不是干净利落的胜利，而是墙内涌出巨型腐肉怪吞噬残骸，像是“餐厅本体”亲自收尾。</li>
+</ul>
+
+<ul>
+<li><strong>令人印象深刻的检定（大成功/大失败）</strong></li>
+<li><strong>大失败/负面结果感最强</strong>：旅在意志检定失败后喝下液体，导致项圈升级。这种结果不仅是数值层面的失利，更直接体现为束缚加深，压迫感极强。</li>
+<li><strong>关键命中</strong>：千早在最终战中的触手命中，可以视为全场最重要的成功检定之一，直接决定战局走向。</li>
+</ul>
+
+<ul>
+<li><strong>有趣的对话或桥段</strong></li>
+<li>“献给神”这一自我定位本身就很有邪教味，和餐厅经营身份形成强烈反差。</li>
+<li>“灵魂调料”与“血液调味料”的设定，把美食、欲望与献祭缝合得非常诡异，也让整个模组的语言风格既荒诞又恶心。</li>
+<li>结尾的“社死传播”特别有跑团后日谈气质：前面拼命求生，后面大家关心的却是船上的八卦，反差极强。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式团后复盘的版本</strong>，或</li>
+<li><strong>更像论坛长评/模组推荐文的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

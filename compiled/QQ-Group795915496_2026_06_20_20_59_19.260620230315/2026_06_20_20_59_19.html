@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_06_20_20_59_19 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_06_20_20_59_19</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情发生在一座与信仰、古老传说紧密相关的大教堂地下。表面上，玩家们是在阿玛迪斯的引导下进行一次“交接”后的深入探索；实际上，他们正一步步踏入一个被教会结构隐藏起来的古老空间。地下大厅不仅在建筑结构上与地上教堂形成镜像，更通过艾奥梅黛与精灵神话壁画暗示这里曾是某种宗教、历史与神秘力量交织的遗迹。</p>
+
+<p>核心冲突则在于：玩家一行刚进入地下，就遭遇了一名巨大的半恶魔兽人。这个敌人并非单纯的守卫或野怪，而是与斯尼奇的旧敌存在关联，意味着这场战斗背后带有私人恩怨与更深层的宿命牵连。于是，剧情从“探索未知遗迹”迅速转化为“与旧日仇敌正面对决”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>在完成与阿玛迪斯的交接后，队伍遵照他的要求进入大教堂地下。地下空间并非普通地窖，而是一条长长的地下长廊，墙面布满艾奥梅黛与精灵神话相关的壁画，透露出这座建筑远比表面更古老，也更复杂。玩家们沿着长廊前进，最终来到一座结构与地上教堂相似、却明显被隐藏起来的大厅。大厅中央是一座干涸的水池，空间布局庄严而诡异，仿佛某种被废弃的仪式场所。</p>
+
+<p>就在众人尚未完全理解此地用途时，一名体型巨大的半恶魔兽人从场中现身。斯尼奇在第一时间通过感知辨认出对方与自己过去的敌人有关，这让局势立刻升级为个人恩怨与团队危机并存的局面。对方没有任何寒暄，直接投出标枪挑起战斗，迫使队伍进入先攻。与此同时，高铎斯通过宗教与知识检定不断尝试解读墙上的壁画与人物背景，为整个地下空间补充历史信息，也让这场战斗不只是单纯的搏杀，而是与教堂秘密、古老信仰和过往宿敌交织在一起的紧张开局。剧情在敌人先手开战的瞬间推至高潮，留下强烈的悬念与战斗张力。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段摘要对应的是剧情开战阶段，因此尚未出现真正意义上的“结局”。目前可确认的收尾是：玩家队伍成功进入地下大厅，识别出关键敌人身份关联，并在半恶魔兽人的投枪挑衅下正式进入战斗。故事在此处留白，明显为后续战斗与地下真相揭露埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）表现</strong></h3>
+
+<h4><strong>斯尼奇</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：警觉、记忆力强，对旧日恩怨反应敏锐。</li>
+<li><strong>关键行为</strong>：在敌人刚出现时便通过感知检定认出其与旧敌有关，说明其对敌对关系极为敏感，也很可能有较强的过往经历。</li>
+<li><strong>高光时刻</strong>：成功识破敌方身份关联的瞬间，直接把战斗从“遭遇战”提升为“宿敌碰面”，对剧情张力贡献很大。</li>
+<li><strong>角色弧光倾向</strong>：从单纯的冒险者逐渐被卷入个人宿命与旧仇的叙事中，未来很可能围绕“清算过去”展开。</li>
+</ul>
+
+<h4><strong>高铎斯</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：知识型、冷静、擅长从环境中提取信息。</li>
+<li><strong>关键行为</strong>：连续进行宗教/知识检定，并成功读出壁画与人物背景，显示其在团队中承担“解释世界观”的功能。</li>
+<li><strong>高光时刻</strong>：多次高检定（27、26、29）说明其在信息分析上表现极佳，是推进设定与解谜的重要支点。</li>
+<li><strong>角色弧光倾向</strong>：他更像是团队的学者/神学解释者，在场景意义尚未明朗时，负责把“看见的东西”转译成“有意义的历史”。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>阿玛迪斯</strong></h4>
+<ul>
+<li><strong>作用</strong>：作为引导者与交接人，他负责把PC带入地下剧情节点。</li>
+<li><strong>剧情功能</strong>：既是任务发起人，也是节奏控制者。他的台词“人应该都齐了吧，是时候下去了？还有什么要准备的吗”表明他在推动队伍进入下一阶段。</li>
+<li><strong>人物印象</strong>：稳重、务实，像是早已预料到地下之行会发生什么，只是在等待合适时机。</li>
+</ul>
+
+<h4><strong>半恶魔兽人</strong></h4>
+<ul>
+<li><strong>作用</strong>：本段核心敌人，也是战斗触发点。</li>
+<li><strong>剧情功能</strong>：他不只是“怪物”，更是斯尼奇旧敌关联的具象化，承担了制造私人冲突与即时威胁的双重职责。</li>
+<li><strong>人物印象</strong>：高威胁、先手主动、压迫感强。其率先投枪的行为说明他并非被动守门者，而是有明确攻击意图的强敌。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 与阿玛迪斯完成交接</strong></h3>
+<p>队伍先在阿玛迪斯处完成必要的交接与准备。阿玛迪斯确认人员到齐后，催促大家进入地下，并询问是否还有额外准备。这一段主要承担“从地面剧情过渡到地下剧情”的功能，语气平静，但也暗示接下来将进入真正的危险区域。</p>
+
+<h3><strong>2. 进入大教堂地下长廊</strong></h3>
+<p>众人沿着地下通道前进，通道两侧布满艾奥梅黛与精灵神话壁画。这些壁画不仅烘托出庄严、古老的氛围，也为后续宗教与历史解读埋下线索。玩家在此阶段的重点从“行动”转向“观察”，开始感受到这座教堂地下并非寻常地窖。</p>
+
+<h3><strong>3. 发现隐藏大厅</strong></h3>
+<p>通道尽头出现一座与地上教堂结构相似的地下大厅，中央还有干涸水池，整体布局像是某种镜像空间或废弃圣所。这一发现强化了“教堂地下藏着更大秘密”的悬念，也让空间本身变成了剧情信息的一部分。</p>
+
+<h3><strong>4. 旧敌现身</strong></h3>
+<p>大厅中央出现一名巨大的半恶魔兽人。斯尼奇通过感知检定认出他与旧敌有关，说明此人并非随机敌人，而是有历史关联的关键角色。此时剧情从探索推进到冲突爆发，个人恩怨正式与主线捆绑。</p>
+
+<h3><strong>5. 战斗开幕</strong></h3>
+<p>敌人率先投出标枪，直接拉开战斗序幕。高铎斯在战前/战中通过多次宗教与知识检定，努力解读壁画与背景，试图把眼前空间的历史拼图拼起来。最终双方进入先攻，意味着本段剧情以“遭遇战开打”作为结点结束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>地下竟藏着一座“教堂的镜像大厅”</strong>：这一设计非常有仪式感，也很有“地下秘藏圣所”的探索味道，容易让玩家瞬间意识到这里不简单。</li>
+<li><strong>旧敌从神秘大厅中现身</strong>：不是普通怪物而是斯尼奇旧敌关联者，这种“私人仇怨插进主线”的处理非常能调动情绪。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>斯尼奇感知成功（21）</strong>：在敌人登场的第一时间认出关联身份，属于典型的“剧情型成功”，直接改变叙事重心。</li>
+<li><strong>高铎斯宗教/知识连环高检（27、26、29）</strong>：非常亮眼的高强度信息检定，显示角色在学识层面发挥稳定，也为场景增加了解读深度。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>阿玛迪斯的催促式台词</strong>：“人应该都齐了吧，是时候下去了？还有什么想要准备的吗”</li>
+<li>这句台词很有“副本开门人”的感觉，既像提醒又像推进器，气氛上轻松了一瞬，但紧接着就把队伍推入危险。</li>
+<li><strong>敌人不废话直接投枪</strong></li>
+<li>这种开场方式很有压迫感，也让战斗显得干脆利落，颇有“仇人见面分外眼红”的直给味道。</li>
+</ul>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更像“团后复盘文”的版本，例如加入：</p>
+<ul>
+<li><strong>模组主题提炼</strong></li>
+<li><strong>伏笔与后续走向预测</strong></li>
+<li><strong>战斗设计点评</strong></li>
+<li><strong>适合发在群里的短版团后总结</strong></li>
+</ul>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

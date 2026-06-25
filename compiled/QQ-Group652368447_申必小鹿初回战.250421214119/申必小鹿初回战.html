@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>申必小鹿初回战 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>申必小鹿初回战</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>从现有日志来看，《申必小鹿初回战》更像是一场<strong>开场遭遇战式的短模组/试玩战</strong>：队伍在行进途中遭到突袭，敌人是一名从阴影中跳出的“小骑士”。核心冲突非常直接——<strong>玩家小队如何在遭遇战中迅速判断敌情、建立先手优势并解除威胁</strong>。</p>
+<p>本战的重点不在复杂谜题或长篇叙事，而在于展示角色的战斗风格、行动配合与第一印象：尤其是游侠的控场与远程输出，成为整场战斗的节奏核心。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>故事开场时，小队正在路途之中，气氛尚未完全铺开，便遭遇了一次突如其来的伏击：一名被称作“小骑士”的敌人从阴影中骤然现身。战斗伊始，双方争夺先攻权，玩家方的 ELF Neon·Waste 以 22 点先攻险胜对手的 21 点，成功抢到先手机会，这也为后续的节奏奠定了基础。</p>
+<p>在第一轮行动中，游侠没有选择保守观望，而是果断使用<strong>诱捕打击</strong>进行压制，随后后撤拉开距离，避免自己被近身反扑；紧接着又用长弓完成一次关键命中。该次攻击不仅造成有效伤害，还成功触发目标的力量豁免失败，使敌人陷入<strong>束缚</strong>状态。此后，小骑士在行动受限的情况下，持续承受藤蔓带来的伤害，战斗能力进一步被削弱。由于玩家方在开局就牢牢掌握了行动权与位置优势，敌人几乎没有完成有效反击，最终在持续伤害与压制中当场倒下。整场战斗迅速结束，呈现出一种“开局即定胜负”的爽快感，也展示了玩家对战斗机制的理解与执行力。</p>
+
+<h3>结局与收尾</h3>
+<p>结局是一次典型的<strong>快速胜利</strong>：小骑士未能在初登场时形成有效威胁，便被游侠的控制与远程火力联合解决。</p>
+<p>收尾部分从日志信息看较简洁，没有展开后续追踪、战利品或剧情转折，因此本次战斗更像是模组的<strong>序章战斗</strong>或<strong>能力展示关卡</strong>，以一场干净利落的胜利为整场跑团定下轻快、高效率的基调。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）分析</h3>
+
+<h4>ELF Neon·Waste</h4>
+<ul>
+<li><strong>性格特点</strong>：冷静、果断、极具战术意识。</li>
+<li><strong>关键行为</strong>：</li>
+<li>先攻检定中拿到 <strong>22</strong>，以极小优势抢下先手。</li>
+<li>第一时间使用<strong>诱捕打击</strong>，体现出“先控再打”的战斗思路。</li>
+<li>后撤保持安全距离，避免自己被对手贴脸。</li>
+<li>继续用长弓命中，完成压制闭环。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>先攻胜出后立刻建立节奏；</li>
+<li>诱捕打击命中并迫使敌人力量豁免失败，直接让敌人进入束缚状态；</li>
+<li>远程补刀稳定收尾，体现出成熟的战斗判断。</li>
+</ul>
+
+<p>> 从这段日志看，Neon·Waste 是典型的“<strong>开局就能掌控局势的游侠型角色</strong>”，对局面的理解明显优于单纯的数值输出。</p>
+
+<h3>其他PC</h3>
+<ul>
+<li>由于摘要中仅明确出现 ELF Neon·Waste 的行动，其他队员暂未体现具体操作。</li>
+<li>从“<strong>小队在路上遭遇伏击</strong>”这一结构来看，其他PC大概率处于待机、补位或观察状态，但暂无可用于细化的人物表现记录。</li>
+</ul>
+
+<h3>重要NPC及其在剧情中的作用</h3>
+
+<h4>小骑士</h4>
+<ul>
+<li><strong>身份作用</strong>：开场敌人、试刀对象、战斗节奏的引子。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>用于制造突然遭遇的紧张感；</li>
+<li>检验玩家的先手、控制和输出能力；</li>
+<li>作为“被秒杀的敌人”强化玩家战斗力的反馈。</li>
+<li><strong>表现特征</strong>：</li>
+<li>从阴影中突袭，带有一定伏击感；</li>
+<li>但在玩家的连招压制下迅速失去行动能力，未能形成有效戏份。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 路途中的伏击</h3>
+<p>小队在前往目标地的途中前进，尚未进入复杂场景，就先遭遇了突袭。一个名为“小骑士”的敌人从阴影中跳出，打断了原本平稳的行程。此处的重点是“突然性”与“开场压力”，让玩家立即进入战斗状态。</p>
+
+<h3>2. 先攻争夺</h3>
+<p>双方进入战斗回合前先进行先攻检定。ELF Neon·Waste 掷出 <strong>22</strong>，对手为 <strong>21</strong>，玩家方以一分之差抢到先手。这个结果非常关键，因为它决定了后续战斗的节奏：由玩家主动选择交战方式，而不是被动承受敌方第一轮攻势。</p>
+
+<h3>3. 游侠建立控制</h3>
+<p>Neon·Waste 率先行动，使用<strong>诱捕打击</strong>命中目标。敌人的力量豁免结果为 <strong>8</strong>，判定失败，目标因此陷入<strong>束缚</strong>。这一回合的意义不仅是造成伤害，更是通过控制效果把敌人锁在原地，为后续输出创造条件。</p>
+
+<h3>4. 机动拉扯与远程补伤</h3>
+<p>在完成控制后，游侠选择后撤，保持安全距离，避免敌人近战反扑。随后再以长弓进行精准射击，命中 <strong>22</strong>，成功补上伤害。战斗从这一刻开始基本失去悬念，玩家方已把“输出窗口”牢牢握在手中。</p>
+
+<h3>5. 持续伤害收尾</h3>
+<p>敌人被藤蔓类效果持续侵蚀，后续回合持续承伤，却无法摆脱束缚状态。缺乏有效反击机会的小骑士最终倒下。战斗迅速结束，未出现拉锯，属于标准的“控制链压死”式胜利。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：先攻仅以 1 点优势险胜，随后立刻完成“控场—后撤—远射”的完整战术链条，节奏非常漂亮。</li>
+<li><strong>最意外</strong>：原本从阴影中跳出的伏击敌人，竟然几乎没有做出有效威胁就被快速解决，形成强烈反差。</li>
+<li><strong>最搞笑</strong>：所谓“小骑士”刚登场就被藤蔓和弓箭安排得明明白白，有一种“出场即退场”的喜剧效果。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>先攻检定</strong></li>
+<li>ELF Neon·Waste：<strong>22</strong></li>
+<li>敌人：<strong>21</strong></li>
+<li>评价：极其关键的一点点优势，直接决定了整场战斗的主动权。</li>
+<li><strong>关键命中</strong></li>
+<li>长弓命中 <strong>22</strong></li>
+<li>评价：稳定命中，说明角色在控场之后仍能维持可靠输出。</li>
+<li><strong>关键豁免失败</strong></li>
+<li>敌人力量豁免 <strong>8</strong> 失败</li>
+<li>评价：这一失败是束缚成立的核心，属于战斗走势的转折点。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>摘要中未提供完整台词，但从战斗过程本身就能看出一个很有趣的桥段：</li>
+<li>敌人：刚从阴影里跳出来准备搞事；</li>
+<li>玩家：先手、束缚、后撤、射箭，一气呵成；</li>
+<li>结果：敌人还没来得及“表演”，就已经被终结。</li>
+</ul>
+
+<p>这类“<strong>伏击者反被控到死</strong>”的桥段，本身就很有跑团喜剧感，也最能体现玩家对规则与战术的熟练度。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>总评</h2>
+<p>这份日志呈现的是一场<strong>短促但完成度很高的开场遭遇战</strong>：剧情简单直接，重点全在战斗执行。ELF Neon·Waste 的表现非常亮眼，尤其是在先攻、控制与站位上的处理，几乎把“小骑士”按进了战术模板里。</p>
+<p>如果说这次“初回战”要传达什么，那就是：<strong>别惹会先手控场的游侠。</strong></p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

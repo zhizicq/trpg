@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_29_21_22_00 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_29_21_22_00</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本段剧情围绕“库伽军队入侵、诱敌伏击与战场反击”展开。玩家方显然处于防守或反制位置，需要利用地形、伪装与法术协同，将敌军引入预设战场后逐步瓦解。核心冲突并不只是“打赢一场战斗”，更在于：如何在敌众我寡、正面硬拼不占优的情况下，通过情报、埋伏与角色分工完成一次高质量的歼灭战，并尽可能争取战利品与战术优势。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>埃莉诺按计划抵达东侧埋伏点，与海蒂会合后，二人以“公主”伪装作为诱饵，成功将库伽军队引入林地。海蒂提前在关键位置布下蛛网与魔法警报，并用冰系法术封锁和减速敌军，为战斗创造了极佳的控场环境。随着敌军进入伏击圈，劳维与蕾娜迅速加入战局，形成多点夹击；牢高则顶在最前线，凭借强悍的近战能力和极高的承伤意志稳住战线，多次替队友挡下致命攻击，甚至在混战中反杀半兽人与冲锋者，成为队伍的“防线核心”。</p>
+
+<p>战斗过程中，海蒂以“食尸鬼之触”成功麻痹狗头人，削弱敌方机动与威胁；埃莉诺抓住时机发起长枪冲锋，并掷出大成功，直接秒杀一名狗头人骑兵，完成了极具冲击力的战场收割。之后队伍持续压制索米兵与骑兵的围攻，逐步清理战场，最终以较低代价取得胜利。战后众人对战场进行搜刮，缴获大量军械、金币、药水以及库伽的强力装备，战斗不仅在战略上取得成功，也在资源上获得了丰厚回报。</p>
+
+<h3>结局与收尾</h3>
+<p>本次遭遇战以玩家方完胜告终。敌军被诱入林中后遭受控制、集火与反冲锋的连锁打击，未能形成有效阵型。战后队伍收缴了可观战利品，尤其是库伽的强力装备，暗示后续剧情中可能会围绕“敌方首领遗留物”或“军备升级”展开新的线索。整体收尾偏向“战后清点与战果确认”，属于典型的战术胜利型结尾。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>埃莉诺</h4>
+<ul>
+<li><strong>性格特点</strong>：沉稳、执行力强，擅长在关键节点抓住机会。</li>
+<li><strong>关键行为</strong>：按计划赴东边埋伏点，并配合海蒂执行“公主”诱敌；在敌军被控住后果断长枪冲锋。</li>
+<li><strong>高光时刻</strong>：大成功命中，直接秒杀一名狗头人骑兵，是本场最具“战场爆点”的瞬间之一。</li>
+<li><strong>角色弧光</strong>：她在这段剧情里体现出从“执行计划的人”到“完成收割的人”的转变，战术配合与个人爆发兼备。</li>
+</ul>
+
+<h4>海蒂</h4>
+<ul>
+<li><strong>性格特点</strong>：谨慎、擅长预谋布局，明显是队伍的控场与战术发动机。</li>
+<li><strong>关键行为</strong>：提前布置蛛网、魔法警报，并以冰系法术控场；使用“食尸鬼之触”麻痹狗头人。</li>
+<li><strong>高光时刻</strong>：前期布场决定了整场战斗的节奏，后期麻痹敌军让队友的输出效率大幅提升。</li>
+<li><strong>角色弧光</strong>：海蒂体现出“战斗不只是输出，更是创造条件”的核心价值，是本段中最典型的策略型施法者。</li>
+</ul>
+
+<h4>劳维</h4>
+<ul>
+<li><strong>性格特点</strong>：偏向正面作战，行动直接，擅长在混战中补位。</li>
+<li><strong>关键行为</strong>：在战局展开后及时加入，协助形成夹击与压制。</li>
+<li><strong>高光时刻</strong>：虽然摘要中未给出具体单次爆点，但其加入时机对局面稳定起到重要作用。</li>
+<li><strong>角色定位</strong>：属于稳健型前线输出/补强位。</li>
+</ul>
+
+<h4>蕾娜</h4>
+<ul>
+<li><strong>性格特点</strong>：行动果断，能快速响应战场变化。</li>
+<li><strong>关键行为</strong>：与劳维一同加入战局，参与围剿敌军。</li>
+<li><strong>高光时刻</strong>：作为战斗推进的一环，她的作用更多体现在团队协同而非单点爆发。</li>
+<li><strong>角色定位</strong>：偏向支援输出或机动补位。</li>
+</ul>
+
+<h4>牢高</h4>
+<ul>
+<li><strong>性格特点</strong>：硬朗、勇猛、极强的责任感，明显是队伍前排核心。</li>
+<li><strong>关键行为</strong>：在正面强势顶住压力，多次“挺身而出”替队友挡下致命攻击。</li>
+<li><strong>高光时刻</strong>：反杀半兽人与冲锋者，证明其不仅能抗，还能打。</li>
+<li><strong>角色弧光</strong>：牢高不是单纯的“肉盾”，而是能用身体换节奏、用硬度换胜机的真正前线支柱。</li>
+</ul>
+
+<h3>重要NPC</h3>
+<p>本段摘要中未出现明确可识别的独立NPC角色，更多是敌方阵营单位作为剧情推动元素存在：</p>
+<ul>
+<li><strong>库伽军队</strong>：本次战斗的主要敌对力量，代表外部军事威胁。</li>
+<li><strong>狗头人骑兵</strong>：具备机动性与冲锋威胁，是埃莉诺高光击杀的目标。</li>
+<li><strong>半兽人、冲锋者、索米兵</strong>：构成敌军主力与混编压力来源，负责制造战局混乱与阵线冲击。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 东侧埋伏点集合与诱敌准备</h3>
+<p>埃莉诺按既定计划赶到东边埋伏点，与海蒂顺利会合。两人决定使用“公主”伪装作为诱饵，吸引库伽军队深入林地。这个阶段的重点不在战斗，而在战术执行：诱敌是否成功，直接决定后续伏击能否成立。</p>
+
+<h3>2. 海蒂先手布场，伏击圈成形</h3>
+<p>海蒂提前布下蛛网与魔法警报，并准备冰系法术进行区域控制。蛛网用于限制敌方行动，警报则确保敌军一进入预设范围就会触发反应，冰法进一步压缩敌军展开空间。此时战斗还未真正打响，但胜负的天平已经开始向玩家方倾斜。</p>
+
+<h3>3. 敌军入林，前线接敌</h3>
+<p>库伽军队被“公主”诱入林中后，劳维与蕾娜迅速加入战斗，形成对敌军的夹击态势。与此同时，牢高顶到最前方，成为敌人火力与冲锋的主要承受者。他多次替队友挡下致命攻击，使后排和侧翼角色能安心输出与控场。</p>
+
+<h3>4. 控场与爆发连锁</h3>
+<p>海蒂使用“食尸鬼之触”麻痹狗头人，成功降低敌方行动能力。埃莉诺看准窗口发动长枪冲锋，在骰运与战术双重加持下打出大成功，直接秒杀一名狗头人骑兵。这一击不仅造成实质伤害，也极大打击了敌方士气，成为战局转折点。</p>
+
+<h3>5. 清场与战斗终结</h3>
+<p>随着敌军的冲锋势头被破坏，队伍逐步压制索米兵与骑兵的围攻，开始系统性清场。劳维、蕾娜负责补刀与压制，海蒂持续控场，牢高维持前线稳定，埃莉诺则在合适时机补上致命一击。最终，玩家方成功击溃敌军，取得战斗胜利。</p>
+
+<h3>6. 战后搜刮与战果确认</h3>
+<p>战斗结束后，众人对战场进行搜刮，缴获了大量军械、金币、药水，以及库伽的强力装备。该阶段属于典型的“战果兑现”，不仅增强队伍资源，也为后续剧情埋下装备与战利品线索。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：埃莉诺长枪冲锋大成功，一枪秒杀狗头人骑兵，极具视觉冲击力。</li>
+<li><strong>最稳健</strong>：牢高多次替队友挡致命攻击，属于“你可以不记得他的每一击，但你一定记得战线没崩”。</li>
+<li><strong>最意外</strong>：从“伪装公主诱敌”到“林中伏杀”这一整套设计很有戏剧性，既有荒诞感也有实战感。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>大成功</strong>：埃莉诺长枪冲锋命中并秒杀骑兵，是本段最耀眼的检定结果。</li>
+<li><strong>控场成功</strong>：海蒂的蛛网、警报与“食尸鬼之触”虽未明确写出骰点，但效果显著，属于连锁成功型表现。</li>
+<li><strong>未见明确大失败</strong>：摘要整体偏向顺风局，没有出现特别严重的失手或翻车。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“公主”伪装诱敌</strong>：这个桥段本身就带有强烈戏剧效果，容易产生“敌军真就这么上钩了？”的喜感。</li>
+<li><strong>牢高替队友挡刀</strong>：这种反复“挺身而出”的描写很有传统战士气质，也很有队伍羁绊感。</li>
+<li><strong>战后搜刮库伽强力装备</strong>：从紧张战斗瞬间切到“清点战利品”的反差，往往是跑团里最有味道的收尾之一。</li>
+</ul>
+
+<p>如果你愿意，我也可以把这份报告进一步整理成：</p>
+<ol>
+<li><strong>更像论坛长评的版本</strong>，</li>
+<li><strong>更像模组复盘文档的版本</strong>，或</li>
+<li><strong>按“主持人视角 / 玩家视角 / 剧情视角”三栏对照版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_22_21_44_47 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_22_21_44_47</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本次模组的舞台是塞卢卡塔，一座表面仍维持秩序、实则暗流汹涌的边境城镇。城中一边是公主车队被劫、王室继承人失踪引发的搜捕与戒严；另一边则是本地权力真空带来的秩序崩坏：城内“雅尔”不知所踪，巡逻队与通缉令遍布街头，地方势力、暴徒、绿龙相关阵营彼此试探。</p>
+<p>核心冲突并不只是“找回公主”，而是多个势力趁乱争夺城镇控制权：王权、地方军势、黑暗帮派与龙裔势力在同一张棋盘上角力，而玩家则在信息不完整的情况下，逐步摸清这场失踪案背后更大的局势。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>故事从塞卢卡塔的紧张气氛展开。埃莉诺在城中四处打听，得知两条足以让全城震动的消息：其一是南方公主车队遭劫，公主本人失踪；其二是城内被称为“雅尔”的重要人物也不知去向。随着两起失踪案并行发生，城内迅速进入高度戒备状态，巡逻队频繁出没，通缉令贴满街头，居民情绪明显受到压制。为了确认这座城市的真实民情，埃莉诺前往战士大厅，以强硬的方式试探当地武力阶层的态度，并凭借出色的腕力击败一名索米战士，从侧面确认了城内力量结构的松散：由于“老大失踪”，原本就不稳的秩序进一步瓦解，东边的暴徒与绿龙相关势力趁机蠢蠢欲动，局势正在向更大的冲突滑去。与此同时，高铎斯回城向库伽汇报情报，确认公主并未遭到侵犯，说明劫持者行动目的未必是传统意义上的掠夺或羞辱；他还判断暴徒同伙可能仍潜伏在北方，并顺利为一名断手的翼龙人处理了止血问题，展现出队伍在调查与救援上的实用能力。整体来看，这一章主要完成了“局势铺开”和“各方势力摆上台面”的任务，玩家已成功切入塞卢卡塔的权力真空与阴谋网络。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段日志尚处于剧情展开阶段，并未进入真正的结局。当前收尾结果是：玩家已掌握公主失踪、城内失踪案、暴徒与绿龙势力蠢动等关键信息，同时确认公主大概率仍处于“被控制但未遭虐待”的状态。队伍的下一步显然将围绕北方残余线索、城内失踪者去向以及势力博弈展开调查。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>埃莉诺</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：主动、强势、擅长社交试探，带有明显的行动派风格。</li>
+<li><strong>关键行为</strong>：她没有被动等待情报，而是直接在城内打听消息，并主动前往战士大厅“试民情”，说明她对局势判断敏锐，且习惯用直接方式切入社群。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>交涉检定成功，取得4个问题的信息，说明她在信息战中非常有效。</li>
+<li>力量检定从失败重掷到成功，并在腕力上压制索米战士，既是角色能力展示，也强化了她“能谈也能打”的定位。</li>
+<li><strong>角色弧光初印象</strong>：她的存在让团队能迅速融入塞卢卡塔的社会结构中，是典型的“开路型”角色。</li>
+</ul>
+
+<h3><strong>高铎斯</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：冷静、务实、具备较强的责任感与照护意识。</li>
+<li><strong>关键行为</strong>：回城向库伽汇报情报，说明他并不孤立行动，而是注重信息归档与团队协同；同时为断手翼龙人装上止血带，体现他在危机中的医疗与救援意识。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>成功确认公主并未遭侵犯，这一判断在剧情上非常重要，直接影响后续对事件性质的推断。</li>
+<li>处理伤员止血，虽然不是战斗性高光，却体现出队伍的“守护者”气质。</li>
+<li><strong>角色弧光初印象</strong>：高铎斯更像团队的稳定器，负责把零散线索转化为可执行的判断。</li>
+</ul>
+
+<h3><strong>库伽</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：从日志看更像信息接收与决策中心，具有领袖或中枢角色倾向。</li>
+<li><strong>关键作用</strong>：作为高铎斯汇报的对象，库伽大概率承担统筹分析、后续决策或阵营联络功能。</li>
+<li><strong>剧情定位</strong>：他是“把情报变成行动”的关键节点。</li>
+</ul>
+
+<h3><strong>索米战士</strong></h3>
+<ul>
+<li><strong>性格特点</strong>：代表本地战士阶层或守备力量，可能带点试探与好斗。</li>
+<li><strong>作用</strong>：通过腕力对决让玩家直观感受到本地武力文化，也侧面展现城内战士阶层并非铁板一块。</li>
+</ul>
+
+<h3><strong>雅尔</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：其失踪是城内混乱的重要触发点之一。作为“老大”级人物的缺席，直接导致力量真空与局势失控。</li>
+</ul>
+
+<h3><strong>公主</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：表层目标人物。她的失踪牵动官方力量与民间关注，但“未遭侵犯”这一信息让事件性质从单纯绑架更偏向政治控制或战略劫持。</li>
+</ul>
+
+<h3><strong>翼龙人</strong></h3>
+<ul>
+<li><strong>剧情作用</strong>：伤员/被救助者，承载着局势边缘族群的生存状态，也可能是后续线索的重要来源。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第一章：入城与情报搜集</strong></h3>
+<p>埃莉诺进入塞卢卡塔后，首先察觉到城内气氛异常。通过交涉，她从居民或相关渠道打听到两条核心消息：南边公主车队被劫，公主失踪；同时城内关键人物“雅尔”也离奇消失。两起失踪案叠加，使得城市迅速陷入警戒状态。</p>
+
+<h3><strong>第二章：街头秩序与戒严氛围</strong></h3>
+<p>随着消息扩散，城内巡逻队增多，通缉令也随处可见。城市不再只是“发生案件”，而是进入一种带有军事化色彩的压制状态。玩家由此确认：这里不是单纯的治安事件，而是权力结构开始松动后的全面紧张。</p>
+
+<h3><strong>第三章：战士大厅试探民情</strong></h3>
+<p>埃莉诺没有停留在街头情报，而是直接进入战士大厅，从当地武装阶层切入。她先以言语探查，再用腕力对决验证自己在这里的分量。虽然第一次力量检定失败，但重掷成功，最终压制索米战士，令自己在本地战士圈中建立了初步威慑。</p>
+
+<h3><strong>第四章：局势真相初步显露</strong></h3>
+<p>通过战士大厅的互动，埃莉诺得知：由于“老大失踪”，城内力量体系已经松散；东边暴徒与绿龙势力正等待机会，准备推动更大规模的变局。此时剧情从“找人”升级为“城镇权力争夺前夜”。</p>
+
+<h3><strong>第五章：高铎斯回城汇报与救援</strong></h3>
+<p>另一条线中，高铎斯返回城内，向库伽汇报目前掌握的信息。他确认公主并未遭到侵犯，这一判断对案件性质具有决定性意义。同时，他推测暴徒同伙可能仍在北方，说明敌对势力尚未完全撤离。随后他为一名断手的翼龙人进行了止血处理，完成了一次重要的现场救援。</p>
+
+<h3><strong>第六章：线索整合与后续铺垫</strong></h3>
+<p>在两条线并行推进后，队伍已初步掌握：公主失踪只是更大阴谋的一部分，雅尔失踪则让城内权力真空加剧，而暴徒、绿龙势力和北方残党都可能与此有关。剧情暂时停留在“信息拼图完成一角”的阶段，下一步应会向追踪、营救或阵营对抗发展。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>埃莉诺在战士大厅直接腕力压制索米战士</strong></li>
+</ul>
+<p>这个场面很有“来者不善”的气势，不靠身份、不靠嘴炮，直接用力量说话，极具TRPG现场感。</p>
+<ul>
+<li><strong>公主“未遭侵犯”的判断</strong></li>
+</ul>
+<p>这不是情绪化推测，而是带有强烈剧情分岔意义的信息，直接把案件从“纯绑架”推向“政治性劫持/战略控制”。</p>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>埃莉诺交涉检定：d20+7=22</strong></li>
+<li>成功打听到城内情报，且拿到4个问题的信息，属于非常高质量的社交检定。</li>
+<li><strong>埃莉诺力量检定</strong></li>
+<li>首次`8`失败，重掷后`22`成功，这种“先摔一跤再翻盘”的节奏很有戏剧张力。</li>
+<li>也让腕力对决更像一场真正的角色展示，而不是简单的数值碾压。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“老大失踪”导致秩序松散</strong></li>
+</ul>
+<p>这类黑帮/地方势力语境非常有味道，瞬间把城市氛围从“王都式官方危机”拉到“灰色地带的权力真空”。</p>
+<ul>
+<li><strong>高铎斯为断手翼龙人装止血带</strong></li>
+</ul>
+<p>这是一个很能体现队伍气质的小动作：不只追线索，也会顺手救人，给整个模组增加了人情味。</p>
+<ul>
+<li><strong>东边暴徒与绿龙势力酝酿变局</strong></li>
+</ul>
+<p>这句信息量很大，也很适合后续发展成多阵营混战或地下势力联动的主线。</p>
+
+<p>如果你愿意，我也可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“适合发群里的精简版复盘”</strong></li>
+<li><strong>“更像正式模组复盘文的长篇版”</strong></li>
+<li><strong>“按PC视角分别总结的角色日报版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_05_07_21_15_39 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_05_07_21_15_39</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本章故事发生在<strong>蒙耶城</strong>，核心围绕“<strong>谁来掌控蒙耶的未来</strong>”展开：</p>
+<p>一边是主张<strong>由拉格利马接管、以外力快速稳定局势</strong>的现实路线；另一边是阿玛迪斯坚持的<strong>蒙耶自治改革</strong>，强调先整顿教会、清理内部腐败，再让蒙耶人自己管理自己的事务。</p>
+<p>与此同时，城内还夹着一条更现实也更敏感的支线：<strong>西赛特公使涉嫌淫乱案件</strong>。这件事表面是丑闻，实则牵扯到外交、司法与政治姿态，成为各方博弈的试金石。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍抵达蒙耶城后，首先与阿玛迪斯进行了一场充满火药味的会谈。围绕“由拉格利马接管”还是“蒙耶自治改革”，双方展开激烈争论。阿玛迪斯态度明确，认为真正的问题不在于换一个统治者，而在于蒙耶内部制度长期失衡，尤其是教会体系的腐败与失能。他提出自己会亲手一步一步改革教会结构，让蒙耶人逐步恢复自治能力，而不是把命运直接交给外来军队。</p>
+<p>与此同时，他也明确表态：若拉格利马选择强攻，他不会坐视不理，而是会组织抵抗，说明其政治立场已从“争取改革空间”转向“必要时武装对抗”。</p>
+<p>在这场大局争论之外，阿玛迪斯单独与斯尼奇谈起西赛特公使的丑闻案件，给出了两条处理路径：若按“法律问题”处理，就将公使长期拘押；若按“外交问题”处理，则通过赔偿和交涉收场。斯尼奇最终选择向上级汇报，并前往查看公使情况，说明队伍在政治、外交与法理之间仍处于谨慎试探阶段。整段剧情虽没有大战，却以密集的立场交锋建立起后续冲突的政治张力。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段剧情没有进入明确的战斗或定案结局，而是以<strong>政治选择的悬置</strong>作为收尾：</p>
+<ul>
+<li>蒙耶是否接受外部接管，尚无定论；</li>
+<li>阿玛迪斯明确站在自治改革与抵抗一侧；</li>
+<li>西赛特公使事件被转入更高层级处理，斯尼奇前去调查并汇报；</li>
+<li>整体氛围从“协商”逐渐转向“立场成形”，为后续冲突埋下伏笔。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）表现</strong></h3>
+<p>由于摘要中未完整列出全部PC姓名，以下以已明确出现的行动者进行分析。</p>
+
+<h4><strong>斯尼奇</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：谨慎、机灵、会审时度势，带有明显的情报型/执行型风格。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在阿玛迪斯提出“法律/外交”两种方案后，选择先向上级汇报，体现出不贸然拍板的职业习惯。</li>
+<li>随后前往查看公使情况，说明其不仅会传话，也会实际踩点确认信息。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在偷偷摸摸调查/离开的环节中，掷出 <strong>d20+13+8=30</strong> 的高检定，说明其潜行/隐蔽能力极强。</li>
+<li>随后察觉检定 <strong>d20+13=15</strong>，体现出他在侦查链条上有“行动成功、观察未必完全”的现实感，符合一个执行者一边做事一边保持警惕的形象。</li>
+<li><strong>角色弧光</strong>：</li>
+</ul>
+<p>他的行动展现出一种“在政治夹缝中找最稳妥解”的路线：不盲目支持某一方，而是先确认信息，再向更高层汇报。</p>
+
+<h4><strong>队伍整体</strong></h4>
+<ul>
+<li><strong>团队定位</strong>：更像是处在高层政治漩涡中的斡旋者/观察者，而非单纯冲锋打手。</li>
+<li><strong>行为风格</strong>：对话主导、立场碰撞明显，说明本团重心偏向政治博弈与阵营选择。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>阿玛迪斯</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：蒙耶自治改革的核心倡导者，也是本段剧情的思想中心。</li>
+<li><strong>核心立场</strong>：</li>
+<li>反对简单粗暴地由拉格利马接管；</li>
+<li>主张先改革教会，再让蒙耶人自主管理；</li>
+<li>面对强攻威胁时，愿意组织抵抗，显示其不只是改革派，更是坚定的政治行动者。</li>
+<li><strong>人物魅力</strong>：</li>
+</ul>
+<p>他不是空谈理想，而是给出明确路线：<strong>“一步一步改革体制”</strong>。这让他显得务实、坚韧，也带有一定悲壮色彩。</p>
+<ul>
+<li><strong>剧情功能</strong>：</li>
+</ul>
+<p>作为“自治派旗帜人物”，他将本章冲突从治理问题提升为政治路线斗争。</p>
+
+<h4><strong>西赛特公使</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：外交冲突的导火索与制度测试点。</li>
+<li><strong>剧情功能</strong>：</li>
+</ul>
+<p>虽未直接展开全部丑闻细节，但“涉嫌淫乱案件”本身已足够敏感，牵动法律、外交、舆论三方关系。</p>
+<ul>
+<li><strong>意义</strong>：</li>
+</ul>
+<p>该角色让剧情从宏观政治落到具体案件，增强了模组的现实感与操作性。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 蒙耶城会谈：路线之争浮出水面</strong></h3>
+<p>队伍在蒙耶城与阿玛迪斯会面，双方围绕蒙耶未来的归属与治理方式展开激烈讨论。</p>
+<p>拉格利马接管代表的是一种“外力接管、迅速稳定”的方案，但阿玛迪斯显然不接受这种处理。他认为蒙耶的问题根源在内部，尤其是教会体制的腐败与失能，因此必须先从制度改革入手。</p>
+
+<h3><strong>2. 阿玛迪斯表态：先改体制，再谈自治</strong></h3>
+<p>阿玛迪斯在会谈中明确提出：他会亲手一步一步改革教会体制，让蒙耶人逐渐恢复自我管理能力。</p>
+<p>这段表态奠定了他作为自治改革派核心人物的定位，也说明他并不相信“换一个统治者就能解决一切”。在他看来，真正的稳定来自内部重建，而不是外部强压。</p>
+
+<h3><strong>3. 武装底线：若强攻则组织抵抗</strong></h3>
+<p>当话题触及拉格利马军队可能强攻时，阿玛迪斯的态度转为坚决：如果对方强行进军，他将组织抵抗。</p>
+<p>这意味着蒙耶问题已不只是政治协商，而是潜在军事冲突。此处剧情张力陡增，也让阿玛迪斯的形象从改革者升级为可能的抵抗领袖。</p>
+
+<h3><strong>4. 单独谈话：西赛特公使丑闻案</strong></h3>
+<p>会谈后，阿玛迪斯单独与斯尼奇讨论西赛特公使涉嫌淫乱案件。</p>
+<p>他将处理方式清晰拆成两条：</p>
+<ul>
+<li><strong>法律问题</strong>：长期拘押，强调司法惩处；</li>
+<li><strong>外交问题</strong>：索取赔偿，以外交通道收场。</li>
+</ul>
+<p>这实际上是在测试队伍对“原则”与“现实”的选择。</p>
+
+<h3><strong>5. 斯尼奇的选择：向上汇报，谨慎查证</strong></h3>
+<p>斯尼奇最终没有直接定性，而是先去找上级汇报，随后前往查看公使情况。</p>
+<p>这一连串动作说明队伍对该事件采取的是<strong>谨慎推进、先核实再决定</strong>的策略。</p>
+<p>同时，斯尼奇在调查/离开时的高检定也表明，他能在高压环境下保持隐蔽与效率，适合承担这种灰色地带的任务。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>阿玛迪斯的政治宣言</strong>最有张力：</li>
+</ul>
+<p>“我会自己亲手一步一步的改革教会的体制……让蒙耶人能够自己管理自己的事务。”</p>
+<p>这句话把角色的理想、耐心与倔强一次性立住了。</p>
+<ul>
+<li><strong>“若强攻就组织抵抗”</strong>也很有爆点：</li>
+</ul>
+<p>让原本像协商会议的剧情，瞬间变成可能升级为战争前夜。</p>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>d20+13+8=30</strong>：</li>
+</ul>
+<p>这是典型的高成功率动作，说明斯尼奇在潜行/行动层面非常稳。</p>
+<ul>
+<li><strong>d20+13=15</strong>：</li>
+</ul>
+<p>虽然不算糟糕，但相比前一个30显得没那么惊艳，形成一种“前脚神隐、后脚查证普通”的落差感，挺有戏剧效果。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>阿玛迪斯给出的处理方案很有“政务感”：</li>
+<li>法律问题 → 长期拘押</li>
+<li>外交问题 → 索取赔偿</li>
+</ul>
+<p>这段对白简洁，但很能体现NPC思路清晰、政治手腕老练。</p>
+<ul>
+<li>斯尼奇的行动也很有角色味：</li>
+</ul>
+<p>不是当场拍板，而是“先汇报，再查看”，非常符合一个在复杂局势中求稳的执行者形象。</p>
+
+<h3><strong>槽点/可惜之处</strong></h3>
+<ul>
+<li>本段摘要信息较短，<strong>剧情爆发点主要集中在对话</strong>，缺少更具体的行动或场面描写，因此整体更像一场高质量政治会谈，而不是完整的事件链。</li>
+<li>西赛特公使案件虽是重要支线，但目前只看到“处理思路”，<strong>具体丑闻内容和后续影响尚未展开</strong>，略显吊胃口。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成更适合发帖/存档的版本，例如：</p>
+<ol>
+<li><strong>“模组复盘帖”风格</strong></li>
+<li><strong>“角色表现排行榜”风格</strong></li>
+<li><strong>“剧情时间线表格”风格</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

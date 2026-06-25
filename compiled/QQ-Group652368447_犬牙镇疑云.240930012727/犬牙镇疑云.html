@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>犬牙镇疑云 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>犬牙镇疑云</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>犬牙镇原本是个依赖丰收节维系秩序与商业活力的小镇，但孩童接连失踪、节日停摆、镇外封锁，让这座地方共同体迅速陷入恐慌。表面上看，这是一起典型的“诱拐案”，镇长也以百金悬赏委托冒险者追查真凶；但随着调查推进，事件逐渐显露出更深层的结构：吹笛人传说、狼人袭击、鼠疫旧案、邪教徽记、异变魔法与某种跨越时间的封印机制彼此缠绕，真正的矛盾并不是“谁绑走了孩子”，而是“谁在利用人们对怪物的恐惧，掩盖一场延续千年的宿命冲突”。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>冒险者抵达被封锁的犬牙镇后，先从镇民口中听闻孩童失踪、丰收节停摆与“吹笛人”传说。众人在酒馆、图书馆、杂货店与镇长大厅之间往返取证：一边接触神秘鼠人“公爵”、结识吟游诗人安东，一边逐步拼起地板裂缝、油脂痕迹、桌底怪声、夜游脚印等线索，判断案件并非单纯的人口绑架。调查中，他们确认安东夜游、所谓“捣蛋鬼”与部分骚动有关，但这只是表层误导；真正的链条通向镇外狼洞、失控狼人、旧鼠疫封存记录以及长角老鼠徽章所象征的诅咒邪教。随着队伍击退狼群、救治受伤者并逼问相关人员，真相逐渐浮现：孩子们之所以失踪，并非被恶意掳走，而是被卷入一场围绕封印与保护的古老仪式。最终，冒险者追入传送门，在旷野与吹笛人正面交锋，在音乐、法术与近战压制下将其击退，也从安东口中听完事件全貌。案件表面上以“抓住凶手”收束，实则以“理解并接纳真相”完成结案，最后众人分配战利品，取得花衣魔笛，故事告终。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>吹笛人被击退，核心威胁解除，失踪案真相大白。案件的“凶手”并未以传统方式伏法，而是被证明是更大历史结构中的一环；冒险者获得花衣魔笛作为战利品，也为后续埋下余韵。镇上的恐慌得到缓解，丰收节有望恢复，犬牙镇暂时摆脱封锁危机。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>1. 卡罗琳</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：外向、擅长社交，且明显有艺术/表演天赋。</li>
+<li><strong>关键行为</strong>：在酒馆以惊艳演奏快速拉近与镇民、吟游诗人安东的关系。</li>
+<li><strong>高光时刻</strong>：她的音乐不是单纯“娱乐”，而是直接成为开局破冰和获取情报的关键手段，属于典型的“用气质开门”的角色。</li>
+<li><strong>角色功能</strong>：团队中的社交与气氛担当，也为后续与安东的深度互动埋下基础。</li>
+</ul>
+
+<h4><strong>2. 里昂</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：行动派、前线型，敢于深入危险区域。</li>
+<li><strong>关键行为</strong>：在狼洞与狼人、狼群交战时受咬伤，但仍推动战斗与调查节奏。</li>
+<li><strong>高光时刻</strong>：受伤并被救治的桥段让他成为“真实危险”的承载者，也强化了模组的紧张感。</li>
+<li><strong>角色功能</strong>：典型前排/承伤位，为队伍推进核心剧情提供安全窗口。</li>
+</ul>
+
+<h4><strong>3. 队伍整体</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：细致、能挖线索，不满足于表层答案。</li>
+<li><strong>关键行为</strong>：反复在图书馆、杂货店、镇长大厅之间来回取证，逐步拆解“诱拐案”假象。</li>
+<li><strong>高光时刻</strong>：从零散异象中拼出“魔法异变 + 旧案 + 邪教痕迹”的完整链条，显示出很强的调查能力。</li>
+<li><strong>角色功能</strong>：调查驱动型队伍，能够把一个“看似怪谈”的案件做成逻辑闭环。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>1. 安东</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：吟游诗人、信息枢纽、真相承载者。</li>
+<li><strong>剧情功能</strong>：前期是可交流、可建立信任的“温和线索点”，后期则承担真相解释者角色。</li>
+<li><strong>人物价值</strong>：他既有“夜游嫌疑”又最终被证明不是恶意主犯，这种反转让他从“疑点人物”转为“核心证人”。</li>
+<li><strong>印象点</strong>：在终局讲清孩子失踪并非单纯诱拐，而是封印与保护机制的一部分，完成叙事上的收束。</li>
+</ul>
+
+<h4><strong>2. 神秘鼠人“公爵”</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：神秘援助者/模糊阵营角色。</li>
+<li><strong>剧情功能</strong>：帮助队伍接触到“非人类视角”的线索，扩大世界观边界。</li>
+<li><strong>人物价值</strong>：作为鼠人，他天然与“鼠疫旧案”“长角老鼠徽章”形成隐性呼应，让模组的历史感更强。</li>
+</ul>
+
+<h4><strong>3. 镇长</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：任务发布者、秩序象征。</li>
+<li><strong>剧情功能</strong>：以百金悬赏引导队伍进入调查，同时代表镇民对危机的现实焦虑。</li>
+<li><strong>人物价值</strong>：其“悬赏真凶”的表面目标，与真相的复杂性形成强烈反差。</li>
+</ul>
+
+<h4><strong>4. 玛拉</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：外出猎狼未归的关键失踪关联者。</li>
+<li><strong>剧情功能</strong>：将“镇外狼群威胁”与“人员失联”连接起来。</li>
+<li><strong>人物价值</strong>：强化了“危险不只在镇内”的空间扩展感。</li>
+</ul>
+
+<h4><strong>5. 店长/杂货店老板</strong></h4>
+<ul>
+<li><strong>身份作用</strong>：信息逼问对象。</li>
+<li><strong>剧情功能</strong>：被迫吐露犬魔、吹笛人和邪教关联，是中后期真相推进的重要节点。</li>
+<li><strong>人物价值</strong>：典型“知道很多但一开始不说”的线索守门人。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 抵达犬牙镇：封锁、失踪与传说开端</strong></h3>
+<p>冒险者进入被封锁的犬牙镇，发现镇内节日气氛停摆，丰收节因孩童连环失踪案而彻底中止。镇长以百金悬赏请求外来者查明真凶，说明局势已严重到无法靠本地力量处理。此阶段确立模组基调：怪谈、封锁、民间恐慌与任务委托同时展开。</p>
+
+<h3><strong>2. 酒馆会面：社交破冰与初始线索</strong></h3>
+<p>队伍先后认识神秘鼠人“公爵”和吟游诗人安东。卡罗琳用精彩演奏迅速打开局面，成功将“外来冒险者”转化为“可被信任的交流对象”。通过镇民口述，他们得知“吹笛人”传说、镇长与玛拉外出猎狼未归等关键信息，传说与现实开始互相嵌合。</p>
+
+<h3><strong>3. 细部调查：异常痕迹与假线索成形</strong></h3>
+<p>随着调查深入，冒险者在案发相关地点发现桌底怪声、油脂痕迹与地板裂缝等异常现象，判断镇中存在魔法层面的异变，而非普通拐带。与此同时，“捣蛋鬼”与安东夜游被卷入嫌疑链，表面上像是“有人在暗中作祟”，但队伍逐渐意识到这些更像是烟幕弹。</p>
+
+<h3><strong>4. 多点取证：图书馆、杂货店与镇长大厅</strong></h3>
+<p>队伍在图书馆、杂货店、镇长大厅之间往返，对照古老记录、民间传言与现实痕迹，逐渐拼出“达维”“犬魔”“狼人”和“鼠疫旧案”的联系。此阶段的关键不在战斗，而在信息整合：长角老鼠徽章、诅咒邪教、被封存的旧案开始浮上水面。</p>
+
+<h3><strong>5. 狼洞战斗：失控狼人现身</strong></h3>
+<p>在狼洞区域，冒险者与失控狼人及狼群正面交战。战斗中里昂被咬伤，队伍一边作战一边处理伤员，确认此地不仅是野兽巢穴，更可能是诅咒、感染与异变的交汇点。击败狼群后，团队从紧张局势中夺回主动权。</p>
+
+<h3><strong>6. 逼问真相：犬魔与吹笛人关联揭开</strong></h3>
+<p>队伍从店长等关键人物口中逼出犬魔与吹笛人的联系，并进一步确认长角老鼠徽章与邪教背景。到这一步，模组的“怪物”不再是单一生物，而成为一整套历史、信仰与污染机制的外化。</p>
+
+<h3><strong>7. 传送门追击：旷野对决吹笛人</strong></h3>
+<p>最终，众人追入传送门，来到旷野与吹笛人正面对抗。战斗中音乐、法术与近战压制交织，吹笛人最终败退。此处既是战斗高潮，也是主题高潮：冒险者第一次直接面对“传说本体”，用行动击碎了笼罩全镇的恐惧。</p>
+
+<h3><strong>8. 真相揭晓与战利品分配</strong></h3>
+<p>战斗结束后，安东说明真相：孩子们并非被单纯诱拐，而是卷入一场跨越千年的封印与保护。案件到此完成真正意义上的“解谜”，而非仅仅“抓人”。众人分配战利品，取得花衣魔笛，模组收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：追入传送门后与吹笛人的终局对决。传说级敌人从“民间故事”落地为实体对抗，舞台感很强。</li>
+<li><strong>最意外</strong>：孩子失踪并非传统意义上的拐卖案，而是被卷入古老封印与保护机制，直接翻转了玩家对案件性质的预期。</li>
+<li><strong>最有戏剧张力</strong>：安东从夜游嫌疑人一路翻盘成真相解释者，属于标准的“嫌疑人反转证人”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>卡罗琳的演奏</strong>可视为一次极具决定性的高光成功：直接完成社交破冰、提升队伍可信度，并开启情报链。</li>
+<li><strong>狼洞交战中里昂被咬伤</strong>虽不是检定文本上的“失败”，但在叙事上很像一次代价高昂的硬碰硬结果，强化了危险感。</li>
+<li><strong>对店长的逼问成功</strong>属于典型的“线索突破点”：把模糊传闻收束为可用信息，让剧情从“猜”转向“证”。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“吹笛人”传说与现实狼患、鼠疫旧案的拼接</strong>，让镇民口中的恐怖故事不再只是民俗，而是逐渐被证实为历史残影。</li>
+<li><strong>卡罗琳用音乐开场</strong>的桥段很适合跑团记忆点：不是靠武力压场，而是靠表演赢得信息。</li>
+<li><strong>安东最终解释真相</strong>的段落，属于那种“前面怀疑他，最后发现他才是最懂局势的人”的经典收束。</li>
+</ul>
+
+<h3><strong>槽点/可惜之处</strong></h3>
+<ul>
+<li><strong>调查点较多、往返频繁</strong>，如果桌面节奏把控不佳，容易显得“跑腿感”偏强。</li>
+<li><strong>部分线索误导味道很重</strong>，虽然有助于悬疑氛围，但也可能让玩家一度觉得“抓错方向”。</li>
+<li><strong>真相层级较深</strong>，若信息释放不够平滑，玩家可能会在中段感到“到底谁是凶手”的困惑。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>“适合发群里的精简版复盘”</strong></li>
+<li><strong>“更像公众号长文的剧情分析版”</strong></li>
+<li><strong>“带角色成长线与伏笔回收的深度版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

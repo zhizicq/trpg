@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑色星期五 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>黑色星期五</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>- <strong>模组背景与核心冲突</strong></h3>
+<p>《黑色星期五》显然是以经典“水晶湖/杰森”恐怖传说为底色改造的高压生存型模组：玩家被强行投放到与水晶湖旧案相关的封闭区域，在物资短缺、时间限制与敌对超自然存在的三重压力下求生。</p>
+<p>核心冲突并不只是“躲避杀人狂”，而是<strong>调查旧案真相、破解杰森异常复生的根源、并在三天倒计时内救出关键NPC/目标人物</strong>。模组把恐怖电影式追杀、调查推理、资源管理和超自然战斗混成一体，形成了“活下去”和“弄明白”的双重目标。</p>
+
+<h3>- <strong>主线剧情概要</strong>（300-500字）</h3>
+<p>故事从系统宣告“新的故事开始了”展开，队伍刚进入状态便被抛进水晶湖营地，手表提示必须撑过三天，而随身装备却被大幅削减。众人很快遭遇以雷克为代表的线索人物，以及诡异出现的无人游艇与尸体，恐怖氛围迅速成型。随后杰森多次袭击，队伍在慌乱中遭受重创：Mason被飞刀命中，张叁在仓库里受到精神污染后失控，最终在后续追击与火焰中阵亡。</p>
+<p>幸存者不得不转入调查模式：他们前往小镇，向警局、居民与旧档案求证，逐渐拼出水晶湖旧案的来龙去脉，确认杰森与沃赫斯家族、以及某种“死而不散”的异常力量有关。期间还穿插医院救治、书店搜证、黑暗幻象和秘经获取等环节，队伍逐步锁定关键人物惠特妮与地下通道/老木屋的位置，并破解影响杰森的关键词“子”。最终，队伍在老木屋及地下空间内展开总攻，杰森、活死人、马车等怪异要素齐上阵，战局一度失控，但在队友协作与拼死救援下，惠特妮被成功救出，杰森也被彻底击败。故事以送回惠特妮、报警收尾、领取奖励并回归主神空间告终。</p>
+
+<h3>- <strong>结局与收尾</strong></h3>
+<p>结局属于典型的“<strong>代价高昂但任务完成</strong>”：队伍成功救出惠特妮并解决杰森威胁，完成三日生存目标，随后将惠特妮送往小镇报警，拿到支线奖励后返回主神空间。</p>
+<p>代价方面，张叁阵亡，队伍也在多次突袭、失控与污染中消耗严重；但从结果看，模组目标基本闭环，主线真相、关键人物与超自然威胁都被处理干净，属于一场血腥但完整的恐怖生存通关。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<p>> 由于摘要中直接点名的PC不多，以下按已出现角色与其在团内表现进行归纳。</p>
+
+<h3>- <strong>杰森</strong></h3>
+<ul>
+<li><strong>定位/性格</strong>：从剧情功能上看是核心压迫源，不只是单纯“杀人狂”，而是被旧案与超自然污染驱动的持续性威胁。</li>
+<li><strong>关键行为</strong>：多次现身偷袭、飞刀重创Mason、复活追击、在最终战中持续制造混乱。</li>
+<li><strong>高光时刻</strong>：几乎所有压迫感都来自他；尤其是“尸体、复活、追击、地下战斗”这一整套连续施压，成功把模组恐怖感拉满。</li>
+</ul>
+
+<h3>- <strong>张叁</strong></h3>
+<ul>
+<li><strong>性格/状态</strong>：明显偏脆弱、易受精神影响的角色，可能在队伍中承担较多调查/辅助定位，但对超自然污染抗性不足。</li>
+<li><strong>关键行为</strong>：在仓库中遭遇精神污染并失控，队友不得不急救和击晕；后续在火焰中阵亡。</li>
+<li><strong>高光/遗憾</strong>：他的戏剧性不在输出，而在“被污染—失控—死亡”的悲剧线，强化了模组的残酷感，也推动队伍意识到敌人不只是物理层面的杰森。</li>
+</ul>
+
+<h3>- <strong>Mason</strong></h3>
+<ul>
+<li><strong>性格/定位</strong>：偏行动派或前排型人物，承担了较多接触战风险。</li>
+<li><strong>关键行为</strong>：遭飞刀重创后仍参与后续行动；在调查、搜刮和终战中持续存在感较强。</li>
+<li><strong>高光时刻</strong>：在被杰森先手命中的情况下仍能撑住局面，体现了团队的抗压核心之一。</li>
+</ul>
+
+<h3>- <strong>雷克</strong></h3>
+<ul>
+<li><strong>性格/定位</strong>：以“寻妹者”身份登场，带有强烈的个人动机与剧情钩子。</li>
+<li><strong>关键行为</strong>：作为早期接触线索的人物，帮助把故事从纯求生引向“寻找失踪者/人物关联”的调查线。</li>
+<li><strong>高光时刻</strong>：他的出现本身就是导入剧情的关键节点，让众人迅速意识到“这里不只是随机逃生，而是有明确案件结构”。</li>
+</ul>
+
+<h3>- <strong>里昂、戴维斯</strong></h3>
+<ul>
+<li><strong>定位</strong>：队伍后期的救援/支援型人物，在总攻阶段体现团队协作价值。</li>
+<li><strong>关键行为</strong>：在终战中拼死救援，帮助打散战局、稳定场面。</li>
+<li><strong>高光时刻</strong>：属于“关键时刻顶上来的人”，没有他们，惠特妮与团队很可能在最终混战中崩盘。</li>
+</ul>
+
+<h3>- <strong>乐奈</strong></h3>
+<ul>
+<li><strong>定位</strong>：具有特殊技能/演出性手段的人物，可能偏控制、幻术或辅助。</li>
+<li><strong>关键行为</strong>：在最终战中以“音乐幻术”制造影响，干扰敌方或改写战场节奏。</li>
+<li><strong>高光时刻</strong>：这是模组里最有风格的战斗元素之一，给传统杰森追杀战增添了超现实舞台感。</li>
+</ul>
+
+<h3>- <strong>惠特妮</strong></h3>
+<ul>
+<li><strong>定位</strong>：核心救援目标/真相关联人物。</li>
+<li><strong>关键作用</strong>：与水晶湖附近房屋、旧案真相密切相关；她的获救基本意味着主线目标达成。</li>
+<li><strong>剧情意义</strong>：她是把“调查真相”与“完成任务”连起来的关键锚点。</li>
+</ul>
+
+<h3>- <strong>重要NPC/附属角色</strong></h3>
+<ul>
+<li><strong>克蕾雅</strong>：开场系统提示/旁白性质角色，“新的故事开始了，祝旅途愉快！”具有仪式感和引导感。</li>
+<li><strong>珍妮</strong>：被提到是幸存者，说明她是旧案重要知情者或事件残留的活证据。</li>
+<li><strong>警局与居民</strong>：提供旧案信息，是主线调查的社会性线索来源。</li>
+<li><strong>书店/医院相关NPC</strong>：承担补给、资料、治疗和转场功能，让调查线得以推进。</li>
+<li><strong>尸体/活死人/马车</strong>：虽然不一定是完整NPC，但在终战中构成了“超自然环境敌人群”，强化了模组的怪诞感。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：系统启动与开局异样</strong></h3>
+<p>故事从“新的故事开始了”这句系统提示开始，像是一个冷冰冰的开场仪式。刚进入记录状态，杰森就试图输入“.log off”，带着一种“角色在试图退出剧本”的黑色幽默感，既像玩家式吐槽，也像模组故意制造的元叙事感。</p>
+<p>这一章本身几乎没有正式剧情推进，但它完成了“记录开始”的标记，也为之后的恐怖展开留下了反差：轻松、荒诞、系统化的开场，与后续血腥追杀形成鲜明对比。</p>
+
+<h3><strong>第2章：水晶湖投放、调查与终局逃生</strong></h3>
+<p>众人醒来后已身处水晶湖营地，手表提示必须活过三天，而物资却被大量削减，生存压力立刻拉满。初步搜寻中，雷克以“寻找妹妹”的身份出现，为团队提供了人际线索和任务感。紧接着，无人游艇驶入湖面，船内竟有被弩箭射死的尸体，氛围迅速转入恐怖片模式。</p>
+<p>随后杰森多次现身突袭，Mason遭飞刀重创，张叁则在仓库中被精神污染并失控，队友不得不急救、击晕和撤退。尽管众人一度逃出生天，但张叁最终死于火焰，队伍也因此确认：这场灾厄与水晶湖旧案、沃赫斯家族阴影，以及某种超自然复现密切相关。</p>
+<p>接下来故事进入“边跑边查”的阶段：众人前往小镇调查旧事，向警局与居民打听情报，逐渐拼出“珍妮是幸存者、杰森已死却仍在活动”的矛盾真相。为处理伤势，他们在餐馆与医院间奔走；同时又在书店遭遇黑暗幻象与精神污染，并获得《玄君七章秘经》等关键文本。借由古书、借条与旧档案，队伍锁定惠特妮及水晶湖附近房屋的关联，并破解出影响杰森的关键字“子”。</p>
+<p>最终，众人在老木屋与地下通道展开总攻。手雷误投、杰森复现、乐奈的音乐幻术、活死人和诡异马车相继登场，场面一度失控并出现人员分散。所幸里昂、戴维斯等人拼死救援，队伍艰难稳住阵线，最终成功救出惠特妮，并将杰森彻底解决。任务结束后，众人将惠特妮送回小镇报警，领取支线奖励，返回主神空间，完成了这场惊魂三日的生存任务。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>- <strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最搞笑</strong>：开场杰森输入“.log off”，一种“Boss想退出脚本”的荒诞感极强。</li>
+<li><strong>最精彩</strong>：最终战的地下通道混战，手雷、复活、幻术、活死人、马车轮番上阵，几乎是恐怖片+动作片+邪典片三合一。</li>
+<li><strong>最意外</strong>：无人游艇上直接躺着被弩箭射死的尸体，属于“开局就把氛围焊死”的经典恐怖导入。</li>
+</ul>
+
+<h3>- <strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>张叁的精神污染与失控</strong>：这类结果通常是恐怖模组里最致命的“失败扩散”，不仅伤角色，还会改变队伍决策。</li>
+<li><strong>手雷误投</strong>：极具喜剧性和灾难性并存的失误，特别适合恐怖团里那种“本来想翻盘，结果先炸自己”的名场面。</li>
+<li><strong>音乐幻术</strong>：即便没有明确写成检定结果，也明显属于一次高完成度的战术表现，成功把战场从纯拼刀变成了带风格的战斗。</li>
+</ul>
+
+<h3>- <strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>克蕾雅：“<strong>新的故事开始了，祝旅途愉快！</strong>”</li>
+</ul>
+<p>这句非常像系统/旁白型开场白，带着温柔而反讽的恐怖感。</p>
+<ul>
+<li>杰森：“<strong>.log off</strong>”</li>
+</ul>
+<p>简短到离谱，但极具玩家式抽离感，是整份日志最有“跑团味”的瞬间。</p>
+<ul>
+<li>“<strong>手表提示必须存活三天</strong>”</li>
+</ul>
+<p>这种强制目标和生存压力的设定本身就很有模组感，也让整个故事从一开始就具备明确节奏。</p>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式模组复盘文的版本</strong>，或</li>
+<li><strong>更像贴吧/论坛风格的爆笑复盘版</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>后山 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>后山</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<ul>
+<li><strong>模组背景与核心冲突</strong></li>
+</ul>
+<p>《后山》是一场建立在“后山国道异空间”上的荒诞恐怖冒险。玩家乘车深入山中后，被卷入一个规则崩坏、时空错位、道路会自我延伸的异常世界。这里既像“鬼打墙”，又像由网络梗、都市怪谈、超现实广告和电子游戏机制拼接而成的扭曲舞台。</p>
+<p>核心冲突并不只是“逃出去”，而是：在持续失控的环境、不断掉SAN的精神压力、以及角色身体/认知异化的过程里，玩家要通过信息拼图找到离开方法，同时抵御异空间对人格和现实感的侵蚀。</p>
+
+<ul>
+<li><strong>主线剧情概要</strong>（300-500字）</li>
+</ul>
+<p>众人随林致远驾车进入后山，本以为只是一次寻常出行，却在抛锚后发现整条山路已变成不合逻辑的闭环世界：没有信号、昼夜错乱、道路重复、路牌会追人、怪人只靠“墨水”“电脑”“地图”这些像是打印流程一样的关键词维持秩序。为了离开此地，队伍被迫分头探索，在荒诞的途中不断与异形“居民”交换信息：透明研究者、打印机头怪人、程序员猩猩、会唱歌的偶像超星酱、可存档的街机、能复活的护士、会说话的五金店等轮番登场。</p>
+<p>在一连串追逐、检定和离奇事件中，角色逐渐意识到这个空间并非单纯的迷路，而是一个会记录、刷新、修正甚至改写人的“系统”。李薇在与超星酱的互动中严重失控，获得了“快门键”般的异常器官，象征她开始从“观看者”转向“记录者/异化者”。安亦堇则在理智削减中被迫适应怪异机制，甚至把世界认知扭曲成“瑞士军刀”。与此同时，众人虽然找到了部分道具与线索，但每次接近真相都会被更大的混乱打断。最终，一场与黑衣人融合怪的战斗后，新的线索“凝视”出现，却又被山体滑坡和泥石流重新卷回原点，形成一种强烈的“离出口越来越近、却永远回不去”的压迫感。</p>
+
+<ul>
+<li><strong>结局与收尾</strong></li>
+</ul>
+<p>摘要中的结局并未真正完成脱困，而是停留在“几乎触及真相却再次被山体灾变打断”的阶段。队伍击败章鱼融合怪、取得关键道具【凝视】后，伤员救治频繁失误，李薇濒死、安亦堇异化，随后山体滑坡将队伍再度卷入混乱。整体收尾呈现出“模组尚未完全终局，但现实已明显被异空间吞没”的开放式压迫结局。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC分析</h3>
+
+<h4>1）张起搏</h4>
+<ul>
+<li><strong>性格</strong>：理性、谨慎、带一点“想把怪事讲明白”的学术倾向。</li>
+<li><strong>关键行为</strong>：</li>
+<li>尝试用神秘学分析异常空间。</li>
+<li>识破“人类粪便”等诡异物件的本质。</li>
+<li>在混乱中维持队伍的信息整合。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为“解释者”承担了大量世界观拆解工作。</li>
+<li>在离奇场景里仍能保持基本判断力。</li>
+<li>顺走麦当劳叔叔假发等行为，展现出他在荒诞环境下也开始被规则同化。</li>
+<li><strong>角色弧光</strong>：从专业分析者逐渐变成在疯狂环境中仍努力“给一切命名”的人，越解释越显得世界不讲理，形成黑色幽默。</li>
+</ul>
+
+<h4>2）李薇</h4>
+<ul>
+<li><strong>性格</strong>：情绪外放、对偶像/舞台文化极度投入，感受力强。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在超星酱演唱会中强烈共鸣并积极互动。</li>
+<li>因过度兴奋与失控导致理智崩坏。</li>
+<li>异化后长出“快门键”，获得拍摄/记录异象的能力。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>与超星酱合照并得到丝带，是她在模组中最鲜明的“参与式高光”。</li>
+<li>她的异化不是纯惩罚，而是将“追逐偶像与记录瞬间”的特质具象化。</li>
+<li><strong>角色弧光</strong>：从“热情的参与者”变成“被异空间赋予记录功能的半异变存在”，是本模组最有象征意味的角色变化。</li>
+</ul>
+
+<h4>3）安亦堇</h4>
+<ul>
+<li><strong>性格</strong>：偏行动派，遇到压力时容易出现认知扭曲，但也因此更适应荒诞世界。</li>
+<li><strong>关键行为</strong>：</li>
+<li>多次在非欧空间检定失败。</li>
+<li>触发临时疯狂，把世界中的物件都看成瑞士军刀。</li>
+<li>在关键节点存档并付出高额SAN代价。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>在“交通灯一二三木头人”式关卡中的屡败屡战。</li>
+<li>作为队伍中最直面系统规则的人，承担了大量机制压力。</li>
+<li><strong>角色弧光</strong>：从“普通人面对怪事”转为“逐渐接受怪事逻辑的人”，而这种适应本身就是代价。</li>
+</ul>
+
+<h4>4）林致远</h4>
+<ul>
+<li><strong>性格</strong>：有点倒霉、操作不稳定，但承担了“司机/推进者”的功能。</li>
+<li><strong>关键行为</strong>：</li>
+<li>驾驶失误导致众人进入异常区域。</li>
+<li>持续承担车辆推进和场景转换责任。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>虽然一直在制造事故，但也是剧情得以启动与推进的关键。</li>
+<li><strong>角色弧光</strong>：更像“灾祸触发器”而非典型成长型角色，但其失误是后续一切怪诞展开的起点。</li>
+</ul>
+
+<h4>5）伊穹思</h4>
+<ul>
+<li><strong>性格</strong>：在摘要中戏份较少，但明显是队伍中承伤和受创较多的一员。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在追逐和创飞事件中重伤。</li>
+<li>经乔伊治疗后恢复。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>体现了模组战损与医疗流程的高压感。</li>
+<li><strong>角色弧光</strong>：主要功能是展示异空间环境的高致伤性与队伍生存压力。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC分析</h3>
+
+<h4>1）超星酱</h4>
+<ul>
+<li><strong>作用</strong>：典型“荒诞偶像NPC”，兼具娱乐性、诱惑性和异化象征。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>作为本模组最具记忆点的“友好怪物”之一，把恐怖氛围暂时转为综艺/饭圈式狂欢。</li>
+<li>她与李薇的互动直接引发后者异化，是剧情转折点。</li>
+<li><strong>象征意义</strong>：偶像、舞台、合照、留念与“被记录”的欲望，在此被扭曲成超现实感染源。</li>
+</ul>
+
+<h4>2）打印机头怪人</h4>
+<ul>
+<li><strong>作用</strong>：信息提供者。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>明确指出“墨水”是推进流程的关键。</li>
+<li>将整个空间的逻辑比喻成“打印/输出”系统。</li>
+<li><strong>象征意义</strong>：后山并非自然空间，而像一台正在错误运行的机器。</li>
+</ul>
+
+<h4>3）透明研究员 / 房子人</h4>
+<ul>
+<li><strong>作用</strong>：线索NPC。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>提示“没有人的电脑”与地图的组合逻辑。</li>
+<li>强化“这里有系统、有流程、但主体缺席”的空洞感。</li>
+<li><strong>象征意义</strong>：知识存在，但拥有知识的人已被抹去或遗忘。</li>
+</ul>
+
+<h4>4）乔伊护士</h4>
+<ul>
+<li><strong>作用</strong>：回复/复活机制NPC。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>提供“刷新生命”的机制感。</li>
+<li>为团队在高频受伤中维持续航。</li>
+<li><strong>象征意义</strong>：把RPG式医疗系统怪诞化，削弱生死边界。</li>
+</ul>
+
+<h4>5）扳手老爷爷 / 五金店老板</h4>
+<ul>
+<li><strong>作用</strong>：工具与道具供应者。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>提供工具包与电脑主板。</li>
+<li><strong>象征意义</strong>：废土式“修理世界”的想象，强调这片空间可以被拆解、装配、再运行。</li>
+</ul>
+
+<h4>6）黑衣人融合章鱼怪</h4>
+<ul>
+<li><strong>作用</strong>：中后期战斗核心敌人。</li>
+<li><strong>剧情功能</strong>：</li>
+<li>以视觉冲击和战斗压迫推动章节高潮。</li>
+<li>击败后掉落关键道具【凝视】。</li>
+<li><strong>象征意义</strong>：群体失去个体边界后的畸变，和主角团逐渐异化形成镜像。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：坠入异空间</h3>
+<p>林致远驾车带队深入后山，车辆很快失控抛锚。起初众人只当是山路事故，但很快就发现周围出现了时间、空间和通讯全部失效的异常现象：没有信号、天色错乱、道路反复出现，像是进入某种异空间。张起搏尝试使用神秘学手段判断情况，但没能得出解决方案。</p>
+<p>随后，众人遭遇会活化追逐的问号路牌，慌忙逃离，并在路尽头见到“打印机头”怪人。怪人暗示他们需要“墨水”才能继续，并给出地图线索。接着队伍分配资源，确认道路会随机延伸，开始试探性分头行动。</p>
+<p>路上他们又遇到透明研究员、程序员猩猩和偶像超星酱。众人没有选择冲突，而是认真参与演唱会，成功合照并从超星酱处得到礼物：照片和能变出声音的丝带。李薇因过度激动与强烈共鸣，在合照后出现异化，头后长出“快门键”，理智大失。原本可能进入战斗的场面，因玩家极度积极互动而和平化处理，成为本章最大的风格转折。</p>
+
+<h3>第2章：规则显形与系统化探索</h3>
+<p>队伍继续在后山国道前进，逐渐意识到这里不是单纯的鬼打墙，而是有“规则”的异常系统。路牌、道路、山景会重复，甚至可能随机刷新。张起搏验证了空间的非现实性，却仍未找到出口。</p>
+<p>一路上他们接触到更多“功能型NPC”：透明研究者提示“没有人的电脑”，说明脱困要依赖地图与机器；乔伊护士提供复活/治疗机制；五金店则给出工具包和电脑主板，仿佛世界真的能被拆装。与此同时，安亦堇在“交通灯一二三木头人”关卡中多次失败，触发临时疯狂，把所见物件都误认成瑞士军刀，强化了空间对认知的污染。</p>
+<p>队伍在回到面包车附近时发现了“存档”街机，可用20点SAN换取复活点。安亦堇选择存档，SAN大幅下降并触发临时疯狂。这一段标志着模组机制开始公开化：失去SAN，换取容错，代价就是自我稳定性进一步崩塌。</p>
+
+<h3>第3章：荒诞升级与战斗冲突</h3>
+<p>随着探索继续，剧情进入更高密度的超现实堆叠：程序员猩猩、超星酱舞台、会说话的假发、会指路的路灯、泥头车创飞等事件接连出现。</p>
+<p>李薇在超星酱演唱会冲击下彻底失控，理智骤降并开始异化，头后长出快门键，成为“记录异常”的存在。她与超星酱合照后继续获得象征性道具“声音丝带”，形成极强的荒诞美学。</p>
+<p>另一边，队伍遭遇因车万话题而崩溃的巨型布偶二小姐，并引出鬼畜大只佬围堵，众人靠宅文化知识和检定勉强脱身。张起搏顺走麦当劳叔叔假发，成为非常典型的“灾难中仍能顺手拿装备”的黑色幽默桥段。</p>
+<p>之后，伊穹思遭遇重伤，经乔伊护士治疗恢复，说明队伍仍在硬撑。此阶段的剧情特点是：怪异事件不再只是“路上风景”，而是直接与战斗、伤害、检定和精神状态挂钩，世界的规则感逐渐完整，但也更危险。</p>
+
+<h3>第4章：高潮战与崩塌收束</h3>
+<p>进入后山更深处后，敌意与混乱进一步加剧。队伍遭遇由五名黑衣人融合成的章鱼怪，战斗成为本阶段高潮。经过一番缠斗，众人终于击败怪物并取得关键道具【凝视】，看似离真相更近了一步。</p>
+<p>但胜利并没有带来稳定。战后救治接连失败，李薇多次濒死，安亦堇因伤势与疯狂进一步异化，手部变成“瑞士军刀般”的怪异形态。与此同时，山体滑坡和泥石流再次袭来，把刚建立起来的秩序推翻，众人仿佛回到起点。</p>
+<p>这一章的结尾很有“模组气质”：真相就在前方，道具已经到手，但世界本身拒绝让你轻易离开。最终留下的是强烈的无力感、循环感和“被系统吃掉”的压迫。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>认真参加超星酱演唱会并成功合照</strong>：在恐怖模组里突然切换到饭圈追星现场，反差极强。</li>
+<li><strong>李薇头后长出“快门键”</strong>：把“记录瞬间”的角色特质直接实体化，既猎奇又非常有记忆点。</li>
+<li><strong>张起搏顺走麦当劳叔叔假发</strong>：灾难逃生途中还能顺手摸装备，黑色幽默拉满。</li>
+<li><strong>“世界像打印机一样运行”</strong>的整体设定：打印机头怪人、墨水、地图、电脑等元素拼出非常统一的怪诞逻辑。</li>
+</ul>
+
+<h3>令人印象深刻的检定（大成功/大失败）</h3>
+<ul>
+<li><strong>神秘学尝试失败</strong>：张起搏试图解释异空间但无果，强化了“知识暂时失效”的压迫感。</li>
+<li><strong>“交通灯一二三木头人”关卡连续失败</strong>：安亦堇多次翻车并引发临时疯狂，是很典型的喜剧性失败。</li>
+<li><strong>存档街机以20 SAN换复活点</strong>：这是非常TRPG化、也非常“游戏里游戏”的机制时刻，代价明确、印象深刻。</li>
+<li><strong>救治连环失误</strong>：战后医疗接连失败，让胜利瞬间转为惨烈收尾，情绪落差很强。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li><strong>“没有人的电脑”</strong>：这类线索极有后现代怪谈味道，像提示又像谜语。</li>
+<li><strong>打印机头怪人要求墨水</strong>：把离开异空间的流程说得像打印文件，荒诞中带着统一逻辑。</li>
+<li><strong>透明研究者与房子人</strong>：身份/形态本身就很有笑点和诡异感。</li>
+<li><strong>程序员猩猩、偶像超星酱、会说话的五金店</strong>：每一个都像从不同梗图宇宙掉进同一张地图里，构成模组最独特的喜感来源。</li>
+<li><strong>“把一切都看成瑞士军刀”</strong>：安亦堇的临时疯狂非常具体，也非常适合被玩家持续二创。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>总结评价</h2>
+<p>《后山》这份跑团日志展现出一种非常鲜明的“梗怪谈 + 异空间生存 + 机制化精神污染”风格。它的厉害之处不在于传统恐怖，而在于把恐怖做成了可互动、可吐槽、可记录的荒诞世界；玩家一边掉SAN，一边认真和怪物合影、和偶像互动、和规则斗智，最终形成一种“越胡闹越令人不安”的独特体验。</p>
+<p>从复盘角度看，本模组的记忆点极强，NPC设计和场景机制都非常适合制造高密度名场面；同时，角色异化与环境规则之间的对应关系也相当清晰，尤其李薇与安亦堇的变化，几乎就是“后山”吞噬人的两种方式：一种是被镜头和舞台吸进去，一种是被规则和疯狂磨成工具。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

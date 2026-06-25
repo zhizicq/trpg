@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无间道 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>无间道</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本模组以“山中古旧教堂失踪案”为表层入口，实质上围绕<strong>替身能力的异常事件、组织委派的秘密调查、以及教堂地下隐藏的非人存在</strong>展开。PC受SPW基金会/丰川集团委派，携带仅能联络三次的BB机上山调查“替身失踪”与相关失联事件；途中遭遇身份暧昧的女汉子岑鸣午、言行可疑的神父，以及不断强化的不祥空间异常。故事核心矛盾是：<strong>调查者想弄清真相，但真相本身早已被某种超常力量和扭曲意志占据</strong>，且教堂中的“幸存者”并非求救对象，而更像是陷阱的一部分。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>PC作为受雇的调查者，带着有限通讯手段前往山中旧教堂，任务是查明替身失踪与人员离奇消失的原因。上山途中，PC先后遇见自称迷路的岑鸣午与一位“神父”。表面上三人只是偶遇，实际上每个人都在互相试探：神父不断抛出关于“采访过疯掉的警员”的话题，似乎在确认PC是否知情；岑鸣午则以强势而快速的行动打破原本的节奏，迫使同行关系成立。随着接近教堂，环境开始出现明显异常：山顶位置不合常理、冷热错乱、空间仿佛折返，宛如“鬼打墙”。</p>
+
+<p>进入教堂后，剧情迅速转入地下空间的压迫式恐怖。PC与岑鸣午误入地下室，遭遇一名抱着尸体的白发红瞳JK及其铁甲替身。该NPC以冷漠又诡异的语气对PC实施精神压迫，显示出对局势与死亡的绝对掌控。面对被替身压制、几近绝境的局面，PC并未选择常规逃脱，而是凭借极强的求生意志，发动替身能力“画”出瞬爆炸弹，直接将敌人与尸体一并炸毁，自己也因此迎来濒死甚至同归于尽的结局。故事整体呈现出从“调查悬疑”快速坠入“超常恐怖对抗”的节奏，最后以极具爆发力的自毁式反击收束。</p>
+
+<h3>结局与收尾</h3>
+<p>本段摘要所示结局为：<strong>主角在地下室遭遇强敌后，以瞬爆炸弹完成绝地反杀，但自身也陷入濒死结局</strong>。这类收尾强化了模组的残酷感：真相未必被完整揭开，调查者却已先一步被卷入漩涡。整体收尾偏向“以代价换取阶段性胜利”，留下明显的后续余波空间，也让教堂事件带有一种未终结的阴影感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC：伊与田知鹤</h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>外在上擅长伪装，能以“记者身份”遮掩真实任务，说明其有一定的应变和谎言构建能力。</li>
+<li>但在关键试探上显得不够圆滑，尤其面对神父关于“疯掉的幸存警员”的话题时，灵感检定失败，暴露出无法顺势接话的问题。</li>
+<li>临场极度顽强，战斗中能在濒死压力下做出极端反击，说明其核心性格并非冷静型，而是<strong>压迫下爆发型</strong>。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>接受基金会/集团委派，独自携带有限通讯工具前往调查，体现出任务执行者属性。</li>
+<li>通过记者身份掩饰来意，是其少数主动建立信息优势的行为。</li>
+<li>在地下室绝境中发动“画”出瞬爆炸弹，完成高风险反击，是最关键的行动。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>绝境下同归于尽式反打</strong>：这是非常典型的“以命换命”式高光，既体现角色求生欲，也体现战斗临场决断。</li>
+<li><strong>伪装调查身份</strong>：虽然在灵感和社交试探上吃亏，但至少说明角色有“先稳住局面再行动”的基本意识。</li>
+</ul>
+
+<hr>
+
+<h3>岑鸣午</h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>外表和行动都很强势，带有明显“女汉子”气质。</li>
+<li>行动效率高、接近速度快，给人一种难以摆脱、存在感很强的印象。</li>
+<li>她更像是剧情中的“搅局者/同行者”而非纯路人，虽然摘要未说明其真实立场，但从推进节奏来看，她对剧情有明显推力。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>以“迷路”名义进入主角视野，成为同行者。</li>
+<li>在敏捷检定失败的情况下迅速跟上，打破主角原本可能的独行节奏。</li>
+<li>与主角误入地下室，成为共同卷入超常事件的见证者。</li>
+</ul>
+
+<p><strong>高光时刻：</strong></p>
+<ul>
+<li><strong>快速贴近并强行加入队伍</strong>：这种“你不想带也得带”的存在感很有戏剧效果。</li>
+<li>她的神秘感与行动力，使她很适合承担后续剧情中“亦敌亦友”的位置。</li>
+</ul>
+
+<hr>
+
+<h3>神父</h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>言语试探性强，明显不是普通NPC。</li>
+<li>通过“采访疯掉的幸存警员”之类的信息投喂，主动观察PC反应，属于典型的“情报筛选者”。</li>
+<li>表面宗教身份掩护下，可能对教堂异常、失踪案乃至地下秘密知情。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>在山路途中与主角搭话，制造信息压力。</li>
+<li>抛出关键背景线索，试图测试PC是否知道“幸存者已经精神崩溃”的事实。</li>
+</ul>
+
+<p><strong>剧情作用：</strong></p>
+<ul>
+<li>作为<strong>前置悬疑钩子</strong>，神父负责把“教堂不是正常场所”这件事提前钉牢。</li>
+<li>也是让PC暴露破绽的试金石，推动后续进入更危险区域。</li>
+</ul>
+
+<hr>
+
+<h3>白发红瞳JK（地下室敌对NPC）</h3>
+<p><strong>性格特征：</strong></p>
+<ul>
+<li>冷酷、诡异、压迫感极强。</li>
+<li>怀抱尸体这一动作极具象征性：她不是单纯的战斗敌人，而像是某种“死亡秩序”的化身。</li>
+<li>红瞳、白发、JK装扮与铁甲替身形成强烈反差，具有视觉和气质上的冲击力。</li>
+</ul>
+
+<p><strong>关键行为：</strong></p>
+<ul>
+<li>在地下室直接拦截PC与岑鸣午。</li>
+<li>以话语压迫与替身威胁形成精神与肉体双重压制。</li>
+<li>最终被瞬爆炸弹带着尸体一起炸毁。</li>
+</ul>
+
+<p><strong>剧情作用：</strong></p>
+<ul>
+<li>是本章的主要“Boss级威胁”。</li>
+<li>她的存在把“调查失踪案”直接升级为“生死战斗”，并把教堂秘密具象化为敌对超常个体。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>第1章：上山、试探与不祥预兆</h3>
+<p>PC受SPW基金会/丰川集团委派，携带只能联络三次的BB机，前往山中古旧教堂调查替身失踪事件。任务从一开始就带有强烈的限制感：通讯稀少、目标隐蔽、地点偏僻，说明这不是一次正常外勤，而是带有高度保密性的危险调查。</p>
+
+<p>在上山途中，PC先遇见自称迷路的岑鸣午。她看起来粗线条、行动直接，但其出现本身就像是对调查流程的干扰。随后又遇到神父，三方一边同行一边互相试探。神父通过“曾采访过疯掉的幸存警员”之类的说法，有意打探PC是否接触过相关内幕；PC则以记者身份遮掩真实来意，试图维持表面正常。</p>
+
+<p>然而，在试探中PC接连失手：面对神父抛出的线索无法顺利接住，灵感检定失败，导致自身破绽暴露；而敏捷检定失败则让岑鸣午迅速跟上，打乱了原本可能单独行动的计划。随着继续上山，教堂周围开始出现明显异常：山顶位置不合理、冷热反常、空间像被扭曲成循环路径，仿佛“鬼打墙”。在这种越来越不对劲的氛围里，PC最终独自走进教堂，为后续灾难打开入口。</p>
+
+<hr>
+
+<h3>第2章：地下室遭遇与绝境反杀</h3>
+<p>进入教堂后，PC与岑鸣午误入地下室，剧情迅速从悬疑调查切换为高压恐怖对抗。地下空间中，一名白发红瞳JK抱着尸体现身，身旁伴随铁甲替身，压迫感极强。她的出现不仅是“敌人登场”，更像某种死亡仪式的中心：尸体、替身、地下室三者构成一个极不祥的封闭场域。</p>
+
+<p>敌人对PC进行言语与替身双重压制，在完全不利的局面下，PC几乎没有退路。就在这时，PC依靠强烈的求生欲和瞬间决断，发动替身能力“画”出瞬爆炸弹，以极端方式反击。爆炸将白发红瞳JK与尸体一同摧毁，代价则是PC自身也被卷入濒死结局。此处剧情完成了从“被调查对象引导到真相入口”到“调查者被真相吞噬”的转折，形成强烈的悲剧张力。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：地下室绝境下的“画出瞬爆炸弹”反杀。这个桥段非常适合TRPG高光复盘，兼具突发性、代价感与视觉冲击。</li>
+<li><strong>最意外</strong>：原本像普通上山调查，结果很快变成“教堂地下室正面开战”，节奏跳变极快。</li>
+<li><strong>最有压迫感</strong>：白发红瞳JK抱着尸体出现的画面，几乎自带恐怖片定格感。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>灵感检定失败</strong>：面对神父的关键试探没能接住，属于非常典型的“该懂的时候没懂”，既增加悬疑，也暴露角色信息不足。</li>
+<li><strong>敏捷检定失败</strong>：岑鸣午迅速贴上来，使PC没能顺利脱身或独行，这个失败很有戏剧性，直接改变队伍构成。</li>
+<li><strong>关键反击成功</strong>：绝境中成功发动瞬爆炸弹，是全段最具戏剧意义的成功检定/行动。</li>
+</ul>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>神父提到“采访过疯掉的幸存警员”这一句，很像恐怖悬疑模组里标准的“你知道得太多了”式开场钩子。</li>
+<li>PC用记者身份搪塞，属于典型“我先编个职业顶着”的跑团生存技巧。</li>
+<li>岑鸣午“迷路却又跟得飞快”的反差感很强，形成了一种“你说你迷路，我看你挺会找路”的喜感。</li>
+<li>白发红瞳JK抱尸体的设定本身就很离谱，配上压迫性台词，既恐怖又有一点“反常到让人记住”的荒诞感。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式战报/复盘文的版本</strong></li>
+<li><strong>更有文艺叙事感的版本</strong></li>
+<li><strong>补充“模组主题、伏笔与可能真相推测”版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

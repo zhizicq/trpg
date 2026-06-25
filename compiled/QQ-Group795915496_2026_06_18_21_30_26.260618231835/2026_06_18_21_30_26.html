@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_06_18_21_30_26 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_06_18_21_30_26</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情发生在一个权力与真相并行崩塌的局势中：一边是蒙耶贵族、男爵、王室手谕与领地控制权之间的政治博弈；另一边则是围绕“大教堂地下遗迹”“妖僧”“冠军勇士圣骑士”展开的历史谜团。</p>
+<p>表面上，PC们是在处理一次贵族会议上的突发政变式冲突；实际上，他们正在借由一次血腥清场，迅速重构地方权力结构，并为后续下地下遗迹调查埋下入口。核心矛盾可以概括为：<strong>如何在局势失控前掌握领地控制权，同时追查被刻意掩埋的古老真相</strong>。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍在男爵会议上突然翻脸，直接对蒙耶贵族及其近卫发动袭击，并在短时间内完成击杀。为了让这场公开的暴力不至于立刻演变成全面清算，PC们迅速将事件包装成“西塞特特务制造爆炸、趁乱袭击”的假象，用“敌袭”与“嫌犯逃脱”解释现场混乱，再辅以王室/女王手谕作为政治合法性，迫使男爵接受既成事实，收拢局势并接管领地。此举将原本可能反噬队伍的政治危机，强行转化为权力真空下的控制机会。</p>
+
+<p>回城后，次日阿玛迪斯确认拉格利马退兵，说明外部军事压力暂时解除。随后他带队前往大教堂，开启通往地下遗迹的密门，正式将剧情从地表政治斗争切入到深层历史谜团的探索。阿玛迪斯指出，地下可能埋着与“妖僧”有关的关键遗存，包括“冠军勇士的圣骑士”以及半恶魔兽人等知情者或见证者；但这些信息链条大多已断裂，已知者也大多死亡，因此队伍只能进入遗迹，从残片中拼凑真相。故事由此从“先稳住局面”过渡到“下潜揭秘”，形成了典型的政治清场—遗迹探查双阶段结构。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本段并未迎来真正意义上的终局，而是完成了一个非常关键的阶段性收束：</p>
+<ol>
+<li>公开冲突被PC成功掩盖并政治化处理；</li>
+<li>男爵在手谕压力下被迫接受局势；</li>
+<li>拉格利马退兵，外部威胁暂缓；</li>
+<li>地下遗迹密门开启，主线转入真相探索。</li>
+</ol>
+
+<p>因此，本章的结尾是一个<strong>“局势已被控制，谜题才刚刚打开”</strong>的收束点，为下一阶段深入遗迹、追索妖僧与冠军勇士的历史留足悬念。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）表现</strong></h3>
+<p>> 由于摘要里仅明确提到“牢高”和“阿玛迪斯”，以下以已知行为为核心分析。</p>
+
+<h4><strong>牢高</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：果断、强硬、擅长临场控场，带有明显的实用主义与政治敏锐度。</li>
+<li><strong>关键行为</strong>：</li>
+<li>在男爵会议上以威吓快速压住局面；</li>
+<li>用“敌袭，让那人跑了”这种半真半假的说辞重构现场叙事；</li>
+<li>借王室手谕为行动背书，将暴力行为包装为“奉命行事”。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>这是典型的“把劣势局打成既成事实”的表现：不是解释为什么打，而是直接告诉对方“事情已经是这样了”。</li>
+<li>其发言本身极具压迫感，说明他在团队中承担了“政治前台/现场控场”的角色。</li>
+</ul>
+
+<h4><strong>阿玛迪斯</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：理性、谨慎、具有调查者气质，对历史与遗迹线索十分敏感。</li>
+<li><strong>关键行为</strong>：</li>
+<li>确认拉格利马退兵，说明他对局势掌握较为准确；</li>
+<li>带队前往大教堂并开启密门，推动剧情进入探索阶段；</li>
+<li>对地下遗迹中可能埋藏的线索进行说明，明确任务方向。</li>
+<li><strong>高光时刻</strong>：</li>
+<li>作为“剧情导航员”与“真相解释者”，他的作用是把战后混乱整理成可调查的线索；</li>
+<li>他的叙述让玩家意识到：这不是单纯的打怪副本，而是带有历史残片拼图性质的遗迹调查。</li>
+</ul>
+
+<h3><strong>重要NPC及其作用</strong></h3>
+
+<h4><strong>男爵</strong></h4>
+<ul>
+<li><strong>作用</strong>：地方权力核心与被施压对象。</li>
+<li><strong>剧情功能</strong>：代表地方统治秩序的脆弱性。面对PC的强势施压，他选择接受“王室授意”的解释，体现其政治上被动、军事上无力的状态。</li>
+</ul>
+
+<h4><strong>蒙耶贵族及近卫</strong></h4>
+<ul>
+<li><strong>作用</strong>：本章主要被清除的政治障碍。</li>
+<li><strong>剧情功能</strong>：作为男爵会议中的对立势力，他们的死亡是剧情转折点，直接为后续领地接管扫清阻碍。</li>
+</ul>
+
+<h4><strong>西塞特特务</strong></h4>
+<ul>
+<li><strong>作用</strong>：甩锅对象与替罪羊。</li>
+<li><strong>剧情功能</strong>：通过“爆炸袭击”的叙事被用于掩盖PC造成的公开杀戮，使事件从“内部政变”变成“外部敌袭”。</li>
+</ul>
+
+<h4><strong>拉格利马</strong></h4>
+<ul>
+<li><strong>作用</strong>：军事局势中的外部变量。</li>
+<li><strong>剧情功能</strong>：其退兵确认了当前前线压力的缓解，为PC转入地下遗迹探索创造安全窗口。</li>
+</ul>
+
+<h4><strong>“妖僧”</strong></h4>
+<ul>
+<li><strong>作用</strong>：历史真相的关键源头。</li>
+<li><strong>剧情功能</strong>：虽然未直接登场，但其名号贯穿遗迹谜团，代表着被掩埋、扭曲或禁忌化的过去。</li>
+</ul>
+
+<h4><strong>“冠军勇士的圣骑士”</strong></h4>
+<ul>
+<li><strong>作用</strong>：核心历史见证者/遗迹谜题中的重要碎片。</li>
+<li><strong>剧情功能</strong>：可能与妖僧、圣骑士团、半恶魔兽人等线索构成过去事件的关键拼图。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 男爵会议失控，PC先发制人</strong></h3>
+<p>故事开局便进入高压政治场景。PC在男爵会议上突然发难，直接击杀蒙耶贵族及其近卫。此举表面上极度冒险，实际上是一次精准的“先手夺权”：趁会议现场人员集中、信息混乱之际快速斩断对立派系的指挥链。</p>
+
+<h3><strong>2. 伪造叙事，强行定性为外敌袭击</strong></h3>
+<p>为了避免被认定为内部政变，队伍迅速将事件描述为“西塞特特务爆炸”引发的混乱，并借“敌袭，让那人跑了”的说法稳住男爵与现场局势。牢高进一步拿出女王/王室手谕，将这场暴力行动从非法杀戮转化为“王命授意的收拢局势”。男爵在压迫与现实面前不得不接受这一解释，等于默认PC接管现场秩序。</p>
+
+<h3><strong>3. 回城整顿，权力过渡完成</strong></h3>
+<p>PC们回城后，表面上的危机暂时平息。此时剧情重点不再是继续扩大冲突，而是完成权力落地：谁来维持秩序、如何处理领地、如何向外部解释男爵会议上的血案。此阶段虽无明确战斗，却是决定整个模组政治走向的重要一环。</p>
+
+<h3><strong>4. 拉格利马退兵，外部军事压力解除</strong></h3>
+<p>次日阿玛迪斯确认拉格利马退兵。这个信息意味着原本可能与会议血案叠加的军事压力暂时消散，队伍不必同时应付外敌与内乱，剧情因此获得喘息空间，也为后续深入地下提供现实基础。</p>
+
+<h3><strong>5. 大教堂密门开启，主线转入遗迹调查</strong></h3>
+<p>阿玛迪斯带队前往大教堂，开启通往地下遗迹的密门。这里正式切换到“探索/考古/揭秘”模式。地下遗迹不仅是地图上的新地点，更是整个故事隐藏历史的容器。</p>
+
+<h3><strong>6. 妖僧与冠军勇士的真相碎片</strong></h3>
+<p>阿玛迪斯说明，地下可能埋有与妖僧相关的关键人物或遗存，包括“冠军勇士的圣骑士”和半恶魔兽人等知情者。遗憾的是，大多数关键人物都已死亡，说明真相并非完整记录，而是需要从残存痕迹中逆推。队伍接下来要做的，不是听答案，而是<strong>在废墟里寻找答案的碎片</strong>。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：男爵会议上突然发难，完成“清场—甩锅—控局”三连操作。</li>
+</ul>
+<p>这是一段非常强势的政治操作，像是在战斗中直接把BOSS房的主持人和保安都清掉，然后说“刚才有人炸场，不是我们”。</p>
+
+<ul>
+<li><strong>最意外</strong>：PC竟然能在公开会议上直接把杀戮转化成政治合法行为。</li>
+</ul>
+<p>这类桥段最有戏剧张力，因为它把“差点团灭的外交事故”变成“权力接管的起点”。</p>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>牢高的威吓检定/临场说服</strong>：</li>
+</ul>
+<p>以“<strong>敌袭，让那人跑了</strong>”稳住男爵，属于典型的高价值社交检定成果。虽然摘要没有明确给出数值，但从结果看，这一手几乎等同于大成功。</p>
+<ul>
+<li><strong>信息整合检定般的成功</strong>：</li>
+</ul>
+<p>阿玛迪斯对遗迹现状与历史人物关系的说明，起到了“把零散线索组织成目标任务”的作用，相当于在剧情层面完成了一次成功的知识判定。</p>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“敌袭，让那人跑了。”</strong></li>
+</ul>
+<p>这句台词非常有画面感：既像战报，又像甩锅现场的经典台词，短短几个字就把混乱、欺骗与压迫感全部拉满。</p>
+<ul>
+<li><strong>“王室/女王手谕”作为政治通行证</strong></li>
+</ul>
+<p>这种“拿上级授权压现场”的做法非常有效，也很符合权谋跑团里“只要权力链条还在，就能把黑的说成灰的”的风格。</p>
+<ul>
+<li><strong>“冠军勇士的圣骑士”与“半恶魔兽人”同埋地下</strong></li>
+</ul>
+<p>这组设定本身就很有反差：一个代表正统荣光，一个代表异质/堕化血脉，埋在同一遗迹中，天然带有强烈的历史冲突感。</p>
+
+<hr>
+
+<p>如果你愿意，我还可以进一步把这份报告整理成：</p>
+<ol>
+<li><strong>更像正式跑团复盘文的版本</strong>，或</li>
+<li><strong>更像玩家向“故事回顾+吐槽”版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

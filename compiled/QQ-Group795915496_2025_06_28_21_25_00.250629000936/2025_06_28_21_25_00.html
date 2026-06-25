@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025_06_28_21_25_00 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2025_06_28_21_25_00</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本团故事发生在一个被边缘化的边境村落：表面上看，这里饱受“雪女”传闻、怪物威胁与资源短缺困扰，实际上更深层的矛盾是<strong>外来商人、狗头人与佣兵构成的压迫链条</strong>对村落进行持续剥削，而村民自身对问题本质的判断也长期被误导。</p>
+<p>故事的核心冲突并不是“打败雪女”，而是<strong>揭开伪装成超自然灾祸的社会压迫与结构性困境</strong>：村子真正缺的不是粮食，而是能恢复生产力的工具、技术与自主性。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍在行动初期先分头收集情报，以确认村中传闻的真伪。海蒂已与同伴提前通气，西边三人组先去拜访村长，了解到村子长期受东边来的商人盘剥，这些商人往往会带着三四个狗头人和七八个流氓佣兵一同前来，以武力和威慑维持交易与压迫秩序。村长同时指出，村里最紧缺的其实并非粮食，而是伐木斧、铁锤等基础农具与生产工具——这意味着村子的问题不是“吃不饱”，而是“无法恢复生产”。</p>
+<p>随后，队伍又去探访老猎人，进一步确认所谓“雪女”大概率只是被夸大的传闻。真正导致伤亡的，很可能是年轻人轻信怪谈、贸然上山所致，而非真正存在的超自然威胁。与此同时，拉科尔通过自然与观察类判断，发现当地气候与地形并不适合稳定种植土豆，且缺乏相应农耕传统与技术支持，说明村子的农业困境并非靠临时种植就能解决。基于这些信息，队伍决定调整策略：哈吉米与拉科尔先乘车前往西边的卢米兰塔，打探沉船与后续线索；斯尼奇则留在村中继续收尾与沟通，推动信息整合与关系维护。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本次摘要所示剧情并未进入最终决战，而是完成了一个非常关键的阶段：<strong>从“怪谈调查”转向“现实问题确认”</strong>。队伍确认了村庄真正的危机来源，并据此分工：外出追查更大的事件线索，留守者负责村中收口与善后。结尾呈现的是一种“调查推进中的阶段性收束”——没有用战斗终结问题，而是用情报与判断重构了任务方向。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>海蒂</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：沟通能力强，重视团队协作，属于那种会提前和队友通气、避免信息断层的人。</li>
+<li><strong>关键行为</strong>：在行动前就与队友协调好路线与分工，为后续调查奠定了稳定基础。</li>
+<li><strong>高光时刻</strong>：她的“先行同步”让整个小队在分头行动时仍保持一致方向，体现出很强的组织意识。</li>
+</ul>
+
+<h3><strong>拉科尔</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：理性、观察细致，擅长从环境条件推断现实可行性，不容易被表面叙事带偏。</li>
+<li><strong>关键行为</strong>：通过自然/观察类判断，识破“当地适合种土豆”这一思路的现实问题，直接指出气候、地形、传统与技术支持都不匹配。</li>
+<li><strong>高光时刻</strong>：这一判断非常关键，因为它把“临时救灾”层面的问题提升到了“长期生存结构”层面，帮助队伍避免错误施策。</li>
+</ul>
+
+<h3><strong>哈吉米</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：行动型、推进型角色，愿意承担外出探路与继续追查的任务。</li>
+<li><strong>关键行为</strong>：与拉科尔一同前往卢米兰塔，承担下一阶段的线索拓展。</li>
+<li><strong>高光时刻</strong>：在关键节点选择继续向外追查，体现出对主线推进的执行力。</li>
+</ul>
+
+<h3><strong>斯尼奇</strong></h3>
+<ul>
+<li><strong>性格特征</strong>：更适合留守、收尾、沟通协调，可能在场面控制和关系维护方面更擅长。</li>
+<li><strong>关键行为</strong>：主动留在村中，继续完成未尽沟通与善后工作。</li>
+<li><strong>高光时刻</strong>：不是冲锋型高光，而是“收束型高光”——保证任务不因分头行动而散架。</li>
+</ul>
+
+<h3><strong>村长</strong></h3>
+<ul>
+<li><strong>作用</strong>：提供村庄现状的核心情报，是本段剧情中最重要的信息节点之一。</li>
+<li><strong>剧情价值</strong>：他揭示了商人、狗头人、佣兵三方联合压榨的模式，并指出村子真正缺的是工具而非粮食，直接扭转了玩家对问题的初始认知。</li>
+</ul>
+
+<h3><strong>老猎人</strong></h3>
+<ul>
+<li><strong>作用</strong>：负责拆解“雪女”传闻，提供民间经验视角。</li>
+<li><strong>剧情价值</strong>：他帮助队伍确认怪谈的真实性偏低，说明危险更多来自年轻人的误判与冒险，而不是神秘实体。</li>
+</ul>
+
+<h3><strong>东边商人</strong></h3>
+<ul>
+<li><strong>作用</strong>：虽然未直接登场，但作为压迫链条的核心外部势力存在。</li>
+<li><strong>剧情价值</strong>：他们代表了本团最主要的现实敌对势力，不一定是最终Boss，却是村庄困境的直接来源。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 情报整理与队伍分工</h3>
+<p>海蒂先与队友完成信息同步，确保小队行动思路一致。队伍决定先从村庄内部入手，查明“雪女”和村庄困境的真相，再决定后续行动。</p>
+
+<h3>2. 拜访村长，揭开村庄真正困境</h3>
+<p>西边三人组前往拜访村长。村长透露：东边商人通常三天后会再次前来，并曾带着“三四个狗头人+七八个流氓佣兵”一同行动。这个细节说明村庄长期处在武力威慑下，所谓交易更像半强制收租。</p>
+<p>与此同时，村长还指出村中最需要的并非粮食，而是伐木斧、铁锤等工具。也就是说，村庄目前并非单纯缺乏食物，而是缺少恢复生产、修复基础设施的能力。</p>
+
+<h3>3. 探访老猎人，确认“雪女”传闻虚实</h3>
+<p>随后队伍去找老猎人，试图核实雪女事件。老猎人的判断倾向于：雪女传说大概率被夸大，真正导致伤亡的是年轻人对怪谈深信不疑、贸然上山。这一信息削弱了“必须猎杀怪物”的路径，迫使队伍转向更现实的调查思路。</p>
+
+<h3>4. 拉科尔进行环境判断，否定简单种植方案</h3>
+<p>拉科尔通过自然/观察类判断得出结论：当地气候与地形都不适合稳定种土豆，而且村子没有相应的农耕传统和技术支持。这个判断非常关键，因为它直接否定了“送点种子就能解决问题”的简单化思路，让任务从短期救济转向长期结构修复。</p>
+
+<h3>5. 任务转向：外出追查与村内收尾并行</h3>
+<p>基于前述情报，队伍重新分工：哈吉米与拉科尔先乘车前往西边卢米兰塔，进一步打探沉船与后续情报；斯尼奇则留在村中继续收尾和沟通。剧情进入“多线并行”的新阶段，为后续更大范围的线索展开做铺垫。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：众人以为村庄的核心问题可能是怪物或饥荒，结果发现真正的关键是<strong>工具短缺、生产停滞和外来势力压榨</strong>。这种从“奇幻表层”翻到“现实底层”的反转很有味道。</li>
+<li><strong>最有戏剧性的点</strong>：村长提供的“商人+狗头人+佣兵”组合，天然带有一种“你以为是买卖，其实是保护费”的压迫感。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>拉科尔的自然/观察判断</strong>：成功识破“这里适合种土豆”这种看似善意、实则不切实际的提案，属于典型的大局观检定。</li>
+<li><strong>意义上的大成功</strong>：不是单纯看穿一个谣言，而是成功把整个任务方向从错误方案中拉回现实。</li>
+</ul>
+
+<h3><strong>最搞笑/最有趣的桥段</strong></h3>
+<ul>
+<li>“村里缺的不是粮食，是斧头和铁锤。”</li>
+</ul>
+<p>这句信息本身就很有喜感：别人以为要送粮，结果村民最需要的是能让自己恢复生产的工具。它既荒诞又合理，笑点来自认知错位。</p>
+<ul>
+<li>“雪女”传闻被老猎人淡化后，整个剧情从神怪恐怖瞬间变成了“谁又被民间传说坑了”的现实风味。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li>村长关于商人带人规模的描述，非常适合做成现场压迫感对白：</li>
+</ul>
+<p><strong>“他们三天后又会来，带着狗头人和佣兵。”</strong></p>
+<p>这类简短信息极具威慑力，也很适合为后续冲突埋雷。</p>
+<ul>
+<li>拉科尔对土豆种植可行性的判断，是一种“冷静拆台”的精彩时刻：</li>
+</ul>
+<p>他不是否定帮助，而是否定错误帮助，这种区别很重要，也很有角色味道。</p>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像“模组复盘文”的正式版本</strong>，或</li>
+<li><strong>更像“团后吐槽总结”的轻松版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

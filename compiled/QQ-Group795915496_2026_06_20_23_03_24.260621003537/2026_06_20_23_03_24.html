@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026_06_20_23_03_24 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>2026_06_20_23_03_24</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3>模组背景与核心冲突</h3>
+<p>本团段落的核心，是一处被“邪恶能量”污染的场所与其守护/盘踞者之间的正面冲突。队伍在推进过程中触发了具有压迫感的超自然威胁：巨斧挥动、邪能外溢、意志豁免接踵而至，说明这并非普通遭遇，而是与场景本身的诅咒、封印或古老邪力直接相关的战斗节点。敌方以半恶魔、兽人等混血或堕化单位为主，暗示这股力量可能正在腐化周边生物，或被人为借由仪式、遗迹加以利用。</p>
+
+<h3>主线剧情概要（300-500字）</h3>
+<p>队伍深入一处充满异常压迫感的大厅后，触发了一场围绕“邪恶能量”的高强度遭遇战。战斗伊始，蕾薇瑞以巨斧释放出的力量成为场景的导火索，逼迫全队进行意志豁免以抵御邪能冲击。尽管部分成员检定表现尚可，仍有人在这股力量下受伤，其中阿禄承受最重，成为最直接的受害者。随后战局迅速分工：隆布勒、斯尼奇与牢维承担起主要输出职责，围绕三名半恶魔/兽人敌人展开压制；阿禄则以祝福术强化团队，弥补开局邪能造成的士气与状态损耗。</p>
+<p>战斗中，斯尼奇通过多次射击不断削弱敌方血线，将目标压入重伤区；牢维以念刃冲锋与近战连击强势切入，直接击杀一名半恶魔；牢高则凭借飞刃袭和全回合攻击补刀，再次收掉一名敌人。队伍在高压环境下保持稳定输出，逐步瓦解敌方攻势。最终，当最后一名敌人倒下后，大厅恢复寂静，而天花板上浮现出新的壁画，表明此处并非单纯战场，而是与更深层的谜团、历史或仪式进程有关。战斗结束并不意味着终点，反而像是打开了下一段剧情的入口。</p>
+
+<h3>结局与收尾</h3>
+<p>本段以战斗胜利收尾：敌人全灭或至少本波遭遇被清理干净，大厅暂时恢复平静。最重要的收束点是“天花板显现新的壁画”这一视觉信息，它起到了明确的剧情推进作用——说明战斗是机关/试炼/封印系统的一部分，或是某种古老遗迹在回应入侵者。此处没有彻底解决主线，而是为后续解谜、探索或更大范围的阴谋揭露埋下伏笔。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3>PC（玩家角色）表现</h3>
+
+<h4>蕾薇瑞</h4>
+<ul>
+<li><strong>性格/定位</strong>：明显是偏前排或强攻型角色，具备爆发式压迫能力。</li>
+<li><strong>关键行为</strong>：以巨斧释放力量，引发邪恶能量爆发，成为战斗开端的核心触发点。</li>
+<li><strong>高光时刻</strong>：她的行动直接推动了整个遭遇战的爆发，属于“以一己之力点燃战局”的关键人物。</li>
+<li><strong>解读</strong>：从叙事效果上看，蕾薇瑞既像前线破局者，也像会与邪能环境产生共鸣的角色，具有强烈的危险感和戏剧性。</li>
+</ul>
+
+<h4>阿禄</h4>
+<ul>
+<li><strong>性格/定位</strong>：支援与团队保护者，偏神术/祝福类辅助。</li>
+<li><strong>关键行为</strong>：在邪能豁免压力下承受最重伤害，但仍持续用祝福术强化全队。</li>
+<li><strong>高光时刻</strong>：在最不利的起手局面中稳住团队士气与战斗效率，是本场战斗的“抗压核心”。</li>
+<li><strong>解读</strong>：阿禄的亮点不在爆发，而在逆风环境下承担代价、维持队伍整体性能，属于非常典型且可靠的辅助担当。</li>
+</ul>
+
+<h4>斯尼奇</h4>
+<ul>
+<li><strong>性格/定位</strong>：远程输出型角色，行动干脆、火力稳定。</li>
+<li><strong>关键行为</strong>：多次射击，将敌人打成重伤，持续压低敌方生存空间。</li>
+<li><strong>高光时刻</strong>：连续命中与稳定伤害是本次战斗最关键的削血手段之一。</li>
+<li><strong>解读</strong>：斯尼奇的表现体现出“持续压制”的价值，不一定每次都以终结见长，但能把敌人逼进斩杀线，属于战局推进器。</li>
+</ul>
+
+<h4>牢维</h4>
+<ul>
+<li><strong>性格/定位</strong>：近战突击/灵能斩杀型角色。</li>
+<li><strong>关键行为</strong>：使用念刃冲锋与近战连击，直接击杀一名半恶魔。</li>
+<li><strong>高光时刻</strong>：切入、爆发、击杀一气呵成，是团队近战斩首的典型成功案例。</li>
+<li><strong>解读</strong>：牢维的表现很有“收割者”气质，擅长在敌方被削弱后果断终结，形成节奏上的致命一击。</li>
+</ul>
+
+<h4>牢高</h4>
+<ul>
+<li><strong>性格/定位</strong>：高机动、多段攻击型角色。</li>
+<li><strong>关键行为</strong>：以飞刃袭和全回合攻击收掉另一名敌人。</li>
+<li><strong>高光时刻</strong>：在关键时刻补足伤害，确保敌方减员，减少场上压力。</li>
+<li><strong>解读</strong>：牢高的价值在于灵活与稳定的补刀能力，是团队清场链条中不可或缺的一环。</li>
+</ul>
+
+<h4>隆布勒</h4>
+<ul>
+<li><strong>性格/定位</strong>：前线火力/稳定输出者。</li>
+<li><strong>关键行为</strong>：与斯尼奇、牢维共同承担主要输出。</li>
+<li><strong>高光时刻</strong>：虽然摘要未给出具体技能细节，但从“连续输出”的描述看，他是维持战线的重要成员。</li>
+<li><strong>解读</strong>：隆布勒更像团队里沉稳的伤害来源，配合节奏而非抢戏，属于战斗结构中的基石型角色。</li>
+</ul>
+
+<hr>
+
+<h3>重要NPC及其作用</h3>
+
+<h4>邪能/大厅中的敌对存在</h4>
+<ul>
+<li><strong>作用</strong>：战斗的直接对手，也是“邪恶能量”具象化的威胁来源。</li>
+<li><strong>表现</strong>：以半恶魔/兽人组合出现，说明敌人可能是腐化后的守卫、祭品、堕落战士或被邪力改造的战斗单位。</li>
+<li><strong>叙事功能</strong>：承担关卡守门、强化场景危险感、验证队伍准备度的作用。</li>
+</ul>
+
+<h4>天花板壁画所隐含的“古老记录者”或“遗迹意志”</h4>
+<ul>
+<li><strong>作用</strong>：虽然不是传统NPC，但壁画作为信息载体，等同于场景叙事NPC。</li>
+<li><strong>表现</strong>：战斗结束后显现，提示场所具有历史层、仪式层或谜题层。</li>
+<li><strong>叙事功能</strong>：为后续剧情提供线索，推动调查而非单纯战斗。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3>1. 邪能压境，战斗爆发</h3>
+<p>队伍进入大厅或关键场所后，蕾薇瑞以巨斧引发强烈的邪恶能量反应。场面瞬间从探索切入战斗，所有人被迫进行意志豁免，抵抗精神与超自然层面的冲击。这个阶段奠定了本场战斗的基调：危险不仅来自敌人的刀斧，更来自环境本身。</p>
+
+<h3>2. 开局承压，团队稳住阵线</h3>
+<p>意志豁免结果虽然有人成功越过DC，但仍有人被邪能波及并受到伤害，阿禄尤为严重。即便如此，队伍没有乱阵，而是迅速切分职责：阿禄立刻使用祝福术为全队提供增益，试图以辅助手段对冲邪能带来的不利状态；与此同时，输出位开始锁定目标，准备快速减员。</p>
+
+<h3>3. 集火阶段，敌方逐步崩解</h3>
+<p>隆布勒、斯尼奇与牢维开始形成输出链条，对三名半恶魔/兽人敌人进行集火。斯尼奇多次射击，不断将敌人打入重伤；牢维则借助念刃冲锋和近战连击完成击杀，直接削减敌方数量。牢高随后以飞刃袭与全回合攻击补完清场，进一步压缩敌人回合空间。整个过程体现出明确的战术执行：先承受冲击，再以高效输出换取战场控制权。</p>
+
+<h3>4. 最后一击与场景反馈</h3>
+<p>随着最后一名敌人倒下，大厅终于恢复寂静。战斗胜利后，天花板上出现新的壁画，这一变化说明战斗并非终点，而是某种机关、封印或历史遗迹反馈机制的一部分。队伍由“打赢一场战斗”转入“解读战斗意义”的阶段，剧情重心从生存与清怪转向探索与解谜。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3>最精彩/最搞笑/最意外的场景</h3>
+<ul>
+<li><strong>最精彩</strong>：邪恶能量爆发后，队伍没有崩盘，而是迅速转入分工明确的集火模式，属于很标准、也很爽快的“扛住第一波然后反打”。</li>
+<li><strong>最意外</strong>：战斗结束后天花板浮现新壁画，这种从纯战斗突然切换到剧情线索反馈的设计，很有“打完才发现刚摸到门”的感觉。</li>
+<li><strong>最具压迫感</strong>：阿禄在意志豁免阶段承受最重伤害，却仍坚持给全队上祝福，形成“最惨辅助但最稳”的反差。</li>
+</ul>
+
+<h3>令人印象深刻的检定</h3>
+<ul>
+<li><strong>意志豁免</strong>：这是本场最关键检定。即使部分人高过DC，仍有人受伤，说明邪能压制强度很高，检定结果直接决定开局态势。</li>
+<li><strong>连续伤害输出</strong>：</li>
+<li>斯尼奇的多次射击表现出稳定压血线的能力；</li>
+<li>牢维的念刃冲锋+连击完成击杀，属于高效斩杀；</li>
+<li>牢高的飞刃袭与全回合攻击则体现出补刀与清场效率。</li>
+</ul>
+<p>这些都构成了战斗节奏上的关键成功点。</p>
+
+<h3>有趣的对话或桥段</h3>
+<ul>
+<li>从现有摘要看，没有完整对白记录，但“邪恶能量爆发—众人豁免—阿禄重伤仍上祝福—输出位接连斩杀—壁画出现”这一串流程，本身就很像一段节奏极佳的战斗剧本。</li>
+<li>其中最有戏剧张力的桥段，是<strong>在吃到邪能伤害后立刻进行团队增益</strong>：这类“先挨打再立刻反制”的流程，往往最能体现跑团中的临场应对与团队协作。</li>
+</ul>
+
+<p>如果你愿意，我还可以把这份报告进一步整理成：</p>
+<ol>
+<li><strong>更像正式模组复盘的版本</strong>，或</li>
+<li><strong>更像同人战报/团后纪实的版本</strong>。</li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

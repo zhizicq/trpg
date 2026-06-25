@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>来自另一端 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>来自另一端</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本段剧情表面上是一次“清剿地精巢穴”的普通赏金任务：雇主按“每只1金币、熊地精按3只算”的方式结算，并要求割耳计数，属于典型的低阶冒险开局。但真正的核心冲突很快从“打地精拿赏金”升级为“在未知森林中追查异常势力”：车夫被冷箭射杀、林间机关明显不是地精手笔、猎人小屋里出现炖煮人肉的食人者，说明这片区域早已被更危险、更组织化的敌人渗透。最终，队伍从“清理杂兵”被推向“逼近地下陵庙入口、揭开幕后势力”的主线。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>队伍原本受雇前往清剿一处地精巢穴，任务简单直接，只需按耳朵数量领赏。然而刚离开起点，便出现了第一层异常：车夫在途中遭冷箭射杀，迫使众人放弃载具改为徒步穿林。进入森林后，灰爪凭借敏锐观察不断发现不对劲之处——树影中似有异动、林地上暗藏绊线弩与伪装坑洞，这些机关明显不是地精能布置出的水平，意味着他们面对的敌人远比预想中更有组织、更懂伏击。继续深入后，队伍循着一缕炊烟找到一间猎人小屋，屋内大锅里赫然炖着“新鲜两脚羊”，阿隆辨认出那是人肉，众人立刻意识到这里盘踞的是以人类为食的掠食者而非普通盗匪。就在他们准备应对之际，四只豺狼人现身，战斗随即在屋内外全面展开。阿隆多次冒进冲锋，数度遭到反击并被打到濒死，靠队友轮番治疗才勉强撑住前线；与此同时，真木麻希与沙维尔以精准攻击、雷鸣波和镜影术稳定战局，逐步瓦解敌人的围攻。经过长时间拉扯与清场，首领与增援尽数倒下。战后，队伍在首领身上搜得一把刻有巨大眼睛图案的钥匙，由此判断，通往地下陵庙的入口已经近在眼前，真正的幕后谜团也才刚刚开始。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>本章以豺狼人据点被清剿告终，队伍成功从“误以为是地精巢穴”的支线任务中，挖出了更深层的危险线索：人肉、机关、首领钥匙、地下陵庙入口。表面上是一次胜利，实际上是把主线门扉彻底打开。收尾充满悬念——巨大眼睛图案的钥匙暗示背后存在某种古老或邪异的组织/遗迹，后续剧情大概率将围绕陵庙探索与幕后势力展开。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>各PC（玩家角色）的性格、关键行为和高光时刻</strong></h3>
+
+<h4><strong>阿隆</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：典型的前排冲锋型角色，行动直接、胆子很大，甚至有些“先打再说”。</li>
+<li><strong>关键行为</strong>：在确认锅里是人肉后迅速进入战斗状态，主动冲锋承担仇恨。</li>
+<li><strong>高光时刻</strong>：虽然数次被集火打到濒死，但依靠队友治疗硬撑住了阵线，体现了前排角色的核心价值：用身体换时间。</li>
+<li><strong>角色弧光</strong>：从“勇猛莽前”到“在濒死边缘反复拉扯”，他的战斗风格非常鲜明，也让这场战斗充满紧迫感。</li>
+</ul>
+
+<h4><strong>灰爪</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：敏锐、谨慎、擅长侦察与环境判断。</li>
+<li><strong>关键行为</strong>：在进入森林后第一时间发现树影异动、绊线弩与伪装坑洞，判断敌人并非地精。</li>
+<li><strong>高光时刻</strong>：其侦察与反侦察能力直接改变了队伍对局势的认知，避免了继续按“清地精”思路误判。</li>
+<li><strong>角色弧光</strong>：灰爪是本章最关键的“信息发现者”，承担了把剧情从低级任务引向真正危险的转折职责。</li>
+</ul>
+
+<h4><strong>真木麻希</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：冷静、精准、输出稳定。</li>
+<li><strong>关键行为</strong>：在战斗中以准确打击压制敌人，属于典型“稳定处理局面”的角色。</li>
+<li><strong>高光时刻</strong>：在屋内外混战、敌人增援不断的情况下，她的精准输出帮助队伍逐步夺回主动权。</li>
+<li><strong>角色弧光</strong>：她的存在让这场战斗不只是“硬扛”，而是有了明确的收割节奏。</li>
+</ul>
+
+<h4><strong>沙维尔</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：战术型施法者，控制与防护兼具。</li>
+<li><strong>关键行为</strong>：使用雷鸣波与镜影术等手段应对包围，兼顾干扰、控场与自保。</li>
+<li><strong>高光时刻</strong>：镜影术有效提升生存能力，雷鸣波则在混战中帮助队伍打乱敌方阵型。</li>
+<li><strong>角色弧光</strong>：沙维尔是战局稳定器，体现了法术在高压近战中的决定性作用。</li>
+</ul>
+
+<h4><strong>游侠与老兵</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：支援型队友，偏稳健、务实。</li>
+<li><strong>关键行为</strong>：在阿隆濒死时持续提供治疗，确保前线不崩。</li>
+<li><strong>高光时刻</strong>：虽然没有最耀眼的击杀表现，但他们的治疗和支援是队伍能活着打完这场仗的基础。</li>
+<li><strong>角色弧光</strong>：属于“幕后英雄”型角色，尤其在高危战斗中价值极高。</li>
+</ul>
+
+<h3><strong>重要NPC及其在剧情中的作用</strong></h3>
+
+<h4><strong>雇主/任务发布者</strong></h4>
+<ul>
+<li><strong>作用</strong>：提供起始任务和报酬信息，构建“低风险赏金任务”的表象。</li>
+<li><strong>剧情功能</strong>：作为反差起点，让后续危险升级更有冲击力。</li>
+</ul>
+
+<h4><strong>车夫</strong></h4>
+<ul>
+<li><strong>作用</strong>：承载队伍进入森林的交通工具提供者。</li>
+<li><strong>剧情功能</strong>：其被冷箭射杀是剧情第一次明显失控，迫使队伍徒步进入危险区域，也强化了敌方的伏击能力。</li>
+</ul>
+
+<h4><strong>豺狼人首领</strong></h4>
+<ul>
+<li><strong>作用</strong>：本章敌方核心，指挥据点并持有关键钥匙。</li>
+<li><strong>剧情功能</strong>：其死亡并掉落刻有巨大眼睛图案的钥匙，为后续地下陵庙探索提供直接线索。</li>
+</ul>
+
+<h4><strong>其他豺狼人</strong></h4>
+<ul>
+<li><strong>作用</strong>：构成据点防卫与战斗压力。</li>
+<li><strong>剧情功能</strong>：通过屋内外夹击、增援压迫等方式制造战斗张力。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 赏金委托：清剿地精巢穴</strong></h3>
+<p>队伍接到任务，目标是清剿地精巢穴，赏金按耳朵数量计算，熊地精更值钱。任务说明简单粗暴，显然是低阶冒险者常见的“刷怪任务”，也为后续反差埋下伏笔。</p>
+
+<h3><strong>2. 途中遇袭：车夫被冷箭射杀</strong></h3>
+<p>前往目标地点途中，车夫突然遭冷箭射死。这个意外立即说明，敌人已经掌握了道路情报并进行伏击。队伍失去交通工具，只能改为徒步穿林，危险感瞬间提升。</p>
+
+<h3><strong>3. 森林侦察：识破机关与陷阱</strong></h3>
+<p>进入树林后，灰爪通过细致观察发现树影异动，并识破绊线弩、伪装坑洞等机关。队伍由此确认，这不是地精惯用的简陋手段，而是更成熟、更凶险的埋伏体系，敌人身份开始变得可疑。</p>
+
+<h3><strong>4. 炊烟线索：猎人小屋与人肉锅</strong></h3>
+<p>继续前进时，队伍循着炊烟找到一间猎人小屋。屋内锅里炖着“新鲜两脚羊”，阿隆确认那是人肉。至此，队伍终于明确：此地盘踞的不是普通地精，而是食人掠食者，剧情方向从“清理洞穴”转向“对抗食人豺狼人”。</p>
+
+<h3><strong>5. 屋内激战：豺狼人现身</strong></h3>
+<p>四只豺狼人现身后，战斗爆发，且迅速扩展到屋内外。阿隆多次冲锋，却频繁遭到反击并被打至濒死；队友则通过治疗、控制与远程输出维持战线。战斗过程呈现出明显的拉扯感，敌我双方在狭小地形中激烈碰撞。</p>
+
+<h3><strong>6. 增援压制与战局逆转</strong></h3>
+<p>门外的增援豺狼人继续施压，但真木麻希、沙维尔、游侠与老兵通过精准打击、雷鸣波、镜影术和治疗协作，逐步削弱敌方战力。最终首领及残敌被全部清除，战斗结束。</p>
+
+<h3><strong>7. 战后搜查：钥匙与地下陵庙</strong></h3>
+<p>搜尸时，队伍在豺狼人首领身上发现一把刻有巨大眼睛图案的钥匙。这个细节成为全章最重要的剧情钩子，意味着前方存在某个地下陵庙或遗迹入口，且幕后势力与“眼睛”意象相关。故事由此正式转入更深层的主线。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：原本去打地精，结果一路打到食人豺狼人据点，这种“任务类型瞬间升级”的反转很有冲击力。</li>
+<li><strong>最精彩</strong>：猎人小屋内外全面开战，狭窄空间、不断增援、前排濒死、后排控场，战斗张力拉满。</li>
+<li><strong>最带氛围的桥段</strong>：锅里炖着“新鲜两脚羊”，一揭盖子就把恐怖感直接拉满，属于标准的恐怖冒险名场面。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>灰爪的侦察类成功</strong>：识破绊线弩与伪装坑洞，属于直接影响路线判断的关键成功。</li>
+<li><strong>阿隆的生存检定压力</strong>：多次濒死仍被救回，虽然不是传统意义上的“大成功”，但从戏剧效果上看极其亮眼。</li>
+<li><strong>沙维尔的关键施法</strong>：雷鸣波与镜影术在混战中显著稳定战局，属于“法术价值被打满”的表现。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“每只1金币，熊地精按3只算”</strong>：非常有赏金猎人味道，也带着一点荒诞喜感。</li>
+<li><strong>割耳计数</strong>：粗粝、实用、带黑色幽默，立刻把模组风格定在“脏、险、现实感强”的路线上。</li>
+<li><strong>“新鲜两脚羊”</strong>：一句话就把猎人小屋从普通补给点变成了恐怖片现场。</li>
+<li><strong>首领身上的巨大眼睛钥匙</strong>：这个道具太有“后面有大事”的味道，作为章节尾钩非常成功。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续把这份报告整理成：</p>
+<ol>
+<li><strong>更像跑团贴吧/群内复盘的口吻版</strong></li>
+<li><strong>更正式的模组评测版</strong></li>
+<li><strong>带“伏笔-回收-角色成长”结构的深度分析版</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

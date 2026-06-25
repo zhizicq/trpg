@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追书人（迫真） - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --border: #3d2b1f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>追书人（迫真）</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>本模组以一座继承来的旧宅、失踪的叔叔、被盗的藏书为起点，逐步揭开一桩与墓地地下通道、神秘封锁区以及“非人化的书迷”有关的怪异事件。表面上看是寻人与寻物委托，实则是调查者在追索一个“仍在追书”的存在：他既是线索中的山上金博，也是逐渐脱离人类形态、蜕变成食尸鬼的异常个体。</p>
+<p>核心冲突在于：委托人希望找回失踪的亲人和书籍，而真相却显示山上本人已经主动选择与人类社会切割，转而沉溺于禁地中的阅读与藏匿。调查者面对的不只是失踪案，更是“是否有权打断一个正在走向非人的执念”的道德与恐怖双重抉择。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>众人受佐藤金博委托，前往其继承的旧宅调查：叔叔山上金博失踪，宅中珍贵藏书也一并被盗。宅内陈设古旧却异常整洁，最奇怪的是书籍保存得出奇完好，似乎偷书者对书极为珍视；但窗锁的破损说明此事并非单纯的“合法取走”。随着调查推进，线索逐步指向墓地与宅邸下方的地下隧道。</p>
+<p>小队分头行动，拜访邻居、旧书店与墓地周边，确认山上长期独来独往，常在墓地徘徊，且与周围人关系疏离。守墓人起初闭口不言，在罪木的安抚下才透露：深夜墓碑附近常出现人影。道尔又从警方旁证得知，这片墓地早有异响与失踪悬案，并靠侦察大成功找到足迹与一扇无碑墓门。</p>
+<p>当调查者深入墓中，却被毒气喷倒，醒来后目睹了一具酷似山上金博的丑陋人形怪物，理智受到冲击。最终，他们找到了这位自称“山上先生”的书迷；他坦承自己拿走了书，只为在被封锁前读完最后一遍，并对劝说与交换毫无动摇。随后他带着书钻回坟中并封闭墓门，仿佛彻底回到了地下的归宿。事件结束后，GM宣布该地将被食尸鬼封锁，调查者则在“平安即是喜乐”的收尾中获得报酬、理智回复与神话知识奖励。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局是典型的克苏鲁式“知晓真相但无法改变真相”。调查者没有成功带回失踪者，也未能追回藏书；山上金博作为“人”的部分几乎消失，只留下一个执着于书本的非人存在。GM通过“食尸鬼封锁”进一步确认此地危险性与后续不可逆性。</p>
+<p>不过从跑团体验上，这一结局给予了相当体面的收束：角色们获得信用、理智恢复与神话知识，意味着虽然真相令人不适，但调查本身仍被系统奖励为一次成功的“揭露”。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC分析</strong></h3>
+
+<h4><strong>道尔</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：偏理性、注重事实验证，行动上稳健且善于从制度与旁证切入。</li>
+<li><strong>关键行为</strong>：从警方渠道补足墓地异响、失踪悬案等信息；在关键时刻以侦察大成功找到了足迹和无碑墓门，是推进地下探索的核心人物。</li>
+<li><strong>高光时刻</strong>：大成功几乎等同于“破局钥匙”，让队伍从“墓地传闻”直接锁定地下入口，属于典型的实用型高光。</li>
+<li><strong>角色作用</strong>：负责把零散线索拼成可操作的调查路径，是团队中的“证据整合者”。</li>
+</ul>
+
+<h4><strong>罪木</strong></h4>
+<ul>
+<li><strong>性格特征</strong>：擅长安抚、共情，面对人际封闭型NPC时具有突破力。</li>
+<li><strong>关键行为</strong>：成功安抚守墓人，让其透露深夜墓碑附近有人影这一关键情报。</li>
+<li><strong>高光时刻</strong>：对“知情但不愿说”的NPC施加情绪层面的突破，属于社交系的决定性推进。</li>
+<li><strong>角色作用</strong>：作为团队的“软性开门人”，在本模组这种沉默、回避、隐瞒型剧情里非常重要。</li>
+</ul>
+
+<h4><strong>其他PC</strong></h4>
+<p>摘要中未详细区分其他玩家角色，但整体可见团队呈现出典型的分工：</p>
+<ul>
+<li>一部分负责外勤访谈与搜证；</li>
+<li>一部分负责地形突破与深入探索；</li>
+<li>一部分负责在恐怖揭示时承受理智冲击。</li>
+</ul>
+<p>这类结构让模组的“调查—地下—真相”三段式推进较为顺畅。</p>
+
+<hr>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>佐藤金博</strong></h4>
+<ul>
+<li><strong>作用</strong>：委托人，提供事件起点与调查目标。</li>
+<li><strong>意义</strong>：他的委托让“失踪叔叔+被盗藏书”成为表层案件，也为后续“家族继承旧宅”提供了情境基础。</li>
+</ul>
+
+<h4><strong>山上金博 / “山上先生”</strong></h4>
+<ul>
+<li><strong>作用</strong>：本模组核心NPC，既是失踪者也是真相本身。</li>
+<li><strong>形象变化</strong>：从普通失踪亲属逐渐转变为墓中怪物般的存在，呈现“人类向食尸鬼异化”的恐怖过程。</li>
+<li><strong>行为动机</strong>：不是为了杀戮或阴谋，而是为了守着书、读完书、带着书回到地下。</li>
+<li><strong>剧情意义</strong>：他让案件从单纯的失踪案升级为“执念吞噬人性”的怪谈式悲剧。</li>
+</ul>
+
+<h4><strong>守墓人</strong></h4>
+<ul>
+<li><strong>作用</strong>：关键情报节点。</li>
+<li><strong>性格特征</strong>：起初谨慎、回避、甚至可能带有恐惧与职业性的沉默。</li>
+<li><strong>意义</strong>：代表“边缘知情者”的典型功能NPC，负责把超自然线索从传闻落到现实。</li>
+</ul>
+
+<h4><strong>警方相关人员</strong></h4>
+<ul>
+<li><strong>作用</strong>：提供墓地早有异响、失踪悬案等旁证。</li>
+<li><strong>意义</strong>：他们让调查者确认这不是单次偶发事件，而是长期存在的异常区域。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>1. 委托与旧宅调查</strong></h3>
+<p>故事从佐藤金博的委托开始。调查者来到继承的旧宅，围绕“叔叔山上金博失踪”“藏书被盗”展开初步搜查。宅邸整体保留良好，尤其书籍保存状况异常出色，这一细节暗示偷书者并非粗暴掠夺者，而是对书本怀有强烈珍惜之情。与此同时，窗锁破损说明旧宅并非完全封闭，存在可疑进入路径。</p>
+
+<h3><strong>2. 走访线索：邻居、旧书店与墓地</strong></h3>
+<p>调查者随后分头行动，向邻居、旧书店与墓地周边摸排。通过访谈得知，山上金博平日独来独往，几乎与外界断联，且常常前往墓地。这个阶段逐渐奠定人物画像：他不是普通失踪者，而是一个与“墓地”有长期联系的人。</p>
+<p>旧书店与周边调查进一步强化了“山上对书的执念”这一主题，使“盗书”从财物损失变成了具有个人意味的行为。</p>
+
+<h3><strong>3. 守墓人松口与警方旁证</strong></h3>
+<p>墓地调查成为转折点。守墓人最初守口如瓶，直到罪木发挥安抚作用才透露：深夜墓碑附近经常有人影出没。与此同时，道尔从警方侧面获得证实，得知这片墓地并不干净，早已有异响和失踪悬案。</p>
+<p>这一段将“传闻”与“现实”连接起来，让墓地从普通场景升级为危险区域。</p>
+
+<h3><strong>4. 侦察成功，发现无碑墓门</strong></h3>
+<p>道尔的侦察大成功是整段调查最关键的推进之一。他不仅找到足迹，还发现了一扇无碑墓门，说明地下结构和墓地之间存在明确的通路。</p>
+<p>此处剧情从“外部调查”正式转入“进入未知空间”的阶段，模组节奏也由侦查推理转为恐怖探索。</p>
+
+<h3><strong>5. 地下探索与毒气陷阱</strong></h3>
+<p>众人深入墓中后遭遇毒气喷放，被直接放倒。这一设计有效制造了“调查者在真相面前失去主动性”的恐怖感，也让地下墓穴显得更像一个为隐藏某种东西而刻意设置的封闭空间。</p>
+<p>醒来后，他们目睹酷似山上金博的丑陋人形怪物，理智受到冲击——这不仅是视觉恐怖，更是身份恐怖：他们看到的“人”，已经不再像人。</p>
+
+<h3><strong>6. 真相揭露：书迷化身“山上先生”</strong></h3>
+<p>最终，调查者找到那位自称“山上先生”的存在。他坦白是自己取走了书，原因并非恶意，而是想在封锁前把最后一遍读完。面对劝说、谈判与交换，他都完全拒绝，表现出一种近乎纯粹而顽固的执念：书要读完，自己也要回到地下。</p>
+<p>随后他带着书钻回坟中并关闭墓门，完成了与人类世界的彻底告别。</p>
+
+<h3><strong>7. 结局与封锁</strong></h3>
+<p>GM宣布该地将被食尸鬼封锁，暗示这不仅是一次个体异变，而是一个会持续扩散的危险区域。调查者带着“平安即是喜乐”的结局收尾，获得信用、理智恢复和神话知识奖励。</p>
+<p>整段故事在“没有救回人，也没有拿回书”的遗憾中完成闭合，保留了克苏鲁风格的苍凉感。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩 / 最搞笑 / 最意外的场景</strong></h3>
+<ul>
+<li><strong>最精彩</strong>：道尔侦察大成功，直接找出足迹与无碑墓门。属于“一个检定打开整张地图”的经典瞬间。</li>
+<li><strong>最意外</strong>：最终真相不是阴谋家、也不是纯粹的怪物袭击，而是一个“只想安静读完最后一遍书”的山上先生。其执念之朴素，反而更诡异。</li>
+<li><strong>最有氛围</strong>：毒气喷倒后醒来，看见酷似山上金博的丑陋人形怪物，这一幕非常适合做桌上集体沉默的名场面。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定</strong></h3>
+<ul>
+<li><strong>侦察大成功</strong>：直接锁定足迹与无碑墓门，是整模组最关键的成果检定。</li>
+<li><strong>罪木安抚成功</strong>：从“问不出话”到“守墓人松口”，是典型的社交检定翻盘。</li>
+<li><strong>毒气陷阱命中</strong>：虽然摘要未说明具体检定结果，但它显然是一次成功制造紧张感的环境危机。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>“我只是想在封锁前读完最后一遍。”</strong></li>
+</ul>
+<p>这句话几乎概括了山上先生全部的角色弧光：不是恶、不是狂，而是一种令人不安的执著。</p>
+<ul>
+<li><strong>“平安即是喜乐”</strong></li>
+</ul>
+<p>作为结局收尾语，形成了一种带点反差的宗教式/箴言式余韵：明明经历了克系恐怖，结果却以相对平和的奖励收束，颇有黑色幽默感。</p>
+
+<h3><strong>总体评价</strong></h3>
+<p>这是一则非常典型、完成度较高的调查型克苏鲁模组：线索层层递进，NPC功能明确，地下真相具备强烈视觉冲击，而最终结局并不试图“解决”怪异，只是让调查者确认它的存在。</p>
+<p>它最出彩的地方，在于把“偷书”这一极其日常的动机，和“墓地、食尸鬼、异变”这种经典恐怖元素拼接在一起，形成一种又荒诞又悲凉的故事质感。</p>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>

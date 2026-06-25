@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>烈风号大劫案 - TRPG 跑团复盘</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap');
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --gold: #e2b04a;
+    --gold-dim: #a67c2e;
+    --text: #d4c5a9;
+    --text-bright: #f0e6d3;
+    --accent: #c0392b;
+    --accent2: #8b4513;
+    --border: #3d2b1f;
+    --dice: #27ae60;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% 0%, #1a2744 0%, transparent 70%),
+                      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30Z' fill='none' stroke='%233d2b1f' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  
+  .header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    position: relative;
+  }
+  .header::before, .header::after {
+    content: '◆ ⚄ ◆';
+    display: block;
+    color: var(--gold-dim);
+    letter-spacing: 1em;
+    font-size: 0.8rem;
+  }
+  .header::before { margin-bottom: 1.5rem; }
+  .header::after { margin-top: 1.5rem; }
+  .header h1 {
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(226,176,74,0.3);
+    letter-spacing: 0.15em;
+  }
+  .header .subtitle {
+    color: var(--gold-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    border-radius: 8px 8px 0 0;
+  }
+  .card h2 {
+    font-family: 'ZCOOL XiaoWei', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .card h3 {
+    color: var(--text-bright);
+    font-size: 1.1rem;
+    margin: 1.2rem 0 0.5rem;
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 0.8rem;
+  }
+  .card h4 {
+    color: var(--gold-dim);
+    font-size: 1rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+  .card p { margin-bottom: 0.8rem; text-indent: 2em; }
+  .card ul, .card ol { margin: 0.5rem 0 0.8rem 2rem; }
+  .card li { margin-bottom: 0.3rem; }
+  .card strong { color: var(--text-bright); }
+  .card em { color: var(--gold-dim); }
+  .card hr { border: none; border-top: 1px dashed var(--border); margin: 1.5rem 0; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gold-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .card { padding: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>烈风号大劫案</h1>
+  <div class="subtitle">—— TRPG 跑团复盘报告 ——</div>
+</div>
+
+<div class="card">
+<h2>一、故事总览</h2>
+<h3><strong>模组背景与核心冲突</strong></h3>
+<p>《烈风号大劫案》是一场典型的“火车劫案”开局、逐步滑向超自然悬疑的西部/蒸汽奇幻式模组。表面上，猎狐帮接到雇主艾尔肯的委托，准备在波恩峡谷劫掠富豪诺比斯乘坐的烈风号，夺取其随车财物；而真正的核心冲突，却隐藏在诺比斯随身携带的翡翠护身符与他早已被翻开的坟墓之间。随着劫案展开，玩家们从单纯的抢劫者逐渐变成追查诅咒真相的调查者，敌人也从列车护卫、竞争帮派，升级为会追猎活人的双翼巨犬与埋在死亡之下的旧日秘密。</p>
+
+<p>这场模组最有趣的地方在于，它把“犯罪片逻辑”和“克苏鲁式/哥特式恐怖逻辑”缝合在一起：一边是炸轨、登车、分赃、逃亡、洗钱采购；另一边是护符、诅咒、挖坟、召唤咒文、亡者与猎犬。玩家从头到尾都在“能不能抢到钱”与“抢到的钱到底是不是烫手山芋”之间反复拉扯。</p>
+
+<h3><strong>主线剧情概要</strong>（300-500字）</h3>
+<p>猎狐帮受艾尔肯委托，得知烈风号将在数日后经过波恩峡谷，车上载有富豪诺比斯的大量财物。为了实施计划，众人先赶往清湖镇采购炸药、弹药与伪装用品，并从酒馆、马厩等处打探消息。表面看，一切都在为一次标准的劫火车行动做准备，但他们很快察觉情报贩子吉尔对诺比斯的秘密有所隐瞒。到埋伏日，众人却意外撞上了同样盯上列车的大比利帮，双方在铁轨旁爆发枪战，计划被迫中断。烈风号抵达后，炸轨失败，众人只能强行追车登车，最终突破护卫与伪装反抗者，逼问出诺比斯躲在豪华车厢中。洗劫车厢后，他们找到大笔财物和一枚诡异的翡翠护身符，诺比斯随即精神崩溃，宣称灾厄将至，紧接着三只双翼巨犬现身追杀，艾尔肯留下断后并惨遭杀害。逃亡中，队伍从遗物和线索推断诺比斯真正的埋葬地点在孟菲斯城外墓地，遂前往调查，挖开被翻掘的坟墓并发现刻有召唤咒文的骸骨。随着艾德琳将护符归回尸骨，猎犬再次现身，最终众人合力击杀怪物、掩埋尸身，带着昏迷的艾德琳撤离，事件在一场“抢劫变除灵”的混乱收束中落幕。</p>
+
+<h3><strong>结局与收尾</strong></h3>
+<p>结局落点是一个带有胜利感的 <strong>Good End</strong>：烈风号上的财物被成功劫得，超自然威胁也被暂时解除。虽然艾尔肯在战斗中阵亡、艾德琳一度重伤昏迷，但猎狐帮最终破解了诺比斯死亡与诅咒的真相，将怪物与骸骨一并掩埋，避免灾厄进一步扩散。后日谈里，角色们各自散去，故事暂告一段落。整体而言，这是一个“先赚到一大笔，再把命从怪物嘴里抢回来”的结尾，既满足了劫案片的爽点，也保留了模组特有的阴郁余韵。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>二、角色分析</h2>
+<h3><strong>PC（玩家角色）分析</strong></h3>
+
+<h4><strong>艾尔肯</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：团队中的发起者与执行层引导者，像是把大家召集起来的“任务老板”或队伍的务实头脑。</li>
+<li><strong>关键行为</strong>：负责带领猎狐帮进入主线，推动调查和最终行动。</li>
+<li><strong>高光时刻</strong>：在烈风号事件中留下断后，直面双翼巨犬，为团队争取撤离时间。</li>
+<li><strong>角色弧光</strong>：从组织者转变为牺牲者，他的阵亡使整个事件从单纯劫案彻底升级为生死与诅咒的故事。</li>
+</ul>
+
+<h4><strong>艾德琳</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：高能、机敏、带有神秘感的关键推进者，兼具“技术/法术/谈判”三种价值。</li>
+<li><strong>关键行为</strong>：白拿毛瑟C96、在追查线索中承担关键行动、在墓地线索环节受到诡异力量牵引。</li>
+<li><strong>高光时刻</strong>：与护符和骸骨形成直接关联，成为“诅咒转移”的承接者；她的操作让剧情真相得以进一步显现。</li>
+<li><strong>角色弧光</strong>：她不是单纯的输出位，而是把模组从“抢完就跑”推进到“必须调查真相”的枢纽人物。昏迷也让她成为后半段最具戏剧张力的角色之一。</li>
+</ul>
+
+<h4><strong>鲍威尔</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：赌性强、起伏大、喜剧效果显著的“高风险玩家”。</li>
+<li><strong>关键行为</strong>：在赌桌上大起大落，最终意外赚得巨款；这一笔钱直接支撑了团队后续采购与武装。</li>
+<li><strong>高光时刻</strong>：以意料之外的赌运补足团队物资，堪称“让计划能继续运转的人”。</li>
+<li><strong>角色弧光</strong>：他的戏份不一定最猛，但很稳定地贡献了“西部片味儿”和团队财政上的戏剧性反转。</li>
+</ul>
+
+<h4><strong>苦艾</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：实用主义者、采购担当、战斗与准备阶段的重要执行手。</li>
+<li><strong>关键行为</strong>：在黑市买到稀有粘性炸药，后续还参与对巨犬的火力输出。</li>
+<li><strong>高光时刻</strong>：靠交易或运气搞到关键爆破物资，是“原计划”最像样的落实者。</li>
+<li><strong>角色弧光</strong>：从补给采购到最终清场，始终是团队稳定的工具人核心，体现了“真正决定成败的往往是准备阶段”。</li>
+</ul>
+
+<h4><strong>都灵</strong></h4>
+<ul>
+<li><strong>性格/定位</strong>：沉稳、靠谱、战斗端支撑型成员。</li>
+<li><strong>关键行为</strong>：在酒馆套情报、后期与苦艾一起击杀巨犬。</li>
+<li><strong>高光时刻</strong>：在最后的怪物战中承担关键输出。</li>
+<li><strong>角色弧光</strong>：不抢戏，但存在感很稳，是团队中“关键时刻能补位”的那类角色。</li>
+</ul>
+
+<h3><strong>重要NPC分析</strong></h3>
+
+<h4><strong>艾尔肯</strong></h4>
+<ul>
+<li>委托人/引路人/剧情发动机。</li>
+<li>他的任务把PC们引到烈风号事件中，也让整个模组的“职业犯罪”入口成立。</li>
+<li>最终牺牲后，剧情从人类冲突转向超自然真相。</li>
+</ul>
+
+<h4><strong>诺比斯</strong></h4>
+<ul>
+<li>富豪、目标、受诅咒者。</li>
+<li>表面上是货主与劫案对象，实际上是护符诅咒的核心携带者，与坟墓、召唤咒文和猎犬有直接联系。</li>
+<li>他崩溃、惊恐、死亡的过程，是模组从“抢钱”转入“恐怖”的转折点。</li>
+</ul>
+
+<h4><strong>吉尔</strong></h4>
+<ul>
+<li>酒馆情报贩子。</li>
+<li>作用是提供世界信息与误导空间，且似乎对诺比斯“闹鬼式搬走财产”的真相有所隐瞒。</li>
+<li>他的存在强化了“有人知道得更多，但不肯说”的调查感。</li>
+</ul>
+
+<h4><strong>大比利帮</strong></h4>
+<ul>
+<li>竞争帮派，起到“意外打断计划”的功能。</li>
+<li>他们不是最终敌人，却让抢劫现场更加混乱，也制造了极具戏剧性的双线冲突。</li>
+</ul>
+
+<h4><strong>双翼巨犬</strong></h4>
+<ul>
+<li>超自然追猎者，模组后半段的直接威胁。</li>
+<li>它们是护符与诅咒的具象化，代表“你拿走的不只是钱，还有不该碰的东西”。</li>
+<li>作为最终战敌人，它们把剧情从犯罪片彻底推入怪奇恐怖。</li>
+</ul>
+
+<h4><strong>孟菲斯当地人/教堂相关者</strong></h4>
+<ul>
+<li>作为信息补充源，提供诺比斯葬地、墓园、教堂等关键线索。</li>
+<li>他们让调查链条得以闭环，推动玩家从“猜测”走向“证实”。</li>
+</ul>
+
+<hr>
+</div>
+<div class="card">
+<h2>三、分章节剧情</h2>
+<h3><strong>第1章：接活、备战与清湖镇调查</strong></h3>
+<p>猎狐帮受艾尔肯召集，得知一趟名为“烈风号”的列车将在五天后通过波恩峡谷，列车上运载着富豪诺比斯的巨额财物。为了抢劫成功，众人先前往清湖镇进行准备：购买炸药、子弹、杂货和伪装用品，并分头前往酒馆、马厩等地点打探风声。期间，他们确认情报贩子吉尔确实与艾尔肯相识，但对诺比斯“离奇搬财”的内幕明显有所隐瞒。此时模组仍带着浓厚的犯罪劫案气质，玩家关注的重点是补给、路线和情报真伪。</p>
+
+<h3><strong>第2章：埋伏失误与列车强登</strong></h3>
+<p>数日后，众人到铁路附近埋伏，结果发现情报有误：前来拦车的不是预定中的目标，而是同样盯上烈风号的大比利帮。误会迅速升级为枪战，双方在铁轨旁交火，烈风号则在混乱中逼近。原定炸轨计划失败，众人只得改为追车登车，在高速移动的列车上强行突入车厢。这一段是模组的第一个高潮：计划崩盘、临场应变、枪战与列车场景形成强烈画面感。</p>
+
+<h3><strong>第3章：豪华车厢洗劫与护符真相</strong></h3>
+<p>众人突破车厢内“安保”与假装反抗的人后，逼问出诺比斯藏身于后方豪华车厢。进入后，他们搜出大量现金、金条与珍贵财物，尤其是一枚翡翠护身符。就在分赃与盘问时，诺比斯突然精神崩溃，称护符会招来猎犬、飞龙与恶鬼。话音未落，三只背生双翼的巨犬现身追杀，艾尔肯选择断后，最终惨遭扑杀。此处完成了剧情转向：抢劫的“宝物”其实是祸源。</p>
+
+<h3><strong>第4章：逃亡、追查与孟菲斯调查</strong></h3>
+<p>带着财物与线索，猎狐帮撤往孟菲斯。途中他们整理艾尔肯遗物，开始意识到事情远不止一场劫案那么简单。到达后，众人从当地人和相关地点入手，发现诺比斯其实应葬于城外墓地，而非他声称的去向。于是他们前往诺比斯宅邸与教堂进行调查，发现宅邸已遭洗劫，书房内仍留有信件与空柜，进一步印证了护符与尸骨之间的联系。此阶段属于“由抢转查”的核心过渡章节。</p>
+
+<h3><strong>第5章：挖坟、召唤咒文与最终对决</strong></h3>
+<p>循着线索，众人来到城外墓地，找到被翻掘的坟墓与刻有召唤咒文的骸骨。艾德琳在此被神秘力量牵引，主动或被迫接近关键点，结果引发第二轮冲突：她试图处理护符/施法却反遭反噬，重伤昏迷。随后双翼巨犬再度现身，苦艾与都灵联手输出，最终击杀两只怪物。众人将尸骨与怪物掩埋，暂时平息诅咒，带着昏迷的艾德琳撤离。结尾进入后日谈，各人分道扬镳，模组收束。</p>
+
+<hr>
+</div>
+<div class="card">
+<h2>四、亮点与槽点</h2>
+<h3><strong>最精彩/最搞笑/最意外的场景</strong></h3>
+<ul>
+<li><strong>最意外</strong>：原本是标准劫火车，结果变成“先跟另一伙劫匪火拼，再强登列车，最后变成除灵任务”。</li>
+<li><strong>最精彩</strong>：烈风号追车强登的段落，节奏极强，极适合TRPG跑团里那种临场翻盘的爽感。</li>
+<li><strong>最有戏剧性</strong>：诺比斯精神崩溃、还没讲完恐怖预言就被双翼巨犬打断，堪称“嘴还没说完，BOSS先来收人”。</li>
+</ul>
+
+<h3><strong>令人印象深刻的检定（大成功/大失败）</strong></h3>
+<ul>
+<li><strong>鲍威尔的赌桌大起大落</strong>：虽然不是战斗检定，但属于非常有记忆点的“财富波动”，而且直接影响队伍装备水平。</li>
+<li><strong>苦艾在黑市买到稀有粘性炸药</strong>：非常关键的资源获取，体现出调查/交易侧的“好检定收益”。</li>
+<li><strong>炸轨失败</strong>：这次失误是整个剧情转折点，直接把“按计划劫车”变成“狼狈追车”，是典型的大失败带来高戏剧性。</li>
+<li><strong>艾德琳在墓地环节的反噬/昏迷</strong>：这一失败让她成为诅咒链条的重要承接者，也制造出强烈的危机感。</li>
+</ul>
+
+<h3><strong>有趣的对话或桥段</strong></h3>
+<ul>
+<li><strong>诺比斯关于“猎犬、飞龙与恶鬼”的惊恐发言</strong>：非常有哥特恐怖味道，也极具表演张力。</li>
+<li><strong>玩家从“抢钱”一路发展到“挖坟找真相”</strong>：整个剧情转向本身就是最有趣的桥段，堪称模组设计的核心魅力。</li>
+<li><strong>大比利帮的误入战局</strong>：原本是同类竞争者，结果莫名其妙成了火并对象，给整个故事增加了黑色幽默感。</li>
+<li><strong>艾尔肯断后赴死</strong>：既英雄化，又把叙事情绪从“发财”一下拉到“死亡与代价”，非常适合作为章节终点。</li>
+</ul>
+
+<hr>
+
+<p>如果你愿意，我还可以继续为这份报告补一版：</p>
+<ol>
+<li><strong>“更像贴吧/论坛风格”的复盘版本</strong></li>
+<li><strong>“更正式的模组评测版”</strong></li>
+<li><strong>“按角色逐人写成角色小传版”</strong></li>
+</ol>
+</div>
+
+<div class="footer">
+  ◆ AI 辅助生成 · 仅供参考 ◆
+</div>
+
+</div>
+</body>
+</html>
